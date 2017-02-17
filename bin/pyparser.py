@@ -1,9 +1,15 @@
 import sys
 import time
 import msgpack
-import pydetector.pydetector as detector
+import pydetector.detector as detector
 from pprint import pprint
 from traceback import format_exc
+
+# TODO: modify the AST adding comments, use tokenizer?
+# TODO: detect the end of the stdin in a less kludgy way
+# TODO: change the asserts for better error control
+# TODO: command line option to export JSON or just pprint
+# the output for debugging (to sys.stdout, unbuffered)
 
 def main():
     while True:
