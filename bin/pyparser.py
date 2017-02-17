@@ -24,6 +24,8 @@ def main():
             code = request[b'content']
             status = 'ok'
             errors = []
+            version = 0
+            ast = ''
 
             try:
                 resdict = detector.detect(codestr = code, stop_on_ok_ast=True)
@@ -32,9 +34,10 @@ def main():
                 errors.append('Exception trying to get the AST: {}'.format(format_exc()))
             else:
                 codeinfo = resdict['<code_string>']
-                if int(codeinfo['version']) in (3, 6):
+                version = codeinfo['version']
+                if version in (3, 6):
                     ast = codeinfo['py3ast']
-                elif codeinfo['version'] == 2:
+                elif version == 2:
                     ast = codeinfo['py2ast']
                 else:
                     status = 'error'
@@ -46,16 +49,17 @@ def main():
 
             outdict = {
                 'status': status,
+                'errors': errors,
                 'language': 'python',
-                'language_version': str(codeinfo['version']),
+                'language_version': version,
                 'driver': 'python23:1.0',
                 'ast': ast,
             }
-            # print(msgpack.dumps(outdict))
             sys.stdout.buffer.write(msgpack.dumps(outdict))
             sys.stdout.flush()
+
         except Exception as e:
-            # XXX log the error
+            # FIXME: log the error
             outdict = {
                 'status': 'fatal',
                 'driver': 'python23:1.0',
@@ -63,8 +67,6 @@ def main():
             }
             sys.stdout.buffer.write(msgpack.dumps(outdict))
             sys.stdout.flush()
-
-            print(format_exc())
             time.sleep(0.3)
 
 
