@@ -1,8 +1,15 @@
 import re
-import pydetector.ast_checks as achecks
-import pydetector.regexp_checks as rchecks
+import sys
+import os
+
 from io import open
 from pprint import pprint
+
+# XXX remove this crap
+sys.path.insert(0, os.path.abspath(os.pardir))
+from pydetector.ast_checks import check_ast
+from pydetector.regexp_checks import check_syntax_regex, check_modules_regex, check_modulesymbols_regex
+
 
 __all__ = ['detect']
 
@@ -105,7 +112,7 @@ def detect(files=None, codestr=None, ast_checks=True, modules_checks=True,
         if ast_checks:
             # Test the AST. This doesnt give points: either both pass, both fails
             # or one is correct and the other dont in which case we shortcircuit the return
-            astversion, py2astroot, py3astroot = achecks.check_ast(
+            astversion, py2astroot, py3astroot = check_ast(
                         input_code, try_other_on_sucess=not stop_on_ok_ast,
                         verbosity=verbosity
             )
@@ -129,14 +136,14 @@ def detect(files=None, codestr=None, ast_checks=True, modules_checks=True,
         # print(cleaned_code); exit()
 
         if modules_checks:
-            apply_score(*rchecks.check_syntax_regex(cleaned_code, retdict['matches']))
-            apply_score(*rchecks.check_modules_regex(cleaned_code, retdict['matches'],
+            apply_score(*check_syntax_regex(cleaned_code, retdict['matches']))
+            apply_score(*check_modules_regex(cleaned_code, retdict['matches'],
                 match_score = modules_score))
 
         # This one is SLOOOOOW
         if modsyms_checks:
             apply_score(
-                *rchecks.check_modulesymbols_regex(cleaned_code, retdict['matches'], symbols_score)
+                *check_modulesymbols_regex(cleaned_code, retdict['matches'], symbols_score)
             )
 
         if retdict['py2_score'] > retdict['py3_score']:

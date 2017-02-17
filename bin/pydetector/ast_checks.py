@@ -1,7 +1,9 @@
-import sys
+import os
 import ast
+import sys
 import subprocess
 from traceback import print_exc
+sys.path.insert(0, os.path.abspath(os.pardir))
 from pydetector.astexport import export_dict
 
 __all__ = ['check_ast']

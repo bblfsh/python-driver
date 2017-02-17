@@ -28,7 +28,7 @@ def main():
             ast = ''
 
             try:
-                resdict = detector.detect(codestr = code, stop_on_ok_ast=True)
+                resdict = detector.detect(codestr = code.decode('utf-8'), stop_on_ok_ast=True)
             except:
                 status = 'error'
                 errors.append('Exception trying to get the AST: {}'.format(format_exc()))
