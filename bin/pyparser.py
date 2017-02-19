@@ -1,14 +1,29 @@
+#!/usr/bin/env python3
 import sys
+import signal
+import logging
 import msgpack
 import pydetector.detector as detector
 from pprint import pprint
 from traceback import format_exc
+
+logging.basicConfig(filename="pyparser.log", level=logging.DEBUG)
 
 # TODO: modify the AST adding comments, use tokenizer?
 # and use dependency injection to pass a custom ast module that extract
 # comments to pydetector
 
 __version__ = '1.0'
+
+# Gracefully handle control c without adding another try-except on top of the loop
+def ctrlc_signal_handler(signal, frame):
+    sys.exit(0)
+signal.signal(signal.SIGINT, ctrlc_signal_handler)
+
+
+class OutputType():
+    MSGPACK = 1
+    PRINT   = 2
 
 class RequestCheckException(Exception): pass
 
@@ -47,12 +62,22 @@ def check_input_request(request, errors):
         raise RequestCheckException()
 
 
-def return_error(status='error', errors=''):
+def return_error(filepath, status='error', errors=None):
+    """
+    Build and send to stdout and error response. Also log
+    the errors to the pyparser.log.
+    """
+
+    errors   = [] if errors is None else errors
+    filepath = '<unnamed>' if not filepath else filepath
+
+    logging.error('Filepath: {}, Errors: {}'.format(filepath, errors))
     outdict = {
             'status': status,
             'errors': errors[0] if isinstance(errors, str) else errors,
             'driver': 'python23:%s' % __version__,
     }
+
     sys.stdout.buffer.write(msgpack.dumps(outdict))
     sys.stdout.flush()
 
@@ -71,58 +96,56 @@ def main():
     # TODO: check what errors are fatal and what to do with them
 
     if len(sys.argv) > 1 and sys.argv[1] == '--print':
-        outformat = 'print'
+        outformat = OutputType.PRINT
     else:
-        outformat = 'msgpack'
+        outformat = OutputType.MSGPACK
 
-    while True:
-        errors = []
+    filepath = ''
+    errors   = []
 
+    for request in msgpack.Unpacker(sys.stdin.buffer):
         try:
-            for request in msgpack.Unpacker(sys.stdin.buffer):
+            check_input_request(request, errors)
 
-                check_input_request(request, errors)
-                code     = request[b'content']
-                # We want the code detection to be fast and we prefer Python3 AST so using
-                # the stop_on_ok_ast will avoid running a Python2 subprocess to check the
-                # AST with Python2 if the Python3 version (which is a better AST anyway) worked
-                resdict  = detector.detect(codestr=code, stop_on_ok_ast=True)
-                codeinfo = resdict['<code_string>']
-                version  = codeinfo['version']
+            filepath = request.get(b'filepath', '')
+            code     = request[b'content']
+            # We want the code detection to be fast and we prefer Python3 AST so using
+            # the stop_on_ok_ast will avoid running a Python2 subprocess to check the
+            # AST with Python2 if the Python3 version (which is a better AST anyway) worked
+            resdict  = detector.detect(codestr=code.decode('utf-8'), stop_on_ok_ast=True)
+            codeinfo = resdict['<code_string>']
+            version  = codeinfo['version']
 
-                if version in (3, 6):
-                    ast = codeinfo['py3ast']
-                elif version in (1, 2):
-                    ast = codeinfo['py2ast']
-                else:
-                    raise Exception('Could not determine Python version')
+            if version in (3, 6):
+                ast = codeinfo['py3ast']
+            elif version in (1, 2):
+                ast = codeinfo['py2ast']
+            else:
+                raise Exception('Could not determine Python version')
 
-                if not ast:
-                    raise Exception('Empty AST generated')
+            if not ast:
+                raise Exception('Empty AST generated')
 
-                outdict = {
-                    'status': 'ok',
-                    'errors': errors,
-                    'language': 'python',
-                    'language_version': version,
-                    'driver': 'python23:1.0',
-                    'ast': ast,
-                }
+            outdict = {
+                'status'           : 'ok',
+                'errors'           : errors,
+                'language'         : 'python',
+                'language_version' : version,
+                'driver'           : 'python23:1.0',
+                'ast'              : ast,
+            }
 
-                if outformat == 'print':
-                    pprint(outdict)
-                else:
-                    # sys.stdout.buffer is the byte stream and since msgpack generates
-                    # byte-typed data on Python3 is the one we need to use
-                    sys.stdout.buffer.write(msgpack.dumps(outdict))
+            if outformat == OutputType.PRINT:
+                pprint(outdict)
+            else:
+                # sys.stdout.buffer is the byte stream and since msgpack generates
+                # byte-typed data on Python3 is the one we need to use
+                sys.stdout.buffer.write(msgpack.dumps(outdict))
 
-                sys.stdout.flush()
-
-        except KeyboardInterrupt:
-            exit(1)
+            sys.stdout.flush()
 
         except:
-            return_error(status='error', errors=[format_exc()])
+            return_error(filepath, status='error', errors=[format_exc()])
 
 
 if __name__ == '__main__':
