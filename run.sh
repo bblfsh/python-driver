@@ -1,5 +1,5 @@
-#!/bin/bash
+#!/bin/sh
 
 docker stop pyparser
 docker rm pyparser
-docker run -it --name pyparser --rm pyparser:latest 
+docker run -i --name pyparser --rm pyparser:latest 
