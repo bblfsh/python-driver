@@ -17,6 +17,13 @@ import logging
 logging.basicConfig(filename="sendmsg.log", level=logging.DEBUG)
 
 files = sys.argv[1:]
+d = {
+    'action': 'ParseAST',
+    'filepath': '',
+    'content': '',
+    'language': 'python',
+}
+
 for f in files:
     logging.info(f)
 
@@ -30,11 +37,11 @@ for f in files:
                 break
             except UnicodeDecodeError:
                 continue
-    d = {
-        'action': 'ParseAST',
+    d.update({
         'filepath': f,
-        'content': content
-    }
+        'content': content,
+    })
+
     msg = msgpack.packb(d)
     sys.stdout.buffer.write(msg)
     sys.stdout.buffer.flush()

@@ -8,11 +8,9 @@ import pydetector.detector as detector
 from pprint import pprint
 from traceback import format_exc
 
-logging.basicConfig(filename="pyparser.log", level=logging.DEBUG)
+logging.basicConfig(filename="pyparser.log", level=logging.ERROR)
 
 # TODO: modify the AST adding comments, use tokenizer?
-# and use dependency injection to pass a custom ast module that extract
-# comments to pydetector
 
 __version__ = '1.0'
 
@@ -28,79 +26,82 @@ class OutputType():
 
 class RequestCheckException(Exception): pass
 
-def check_input_request(request, errors):
-    """
-    Check the incoming request package and validate that the 'content' and
-    'language' keys are not missing and that 'language' and 'language_version'
-    are the right ones for this driver.
+class RequestProcessor():
+    def __init__(self, outbuffer, output_format=OutputType.MSGPACK):
+        self.outformat = output_format
+        self.outbuffer = outbuffer
 
-    Args:
-        request (bytes, messagepack): The incoming request in messagepack format
-            as bytes.
+    def _check_input_request(self, request):
+        """
+        Check the incoming request package and validate that the 'content' and
+        'language' keys are not missing and that 'language' and 'language_version'
+        are the right ones for this driver.
 
-        errors (List[str]): the list of errors. New errors will be added to it in place.
-    Raises:
-        RequestCheckException if the request failed to validate.
-    """
+        Args:
+            request (bytes, messagepack): The incoming request in messagepack format
+                as bytes.
 
-    with_error = False
-    if b'content' not in request or not request[b'content']:
-        errors.append('Bad input message, missing content')
-        with_error = True
+            errors (List[str]): the list of errors. New errors will be added to it in place.
+        Raises:
+            RequestCheckException if the request failed to validate.
+        """
 
-    if b'language' in request and request[b'language'].lower() != b'python':
-        errors.append('Bad language requested for the Python driver: "%s"'
-                      % request[b'language'].decode('utf-8'))
-        with_error = True
+        code = request.get(b'content', b'').decode()
+        if not code:
+            raise RequestCheckException('Bad input message, missing content')
 
-    if 'language_version' in request and \
-            request[b'language_version'][0] not in (b'1', b'2', b'3'):
-        errors.append('Bad language version requested, Python driver only '
-                      'supports versions 1, 2 and 3')
-        with_error = True
+        language = request.get(b'language', b'').decode()
+        if language.lower() != 'python':
+            raise RequestCheckException('Bad language requested for the Python driver: "%s"'
+                          % language)
 
-    if with_error:
-        raise RequestCheckException()
+        language_version = request.get(b'language_version', b'')
+        if language_version not in (b'', b'1', b'2', b'3'):
+            raise RequestCheckException('Bad language version requested, Python driver only '
+                          'supports versions 1, 2 and 3')
 
+        return code, request.get(b'filepath', b'').decode()
 
-def return_error(filepath, status='error', errors=None):
-    """
-    Build and send to stdout and error response. Also log
-    the errors to the pyparser.log.
-    """
+    def _send_response(self, response):
+        if self.outformat == OutputType.PRINT:
+            pprint(response)
+        else:
+            # sys.stdout.buffer is the byte stream and since msgpack generates
+            # byte-typed data on Python3 is the one we need to use
+            self.outbuffer.write(msgpack.dumps(response))
+            self.outbuffer.flush()
 
-    errors   = [] if errors is None else errors
-    filepath = '<unnamed>' if not filepath else filepath
+    def _return_error(self, filepath, status='error'):
+        """
+        Build and send to stdout and error response. Also log
+        the errors to the pyparser.log.
+        """
 
-    logging.error('Filepath: {}, Errors: {}'.format(filepath, errors))
-    outdict = {
-            'status': status,
-            'errors': errors[0] if isinstance(errors, str) else errors,
-            'driver': 'python23:%s' % __version__,
-    }
+        logging.error('Filepath: {}, Errors: {}'.format(filepath, self.errors))
+        response = {
+                'status': status,
+                'errors': self.errors,
+                'driver': 'python23:%s' % __version__,
+        }
+        if filepath:
+            response['filepath'] = filepath
+        self._send_response(response)
 
-    sys.stdout.buffer.write(msgpack.dumps(outdict))
-    sys.stdout.flush()
+        # sleep for a little to avoid clogging the CPU on repeated errors
+        time.sleep(0.2)
 
-    # sleep for a little to avoid clogging the CPU on repeated errors
-    time.sleep(0.2)
-
-
-def process_requests(buffer_, outformat):
-    for request in msgpack.Unpacker(buffer_):
-        ast      = None
-        filepath = ''
-        errors   = []
+    def process_request(self, request):
+        filepath    = ''
+        ast         = None
+        self.errors = []
 
         try:
-            check_input_request(request, errors)
+            code, filepath = self._check_input_request(request)
 
-            filepath = request.get(b'filepath', '')
-            code     = request[b'content']
             # We want the code detection to be fast and we prefer Python3 AST so using
             # the stop_on_ok_ast will avoid running a Python2 subprocess to check the
             # AST with Python2 if the Python3 version (which is a better AST anyway) worked
-            resdict  = detector.detect(codestr=code.decode('utf-8'), stop_on_ok_ast=True)
+            resdict  = detector.detect(codestr=code, stop_on_ok_ast=True)
             codeinfo = resdict['<code_string>']
             version  = codeinfo['version']
 
@@ -114,36 +115,38 @@ def process_requests(buffer_, outformat):
             if not ast:
                 raise Exception('Empty AST generated')
 
-            outdict = {
+            response = {
                 'status'           : 'ok',
-                'errors'           : errors,
+                'errors'           : self.errors,
                 'language'         : 'python',
                 'language_version' : version,
                 'driver'           : 'python23:1.0',
                 'ast'              : ast,
             }
+            if filepath:
+                response['filepath'] = filepath
 
-            if outformat == OutputType.PRINT:
-                pprint(outdict)
-            else:
-                # sys.stdout.buffer is the byte stream and since msgpack generates
-                # byte-typed data on Python3 is the one we need to use
-                sys.stdout.buffer.write(msgpack.dumps(outdict))
-
-            sys.stdout.flush()
+            self._send_response(response)
 
         except:
             status = 'fatal' if ast is None else 'error'
-            return_error(filepath, status=status, errors=[format_exc()])
+            self.errors.append(format_exc())
+            self._return_error(filepath, status=status)
 
 
-def main():
+def process_requests(inbuffer, outbuffer, outformat):
     """
     Main loop. It will read msgpack incoming requests from stdin using
     the msgpack lib stream unpacker. In case of error it will generate
     an error reply, also in msgpack format. The replies will be printed
     in stdout using bytes.
+    """
+    processor = RequestProcessor(outbuffer, outformat)
+    for request in msgpack.Unpacker(inbuffer):
+        processor.process_request(request)
 
+def main():
+    """
     If you pass the --print command line parameter the replies will be
     printed using pprint without wrapping them in the msgpack format which
     can be handy when debugging.
@@ -152,8 +155,7 @@ def main():
         outformat = OutputType.PRINT
     else:
         outformat = OutputType.MSGPACK
-
-    process_requests(sys.stdin.buffer, outformat)
+    process_requests(sys.stdin.buffer, sys.stdout.buffer, outformat)
 
 
 if __name__ == '__main__':

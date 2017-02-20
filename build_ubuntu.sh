@@ -2,4 +2,5 @@
 docker stop pyparser
 docker rm pyparser
 docker rmi pyparser:latest
-docker build --tag pyparser .
+cp Dockerfile.ubuntu Dockerfile
+docker build --tag pyparser_ubuntu .
