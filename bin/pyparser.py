@@ -100,10 +100,11 @@ def main():
     else:
         outformat = OutputType.MSGPACK
 
-    filepath = ''
-    errors   = []
-
     for request in msgpack.Unpacker(sys.stdin.buffer):
+        ast      = None
+        filepath = ''
+        errors   = []
+
         try:
             check_input_request(request, errors)
 
@@ -116,9 +117,9 @@ def main():
             codeinfo = resdict['<code_string>']
             version  = codeinfo['version']
 
-            if version in (3, 6):
+            if version in (3, 6) and codeinfo['py3ast']:
                 ast = codeinfo['py3ast']
-            elif version in (1, 2):
+            elif version in (1, 2) and codeinfo['py2ast']:
                 ast = codeinfo['py2ast']
             else:
                 raise Exception('Could not determine Python version')
@@ -145,7 +146,8 @@ def main():
             sys.stdout.flush()
 
         except:
-            return_error(filepath, status='error', errors=[format_exc()])
+            status = 'fatal' if ast is None else 'error'
+            return_error(filepath, status=status, errors=[format_exc()])
 
 
 if __name__ == '__main__':
