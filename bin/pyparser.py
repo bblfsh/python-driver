@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import sys
+import time
 import signal
 import logging
 import msgpack
@@ -81,26 +82,12 @@ def return_error(filepath, status='error', errors=None):
     sys.stdout.buffer.write(msgpack.dumps(outdict))
     sys.stdout.flush()
 
+    # sleep for a little to avoid clogging the CPU on repeated errors
+    time.sleep(0.2)
 
-def main():
-    """
-    Main loop. It will read msgpack incoming requests from stdin using
-    the msgpack lib stream unpacker. In case of error it will generate
-    an error reply, also in msgpack format. The replies will be printed
-    in stdout using bytes.
 
-    If you pass the --print command line parameter the replies will be
-    printed using pprint without wrapping them in the msgpack format which
-    can be handy when debugging.
-    """
-    # TODO: check what errors are fatal and what to do with them
-
-    if len(sys.argv) > 1 and sys.argv[1] == '--print':
-        outformat = OutputType.PRINT
-    else:
-        outformat = OutputType.MSGPACK
-
-    for request in msgpack.Unpacker(sys.stdin.buffer):
+def process_requests(buffer_, outformat):
+    for request in msgpack.Unpacker(buffer_):
         ast      = None
         filepath = ''
         errors   = []
@@ -148,6 +135,25 @@ def main():
         except:
             status = 'fatal' if ast is None else 'error'
             return_error(filepath, status=status, errors=[format_exc()])
+
+
+def main():
+    """
+    Main loop. It will read msgpack incoming requests from stdin using
+    the msgpack lib stream unpacker. In case of error it will generate
+    an error reply, also in msgpack format. The replies will be printed
+    in stdout using bytes.
+
+    If you pass the --print command line parameter the replies will be
+    printed using pprint without wrapping them in the msgpack format which
+    can be handy when debugging.
+    """
+    if len(sys.argv) > 1 and sys.argv[1] == '--print':
+        outformat = OutputType.PRINT
+    else:
+        outformat = OutputType.MSGPACK
+
+    process_requests(sys.stdin.buffer, outformat)
 
 
 if __name__ == '__main__':
