@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 import sys
-import time
 import signal
 import logging
 import msgpack
 import pydetector.detector as detector
-from pprint import pprint
+from pprint import pformat
 from traceback import format_exc
 
 logging.basicConfig(filename="pyparser.log", level=logging.ERROR)
 
 # TODO: modify the AST adding comments, use tokenizer?
+# TODO; benchmark this with compression
 
 __version__ = '1.0'
 
@@ -64,12 +64,11 @@ class RequestProcessor():
 
     def _send_response(self, response):
         if self.outformat == OutputType.PRINT:
-            pprint(response)
+            prettyoutput_bytes = pformat(response).encode('utf-8')
+            self.outbuffer.write(prettyoutput_bytes)
         else:
-            # sys.stdout.buffer is the byte stream and since msgpack generates
-            # byte-typed data on Python3 is the one we need to use
             self.outbuffer.write(msgpack.dumps(response))
-            self.outbuffer.flush()
+        self.outbuffer.flush()
 
     def _return_error(self, filepath, status='error'):
         """
@@ -86,9 +85,6 @@ class RequestProcessor():
         if filepath:
             response['filepath'] = filepath
         self._send_response(response)
-
-        # sleep for a little to avoid clogging the CPU on repeated errors
-        time.sleep(0.2)
 
     def process_request(self, request):
         filepath    = ''
@@ -134,13 +130,14 @@ class RequestProcessor():
             self._return_error(filepath, status=status)
 
 
-def process_requests(inbuffer, outbuffer, outformat):
+def process_requests(inbuffer, outbuffer, outformat=OutputType.MSGPACK):
     """
-    Main loop. It will read msgpack incoming requests from stdin using
+    Main loop. It will read msgpack incoming requests from inbuffer using
     the msgpack lib stream unpacker. In case of error it will generate
     an error reply, also in msgpack format. The replies will be printed
     in stdout using bytes.
     """
+    # Instantiated out of the loop to avoid the object-creation cost
     processor = RequestProcessor(outbuffer, outformat)
     for request in msgpack.Unpacker(inbuffer):
         processor.process_request(request)
