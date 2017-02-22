@@ -1,18 +1,20 @@
 #!/usr/bin/env python3
+__version__ = '1.0'
+
+import io
+import abc
 import sys
+import json
 import signal
 import logging
 import msgpack
 import pydetector.detector as detector
-from pprint import pformat
+from pprint import pformat, pprint
 from traceback import format_exc
+logging.basicConfig(filename="pyparser.log", level=logging.WARNING)
 
-logging.basicConfig(filename="pyparser.log", level=logging.ERROR)
-
-# TODO: modify the AST adding comments, use tokenizer?
-# TODO; benchmark this with compression
-
-__version__ = '1.0'
+class RequestInstantiationException(Exception): pass
+class RequestCheckException(Exception): pass
 
 # Gracefully handle control c without adding another try-except on top of the loop
 def ctrlc_signal_handler(signal, frame):
@@ -20,16 +22,23 @@ def ctrlc_signal_handler(signal, frame):
 signal.signal(signal.SIGINT, ctrlc_signal_handler)
 
 
-class OutputType():
-    MSGPACK = 1
-    PRINT   = 2
+def asstr(txt):
+    """
+    Decode a byte string if it really is an intance of bytes
+    """
+    if isinstance(txt, bytes):
+        return txt.decode()
+    return txt
 
-class RequestCheckException(Exception): pass
 
-class RequestProcessor():
-    def __init__(self, outbuffer, output_format=OutputType.MSGPACK):
-        self.outformat = output_format
+class RequestProcessor(metaclass=abc.ABCMeta):
+    def __init__(self, outbuffer):
         self.outbuffer = outbuffer
+
+    @staticmethod
+    @abc.abstractmethod
+    def _prepare_dict(d):
+        pass
 
     def _check_input_request(self, request):
         """
@@ -45,31 +54,27 @@ class RequestProcessor():
         Raises:
             RequestCheckException if the request failed to validate.
         """
-
-        code = request.get(b'content', b'').decode()
+        request = self._prepare_dict(request)
+        code = asstr(request.get('content', ''))
 
         if not code:
             raise RequestCheckException('Bad input message, missing content')
 
-        language = request.get(b'language', b'').decode()
+        language = asstr(request.get('language', ''))
         if language.lower() != 'python':
             raise RequestCheckException('Bad language requested for the Python driver: "%s"'
-                          % language)
+                                        % language)
 
-        language_version = request.get(b'language_version', b'')
-        if language_version not in (b'', b'1', b'2', b'3'):
+        language_version = asstr(request.get('language_version', ''))
+        if language_version not in ('', '1', '2', '3'):
             raise RequestCheckException('Bad language version requested, Python driver only '
-                          'supports versions 1, 2 and 3')
+                                        'supports versions 1, 2 and 3')
 
-        return code, request.get(b'filepath', b'').decode()
+        return code, asstr(request.get('filepath', ''))
 
+    @abc.abstractmethod
     def _send_response(self, response):
-        if self.outformat == OutputType.PRINT:
-            prettyoutput_bytes = pformat(response).encode('utf-8')
-            self.outbuffer.write(prettyoutput_bytes)
-        else:
-            self.outbuffer.write(msgpack.dumps(response))
-        self.outbuffer.flush()
+        pass
 
     def _return_error(self, filepath, status='error'):
         """
@@ -131,17 +136,102 @@ class RequestProcessor():
             self._return_error(filepath, status=status)
 
 
-def process_requests(inbuffer, outbuffer, outformat=OutputType.MSGPACK):
-    """
-    Main loop. It will read msgpack incoming requests from inbuffer using
-    the msgpack lib stream unpacker. In case of error it will generate
-    an error reply, also in msgpack format. The replies will be printed
-    in stdout using bytes.
-    """
-    # Instantiated out of the loop to avoid the object-creation cost
-    processor = RequestProcessor(outbuffer, outformat)
-    for request in msgpack.Unpacker(inbuffer):
-        processor.process_request(request)
+class RequestProcessorJSON(RequestProcessor):
+
+    JSONEndMark = '@@----@@\n'
+
+    def _send_response(self, response):
+        self.outbuffer.write(json.dumps(response, ensure_ascii=False))
+        self.outbuffer.write('\n@@----@@\n')
+        self.outbuffer.flush()
+
+    @staticmethod
+    def _prepare_dict(d):
+        """
+        JSON already comes encoded as str so no need to lose time reencoding
+        anything
+        """
+        return d
+
+    def _extract_docs(self, inbuffer):
+        """
+        This generator will read the inbuffer yielding the JSON
+        docs when it finds the ending mark
+        """
+        strio = io.StringIO()
+
+        for line in inbuffer.readlines():
+            try:
+                if line == RequestProcessorJSON.JSONEndMark:
+                    yield json.loads(strio.getvalue())
+                    strio.seek(0)
+                    strio = io.StringIO()
+                else:
+                    strio.write(line)
+            except:
+                self.errors = ['error decoding JSON from input: {}'.format(strio.getvalue())]
+                self._return_error(filepath='<jsonstream>', status='fatal')
+
+
+    def process_requests(self, inbuffer):
+        for doc in self._extract_docs(inbuffer):
+            self.process_request(doc)
+
+
+class RequestProcessorMSGPack(RequestProcessor):
+    def _send_response(self, response):
+        self.outbuffer.write(msgpack.dumps(response))
+        self.outbuffer.flush()
+
+    @staticmethod
+    def _prepare_dict(d):
+        """
+        Convert all byte-string keys and values to normal strings (non recursively since
+        we only have one level)
+        """
+        newdict = {}
+        for key, value in d.items():
+            if isinstance(value, bytes):
+                value = value.decode()
+
+            if isinstance(key, bytes):
+                key = key.decode()
+
+            newdict[key] = value
+        return newdict
+
+    def process_requests(self, inbuffer):
+        for request in msgpack.Unpacker(inbuffer):
+            self.process_request(request)
+
+
+ProcessorConfigs = {
+        'json': {
+            'class': RequestProcessorJSON,
+            'inbuffer': sys.stdin,
+            'outbuffer': sys.stdout
+        },
+
+        'msgpack': {
+            'class': RequestProcessorMSGPack,
+            'inbuffer': sys.stdin.buffer,
+            'outbuffer': sys.stdout.buffer
+        }
+}
+
+
+def getRequestProcessorInstance(format_, custom_inbuffer=None, custom_outbuffer=None):
+    conf = ProcessorConfigs.get(format_)
+    if not conf:
+        raise RequestInstantiationException('No RequestProcessor found for format {}'
+                .format(format_))
+
+    outbuffer = custom_outbuffer if custom_outbuffer else conf['outbuffer']
+    inbuffer = custom_inbuffer if custom_inbuffer else conf['inbuffer']
+
+    instance = conf['class'](outbuffer)
+    return instance, inbuffer
+
 
 def main():
     """
@@ -149,11 +239,14 @@ def main():
     printed using pprint without wrapping them in the msgpack format which
     can be handy when debugging.
     """
-    if len(sys.argv) > 1 and sys.argv[1] == '--print':
-        outformat = OutputType.PRINT
+
+    if len(sys.argv) > 1 and sys.argv[1] == '--json':
+        format_ = 'json'
     else:
-        outformat = OutputType.MSGPACK
-    process_requests(sys.stdin.buffer, sys.stdout.buffer, outformat)
+        format_ = 'msgpack'
+
+    processor, inbuffer = getRequestProcessorInstance(format_)
+    processor.process_requests(inbuffer)
 
 
 if __name__ == '__main__':
