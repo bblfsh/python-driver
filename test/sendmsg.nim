@@ -14,5 +14,6 @@ when isMainModule:
     discard f.open(filepath, fmRead)
     msg["filepath"] = filepath
     msg["content"] = f.readAll
+    msg["
     var msgbuf = pack(msg)
     stdout.write(msgbuf)

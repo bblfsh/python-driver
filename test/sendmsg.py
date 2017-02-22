@@ -11,8 +11,8 @@ Or with the Docker image:
 
 $ ./sendmsg.py [source_file.py]|docker run -it --rm pyparser:latest
 """
-import msgpack
 import sys
+import msgpack
 import logging
 logging.basicConfig(filename="sendmsg.log", level=logging.DEBUG)
 
@@ -37,6 +37,8 @@ for f in files:
                 break
             except UnicodeDecodeError:
                 continue
+
+    content = content.encode() if isinstance(content, str) else content
     d.update({
         'filepath': f,
         'content': content,

@@ -47,6 +47,7 @@ class RequestProcessor():
         """
 
         code = request.get(b'content', b'').decode()
+
         if not code:
             raise RequestCheckException('Bad input message, missing content')
 
