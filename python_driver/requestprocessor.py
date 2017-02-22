@@ -1,30 +1,27 @@
-#!/usr/bin/env python3
-__version__ = '1.0'
-
-import io
 import abc
-import sys
+import io
 import json
-import signal
-import logging
 import msgpack
-import pydetector.detector as detector
-from pprint import pformat, pprint
+import logging
+from pydetector import detector
 from traceback import format_exc
-logging.basicConfig(filename="pyparser.log", level=logging.WARNING)
+from python_driver.version import __version__
+# from typing import TypeVar, Generic
 
-class RequestInstantiationException(Exception): pass
-class RequestCheckException(Exception): pass
+# TODO: typing
 
-# Gracefully handle control c without adding another try-except on top of the loop
-def ctrlc_signal_handler(signal, frame):
-    sys.exit(0)
-signal.signal(signal.SIGINT, ctrlc_signal_handler)
+class RequestCheckException(Exception):
+    """
+    Exception produced while there is an error during the processing
+    of the request. It will cause an error reply to be produced on the
+    output buffer.
+    """
+    pass
 
 
 def asstr(txt):
     """
-    Decode a byte string if it really is an intance of bytes
+    Convert from byte to str. Noop if it was already an str
     """
     if isinstance(txt, bytes):
         return txt.decode()
@@ -32,26 +29,43 @@ def asstr(txt):
 
 
 class RequestProcessor(metaclass=abc.ABCMeta):
+    """
+    Base class of RequestProcessors. This must be subclassed to add new communication
+    protocols. This should be done reimplementing the methods: _send_response,
+    _prepare_dict and process_requests.
+    """
     def __init__(self, outbuffer):
+        """
+        Constructor for a RequestProcessor instance.
+
+        :param outbuffer: the output buffer. This must be a file-like object based on
+        str or bytes depnding on the protocol (see the documentation on subclasses for
+        specifics) supporting the write(type) and flush() methods.
+        """
         self.outbuffer = outbuffer
+        self.errors    = []
 
     @staticmethod
     @abc.abstractmethod
     def _prepare_dict(d):
+        """
+        This method should be reimplemented by subclasses ensuring that all the keys
+        and values in the request dictionary once deserialized have the str type.
+        :param d: the deserialized request dictionary
+        :return: the converted dictionary
+        """
         pass
 
     def _check_input_request(self, request):
         """
         Check the incoming request package and validate that the 'content' and
         'language' keys are not missing and that 'language' and 'language_version'
-        are the right ones for this driver.
+        are the right ones for this driver. It will also call _preprare_dict
+        to covnvert the request bytestrings to str.
 
-        Args:
-            request (bytes, messagepack): The incoming request in messagepack format
-                as bytes.
+        :param request: The incoming request, already deserialized.
 
-            errors (List[str]): the list of errors. New errors will be added to it in place.
-        Raises:
+        .. raises::
             RequestCheckException if the request failed to validate.
         """
         request = self._prepare_dict(request)
@@ -74,25 +88,46 @@ class RequestProcessor(metaclass=abc.ABCMeta):
 
     @abc.abstractmethod
     def _send_response(self, response):
+        """
+        Send the response dictionary. This method must be reimplemented by
+        protocol handling subclasses and must encapsulate the operations needed
+        to serialize the response dictionary to the final format and send it
+        on the output buffer
+
+        :param response: the response dictionary, not serialized
+        """
         pass
 
-    def _return_error(self, filepath, status='error'):
+    def _return_error(self, filepath='', status='error'):
         """
         Build and send to stdout and error response. Also log
         the errors to the pyparser.log.
+
+        :param filepath: optional str with the path of the source file that produced
+        the error.
+        :param status: error type, 'error' or 'fatal'
         """
 
         logging.error('Filepath: {}, Errors: {}'.format(filepath, self.errors))
         response = {
-                'status': status,
-                'errors': self.errors,
-                'driver': 'python23:%s' % __version__,
+            'status': status,
+            'errors': self.errors,
+            'driver': 'python23:%s' % __version__,
         }
         if filepath:
             response['filepath'] = filepath
         self._send_response(response)
 
     def process_request(self, request):
+        """
+        Main function doing the work of processing a single request. It will
+        do its best effort to detect the code Python version(s), extract the AST,
+        prepare the reply package and sent it on the output buffer.
+
+        Any error will cause an error or fatal package to be submitted.
+
+        :param request: the deserialized request dictionary.
+        """
         filepath    = ''
         ast         = None
         self.errors = []
@@ -137,32 +172,64 @@ class RequestProcessor(metaclass=abc.ABCMeta):
 
 
 class RequestProcessorJSON(RequestProcessor):
+    """
+    RequestProcessor subclass that operates deserializing requests and serializing
+    responses using the JSON format. When sending JSON documents on the inputbuffer
+    the documents must be separated with a like with the content @@----@@ followed
+    by a newline character. You can use a different separator passing the separator
+    parameter to the constructor. The documents produced on the output stream by this
+    class will also have this separator. Between them.
+    """
 
-    JSONEndMark = '@@----@@\n'
+
+    def __init__(self, outbuffer, separator='@@----@@'):
+        """
+        :param outbuffer: the output buffer. This must be a file-like object based on
+        str (like sys.stdout or io.StringIO but not sys.stdout.buffer or io.BytesIO).
+        :param separator: the separator between JSON documents. It must go
+        on a separate line followed by a unix newline ('\n') character.
+        """
+        super().__init__(outbuffer)
+
+        self.separator = separator + '\n'
 
     def _send_response(self, response):
+        """
+        Serialized the response dictionary to JSON format and sent it on the
+        (str-based) output buffer followed by the document separator line.
+
+        The generated JSON content could have non-ascii characters.
+
+        :param response: deserialized response dictionary
+        """
         self.outbuffer.write(json.dumps(response, ensure_ascii=False))
-        self.outbuffer.write('\n@@----@@\n')
+        self.outbuffer.write('\n%s' % self.separator)
         self.outbuffer.flush()
 
     @staticmethod
     def _prepare_dict(d):
         """
-        JSON already comes encoded as str so no need to lose time reencoding
-        anything
+        This interface method is a NOOP for this class since JSON keys already comes
+        encoded as str so there is no need to lose time reencoding anything
+
+        :return: the dictionary with str keys and values (where applicable) converted
+        to str
         """
         return d
 
     def _extract_docs(self, inbuffer):
         """
         This generator will read the inbuffer yielding the JSON
-        docs when it finds the ending mark
+        docs when it finds the document separator line.
+
+        :param inbuffer: the input buffer that be of type str and support
+        the readlines method.
         """
         strio = io.StringIO()
 
         for line in inbuffer.readlines():
             try:
-                if line == RequestProcessorJSON.JSONEndMark:
+                if line == self.separator:
                     yield json.loads(strio.getvalue())
                     strio.seek(0)
                     strio = io.StringIO()
@@ -172,13 +239,29 @@ class RequestProcessorJSON(RequestProcessor):
                 self.errors = ['error decoding JSON from input: {}'.format(strio.getvalue())]
                 self._return_error(filepath='<jsonstream>', status='fatal')
 
-
     def process_requests(self, inbuffer):
+        """
+        Main request-processing loop. It will call the _extract_docs iterator to
+        get the requests.
+
+        :param inbuffer: file like object type str and supporting the readlines method.
+        """
         for doc in self._extract_docs(inbuffer):
             self.process_request(doc)
 
 
 class RequestProcessorMSGPack(RequestProcessor):
+    """
+    RequestProcessor subclass that operates deserializing and serializing responses
+    using the MSGPACK format. Input and output packages
+    """
+
+    def __init__(self, outbuffer):
+        """
+        :param outbuffer: the output buffer. This must be a bytes-based file like object
+        supporting the write(bytes) and flush() methods.
+        """
+
     def _send_response(self, response):
         self.outbuffer.write(msgpack.dumps(response))
         self.outbuffer.flush()
@@ -188,6 +271,9 @@ class RequestProcessorMSGPack(RequestProcessor):
         """
         Convert all byte-string keys and values to normal strings (non recursively since
         we only have one level)
+
+        :param d: dictionary that potentially can contain bytestring keys and values.
+        :return: the converted dictionary
         """
         newdict = {}
         for key, value in d.items():
@@ -201,53 +287,9 @@ class RequestProcessorMSGPack(RequestProcessor):
         return newdict
 
     def process_requests(self, inbuffer):
+        """
+        :param inbuffer: file-like object based on bytes supporting the read() and
+        readlines() methods.
+        """
         for request in msgpack.Unpacker(inbuffer):
             self.process_request(request)
-
-
-ProcessorConfigs = {
-        'json': {
-            'class': RequestProcessorJSON,
-            'inbuffer': sys.stdin,
-            'outbuffer': sys.stdout
-        },
-
-        'msgpack': {
-            'class': RequestProcessorMSGPack,
-            'inbuffer': sys.stdin.buffer,
-            'outbuffer': sys.stdout.buffer
-        }
-}
-
-
-def getRequestProcessorInstance(format_, custom_inbuffer=None, custom_outbuffer=None):
-    conf = ProcessorConfigs.get(format_)
-    if not conf:
-        raise RequestInstantiationException('No RequestProcessor found for format {}'
-                .format(format_))
-
-    outbuffer = custom_outbuffer if custom_outbuffer else conf['outbuffer']
-    inbuffer = custom_inbuffer if custom_inbuffer else conf['inbuffer']
-
-    instance = conf['class'](outbuffer)
-    return instance, inbuffer
-
-
-def main():
-    """
-    If you pass the --print command line parameter the replies will be
-    printed using pprint without wrapping them in the msgpack format which
-    can be handy when debugging.
-    """
-
-    if len(sys.argv) > 1 and sys.argv[1] == '--json':
-        format_ = 'json'
-    else:
-        format_ = 'msgpack'
-
-    processor, inbuffer = getRequestProcessorInstance(format_)
-    processor.process_requests(inbuffer)
-
-
-if __name__ == '__main__':
-    main()
