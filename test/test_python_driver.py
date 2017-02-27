@@ -13,7 +13,7 @@ from python_driver.requestprocessor import (
     Request, Response, RequestProcessorMSGPack, RequestProcessorJSON,
     InBuffer, RequestCheckException
 )
-from typing import Dict, Any, List, AnyStr, Optional, Iterator, cast, TypeVar
+from typing import Dict, Any, List, AnyStr, Optional, Iterator, cast
 
 CURDIR = abspath(dirname(__file__))
 
@@ -44,7 +44,7 @@ def convert_bytes(data: Any, to_bytes: bool=False) -> Any:
 
 
 class TestTypeCheck(unittest.TestCase):
-    def test_10_check(self):
+    def test_10_check(self) -> None:
         prevdir = os.getcwd()
         try:
             os.chdir(dirname(CURDIR))
