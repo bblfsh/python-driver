@@ -1,3 +1,4 @@
 #!/bin/bash
-coverage run --source=/usr/local/lib/python3.6/dist-packages/python_driver,. --omit=sendmsg.py  -m unittest discover
+# Note: This must be run from the parent directory, not from tests
+coverage run --source=python_driver/,. --omit=sendmsg.py  -m unittest discover
 coverage report
