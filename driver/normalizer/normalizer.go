@@ -6,7 +6,6 @@ import (
 	. "github.com/bblfsh/sdk/uast"
 	. "github.com/bblfsh/sdk/uast/ann"
 )
-
 /*
 Some stuff is missing from the current UAST spec to fully represent a Python AST. Issue:
 
@@ -14,7 +13,7 @@ https://github.com/bblfsh/documentation/issues/13
 
 For a description of Python AST nodes:
 
-https://greentreesnakes.readthedocs.io/en/latest/nodes.html?highlight=joinedstr#JoinedStr
+https://greentreesnakes.readthedocs.io/en/latest/nodes.html
 
 	// Missing:
 	GeneratorExp
@@ -57,14 +56,10 @@ https://greentreesnakes.readthedocs.io/en/latest/nodes.html?highlight=joinedstr#
 var AnnotationRules = On(Any).Self(
 	On(Not(HasInternalType(pyast.Module))).Error("root must be Module"),
 	On(HasInternalType(pyast.Module)).Roles(File).Descendants(
-		On(HasInternalType(pyast.Module)).Roles(PackageDeclaration),
-
-		On(HasInternalType(pyast.Module)).Roles(File),
 		// FIXME: check how to add annotations and add them
 		On(HasInternalType(pyast.Name)).Roles(SimpleIdentifier),
-		On(HasInternalType(pyast.Expression)).Roles(File),
-		On(HasInternalType(pyast.Expr)).Roles(File),
-		On(HasInternalType(pyast.expr)).Roles(File),
+		On(HasInternalType(pyast.Expression)).Roles(Statement),
+		On(HasInternalType(pyast.Expr)).Roles(Statement),
 		On(HasInternalType(pyast.Assert)).Roles(Assert),
 
 		On(HasInternalType(pyast.Constant)).Roles(Literal),
@@ -81,7 +76,12 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.List)).Roles(Literal),
 		On(HasInternalType(pyast.Dict)).Roles(Literal),
 		On(HasInternalType(pyast.Tuple)).Roles(Literal),
-		On(HasInternalType(pyast.Try)).Roles(Try),
+		On(HasInternalType(pyast.Try)).Roles(Try).Children(
+			On(HasInternalRole("body")).Roles(TryBody),
+			On(HasInternalRole("finalbody")).Roles(TryFinally),
+			// TODO: this is really a list, use descendents and search for ExceptHandlers?
+			On(HasInternalRole("handlers")).Roles(TryCatch),
+		),
 		// FIXME: add OnPath Try.body (uast_type=ExceptHandler) => TryBody
 		On(HasInternalType(pyast.TryExcept)).Roles(TryCatch),
 		On(HasInternalType(pyast.TryFinally)).Roles(TryFinally),
@@ -101,27 +101,70 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.IfExp)).Roles(If),
 		// FIXME: Import and ImportFrom can make an alias (name -> asname), extract it and put it as
 		// uast.ImportAlias
-		On(HasInternalType(pyast.Import)).Roles(Import),
-		On(HasInternalType(pyast.ImportFrom)).Roles(Import),
+		On(HasInternalType(pyast.Import)).Roles(ImportDeclaration),
+		On(HasInternalType(pyast.ImportFrom)).Roles(ImportDeclaration),
 		On(HasInternalType(pyast.ClassDef)).Roles(TypeDeclaration),
 		// FIXME: add .args[].arg, .body, .name, .decorator_list[]
 		On(HasInternalType(pyast.FunctionDef)).Roles(FunctionDeclaration),
 		// FIXME: Internal keys for the ForEach: iter -> ?, target -> ?, body -> ForBody,
-		On(HasInternalType(pyast.For)).Roles(ForEach),
+		/*
+			For => Foreach:
+				body => ForBody
+				iter => ForIter
+				target => ForTarget
+		*/
+		On(HasInternalType(pyast.For)).Roles(ForEach).Children(
+			On(HasInternalRole("body")).Roles(ForBody),
+			On(HasInternalRole("iter")).Roles(ForExpression),
+			On(HasInternalRole("target")).Roles(ForUpdate),
+		),
 		// FIXME: while internal keys: body -> WhileBody, orelse -> ?, test -> WhileCondition
-		On(HasInternalType(pyast.While)).Roles(While),
+		On(HasInternalType(pyast.While)).Roles(While).Children(
+			On(HasInternalRole("body")).Roles(WhileBody),
+			On(HasInternalRole("test")).Roles(WhileCondition),
+
+		),
 		// FIXME: detect qualified 'Call.func' with a "Call.func.value" member and
 		// "Call.func.ast_type" == attr (module/object calls) and convert the to this UAST:
 		// MethodInvocation + MethodInvocationObject (func.value.id) + MethodInvocationName (func.attr)
 		On(HasInternalType(pyast.Pass)).Roles(Noop),
 		On(HasInternalType(pyast.Str)).Roles(StringLiteral),
 		On(HasInternalType(pyast.Num)).Roles(NumberLiteral),
-		On(HasInternalType(pyast.Assign)).Roles(Assignment),
+		/*
+			Assign => Assigment:
+				targets[] => AssignmentVariable
+				value     => AssignmentValue
+		 */
+		On(HasInternalType(pyast.Assign)).Roles(Assignment).Children(
+			On(HasInternalRole("targets")).Children(
+				On(Any).Self().Roles(AssignmentVariable),
+				On(HasInternalRole("value")).Roles(AssignmentVariable),
+			),
+		),
 		// FIXME: this is the annotated assignment (a: annotation = 3) not exactly Assignment
 		// it also lacks AssignmentValue and AssignmentVariable (see how to add them)
 		On(HasInternalType(pyast.AnnAssign)).Roles(Assignment),
 		// FIXME: this is the a += 1 style assigment
 		On(HasInternalType(pyast.AugAssign)).Roles(Assignment),
+		// Function or method calls (TODO: check that this is getting everything right)
+		/*
+			Call => MethodInvocation:
+				args[] => MethodInvocationArgument
+				func:
+					id   => MethodInvocationName
+					attr => MethodInvocationName
+					Attribute:
+						id => MethodInvocationObject
+
+		 */
+		On(HasInternalType(pyast.Call)).Roles(MethodInvocation).Children(
+			On(HasInternalRole("args")).Children(On(Any).Roles(MethodInvocationArgument)),
+			On(HasInternalRole("func")).Self(On(HasInternalRole("id"))).Roles(MethodInvocationName),
+			On(HasInternalRole("func")).Self(On(HasInternalRole("attr"))).Roles(MethodInvocationName),
+			On(HasInternalRole("func")).Self(On(HasInternalType(pyast.Attribute))).Children(
+				On(HasInternalRole("id")).Roles(MethodInvocationObject),
+			),
+		),
 	),
 )
 
