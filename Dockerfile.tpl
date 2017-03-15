@@ -1,7 +1,8 @@
 FROM python:3.6-alpine
 MAINTAINER source{d}
 
-RUN apk add --no-cache --update python py-pip git
+# XXX remove vim
+RUN apk add --no-cache --update python py-pip git build-base bash vim
 RUN pip3 install six git+https://github.com/juanjux/python-pydetector.git
 RUN pip2 install six git+https://github.com/juanjux/python-pydetector.git
 
