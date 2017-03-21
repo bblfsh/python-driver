@@ -1,0 +1,49 @@
+{
+  "AST": {
+    "ast_type": "Module",
+    "body": [
+      {
+        "ast_type": "Assign",
+        "targets": [
+          {
+            "ast_type": "Name",
+            "id": "a",
+            "ctx": "Store",
+            "lineno": 2,
+            "col_offset": 0,
+            "noops_previous": {
+              "ast_type": "PreviousNoops",
+              "lines": [
+                {
+                  "ast_type": "NoopLine",
+                  "noop_line": "# comment above\n"
+                }
+              ]
+            },
+            "noops_sameline": {
+              "ast_type": "SameLineNoops",
+              "noop_line": "# line trailing comment"
+            }
+          }
+        ],
+        "value": {
+          "NumType": "int",
+          "LiteralValue": 1,
+          "ast_type": "NumLiteral",
+          "lineno": 2,
+          "col_offset": 4,
+          "noops_sameline": {
+            "ast_type": "SameLineNoops",
+            "noop_line": "# line trailing comment"
+          }
+        },
+        "lineno": 2,
+        "col_offset": 0,
+        "noops_sameline": {
+          "ast_type": "SameLineNoops",
+          "noop_line": "# line trailing comment"
+        }
+      }
+    ]
+  }
+}

@@ -55,27 +55,53 @@ https://greentreesnakes.readthedocs.io/en/latest/nodes.html
 var AnnotationRules = On(Any).Self(
 	On(Not(HasInternalType(pyast.Module))).Error("root must be Module"),
 	On(HasInternalType(pyast.Module)).Roles(File).Descendants(
-		On(HasInternalType(pyast.Expression)).Roles(Expression),
-		// FIXME: check how to add annotations and add them
-		//On(HasInternalType(pyast.PreviousNoops)).Roles(Comment),
-		//On(HasInternalType(pyast.RemainderNoops)).Roles(Comment),
-		//On(HasInternalType(pyast.SameLineNoops)).Roles(Comment),
-		On(HasInternalType(pyast.NoopLine)).Children(
-			On(HasInternalRole("l")).Roles(Comment),
+
+		On(HasInternalType(pyast.StringLiteral)).Roles(StringLiteral),
+		On(HasInternalType(pyast.Str)).Roles(StringLiteral),
+		On(HasInternalType(pyast.NumLiteral)).Roles(NumberLiteral),
+
+		On(HasInternalType(pyast.Call)).Roles(MethodInvocation).Children(
+			On(HasInternalRole("args")).Roles(MethodInvocationArgument),
+			On(HasInternalRole("func")).Self(On(HasInternalRole("id"))).Roles(MethodInvocationName),
+			On(HasInternalRole("func")).Self(On(HasInternalRole("attr"))).Roles(MethodInvocationName),
+			On(HasInternalRole("func")).Self(On(HasInternalType(pyast.Attribute))).Children(
+				On(HasInternalRole("id")).Roles(MethodInvocationObject),
+			),
 		),
-		On(HasInternalType(pyast.Name)).Roles(SimpleIdentifier),
+
+		//
+		//	Assign => Assigment:
+		//		targets[] => AssignmentVariable
+		//		value     => AssignmentValue
+		//
+		On(HasInternalType(pyast.Assign)).Roles(Assignment).Children(
+			On(HasInternalRole("targets")).Roles(AssignmentVariable),
+			On(HasInternalRole("value")).Roles(AssignmentValue),
+		),
+
+		On(HasInternalType(pyast.Expression)).Roles(Expression),
 		On(HasInternalType(pyast.Expr)).Roles(Expression),
+		On(HasInternalType(pyast.Name)).Roles(SimpleIdentifier),
+
+		// Comments and non significative whitespace
+		On(HasInternalType(pyast.SameLineNoops)).Roles(Comment), // this works on test
+		On(HasInternalType(pyast.PreviousNoops)).Roles(Whitespace).Children(
+			On(HasInternalRole("lines")).Roles(Comment),
+		),
+		On(HasInternalType(pyast.RemainderNoops)).Roles(Whitespace).Children(
+			On(HasInternalRole("lines")).Roles(Comment),
+		),
+		// XXX current integration tests cover until the above roles
+
 		On(HasInternalType(pyast.Assert)).Roles(Assert),
 
 		On(HasInternalType(pyast.Constant)).Roles(Literal),
-		On(HasInternalType(pyast.StringLiteral)).Roles(StringLiteral),
 		// FIXME: should we make a distinction between StringLiteral and ByteLiteral on the UAST?
 		On(HasInternalType(pyast.ByteLiteral)).Roles(StringLiteral),
 		// FIXME: JoinedStr are the fstrings (f"my name is {name}"), they have a composite AST
 		// with a body that is a list of StringLiteral + FormattedValue(value, conversion, format_spec)
 		On(HasInternalType(pyast.JoinedStr)).Roles(StringLiteral),
 		On(HasInternalType(pyast.NoneLiteral)).Roles(NullLiteral),
-		On(HasInternalType(pyast.NumLiteral)).Roles(NumberLiteral),
 		// FIXME: change these to ContainerLiteral/CompoundLiteral/whatever if they're added
 		On(HasInternalType(pyast.Set)).Roles(Literal),
 		On(HasInternalType(pyast.List)).Roles(Literal),
@@ -133,42 +159,12 @@ var AnnotationRules = On(Any).Self(
 		// "Call.func.ast_type" == attr (module/object calls) and convert the to this UAST:
 		// MethodInvocation + MethodInvocationObject (func.value.id) + MethodInvocationName (func.attr)
 		On(HasInternalType(pyast.Pass)).Roles(Noop),
-		On(HasInternalType(pyast.Str)).Roles(StringLiteral),
 		On(HasInternalType(pyast.Num)).Roles(NumberLiteral),
-		//
-		//	Assign => Assigment:
-		//		targets[] => AssignmentVariable
-		//		value     => AssignmentValue
-		//
-		On(HasInternalType(pyast.Assign)).Roles(Assignment).Children(
-			On(HasInternalRole("targets")).Children(
-				On(Any).Self().Roles(AssignmentVariable),
-				On(HasInternalRole("value")).Roles(AssignmentVariable),
-			),
-		),
 		// FIXME: this is the annotated assignment (a: annotation = 3) not exactly Assignment
 		// it also lacks AssignmentValue and AssignmentVariable (see how to add them)
 		On(HasInternalType(pyast.AnnAssign)).Roles(Assignment),
 		// FIXME: this is the a += 1 style assigment
 		On(HasInternalType(pyast.AugAssign)).Roles(Assignment),
-		// Function or method calls (TODO: check that this is getting everything right)
-		//
-		//	Call => MethodInvocation:
-		//		args[] => MethodInvocationArgument
-		//		func:
-		//			id   => MethodInvocationName
-		//			attr => MethodInvocationName
-		//			Attribute:
-		//				id => MethodInvocationObject
-		//
-		On(HasInternalType(pyast.Call)).Roles(MethodInvocation).Children(
-			On(HasInternalRole("args")).Children(On(Any).Roles(MethodInvocationArgument)),
-			On(HasInternalRole("func")).Self(On(HasInternalRole("id"))).Roles(MethodInvocationName),
-			On(HasInternalRole("func")).Self(On(HasInternalRole("attr"))).Roles(MethodInvocationName),
-			On(HasInternalRole("func")).Self(On(HasInternalType(pyast.Attribute))).Children(
-				On(HasInternalRole("id")).Roles(MethodInvocationObject),
-			),
-		),
 	),
 )
 
