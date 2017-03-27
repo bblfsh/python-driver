@@ -31,6 +31,12 @@ https://greentreesnakes.readthedocs.io/en/latest/nodes.html
 	Lambda
 	arguments
 	arg              => arguments.args[list].arg (is both ast type and a key 'arg' pointing to the name)
+			 => for python we would need:
+			 	- FunctionDefArg (a)
+			 	- FunctionDefArgDefaultValue (a = 3)
+			 	- FunctionDefArgAnnotation (a: int)
+			 	- FunctionDefVarArgsList (*args)
+			 	- FunctionDefVarArgsMap (**kwargs)
 
 	// Operators:
 	Compare          => (comparators) .ops[list] = Eq | NotEq | Lt | LtE | Gt | GtE | Is | IsNot | In | NotIn
@@ -49,25 +55,29 @@ https://greentreesnakes.readthedocs.io/en/latest/nodes.html
 	Await
 	Print
 
+	For, while and exception Else statements
+
 	// Other:
 	Starred          => *expanded_list, could be translated to UnaryOp.Star
+	context_expr (the "thing" in "with thing:")
  */
 var AnnotationRules = On(Any).Self(
 	On(Not(HasInternalType(pyast.Module))).Error("root must be Module"),
 	On(HasInternalType(pyast.Module)).Roles(File).Descendants(
-		On(HasInternalType(pyast.Assert)).Roles(Assert),
 		// FIXME: boolliteral should probably be added to the UAST
-		On(HasInternalType(pyast.BoolLiteral)).Roles(Literal),
 		On(HasInternalType(pyast.StringLiteral)).Roles(StringLiteral),
-		On(HasInternalType(pyast.Str)).Roles(StringLiteral),
 		On(HasInternalType(pyast.NumLiteral)).Roles(NumberLiteral),
+		On(HasInternalType(pyast.Str)).Roles(StringLiteral),
+		On(HasInternalType(pyast.BoolLiteral)).Roles(Literal),
 
-		On(HasInternalType(pyast.Call)).Roles(MethodInvocation).Children(
-			On(HasInternalRole("args")).Roles(MethodInvocationArgument),
-			On(HasInternalRole("func")).Self(On(HasInternalRole("id"))).Roles(MethodInvocationName),
-			On(HasInternalRole("func")).Self(On(HasInternalRole("attr"))).Roles(MethodInvocationName),
+		// FIXME: add .args[].arg, .body, .name, .decorator_list[]
+		On(HasInternalType(pyast.FunctionDef)).Roles(FunctionDeclaration),
+		On(HasInternalType(pyast.Call)).Roles(Call).Children(
+			On(HasInternalRole("args")).Roles(CallPositionalArgument),
+			On(HasInternalRole("func")).Self(On(HasInternalRole("id"))).Roles(CallCallee),
+			On(HasInternalRole("func")).Self(On(HasInternalRole("attr"))).Roles(CallCallee),
 			On(HasInternalRole("func")).Self(On(HasInternalType(pyast.Attribute))).Children(
-				On(HasInternalRole("id")).Roles(MethodInvocationObject),
+				On(HasInternalRole("id")).Roles(CallReceiver),
 			),
 		),
 
@@ -93,8 +103,6 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.RemainderNoops)).Roles(Whitespace).Children(
 			On(HasInternalRole("lines")).Roles(Comment),
 		),
-		// XXX current integration tests cover until the above roles
-
 
 		On(HasInternalType(pyast.Constant)).Roles(Literal),
 		// FIXME: should we make a distinction between StringLiteral and ByteLiteral on the UAST?
@@ -127,7 +135,11 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.Continue)).Roles(Continue),
 		// FIXME: extract the test, orelse and the body to test-> IfCondition, orelse -> IfElse, body -> IfBody
 		// UAST are first level members
-		On(HasInternalType(pyast.If)).Roles(If),
+		On(HasInternalType(pyast.If)).Roles(If).Children(
+			On(HasInternalRole("body")).Roles(IfBody),
+			On(HasInternalRole("orelse")).Roles(IfElse),
+			On(HasInternalType(pyast.Compare)).Roles(IfCondition),
+		),
 		// One liner if, like a normal If but it will be inside an Assign (like the ternary if in C)
 		// also applies the comment about the If
 		On(HasInternalType(pyast.IfExp)).Roles(If),
@@ -135,9 +147,8 @@ var AnnotationRules = On(Any).Self(
 		// uast.ImportAlias
 		On(HasInternalType(pyast.Import)).Roles(ImportDeclaration),
 		On(HasInternalType(pyast.ImportFrom)).Roles(ImportDeclaration),
+		On(HasInternalType(pyast.Alias)).Roles(ImportPath),
 		On(HasInternalType(pyast.ClassDef)).Roles(TypeDeclaration),
-		// FIXME: add .args[].arg, .body, .name, .decorator_list[]
-		On(HasInternalType(pyast.FunctionDef)).Roles(FunctionDeclaration),
 		// FIXME: Internal keys for the ForEach: iter -> ?, target -> ?, body -> ForBody,
 		//
 		//	For => Foreach:
@@ -157,8 +168,6 @@ var AnnotationRules = On(Any).Self(
 
 		),
 		// FIXME: detect qualified 'Call.func' with a "Call.func.value" member and
-		// "Call.func.ast_type" == attr (module/object calls) and convert the to this UAST:
-		// MethodInvocation + MethodInvocationObject (func.value.id) + MethodInvocationName (func.attr)
 		On(HasInternalType(pyast.Pass)).Roles(Noop),
 		On(HasInternalType(pyast.Num)).Roles(NumberLiteral),
 		// FIXME: this is the annotated assignment (a: annotation = 3) not exactly Assignment
@@ -166,6 +175,7 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.AnnAssign)).Roles(Assignment),
 		// FIXME: this is the a += 1 style assigment
 		On(HasInternalType(pyast.AugAssign)).Roles(Assignment),
+		On(HasInternalType(pyast.Assert)).Roles(Assert),
 	),
 )
 
