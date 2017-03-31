@@ -20,7 +20,33 @@ Module {
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: Pass {
+.  .  .  .  0: Name {
+.  .  .  .  .  Roles: SimpleIdentifier,ForUpdate
+.  .  .  .  .  TOKEN "i"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 5
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  ctx: 0
+.  .  .  .  .  .  internalRole: target
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: Name {
+.  .  .  .  .  Roles: SimpleIdentifier,ForExpression
+.  .  .  .  .  TOKEN "something"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 10
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  ctx: 0
+.  .  .  .  .  .  internalRole: iter
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  2: Pass {
 .  .  .  .  .  Roles: ForBody,Noop
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
@@ -31,7 +57,7 @@ Module {
 .  .  .  .  .  .  internalRole: body
 .  .  .  .  .  }
 .  .  .  .  }
-.  .  .  .  1: Expr {
+.  .  .  .  3: Expr {
 .  .  .  .  .  Roles: Expression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
@@ -80,32 +106,6 @@ Module {
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  2: Name {
-.  .  .  .  .  Roles: SimpleIdentifier,ForUpdate
-.  .  .  .  .  TOKEN "i"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 5
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  ctx: 0
-.  .  .  .  .  .  internalRole: target
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  3: Name {
-.  .  .  .  .  Roles: SimpleIdentifier,ForExpression
-.  .  .  .  .  TOKEN "something"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 10
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: iter
-.  .  .  .  .  .  ctx: 0
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }

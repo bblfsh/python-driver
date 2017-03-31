@@ -5,6 +5,7 @@ package pyast
 // DO NOT EDIT
 
 // Python 2+3 AST node types.
+// FIXME: ColumnKey? (col_offset in Python)
 // This includes all classes extending from _ast.AST for both Python 2 and 3.
 // See:
 // https://docs.python.org/3.6/library/ast.html#abstract-grammar

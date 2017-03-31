@@ -18,8 +18,8 @@ Module {
 .  .  .  .  Col: 1
 .  .  .  }
 .  .  .  Properties: {
-.  .  .  .  internalRole: body
 .  .  .  .  returns: 0
+.  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: arguments {
@@ -54,8 +54,8 @@ Module {
 .  .  .  .  .  .  .  .  Col: 24
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  annotation: 0
 .  .  .  .  .  .  .  .  internalRole: args
+.  .  .  .  .  .  .  .  annotation: 0
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: arg {
@@ -119,8 +119,8 @@ Module {
 .  .  .  .  .  .  .  .  Col: 5
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: targets
 .  .  .  .  .  .  .  .  ctx: 0
+.  .  .  .  .  .  .  .  internalRole: targets
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: BinOp {
@@ -143,11 +143,12 @@ Module {
 .  .  .  .  .  .  .  .  .  .  Col: 12
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  ctx: 0
 .  .  .  .  .  .  .  .  .  .  internalRole: left
+.  .  .  .  .  .  .  .  .  .  ctx: 0
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Add {
+.  .  .  .  .  .  .  .  .  Roles: OpAdd
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  .  .  .  .  Line: 6
@@ -334,8 +335,8 @@ Module {
 .  .  .  .  .  .  .  .  Col: 12
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  .  .  ctx: 0
+.  .  .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Name {
@@ -416,8 +417,8 @@ Module {
 .  .  .  .  .  .  Col: 5
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  ctx: 0
 .  .  .  .  .  .  internalRole: value
+.  .  .  .  .  .  ctx: 0
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: NumLiteral {
@@ -442,8 +443,8 @@ Module {
 .  .  .  .  .  .  .  .  Col: 9
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: elts
 .  .  .  .  .  .  .  .  NumType: 0
+.  .  .  .  .  .  .  .  internalRole: elts
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }
@@ -494,8 +495,8 @@ Module {
 .  .  .  .  .  .  .  .  Col: 14
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  NumType: 0
 .  .  .  .  .  .  .  .  internalRole: args
+.  .  .  .  .  .  .  .  NumType: 0
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Starred {

@@ -10,7 +10,7 @@ Module {
 .  }
 .  Children: {
 .  .  0: AugAssign {
-.  .  .  Roles: Assignment
+.  .  .  Roles: AugmentedAssignment,Assignment
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
 .  .  .  .  Line: 1
@@ -21,6 +21,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Add {
+.  .  .  .  .  Roles: OpAdd,AugmentedAssignmentOperator
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  Line: 1
@@ -31,8 +32,8 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: NumLiteral {
-.  .  .  .  .  Roles: NumberLiteral
-.  .  .  .  .  TOKEN "3"
+.  .  .  .  .  Roles: NumberLiteral,AugmentedAssignmentValue
+.  .  .  .  .  TOKEN "1"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  Line: 1
@@ -52,14 +53,14 @@ Module {
 .  .  .  .  .  .  Col: 1
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: target
 .  .  .  .  .  .  ctx: 0
+.  .  .  .  .  .  internalRole: target
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
 .  .  }
 .  .  1: AugAssign {
-.  .  .  Roles: Assignment
+.  .  .  Roles: AugmentedAssignment,Assignment
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
 .  .  .  .  Line: 2
@@ -69,9 +70,33 @@ Module {
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: Name {
+.  .  .  .  0: Sub {
+.  .  .  .  .  Roles: OpSubstract,AugmentedAssignmentOperator
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  Col: 0
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: op
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: NumLiteral {
+.  .  .  .  .  Roles: NumberLiteral,AugmentedAssignmentValue
+.  .  .  .  .  TOKEN "1"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  Col: 6
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: value
+.  .  .  .  .  .  NumType: 0
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  2: Name {
 .  .  .  .  .  Roles: SimpleIdentifier
-.  .  .  .  .  TOKEN "b"
+.  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  Line: 2
@@ -82,33 +107,10 @@ Module {
 .  .  .  .  .  .  internalRole: target
 .  .  .  .  .  }
 .  .  .  .  }
-.  .  .  .  1: Sub {
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  Col: 0
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: op
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  2: NumLiteral {
-.  .  .  .  .  Roles: NumberLiteral
-.  .  .  .  .  TOKEN "1"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  Col: 6
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  NumType: 0
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  }
-.  .  .  .  }
 .  .  .  }
 .  .  }
 .  .  2: AugAssign {
-.  .  .  Roles: Assignment
+.  .  .  Roles: AugmentedAssignment,Assignment
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
 .  .  .  .  Line: 3
@@ -119,8 +121,8 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: NumLiteral {
-.  .  .  .  .  Roles: NumberLiteral
-.  .  .  .  .  TOKEN "4"
+.  .  .  .  .  Roles: NumberLiteral,AugmentedAssignmentValue
+.  .  .  .  .  TOKEN "1"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  Line: 3
@@ -133,18 +135,19 @@ Module {
 .  .  .  .  }
 .  .  .  .  1: Name {
 .  .  .  .  .  Roles: SimpleIdentifier
-.  .  .  .  .  TOKEN "c"
+.  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  Line: 3
 .  .  .  .  .  .  Col: 1
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  ctx: 0
 .  .  .  .  .  .  internalRole: target
+.  .  .  .  .  .  ctx: 0
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  2: Mult {
+.  .  .  .  .  Roles: OpMultiply,AugmentedAssignmentOperator
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  Line: 3
@@ -157,7 +160,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  3: AugAssign {
-.  .  .  Roles: Assignment
+.  .  .  Roles: AugmentedAssignment,Assignment
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
 .  .  .  .  Line: 4
@@ -169,7 +172,7 @@ Module {
 .  .  .  Children: {
 .  .  .  .  0: Name {
 .  .  .  .  .  Roles: SimpleIdentifier
-.  .  .  .  .  TOKEN "d"
+.  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  Line: 4
@@ -181,6 +184,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Div {
+.  .  .  .  .  Roles: OpDivide,AugmentedAssignmentOperator
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  Line: 4
@@ -191,8 +195,8 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  2: NumLiteral {
-.  .  .  .  .  Roles: NumberLiteral
-.  .  .  .  .  TOKEN "6"
+.  .  .  .  .  Roles: NumberLiteral,AugmentedAssignmentValue
+.  .  .  .  .  TOKEN "1"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  Line: 4

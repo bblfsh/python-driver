@@ -1,0 +1,76 @@
+{
+    "status": "ok",
+    "errors": [],
+    "ast": {
+        "PY3AST": {
+            "ast_type": "Module",
+            "body": [
+                {
+                    "ast_type": "Expr",
+                    "col_offset": 1,
+                    "lineno": 1,
+                    "value": {
+                        "ast_type": "UnaryOp",
+                        "col_offset": 1,
+                        "lineno": 1,
+                        "op": {
+                            "ast_type": "Invert",
+                            "lineno": 1
+                        },
+                        "operand": {
+                            "LiteralValue": 1,
+                            "NumType": "int",
+                            "ast_type": "NumLiteral",
+                            "col_offset": 2,
+                            "lineno": 1
+                        }
+                    }
+                },
+                {
+                    "ast_type": "Expr",
+                    "col_offset": 1,
+                    "lineno": 2,
+                    "value": {
+                        "ast_type": "UnaryOp",
+                        "col_offset": 1,
+                        "lineno": 2,
+                        "op": {
+                            "ast_type": "USub",
+                            "lineno": 2
+                        },
+                        "operand": {
+                            "ast_type": "Name",
+                            "col_offset": 2,
+                            "ctx": "Load",
+                            "id": "a",
+                            "lineno": 2
+                        }
+                    }
+                },
+                {
+                    "ast_type": "Expr",
+                    "col_offset": 1,
+                    "lineno": 3,
+                    "value": {
+                        "ast_type": "UnaryOp",
+                        "col_offset": 1,
+                        "lineno": 3,
+                        "op": {
+                            "ast_type": "UAdd",
+                            "lineno": 3
+                        },
+                        "operand": {
+                            "ast_type": "Name",
+                            "col_offset": 2,
+                            "ctx": "Load",
+                            "id": "a",
+                            "lineno": 3
+                        }
+                    }
+                }
+            ],
+            "col_offset": 1,
+            "lineno": 1
+        }
+    }
+}

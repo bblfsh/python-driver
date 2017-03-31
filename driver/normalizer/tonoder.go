@@ -5,7 +5,6 @@ import (
 )
 
 var NativeToNoder = &uast.BaseToNoder{
-	// FIXME: ColumnKey? (col_offset in Python)
 	InternalTypeKey: "ast_type",
 	LineKey:         "lineno",
 	ColumnKey:       "col_offset",

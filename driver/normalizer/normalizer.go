@@ -94,6 +94,34 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.In)).Roles(OpContains),
 		On(HasInternalType(pyast.NotIn)).Roles(OpNotContains),
 
+		// Aritmetic operators
+		On(HasInternalType(pyast.Add)).Roles(OpAdd),
+		On(HasInternalType(pyast.Sub)).Roles(OpSubstract),
+		On(HasInternalType(pyast.Mult)).Roles(OpMultiply),
+		On(HasInternalType(pyast.Div)).Roles(OpDivide),
+		On(HasInternalType(pyast.Mod)).Roles(OpMod),
+		// TODO: currently without mapping in the UAST
+		//On(HasInternalType(pyast.FloorDiv)).Roles(OpDivide),
+		//On(HasInternalType(pyast.Pow)).Roles(???),
+		//On(HasInternalType(pyast.MatMult)).Roles(???),
+
+		// Bitwise operators
+		On(HasInternalType(pyast.LShift)).Roles(OpBitwiseLeftShift),
+		On(HasInternalType(pyast.RShift)).Roles(OpBitwiseRightShift),
+		On(HasInternalType(pyast.BitOr)).Roles(OpBitwiseOr),
+		On(HasInternalType(pyast.BitXor)).Roles(OpBitwiseXor),
+		On(HasInternalType(pyast.BitAnd)).Roles(OpBitwiseAnd),
+
+		// Boolean operators
+		On(HasInternalType(pyast.And)).Roles(OpBooleanAnd),
+		On(HasInternalType(pyast.Or)).Roles(OpBooleanOr),
+		On(HasInternalType(pyast.Not)).Roles(OpBooleanNot),
+
+		// Unary operators
+		On(HasInternalType(pyast.Invert)).Roles(OpBitwiseComplement),
+		On(HasInternalType(pyast.UAdd)).Roles(OpPositive),
+		On(HasInternalType(pyast.USub)).Roles(OpNegative),
+
 		// FIXME: boolliteral should probably be added to the UAST
 		On(HasInternalType(pyast.StringLiteral)).Roles(StringLiteral),
 		On(HasInternalType(pyast.ByteLiteral)).Roles(ByteStringLiteral),
@@ -110,8 +138,7 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.Dict)).Roles(MapLiteral),
 		On(HasInternalType(pyast.Tuple)).Roles(TupleLiteral),
 
-		// FIXME: add .args[].arg, .body, .name, .decorator_list[]
-		// FIXME XXX BUG: Call is for calls, not for definitions!
+		// FIXME: add .args[].arg, .body, .name, .decorator_list[], etc
 		On(HasInternalType(pyast.FunctionDef)).Roles(FunctionDeclaration),
 		On(HasInternalType(pyast.Call)).Roles(Call).Children(
 			On(HasInternalRole("args")).Roles(CallPositionalArgument),
@@ -130,6 +157,12 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.Assign)).Roles(Assignment).Children(
 			On(HasInternalRole("targets")).Roles(AssignmentVariable),
 			On(HasInternalRole("value")).Roles(AssignmentValue),
+		),
+
+		On(HasInternalType(pyast.AugAssign)).Roles(AugmentedAssignment).Children(
+			On(HasInternalRole("op")).Roles(AugmentedAssignmentOperator),
+			On(HasInternalRole("targets")).Roles(AugmentedAssignmentVariable),
+			On(HasInternalRole("value")).Roles(AugmentedAssignmentValue),
 		),
 
 		On(HasInternalType(pyast.Expression)).Roles(Expression),
