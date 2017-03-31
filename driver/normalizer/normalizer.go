@@ -15,40 +15,25 @@ For a description of Python AST nodes:
 https://greentreesnakes.readthedocs.io/en/latest/nodes.html
 
 	// Missing: =======================================
-	// Comprehensions
-	comprehension: DictComp ListComp SetComp
+	Comprehensions: DictComp ListComp SetComp
 
 	Ellipsis ("..." for multidimensional arrays)
 
-	Lambda (wait for FunctionDef to be complete)
-
-	arg => arguments.args[list].arg (is both ast type and a key 'arg' pointing to the name)
-			 => for python we would need:
-			 	- FunctionDefArg (a)
-			 	- FunctionDefArgDefaultValue (a = 3)
-			 	- FunctionDefArgAnnotation (a: int)
-			 	- FunctionDefVarArgsList (*args)
-			 	- FunctionDefVarArgsMap (**kwargs)
-				More:
-
-	// TODO: make a full proposal for FunctionDef
-
 	// To do in rules (TODO): ========================================
-	exec, repr, print: are nodes in the Python 2 AST but they take the form of a functioncall.
-	Convert them to function calls using the rules
-	Convert ellipsis to a SimpleIdentifier with the name "pyellipsis".
+
+	- exec, repr, print: are nodes in the Python 2 AST but they take the form of a functioncall.
+	- Convert "ellipsis" to a SimpleIdentifier with the name "pyellipsis".
+
+	// Other PRs to make or discuss:
+	- PR for BinaryExpression
+	- PR for NotImplemented role?
+	- PR for UnaryExpression?
 
 	// Merged or added as issue: ==============================================
 	Issue #52: Global Nonlocal
 	Issue #53: Async, Await, AsyncFor AsyncFunctionDef AsyncWith => these three can be avoided and stored as
 		For/FunctionDef/With if the save they "async" keyword node
 
-	// Operators:
-	PR: Compare          => (comparators) .ops[list] = Eq | NotEq | Lt | LtE | Gt | GtE | Is | IsNot | In | NotIn
-	PR: BoolOp           => .boolop = And | Or
-	PR: BinOp            => .op = Add | Sub | Mult | MatMult | Div | Mod | Pow | LShift | RShift | BitOr |
-	                          BitXor | BitAnd | FloorDiv
-	PR: UnaryOp          => .unaryop = Invert | Not | UAdd | USub
 	PR #55: Delete
 	PR #56: Yield and YieldFrom
 	PR #57	ListExpansion (Starred) MapExpansion (**)
@@ -60,17 +45,24 @@ https://greentreesnakes.readthedocs.io/en/latest/nodes.html
 				   withitem(context_expr=Name(id='thing', ctx=Load()), optional_vars=Name(id='t', ctx=Store()))
 				  ],
 				  body=[
-				    Expr(value=Name(id='t', ctx=Load())
-				    ) ] )
-			       ]
+					Expr(value=Name(id='t', ctx=Load())
+					) ] )
+				   ]
 			  )"
-    PR #59:
-		Subscript ->
-			a[1] -> Index value=NumLiteral
+	PR #59: Subscript ->
+			a[0] -> Index value=NumLiteral
 			a[1:2] -> Slice lower=NumLiteral upper=NumLiteral
 			a[1:2,3:4] -> ExtSlice -> [Slice, Slice]
 
+	PR #62 & 63:	- FunctionDefArg (a)
+				- FunctionDefArgDefaultValue (a = 3)
+				- FunctionDefArgAnnotation (a: int)
+				- FunctionDefVarArgsList (*args)
+				- FunctionDefVarArgsMap (**kwargs)
+	PR #63: Lambda
+
 	// Noop (decently parsed by the rules even if unorthodox):
+
 	"else" clauses for for/while/try -> Added as "IfElse" child nodes of the for/while/try
 	"stride" third element in slices
 
@@ -152,7 +144,7 @@ var AnnotationRules = On(Any).Self(
 		//
 		//	Assign => Assigment:
 		//		targets[] => AssignmentVariable
-		//		value     => AssignmentValue
+		//		value	  => AssignmentValue
 		//
 		On(HasInternalType(pyast.Assign)).Roles(Assignment).Children(
 			On(HasInternalRole("targets")).Roles(AssignmentVariable),
@@ -185,6 +177,8 @@ var AnnotationRules = On(Any).Self(
 			On(HasInternalRole("finalbody")).Roles(TryFinally),
 			// TODO: this is really a list, use descendents and search for ExceptHandlers?
 			On(HasInternalRole("handlers")).Roles(TryCatch),
+			// TODO: check that the IfElse really goes here
+			On(HasInternalRole("orelse")).Roles(IfElse),
 		),
 		// FIXME: add OnPath Try.body (uast_type=ExceptHandler) => TryBody
 		On(HasInternalType(pyast.TryExcept)).Roles(TryCatch),
@@ -219,6 +213,7 @@ var AnnotationRules = On(Any).Self(
 		//		body => ForBody
 		//		iter => ForIter
 		//		target => ForTarget
+		//		else => IfElse
 		//
 		On(HasInternalType(pyast.For)).Roles(ForEach).Children(
 			On(HasInternalRole("body")).Roles(ForBody),
@@ -229,7 +224,7 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.While)).Roles(While).Children(
 			On(HasInternalRole("body")).Roles(WhileBody),
 			On(HasInternalRole("test")).Roles(WhileCondition),
-
+			On(HasInternalRole("orelse")).Roles(IfElse),
 		),
 		// FIXME: detect qualified 'Call.func' with a "Call.func.value" member and
 		On(HasInternalType(pyast.Pass)).Roles(Noop),
