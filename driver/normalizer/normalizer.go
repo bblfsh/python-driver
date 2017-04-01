@@ -255,7 +255,7 @@ var AnnotationRules = On(Any).Self(
 		// Repr already comes as a Call \o/
 		// Print as a function too.
 		// FIXME: the UAST generated is missing the name node
-		On(HasInternalType(pyast.Print)).Roles(Call).Children(
+		On(HasInternalType(pyast.Print)).Roles(Call, CallCallee).Children(
 			On(HasInternalRole("dest")).Roles(CallPositionalArgument),
 			On(HasInternalRole("nl")).Roles(CallPositionalArgument),
 			On(HasInternalRole("values")).Roles(CallPositionalArgument).Children(

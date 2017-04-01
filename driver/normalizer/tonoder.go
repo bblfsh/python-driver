@@ -9,7 +9,6 @@ var NativeToNoder = &uast.BaseToNoder{
 	LineKey:         "lineno",
 	ColumnKey:       "col_offset",
 
-	// FIXME: if ones matches several? (ImportFrom -> Names can have name and asname)
 	TokenKeys: map[string]bool{
 		"module":            true, // Module on ImportFrom
 		"name":              true,
@@ -21,6 +20,7 @@ var NativeToNoder = &uast.BaseToNoder{
 		"noop_line":         true, // Comment/Noop (non significative whitespace)
 	},
 	SyntheticTokens: map[string]string{
-		"NullLiteral":        "null",
+		"NoneLiteral":        "null",
+		"Print":              "print",
 	},
 }
