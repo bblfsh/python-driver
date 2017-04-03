@@ -122,7 +122,6 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.UAdd)).Roles(OpPositive),
 		On(HasInternalType(pyast.USub)).Roles(OpNegative),
 
-		// FIXME: boolliteral should probably be added to the UAST
 		On(HasInternalType(pyast.StringLiteral)).Roles(StringLiteral),
 		On(HasInternalType(pyast.ByteLiteral)).Roles(ByteStringLiteral),
 		On(HasInternalType(pyast.NumLiteral)).Roles(NumberLiteral),
