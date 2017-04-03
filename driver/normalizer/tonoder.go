@@ -20,7 +20,6 @@ var NativeToNoder = &uast.BaseToNoder{
 		"noop_line":         true, // Comment/Noop (non significative whitespace)
 	},
 	SyntheticTokens: map[string]string{
-		"NoneLiteral":        "null",
 		"Print":              "print",
 	},
 }
