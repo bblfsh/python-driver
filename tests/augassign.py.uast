@@ -70,20 +70,7 @@ Module {
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: NumLiteral {
-.  .  .  .  .  Roles: NumberLiteral,AugmentedAssignmentValue
-.  .  .  .  .  TOKEN "1"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  Col: 6
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  NumType: int
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Name {
+.  .  .  .  0: Name {
 .  .  .  .  .  Roles: SimpleIdentifier
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
@@ -96,7 +83,7 @@ Module {
 .  .  .  .  .  .  internalRole: target
 .  .  .  .  .  }
 .  .  .  .  }
-.  .  .  .  2: Sub {
+.  .  .  .  1: Sub {
 .  .  .  .  .  Roles: OpSubstract,AugmentedAssignmentOperator
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
@@ -105,6 +92,19 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: op
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  2: NumLiteral {
+.  .  .  .  .  Roles: NumberLiteral,AugmentedAssignmentValue
+.  .  .  .  .  TOKEN "1"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  Col: 6
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  NumType: int
+.  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
@@ -120,20 +120,7 @@ Module {
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: Name {
-.  .  .  .  .  Roles: SimpleIdentifier
-.  .  .  .  .  TOKEN "a"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  internalRole: target
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Mult {
+.  .  .  .  0: Mult {
 .  .  .  .  .  Roles: OpMultiply,AugmentedAssignmentOperator
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
@@ -144,7 +131,7 @@ Module {
 .  .  .  .  .  .  internalRole: op
 .  .  .  .  .  }
 .  .  .  .  }
-.  .  .  .  2: NumLiteral {
+.  .  .  .  1: NumLiteral {
 .  .  .  .  .  Roles: NumberLiteral,AugmentedAssignmentValue
 .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  StartPosition: {
@@ -155,6 +142,19 @@ Module {
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  NumType: int
 .  .  .  .  .  .  internalRole: value
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  2: Name {
+.  .  .  .  .  Roles: SimpleIdentifier
+.  .  .  .  .  TOKEN "a"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 1
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  ctx: Store
+.  .  .  .  .  .  internalRole: target
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }

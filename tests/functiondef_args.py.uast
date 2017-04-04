@@ -102,18 +102,7 @@ Module {
 .  .  .  .  returns: <nil>
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: Pass {
-.  .  .  .  .  Roles: FunctionDeclarationBody,Noop
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 5
-.  .  .  .  .  .  Col: 5
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: body
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: arguments {
+.  .  .  .  0: arguments {
 .  .  .  .  .  Roles: FunctionDeclarationArgument
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
@@ -219,6 +208,17 @@ Module {
 .  .  .  .  .  .  .  .  internalRole: defaults
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: Pass {
+.  .  .  .  .  Roles: FunctionDeclarationBody,Noop
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  Col: 5
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: body
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
@@ -344,6 +344,19 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: arg {
+.  .  .  .  .  .  .  Roles: FunctionDeclarationArgument,FunctionDeclarationVarArgsList,FunctionDeclarationArgumentName
+.  .  .  .  .  .  .  TOKEN "kwargs"
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Line: 10
+.  .  .  .  .  .  .  .  Col: 21
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  annotation: <nil>
+.  .  .  .  .  .  .  .  internalRole: kwarg
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  1: arg {
 .  .  .  .  .  .  .  Roles: FunctionDeclarationArgument,FunctionDeclarationArgumentName
 .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  StartPosition: {
@@ -383,19 +396,6 @@ Module {
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: arg {
-.  .  .  .  .  .  .  Roles: FunctionDeclarationArgument,FunctionDeclarationVarArgsList,FunctionDeclarationArgumentName
-.  .  .  .  .  .  .  TOKEN "kwargs"
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  .  .  Line: 10
-.  .  .  .  .  .  .  .  Col: 21
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  annotation: <nil>
-.  .  .  .  .  .  .  .  internalRole: kwarg
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }

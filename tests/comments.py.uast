@@ -20,7 +20,20 @@ Module {
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: Name {
+.  .  .  .  0: NumLiteral {
+.  .  .  .  .  Roles: NumberLiteral,AssignmentValue
+.  .  .  .  .  TOKEN "1"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 5
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  NumType: int
+.  .  .  .  .  .  internalRole: value
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: Name {
 .  .  .  .  .  Roles: AssignmentVariable,SimpleIdentifier
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
@@ -33,7 +46,19 @@ Module {
 .  .  .  .  .  .  internalRole: targets
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: PreviousNoops {
+.  .  .  .  .  .  0: SameLineNoops {
+.  .  .  .  .  .  .  Roles: Comment
+.  .  .  .  .  .  .  TOKEN "# line trailing comment"
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  Col: 0
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: noops_sameline
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  1: PreviousNoops {
 .  .  .  .  .  .  .  Roles: Whitespace
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 0
@@ -73,31 +98,6 @@ Module {
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  .  1: SameLineNoops {
-.  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  TOKEN "# line trailing comment"
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  .  .  Col: 0
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: noops_sameline
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: NumLiteral {
-.  .  .  .  .  Roles: NumberLiteral,AssignmentValue
-.  .  .  .  .  TOKEN "1"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  Col: 5
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  NumType: int
-.  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
