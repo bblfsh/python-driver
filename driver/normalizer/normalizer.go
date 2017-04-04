@@ -137,21 +137,30 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.Dict)).Roles(MapLiteral),
 		On(HasInternalType(pyast.Tuple)).Roles(TupleLiteral),
 
-		// FIXME: fixme needs mapping for kwarg and default arguments
-		// Default arguments: Python's AST puts default arguments on a sibling list to the one of
-		// arguments that must be mapped to the arguments right-aligned like:
-		// a, b=2, c=3 ->
-		//		args    [a,b,c],
-		//		defaults  [2,3]
+		// FIXME: decorators
+		// FIXME: the FunctionDeclarationReceiver is not set for methods; it should be taken from the parent
+		// Type node Token (2 levels up) but the SDK doesn't allow this
 		// TODO: create an issue for the SDK
-		On(HasInternalType(pyast.FunctionDef)).Roles(FunctionDeclaration, FunctionDeclarationName).Children(
-			On(HasInternalType("arguments")).Children(
-				On(HasInternalType("arg")).Roles(FunctionDeclarationArgument, FunctionDeclarationArgumentName),
-				On(HasInternalRole("vararg")).Roles(FunctionDeclarationVarArgsList),
+		On(HasInternalType(pyast.FunctionDef)).Roles(FunctionDeclaration, FunctionDeclarationName).Descendants(
+			On(HasInternalType("arguments")).Roles(FunctionDeclarationArgument).Children(
+				On(HasInternalRole("args")).Roles(FunctionDeclarationArgument, FunctionDeclarationArgumentName),
+				On(HasInternalRole("vararg")).Roles(FunctionDeclarationArgument, FunctionDeclarationVarArgsList,
+													FunctionDeclarationArgumentName),
 				// FIXME: this is really different from vararg, change it when we have FunctionDeclarationMap
 				// or something similar in the UAST
-				On(HasInternalRole("kwarg")).Roles(FunctionDeclarationVarArgsList),
-				On(HasInternalRole("defaults")).Roles(FunctionDeclarationArgumentDefaultValue),
+				On(HasInternalRole("kwarg")).Roles(FunctionDeclarationArgument, FunctionDeclarationVarArgsList,
+												   FunctionDeclarationArgumentName),
+				// FIXME: fixme needs mapping for default arguments
+				// Default arguments: Python's AST puts default arguments on a sibling list to the one of
+				// arguments that must be mapped to the arguments right-aligned like:
+				// a, b=2, c=3 ->
+				//		args    [a,b,c],
+				//		defaults  [2,3]
+				// TODO: create an issue for the SDK
+				// XXX doesnt work
+				On(HasInternalRole("defaults")).Children(
+					On(HasInternalRole("defaults")).Roles(FunctionDeclarationArgumentDefaultValue),
+				),
 			),
 			On(HasInternalRole("body")).Roles(FunctionDeclarationBody),
 		),

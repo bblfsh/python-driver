@@ -9,7 +9,60 @@ Module {
 .  .  Col: 1
 .  }
 .  Children: {
-.  .  0: Pass {
+.  .  0: RemainderNoops {
+.  .  .  Roles: Whitespace
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 0
+.  .  .  .  Line: 3
+.  .  .  .  Col: 0
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  end_lineno: 6
+.  .  .  .  internalRole: noops_remainder
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: NoopLine {
+.  .  .  .  .  Roles: Comment
+.  .  .  .  .  TOKEN "
+"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 0
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: lines
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: NoopLine {
+.  .  .  .  .  Roles: Comment
+.  .  .  .  .  TOKEN "# remainder comment and newline
+"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 0
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: lines
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  2: NoopLine {
+.  .  .  .  .  Roles: Comment
+.  .  .  .  .  TOKEN "# last remainder comment line
+"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 0
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: lines
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  .  1: Pass {
 .  .  .  Roles: Noop
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
@@ -74,7 +127,7 @@ Module {
 .  .  .  .  }
 .  .  .  }
 .  .  }
-.  .  1: SameLineNoops {
+.  .  2: SameLineNoops {
 .  .  .  Roles: Comment
 .  .  .  TOKEN "# thse are"
 .  .  .  StartPosition: {
@@ -84,59 +137,6 @@ Module {
 .  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: noops_sameline
-.  .  .  }
-.  .  }
-.  .  2: RemainderNoops {
-.  .  .  Roles: Whitespace
-.  .  .  StartPosition: {
-.  .  .  .  Offset: 0
-.  .  .  .  Line: 3
-.  .  .  .  Col: 0
-.  .  .  }
-.  .  .  Properties: {
-.  .  .  .  end_lineno: 6
-.  .  .  .  internalRole: noops_remainder
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: NoopLine {
-.  .  .  .  .  Roles: Comment
-.  .  .  .  .  TOKEN "
-"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  Col: 0
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: lines
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: NoopLine {
-.  .  .  .  .  Roles: Comment
-.  .  .  .  .  TOKEN "# remainder comment and newline
-"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  Col: 0
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: lines
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  2: NoopLine {
-.  .  .  .  .  Roles: Comment
-.  .  .  .  .  TOKEN "# last remainder comment line
-"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  Col: 0
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: lines
-.  .  .  .  .  }
-.  .  .  .  }
 .  .  .  }
 .  .  }
 .  }
