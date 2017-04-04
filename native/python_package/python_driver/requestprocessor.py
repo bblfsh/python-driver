@@ -1,6 +1,5 @@
 import abc
 import json
-import msgpack
 import logging
 from pydetector import detector
 from traceback import format_exc
@@ -254,7 +253,6 @@ class RequestProcessorMSGPack(RequestProcessor):
     RequestProcessor subclass that operates deserializing and serializing responses
     using the MSGPACK format. Input and output packages
     """
-
     def __init__(self, outbuffer: OutBytesBuffer) -> None:
         """
         :param outbuffer: the output buffer. This must be a bytes-based file like object
@@ -263,7 +261,8 @@ class RequestProcessorMSGPack(RequestProcessor):
         super().__init__(outbuffer)
 
     def _send_response(self, response: Response) -> None:
-        self.outbuffer.write(msgpack.dumps(response))
+        from msgpack import dumps
+        self.outbuffer.write(dumps(response))
         self.outbuffer.flush()
 
     def _tostr_request(self, request: RawRequest) -> Request:
@@ -295,5 +294,6 @@ class RequestProcessorMSGPack(RequestProcessor):
         :param inbuffer: file-like object based on bytes supporting the read() and
         iteration by lines
         """
-        for request in msgpack.Unpacker(inbuffer):
+        from msgpack import Unpacker
+        for request in Unpacker(inbuffer):
             self.process_request(request)

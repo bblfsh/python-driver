@@ -35,7 +35,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  1: FunctionDef {
-.  .  .  Roles: FunctionDeclaration
+.  .  .  Roles: FunctionDeclaration,FunctionDeclarationName
 .  .  .  TOKEN "somefun"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
@@ -60,7 +60,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Pass {
-.  .  .  .  .  Roles: Noop
+.  .  .  .  .  Roles: FunctionDeclarationBody,Noop
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  Line: 3
@@ -102,7 +102,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  2: FunctionDef {
-.  .  .  Roles: FunctionDeclaration
+.  .  .  Roles: FunctionDeclaration,FunctionDeclarationName
 .  .  .  TOKEN "otherfun"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
@@ -114,20 +114,8 @@ Module {
 .  .  .  .  returns: <nil>
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: arguments {
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 5
-.  .  .  .  .  .  Col: 0
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  kwarg: <nil>
-.  .  .  .  .  .  vararg: <nil>
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Pass {
-.  .  .  .  .  Roles: Noop
+.  .  .  .  0: Pass {
+.  .  .  .  .  Roles: FunctionDeclarationBody,Noop
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  Line: 6
@@ -164,6 +152,18 @@ Module {
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: arguments {
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  Col: 0
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: args
+.  .  .  .  .  .  kwarg: <nil>
+.  .  .  .  .  .  vararg: <nil>
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }

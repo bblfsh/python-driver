@@ -62,12 +62,12 @@ https://greentreesnakes.readthedocs.io/en/latest/nodes.html
 			a[1:2] -> Slice lower=NumLiteral upper=NumLiteral
 			a[1:2,3:4] -> ExtSlice -> [Slice, Slice]
 
-	PR #62 & 63:	- FunctionDefArg (a)
+	PR #63:	- FunctionDefArg (a)
 				- FunctionDefArgDefaultValue (a = 3)
 				- FunctionDefArgAnnotation (a: int)
 				- FunctionDefVarArgsList (*args)
 				- FunctionDefVarArgsMap (**kwargs)
-	PR #63: Lambda
+				- Lambda
 
 	// Noop (decently parsed by the rules even if unorthodox):
 
@@ -137,8 +137,24 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.Dict)).Roles(MapLiteral),
 		On(HasInternalType(pyast.Tuple)).Roles(TupleLiteral),
 
-		// FIXME: add .args[].arg, .body, .name, .decorator_list[], etc
-		On(HasInternalType(pyast.FunctionDef)).Roles(FunctionDeclaration),
+		// FIXME: fixme needs mapping for kwarg and default arguments
+		// Default arguments: Python's AST puts default arguments on a sibling list to the one of
+		// arguments that must be mapped to the arguments right-aligned like:
+		// a, b=2, c=3 ->
+		//		args    [a,b,c],
+		//		defaults  [2,3]
+		// TODO: create an issue for the SDK
+		On(HasInternalType(pyast.FunctionDef)).Roles(FunctionDeclaration, FunctionDeclarationName).Children(
+			On(HasInternalType("arguments")).Children(
+				On(HasInternalType("arg")).Roles(FunctionDeclarationArgument, FunctionDeclarationArgumentName),
+				On(HasInternalRole("vararg")).Roles(FunctionDeclarationVarArgsList),
+				// FIXME: this is really different from vararg, change it when we have FunctionDeclarationMap
+				// or something similar in the UAST
+				On(HasInternalRole("kwarg")).Roles(FunctionDeclarationVarArgsList),
+				On(HasInternalRole("defaults")).Roles(FunctionDeclarationArgumentDefaultValue),
+			),
+			On(HasInternalRole("body")).Roles(FunctionDeclarationBody),
+		),
 
 		On(HasInternalType(pyast.Call)).Roles(Call).Children(
 			On(HasInternalRole("args")).Roles(CallPositionalArgument),

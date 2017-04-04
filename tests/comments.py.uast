@@ -9,59 +9,7 @@ Module {
 .  .  Col: 1
 .  }
 .  Children: {
-.  .  0: SameLineNoops {
-.  .  .  Roles: Comment
-.  .  .  TOKEN "# comment above"
-.  .  .  StartPosition: {
-.  .  .  .  Offset: 0
-.  .  .  .  Line: 1
-.  .  .  .  Col: 0
-.  .  .  }
-.  .  .  Properties: {
-.  .  .  .  internalRole: noops_sameline
-.  .  .  }
-.  .  }
-.  .  1: RemainderNoops {
-.  .  .  Roles: Whitespace
-.  .  .  StartPosition: {
-.  .  .  .  Offset: 0
-.  .  .  .  Line: 3
-.  .  .  .  Col: 0
-.  .  .  }
-.  .  .  Properties: {
-.  .  .  .  end_lineno: 5
-.  .  .  .  internalRole: noops_remainder
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: NoopLine {
-.  .  .  .  .  Roles: Comment
-.  .  .  .  .  TOKEN "# file trailing comment
-"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  Col: 0
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: lines
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: NoopLine {
-.  .  .  .  .  Roles: Comment
-.  .  .  .  .  TOKEN "# second file trailing comment
-"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  Col: 0
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: lines
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  2: Assign {
+.  .  0: Assign {
 .  .  .  Roles: Assignment
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
@@ -150,6 +98,58 @@ Module {
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  NumType: int
 .  .  .  .  .  .  internalRole: value
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  .  1: SameLineNoops {
+.  .  .  Roles: Comment
+.  .  .  TOKEN "# comment above"
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 0
+.  .  .  .  Line: 1
+.  .  .  .  Col: 0
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: noops_sameline
+.  .  .  }
+.  .  }
+.  .  2: RemainderNoops {
+.  .  .  Roles: Whitespace
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 0
+.  .  .  .  Line: 3
+.  .  .  .  Col: 0
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  end_lineno: 5
+.  .  .  .  internalRole: noops_remainder
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: NoopLine {
+.  .  .  .  .  Roles: Comment
+.  .  .  .  .  TOKEN "# file trailing comment
+"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 0
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: lines
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: NoopLine {
+.  .  .  .  .  Roles: Comment
+.  .  .  .  .  TOKEN "# second file trailing comment
+"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 0
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: lines
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
