@@ -21,7 +21,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
-.  .  .  .  .  Roles: SimpleIdentifier
+.  .  .  .  .  Roles: AugmentedAssignmentVariable,SimpleIdentifier
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
@@ -71,7 +71,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
-.  .  .  .  .  Roles: SimpleIdentifier
+.  .  .  .  .  Roles: AugmentedAssignmentVariable,SimpleIdentifier
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
@@ -120,7 +120,20 @@ Module {
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: Mult {
+.  .  .  .  0: Name {
+.  .  .  .  .  Roles: AugmentedAssignmentVariable,SimpleIdentifier
+.  .  .  .  .  TOKEN "a"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 1
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  ctx: Store
+.  .  .  .  .  .  internalRole: target
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: Mult {
 .  .  .  .  .  Roles: OpMultiply,AugmentedAssignmentOperator
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
@@ -131,7 +144,7 @@ Module {
 .  .  .  .  .  .  internalRole: op
 .  .  .  .  .  }
 .  .  .  .  }
-.  .  .  .  1: NumLiteral {
+.  .  .  .  2: NumLiteral {
 .  .  .  .  .  Roles: NumberLiteral,AugmentedAssignmentValue
 .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  StartPosition: {
@@ -142,19 +155,6 @@ Module {
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  NumType: int
 .  .  .  .  .  .  internalRole: value
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  2: Name {
-.  .  .  .  .  Roles: SimpleIdentifier
-.  .  .  .  .  TOKEN "a"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  internalRole: target
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
@@ -171,7 +171,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
-.  .  .  .  .  Roles: SimpleIdentifier
+.  .  .  .  .  Roles: AugmentedAssignmentVariable,SimpleIdentifier
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0

@@ -20,12 +20,18 @@ Module {
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: alias {
-.  .  .  .  .  Roles: ImportPath
-.  .  .  .  .  TOKEN "sys"
+.  .  .  .  0: Import.names {
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  asname: <nil>
-.  .  .  .  .  .  internalRole: names
+.  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: alias {
+.  .  .  .  .  .  .  Roles: ImportPath
+.  .  .  .  .  .  .  TOKEN "sys"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  asname: <nil>
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
@@ -41,20 +47,25 @@ Module {
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: alias {
-.  .  .  .  .  Roles: ImportPath
-.  .  .  .  .  TOKEN "sys"
+.  .  .  .  0: Import.names {
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  asname: <nil>
-.  .  .  .  .  .  internalRole: names
+.  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: alias {
-.  .  .  .  .  Roles: ImportPath
-.  .  .  .  .  TOKEN "os"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  asname: <nil>
-.  .  .  .  .  .  internalRole: names
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: alias {
+.  .  .  .  .  .  .  Roles: ImportPath
+.  .  .  .  .  .  .  TOKEN "sys"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  asname: <nil>
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  1: alias {
+.  .  .  .  .  .  .  Roles: ImportPath
+.  .  .  .  .  .  .  TOKEN "os"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  asname: <nil>
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
@@ -72,12 +83,18 @@ Module {
 .  .  .  .  level: 0
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: alias {
-.  .  .  .  .  Roles: ImportPath
-.  .  .  .  .  TOKEN "path"
+.  .  .  .  0: ImportFrom.names {
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  asname: <nil>
-.  .  .  .  .  .  internalRole: names
+.  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: alias {
+.  .  .  .  .  .  .  Roles: ImportPath
+.  .  .  .  .  .  .  TOKEN "path"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  asname: <nil>
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
@@ -95,20 +112,25 @@ Module {
 .  .  .  .  level: 0
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: alias {
-.  .  .  .  .  Roles: ImportPath
-.  .  .  .  .  TOKEN "join"
+.  .  .  .  0: ImportFrom.names {
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  asname: <nil>
-.  .  .  .  .  .  internalRole: names
+.  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: alias {
-.  .  .  .  .  Roles: ImportPath
-.  .  .  .  .  TOKEN "exists"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  asname: <nil>
-.  .  .  .  .  .  internalRole: names
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: alias {
+.  .  .  .  .  .  .  Roles: ImportPath
+.  .  .  .  .  .  .  TOKEN "join"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  asname: <nil>
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  1: alias {
+.  .  .  .  .  .  .  Roles: ImportPath
+.  .  .  .  .  .  .  TOKEN "exists"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  asname: <nil>
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }

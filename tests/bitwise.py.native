@@ -142,6 +142,66 @@
                             "lineno": 5
                         }
                     }
+                },
+                {
+                    "ast_type": "Expr",
+                    "col_offset": 1,
+                    "lineno": 6,
+                    "value": {
+                        "ast_type": "BinOp",
+                        "col_offset": 1,
+                        "left": {
+                            "ast_type": "BinOp",
+                            "col_offset": 7,
+                            "left": {
+                                "ast_type": "BinOp",
+                                "col_offset": 1,
+                                "left": {
+                                    "LiteralValue": 1,
+                                    "NumType": "int",
+                                    "ast_type": "NumLiteral",
+                                    "col_offset": 1,
+                                    "lineno": 6
+                                },
+                                "lineno": 6,
+                                "op": {
+                                    "ast_type": "BitAnd",
+                                    "lineno": 6
+                                },
+                                "right": {
+                                    "LiteralValue": 2,
+                                    "NumType": "int",
+                                    "ast_type": "NumLiteral",
+                                    "col_offset": 5,
+                                    "lineno": 6
+                                }
+                            },
+                            "lineno": 6,
+                            "op": {
+                                "ast_type": "BitAnd",
+                                "lineno": 6
+                            },
+                            "right": {
+                                "LiteralValue": 3,
+                                "NumType": "int",
+                                "ast_type": "NumLiteral",
+                                "col_offset": 9,
+                                "lineno": 6
+                            }
+                        },
+                        "lineno": 6,
+                        "op": {
+                            "ast_type": "BitOr",
+                            "lineno": 6
+                        },
+                        "right": {
+                            "LiteralValue": 4,
+                            "NumType": "int",
+                            "ast_type": "NumLiteral",
+                            "col_offset": 13,
+                            "lineno": 6
+                        }
+                    }
                 }
             ],
             "col_offset": 1,
