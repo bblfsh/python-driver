@@ -20,7 +20,18 @@ Module {
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: Name {
+.  .  .  .  0: Add {
+.  .  .  .  .  Roles: OpAdd,AugmentedAssignmentOperator
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 0
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: op
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: Name {
 .  .  .  .  .  Roles: AugmentedAssignmentVariable,SimpleIdentifier
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
@@ -31,17 +42,6 @@ Module {
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  ctx: Store
 .  .  .  .  .  .  internalRole: target
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Add {
-.  .  .  .  .  Roles: OpAdd,AugmentedAssignmentOperator
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 0
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: op
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  2: NumLiteral {
@@ -70,7 +70,18 @@ Module {
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: Name {
+.  .  .  .  0: Sub {
+.  .  .  .  .  Roles: OpSubstract,AugmentedAssignmentOperator
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  Col: 0
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: op
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: Name {
 .  .  .  .  .  Roles: AugmentedAssignmentVariable,SimpleIdentifier
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
@@ -81,17 +92,6 @@ Module {
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  ctx: Store
 .  .  .  .  .  .  internalRole: target
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Sub {
-.  .  .  .  .  Roles: OpSubstract,AugmentedAssignmentOperator
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  Col: 0
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: op
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  2: NumLiteral {
@@ -120,7 +120,18 @@ Module {
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: Name {
+.  .  .  .  0: Mult {
+.  .  .  .  .  Roles: OpMultiply,AugmentedAssignmentOperator
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 0
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: op
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: Name {
 .  .  .  .  .  Roles: AugmentedAssignmentVariable,SimpleIdentifier
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
@@ -131,17 +142,6 @@ Module {
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  ctx: Store
 .  .  .  .  .  .  internalRole: target
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Mult {
-.  .  .  .  .  Roles: OpMultiply,AugmentedAssignmentOperator
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  Col: 0
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: op
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  2: NumLiteral {
@@ -170,7 +170,18 @@ Module {
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: Name {
+.  .  .  .  0: Div {
+.  .  .  .  .  Roles: OpDivide,AugmentedAssignmentOperator
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  Col: 0
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: op
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: Name {
 .  .  .  .  .  Roles: AugmentedAssignmentVariable,SimpleIdentifier
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
@@ -181,17 +192,6 @@ Module {
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  ctx: Store
 .  .  .  .  .  .  internalRole: target
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Div {
-.  .  .  .  .  Roles: OpDivide,AugmentedAssignmentOperator
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 4
-.  .  .  .  .  .  Col: 0
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: op
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  2: NumLiteral {

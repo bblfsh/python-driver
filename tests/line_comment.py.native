@@ -9,23 +9,28 @@
                     "lineno": 3,
                     "noops_previous": {
                         "ast_type": "PreviousNoops",
-                        "end_lineno": 1,
+                        "col_offset": 1,
+                        "end_lineno": 2,
                         "lineno": 1,
                         "lines": [
                             {
                                 "ast_type": "NoopLine",
+                                "col_offset": 1,
                                 "lineno": 1,
                                 "noop_line": "# thse are\n"
                             },
                             {
                                 "ast_type": "NoopLine",
-                                "lineno": 1,
+                                "col_offset": 1,
+                                "lineno": 2,
                                 "noop_line": "# previous comments\n"
                             }
                         ]
                     },
                     "noops_sameline": {
                         "ast_type": "SameLineNoops",
+                        "col_end": 23,
+                        "col_offset": 5,
                         "lineno": 3,
                         "noop_line": "# sameline comment"
                     }
@@ -35,30 +40,29 @@
             "lineno": 1,
             "noops_remainder": {
                 "ast_type": "RemainderNoops",
-                "end_lineno": 6,
-                "lineno": 3,
+                "col_offset": 1,
+                "end_lineno": 7,
+                "lineno": 4,
                 "lines": [
                     {
                         "ast_type": "NoopLine",
-                        "lineno": 3,
+                        "col_offset": 1,
+                        "lineno": 4,
                         "noop_line": "\n"
                     },
                     {
                         "ast_type": "NoopLine",
-                        "lineno": 3,
+                        "col_offset": 1,
+                        "lineno": 5,
                         "noop_line": "# remainder comment and newline\n"
                     },
                     {
                         "ast_type": "NoopLine",
-                        "lineno": 3,
+                        "col_offset": 1,
+                        "lineno": 6,
                         "noop_line": "# last remainder comment line\n"
                     }
                 ]
-            },
-            "noops_sameline": {
-                "ast_type": "SameLineNoops",
-                "lineno": 1,
-                "noop_line": "# thse are"
             }
         }
     },

@@ -25,6 +25,12 @@ https://greentreesnakes.readthedocs.io/en/latest/nodes.html
 var AnnotationRules = On(Any).Self(
 	On(Not(HasInternalType(pyast.Module))).Error("root must be Module"),
 	On(HasInternalType(pyast.Module)).Roles(File).Descendants(
+		// Binary Expressions
+		On(HasInternalType(pyast.BinOp)).Roles(BinaryExpression).Children(
+			On(HasInternalRole("op")).Roles(BinaryExpressionOp),
+			On(HasInternalRole("left")).Roles(BinaryExpressionLeft),
+			On(HasInternalRole("right")).Roles(BinaryExpressionRight),
+		),
 		// Comparison operators
 		On(HasInternalType(pyast.Eq)).Roles(OpEqual),
 		On(HasInternalType(pyast.NotEq)).Roles(OpNotEqual),
@@ -80,7 +86,10 @@ var AnnotationRules = On(Any).Self(
 		// FIXME: change these to ContainerLiteral/CompoundLiteral/whatever if they're added
 		On(HasInternalType(pyast.Set)).Roles(SetLiteral),
 		On(HasInternalType(pyast.List)).Roles(ListLiteral),
-		On(HasInternalType(pyast.Dict)).Roles(MapLiteral),
+		On(HasInternalType(pyast.Dict)).Roles(MapLiteral).Children(
+			On(HasInternalRole("keys")).Roles(MapKey),
+			On(HasInternalRole("values")).Roles(MapValue),
+		),
 		On(HasInternalType(pyast.Tuple)).Roles(TupleLiteral),
 
 		// FIXME: decorators
@@ -192,7 +201,11 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.Import)).Roles(ImportDeclaration),
 		On(HasInternalType(pyast.ImportFrom)).Roles(ImportDeclaration),
 		On(HasInternalType(pyast.Alias)).Roles(ImportPath),
-		On(HasInternalType(pyast.ClassDef)).Roles(TypeDeclaration),
+		On(HasInternalType(pyast.ClassDef)).Roles(TypeDeclaration).Children(
+			On(HasInternalType("ClassDef.body")).Roles(TypeDeclarationBody),
+			On(HasInternalType("ClassDef.bases")).Roles(TypeDeclarationBases),
+		),
+
 		// FIXME: Internal keys for the ForEach: iter -> ?, target -> ?, body -> ForBody,
 		//
 		//	For => Foreach:
@@ -240,6 +253,17 @@ var AnnotationRules = On(Any).Self(
 				On(Any).Roles(CallPositionalArgument),
 			),
 		),
+
+		// Python annotations for variables, function argument or return values doesn't have any semantic
+		// information by themselves and this we consider it comments (some preprocessors or linters can use
+		// them, the runtimes ignore them). The TOKEN will take the annotation in the UAST node so
+		// the information is keept in any case.
+		On(HasInternalRole("annotation")).Roles(Comment),
+		On(HasInternalRole("returns")).Roles(Comment),
+
+		// Python very odd ellipsis operator. Has a special rule in tonoder synthetic tokens
+		// map to load it with the token "PythonEllipsisOperator" and gets the role SimpleIdentifier
+		On(HasInternalType(pyast.Ellipsis)).Roles(SimpleIdentifier),
 	),
 )
 

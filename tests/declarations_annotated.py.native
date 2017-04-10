@@ -1,0 +1,66 @@
+{
+    "ast": {
+        "PY3AST": {
+            "ast_type": "Module",
+            "body": [
+                {
+                    "annotation": {
+                        "ast_type": "Name",
+                        "col_offset": 4,
+                        "ctx": "Load",
+                        "id": "int",
+                        "lineno": 1
+                    },
+                    "ast_type": "AnnAssign",
+                    "col_offset": 1,
+                    "lineno": 1,
+                    "simple": 1,
+                    "target": {
+                        "ast_type": "Name",
+                        "col_offset": 1,
+                        "ctx": "Store",
+                        "id": "a",
+                        "lineno": 1
+                    },
+                    "value": {
+                        "LiteralValue": 3,
+                        "NumType": "int",
+                        "ast_type": "NumLiteral",
+                        "col_offset": 10,
+                        "lineno": 1
+                    }
+                },
+                {
+                    "annotation": {
+                        "ast_type": "Name",
+                        "col_offset": 4,
+                        "ctx": "Load",
+                        "id": "str",
+                        "lineno": 2
+                    },
+                    "ast_type": "AnnAssign",
+                    "col_offset": 1,
+                    "lineno": 2,
+                    "simple": 1,
+                    "target": {
+                        "ast_type": "Name",
+                        "col_offset": 1,
+                        "ctx": "Store",
+                        "id": "b",
+                        "lineno": 2
+                    },
+                    "value": {
+                        "LiteralValue": "foo",
+                        "ast_type": "StringLiteral",
+                        "col_offset": 10,
+                        "lineno": 2
+                    }
+                }
+            ],
+            "col_offset": 1,
+            "lineno": 1
+        }
+    },
+    "errors": [],
+    "status": "ok"
+}

@@ -20,7 +20,8 @@ var NativeToNoder = &uast.BaseToNoder{
 		"noop_line":         true, // Comment/Noop (non significative whitespace)
 	},
 	SyntheticTokens: map[string]string{
-		"Print": "print",
+		"Print"   : "print",
+		"Ellipsis": "PythonEllipsisOperator",
 	},
 	PromoteAllPropertyLists: false,
 	PromotedPropertyLists: map[string]map[string]bool {

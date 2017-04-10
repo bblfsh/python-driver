@@ -72,19 +72,7 @@ Module {
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: BoolLiteral {
-.  .  .  .  .  Roles: BooleanLiteral
-.  .  .  .  .  TOKEN "true"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  Col: 8
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: test
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: StringLiteral {
+.  .  .  .  0: StringLiteral {
 .  .  .  .  .  Roles: StringLiteral
 .  .  .  .  .  TOKEN "assert message"
 .  .  .  .  .  StartPosition: {
@@ -94,6 +82,18 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: msg
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: BoolLiteral {
+.  .  .  .  .  Roles: BooleanLiteral
+.  .  .  .  .  TOKEN "true"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 8
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: test
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }

@@ -5,16 +5,8 @@
 
 ## Driver/SDK bugs:
 
-- PythonDrivers#6: Some nodes with "Col:0": 
-    - arguments (parent node, arguments and annotations are fine)
-
-    - triple quoted strings (docstrings) and their parent expression
-
-    - whitespace/comments: PreviousNoops (and their NoopLine children), 
-      SameLineNoops, RemainderNoops (and NoopLine).
-
-    - Binary/boolean operators (example: aritmeticopts). The native AST as 
-      exported has Line but not column so the problem lies there.
+- PythonDrivers#6: Some nodes with "Col:0": arguments, all operators, 
+  all whitespace
 
 - The integration tests should probably check for nodes in the UAST 
   that doesn't have assigned Roles.
@@ -23,8 +15,11 @@
 
 ### Pending/need research PRs:
 
+- #83: Classdef.body, Classdef.bases
+- #82: MapKey, MapValue
 - #81: ListComprehension, MapComprehension, SetComprehension
 - #79: FunctionDeclarationArguments parent node
+- #78: BinaryExpression, left, right
 - #63: FunctionAnnotation (D UDA, Python property, Java annotation), 
        FunctionDeclarationVarArgsMap, LambdaFunctionDeclaration
 - #59: IndexOperators
@@ -55,6 +50,17 @@
 
 ## Tests with problems
 
+### AritmeticOps (missing UAST nodes, PR done)
+
+- BinOp doesn't have a rule. It could have the role Expr or add
+  a new BinOp UAST role.
+
+- "left" and "right" operators should have a Role.
+
+### Bitwise (missing UAST)
+
+- Same as BinaryOpt. 
+
 ### BooleanOp / Compare (needs SDK::normalizer changes, missing UAST)
 
 Thi is an odd case. They're not BinaryExpressions but a "Compare" node that
@@ -78,10 +84,16 @@ BooleanExpresion {
 
 - UnaryOp ("not a") doesn't have a rule.
 
-### ClassDef (needs SDK::normalizer changes)
+### ClassDef (needs SDK::normalizer changes, missing UAST roles)
+
+- ClassDef.body doesn't have a UAST role (TypeBody).
 
 - Methods have the same issues as FunctionDef plus class decorators would need
 some TypeDefinitionAnnotation or something like that.
+
+### ClassDefInheritance (missing UAST roles)
+
+- ClassDef.bases (list of parent classes) doesn't have a Role.
 
 ### ClassDefMetaClassPy3 (missing UAST roles)
 
@@ -156,7 +168,17 @@ nodes)
   in Python (odd layout of elements).
 
 
-### Pass (Col:0 for comments)
+### LiteralsAssign (missing UAST)
+
+- Ordering is fine when inside List/Tuple/Dict literals
+
+- Dict literals (MapLiteral) on the AST would need MapKey and MapValue
+  roles for the elements. 
+
+- Ordering is also fine for the two binary expressions at the end (could be 
+  random chance).
+
+### Pass (Col:0 for comments
 
 - The line-trailing comment doesn't have the column (Col:0)
 
@@ -167,11 +189,9 @@ nodes)
 - The "item" in "with item as s" should have BlockScopeObject and the 
   "s" BlockScopeObjectAlias.
 
-### Comments (Col: 0, rule problems)
-
-- All comments and lines have col:0
-
 ## Clean tests
+
+- Comments
 
 - FunctionDefDocstring: The docstring shows as an
   Func.Body.Expression.StringLiteral but the Python AST doesn't add any other role
@@ -215,11 +235,3 @@ nodes)
 - Ellipsis: Ok (it's a very odd token that doesn't reserve an UAST node until we
   find more instances in other languages; gets the SimpleIdentifier role with the 
   "PythonEllipsisOperator" token). Could be changed to NotImplemented if added.
-
-- LiteralsAssign
-
-- Bitwise
-
-- AritmeticOps
-
-- ClassDefInheritance
