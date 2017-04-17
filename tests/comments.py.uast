@@ -20,20 +20,7 @@ Module {
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: NumLiteral {
-.  .  .  .  .  Roles: NumberLiteral,AssignmentValue
-.  .  .  .  .  TOKEN "1"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  Col: 5
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  NumType: int
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Name {
+.  .  .  .  0: Name {
 .  .  .  .  .  Roles: AssignmentVariable,SimpleIdentifier
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
@@ -46,27 +33,15 @@ Module {
 .  .  .  .  .  .  internalRole: targets
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: SameLineNoops {
-.  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  TOKEN "# line trailing comment"
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  .  .  Col: 0
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: noops_sameline
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: PreviousNoops {
+.  .  .  .  .  .  0: PreviousNoops {
 .  .  .  .  .  .  .  Roles: Whitespace
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  .  .  Col: 0
+.  .  .  .  .  .  .  .  Col: 1
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  end_lineno: 1
+.  .  .  .  .  .  .  .  end_lineno: 2
 .  .  .  .  .  .  .  .  internalRole: noops_previous
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
@@ -77,7 +52,7 @@ Module {
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  .  .  .  .  Col: 0
+.  .  .  .  .  .  .  .  .  .  Col: 1
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  internalRole: lines
@@ -89,8 +64,8 @@ Module {
 "
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  .  .  .  .  Col: 0
+.  .  .  .  .  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  .  .  .  .  Col: 1
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  internalRole: lines
@@ -98,31 +73,45 @@ Module {
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
+.  .  .  .  .  .  1: SameLineNoops {
+.  .  .  .  .  .  .  Roles: Comment
+.  .  .  .  .  .  .  TOKEN "# line trailing comment"
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  Col: 6
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  col_end: 29
+.  .  .  .  .  .  .  .  internalRole: noops_sameline
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: NumLiteral {
+.  .  .  .  .  Roles: NumberLiteral,AssignmentValue
+.  .  .  .  .  TOKEN "1"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 5
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  NumType: int
+.  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
 .  .  }
-.  .  1: SameLineNoops {
-.  .  .  Roles: Comment
-.  .  .  TOKEN "# comment above"
-.  .  .  StartPosition: {
-.  .  .  .  Offset: 0
-.  .  .  .  Line: 1
-.  .  .  .  Col: 0
-.  .  .  }
-.  .  .  Properties: {
-.  .  .  .  internalRole: noops_sameline
-.  .  .  }
-.  .  }
-.  .  2: RemainderNoops {
+.  .  1: RemainderNoops {
 .  .  .  Roles: Whitespace
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
-.  .  .  .  Line: 3
-.  .  .  .  Col: 0
+.  .  .  .  Line: 4
+.  .  .  .  Col: 1
 .  .  .  }
 .  .  .  Properties: {
-.  .  .  .  end_lineno: 5
+.  .  .  .  end_lineno: 6
 .  .  .  .  internalRole: noops_remainder
 .  .  .  }
 .  .  .  Children: {
@@ -132,8 +121,8 @@ Module {
 "
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  Col: 0
+.  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  Col: 1
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: lines
@@ -145,8 +134,8 @@ Module {
 "
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  Col: 0
+.  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  Col: 1
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: lines

@@ -1,211 +1,225 @@
-=== General issues:
+## Integrations tests to add:
 
-- Some nodes with "Col:0": arguments, all operators, all whitespace
+- Different string and string interpolation types (fstrings, format, %, 
+  triple-quoted, double/single quoted).
 
-- Body (IfBody, ForBody, etc) elements have the role xBody but not a parent
-  xBody node grouping them.
+## Driver/SDK bugs:
 
-- "a.b" has the native role "Attribute", should be QualifiedIdentifier
+- PythonDrivers#6: Some nodes with "Col:0": 
+    - arguments (parent node, arguments and annotations are fine)
+
+    - triple quoted strings (docstrings) and their parent expression
+
+    - whitespace/comments: PreviousNoops (and their NoopLine children), 
+      SameLineNoops, RemainderNoops (and NoopLine).
+
+    - Binary/boolean operators (example: aritmeticopts). The native AST as 
+      exported has Line but not column so the problem lies there.
 
 - The integration tests should probably check for nodes in the UAST 
   that doesn't have assigned Roles.
 
-=== AritmeticOps (missing UAST nodes)
+## Missing UAST nodes
 
-- BinOp doesn't have a rule. It could have the role Expr or add
-  a new BinOp UAST role.
-- "left" and "right" operators should have a Role.
+### Pending/need research PRs:
 
-=== Assert (sorting)
-- Redo tests with the message and without parens
-- The third line with the assertmsg: it puts the message string before
-  the boolean (should be the boolean and then the message).
+- #81: ListComprehension, MapComprehension, SetComprehension
+- #79: FunctionDeclarationArguments parent node
+- #63: FunctionAnnotation (D UDA, Python property, Java annotation), 
+       FunctionDeclarationVarArgsMap, LambdaFunctionDeclaration
+- #59: IndexOperators
+- #58: BlockScopeResourceExpr, BlockScopeResourceAlias, BlockScopeBody
+- #57: ListExpansion, MapExpansion
+- #56: Yield, Yield From 
 
-=== AugAssign (not OK)
+### No PR done:
 
-- a +=: "a" should be AssignmentVariable (only has SimpleIdentifier, it has the
-  "target" property in the native AST). Check after the merge?
+- Currently none.
 
-=== Bitwise (missing UAST, sorting)
+## Rule problems
 
-- Same as BinaryOpt. Also left, right and the operator are unsorted.
+- Currently none.
 
-=== BooleanOp (rule problems, missing UAST)
+## Missing SDK features
 
-- The "Compare" parent doesn't have a rule (child of Expression).
+- Moving nodes,  examples: 
+    - Default argument values must be put under their FunctionDeclarationArgument
+    node. In Python they're on a separate parent node.
+
+    - Boolean expressions in Python are anidated if there are more than 2 nodes,
+      in the UAST they should be a plain list of operators OR anidated boolean
+      binaryExpressions (like Nim and C++ AST do).
+
+    - Attributes like a.b.c.d are anidated (a(b(c(d)))) in Python but in the 
+      UAST should be a list of nodes under a QualifiedIdentifier parent.
+
+## Tests with problems
+
+### BooleanOp / Compare (needs SDK::normalizer changes, missing UAST)
+
+Thi is an odd case. They're not BinaryExpressions but a "Compare" node that
+has a "left" node (the first element), a "comparators" node whose childs are
+the other expressions/literals. The operators are grouped under a parrent
+node "operators" that, like default values, must be interpolated.
+
+So for a == b < c we would have something like:
+
+compare {
+   left: a
+   comparators: [b, c]
+   operators: LessThan, Equal
+
+So for this, and the function default valuies, we would need a rule 
+"Interpolate" or something like that that can take that and do:
+
+BooleanExpresion {
+    Childs: [a, lessthan, b, equal, c]
+}
+
 - UnaryOp ("not a") doesn't have a rule.
 
-=== ClassDef (test again with new FunctionDeclaration rules, improve test)
+### ClassDef (needs SDK::normalizer changes)
 
-- The arguments doesn't have roles (test again when the FunctionDef PR
-  has been defined). 
+- Methods have the same issues as FunctionDef plus class decorators would need
+some TypeDefinitionAnnotation or something like that.
 
-- Find a way or feature request so we can add a rule that can add the 
-  parent ClassDef node as FunctionDeclarationReceiver.
+### ClassDefMetaClassPy3 (missing UAST roles)
 
-- @Properties or decorator are not marked. It is rightly inside the FunctionDef,
-  but it has the role "SimpleIdentifier" if they don't have a callee or Attribute
-  if they have. Should have some UAST role (annotation, etc).
+- the "X=Y" inside the class parenthesis  is inside a "keywords" group. This has
+  "keyword" nodes and for every node, in our UAST the "X" is this group
+  Token (Ok) and has a child "Y" of type SimpleIdentifier (also Ok, I think).
+  We would need some way to represent those class keywords and the grouper 
+  node (internal types ClassDef.keywords and keyword currently) -> these can
+  use TypeDeclarationAnnotation if added.
 
-- "a.setter" generates the nodes:
-    Attribute(a)
-        Childs:
-            SimpleIdentifier(setter)
+### QualifiedIdentifier (rules? maybe need SDK feature)
+
+For a given expression with the form:
+
+a.b.c
+
+Python generates an "Attribute" node with the field "attr" set to the 
+last element ("c") and a child which also have "Attribute" type and attr "b" 
+which recursively has a child Attribute.attr = "a". In the generated
+UAST these have the QualifiedIdentifier roles (except the last one which has
+SimpleIdentifier), but the UAST specifies that a QualifiedIdentifier should
+have its member as Childrens of type SimpleIdentifier. 
   
-  In the Python AST is:
-    Attribute (setter)
-        value:
-            Name (a)
+### FunctionCalls (rule problems)
 
-  Probably dotted/arrowed attribute access receivers (not always function calls)
-  should have a Receiver (maybe we could use that receiver for CallReceiver and
-  FunctionDeclarationReceiver?).
+- Need UAST nodes for ListExpansion (native AST = starred) and MapExpansion
+  (native AST != keyword, usually "name", inside keywords).
 
-- The assignments at the end, contrary to what happens with AugAssign and 
-  the assignments inside the methods, have their AssignmentVariable role
-  correctly set.
+### FunctionDefAnnotated (missing UAST nodes)
 
-- Need to add staticmember and classmember decorators for methods, metaclass
-  assignment in the style of Python2 and Python3 and class members.
-  
-=== Comments (OK)
+- Annotated parameters (type: annotation) without correct role (but is 
+  already a children of the argument which is very nice).
 
-- Ok
+- Annotated return value (type: returns) without correct role.
 
-=== For (rule problems, sorting)
-
-- Elements in the list have the right order but childs of the ForEach
-  node have not.
-
-- Elements in the body has the ForBody but not a parent node (this
-  also happens with IfBody and other bodies).
-
-=== FuncDefDefParams (test again)
-
-- Check once the FunctionDeclaration roles have been added.
-
-=== FunctionCalls (rule problems, sorting)
-
-- The "a.bitlength()" call has the form:
-  Call -> bitlength:Attribute:CallCalle -> 
-      [a:SimpleIdentifier] 
-
-  it should be:
-
-  Call -> Attribute -> [a:CallReceiver, bitlength:CallCallee]
-
-  or maybe:
-
-  Call -> Attribute:CallCallee -> [a: CallReceiver, bitlength:SimpleIdentifier]
-
-  The children of call are also unsorted.
-
-=== FunctionDef (test again)
-
-- Check once the FunctionDeclaration roles have been added
+- Argument grouper waiting for the FunctionDeclarationArguments role to be
+  merged.
 
 
-=== FunctionDefArgs (test again)
+### FunctionDefDecorated (missing UAST nodes)
 
-- Check once the FunctionDeclaration roles have been added
+- The decorators need an additional role. 
 
-=== Hello (OK)
+### FunctionDefDefaultparams (semantic language specific problem, missing UAST
+nodes)
 
-- Ok
+- The function has a FunctionDef.defaults child node which has the default
+  arguments but those are not children of the arguments itself (you have
+  to match them aligning the normal non-vararg non-kwarg arguments to the 
+  right).
 
-=== If (rule problems, tree problems)
+- The parent has the role FunctionDefArgDefaultValue but a plural version 
+  with the individual default values using the the singular version would
+  be better.
 
-- There is no parent IfBody node, instead all the expressions in the body
-  have the additional rule IfBody. I would prefer to have a parent IfBody node.
+### FunctionDefKwarg (missing UAST nodes)
 
-- The "elif" (with Roles If+Elseif, nice!) is a children of the If node and the
-  "else" is a children of that "elif". This is how Python AST works for ifs but
-  we've to see if in the UAST we want to reparent the elses to the first If node.
+- The kwargs are using the role FunctionDeclarationVarArgsList while the 
+  PR for the FunctionDeclarationMap is pending.
 
-- The compare in this case rightly have the "IfCondition" node (unlike what 
-  happens in the BooleanOp test).
+### FunctionDefSimple (missing UAST nodes)
 
-=== IfExpression (a = val if sometest else otherval) (rule problems)
+- FunctionDeclarationArguments and Yield need UAST roles.
 
-- The If node is a child of the Assignment and has also the AssignmentValue
-  role, which is nice.
+### FunctionDefVarArg (missing UAST nodes)
 
-- The compare child of the If doesn't have the IfCondition role.
+- Same as FunctionDefSimple. Missing UAST role "FunctionDeclarationArguments".
 
-- The isn't an ElseIf node (it should have the "otherval" as a child).
+### IfExpression (a = val if sometest else otherval) (rule problems)
 
-=== Import (OK)
+- The test (IfCondition) has the same problems as the other boolean expressions
+  in Python (odd layout of elements).
 
-- Ok. The way to distinguist "import os" from "from os import path" is that
+
+### Pass (Col:0 for comments)
+
+- The line-trailing comment doesn't have the column (Col:0)
+
+### With (missing UAST)
+
+- with.body doesn't have UAST (BlockScopeBody)
+
+- The "item" in "with item as s" should have BlockScopeObject and the 
+  "s" BlockScopeObjectAlias.
+
+### Comments (Col: 0, rule problems)
+
+- All comments and lines have col:0
+
+## Clean tests
+
+- FunctionDefDocstring: The docstring shows as an
+  Func.Body.Expression.StringLiteral but the Python AST doesn't add any other role
+  either so its Ok.
+
+- Hello
+
+- Import: Ok. The way to distinguist "import os" from "from os import path" is that
   in the first case the ImportDeclaration doesn't have a Token and it the second
   case it as the "os" token, which I think is enough. In both cases the childs
   ("os" in the first case and "path" in the second) have the ImportPath role.
 
-=== LineComment (Col: 0)
+- Print
 
-- Column on comments is 0
-
-=== LiteralsAssign (sorting)
-
-- Sorting
-
-=== LiteralsAssign (missing UAST)
-
-- Ordering is fine when inside List/Tuple/Dict literals
-
-- Dict literals (MapLiteral) on the AST would need MapKey and MapValue
-  roles for the elements. 
-
-- Ordering is also fine for the two binary expressions at the end (could be 
-  random chance).
-
-=== LoopIf (else for for/while loops) (rule problems)
-
-- The "else" part of the ForEach has just the "Expression" role. It should be
-  "IfElse" or "Expression, IfElse".
-
-=== Pass (Col:0 for comments
-
-- The line-trailing comment doesn't have the column (Col:0)
-
-=== Print (Ok)
-
-- Ok
-
-=== Expr (Ok)
-
-- Ok, but it puts the Expr Call under and Expression node while in the Print
+- Expr: but it puts the Expr Call under and Expression node while in the Print
   test it doesn't (but is the Python AST that does it that way so we 
   probably can do much to unify this).
 
-=== SameLine (expr; expr) (Ok)
+- SameLine (expr; expr): The native AST or UAST doesn't make a distintion because
+  of the ";"  but since both expressions are children of the "File" node and the
+  column numbers are correctly set it can be inferred.
 
-- Ok. The native AST or UAST doesn't make a distintion because of the ";"  
-  but since both expressions are children of the "File" node and the column
-  numbers are correctly set it can be inferred.
+- Assert (OK) Very minor: assert with and without parenthesis produce the same AST.
 
-=== Unary (missing UAST)
+- AugAssign
 
-- Python UnaryOp node doesn't have any role; should probably have the 
-  UAST role "UnaryExpression". 
+- ClassDefMetaClassPy2 (just a normal assignment inside the class body)
 
+- For
 
-=== While (rule problems)
+- If 
 
-- The WhileBody nodes should be under a WhileBody parent.
+- LineComment
 
-- The native Compare has the UAST WhileCompare, which is Ok (but could be 
-  useful to debug the un-roled Compare of BooleanOps).
+- While
 
-- If we add BinaryExpression to the UAST the comparison should probably have
-  a BinaryExpression parent, but the Python's AST doesn't generate the 
-  BinOp...
+- LoopIf
 
-- In this case the "else" of the while statement is transformed into a "IfElse"
-  UAST node which is Ok, but could help debug the LoopIf test where that 
-  didn't happen.
+- UnaryExpr
 
-=== With (missing UAST)
+- Ellipsis: Ok (it's a very odd token that doesn't reserve an UAST node until we
+  find more instances in other languages; gets the SimpleIdentifier role with the 
+  "PythonEllipsisOperator" token). Could be changed to NotImplemented if added.
 
-- BlockScope.withitem (the "a" in "with a:") doesn't have a role 
-  (PR #58 would add them).
+- LiteralsAssign
+
+- Bitwise
+
+- AritmeticOps
+
+- ClassDefInheritance

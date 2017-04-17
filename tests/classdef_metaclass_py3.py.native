@@ -1,0 +1,93 @@
+{
+    "ast": {
+        "PY3AST": {
+            "ast_type": "Module",
+            "body": [
+                {
+                    "ast_type": "ClassDef",
+                    "bases": [],
+                    "body": [
+                        {
+                            "ast_type": "Pass",
+                            "col_offset": 5,
+                            "lineno": 2
+                        }
+                    ],
+                    "col_offset": 1,
+                    "decorator_list": [],
+                    "keywords": [
+                        {
+                            "arg": "metaclass",
+                            "ast_type": "keyword",
+                            "lineno": 1,
+                            "value": {
+                                "ast_type": "Name",
+                                "col_offset": 29,
+                                "ctx": "Load",
+                                "id": "Singleton",
+                                "lineno": 1
+                            }
+                        }
+                    ],
+                    "lineno": 1,
+                    "name": "MySingleton"
+                },
+                {
+                    "ast_type": "ClassDef",
+                    "bases": [
+                        {
+                            "ast_type": "Name",
+                            "col_offset": 19,
+                            "ctx": "Load",
+                            "id": "ParentClass",
+                            "lineno": 4,
+                            "noops_previous": {
+                                "ast_type": "PreviousNoops",
+                                "col_offset": 1,
+                                "end_lineno": 3,
+                                "lineno": 3,
+                                "lines": [
+                                    {
+                                        "ast_type": "NoopLine",
+                                        "col_offset": 1,
+                                        "lineno": 3,
+                                        "noop_line": "\n"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "body": [
+                        {
+                            "ast_type": "Pass",
+                            "col_offset": 5,
+                            "lineno": 5
+                        }
+                    ],
+                    "col_offset": 1,
+                    "decorator_list": [],
+                    "keywords": [
+                        {
+                            "arg": "metaclass",
+                            "ast_type": "keyword",
+                            "lineno": 4,
+                            "value": {
+                                "ast_type": "Name",
+                                "col_offset": 42,
+                                "ctx": "Load",
+                                "id": "Singleton",
+                                "lineno": 4
+                            }
+                        }
+                    ],
+                    "lineno": 4,
+                    "name": "MySingleton"
+                }
+            ],
+            "col_offset": 1,
+            "lineno": 1
+        }
+    },
+    "errors": [],
+    "status": "ok"
+}

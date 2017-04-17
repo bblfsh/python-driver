@@ -4,79 +4,27 @@
             "ast_type": "Module",
             "body": [
                 {
-                    "ast_type": "Expr",
-                    "col_offset": 1,
-                    "lineno": 1,
-                    "value": {
-                        "args": [
-                            {
-                                "LiteralValue": "before something",
-                                "ast_type": "StringLiteral",
-                                "col_offset": 7,
-                                "lineno": 1
-                            }
-                        ],
-                        "ast_type": "Call",
-                        "col_offset": 1,
-                        "func": {
-                            "ast_type": "Name",
-                            "col_offset": 1,
-                            "ctx": "Load",
-                            "id": "print",
-                            "lineno": 1
-                        },
-                        "keywords": [],
-                        "lineno": 1
-                    }
-                },
-                {
-                    "ast_type": "Assign",
-                    "col_offset": 1,
-                    "lineno": 2,
-                    "targets": [
-                        {
-                            "ast_type": "Name",
-                            "col_offset": 1,
-                            "ctx": "Store",
-                            "id": "something",
-                            "lineno": 2
-                        }
-                    ],
-                    "value": {
-                        "LiteralValue": 1,
-                        "NumType": "int",
-                        "ast_type": "NumLiteral",
-                        "col_offset": 13,
-                        "lineno": 2
-                    }
-                },
-                {
                     "ast_type": "With",
                     "body": [
                         {
-                            "ast_type": "Expr",
+                            "ast_type": "Assign",
                             "col_offset": 5,
-                            "lineno": 4,
-                            "value": {
-                                "args": [
-                                    {
-                                        "LiteralValue": "doing stuff with something",
-                                        "ast_type": "StringLiteral",
-                                        "col_offset": 11,
-                                        "lineno": 4
-                                    }
-                                ],
-                                "ast_type": "Call",
-                                "col_offset": 5,
-                                "func": {
+                            "lineno": 2,
+                            "targets": [
+                                {
                                     "ast_type": "Name",
                                     "col_offset": 5,
-                                    "ctx": "Load",
-                                    "id": "print",
-                                    "lineno": 4
-                                },
-                                "keywords": [],
-                                "lineno": 4
+                                    "ctx": "Store",
+                                    "id": "a",
+                                    "lineno": 2
+                                }
+                            ],
+                            "value": {
+                                "ast_type": "Name",
+                                "col_offset": 9,
+                                "ctx": "Load",
+                                "id": "s",
+                                "lineno": 2
                             }
                         }
                     ],
@@ -89,38 +37,18 @@
                                 "col_offset": 6,
                                 "ctx": "Load",
                                 "id": "something",
-                                "lineno": 3
+                                "lineno": 1
                             },
-                            "optional_vars": null
+                            "optional_vars": {
+                                "ast_type": "Name",
+                                "col_offset": 19,
+                                "ctx": "Store",
+                                "id": "s",
+                                "lineno": 1
+                            }
                         }
                     ],
-                    "lineno": 3
-                },
-                {
-                    "ast_type": "Expr",
-                    "col_offset": 1,
-                    "lineno": 5,
-                    "value": {
-                        "args": [
-                            {
-                                "LiteralValue": "not inside something",
-                                "ast_type": "StringLiteral",
-                                "col_offset": 7,
-                                "lineno": 5
-                            }
-                        ],
-                        "ast_type": "Call",
-                        "col_offset": 1,
-                        "func": {
-                            "ast_type": "Name",
-                            "col_offset": 1,
-                            "ctx": "Load",
-                            "id": "print",
-                            "lineno": 5
-                        },
-                        "keywords": [],
-                        "lineno": 5
-                    }
+                    "lineno": 1
                 }
             ],
             "col_offset": 1,

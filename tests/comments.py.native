@@ -16,23 +16,28 @@
                             "lineno": 3,
                             "noops_previous": {
                                 "ast_type": "PreviousNoops",
-                                "end_lineno": 1,
+                                "col_offset": 1,
+                                "end_lineno": 2,
                                 "lineno": 1,
                                 "lines": [
                                     {
                                         "ast_type": "NoopLine",
+                                        "col_offset": 1,
                                         "lineno": 1,
                                         "noop_line": "# comment above\n"
                                     },
                                     {
                                         "ast_type": "NoopLine",
-                                        "lineno": 1,
+                                        "col_offset": 1,
+                                        "lineno": 2,
                                         "noop_line": "# second comment above\n"
                                     }
                                 ]
                             },
                             "noops_sameline": {
                                 "ast_type": "SameLineNoops",
+                                "col_end": 29,
+                                "col_offset": 6,
                                 "lineno": 3,
                                 "noop_line": "# line trailing comment"
                             }
@@ -51,25 +56,23 @@
             "lineno": 1,
             "noops_remainder": {
                 "ast_type": "RemainderNoops",
-                "end_lineno": 5,
-                "lineno": 3,
+                "col_offset": 1,
+                "end_lineno": 6,
+                "lineno": 4,
                 "lines": [
                     {
                         "ast_type": "NoopLine",
-                        "lineno": 3,
+                        "col_offset": 1,
+                        "lineno": 4,
                         "noop_line": "# file trailing comment\n"
                     },
                     {
                         "ast_type": "NoopLine",
-                        "lineno": 3,
+                        "col_offset": 1,
+                        "lineno": 5,
                         "noop_line": "# second file trailing comment\n"
                     }
                 ]
-            },
-            "noops_sameline": {
-                "ast_type": "SameLineNoops",
-                "lineno": 1,
-                "noop_line": "# comment above"
             }
         }
     },
