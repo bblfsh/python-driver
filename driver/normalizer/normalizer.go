@@ -20,7 +20,6 @@ https://greentreesnakes.readthedocs.io/en/latest/nodes.html
 
  */
 
- // TODO: all the "orelse" subnodes of for/while/try as "IfElse" childs
  // TODO: add the "stride", third element of slices in some way once we've the index/slice roles
 var AnnotationRules = On(Any).Self(
 	On(Not(HasInternalType(pyast.Module))).Error("root must be Module"),
@@ -83,7 +82,6 @@ var AnnotationRules = On(Any).Self(
 		// with a body that is a list of StringLiteral + FormattedValue(value, conversion, format_spec)
 		On(HasInternalType(pyast.JoinedStr)).Roles(StringLiteral),
 		On(HasInternalType(pyast.NoneLiteral)).Roles(NullLiteral),
-		// FIXME: change these to ContainerLiteral/CompoundLiteral/whatever if they're added
 		On(HasInternalType(pyast.Set)).Roles(SetLiteral),
 		On(HasInternalType(pyast.List)).Roles(ListLiteral),
 		On(HasInternalType(pyast.Dict)).Roles(MapLiteral).Children(
@@ -220,19 +218,16 @@ var AnnotationRules = On(Any).Self(
 			On(HasInternalRole("target")).Roles(ForUpdate),
 			On(HasInternalType("For.orelse")).Roles(IfElse),
 		),
-		// FIXME: while internal keys: body -> WhileBody, orelse -> ?, test -> WhileCondition
 		On(HasInternalType(pyast.While)).Roles(While).Children(
 			On(HasInternalType("While.body")).Roles(WhileBody),
 			On(HasInternalRole("test")).Roles(WhileCondition),
 			On(HasInternalType("While.orelse")).Roles(IfElse),
 		),
-		// FIXME: detect qualified 'Call.func' with a "Call.func.value" member and
 		On(HasInternalType(pyast.Pass)).Roles(Noop),
 		On(HasInternalType(pyast.Num)).Roles(NumberLiteral),
 		// FIXME: this is the annotated assignment (a: annotation = 3) not exactly Assignment
 		// it also lacks AssignmentValue and AssignmentVariable (see how to add them)
 		On(HasInternalType(pyast.AnnAssign)).Roles(Assignment),
-		// FIXME: this is the a += 1 style assigment
 		On(HasInternalType(pyast.AugAssign)).Roles(Assignment),
 		On(HasInternalType(pyast.Assert)).Roles(Assert),
 

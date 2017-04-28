@@ -30,7 +30,7 @@ func TestAnnotate(t *testing.T) {
 	require.NoError(err)
 
 	missingRole := make(map[string]bool)
-	iter := uast.NewPreOrderPathIter(uast.NewPath(n))
+	iter := uast.NewOrderPathIter(uast.NewPath(n))
 	for {
 		n := iter.Next()
 		if n.IsEmpty() {
