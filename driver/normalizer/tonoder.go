@@ -22,6 +22,14 @@ var NativeToNoder = &uast.BaseToNoder{
 	SyntheticTokens: map[string]string{
 		"Print"   : "print",
 		"Ellipsis": "PythonEllipsisOperator",
+		"Add"     : "+",
+		"Sub"     : "-",
+		"Mult"    : "*",
+		"Div"     : "/",
+		"FloorDiv": "//",
+		"Mod"     : "%",
+		"Pow"     : "^",
+		"AugAssign": "?=",
 	},
 	PromoteAllPropertyLists: false,
 	PromotedPropertyLists: map[string]map[string]bool {
