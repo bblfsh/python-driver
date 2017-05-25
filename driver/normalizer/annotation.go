@@ -1,7 +1,10 @@
 package normalizer
 
 import (
+	"errors"
+
 	"github.com/bblfsh/python-driver/driver/normalizer/pyast"
+
 	. "github.com/bblfsh/sdk/uast"
 	. "github.com/bblfsh/sdk/uast/ann"
 )
@@ -18,11 +21,68 @@ For a description of Python AST nodes:
 
 https://greentreesnakes.readthedocs.io/en/latest/nodes.html
 
- */
+*/
 
- // TODO: add the "stride", third element of slices in some way once we've the index/slice roles
+/*
+Missing nodes or nodes needing new features from the SDK:
+
+   === With unmerged PRs:
+
+   = PR 55:
+	   Delete
+
+   = PR 56:
+	   Yield
+	   YieldFrom
+
+   = PR 58:
+       withitem
+
+   = PR 59:
+	   Subscript
+	   Index
+	   Slice
+	   ExtSlice
+
+   = PR 81:
+	   ListComp
+	   SetComp
+	   DictComp
+
+   = PR 79:
+	   arguments
+
+   === No PR:
+
+   JoinedStr
+   FormattedValue
+
+   Starred
+
+   BoolOp collapsing: needs SDK features
+   arguments.defaults: needs SDK features
+   arguments.keywords: same
+
+   GeneratorExp: check
+
+   AnnAssign (currently as assign, needs Annotation UAST)
+
+   Lambda
+
+   Global
+   Nonlocal
+
+   AsyncFunctionDef (FunctionDef + async)
+   Await
+   AsyncFor (For + async)
+   AsyncWith (With + async)
+
+
+*/
+
+// TODO: add the "stride", third element of slices in some way once we've the index/slice roles
 var AnnotationRules = On(Any).Self(
-	On(Not(HasInternalType(pyast.Module))).Error("root must be Module"),
+	On(Not(HasInternalType(pyast.Module))).Error(errors.New("root must be Module")),
 	On(HasInternalType(pyast.Module)).Roles(File).Descendants(
 		// Binary Expressions
 		On(HasInternalType(pyast.BinOp)).Roles(BinaryExpression).Children(
@@ -100,11 +160,11 @@ var AnnotationRules = On(Any).Self(
 			On(HasInternalType("arguments")).Roles(FunctionDeclarationArgument).Children(
 				On(HasInternalRole("args")).Roles(FunctionDeclarationArgument, FunctionDeclarationArgumentName),
 				On(HasInternalRole("vararg")).Roles(FunctionDeclarationArgument, FunctionDeclarationVarArgsList,
-													FunctionDeclarationArgumentName),
+					FunctionDeclarationArgumentName),
 				// FIXME: this is really different from vararg, change it when we have FunctionDeclarationMap
 				// or something similar in the UAST
 				On(HasInternalRole("kwarg")).Roles(FunctionDeclarationArgument, FunctionDeclarationVarArgsList,
-												   FunctionDeclarationArgumentName),
+					FunctionDeclarationArgumentName),
 				// Default arguments: Python's AST puts default arguments on a sibling list to the one of
 				// arguments that must be mapped to the arguments right-aligned like:
 				// a, b=2, c=3 ->
@@ -162,13 +222,11 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.Try)).Roles(Try).Children(
 			On(HasInternalRole("body")).Roles(TryBody),
 			On(HasInternalRole("finalbody")).Roles(TryFinally),
-			// TODO: this is really a list, use descendents and search for ExceptHandlers?
 			On(HasInternalRole("handlers")).Roles(TryCatch),
-			// TODO: check that the IfElse really goes here
 			On(HasInternalRole("orelse")).Roles(IfElse),
 		),
-		// FIXME: add OnPath Try.body (uast_type=ExceptHandler) => TryBody
-		On(HasInternalType(pyast.TryExcept)).Roles(TryCatch),
+		On(HasInternalType(pyast.TryExcept)).Roles(TryCatch), // py2
+		On(HasInternalType(pyast.ExceptHandler)).Roles(TryCatch), // py3
 		On(HasInternalType(pyast.TryFinally)).Roles(TryFinally),
 		On(HasInternalType(pyast.Raise)).Roles(Throw),
 		// FIXME: review, add path for the body and items childs
@@ -178,8 +236,6 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.Return)).Roles(Return),
 		On(HasInternalType(pyast.Break)).Roles(Break),
 		On(HasInternalType(pyast.Continue)).Roles(Continue),
-		// FIXME: extract the test, orelse and the body to test-> IfCondition, orelse -> IfElse, body -> IfBody
-		// UAST are first level members
 		On(HasInternalType(pyast.If)).Roles(If).Children(
 			On(HasInternalType("If.body")).Roles(IfBody),
 			On(HasInternalType(pyast.Compare)).Roles(IfCondition),
@@ -192,26 +248,15 @@ var AnnotationRules = On(Any).Self(
 			On(HasInternalRole("orelse")).Roles(IfElse),
 		),
 		// One liner if, like a normal If but it will be inside an Assign (like the ternary if in C)
-		// also applies the comment about the If
 		On(HasInternalType(pyast.IfExp)).Roles(If),
-		// FIXME: Import and ImportFrom can make an alias (name -> asname), extract it and put it as
-		// uast.ImportAlias
 		On(HasInternalType(pyast.Import)).Roles(ImportDeclaration),
 		On(HasInternalType(pyast.ImportFrom)).Roles(ImportDeclaration),
-		On(HasInternalType(pyast.Alias)).Roles(ImportPath),
+		On(HasInternalType(pyast.Alias)).Roles(ImportAlias),
 		On(HasInternalType(pyast.ClassDef)).Roles(TypeDeclaration).Children(
 			On(HasInternalType("ClassDef.body")).Roles(TypeDeclarationBody),
 			On(HasInternalType("ClassDef.bases")).Roles(TypeDeclarationBases),
 		),
 
-		// FIXME: Internal keys for the ForEach: iter -> ?, target -> ?, body -> ForBody,
-		//
-		//	For => Foreach:
-		//		body => ForBody
-		//		iter => ForIter
-		//		target => ForTarget
-		//		else => IfElse
-		//
 		On(HasInternalType(pyast.For)).Roles(ForEach).Children(
 			On(HasInternalType("For.body")).Roles(ForBody),
 			On(HasInternalRole("iter")).Roles(ForExpression),
@@ -228,7 +273,6 @@ var AnnotationRules = On(Any).Self(
 		// FIXME: this is the annotated assignment (a: annotation = 3) not exactly Assignment
 		// it also lacks AssignmentValue and AssignmentVariable (see how to add them)
 		On(HasInternalType(pyast.AnnAssign)).Roles(Assignment),
-		On(HasInternalType(pyast.AugAssign)).Roles(Assignment),
 		On(HasInternalType(pyast.Assert)).Roles(Assert),
 
 		// These are AST nodes in Python2 but we convert them to functions in the UAST like
@@ -240,7 +284,6 @@ var AnnotationRules = On(Any).Self(
 		),
 		// Repr already comes as a Call \o/
 		// Print as a function too.
-		// FIXME: the UAST generated is missing the name node
 		On(HasInternalType(pyast.Print)).Roles(Call, CallCallee).Children(
 			On(HasInternalRole("dest")).Roles(CallPositionalArgument),
 			On(HasInternalRole("nl")).Roles(CallPositionalArgument),
@@ -261,4 +304,3 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.Ellipsis)).Roles(SimpleIdentifier),
 	),
 )
-
