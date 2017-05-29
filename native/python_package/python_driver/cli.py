@@ -8,7 +8,7 @@ from python_driver.processor_configs import ProcessorConfigs
 from python_driver.requestprocessor import RequestProcessor, InBuffer, OutBuffer
 from typing import Any, Tuple, Optional
 
-logging.basicConfig(filename="python_driver.log", level=logging.ERROR)
+logging.basicConfig(level=logging.ERROR)
 
 
 class RequestInstantiationException(Exception):
