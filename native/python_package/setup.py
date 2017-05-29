@@ -18,12 +18,10 @@ setup(
     version=version,
     description=description,
     long_description=description,
-    license="MIT",
+    license="GPL3",
     test_suite="test",
-    # TODO: change this to the bblfsh directory
-    url="https://github.com/juanjux/python-driver",
-    # download_url = "https://github.com/juanjux/python_driver/archive/%s.tar.gz" % version,
-    download_url="https://github.com/juanjux/python_driver/archive/astcomments_profiling.tar.gz",
+    url="https://github.com/bblfsh/python-driver",
+    download_url="https://github.com/bblfsh/python-driver/archive/master.zip",
     author="Juanjo Alvarez",
     author_email="juanjo@sourced.tech",
     packages=find_packages(exclude=["tests"]),
@@ -34,7 +32,7 @@ setup(
     },
     install_requires=[
         "msgpack-python==0.4.8",
-        "pydetector==0.5.1"
+        "pydetector==0.5.5"
     ],
     classifiers=[
         "Development Status :: 4 - Beta",
@@ -42,7 +40,7 @@ setup(
         "Intended Audience :: Developers",
         "Topic :: Software Development :: Compilers",
         "Topic :: Software Development :: Disassemblers",
-        "License :: OSI Approved :: MIT License",
+        "License :: OSI Approved :: GPL3 License",
         "Operating System :: OS Independent",
         "Programming Language :: Python :: 3.6"
     ]
