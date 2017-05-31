@@ -1,7 +1,7 @@
-FROM python:3.6-alpine
+FROM alpine:3.6
 MAINTAINER source{d}
 
-RUN apk add --no-cache --update python py-pip git
+RUN apk add --no-cache --update python python3 py-pip py2-pip git
 RUN pip3 install six git+https://github.com/juanjux/python-pydetector.git
 RUN pip2 install six git+https://github.com/juanjux/python-pydetector.git
 
