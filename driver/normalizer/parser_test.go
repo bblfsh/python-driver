@@ -1,7 +1,6 @@
 package normalizer
 
 import (
-	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/require"
@@ -16,5 +15,4 @@ func TestNativeToNoder(t *testing.T) {
 	n, err := ToNoder.ToNode(f)
 	require.NoError(err)
 	require.NotNil(n)
-	fmt.Println("NODE", n)
 }
