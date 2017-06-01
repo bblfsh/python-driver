@@ -143,7 +143,6 @@ class Test10ProcessRequestFunc(TestPythonDriverBase):
 
     def _check_reply_dict(self, response: Response, has_errors: bool=False) -> None:
         self.assertIsInstance(response, dict)
-        self.assertEqual(response.get('driver'), 'python23:%s' % __version__)
         status = response.get('status')
 
         if has_errors:
@@ -152,10 +151,10 @@ class Test10ProcessRequestFunc(TestPythonDriverBase):
             self.assertIsInstance(errors, list)
             self.assertGreater(len(errors), 0)
         else:
-            self.assertEqual(response.get('language'), 'python')
+            self.assertEqual(response['metadata']['language'], 'python')
             self.assertEqual(status, 'ok')
             self._check_AST_dict(response)
-            language_version = response.get('language_version', -1)
+            language_version = response['metadata'].get('language_version', -1)
             assert str(language_version) in ('2', '3')
 
     def _check_AST_dict(self, response: Response) -> None:

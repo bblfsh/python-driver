@@ -156,10 +156,12 @@ class RequestProcessor(metaclass=abc.ABCMeta):
             response = Response({
                 'status'           : 'ok',
                 'errors'           : self.errors,
-                'language'         : 'python',
-                'language_version' : version,
-                'driver'           : 'python23:%s' % __version__,
                 'ast'              : ast,
+                'metadata'         : {
+                    'language'         : 'python',
+                    'language_version' : version,
+                    'driver'           : 'python23:%s' % __version__,
+                }
             })
             if filepath:
                 response['filepath'] = filepath
