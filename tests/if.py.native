@@ -9,16 +9,118 @@
                     "ast_type": "If",
                     "body": [
                         {
-                            "ast_type": "Assign",
+                            "ast_type": "Expr",
                             "col_offset": 5,
                             "lineno": 2,
+                            "value": {
+                                "args": [
+                                    {
+                                        "LiteralValue": true,
+                                        "ast_type": "BoolLiteral",
+                                        "col_offset": 11,
+                                        "lineno": 2
+                                    }
+                                ],
+                                "ast_type": "Call",
+                                "col_offset": 5,
+                                "func": {
+                                    "ast_type": "Name",
+                                    "col_offset": 5,
+                                    "ctx": "Load",
+                                    "id": "print",
+                                    "lineno": 2
+                                },
+                                "keywords": [],
+                                "lineno": 2
+                            }
+                        }
+                    ],
+                    "col_offset": 1,
+                    "lineno": 1,
+                    "orelse": [],
+                    "test": {
+                        "LiteralValue": true,
+                        "ast_type": "BoolLiteral",
+                        "col_offset": 4,
+                        "lineno": 1
+                    }
+                },
+                {
+                    "ast_type": "If",
+                    "body": [
+                        {
+                            "ast_type": "Expr",
+                            "col_offset": 5,
+                            "lineno": 5,
+                            "value": {
+                                "args": [
+                                    {
+                                        "LiteralValue": true,
+                                        "ast_type": "BoolLiteral",
+                                        "col_offset": 11,
+                                        "lineno": 5
+                                    }
+                                ],
+                                "ast_type": "Call",
+                                "col_offset": 5,
+                                "func": {
+                                    "ast_type": "Name",
+                                    "col_offset": 5,
+                                    "ctx": "Load",
+                                    "id": "print",
+                                    "lineno": 5
+                                },
+                                "keywords": [],
+                                "lineno": 5
+                            }
+                        }
+                    ],
+                    "col_offset": 1,
+                    "lineno": 4,
+                    "orelse": [],
+                    "test": {
+                        "args": [],
+                        "ast_type": "Call",
+                        "col_offset": 4,
+                        "func": {
+                            "ast_type": "Name",
+                            "col_offset": 4,
+                            "ctx": "Load",
+                            "id": "functionCall",
+                            "lineno": 4,
+                            "noops_previous": {
+                                "ast_type": "PreviousNoops",
+                                "col_offset": 1,
+                                "end_lineno": 3,
+                                "lineno": 3,
+                                "lines": [
+                                    {
+                                        "ast_type": "NoopLine",
+                                        "col_offset": 1,
+                                        "lineno": 3,
+                                        "noop_line": "\n"
+                                    }
+                                ]
+                            }
+                        },
+                        "keywords": [],
+                        "lineno": 4
+                    }
+                },
+                {
+                    "ast_type": "If",
+                    "body": [
+                        {
+                            "ast_type": "Assign",
+                            "col_offset": 5,
+                            "lineno": 8,
                             "targets": [
                                 {
                                     "ast_type": "Name",
                                     "col_offset": 5,
                                     "ctx": "Store",
                                     "id": "a",
-                                    "lineno": 2
+                                    "lineno": 8
                                 }
                             ],
                             "value": {
@@ -26,20 +128,20 @@
                                 "NumType": "float",
                                 "ast_type": "NumLiteral",
                                 "col_offset": 9,
-                                "lineno": 2
+                                "lineno": 8
                             }
                         },
                         {
                             "ast_type": "Assign",
                             "col_offset": 5,
-                            "lineno": 3,
+                            "lineno": 9,
                             "targets": [
                                 {
                                     "ast_type": "Name",
                                     "col_offset": 5,
                                     "ctx": "Store",
                                     "id": "x",
-                                    "lineno": 3
+                                    "lineno": 9
                                 }
                             ],
                             "value": {
@@ -47,12 +149,12 @@
                                 "NumType": "float",
                                 "ast_type": "NumLiteral",
                                 "col_offset": 9,
-                                "lineno": 3
+                                "lineno": 9
                             }
                         }
                     ],
                     "col_offset": 1,
-                    "lineno": 1,
+                    "lineno": 7,
                     "orelse": [
                         {
                             "ast_type": "If",
@@ -60,14 +162,14 @@
                                 {
                                     "ast_type": "Assign",
                                     "col_offset": 5,
-                                    "lineno": 5,
+                                    "lineno": 11,
                                     "targets": [
                                         {
                                             "ast_type": "Name",
                                             "col_offset": 5,
                                             "ctx": "Store",
                                             "id": "c",
-                                            "lineno": 5
+                                            "lineno": 11
                                         }
                                     ],
                                     "value": {
@@ -75,20 +177,20 @@
                                         "NumType": "float",
                                         "ast_type": "NumLiteral",
                                         "col_offset": 9,
-                                        "lineno": 5
+                                        "lineno": 11
                                     }
                                 },
                                 {
                                     "ast_type": "Assign",
                                     "col_offset": 5,
-                                    "lineno": 6,
+                                    "lineno": 12,
                                     "targets": [
                                         {
                                             "ast_type": "Name",
                                             "col_offset": 5,
                                             "ctx": "Store",
                                             "id": "j",
-                                            "lineno": 6
+                                            "lineno": 12
                                         }
                                     ],
                                     "value": {
@@ -96,24 +198,24 @@
                                         "NumType": "float",
                                         "ast_type": "NumLiteral",
                                         "col_offset": 9,
-                                        "lineno": 6
+                                        "lineno": 12
                                     }
                                 }
                             ],
                             "col_offset": 6,
-                            "lineno": 4,
+                            "lineno": 10,
                             "orelse": [
                                 {
                                     "ast_type": "Assign",
                                     "col_offset": 5,
-                                    "lineno": 8,
+                                    "lineno": 14,
                                     "targets": [
                                         {
                                             "ast_type": "Name",
                                             "col_offset": 5,
                                             "ctx": "Store",
                                             "id": "b",
-                                            "lineno": 8
+                                            "lineno": 14
                                         }
                                     ],
                                     "value": {
@@ -121,20 +223,20 @@
                                         "NumType": "float",
                                         "ast_type": "NumLiteral",
                                         "col_offset": 9,
-                                        "lineno": 8
+                                        "lineno": 14
                                     }
                                 },
                                 {
                                     "ast_type": "Assign",
                                     "col_offset": 5,
-                                    "lineno": 9,
+                                    "lineno": 15,
                                     "targets": [
                                         {
                                             "ast_type": "Name",
                                             "col_offset": 5,
                                             "ctx": "Store",
                                             "id": "p",
-                                            "lineno": 9
+                                            "lineno": 15
                                         }
                                     ],
                                     "value": {
@@ -142,7 +244,7 @@
                                         "NumType": "float",
                                         "ast_type": "NumLiteral",
                                         "col_offset": 9,
-                                        "lineno": 9
+                                        "lineno": 15
                                     }
                                 }
                             ],
@@ -155,7 +257,7 @@
                                         "col_offset": 11,
                                         "ctx": "Load",
                                         "id": "c",
-                                        "lineno": 4
+                                        "lineno": 10
                                     }
                                 ],
                                 "left": {
@@ -163,13 +265,13 @@
                                     "col_offset": 6,
                                     "ctx": "Load",
                                     "id": "b",
-                                    "lineno": 4
+                                    "lineno": 10
                                 },
-                                "lineno": 4,
+                                "lineno": 10,
                                 "ops": [
                                     {
                                         "ast_type": "Eq",
-                                        "lineno": 4
+                                        "lineno": 10
                                     }
                                 ]
                             }
@@ -184,7 +286,7 @@
                                 "col_offset": 8,
                                 "ctx": "Load",
                                 "id": "b",
-                                "lineno": 1
+                                "lineno": 7
                             }
                         ],
                         "left": {
@@ -192,13 +294,27 @@
                             "col_offset": 4,
                             "ctx": "Load",
                             "id": "a",
-                            "lineno": 1
+                            "lineno": 7,
+                            "noops_previous": {
+                                "ast_type": "PreviousNoops",
+                                "col_offset": 1,
+                                "end_lineno": 6,
+                                "lineno": 6,
+                                "lines": [
+                                    {
+                                        "ast_type": "NoopLine",
+                                        "col_offset": 1,
+                                        "lineno": 6,
+                                        "noop_line": "\n"
+                                    }
+                                ]
+                            }
                         },
-                        "lineno": 1,
+                        "lineno": 7,
                         "ops": [
                             {
                                 "ast_type": "Gt",
-                                "lineno": 1
+                                "lineno": 7
                             }
                         ]
                     }
@@ -209,11 +325,11 @@
                         {
                             "ast_type": "Pass",
                             "col_offset": 5,
-                            "lineno": 12
+                            "lineno": 18
                         }
                     ],
                     "col_offset": 1,
-                    "lineno": 11,
+                    "lineno": 17,
                     "orelse": [],
                     "test": {
                         "ast_type": "Compare",
@@ -224,21 +340,21 @@
                                 "col_offset": 8,
                                 "ctx": "Load",
                                 "id": "b",
-                                "lineno": 11
+                                "lineno": 17
                             },
                             {
                                 "ast_type": "Name",
                                 "col_offset": 12,
                                 "ctx": "Load",
                                 "id": "c",
-                                "lineno": 11
+                                "lineno": 17
                             },
                             {
                                 "ast_type": "Name",
                                 "col_offset": 16,
                                 "ctx": "Load",
                                 "id": "d",
-                                "lineno": 11
+                                "lineno": 17
                             }
                         ],
                         "left": {
@@ -246,35 +362,35 @@
                             "col_offset": 4,
                             "ctx": "Load",
                             "id": "a",
-                            "lineno": 11,
+                            "lineno": 17,
                             "noops_previous": {
                                 "ast_type": "PreviousNoops",
                                 "col_offset": 1,
-                                "end_lineno": 10,
-                                "lineno": 10,
+                                "end_lineno": 16,
+                                "lineno": 16,
                                 "lines": [
                                     {
                                         "ast_type": "NoopLine",
                                         "col_offset": 1,
-                                        "lineno": 10,
+                                        "lineno": 16,
                                         "noop_line": "\n"
                                     }
                                 ]
                             }
                         },
-                        "lineno": 11,
+                        "lineno": 17,
                         "ops": [
                             {
                                 "ast_type": "Gt",
-                                "lineno": 11
+                                "lineno": 17
                             },
                             {
                                 "ast_type": "Gt",
-                                "lineno": 11
+                                "lineno": 17
                             },
                             {
                                 "ast_type": "Gt",
-                                "lineno": 11
+                                "lineno": 17
                             }
                         ]
                     }

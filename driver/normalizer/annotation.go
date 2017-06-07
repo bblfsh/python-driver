@@ -262,8 +262,9 @@ var AnnotationRules = On(Any).Self(
 		// "If that sounds awkward is because it is" (their words)
 		On(HasInternalType(pyast.If)).Roles(If).Children(
 			On(HasInternalType("If.body")).Roles(IfBody),
+			On(HasInternalRole("test")).Roles(IfCondition),
 			On(HasInternalType("If.orelse")).Roles(IfElse),
-			On(HasInternalType(pyast.Compare)).Roles(IfCondition, BinaryExpression).Children(
+			On(HasInternalType(pyast.Compare)).Roles(BinaryExpression).Children(
 				On(HasInternalType("Compare.ops")).Roles(BinaryExpressionOp),
 				On(HasInternalType("Compare.comparators")).Roles(BinaryExpressionRight),
 				On(HasInternalRole("left")).Roles(BinaryExpressionLeft),
