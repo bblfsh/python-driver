@@ -165,7 +165,7 @@ var AnnotationRules = On(Any).Self(
 		// FIXME: the FunctionDeclarationReceiver is not set for methods; it should be taken from the parent
 		// Type node Token (2 levels up) but the SDK doesn't allow this
 		// TODO: create an issue for the SDK
-		On(HasInternalType(pyast.FunctionDef)).Roles(FunctionDeclaration, FunctionDeclarationName).Children(
+		On(HasInternalType(pyast.FunctionDef)).Roles(FunctionDeclaration, FunctionDeclarationName, SimpleIdentifier).Children(
 			On(HasInternalType("FunctionDef.body")).Roles(FunctionDeclarationBody),
 			// FIXME: change to FunctionDeclarationArgumentS once the PR has been merged
 			On(HasInternalType("arguments")).Roles(FunctionDeclarationArgument).Children(
@@ -194,7 +194,7 @@ var AnnotationRules = On(Any).Self(
 			On(HasInternalRole("func")).Self(On(HasInternalRole("id"))).Roles(CallCallee),
 			On(HasInternalRole("func")).Self(On(HasInternalRole("attr"))).Roles(CallCallee),
 			On(HasInternalRole("func")).Self(On(HasInternalType(pyast.Attribute))).Children(
-				On(HasInternalRole("id")).Roles(CallReceiver),
+				On(HasInternalRole("id")).Roles(CallReceiver, SimpleIdentifier),
 			),
 		),
 
@@ -280,8 +280,8 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.IfExp)).Roles(If),
 		On(HasInternalType(pyast.Import)).Roles(ImportDeclaration),
 		On(HasInternalType(pyast.ImportFrom)).Roles(ImportDeclaration),
-		On(HasInternalType(pyast.Alias)).Roles(ImportAlias),
-		On(HasInternalType(pyast.ClassDef)).Roles(TypeDeclaration).Children(
+		On(HasInternalType(pyast.Alias)).Roles(ImportAlias, SimpleIdentifier),
+		On(HasInternalType(pyast.ClassDef)).Roles(TypeDeclaration, SimpleIdentifier).Children(
 			On(HasInternalType("ClassDef.body")).Roles(TypeDeclarationBody),
 			On(HasInternalType("ClassDef.bases")).Roles(TypeDeclarationBases),
 		),
@@ -313,7 +313,7 @@ var AnnotationRules = On(Any).Self(
 		),
 		// Repr already comes as a Call \o/
 		// Print as a function too.
-		On(HasInternalType(pyast.Print)).Roles(Call, CallCallee).Children(
+		On(HasInternalType(pyast.Print)).Roles(Call, CallCallee, SimpleIdentifier).Children(
 			On(HasInternalRole("dest")).Roles(CallPositionalArgument),
 			On(HasInternalRole("nl")).Roles(CallPositionalArgument),
 			On(HasInternalRole("values")).Roles(CallPositionalArgument).Children(
@@ -346,6 +346,5 @@ var AnnotationRules = On(Any).Self(
 				On(HasInternalRole("left")).Roles(BinaryExpressionLeft),
 			),
 		),
-
 	),
 )
