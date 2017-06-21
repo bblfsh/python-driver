@@ -17,9 +17,7 @@ else:
 sys.path.append('..')
 from python_driver import __version__, get_processor_instance
 from python_driver.requestprocessor import (
-    Request, Response, RequestProcessorJSON,
-    InBuffer, RequestCheckException, EmptyCodeException
-)
+    Request, Response, RequestProcessorJSON, InBuffer, EmptyCodeException)
 
 if TEST_MSGPACK:
     from python_driver.requestprocessor import RequestProcessorMSGPack

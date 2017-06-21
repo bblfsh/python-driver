@@ -22,14 +22,6 @@ RawRequest = NewType('RawRequest', Dict[AnyStr, Any])
 Request    = NewType('Request',    Dict[str, Any])
 Response   = NewType('Response',   Dict[AnyStr, Any])
 
-class RequestCheckException(Exception):
-    """
-    Exception produced while there is an error during the processing
-    of the request. It will cause an error reply to be produced on the
-    output buffer.
-    """
-    pass
-
 class EmptyCodeException(Exception):
     """
     Exception produced when the input code is empty. This should
@@ -75,26 +67,6 @@ class RequestProcessor(metaclass=abc.ABCMeta):
         """
         pass
 
-    def _parse_input_request(self, request: RawRequest) -> Tuple[str, str]:
-        """
-        Check the incoming request package and validate that the 'content' and
-        'language' keys are not missing and that 'language' and 'language_version'
-        are the right ones for this driver. It will also call _preprare_dict
-        to covnvert the request bytestrings to str.
-
-        :param request: The incoming request, already deserialized.
-
-        .. raises::
-            EmptyCodeException if the code was empty.
-        """
-        str_request = self._tostr_request(request)
-        code = asstr(str_request.get('content', ''))
-
-        if not code:
-            raise EmptyCodeException('Bad input message, missing content')
-
-        return code, asstr(str_request.get('filepath', ''))
-
     @abc.abstractmethod
     def _send_response(self, response: Response) -> None:
         """
@@ -118,18 +90,7 @@ class RequestProcessor(metaclass=abc.ABCMeta):
         :param status: error type, 'error' or 'fatal'
         """
 
-        if status == 'fatal':
-            ret_ast = None
-        elif ast:
-            ret_ast = ast
-        else:
-            # Empty modules are still modules
-            ret_ast = {"PY3AST": {
-                    "ast_type"   : "Module",
-                    "lineno"     : 1,
-                    "col_offset" : 1,
-                  }}
-
+        ret_ast = None if status == 'fatal' else ast
         logging.error('Filepath: {}, Errors: {}'.format(filepath, self.errors))
         response = Response({
             'status': status,
@@ -156,24 +117,35 @@ class RequestProcessor(metaclass=abc.ABCMeta):
         self.errors = []
 
         try:
-            code, filepath = self._parse_input_request(request)
+            str_request = self._tostr_request(request)
+            code = asstr(str_request.get('content', ''))
 
-            # We want the code detection to be fast and we prefer Python3 AST so using
-            # the stop_on_ok_ast will avoid running a Python2 subprocess to check the
-            # AST with Python2 if the Python3 version (which is a better AST anyway) worked
-            resdict  = detector.detect(codestr=code, stop_on_ok_ast=True)
-            codeinfo = resdict['<code_string>']
-            version  = codeinfo['version']
+            if code:
+                # We want the code detection to be fast and we prefer Python3 AST so using
+                # the stop_on_ok_ast will avoid running a Python2 subprocess to check the
+                # AST with Python2 if the Python3 version (which is a better AST anyway) worked
+                resdict  = detector.detect(codestr=code, stop_on_ok_ast=True)
+                codeinfo = resdict['<code_string>']
+                version  = codeinfo['version']
 
-            if version in (3, 6) and codeinfo['py3ast']:
-                ast = codeinfo['py3ast']
-            elif version in (1, 2) and codeinfo['py2ast']:
-                ast = codeinfo['py2ast']
+                if version in (3, 6) and codeinfo['py3ast']:
+                    ast = codeinfo['py3ast']
+                elif version in (1, 2) and codeinfo['py2ast']:
+                    ast = codeinfo['py2ast']
+                else:
+                    raise Exception('Could not determine Python version')
+
+                if not ast:
+                    raise Exception('Empty AST generated from non empty code')
             else:
-                raise Exception('Could not determine Python version')
-
-            if not ast:
-                raise Exception('Empty AST generated')
+                # Module with empty code (like __init__.py) return a module-only AST
+                # since this would still have semantic meaning for Python
+                ast = {"PY3AST": {
+                        "ast_type"   : "Module",
+                        "lineno"     : 1,
+                        "col_offset" : 1,
+                       }}
+                version = 3
 
             response = Response({
                 'status'           : 'ok',
@@ -185,6 +157,7 @@ class RequestProcessor(metaclass=abc.ABCMeta):
                     'driver'           : 'python23:%s' % __version__,
                 }
             })
+
             if filepath:
                 response['filepath'] = filepath
 
