@@ -18,7 +18,7 @@ sys.path.append('..')
 from python_driver import __version__, get_processor_instance
 from python_driver.requestprocessor import (
     Request, Response, RequestProcessorJSON,
-    InBuffer, RequestCheckException
+    InBuffer, RequestCheckException, EmptyCodeException
 )
 
 if TEST_MSGPACK:
@@ -251,7 +251,7 @@ class Test20ReqProcMethods(TestPythonDriverBase):
             self._restart_data('json')
             brequest = convert_bytes(self.data, to_bytes=True)
             processor = RequestProcessorMSGPack(self.recvbuffer)
-            res = processor._check_input_request(brequest)
+            res = processor._parse_input_request(brequest)
             self.assertEqual(res[1], 'test.py')
 
         def test_20_check_input_bad(self) -> None:
@@ -259,8 +259,8 @@ class Test20ReqProcMethods(TestPythonDriverBase):
             del self.data['content']
             brequest = convert_bytes(self.data, to_bytes=True)
             processor = RequestProcessorMSGPack(self.recvbuffer)
-            with self.assertRaises(RequestCheckException) as _:  # noqa: F841
-                processor._check_input_request(brequest)
+            with self.assertRaises(EmptyCodeException) as _:  # noqa: F841
+                processor._parse_input_request(brequest)
 
         def test_30_send_response_msgpack(self) -> None:
             self._restart_data('msgpack')
@@ -290,6 +290,7 @@ class Test20ReqProcMethods(TestPythonDriverBase):
         self.assertDictEqual(res[0] , {'driver': 'python23:%s' % __version__,
                                        'errors': ['test error'],
                                        'filepath': 'test.py',
+                                       'ast': None,
                                        'status': 'fatal'})
 
 
