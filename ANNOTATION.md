@@ -47,12 +47,12 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Dict'\]/\*\[@internalRole\]\[@internalRole='keys'\] | MapKey |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Dict'\]/\*\[@internalRole\]\[@internalRole='values'\] | MapValue |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Tuple'\] | TupleLiteral |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef'\] | FunctionDeclaration |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef'\] | FunctionDeclaration, FunctionDeclarationName, SimpleIdentifier |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef'\]/\*\[@InternalType='FunctionDef\.body'\] | FunctionDeclarationBody |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef'\]/\*\[@InternalType='arguments'\] | FunctionDeclarationArgument |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef'\]/\*\[@InternalType='arguments'\]/\*\[@internalRole\]\[@internalRole='args'\] | FunctionDeclarationArgument |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef'\]/\*\[@InternalType='arguments'\]/\*\[@internalRole\]\[@internalRole='vararg'\] | FunctionDeclarationArgument |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef'\]/\*\[@InternalType='arguments'\]/\*\[@internalRole\]\[@internalRole='kwarg'\] | FunctionDeclarationArgument |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef'\]/\*\[@InternalType='arguments'\]/\*\[@internalRole\]\[@internalRole='args'\] | FunctionDeclarationArgument, FunctionDeclarationArgumentName |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef'\]/\*\[@InternalType='arguments'\]/\*\[@internalRole\]\[@internalRole='vararg'\] | FunctionDeclarationArgument, FunctionDeclarationVarArgsList, FunctionDeclarationArgumentName |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef'\]/\*\[@InternalType='arguments'\]/\*\[@internalRole\]\[@internalRole='kwarg'\] | FunctionDeclarationArgument, FunctionDeclarationVarArgsList, FunctionDeclarationArgumentName |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef'\]/\*\[@InternalType='arguments'\]/\*\[@InternalType='arguments\.defaults'\] | FunctionDeclarationArgumentDefaultValue |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Call'\] | Call |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Call'\]/\*\[@internalRole\]\[@internalRole='args'\] | CallPositionalArgument |
@@ -60,7 +60,7 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Call'\]/\*\[@internalRole\]\[@internalRole='keywords'\]/\*\[@internalRole\]\[@internalRole='value'\] | CallNamedArgumentValue |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Call'\]/\*\[@internalRole\]\[@internalRole='func'\] | CallCallee |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Call'\]/\*\[@internalRole\]\[@internalRole='func'\] | CallCallee |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Call'\]/\*\[@internalRole\]\[@internalRole='func'\]/\*\[@internalRole\]\[@internalRole='id'\] | CallReceiver |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Call'\]/\*\[@internalRole\]\[@internalRole='func'\]/\*\[@internalRole\]\[@internalRole='id'\] | CallReceiver, SimpleIdentifier |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Assign'\] | Assignment |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Assign'\]/\*\[@internalRole\]\[@internalRole='targets'\] | AssignmentVariable |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Assign'\]/\*\[@internalRole\]\[@internalRole='value'\] | AssignmentValue |
@@ -99,15 +99,15 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='If'\]/\*\[@InternalType='Compare'\]/\*\[@InternalType='Compare\.ops'\] | BinaryExpressionOp |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='If'\]/\*\[@InternalType='Compare'\]/\*\[@InternalType='Compare\.comparators'\] | BinaryExpressionRight |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='If'\]/\*\[@InternalType='Compare'\]/\*\[@internalRole\]\[@internalRole='left'\] | BinaryExpressionLeft |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='IfExp'\] | If |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='IfExp'\] | If, Expression |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='IfExp'\]/\*\[@internalRole\]\[@internalRole='body'\] | IfBody |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='IfExp'\]/\*\[@internalRole\]\[@internalRole='test'\] | IfCondition |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='IfExp'\]/\*\[@internalRole\]\[@internalRole='orelse'\] | IfElse |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='IfExp'\] | If |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Import'\] | ImportDeclaration |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='ImportFrom'\] | ImportDeclaration |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='alias'\] | ImportAlias |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='ClassDef'\] | TypeDeclaration |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='alias'\] | ImportAlias, SimpleIdentifier |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='ClassDef'\] | TypeDeclaration, SimpleIdentifier |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='ClassDef'\]/\*\[@InternalType='ClassDef\.body'\] | TypeDeclarationBody |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='ClassDef'\]/\*\[@InternalType='ClassDef\.bases'\] | TypeDeclarationBases |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='For'\] | ForEach |
@@ -127,7 +127,7 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Exec'\]/\*\[@internalRole\]\[@internalRole='body'\] | CallPositionalArgument |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Exec'\]/\*\[@internalRole\]\[@internalRole='globals'\] | CallPositionalArgument |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Exec'\]/\*\[@internalRole\]\[@internalRole='locals'\] | CallPositionalArgument |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Print'\] | Call |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Print'\] | Call, CallCallee, SimpleIdentifier |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Print'\]/\*\[@internalRole\]\[@internalRole='dest'\] | CallPositionalArgument |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Print'\]/\*\[@internalRole\]\[@internalRole='nl'\] | CallPositionalArgument |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Print'\]/\*\[@internalRole\]\[@internalRole='values'\] | CallPositionalArgument |
@@ -138,7 +138,7 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='comprehension'\] | ForEach |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='comprehension'\]/\*\[@internalRole\]\[@internalRole='iter'\] | ForUpdate |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='comprehension'\]/\*\[@internalRole\]\[@internalRole='target'\] | ForExpression |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='comprehension'\]/\*\[@InternalType='Compare'\] | IfCondition |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='comprehension'\]/\*\[@InternalType='Compare'\] | IfCondition, BinaryExpression |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='comprehension'\]/\*\[@InternalType='Compare'\]/\*\[@InternalType='Compare\.ops'\] | BinaryExpressionOp |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='comprehension'\]/\*\[@InternalType='Compare'\]/\*\[@InternalType='Compare\.comparators'\] | BinaryExpressionRight |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='comprehension'\]/\*\[@InternalType='Compare'\]/\*\[@internalRole\]\[@internalRole='left'\] | BinaryExpressionLeft |
