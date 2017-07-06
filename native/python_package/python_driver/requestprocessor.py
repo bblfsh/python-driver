@@ -133,7 +133,11 @@ class RequestProcessor(metaclass=abc.ABCMeta):
                 elif version in (1, 2) and codeinfo['py2ast']:
                     ast = codeinfo['py2ast']
                 else:
-                    raise Exception('Could not determine Python version')
+                    raise Exception(
+                        'Errors produced trying to get an AST for both Python versions' +
+                        '\n------ Python2 errors:\n%s' % codeinfo['py2_ast_errors'] +
+                        '\n------ Python3 errors:\n%s' % codeinfo['py3_ast_errors']
+                    )
 
                 if not ast:
                     raise Exception('Empty AST generated from non empty code')
