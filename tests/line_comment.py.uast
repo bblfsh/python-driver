@@ -12,7 +12,7 @@ Module {
 .  .  0: Pass {
 .  .  .  Roles: Noop
 .  .  .  StartPosition: {
-.  .  .  .  Offset: 0
+.  .  .  .  Offset: 31
 .  .  .  .  Line: 3
 .  .  .  .  Col: 1
 .  .  .  }
@@ -50,7 +50,7 @@ Module {
 .  .  .  .  .  .  .  TOKEN "# previous comments
 "
 .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Offset: 11
 .  .  .  .  .  .  .  .  Line: 2
 .  .  .  .  .  .  .  .  Col: 1
 .  .  .  .  .  .  .  }
@@ -64,7 +64,7 @@ Module {
 .  .  .  .  .  Roles: Comment
 .  .  .  .  .  TOKEN "# sameline comment"
 .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Offset: 35
 .  .  .  .  .  .  Line: 3
 .  .  .  .  .  .  Col: 5
 .  .  .  .  .  }
@@ -78,7 +78,7 @@ Module {
 .  .  1: RemainderNoops {
 .  .  .  Roles: Whitespace
 .  .  .  StartPosition: {
-.  .  .  .  Offset: 0
+.  .  .  .  Offset: 55
 .  .  .  .  Line: 4
 .  .  .  .  Col: 1
 .  .  .  }
@@ -92,7 +92,7 @@ Module {
 .  .  .  .  .  TOKEN "
 "
 .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Offset: 55
 .  .  .  .  .  .  Line: 4
 .  .  .  .  .  .  Col: 1
 .  .  .  .  .  }
@@ -105,7 +105,7 @@ Module {
 .  .  .  .  .  TOKEN "# remainder comment and newline
 "
 .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Offset: 56
 .  .  .  .  .  .  Line: 5
 .  .  .  .  .  .  Col: 1
 .  .  .  .  .  }
@@ -118,7 +118,7 @@ Module {
 .  .  .  .  .  TOKEN "# last remainder comment line
 "
 .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Offset: 88
 .  .  .  .  .  .  Line: 6
 .  .  .  .  .  .  Col: 1
 .  .  .  .  .  }

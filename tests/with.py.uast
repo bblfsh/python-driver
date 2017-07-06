@@ -1,5 +1,6 @@
-Status:  ok
+Status:  error
 Errors: 
+ .  line out of bounds: 0 [1, 3]
 UAST: 
 Module {
 .  Roles: File
@@ -28,7 +29,7 @@ Module {
 .  .  .  .  .  .  0: Assign {
 .  .  .  .  .  .  .  Roles: Assignment
 .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Offset: 25
 .  .  .  .  .  .  .  .  Line: 2
 .  .  .  .  .  .  .  .  Col: 5
 .  .  .  .  .  .  .  }
@@ -37,7 +38,7 @@ Module {
 .  .  .  .  .  .  .  .  .  Roles: AssignmentVariable,SimpleIdentifier
 .  .  .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  Offset: 25
 .  .  .  .  .  .  .  .  .  .  Line: 2
 .  .  .  .  .  .  .  .  .  .  Col: 5
 .  .  .  .  .  .  .  .  .  }
@@ -50,7 +51,7 @@ Module {
 .  .  .  .  .  .  .  .  .  Roles: AssignmentValue,SimpleIdentifier
 .  .  .  .  .  .  .  .  .  TOKEN "s"
 .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  Offset: 29
 .  .  .  .  .  .  .  .  .  .  Line: 2
 .  .  .  .  .  .  .  .  .  .  Col: 9
 .  .  .  .  .  .  .  .  .  }
@@ -69,6 +70,11 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: withitem {
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Line: 0
+.  .  .  .  .  .  .  .  Col: 2
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
 .  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier

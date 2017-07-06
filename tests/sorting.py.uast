@@ -12,7 +12,7 @@ Module {
 .  .  0: Expr {
 .  .  .  Roles: Expression
 .  .  .  StartPosition: {
-.  .  .  .  Offset: 0
+.  .  .  .  Offset: 17
 .  .  .  .  Line: 2
 .  .  .  .  Col: 1
 .  .  .  }
@@ -23,7 +23,7 @@ Module {
 .  .  .  .  0: BinOp {
 .  .  .  .  .  Roles: BinaryExpression
 .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Offset: 17
 .  .  .  .  .  .  Line: 2
 .  .  .  .  .  .  Col: 1
 .  .  .  .  .  }
@@ -35,7 +35,7 @@ Module {
 .  .  .  .  .  .  .  Roles: BinaryExpressionLeft,NumberLiteral
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Offset: 17
 .  .  .  .  .  .  .  .  Line: 2
 .  .  .  .  .  .  .  .  Col: 1
 .  .  .  .  .  .  .  }
@@ -75,7 +75,7 @@ Module {
 .  .  .  .  .  .  .  .  .  Roles: Comment
 .  .  .  .  .  .  .  .  .  TOKEN "# linetrailing comment"
 .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  Offset: 20
 .  .  .  .  .  .  .  .  .  .  Line: 2
 .  .  .  .  .  .  .  .  .  .  Col: 4
 .  .  .  .  .  .  .  .  .  }
@@ -90,9 +90,9 @@ Module {
 .  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpAdd
 .  .  .  .  .  .  .  TOKEN "+"
 .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Offset: 17
 .  .  .  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  .  .  Col: 0
+.  .  .  .  .  .  .  .  Col: 1
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: op
@@ -102,7 +102,7 @@ Module {
 .  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Offset: 19
 .  .  .  .  .  .  .  .  Line: 2
 .  .  .  .  .  .  .  .  Col: 3
 .  .  .  .  .  .  .  }
@@ -118,7 +118,7 @@ Module {
 .  .  1: RemainderNoops {
 .  .  .  Roles: Whitespace
 .  .  .  StartPosition: {
-.  .  .  .  Offset: 0
+.  .  .  .  Offset: 44
 .  .  .  .  Line: 3
 .  .  .  .  Col: 1
 .  .  .  }
@@ -132,7 +132,7 @@ Module {
 .  .  .  .  .  TOKEN "# remaining comment
 "
 .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Offset: 44
 .  .  .  .  .  .  Line: 3
 .  .  .  .  .  .  Col: 1
 .  .  .  .  .  }

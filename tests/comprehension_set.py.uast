@@ -1,5 +1,6 @@
-Status:  ok
+Status:  error
 Errors: 
+ .  line out of bounds: 0 [1, 2]
 UAST: 
 Module {
 .  Roles: File
@@ -33,7 +34,7 @@ Module {
 .  .  .  .  .  .  0: BinOp {
 .  .  .  .  .  .  .  Roles: BinaryExpression
 .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Offset: 1
 .  .  .  .  .  .  .  .  Line: 1
 .  .  .  .  .  .  .  .  Col: 2
 .  .  .  .  .  .  .  }
@@ -45,7 +46,7 @@ Module {
 .  .  .  .  .  .  .  .  .  Roles: BinaryExpressionLeft,SimpleIdentifier
 .  .  .  .  .  .  .  .  .  TOKEN "n"
 .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  Offset: 1
 .  .  .  .  .  .  .  .  .  .  Line: 1
 .  .  .  .  .  .  .  .  .  .  Col: 2
 .  .  .  .  .  .  .  .  .  }
@@ -58,9 +59,9 @@ Module {
 .  .  .  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpMultiply
 .  .  .  .  .  .  .  .  .  TOKEN "*"
 .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  Offset: 1
 .  .  .  .  .  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  .  .  .  .  Col: 0
+.  .  .  .  .  .  .  .  .  .  Col: 2
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  internalRole: op
@@ -70,7 +71,7 @@ Module {
 .  .  .  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral
 .  .  .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  Offset: 3
 .  .  .  .  .  .  .  .  .  .  Line: 1
 .  .  .  .  .  .  .  .  .  .  Col: 4
 .  .  .  .  .  .  .  .  .  }
@@ -83,6 +84,11 @@ Module {
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: comprehension {
 .  .  .  .  .  .  .  Roles: ForEach
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Line: 0
+.  .  .  .  .  .  .  .  Col: 2
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: generators
 .  .  .  .  .  .  .  .  is_async: 0
@@ -144,7 +150,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 0
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 2
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  }
