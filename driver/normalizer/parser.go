@@ -75,8 +75,6 @@ var ToNoder = &native.ObjectToNoder{
 	// FIXME: test[ast_type=Compare].comparators is a list?? (should be "right")
 }
 
-// transUASTParserBuilder creates a parser that transform source code files into *uast.Node
-// and calculates the offset from the position
 func transformationParser(opts driver.UASTParserOptions) (tr driver.UASTParser, err error) {
 	parser, err := native.ExecParser(ToNoder, opts.NativeBin)
 	if err != nil {
