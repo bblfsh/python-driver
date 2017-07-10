@@ -1,0 +1,67 @@
+{
+    "status": "ok",
+    "errors": [],
+    "ast": {
+        "PY3AST": {
+            "ast_type": "Module",
+            "body": [
+                {
+                    "ast_type": "Import",
+                    "col_offset": 1,
+                    "lineno": 1,
+                    "names": [
+                        {
+                            "asname": null,
+                            "ast_type": "alias",
+                            "col_offset": 1,
+                            "lineno": 1,
+                            "name": "sys"
+                        }
+                    ]
+                },
+                {
+                    "ast_type": "Expr",
+                    "col_offset": 1,
+                    "lineno": 2,
+                    "value": {
+                        "args": [
+                            {
+                                "LiteralValue": "Hello world!\n",
+                                "ast_type": "StringLiteral",
+                                "col_offset": 18,
+                                "lineno": 2
+                            }
+                        ],
+                        "ast_type": "Call",
+                        "col_offset": 1,
+                        "func": {
+                            "ast_type": "Attribute",
+                            "attr": "write",
+                            "col_offset": 1,
+                            "ctx": "Load",
+                            "lineno": 2,
+                            "value": {
+                                "ast_type": "Attribute",
+                                "attr": "stdout",
+                                "col_offset": 1,
+                                "ctx": "Load",
+                                "lineno": 2,
+                                "value": {
+                                    "ast_type": "Name",
+                                    "col_offset": 1,
+                                    "ctx": "Load",
+                                    "id": "sys",
+                                    "lineno": 2
+                                }
+                            }
+                        },
+                        "keywords": [],
+                        "lineno": 2
+                    }
+                }
+            ],
+            "col_offset": 1,
+            "lineno": 1
+        }
+    }
+}

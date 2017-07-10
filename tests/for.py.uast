@@ -30,7 +30,7 @@ Module {
 .  .  .  .  .  .  .  Roles: AugmentedAssignment
 .  .  .  .  .  .  .  TOKEN "?="
 .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Offset: 22
 .  .  .  .  .  .  .  .  Line: 2
 .  .  .  .  .  .  .  .  Col: 5
 .  .  .  .  .  .  .  }
@@ -39,9 +39,9 @@ Module {
 .  .  .  .  .  .  .  .  .  Roles: OpAdd,AugmentedAssignmentOperator
 .  .  .  .  .  .  .  .  .  TOKEN "+"
 .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  Offset: 22
 .  .  .  .  .  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  .  .  .  .  Col: 0
+.  .  .  .  .  .  .  .  .  .  Col: 5
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  internalRole: op
@@ -51,7 +51,7 @@ Module {
 .  .  .  .  .  .  .  .  .  Roles: AugmentedAssignmentVariable,SimpleIdentifier
 .  .  .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  Offset: 22
 .  .  .  .  .  .  .  .  .  .  Line: 2
 .  .  .  .  .  .  .  .  .  .  Col: 5
 .  .  .  .  .  .  .  .  .  }
@@ -64,7 +64,7 @@ Module {
 .  .  .  .  .  .  .  .  .  Roles: NumberLiteral,AugmentedAssignmentValue
 .  .  .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  Offset: 27
 .  .  .  .  .  .  .  .  .  .  Line: 2
 .  .  .  .  .  .  .  .  .  .  Col: 10
 .  .  .  .  .  .  .  .  .  }
@@ -78,7 +78,7 @@ Module {
 .  .  .  .  .  .  1: Expr {
 .  .  .  .  .  .  .  Roles: Expression
 .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Offset: 33
 .  .  .  .  .  .  .  .  Line: 3
 .  .  .  .  .  .  .  .  Col: 5
 .  .  .  .  .  .  .  }
@@ -86,7 +86,7 @@ Module {
 .  .  .  .  .  .  .  .  0: Call {
 .  .  .  .  .  .  .  .  .  Roles: Call
 .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  Offset: 33
 .  .  .  .  .  .  .  .  .  .  Line: 3
 .  .  .  .  .  .  .  .  .  .  Col: 5
 .  .  .  .  .  .  .  .  .  }
@@ -98,7 +98,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  Roles: CallPositionalArgument,SimpleIdentifier
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "i"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 39
 .  .  .  .  .  .  .  .  .  .  .  .  Line: 3
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 11
 .  .  .  .  .  .  .  .  .  .  .  }
@@ -111,7 +111,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  Roles: CallCallee,CallCallee,SimpleIdentifier
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "print"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 33
 .  .  .  .  .  .  .  .  .  .  .  .  Line: 3
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 5
 .  .  .  .  .  .  .  .  .  .  .  }
@@ -129,7 +129,7 @@ Module {
 .  .  .  .  1: List {
 .  .  .  .  .  Roles: ListLiteral,ForExpression
 .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Offset: 9
 .  .  .  .  .  .  Line: 1
 .  .  .  .  .  .  Col: 10
 .  .  .  .  .  }
@@ -142,7 +142,7 @@ Module {
 .  .  .  .  .  .  .  Roles: NumberLiteral
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Offset: 10
 .  .  .  .  .  .  .  .  Line: 1
 .  .  .  .  .  .  .  .  Col: 11
 .  .  .  .  .  .  .  }
@@ -155,7 +155,7 @@ Module {
 .  .  .  .  .  .  .  Roles: NumberLiteral
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Offset: 12
 .  .  .  .  .  .  .  .  Line: 1
 .  .  .  .  .  .  .  .  Col: 13
 .  .  .  .  .  .  .  }
@@ -168,7 +168,7 @@ Module {
 .  .  .  .  .  .  .  Roles: NumberLiteral
 .  .  .  .  .  .  .  TOKEN "3"
 .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Offset: 14
 .  .  .  .  .  .  .  .  Line: 1
 .  .  .  .  .  .  .  .  Col: 15
 .  .  .  .  .  .  .  }
@@ -183,7 +183,7 @@ Module {
 .  .  .  .  .  Roles: SimpleIdentifier,ForUpdate
 .  .  .  .  .  TOKEN "i"
 .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Offset: 4
 .  .  .  .  .  .  Line: 1
 .  .  .  .  .  .  Col: 5
 .  .  .  .  .  }

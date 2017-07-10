@@ -32,6 +32,11 @@ Module {
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: comprehension {
 .  .  .  .  .  .  .  Roles: ForEach
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 4
+.  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  Col: 5
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: generators
 .  .  .  .  .  .  .  .  is_async: 0
@@ -40,7 +45,7 @@ Module {
 .  .  .  .  .  .  .  .  0: Compare {
 .  .  .  .  .  .  .  .  .  Roles: IfCondition,BinaryExpression
 .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  Offset: 29
 .  .  .  .  .  .  .  .  .  .  Line: 1
 .  .  .  .  .  .  .  .  .  .  Col: 30
 .  .  .  .  .  .  .  .  .  }
@@ -58,7 +63,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: NumberLiteral
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 31
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 1
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 32
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
@@ -72,7 +77,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,BinaryExpressionLeft
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "n"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 29
 .  .  .  .  .  .  .  .  .  .  .  .  Line: 1
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 30
 .  .  .  .  .  .  .  .  .  .  .  }
@@ -91,9 +96,9 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: OpGreaterThan
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN ">"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 29
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 0
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 30
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  }
@@ -104,7 +109,7 @@ Module {
 .  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,ForUpdate
 .  .  .  .  .  .  .  .  .  TOKEN "somelist"
 .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  Offset: 17
 .  .  .  .  .  .  .  .  .  .  Line: 1
 .  .  .  .  .  .  .  .  .  .  Col: 18
 .  .  .  .  .  .  .  .  .  }
@@ -117,7 +122,7 @@ Module {
 .  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,ForExpression
 .  .  .  .  .  .  .  .  .  TOKEN "n"
 .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  Offset: 12
 .  .  .  .  .  .  .  .  .  .  Line: 1
 .  .  .  .  .  .  .  .  .  .  Col: 13
 .  .  .  .  .  .  .  .  .  }
@@ -132,7 +137,7 @@ Module {
 .  .  .  .  .  .  .  Roles: SimpleIdentifier
 .  .  .  .  .  .  .  TOKEN "n"
 .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Offset: 1
 .  .  .  .  .  .  .  .  Line: 1
 .  .  .  .  .  .  .  .  Col: 2
 .  .  .  .  .  .  .  }
@@ -144,7 +149,7 @@ Module {
 .  .  .  .  .  .  2: BinOp {
 .  .  .  .  .  .  .  Roles: BinaryExpression
 .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Offset: 4
 .  .  .  .  .  .  .  .  Line: 1
 .  .  .  .  .  .  .  .  Col: 5
 .  .  .  .  .  .  .  }
@@ -156,7 +161,7 @@ Module {
 .  .  .  .  .  .  .  .  .  Roles: BinaryExpressionLeft,SimpleIdentifier
 .  .  .  .  .  .  .  .  .  TOKEN "n"
 .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  Offset: 4
 .  .  .  .  .  .  .  .  .  .  Line: 1
 .  .  .  .  .  .  .  .  .  .  Col: 5
 .  .  .  .  .  .  .  .  .  }
@@ -169,9 +174,9 @@ Module {
 .  .  .  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpMultiply
 .  .  .  .  .  .  .  .  .  TOKEN "*"
 .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  Offset: 4
 .  .  .  .  .  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  .  .  .  .  Col: 0
+.  .  .  .  .  .  .  .  .  .  Col: 5
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  internalRole: op
@@ -181,7 +186,7 @@ Module {
 .  .  .  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral
 .  .  .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  Offset: 6
 .  .  .  .  .  .  .  .  .  .  Line: 1
 .  .  .  .  .  .  .  .  .  .  Col: 7
 .  .  .  .  .  .  .  .  .  }
