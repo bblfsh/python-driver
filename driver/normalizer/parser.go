@@ -75,22 +75,22 @@ var ToNoder = &native.ObjectToNoder{
 	// FIXME: test[ast_type=Compare].comparators is a list?? (should be "right")
 }
 
-func transformationParser(opts driver.UASTParserOptions) (tr driver.UASTParser, err error) {
+func transformationParser(opts driver.ParserOptions) (tr driver.Parser, err error) {
 	parser, err := native.ExecParser(ToNoder, opts.NativeBin)
 	if err != nil {
 		return tr, err
 	}
 
-	tr = &driver.TransformationUASTParser{
-		UASTParser: parser,
+	tr = &driver.TransformationParser{
+		Parser:         parser,
 		Transformation: driver.FillOffsetFromLineCol,
 	}
 
 	return tr, nil
 }
 
-// UASTParserBuilder creates a parser that transform source code files into *uast.Node.
-func UASTParserBuilder(opts driver.UASTParserOptions) (driver.UASTParser, error) {
+// ParserBuilder creates a parser that transform source code files into *uast.Node.
+func ParserBuilder(opts driver.ParserOptions) (driver.Parser, error) {
 	parser, err := transformationParser(opts)
 	if err != nil {
 		return nil, err
