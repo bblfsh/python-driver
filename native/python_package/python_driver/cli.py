@@ -41,16 +41,7 @@ def get_processor_instance(format_: str, custom_inbuffer: InBuffer=None,
 
 
 def main() -> None:
-    """
-    If you pass the --json command line parameter the replies will be
-    printed using pprint without wrapping them in the msgpack format which
-    can be handy when debugging.
-    """
-
-    if len(sys.argv) > 1 and sys.argv[1] == '--msgpack':
-        format_ = 'msgpack'
-    else:
-        format_ = 'json'
+    format_ = 'json'
 
     processor, inbuffer = get_processor_instance(format_)
     try:

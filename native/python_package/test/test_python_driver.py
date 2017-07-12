@@ -1,55 +1,19 @@
 import io
-import os
-import sys
 import json
-import unittest
+import os
 import subprocess
+import sys
+import unittest
 from os.path import join, abspath, dirname
-
-# msgpack is an optional dependency
-try:
-    import msgpack
-except ImportError:
-    TEST_MSGPACK = False
-else:
-    TEST_MSGPACK = True
 
 sys.path.append('..')
 from python_driver import __version__, get_processor_instance
 from python_driver.requestprocessor import (
     Request, Response, RequestProcessorJSON, InBuffer, EmptyCodeException)
 
-if TEST_MSGPACK:
-    from python_driver.requestprocessor import RequestProcessorMSGPack
 from typing import Dict, Any, List, AnyStr, Optional, Iterator, cast
 
 CURDIR = abspath(dirname(__file__))
-
-
-def convert_bytes(data: Any, to_bytes: bool=False) -> Any:
-    """
-    Both in normal operation and with this tests data comes trough a bytestream so this is needed to
-    recursively convert the msgpack incoming data (the pprint data is converted just decoding and using
-    literal_eval)
-    """
-    if type(data) in (list, tuple):
-        newlist: List[Any] = []
-        for item in data:
-            newlist.append(convert_bytes(item, to_bytes))
-        return newlist
-    elif isinstance(data, dict):
-        newdict: Dict[str, Any] = {}
-        for key, value in data.items():
-            newvalue = convert_bytes(value, to_bytes)
-            newkey = convert_bytes(key, to_bytes)
-            newdict[newkey] = newvalue
-        return newdict
-    elif isinstance(data, bytes) and not to_bytes:
-        return data.decode()
-    elif isinstance(data, str) and to_bytes:
-        return data.encode()
-    return data
-
 
 class TestTypeCheck(unittest.TestCase):
     def test_10_check(self) -> None:
@@ -64,7 +28,7 @@ class TestTypeCheck(unittest.TestCase):
 
 class TestPythonDriverBase(unittest.TestCase):
     def _restart_data(self, format_: str='json') -> None:
-        assert format_ in ('json', 'msgpack')
+        assert format_ == 'json'
 
         with open(join(CURDIR, 'data', 'helloworld.py')) as f:
             testcode = f.read()
@@ -94,27 +58,21 @@ class TestPythonDriverBase(unittest.TestCase):
             yield json.loads(line)
 
     def _loadResults(self, format_: str) -> List[Response]:
-        """Read all msgpacks from the recvbuffer"""
+        """Read all msgs from the recvbuffer"""
         self.recvbuffer.seek(0)
 
         res: List[Response] = []
-        if format_ == 'json':
-            res = [doc for doc in self._extract_docs(self.recvbuffer)]
-        elif TEST_MSGPACK and format_ == 'msgpack':
-            res = [convert_bytes(msg) for msg in msgpack.Unpacker(self.recvbuffer)]
+        res = [doc for doc in self._extract_docs(self.recvbuffer)]
         return res
 
 
 class Test10ProcessRequestFunc(TestPythonDriverBase):
 
     def _add_to_buffer(self, count: int, format_: str) -> None:
-        """Add count test msgpacks to the sendbuffer"""
+        """Add count test msgs to the sendbuffer"""
         for i in range(count):
             msg = ''
-            if TEST_MSGPACK and format_ == 'msgpack':
-                msg = msgpack.dumps(self.data)
-            elif format_ == 'json':
-                msg = json.dumps(self.data, ensure_ascii=False) + '\n'
+            msg = json.dumps(self.data, ensure_ascii=False) + '\n'
             self.sendbuffer.write(msg)
 
         self.sendbuffer.flush()
@@ -176,26 +134,13 @@ class Test10ProcessRequestFunc(TestPythonDriverBase):
         self.assertEqual(len(replies), 1)
         self._check_reply_dict(replies[0])
 
-    if TEST_MSGPACK:
-        def test_020_normal_msgpack(self) -> None:
-            replies = self._send_receive(1, 'msgpack')
-            self.assertEqual(len(replies), 1)
-            self._check_reply_dict(replies[0])
-
-    def test_030_normal_json_many(self) -> None:
+    def test_020_normal_json_many(self) -> None:
         replies = self._send_receive(100, 'json')
         self.assertEqual(len(replies), 100)
         for reply in replies:
             self._check_reply_dict(reply)
 
-    if TEST_MSGPACK:
-        def test_040_normal_msgpack_many(self) -> None:
-            replies = self._send_receive(100, 'msgpack')
-            self.assertEqual(len(replies), 100)
-            for reply in replies:
-                self._check_reply_dict(reply)
-
-    def test_050_error_print(self) -> None:
+    def test_030_error_print(self) -> None:
         wrongcode = 'wtf lol'
 
         replies = self._send_receive(1, 'json', {'content': wrongcode})
@@ -209,31 +154,7 @@ class Test10ProcessRequestFunc(TestPythonDriverBase):
         replies = self._send_receive(1, 'json')
         self.assertEqual(len(replies), 1)
 
-    if TEST_MSGPACK:
-        def test_060_error_msgpack(self) -> None:
-            wrongcode = 'wtf lol'
-
-            replies = self._send_receive(1, 'msgpack', {'content': wrongcode})
-            self.assertEqual(len(replies), 1)
-            ast = replies[0].get('ast')
-            self.assertIsNone(ast)
-            self._check_reply_dict(replies[0], has_errors=True)
-
-            # Check that it still alive
-            self._restart_data()
-            replies = self._send_receive(1, 'json')
-            self.assertEqual(len(replies), 1)
-
-        def test_070_broken_msgpack(self) -> None:
-            self._restart_data('msgpack')
-            brokendata = msgpack.dumps(self.data)[:-30]
-            self.sendbuffer.write(brokendata)
-            self.sendbuffer.flush()
-            reply = self._send_receive(1, 'msgpack', restart_data=False)[0]
-            self.assertEqual(reply['status'], 'fatal')
-            self.assertEqual(len(reply['errors']), 1)
-
-    def test_080_broken_json(self) -> None:
+    def test_040_broken_json(self) -> None:
         self._restart_data('json')
         brokendata = json.dumps(self.data, ensure_ascii=False)[:-30]
         self.sendbuffer.write(brokendata)
@@ -244,31 +165,8 @@ class Test10ProcessRequestFunc(TestPythonDriverBase):
 
 
 class Test20ReqProcMethods(TestPythonDriverBase):
-    if TEST_MSGPACK:
-        def test_10_check_input(self) -> None:
-            self._restart_data('json')
-            brequest = convert_bytes(self.data, to_bytes=True)
-            processor = RequestProcessorMSGPack(self.recvbuffer)
-            res = processor._parse_input_request(brequest)
-            self.assertEqual(res[1], 'test.py')
 
-        def test_20_check_input_bad(self) -> None:
-            self._restart_data('msgpack')
-            del self.data['content']
-            brequest = convert_bytes(self.data, to_bytes=True)
-            processor = RequestProcessorMSGPack(self.recvbuffer)
-            with self.assertRaises(EmptyCodeException) as _:  # noqa: F841
-                processor._parse_input_request(brequest)
-
-        def test_30_send_response_msgpack(self) -> None:
-            self._restart_data('msgpack')
-            processor = RequestProcessorMSGPack(self.recvbuffer)
-            processor._send_response(cast(Response, self.data))
-            res = self._loadResults('msgpack')
-            self.assertEqual(len(res), 1)
-            self.assertDictEqual(self.data, res[0])
-
-    def test_40_send_response_json(self) -> None:
+    def test_10_send_response_json(self) -> None:
         self._restart_data('json')
         processor = RequestProcessorJSON(self.recvbuffer)
         processor._send_response(cast(Response, self.data))
@@ -278,7 +176,7 @@ class Test20ReqProcMethods(TestPythonDriverBase):
 
     # process request already tested with TestPythonDriverBase
 
-    def test_50_return_error(self) -> None:
+    def test_20_return_error(self) -> None:
         self._restart_data('json')
         processor = RequestProcessorJSON(self.recvbuffer)
         processor.errors = ['test error']

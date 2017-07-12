@@ -1,5 +1,5 @@
 import sys
-from python_driver.requestprocessor import RequestProcessorJSON, RequestProcessorMSGPack
+from python_driver.requestprocessor import RequestProcessorJSON
 
 ProcessorConfigs = {
         'json': {
@@ -7,10 +7,4 @@ ProcessorConfigs = {
             'inbuffer': sys.stdin,
             'outbuffer': sys.stdout
         },
-
-        'msgpack': {
-            'class': RequestProcessorMSGPack,
-            'inbuffer': sys.stdin.buffer,
-            'outbuffer': sys.stdout.buffer
-        }
 }
