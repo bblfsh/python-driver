@@ -31,7 +31,6 @@ setup(
         ]
     },
     install_requires=[
-        "msgpack-python==0.4.8",
         "pydetector==0.8.1"
     ],
     classifiers=[
