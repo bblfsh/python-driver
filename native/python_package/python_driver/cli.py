@@ -31,7 +31,7 @@ def get_processor_instance(format_: str, custom_inbuffer: InBuffer=None,
     """
     conf = ProcessorConfigs.get(format_)
     if not conf:
-        raise RequestInstantiationException('No RequestProcessor found for format %s' % format)
+        raise RequestInstantiationException('No RequestProcessor found for format %s' % format_)
 
     inbuffer  = custom_inbuffer if custom_inbuffer else conf['inbuffer']
     outbuffer = custom_outbuffer if custom_outbuffer else conf['outbuffer']
@@ -49,7 +49,7 @@ def main() -> None:
     except UnicodeDecodeError:
         print_exc()
         print('Error while trying to decode the message, are you sure you are not '
-              'using a different input format that the currently configured (%s)?' % format)
+              'using a different input format that the currently configured (%s)?' % format_)
 
 
 if __name__ == '__main__':
