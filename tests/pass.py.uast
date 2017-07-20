@@ -8,6 +8,10 @@ Module {
 .  .  Line: 1
 .  .  Col: 1
 .  }
+.  Properties: {
+.  .  end_col_offset: 12
+.  .  end_lineno: 5
+.  }
 .  Children: {
 .  .  0: Pass {
 .  .  .  Roles: Noop
@@ -30,6 +34,8 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  col_end: 11
+.  .  .  .  .  .  end_col_offset: <nil>
+.  .  .  .  .  .  end_lineno: <nil>
 .  .  .  .  .  .  internalRole: noops_sameline
 .  .  .  .  .  }
 .  .  .  .  }
@@ -44,6 +50,8 @@ Module {
 .  .  .  .  Col: 5
 .  .  .  }
 .  .  .  Properties: {
+.  .  .  .  end_col_offset: 11
+.  .  .  .  end_lineno: 3
 .  .  .  .  internalRole: body
 .  .  .  .  returns: <nil>
 .  .  .  }
@@ -83,6 +91,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  Col: 1
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  end_col_offset: 0
 .  .  .  .  .  .  .  .  .  .  end_lineno: 2
 .  .  .  .  .  .  .  .  .  .  internalRole: noops_previous
 .  .  .  .  .  .  .  .  .  }
@@ -117,6 +126,8 @@ Module {
 .  .  .  .  Col: 5
 .  .  .  }
 .  .  .  Properties: {
+.  .  .  .  end_col_offset: 12
+.  .  .  .  end_lineno: 5
 .  .  .  .  internalRole: body
 .  .  .  .  returns: <nil>
 .  .  .  }
@@ -129,6 +140,8 @@ Module {
 .  .  .  .  .  .  Col: 1
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
+.  .  .  .  .  .  end_col_offset: 11
+.  .  .  .  .  .  end_lineno: 3
 .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  kwarg: <nil>
 .  .  .  .  .  .  vararg: <nil>
@@ -147,6 +160,10 @@ Module {
 .  .  .  .  .  .  .  .  Line: 6
 .  .  .  .  .  .  .  .  Col: 5
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  end_col_offset: 11
+.  .  .  .  .  .  .  .  end_lineno: 3
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: PreviousNoops {
 .  .  .  .  .  .  .  .  .  Roles: Whitespace
@@ -156,6 +173,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  Col: 1
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  end_col_offset: 0
 .  .  .  .  .  .  .  .  .  .  end_lineno: 4
 .  .  .  .  .  .  .  .  .  .  internalRole: noops_previous
 .  .  .  .  .  .  .  .  .  }

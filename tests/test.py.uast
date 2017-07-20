@@ -8,6 +8,10 @@ Module {
 .  .  Line: 1
 .  .  Col: 1
 .  }
+.  Properties: {
+.  .  end_col_offset: 8
+.  .  end_lineno: 1
+.  }
 .  Children: {
 .  .  0: If {
 .  .  .  Roles: If
@@ -17,6 +21,8 @@ Module {
 .  .  .  .  Col: 1
 .  .  .  }
 .  .  .  Properties: {
+.  .  .  .  end_col_offset: 8
+.  .  .  .  end_lineno: 1
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
@@ -33,6 +39,10 @@ Module {
 .  .  .  .  .  .  .  .  Line: 2
 .  .  .  .  .  .  .  .  Col: 5
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  end_col_offset: 8
+.  .  .  .  .  .  .  .  end_lineno: 1
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
@@ -44,6 +54,8 @@ Module {
 .  .  .  .  .  .  Col: 4
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
+.  .  .  .  .  .  end_col_offset: 8
+.  .  .  .  .  .  end_lineno: 1
 .  .  .  .  .  .  internalRole: test
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
@@ -63,6 +75,8 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  NumType: int
+.  .  .  .  .  .  .  .  .  .  end_col_offset: 8
+.  .  .  .  .  .  .  .  .  .  end_lineno: 1
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
@@ -77,6 +91,8 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  NumType: int
+.  .  .  .  .  .  .  .  end_col_offset: 4
+.  .  .  .  .  .  .  .  end_lineno: 1
 .  .  .  .  .  .  .  .  internalRole: left
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
@@ -90,9 +106,13 @@ Module {
 .  .  .  .  .  .  .  .  .  Roles: OpGreaterThan
 .  .  .  .  .  .  .  .  .  TOKEN ">"
 .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 3
+.  .  .  .  .  .  .  .  .  .  Offset: 5
 .  .  .  .  .  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  .  .  .  .  Col: 4
+.  .  .  .  .  .  .  .  .  .  Col: 6
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  end_col_offset: 6
+.  .  .  .  .  .  .  .  .  .  end_lineno: 1
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }

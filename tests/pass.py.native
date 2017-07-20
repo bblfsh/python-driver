@@ -13,6 +13,8 @@
                         "ast_type": "SameLineNoops",
                         "col_end": 11,
                         "col_offset": 5,
+                        "end_col_offset": null,
+                        "end_lineno": null,
                         "lineno": 1,
                         "noop_line": "# easy"
                     }
@@ -38,6 +40,7 @@
                             "noops_previous": {
                                 "ast_type": "PreviousNoops",
                                 "col_offset": 1,
+                                "end_col_offset": 0,
                                 "end_lineno": 2,
                                 "lineno": 2,
                                 "lines": [
@@ -53,6 +56,8 @@
                     ],
                     "col_offset": 5,
                     "decorator_list": [],
+                    "end_col_offset": 11,
+                    "end_lineno": 3,
                     "lineno": 3,
                     "name": "somefun",
                     "returns": null
@@ -63,6 +68,8 @@
                         "ast_type": "arguments",
                         "col_offset": 1,
                         "defaults": [],
+                        "end_col_offset": 11,
+                        "end_lineno": 3,
                         "kw_defaults": [],
                         "kwarg": null,
                         "kwonlyargs": [],
@@ -74,10 +81,13 @@
                         {
                             "ast_type": "Pass",
                             "col_offset": 5,
+                            "end_col_offset": 11,
+                            "end_lineno": 3,
                             "lineno": 6,
                             "noops_previous": {
                                 "ast_type": "PreviousNoops",
                                 "col_offset": 1,
+                                "end_col_offset": 0,
                                 "end_lineno": 4,
                                 "lineno": 4,
                                 "lines": [
@@ -93,12 +103,16 @@
                     ],
                     "col_offset": 5,
                     "decorator_list": [],
+                    "end_col_offset": 12,
+                    "end_lineno": 5,
                     "lineno": 5,
                     "name": "otherfun",
                     "returns": null
                 }
             ],
             "col_offset": 1,
+            "end_col_offset": 12,
+            "end_lineno": 5,
             "lineno": 1
         }
     }
