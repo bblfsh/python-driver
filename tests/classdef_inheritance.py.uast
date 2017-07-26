@@ -1,5 +1,6 @@
-Status:  ok
+Status:  error
 Errors: 
+ .  column out of bounds: 0 [1, 1]
 UAST: 
 Module {
 .  Roles: File
@@ -8,9 +9,10 @@ Module {
 .  .  Line: 1
 .  .  Col: 1
 .  }
-.  Properties: {
-.  .  end_col_offset: 25
-.  .  end_lineno: 4
+.  EndPosition: {
+.  .  Offset: 66
+.  .  Line: 6
+.  .  Col: 1
 .  }
 .  Children: {
 .  .  0: ClassDef {
@@ -21,9 +23,12 @@ Module {
 .  .  .  .  Line: 1
 .  .  .  .  Col: 7
 .  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 15
+.  .  .  .  Line: 1
+.  .  .  .  Col: 16
+.  .  .  }
 .  .  .  Properties: {
-.  .  .  .  end_col_offset: 16
-.  .  .  .  end_lineno: 1
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
@@ -41,10 +46,13 @@ Module {
 .  .  .  .  .  .  .  .  Line: 1
 .  .  .  .  .  .  .  .  Col: 11
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 15
+.  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  Col: 16
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  end_col_offset: 16
-.  .  .  .  .  .  .  .  end_lineno: 1
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }
@@ -62,10 +70,6 @@ Module {
 .  .  .  .  .  .  .  .  Line: 2
 .  .  .  .  .  .  .  .  Col: 5
 .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  end_col_offset: 16
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
@@ -79,9 +83,12 @@ Module {
 .  .  .  .  Line: 4
 .  .  .  .  Col: 7
 .  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 53
+.  .  .  .  Line: 4
+.  .  .  .  Col: 25
+.  .  .  }
 .  .  .  Properties: {
-.  .  .  .  end_col_offset: 25
-.  .  .  .  end_lineno: 4
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
@@ -99,10 +106,13 @@ Module {
 .  .  .  .  .  .  .  .  Line: 4
 .  .  .  .  .  .  .  .  Col: 16
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 48
+.  .  .  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  .  .  Col: 20
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  end_col_offset: 20
-.  .  .  .  .  .  .  .  end_lineno: 4
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: PreviousNoops {
@@ -112,9 +122,12 @@ Module {
 .  .  .  .  .  .  .  .  .  .  Line: 3
 .  .  .  .  .  .  .  .  .  .  Col: 1
 .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  .  .  Col: 0
+.  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 0
-.  .  .  .  .  .  .  .  .  .  end_lineno: 3
 .  .  .  .  .  .  .  .  .  .  internalRole: noops_previous
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
@@ -123,7 +136,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "
 "
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  Offset: 28
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  .  .  .  .  .  .  Line: 3
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 1
 .  .  .  .  .  .  .  .  .  .  .  }
@@ -139,14 +152,17 @@ Module {
 .  .  .  .  .  .  .  Roles: SimpleIdentifier
 .  .  .  .  .  .  .  TOKEN "Dog"
 .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 51
+.  .  .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  .  .  Line: 4
 .  .  .  .  .  .  .  .  Col: 23
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  .  .  Col: 25
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  end_col_offset: 25
-.  .  .  .  .  .  .  .  end_lineno: 4
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }
@@ -160,13 +176,9 @@ Module {
 .  .  .  .  .  .  0: Pass {
 .  .  .  .  .  .  .  Roles: Noop
 .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 61
+.  .  .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  .  .  Line: 5
 .  .  .  .  .  .  .  .  Col: 5
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  end_col_offset: 25
-.  .  .  .  .  .  .  .  end_lineno: 4
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }
@@ -176,13 +188,16 @@ Module {
 .  .  2: RemainderNoops {
 .  .  .  Roles: Whitespace
 .  .  .  StartPosition: {
-.  .  .  .  Offset: 66
+.  .  .  .  Offset: 0
+.  .  .  .  Line: 6
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 0
 .  .  .  .  Line: 6
 .  .  .  .  Col: 1
 .  .  .  }
 .  .  .  Properties: {
-.  .  .  .  end_col_offset: 1
-.  .  .  .  end_lineno: 6
 .  .  .  .  internalRole: noops_remainder
 .  .  .  }
 .  .  .  Children: {
@@ -191,7 +206,7 @@ Module {
 .  .  .  .  .  TOKEN "
 "
 .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 66
+.  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  Line: 6
 .  .  .  .  .  .  Col: 1
 .  .  .  .  .  }

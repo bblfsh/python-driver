@@ -8,7 +8,9 @@ import (
 var ToNoder = &native.ObjectToNoder{
 	InternalTypeKey: "ast_type",
 	LineKey:         "lineno",
+	EndLineKey:      "end_lineno",
 	ColumnKey:       "col_offset",
+	EndColumnKey:    "end_col_offset",
 
 	TokenKeys: map[string]bool{
 		"module": true, // Module on ImportFrom

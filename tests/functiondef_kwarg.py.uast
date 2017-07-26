@@ -1,5 +1,6 @@
-Status:  ok
+Status:  error
 Errors: 
+ .  column out of bounds: 0 [1, 1]
 UAST: 
 Module {
 .  Roles: File
@@ -8,9 +9,10 @@ Module {
 .  .  Line: 1
 .  .  Col: 1
 .  }
-.  Properties: {
-.  .  end_col_offset: 56
-.  .  end_lineno: 4
+.  EndPosition: {
+.  .  Offset: 107
+.  .  Line: 4
+.  .  Col: 56
 .  }
 .  Children: {
 .  .  0: FunctionDef {
@@ -21,9 +23,12 @@ Module {
 .  .  .  .  Line: 1
 .  .  .  .  Col: 5
 .  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 38
+.  .  .  .  Line: 1
+.  .  .  .  Col: 39
+.  .  .  }
 .  .  .  Properties: {
-.  .  .  .  end_col_offset: 39
-.  .  .  .  end_lineno: 1
 .  .  .  .  internalRole: body
 .  .  .  .  returns: <nil>
 .  .  .  }
@@ -35,9 +40,12 @@ Module {
 .  .  .  .  .  .  Line: 1
 .  .  .  .  .  .  Col: 15
 .  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 38
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 39
+.  .  .  .  .  }
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  end_col_offset: 39
-.  .  .  .  .  .  end_lineno: 1
 .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  vararg: <nil>
 .  .  .  .  .  }
@@ -50,10 +58,13 @@ Module {
 .  .  .  .  .  .  .  .  Line: 1
 .  .  .  .  .  .  .  .  Col: 14
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 16
+.  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  Col: 17
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  annotation: <nil>
-.  .  .  .  .  .  .  .  end_col_offset: 17
-.  .  .  .  .  .  .  .  end_lineno: 1
 .  .  .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
@@ -65,10 +76,13 @@ Module {
 .  .  .  .  .  .  .  .  Line: 1
 .  .  .  .  .  .  .  .  Col: 20
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 22
+.  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  Col: 23
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  annotation: <nil>
-.  .  .  .  .  .  .  .  end_col_offset: 23
-.  .  .  .  .  .  .  .  end_lineno: 1
 .  .  .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
@@ -80,10 +94,13 @@ Module {
 .  .  .  .  .  .  .  .  Line: 1
 .  .  .  .  .  .  .  .  Col: 28
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 38
+.  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  Col: 39
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  annotation: <nil>
-.  .  .  .  .  .  .  .  end_col_offset: 39
-.  .  .  .  .  .  .  .  end_lineno: 1
 .  .  .  .  .  .  .  .  internalRole: kwarg
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
@@ -102,10 +119,6 @@ Module {
 .  .  .  .  .  .  .  .  Line: 2
 .  .  .  .  .  .  .  .  Col: 5
 .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  end_col_offset: 39
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
@@ -119,9 +132,12 @@ Module {
 .  .  .  .  Line: 4
 .  .  .  .  Col: 5
 .  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 107
+.  .  .  .  Line: 4
+.  .  .  .  Col: 56
+.  .  .  }
 .  .  .  Properties: {
-.  .  .  .  end_col_offset: 56
-.  .  .  .  end_lineno: 4
 .  .  .  .  internalRole: body
 .  .  .  .  returns: <nil>
 .  .  .  }
@@ -133,9 +149,12 @@ Module {
 .  .  .  .  .  .  Line: 4
 .  .  .  .  .  .  Col: 21
 .  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 107
+.  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  Col: 56
+.  .  .  .  .  }
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  end_col_offset: 56
-.  .  .  .  .  .  end_lineno: 4
 .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
@@ -147,10 +166,13 @@ Module {
 .  .  .  .  .  .  .  .  Line: 4
 .  .  .  .  .  .  .  .  Col: 20
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 74
+.  .  .  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  .  .  Col: 23
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  annotation: <nil>
-.  .  .  .  .  .  .  .  end_col_offset: 23
-.  .  .  .  .  .  .  .  end_lineno: 4
 .  .  .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
@@ -161,9 +183,12 @@ Module {
 .  .  .  .  .  .  .  .  .  .  Line: 3
 .  .  .  .  .  .  .  .  .  .  Col: 1
 .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  .  .  Col: 0
+.  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 0
-.  .  .  .  .  .  .  .  .  .  end_lineno: 3
 .  .  .  .  .  .  .  .  .  .  internalRole: noops_previous
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
@@ -172,7 +197,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "
 "
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  Offset: 51
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  .  .  .  .  .  .  Line: 3
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 1
 .  .  .  .  .  .  .  .  .  .  .  }
@@ -188,14 +213,17 @@ Module {
 .  .  .  .  .  .  .  Roles: FunctionDeclarationArgument,FunctionDeclarationArgumentName
 .  .  .  .  .  .  .  TOKEN "arg2"
 .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 77
+.  .  .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  .  .  Line: 4
 .  .  .  .  .  .  .  .  Col: 26
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  .  .  Col: 29
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  annotation: <nil>
-.  .  .  .  .  .  .  .  end_col_offset: 29
-.  .  .  .  .  .  .  .  end_lineno: 4
 .  .  .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
@@ -203,14 +231,17 @@ Module {
 .  .  .  .  .  .  .  Roles: FunctionDeclarationArgument,FunctionDeclarationVarArgsList,FunctionDeclarationArgumentName
 .  .  .  .  .  .  .  TOKEN "kwparameters2"
 .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 95
+.  .  .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  .  .  Line: 4
 .  .  .  .  .  .  .  .  Col: 44
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  .  .  Col: 56
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  annotation: <nil>
-.  .  .  .  .  .  .  .  end_col_offset: 56
-.  .  .  .  .  .  .  .  end_lineno: 4
 .  .  .  .  .  .  .  .  internalRole: kwarg
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
@@ -218,14 +249,17 @@ Module {
 .  .  .  .  .  .  .  Roles: FunctionDeclarationArgument,FunctionDeclarationVarArgsList,FunctionDeclarationArgumentName
 .  .  .  .  .  .  .  TOKEN "varargs"
 .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 84
+.  .  .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  .  .  Line: 4
 .  .  .  .  .  .  .  .  Col: 33
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  .  .  Col: 39
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  annotation: <nil>
-.  .  .  .  .  .  .  .  end_col_offset: 39
-.  .  .  .  .  .  .  .  end_lineno: 4
 .  .  .  .  .  .  .  .  internalRole: vararg
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
@@ -240,13 +274,9 @@ Module {
 .  .  .  .  .  .  0: Pass {
 .  .  .  .  .  .  .  Roles: Noop
 .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 115
+.  .  .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  .  .  Line: 5
 .  .  .  .  .  .  .  .  Col: 5
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  end_col_offset: 56
-.  .  .  .  .  .  .  .  end_lineno: 4
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }

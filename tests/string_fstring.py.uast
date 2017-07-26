@@ -1,6 +1,6 @@
 Status:  error
 Errors: 
- .  column out of bounds: 11 [1, 7]
+ .  column out of bounds: 0 [1, 1]
 UAST: 
 Module {
 .  Roles: File
@@ -9,9 +9,10 @@ Module {
 .  .  Line: 1
 .  .  Col: 1
 .  }
-.  Properties: {
-.  .  end_col_offset: 54
-.  .  end_lineno: 11
+.  EndPosition: {
+.  .  Offset: 382
+.  .  Line: 12
+.  .  Col: 1
 .  }
 .  Children: {
 .  .  0: Assign {
@@ -21,9 +22,12 @@ Module {
 .  .  .  .  Line: 1
 .  .  .  .  Col: 1
 .  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 5
+.  .  .  .  Line: 1
+.  .  .  .  Col: 6
+.  .  .  }
 .  .  .  Properties: {
-.  .  .  .  end_col_offset: 6
-.  .  .  .  end_lineno: 1
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
@@ -35,10 +39,13 @@ Module {
 .  .  .  .  .  .  Line: 1
 .  .  .  .  .  .  Col: 1
 .  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 1
+.  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  end_lineno: 1
 .  .  .  .  .  .  internalRole: targets
 .  .  .  .  .  }
 .  .  .  .  }
@@ -50,10 +57,13 @@ Module {
 .  .  .  .  .  .  Line: 1
 .  .  .  .  .  .  Col: 5
 .  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 5
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 6
+.  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  NumType: int
-.  .  .  .  .  .  end_col_offset: 6
-.  .  .  .  .  .  end_lineno: 1
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  }
@@ -66,9 +76,12 @@ Module {
 .  .  .  .  Line: 2
 .  .  .  .  Col: 1
 .  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 14
+.  .  .  .  Line: 2
+.  .  .  .  Col: 8
+.  .  .  }
 .  .  .  Properties: {
-.  .  .  .  end_col_offset: 8
-.  .  .  .  end_lineno: 2
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
@@ -80,10 +93,13 @@ Module {
 .  .  .  .  .  .  Line: 2
 .  .  .  .  .  .  Col: 1
 .  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 7
+.  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  Col: 1
+.  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  end_lineno: 2
 .  .  .  .  .  .  internalRole: targets
 .  .  .  .  .  }
 .  .  .  .  }
@@ -95,10 +111,13 @@ Module {
 .  .  .  .  .  .  Line: 2
 .  .  .  .  .  .  Col: 5
 .  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 14
+.  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  Col: 8
+.  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  NumType: float
-.  .  .  .  .  .  end_col_offset: 8
-.  .  .  .  .  .  end_lineno: 2
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  }
@@ -111,9 +130,12 @@ Module {
 .  .  .  .  Line: 3
 .  .  .  .  Col: 1
 .  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 67
+.  .  .  .  Line: 3
+.  .  .  .  Col: 52
+.  .  .  }
 .  .  .  Properties: {
-.  .  .  .  end_col_offset: 52
-.  .  .  .  end_lineno: 3
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
@@ -124,9 +146,12 @@ Module {
 .  .  .  .  .  .  Line: 3
 .  .  .  .  .  .  Col: 1
 .  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 67
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 52
+.  .  .  .  .  }
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  end_col_offset: 52
-.  .  .  .  .  .  end_lineno: 3
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
@@ -138,9 +163,12 @@ Module {
 .  .  .  .  .  .  .  .  Line: 3
 .  .  .  .  .  .  .  .  Col: 3
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 67
+.  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  Col: 52
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  end_col_offset: 52
-.  .  .  .  .  .  .  .  end_lineno: 3
 .  .  .  .  .  .  .  .  internalRole: values
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
@@ -151,10 +179,13 @@ Module {
 .  .  .  .  .  .  .  .  Line: 3
 .  .  .  .  .  .  .  .  Col: 11
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 67
+.  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  Col: 52
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  conversion: -1
-.  .  .  .  .  .  .  .  end_col_offset: 52
-.  .  .  .  .  .  .  .  end_lineno: 3
 .  .  .  .  .  .  .  .  format_spec: <nil>
 .  .  .  .  .  .  .  .  internalRole: values
 .  .  .  .  .  .  .  }
@@ -167,10 +198,13 @@ Module {
 .  .  .  .  .  .  .  .  .  .  Line: 3
 .  .  .  .  .  .  .  .  .  .  Col: 11
 .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 67
+.  .  .  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  .  .  Col: 52
+.  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 52
-.  .  .  .  .  .  .  .  .  .  end_lineno: 3
 .  .  .  .  .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
@@ -184,9 +218,12 @@ Module {
 .  .  .  .  .  .  .  .  Line: 3
 .  .  .  .  .  .  .  .  Col: 33
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 67
+.  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  Col: 52
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  end_col_offset: 52
-.  .  .  .  .  .  .  .  end_lineno: 3
 .  .  .  .  .  .  .  .  internalRole: values
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
@@ -201,9 +238,12 @@ Module {
 .  .  .  .  Line: 4
 .  .  .  .  Col: 1
 .  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 108
+.  .  .  .  Line: 4
+.  .  .  .  Col: 40
+.  .  .  }
 .  .  .  Properties: {
-.  .  .  .  end_col_offset: 40
-.  .  .  .  end_lineno: 4
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
@@ -214,9 +254,12 @@ Module {
 .  .  .  .  .  .  Line: 4
 .  .  .  .  .  .  Col: 1
 .  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 108
+.  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  Col: 40
+.  .  .  .  .  }
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  end_col_offset: 40
-.  .  .  .  .  .  end_lineno: 4
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
@@ -228,9 +271,12 @@ Module {
 .  .  .  .  .  .  .  .  Line: 4
 .  .  .  .  .  .  .  .  Col: 3
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 108
+.  .  .  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  .  .  Col: 40
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  end_col_offset: 40
-.  .  .  .  .  .  .  .  end_lineno: 4
 .  .  .  .  .  .  .  .  internalRole: values
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
@@ -241,10 +287,13 @@ Module {
 .  .  .  .  .  .  .  .  Line: 4
 .  .  .  .  .  .  .  .  Col: 17
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 108
+.  .  .  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  .  .  Col: 40
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  conversion: 115
-.  .  .  .  .  .  .  .  end_col_offset: 40
-.  .  .  .  .  .  .  .  end_lineno: 4
 .  .  .  .  .  .  .  .  format_spec: <nil>
 .  .  .  .  .  .  .  .  internalRole: values
 .  .  .  .  .  .  .  }
@@ -257,10 +306,13 @@ Module {
 .  .  .  .  .  .  .  .  .  .  Line: 4
 .  .  .  .  .  .  .  .  .  .  Col: 17
 .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 108
+.  .  .  .  .  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  .  .  .  .  Col: 40
+.  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 40
-.  .  .  .  .  .  .  .  .  .  end_lineno: 4
 .  .  .  .  .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
@@ -274,9 +326,12 @@ Module {
 .  .  .  .  .  .  .  .  Line: 4
 .  .  .  .  .  .  .  .  Col: 21
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 108
+.  .  .  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  .  .  Col: 40
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  end_col_offset: 40
-.  .  .  .  .  .  .  .  end_lineno: 4
 .  .  .  .  .  .  .  .  internalRole: values
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
@@ -291,9 +346,12 @@ Module {
 .  .  .  .  Line: 5
 .  .  .  .  Col: 1
 .  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 145
+.  .  .  .  Line: 5
+.  .  .  .  Col: 36
+.  .  .  }
 .  .  .  Properties: {
-.  .  .  .  end_col_offset: 36
-.  .  .  .  end_lineno: 5
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
@@ -304,9 +362,12 @@ Module {
 .  .  .  .  .  .  Line: 5
 .  .  .  .  .  .  Col: 1
 .  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 145
+.  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  Col: 36
+.  .  .  .  .  }
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  end_col_offset: 36
-.  .  .  .  .  .  end_lineno: 5
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
@@ -318,9 +379,12 @@ Module {
 .  .  .  .  .  .  .  .  Line: 5
 .  .  .  .  .  .  .  .  Col: 3
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 145
+.  .  .  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  .  .  Col: 36
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  end_col_offset: 36
-.  .  .  .  .  .  .  .  end_lineno: 5
 .  .  .  .  .  .  .  .  internalRole: values
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
@@ -331,10 +395,13 @@ Module {
 .  .  .  .  .  .  .  .  Line: 5
 .  .  .  .  .  .  .  .  Col: 17
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 145
+.  .  .  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  .  .  Col: 36
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  conversion: 114
-.  .  .  .  .  .  .  .  end_col_offset: 36
-.  .  .  .  .  .  .  .  end_lineno: 5
 .  .  .  .  .  .  .  .  format_spec: <nil>
 .  .  .  .  .  .  .  .  internalRole: values
 .  .  .  .  .  .  .  }
@@ -347,10 +414,13 @@ Module {
 .  .  .  .  .  .  .  .  .  .  Line: 5
 .  .  .  .  .  .  .  .  .  .  Col: 17
 .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 145
+.  .  .  .  .  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  .  .  .  .  Col: 36
+.  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 36
-.  .  .  .  .  .  .  .  .  .  end_lineno: 5
 .  .  .  .  .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
@@ -364,9 +434,12 @@ Module {
 .  .  .  .  .  .  .  .  Line: 5
 .  .  .  .  .  .  .  .  Col: 21
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 145
+.  .  .  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  .  .  Col: 36
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  end_col_offset: 36
-.  .  .  .  .  .  .  .  end_lineno: 5
 .  .  .  .  .  .  .  .  internalRole: values
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
@@ -381,9 +454,12 @@ Module {
 .  .  .  .  Line: 6
 .  .  .  .  Col: 1
 .  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 183
+.  .  .  .  Line: 6
+.  .  .  .  Col: 37
+.  .  .  }
 .  .  .  Properties: {
-.  .  .  .  end_col_offset: 37
-.  .  .  .  end_lineno: 6
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
@@ -394,9 +470,12 @@ Module {
 .  .  .  .  .  .  Line: 6
 .  .  .  .  .  .  Col: 1
 .  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 183
+.  .  .  .  .  .  Line: 6
+.  .  .  .  .  .  Col: 37
+.  .  .  .  .  }
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  end_col_offset: 37
-.  .  .  .  .  .  end_lineno: 6
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
@@ -408,9 +487,12 @@ Module {
 .  .  .  .  .  .  .  .  Line: 6
 .  .  .  .  .  .  .  .  Col: 3
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 183
+.  .  .  .  .  .  .  .  Line: 6
+.  .  .  .  .  .  .  .  Col: 37
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  end_col_offset: 37
-.  .  .  .  .  .  .  .  end_lineno: 6
 .  .  .  .  .  .  .  .  internalRole: values
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
@@ -421,10 +503,13 @@ Module {
 .  .  .  .  .  .  .  .  Line: 6
 .  .  .  .  .  .  .  .  Col: 17
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 183
+.  .  .  .  .  .  .  .  Line: 6
+.  .  .  .  .  .  .  .  Col: 37
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  conversion: 97
-.  .  .  .  .  .  .  .  end_col_offset: 37
-.  .  .  .  .  .  .  .  end_lineno: 6
 .  .  .  .  .  .  .  .  format_spec: <nil>
 .  .  .  .  .  .  .  .  internalRole: values
 .  .  .  .  .  .  .  }
@@ -437,10 +522,13 @@ Module {
 .  .  .  .  .  .  .  .  .  .  Line: 6
 .  .  .  .  .  .  .  .  .  .  Col: 17
 .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 183
+.  .  .  .  .  .  .  .  .  .  Line: 6
+.  .  .  .  .  .  .  .  .  .  Col: 37
+.  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 37
-.  .  .  .  .  .  .  .  .  .  end_lineno: 6
 .  .  .  .  .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
@@ -454,9 +542,12 @@ Module {
 .  .  .  .  .  .  .  .  Line: 6
 .  .  .  .  .  .  .  .  Col: 21
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 183
+.  .  .  .  .  .  .  .  Line: 6
+.  .  .  .  .  .  .  .  Col: 37
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  end_col_offset: 37
-.  .  .  .  .  .  .  .  end_lineno: 6
 .  .  .  .  .  .  .  .  internalRole: values
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
@@ -471,9 +562,12 @@ Module {
 .  .  .  .  Line: 7
 .  .  .  .  Col: 1
 .  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 248
+.  .  .  .  Line: 7
+.  .  .  .  Col: 64
+.  .  .  }
 .  .  .  Properties: {
-.  .  .  .  end_col_offset: 64
-.  .  .  .  end_lineno: 7
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
@@ -484,9 +578,12 @@ Module {
 .  .  .  .  .  .  Line: 7
 .  .  .  .  .  .  Col: 1
 .  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 248
+.  .  .  .  .  .  Line: 7
+.  .  .  .  .  .  Col: 64
+.  .  .  .  .  }
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  end_col_offset: 64
-.  .  .  .  .  .  end_lineno: 7
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
@@ -498,9 +595,12 @@ Module {
 .  .  .  .  .  .  .  .  Line: 7
 .  .  .  .  .  .  .  .  Col: 3
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 248
+.  .  .  .  .  .  .  .  Line: 7
+.  .  .  .  .  .  .  .  Col: 64
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  end_col_offset: 64
-.  .  .  .  .  .  .  .  end_lineno: 7
 .  .  .  .  .  .  .  .  internalRole: values
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
@@ -511,10 +611,13 @@ Module {
 .  .  .  .  .  .  .  .  Line: 7
 .  .  .  .  .  .  .  .  Col: 17
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 248
+.  .  .  .  .  .  .  .  Line: 7
+.  .  .  .  .  .  .  .  Col: 64
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  conversion: -1
-.  .  .  .  .  .  .  .  end_col_offset: 64
-.  .  .  .  .  .  .  .  end_lineno: 7
 .  .  .  .  .  .  .  .  internalRole: values
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
@@ -525,9 +628,12 @@ Module {
 .  .  .  .  .  .  .  .  .  .  Line: 7
 .  .  .  .  .  .  .  .  .  .  Col: 1
 .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 248
+.  .  .  .  .  .  .  .  .  .  Line: 7
+.  .  .  .  .  .  .  .  .  .  Col: 64
+.  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 64
-.  .  .  .  .  .  .  .  .  .  end_lineno: 7
 .  .  .  .  .  .  .  .  .  .  internalRole: format_spec
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
@@ -538,10 +644,13 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  Line: 7
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 20
 .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 248
+.  .  .  .  .  .  .  .  .  .  .  .  Line: 7
+.  .  .  .  .  .  .  .  .  .  .  .  Col: 64
+.  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  .  .  conversion: -1
-.  .  .  .  .  .  .  .  .  .  .  .  end_col_offset: 64
-.  .  .  .  .  .  .  .  .  .  .  .  end_lineno: 7
 .  .  .  .  .  .  .  .  .  .  .  .  format_spec: <nil>
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: values
 .  .  .  .  .  .  .  .  .  .  .  }
@@ -554,10 +663,13 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 7
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 20
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 248
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 7
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 64
+.  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  NumType: int
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  end_col_offset: 64
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  end_lineno: 7
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  }
@@ -571,9 +683,12 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  Line: 7
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 22
 .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 248
+.  .  .  .  .  .  .  .  .  .  .  .  Line: 7
+.  .  .  .  .  .  .  .  .  .  .  .  Col: 64
+.  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  end_col_offset: 64
-.  .  .  .  .  .  .  .  .  .  .  .  end_lineno: 7
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: values
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
@@ -584,10 +699,13 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  Line: 7
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 24
 .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 248
+.  .  .  .  .  .  .  .  .  .  .  .  Line: 7
+.  .  .  .  .  .  .  .  .  .  .  .  Col: 64
+.  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  .  .  conversion: -1
-.  .  .  .  .  .  .  .  .  .  .  .  end_col_offset: 64
-.  .  .  .  .  .  .  .  .  .  .  .  end_lineno: 7
 .  .  .  .  .  .  .  .  .  .  .  .  format_spec: <nil>
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: values
 .  .  .  .  .  .  .  .  .  .  .  }
@@ -600,10 +718,13 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 7
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 24
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 248
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 7
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 64
+.  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  NumType: int
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  end_col_offset: 64
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  end_lineno: 7
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  }
@@ -619,10 +740,13 @@ Module {
 .  .  .  .  .  .  .  .  .  .  Line: 7
 .  .  .  .  .  .  .  .  .  .  Col: 17
 .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 248
+.  .  .  .  .  .  .  .  .  .  Line: 7
+.  .  .  .  .  .  .  .  .  .  Col: 64
+.  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 64
-.  .  .  .  .  .  .  .  .  .  end_lineno: 7
 .  .  .  .  .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
@@ -636,9 +760,12 @@ Module {
 .  .  .  .  .  .  .  .  Line: 7
 .  .  .  .  .  .  .  .  Col: 27
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 248
+.  .  .  .  .  .  .  .  Line: 7
+.  .  .  .  .  .  .  .  Col: 64
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  end_col_offset: 64
-.  .  .  .  .  .  .  .  end_lineno: 7
 .  .  .  .  .  .  .  .  internalRole: values
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
@@ -654,9 +781,12 @@ Module {
 .  .  .  .  Line: 9
 .  .  .  .  Col: 5
 .  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 277
+.  .  .  .  Line: 9
+.  .  .  .  Col: 27
+.  .  .  }
 .  .  .  Properties: {
-.  .  .  .  end_col_offset: 27
-.  .  .  .  end_lineno: 9
 .  .  .  .  internalRole: body
 .  .  .  .  returns: <nil>
 .  .  .  }
@@ -668,9 +798,12 @@ Module {
 .  .  .  .  .  .  Line: 9
 .  .  .  .  .  .  Col: 15
 .  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 264
+.  .  .  .  .  .  Line: 9
+.  .  .  .  .  .  Col: 14
+.  .  .  .  .  }
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  end_col_offset: 14
-.  .  .  .  .  .  end_lineno: 9
 .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  kwarg: <nil>
 .  .  .  .  .  .  vararg: <nil>
@@ -684,10 +817,13 @@ Module {
 .  .  .  .  .  .  .  .  Line: 9
 .  .  .  .  .  .  .  .  Col: 14
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 264
+.  .  .  .  .  .  .  .  Line: 9
+.  .  .  .  .  .  .  .  Col: 14
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  annotation: <nil>
-.  .  .  .  .  .  .  .  end_col_offset: 14
-.  .  .  .  .  .  .  .  end_lineno: 9
 .  .  .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
@@ -698,9 +834,12 @@ Module {
 .  .  .  .  .  .  .  .  .  .  Line: 8
 .  .  .  .  .  .  .  .  .  .  Col: 1
 .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  Line: 8
+.  .  .  .  .  .  .  .  .  .  Col: 0
+.  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 0
-.  .  .  .  .  .  .  .  .  .  end_lineno: 8
 .  .  .  .  .  .  .  .  .  .  internalRole: noops_previous
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
@@ -709,7 +848,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "
 "
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  Offset: 250
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  .  .  .  .  .  .  Line: 8
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 1
 .  .  .  .  .  .  .  .  .  .  .  }
@@ -732,25 +871,29 @@ Module {
 .  .  .  .  .  .  0: Return {
 .  .  .  .  .  .  .  Roles: Return
 .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 268
+.  .  .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  .  .  Line: 9
 .  .  .  .  .  .  .  .  Col: 18
 .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  end_col_offset: 27
-.  .  .  .  .  .  .  .  end_lineno: 9
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Line: 9
+.  .  .  .  .  .  .  .  Col: 27
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: BinOp {
 .  .  .  .  .  .  .  .  .  Roles: BinaryExpression
 .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 275
+.  .  .  .  .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  .  .  .  .  Line: 9
 .  .  .  .  .  .  .  .  .  .  Col: 25
 .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  Line: 9
+.  .  .  .  .  .  .  .  .  .  Col: 27
+.  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 27
-.  .  .  .  .  .  .  .  .  .  end_lineno: 9
 .  .  .  .  .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
@@ -758,14 +901,17 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  Roles: BinaryExpressionLeft,SimpleIdentifier
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "i"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  Offset: 275
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  .  .  Line: 9
+.  .  .  .  .  .  .  .  .  .  .  .  Col: 25
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  .  .  .  .  .  .  Line: 9
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 25
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  .  .  end_col_offset: 25
-.  .  .  .  .  .  .  .  .  .  .  .  end_lineno: 9
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: left
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
@@ -773,13 +919,16 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpMultiply
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "*"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  Offset: 276
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  .  .  Line: 9
+.  .  .  .  .  .  .  .  .  .  .  .  Col: 26
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  .  .  .  .  .  .  Line: 9
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 26
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  end_col_offset: 26
-.  .  .  .  .  .  .  .  .  .  .  .  end_lineno: 9
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: op
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
@@ -787,14 +936,17 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  Offset: 277
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  .  .  Line: 9
+.  .  .  .  .  .  .  .  .  .  .  .  Col: 27
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  .  .  .  .  .  .  Line: 9
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 27
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  .  .  NumType: int
-.  .  .  .  .  .  .  .  .  .  .  .  end_col_offset: 27
-.  .  .  .  .  .  .  .  .  .  .  .  end_lineno: 9
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: right
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
@@ -809,26 +961,32 @@ Module {
 .  .  8: Expr {
 .  .  .  Roles: Expression
 .  .  .  StartPosition: {
-.  .  .  .  Offset: 279
+.  .  .  .  Offset: 0
 .  .  .  .  Line: 10
 .  .  .  .  Col: 1
 .  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 0
+.  .  .  .  Line: 10
+.  .  .  .  Col: 47
+.  .  .  }
 .  .  .  Properties: {
-.  .  .  .  end_col_offset: 47
-.  .  .  .  end_lineno: 10
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: JoinedStr {
 .  .  .  .  .  Roles: StringLiteral
 .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 279
+.  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  Line: 10
 .  .  .  .  .  .  Col: 1
 .  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Line: 10
+.  .  .  .  .  .  Col: 47
+.  .  .  .  .  }
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  end_col_offset: 47
-.  .  .  .  .  .  end_lineno: 10
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
@@ -836,27 +994,33 @@ Module {
 .  .  .  .  .  .  .  Roles: StringLiteral
 .  .  .  .  .  .  .  TOKEN "Another with "
 .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 281
+.  .  .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  .  .  Line: 10
 .  .  .  .  .  .  .  .  Col: 3
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Line: 10
+.  .  .  .  .  .  .  .  Col: 47
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  end_col_offset: 47
-.  .  .  .  .  .  .  .  end_lineno: 10
 .  .  .  .  .  .  .  .  internalRole: values
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: FormattedValue {
 .  .  .  .  .  .  .  Roles: Expression
 .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 295
+.  .  .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  .  .  Line: 10
 .  .  .  .  .  .  .  .  Col: 17
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Line: 10
+.  .  .  .  .  .  .  .  Col: 47
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  conversion: -1
-.  .  .  .  .  .  .  .  end_col_offset: 47
-.  .  .  .  .  .  .  .  end_lineno: 10
 .  .  .  .  .  .  .  .  format_spec: <nil>
 .  .  .  .  .  .  .  .  internalRole: values
 .  .  .  .  .  .  .  }
@@ -864,7 +1028,7 @@ Module {
 .  .  .  .  .  .  .  .  0: Call {
 .  .  .  .  .  .  .  .  .  Roles: Call
 .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 295
+.  .  .  .  .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  .  .  .  .  Line: 10
 .  .  .  .  .  .  .  .  .  .  Col: 17
 .  .  .  .  .  .  .  .  .  }
@@ -893,10 +1057,13 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  Line: 10
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 17
 .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  .  .  Line: 10
+.  .  .  .  .  .  .  .  .  .  .  .  Col: 47
+.  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  .  .  end_col_offset: 47
-.  .  .  .  .  .  .  .  .  .  .  .  end_lineno: 10
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: func
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
@@ -912,9 +1079,12 @@ Module {
 .  .  .  .  .  .  .  .  Line: 10
 .  .  .  .  .  .  .  .  Col: 30
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Line: 10
+.  .  .  .  .  .  .  .  Col: 47
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  end_col_offset: 47
-.  .  .  .  .  .  .  .  end_lineno: 10
 .  .  .  .  .  .  .  .  internalRole: values
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
@@ -929,9 +1099,12 @@ Module {
 .  .  .  .  Line: 11
 .  .  .  .  Col: 1
 .  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 0
+.  .  .  .  Line: 11
+.  .  .  .  Col: 54
+.  .  .  }
 .  .  .  Properties: {
-.  .  .  .  end_col_offset: 54
-.  .  .  .  end_lineno: 11
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
@@ -942,9 +1115,12 @@ Module {
 .  .  .  .  .  .  Line: 11
 .  .  .  .  .  .  Col: 1
 .  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Line: 11
+.  .  .  .  .  .  Col: 54
+.  .  .  .  .  }
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  end_col_offset: 54
-.  .  .  .  .  .  end_lineno: 11
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
@@ -956,9 +1132,12 @@ Module {
 .  .  .  .  .  .  .  .  Line: 11
 .  .  .  .  .  .  .  .  Col: 3
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Line: 11
+.  .  .  .  .  .  .  .  Col: 54
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  end_col_offset: 54
-.  .  .  .  .  .  .  .  end_lineno: 11
 .  .  .  .  .  .  .  .  internalRole: values
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
@@ -969,10 +1148,13 @@ Module {
 .  .  .  .  .  .  .  .  Line: 11
 .  .  .  .  .  .  .  .  Col: 23
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Line: 11
+.  .  .  .  .  .  .  .  Col: 54
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  conversion: -1
-.  .  .  .  .  .  .  .  end_col_offset: 54
-.  .  .  .  .  .  .  .  end_lineno: 11
 .  .  .  .  .  .  .  .  format_spec: <nil>
 .  .  .  .  .  .  .  .  internalRole: values
 .  .  .  .  .  .  .  }
@@ -996,10 +1178,13 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  Line: 11
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 23
 .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  .  .  Line: 11
+.  .  .  .  .  .  .  .  .  .  .  .  Col: 54
+.  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  .  .  end_col_offset: 54
-.  .  .  .  .  .  .  .  .  .  .  .  end_lineno: 11
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: func
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
@@ -1011,9 +1196,12 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 11
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 18
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 11
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 54
+.  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  end_col_offset: 54
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  end_lineno: 11
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  }
@@ -1031,9 +1219,12 @@ Module {
 .  .  .  .  .  .  .  .  Line: 11
 .  .  .  .  .  .  .  .  Col: 31
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Line: 11
+.  .  .  .  .  .  .  .  Col: 54
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  end_col_offset: 54
-.  .  .  .  .  .  .  .  end_lineno: 11
 .  .  .  .  .  .  .  .  internalRole: values
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
@@ -1048,9 +1239,12 @@ Module {
 .  .  .  .  Line: 12
 .  .  .  .  Col: 1
 .  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 0
+.  .  .  .  Line: 12
+.  .  .  .  Col: 1
+.  .  .  }
 .  .  .  Properties: {
-.  .  .  .  end_col_offset: 1
-.  .  .  .  end_lineno: 12
 .  .  .  .  internalRole: noops_remainder
 .  .  .  }
 .  .  .  Children: {
