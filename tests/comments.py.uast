@@ -8,6 +8,10 @@ Module {
 .  .  Line: 1
 .  .  Col: 1
 .  }
+.  Properties: {
+.  .  end_col_offset: 5
+.  .  end_lineno: 3
+.  }
 .  Children: {
 .  .  0: Assign {
 .  .  .  Roles: Assignment
@@ -17,6 +21,8 @@ Module {
 .  .  .  .  Col: 1
 .  .  .  }
 .  .  .  Properties: {
+.  .  .  .  end_col_offset: 5
+.  .  .  .  end_lineno: 3
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
@@ -30,6 +36,8 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  ctx: Store
+.  .  .  .  .  .  end_col_offset: 1
+.  .  .  .  .  .  end_lineno: 3
 .  .  .  .  .  .  internalRole: targets
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
@@ -41,6 +49,7 @@ Module {
 .  .  .  .  .  .  .  .  Col: 1
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  end_col_offset: 22
 .  .  .  .  .  .  .  .  end_lineno: 2
 .  .  .  .  .  .  .  .  internalRole: noops_previous
 .  .  .  .  .  .  .  }
@@ -83,6 +92,8 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  col_end: 29
+.  .  .  .  .  .  .  .  end_col_offset: 22
+.  .  .  .  .  .  .  .  end_lineno: 2
 .  .  .  .  .  .  .  .  internalRole: noops_sameline
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
@@ -98,6 +109,8 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  NumType: int
+.  .  .  .  .  .  end_col_offset: 5
+.  .  .  .  .  .  end_lineno: 3
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  }
@@ -111,7 +124,8 @@ Module {
 .  .  .  .  Col: 1
 .  .  .  }
 .  .  .  Properties: {
-.  .  .  .  end_lineno: 6
+.  .  .  .  end_col_offset: 1
+.  .  .  .  end_lineno: 5
 .  .  .  .  internalRole: noops_remainder
 .  .  .  }
 .  .  .  Children: {

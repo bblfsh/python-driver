@@ -11,12 +11,16 @@
                         {
                             "ast_type": "Assign",
                             "col_offset": 5,
+                            "end_col_offset": 9,
+                            "end_lineno": 2,
                             "lineno": 2,
                             "targets": [
                                 {
                                     "ast_type": "Name",
                                     "col_offset": 5,
                                     "ctx": "Store",
+                                    "end_col_offset": 5,
+                                    "end_lineno": 2,
                                     "id": "a",
                                     "lineno": 2
                                 }
@@ -26,6 +30,8 @@
                                 "NumType": "int",
                                 "ast_type": "NumLiteral",
                                 "col_offset": 9,
+                                "end_col_offset": 9,
+                                "end_lineno": 2,
                                 "lineno": 2
                             }
                         },
@@ -33,21 +39,29 @@
                             "ast_type": "Raise",
                             "cause": null,
                             "col_offset": 5,
+                            "end_col_offset": 28,
+                            "end_lineno": 3,
                             "exc": {
                                 "args": [
                                     {
                                         "LiteralValue": "gogogo",
                                         "ast_type": "StringLiteral",
                                         "col_offset": 21,
+                                        "end_col_offset": 28,
+                                        "end_lineno": 3,
                                         "lineno": 3
                                     }
                                 ],
                                 "ast_type": "Call",
                                 "col_offset": 12,
+                                "end_col_offset": 28,
+                                "end_lineno": 3,
                                 "func": {
                                     "ast_type": "Name",
                                     "col_offset": 11,
                                     "ctx": "Load",
+                                    "end_col_offset": 19,
+                                    "end_lineno": 3,
                                     "id": "Exception",
                                     "lineno": 3
                                 },
@@ -58,10 +72,14 @@
                         }
                     ],
                     "col_offset": 1,
+                    "end_col_offset": 23,
+                    "end_lineno": 9,
                     "finalbody": [
                         {
                             "ast_type": "Expr",
                             "col_offset": 5,
+                            "end_col_offset": 23,
+                            "end_lineno": 9,
                             "lineno": 9,
                             "value": {
                                 "args": [
@@ -69,15 +87,21 @@
                                         "LiteralValue": "here we are",
                                         "ast_type": "StringLiteral",
                                         "col_offset": 11,
+                                        "end_col_offset": 23,
+                                        "end_lineno": 9,
                                         "lineno": 9
                                     }
                                 ],
                                 "ast_type": "Call",
                                 "col_offset": 6,
+                                "end_col_offset": 23,
+                                "end_lineno": 9,
                                 "func": {
                                     "ast_type": "Name",
                                     "col_offset": 5,
                                     "ctx": "Load",
+                                    "end_col_offset": 9,
+                                    "end_lineno": 9,
                                     "id": "print",
                                     "lineno": 9
                                 },
@@ -93,6 +117,8 @@
                                 {
                                     "ast_type": "Expr",
                                     "col_offset": 5,
+                                    "end_col_offset": 33,
+                                    "end_lineno": 5,
                                     "lineno": 5,
                                     "value": {
                                         "args": [
@@ -100,15 +126,21 @@
                                                 "LiteralValue": "someexception catched",
                                                 "ast_type": "StringLiteral",
                                                 "col_offset": 11,
+                                                "end_col_offset": 33,
+                                                "end_lineno": 5,
                                                 "lineno": 5
                                             }
                                         ],
                                         "ast_type": "Call",
                                         "col_offset": 6,
+                                        "end_col_offset": 33,
+                                        "end_lineno": 5,
                                         "func": {
                                             "ast_type": "Name",
                                             "col_offset": 5,
                                             "ctx": "Load",
+                                            "end_col_offset": 9,
+                                            "end_lineno": 5,
                                             "id": "print",
                                             "lineno": 5
                                         },
@@ -118,12 +150,16 @@
                                 }
                             ],
                             "col_offset": 25,
+                            "end_col_offset": 33,
+                            "end_lineno": 5,
                             "lineno": 4,
                             "name": "e",
                             "type": {
                                 "ast_type": "Name",
                                 "col_offset": 8,
                                 "ctx": "Load",
+                                "end_col_offset": 20,
+                                "end_lineno": 4,
                                 "id": "SomeException",
                                 "lineno": 4
                             }
@@ -134,6 +170,8 @@
                                 {
                                     "ast_type": "Expr",
                                     "col_offset": 5,
+                                    "end_col_offset": 17,
+                                    "end_lineno": 7,
                                     "lineno": 7,
                                     "value": {
                                         "args": [
@@ -141,15 +179,21 @@
                                                 "LiteralValue": "ayyyy",
                                                 "ast_type": "StringLiteral",
                                                 "col_offset": 11,
+                                                "end_col_offset": 17,
+                                                "end_lineno": 7,
                                                 "lineno": 7
                                             }
                                         ],
                                         "ast_type": "Call",
                                         "col_offset": 6,
+                                        "end_col_offset": 17,
+                                        "end_lineno": 7,
                                         "func": {
                                             "ast_type": "Name",
                                             "col_offset": 5,
                                             "ctx": "Load",
+                                            "end_col_offset": 9,
+                                            "end_lineno": 7,
                                             "id": "print",
                                             "lineno": 7
                                         },
@@ -159,6 +203,8 @@
                                 }
                             ],
                             "col_offset": 1,
+                            "end_col_offset": 17,
+                            "end_lineno": 7,
                             "lineno": 6,
                             "name": null,
                             "type": null
@@ -169,6 +215,8 @@
                 }
             ],
             "col_offset": 1,
+            "end_col_offset": 23,
+            "end_lineno": 9,
             "lineno": 1
         }
     }

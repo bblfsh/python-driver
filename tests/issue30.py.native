@@ -8,12 +8,16 @@
                 {
                     "ast_type": "Import",
                     "col_offset": 1,
+                    "end_col_offset": 10,
+                    "end_lineno": 1,
                     "lineno": 1,
                     "names": [
                         {
                             "asname": null,
                             "ast_type": "alias",
                             "col_offset": 8,
+                            "end_col_offset": 10,
+                            "end_lineno": 1,
                             "lineno": 1,
                             "name": "sys"
                         }
@@ -22,6 +26,8 @@
                 {
                     "ast_type": "Expr",
                     "col_offset": 1,
+                    "end_col_offset": 33,
+                    "end_lineno": 2,
                     "lineno": 2,
                     "value": {
                         "args": [
@@ -29,27 +35,37 @@
                                 "LiteralValue": "Hello world!\n",
                                 "ast_type": "StringLiteral",
                                 "col_offset": 18,
+                                "end_col_offset": 33,
+                                "end_lineno": 2,
                                 "lineno": 2
                             }
                         ],
                         "ast_type": "Call",
                         "col_offset": 13,
+                        "end_col_offset": 33,
+                        "end_lineno": 2,
                         "func": {
                             "ast_type": "Attribute",
                             "attr": "write",
                             "col_offset": 12,
                             "ctx": "Load",
+                            "end_col_offset": 16,
+                            "end_lineno": 2,
                             "lineno": 2,
                             "value": {
                                 "ast_type": "Attribute",
                                 "attr": "stdout",
                                 "col_offset": 5,
                                 "ctx": "Load",
+                                "end_col_offset": 10,
+                                "end_lineno": 2,
                                 "lineno": 2,
                                 "value": {
                                     "ast_type": "Name",
                                     "col_offset": 1,
                                     "ctx": "Load",
+                                    "end_col_offset": 3,
+                                    "end_lineno": 2,
                                     "id": "sys",
                                     "lineno": 2
                                 }
@@ -61,6 +77,8 @@
                 }
             ],
             "col_offset": 1,
+            "end_col_offset": 33,
+            "end_lineno": 2,
             "lineno": 1
         }
     }
