@@ -14,7 +14,7 @@ Module {
 .  }
 .  Children: {
 .  .  0: AugAssign {
-.  .  .  Roles: AugmentedAssignment
+.  .  .  Roles: AugmentedAssignment,Statement
 .  .  .  TOKEN "?="
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 2
@@ -42,7 +42,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Name {
-.  .  .  .  .  Roles: AugmentedAssignmentVariable,SimpleIdentifier
+.  .  .  .  .  Roles: AugmentedAssignmentVariable,SimpleIdentifier,Expression
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
@@ -57,7 +57,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  2: NumLiteral {
-.  .  .  .  .  Roles: NumberLiteral,AugmentedAssignmentValue
+.  .  .  .  .  Roles: NumberLiteral,Expression,AugmentedAssignmentValue
 .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 5
@@ -74,7 +74,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  1: AugAssign {
-.  .  .  Roles: AugmentedAssignment
+.  .  .  Roles: AugmentedAssignment,Statement
 .  .  .  TOKEN "?="
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 7
@@ -102,7 +102,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Name {
-.  .  .  .  .  Roles: AugmentedAssignmentVariable,SimpleIdentifier
+.  .  .  .  .  Roles: AugmentedAssignmentVariable,SimpleIdentifier,Expression
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 7
@@ -117,7 +117,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  2: NumLiteral {
-.  .  .  .  .  Roles: NumberLiteral,AugmentedAssignmentValue
+.  .  .  .  .  Roles: NumberLiteral,Expression,AugmentedAssignmentValue
 .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 12
@@ -134,7 +134,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  2: AugAssign {
-.  .  .  Roles: AugmentedAssignment
+.  .  .  Roles: AugmentedAssignment,Statement
 .  .  .  TOKEN "?="
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 14
@@ -162,7 +162,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Name {
-.  .  .  .  .  Roles: AugmentedAssignmentVariable,SimpleIdentifier
+.  .  .  .  .  Roles: AugmentedAssignmentVariable,SimpleIdentifier,Expression
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 14
@@ -177,7 +177,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  2: NumLiteral {
-.  .  .  .  .  Roles: NumberLiteral,AugmentedAssignmentValue
+.  .  .  .  .  Roles: NumberLiteral,Expression,AugmentedAssignmentValue
 .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 19
@@ -194,7 +194,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  3: AugAssign {
-.  .  .  Roles: AugmentedAssignment
+.  .  .  Roles: AugmentedAssignment,Statement
 .  .  .  TOKEN "?="
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 21
@@ -222,7 +222,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Name {
-.  .  .  .  .  Roles: AugmentedAssignmentVariable,SimpleIdentifier
+.  .  .  .  .  Roles: AugmentedAssignmentVariable,SimpleIdentifier,Expression
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 21
@@ -237,7 +237,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  2: NumLiteral {
-.  .  .  .  .  Roles: NumberLiteral,AugmentedAssignmentValue
+.  .  .  .  .  Roles: NumberLiteral,Expression,AugmentedAssignmentValue
 .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 26

@@ -14,7 +14,7 @@ Module {
 .  }
 .  Children: {
 .  .  0: For {
-.  .  .  Roles: ForEach
+.  .  .  Roles: ForEach,Statement
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
 .  .  .  .  Line: 1
@@ -33,7 +33,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: AugAssign {
-.  .  .  .  .  .  .  Roles: AugmentedAssignment
+.  .  .  .  .  .  .  Roles: AugmentedAssignment,Statement
 .  .  .  .  .  .  .  TOKEN "?="
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 24
@@ -60,7 +60,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  Roles: AugmentedAssignmentVariable,SimpleIdentifier
+.  .  .  .  .  .  .  .  .  Roles: AugmentedAssignmentVariable,SimpleIdentifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 22
@@ -75,7 +75,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  2: NumLiteral {
-.  .  .  .  .  .  .  .  .  Roles: NumberLiteral,AugmentedAssignmentValue
+.  .  .  .  .  .  .  .  .  Roles: NumberLiteral,Expression,AugmentedAssignmentValue
 .  .  .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 27
@@ -104,7 +104,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Call {
-.  .  .  .  .  .  .  .  .  Roles: Call
+.  .  .  .  .  .  .  .  .  Roles: Call,Expression
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 34
 .  .  .  .  .  .  .  .  .  .  Line: 3
@@ -117,7 +117,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  .  .  Roles: CallPositionalArgument,SimpleIdentifier
+.  .  .  .  .  .  .  .  .  .  .  Roles: CallPositionalArgument,SimpleIdentifier,Expression
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "i"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 39
@@ -132,7 +132,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  .  .  Roles: CallCallee,CallCallee,SimpleIdentifier
+.  .  .  .  .  .  .  .  .  .  .  Roles: CallCallee,CallCallee,SimpleIdentifier,Expression
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "print"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 33
@@ -153,7 +153,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: List {
-.  .  .  .  .  Roles: ListLiteral,ForExpression
+.  .  .  .  .  Roles: ListLiteral,Expression,ForExpression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 9
 .  .  .  .  .  .  Line: 1
@@ -167,7 +167,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: NumLiteral {
-.  .  .  .  .  .  .  Roles: NumberLiteral
+.  .  .  .  .  .  .  Roles: NumberLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 10
@@ -182,7 +182,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: NumLiteral {
-.  .  .  .  .  .  .  Roles: NumberLiteral
+.  .  .  .  .  .  .  Roles: NumberLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 12
@@ -197,7 +197,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: NumLiteral {
-.  .  .  .  .  .  .  Roles: NumberLiteral
+.  .  .  .  .  .  .  Roles: NumberLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "3"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 14
@@ -214,7 +214,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  2: Name {
-.  .  .  .  .  Roles: SimpleIdentifier,ForUpdate
+.  .  .  .  .  Roles: SimpleIdentifier,Expression,ForUpdate
 .  .  .  .  .  TOKEN "i"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 4

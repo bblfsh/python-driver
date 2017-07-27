@@ -14,7 +14,7 @@ Module {
 .  }
 .  Children: {
 .  .  0: Assert {
-.  .  .  Roles: Assert
+.  .  .  Roles: Assert,Statement
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
 .  .  .  .  Line: 1
@@ -28,7 +28,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BoolLiteral {
-.  .  .  .  .  Roles: BooleanLiteral
+.  .  .  .  .  Roles: BooleanLiteral,Expression
 .  .  .  .  .  TOKEN "true"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 7
@@ -44,7 +44,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  1: Assert {
-.  .  .  Roles: Assert
+.  .  .  Roles: Assert,Statement
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 13
 .  .  .  .  Line: 2
@@ -58,7 +58,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BoolLiteral {
-.  .  .  .  .  Roles: BooleanLiteral
+.  .  .  .  .  Roles: BooleanLiteral,Expression
 .  .  .  .  .  TOKEN "true"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 20
@@ -74,7 +74,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  2: Assert {
-.  .  .  Roles: Assert
+.  .  .  Roles: Assert,Statement
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 25
 .  .  .  .  Line: 3
@@ -87,7 +87,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: StringLiteral {
-.  .  .  .  .  Roles: StringLiteral
+.  .  .  .  .  Roles: StringLiteral,Expression
 .  .  .  .  .  TOKEN "assert message"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 38
@@ -101,7 +101,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: BoolLiteral {
-.  .  .  .  .  Roles: BooleanLiteral
+.  .  .  .  .  Roles: BooleanLiteral,Expression
 .  .  .  .  .  TOKEN "true"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 32

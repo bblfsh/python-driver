@@ -60,7 +60,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: StringLiteral {
-.  .  .  .  .  .  .  .  .  Roles: StringLiteral
+.  .  .  .  .  .  .  .  .  Roles: StringLiteral,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "
     And this is the docstring
     "
@@ -78,7 +78,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Pass {
-.  .  .  .  .  .  .  Roles: Noop
+.  .  .  .  .  .  .  Roles: Noop,Statement
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 66
 .  .  .  .  .  .  .  .  Line: 5
@@ -90,7 +90,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Return {
-.  .  .  .  .  .  .  Roles: Return
+.  .  .  .  .  .  .  Roles: Return,Statement
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 75
 .  .  .  .  .  .  .  .  Line: 6

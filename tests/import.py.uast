@@ -14,7 +14,7 @@ Module {
 .  }
 .  Children: {
 .  .  0: Import {
-.  .  .  Roles: ImportDeclaration
+.  .  .  Roles: ImportDeclaration,Statement
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
 .  .  .  .  Line: 1
@@ -50,7 +50,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  1: Import {
-.  .  .  Roles: ImportDeclaration
+.  .  .  Roles: ImportDeclaration,Statement
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 11
 .  .  .  .  Line: 2
@@ -100,7 +100,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  2: ImportFrom {
-.  .  .  Roles: ImportDeclaration
+.  .  .  Roles: ImportDeclaration,Statement
 .  .  .  TOKEN "os"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 31
@@ -138,7 +138,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  3: ImportFrom {
-.  .  .  Roles: ImportDeclaration
+.  .  .  Roles: ImportDeclaration,Statement
 .  .  .  TOKEN "os.path"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 46
