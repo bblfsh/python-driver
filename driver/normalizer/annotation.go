@@ -270,7 +270,7 @@ var AnnotationRules = On(Any).Self(
 				On(HasInternalRole("left")).Roles(BinaryExpressionLeft),
 			),
 		),
-		On(HasInternalType(pyast.IfExp)).Roles(If, Expression, Statement).Children(
+		On(HasInternalType(pyast.IfExp)).Roles(If, Expression).Children(
 			// These are used on ifexpressions (a = 1 if x else 2)
 			On(HasInternalRole("body")).Roles(IfBody),
 			On(HasInternalRole("test")).Roles(IfCondition),

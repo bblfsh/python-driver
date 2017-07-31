@@ -99,7 +99,7 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='If'\]/\*\[@InternalType='Compare'\]/\*\[@InternalType='Compare\.ops'\] | BinaryExpressionOp |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='If'\]/\*\[@InternalType='Compare'\]/\*\[@InternalType='Compare\.comparators'\] | BinaryExpressionRight |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='If'\]/\*\[@InternalType='Compare'\]/\*\[@internalRole\]\[@internalRole='left'\] | BinaryExpressionLeft |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='IfExp'\] | If, Expression, Statement |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='IfExp'\] | If, Expression |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='IfExp'\]/\*\[@internalRole\]\[@internalRole='body'\] | IfBody |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='IfExp'\]/\*\[@internalRole\]\[@internalRole='test'\] | IfCondition |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='IfExp'\]/\*\[@internalRole\]\[@internalRole='orelse'\] | IfElse |
