@@ -15,7 +15,7 @@ Module {
 .  }
 .  Children: {
 .  .  0: Import {
-.  .  .  Roles: ImportDeclaration
+.  .  .  Roles: ImportDeclaration,Statement
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
 .  .  .  .  Line: 1
@@ -73,7 +73,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Call {
-.  .  .  .  .  Roles: Call
+.  .  .  .  .  Roles: Call,Expression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 23
 .  .  .  .  .  .  Line: 2
@@ -89,7 +89,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: StringLiteral {
-.  .  .  .  .  .  .  Roles: StringLiteral,CallPositionalArgument
+.  .  .  .  .  .  .  Roles: StringLiteral,Expression,CallPositionalArgument
 .  .  .  .  .  .  .  TOKEN "Hello world!
 "
 .  .  .  .  .  .  .  StartPosition: {
@@ -107,7 +107,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Attribute {
-.  .  .  .  .  .  .  Roles: CallCallee,CallCallee,QualifiedIdentifier
+.  .  .  .  .  .  .  Roles: CallCallee,CallCallee,QualifiedIdentifier,Expression
 .  .  .  .  .  .  .  TOKEN "write"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 22
@@ -125,7 +125,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Attribute {
-.  .  .  .  .  .  .  .  .  Roles: QualifiedIdentifier
+.  .  .  .  .  .  .  .  .  Roles: QualifiedIdentifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "stdout"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 15
@@ -143,7 +143,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier
+.  .  .  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "sys"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 11

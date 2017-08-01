@@ -67,7 +67,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Comment
+.  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression,Comment
 .  .  .  .  .  .  .  .  .  TOKEN "int"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 19
@@ -104,7 +104,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Comment
+.  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression,Comment
 .  .  .  .  .  .  .  .  .  TOKEN "str"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 30
@@ -141,7 +141,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Comment
+.  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression,Comment
 .  .  .  .  .  .  .  .  .  TOKEN "MyType"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 41
@@ -169,7 +169,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Pass {
-.  .  .  .  .  .  .  Roles: Noop
+.  .  .  .  .  .  .  Roles: Noop,Statement
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 63
 .  .  .  .  .  .  .  .  Line: 2
@@ -179,7 +179,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  2: Name {
-.  .  .  .  .  Roles: SimpleIdentifier,Comment
+.  .  .  .  .  Roles: SimpleIdentifier,Expression,Comment
 .  .  .  .  .  TOKEN "Tuple"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 52

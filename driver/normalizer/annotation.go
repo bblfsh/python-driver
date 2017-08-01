@@ -95,7 +95,7 @@ var AnnotationRules = On(Any).Self(
 	On(Not(HasInternalType(pyast.Module))).Error(errors.New("root must be Module")),
 	On(HasInternalType(pyast.Module)).Roles(File).Descendants(
 		// Binary Expressions
-		On(HasInternalType(pyast.BinOp)).Roles(BinaryExpression).Children(
+		On(HasInternalType(pyast.BinOp)).Roles(BinaryExpression, Expression).Children(
 			On(HasInternalRole("op")).Roles(BinaryExpressionOp),
 			On(HasInternalRole("left")).Roles(BinaryExpressionLeft),
 			On(HasInternalRole("right")).Roles(BinaryExpressionRight),
@@ -143,23 +143,23 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.UAdd)).Roles(OpPositive),
 		On(HasInternalType(pyast.USub)).Roles(OpNegative),
 
-		On(HasInternalType(pyast.StringLiteral)).Roles(StringLiteral),
-		On(HasInternalType(pyast.ByteLiteral)).Roles(ByteStringLiteral),
-		On(HasInternalType(pyast.NumLiteral)).Roles(NumberLiteral),
-		On(HasInternalType(pyast.Str)).Roles(StringLiteral),
-		On(HasInternalType(pyast.BoolLiteral)).Roles(BooleanLiteral),
-		On(HasInternalType(pyast.JoinedStr)).Roles(StringLiteral).Children(
+		On(HasInternalType(pyast.StringLiteral)).Roles(StringLiteral, Expression),
+		On(HasInternalType(pyast.ByteLiteral)).Roles(ByteStringLiteral, Expression),
+		On(HasInternalType(pyast.NumLiteral)).Roles(NumberLiteral, Expression),
+		On(HasInternalType(pyast.Str)).Roles(StringLiteral, Expression),
+		On(HasInternalType(pyast.BoolLiteral)).Roles(BooleanLiteral, Expression),
+		On(HasInternalType(pyast.JoinedStr)).Roles(StringLiteral, Expression).Children(
 			// FIXME: should be StringInterpolatedExpression or something like that
 			On(HasInternalType(pyast.FormattedValue)).Roles(Expression),
 		),
-		On(HasInternalType(pyast.NoneLiteral)).Roles(NullLiteral),
-		On(HasInternalType(pyast.Set)).Roles(SetLiteral),
-		On(HasInternalType(pyast.List)).Roles(ListLiteral),
-		On(HasInternalType(pyast.Dict)).Roles(MapLiteral).Children(
+		On(HasInternalType(pyast.NoneLiteral)).Roles(NullLiteral, Expression),
+		On(HasInternalType(pyast.Set)).Roles(SetLiteral, Expression),
+		On(HasInternalType(pyast.List)).Roles(ListLiteral, Expression),
+		On(HasInternalType(pyast.Dict)).Roles(MapLiteral, Expression).Children(
 			On(HasInternalRole("keys")).Roles(MapKey),
 			On(HasInternalRole("values")).Roles(MapValue),
 		),
-		On(HasInternalType(pyast.Tuple)).Roles(TupleLiteral),
+		On(HasInternalType(pyast.Tuple)).Roles(TupleLiteral, Expression),
 
 		// FIXME: decorators
 		// FIXME: the FunctionDeclarationReceiver is not set for methods; it should be taken from the parent
@@ -186,7 +186,7 @@ var AnnotationRules = On(Any).Self(
 			),
 		),
 
-		On(HasInternalType(pyast.Call)).Roles(Call).Children(
+		On(HasInternalType(pyast.Call)).Roles(Call, Expression).Children(
 			On(HasInternalRole("args")).Roles(CallPositionalArgument),
 			On(HasInternalRole("keywords")).Roles(CallNamedArgument).Children(
 				On(HasInternalRole("value")).Roles(CallNamedArgumentValue),
@@ -203,12 +203,12 @@ var AnnotationRules = On(Any).Self(
 		//		targets[] => AssignmentVariable
 		//		value	  => AssignmentValue
 		//
-		On(HasInternalType(pyast.Assign)).Roles(Assignment).Children(
+		On(HasInternalType(pyast.Assign)).Roles(Assignment, Statement).Children(
 			On(HasInternalRole("targets")).Roles(AssignmentVariable),
 			On(HasInternalRole("value")).Roles(AssignmentValue),
 		),
 
-		On(HasInternalType(pyast.AugAssign)).Roles(AugmentedAssignment).Children(
+		On(HasInternalType(pyast.AugAssign)).Roles(AugmentedAssignment, Statement).Children(
 			On(HasInternalRole("op")).Roles(AugmentedAssignmentOperator),
 			On(HasInternalRole("target")).Roles(AugmentedAssignmentVariable),
 			On(HasInternalRole("value")).Roles(AugmentedAssignmentValue),
@@ -216,8 +216,8 @@ var AnnotationRules = On(Any).Self(
 
 		On(HasInternalType(pyast.Expression)).Roles(Expression),
 		On(HasInternalType(pyast.Expr)).Roles(Expression),
-		On(HasInternalType(pyast.Name)).Roles(SimpleIdentifier),
-		On(HasInternalType(pyast.Attribute)).Roles(QualifiedIdentifier),
+		On(HasInternalType(pyast.Name)).Roles(SimpleIdentifier, Expression),
+		On(HasInternalType(pyast.Attribute)).Roles(QualifiedIdentifier, Expression),
 
 		// Comments and non significative whitespace
 		On(HasInternalType(pyast.SameLineNoops)).Roles(Comment),
@@ -229,24 +229,24 @@ var AnnotationRules = On(Any).Self(
 		),
 
 		// TODO: check what Constant nodes are generated in the python AST and improve this
-		On(HasInternalType(pyast.Constant)).Roles(SimpleIdentifier),
-		On(HasInternalType(pyast.Try)).Roles(Try).Children(
+		On(HasInternalType(pyast.Constant)).Roles(SimpleIdentifier, Expression),
+		On(HasInternalType(pyast.Try)).Roles(Try, Statement).Children(
 			On(HasInternalRole("body")).Roles(TryBody),
 			On(HasInternalRole("finalbody")).Roles(TryFinally),
 			On(HasInternalRole("handlers")).Roles(TryCatch),
 			On(HasInternalRole("orelse")).Roles(IfElse),
 		),
-		On(HasInternalType(pyast.TryExcept)).Roles(TryCatch),     // py2
-		On(HasInternalType(pyast.ExceptHandler)).Roles(TryCatch), // py3
-		On(HasInternalType(pyast.TryFinally)).Roles(TryFinally),
-		On(HasInternalType(pyast.Raise)).Roles(Throw),
+		On(HasInternalType(pyast.TryExcept)).Roles(TryCatch, Statement),     // py2
+		On(HasInternalType(pyast.ExceptHandler)).Roles(TryCatch, Statement), // py3
+		On(HasInternalType(pyast.TryFinally)).Roles(TryFinally, Statement),
+		On(HasInternalType(pyast.Raise)).Roles(Throw, Statement),
 		// FIXME: review, add path for the body and items childs
 		// FIXME: withitem on Python to RAII on a resource and can aditionally create and alias on it,
 		// both of which currently doesn't have representation in the UAST
-		On(HasInternalType(pyast.With)).Roles(BlockScope),
-		On(HasInternalType(pyast.Return)).Roles(Return),
-		On(HasInternalType(pyast.Break)).Roles(Break),
-		On(HasInternalType(pyast.Continue)).Roles(Continue),
+		On(HasInternalType(pyast.With)).Roles(BlockScope, Statement),
+		On(HasInternalType(pyast.Return)).Roles(Return, Statement),
+		On(HasInternalType(pyast.Break)).Roles(Break, Statement),
+		On(HasInternalType(pyast.Continue)).Roles(Continue, Statement),
 		// FIXME: IfCondition bodies in Python take the form:
 		// 1 < a < 10
 		// - left (internalRole): 1 (first element)
@@ -260,11 +260,11 @@ var AnnotationRules = On(Any).Self(
 		// and SDK feature to mix lists (also needed for default and keyword arguments and
 		// boolean operators).
 		// "If that sounds awkward is because it is" (their words)
-		On(HasInternalType(pyast.If)).Roles(If).Children(
+		On(HasInternalType(pyast.If)).Roles(If, Statement).Children(
 			On(HasInternalType("If.body")).Roles(IfBody),
 			On(HasInternalRole("test")).Roles(IfCondition),
 			On(HasInternalType("If.orelse")).Roles(IfElse),
-			On(HasInternalType(pyast.Compare)).Roles(BinaryExpression).Children(
+			On(HasInternalType(pyast.Compare)).Roles(BinaryExpression, Expression).Children(
 				On(HasInternalType("Compare.ops")).Roles(BinaryExpressionOp),
 				On(HasInternalType("Compare.comparators")).Roles(BinaryExpressionRight),
 				On(HasInternalRole("left")).Roles(BinaryExpressionLeft),
@@ -276,44 +276,42 @@ var AnnotationRules = On(Any).Self(
 			On(HasInternalRole("test")).Roles(IfCondition),
 			On(HasInternalRole("orelse")).Roles(IfElse),
 		),
-		// One liner if, like a normal If but it will be inside an Assign (like the ternary if in C)
-		On(HasInternalType(pyast.IfExp)).Roles(If),
-		On(HasInternalType(pyast.Import)).Roles(ImportDeclaration),
-		On(HasInternalType(pyast.ImportFrom)).Roles(ImportDeclaration),
+		On(HasInternalType(pyast.Import)).Roles(ImportDeclaration, Statement),
+		On(HasInternalType(pyast.ImportFrom)).Roles(ImportDeclaration, Statement),
 		On(HasInternalType(pyast.Alias)).Roles(ImportAlias, SimpleIdentifier),
-		On(HasInternalType(pyast.ClassDef)).Roles(TypeDeclaration, SimpleIdentifier).Children(
+		On(HasInternalType(pyast.ClassDef)).Roles(TypeDeclaration, SimpleIdentifier, Statement).Children(
 			On(HasInternalType("ClassDef.body")).Roles(TypeDeclarationBody),
 			On(HasInternalType("ClassDef.bases")).Roles(TypeDeclarationBases),
 		),
 
-		On(HasInternalType(pyast.For)).Roles(ForEach).Children(
+		On(HasInternalType(pyast.For)).Roles(ForEach, Statement).Children(
 			On(HasInternalType("For.body")).Roles(ForBody),
 			On(HasInternalRole("iter")).Roles(ForExpression),
 			On(HasInternalRole("target")).Roles(ForUpdate),
 			On(HasInternalType("For.orelse")).Roles(IfElse),
 		),
-		On(HasInternalType(pyast.While)).Roles(While).Children(
+		On(HasInternalType(pyast.While)).Roles(While, Statement).Children(
 			On(HasInternalType("While.body")).Roles(WhileBody),
 			On(HasInternalRole("test")).Roles(WhileCondition),
 			On(HasInternalType("While.orelse")).Roles(IfElse),
 		),
-		On(HasInternalType(pyast.Pass)).Roles(Noop),
-		On(HasInternalType(pyast.Num)).Roles(NumberLiteral),
+		On(HasInternalType(pyast.Pass)).Roles(Noop, Statement),
+		On(HasInternalType(pyast.Num)).Roles(NumberLiteral, Expression),
 		// FIXME: this is the annotated assignment (a: annotation = 3) not exactly Assignment
 		// it also lacks AssignmentValue and AssignmentVariable (see how to add them)
-		On(HasInternalType(pyast.AnnAssign)).Roles(Assignment),
-		On(HasInternalType(pyast.Assert)).Roles(Assert),
+		On(HasInternalType(pyast.AnnAssign)).Roles(Assignment, Statement),
+		On(HasInternalType(pyast.Assert)).Roles(Assert, Statement),
 
 		// These are AST nodes in Python2 but we convert them to functions in the UAST like
 		// they are in Python3
-		On(HasInternalType(pyast.Exec)).Roles(Call).Children(
+		On(HasInternalType(pyast.Exec)).Roles(Call, Expression).Children(
 			On(HasInternalRole("body")).Roles(CallPositionalArgument),
 			On(HasInternalRole("globals")).Roles(CallPositionalArgument),
 			On(HasInternalRole("locals")).Roles(CallPositionalArgument),
 		),
 		// Repr already comes as a Call \o/
 		// Print as a function too.
-		On(HasInternalType(pyast.Print)).Roles(Call, CallCallee, SimpleIdentifier).Children(
+		On(HasInternalType(pyast.Print)).Roles(Call, CallCallee, SimpleIdentifier, Expression).Children(
 			On(HasInternalRole("dest")).Roles(CallPositionalArgument),
 			On(HasInternalRole("nl")).Roles(CallPositionalArgument),
 			On(HasInternalRole("values")).Roles(CallPositionalArgument).Children(
@@ -336,8 +334,8 @@ var AnnotationRules = On(Any).Self(
 		// List/Map/Set comprehensions. We map the "for x in y" to ForEach roles and the
 		// "if something" to If* roles. FIXME: missing the top comprehension roles in the UAST, change
 		// once they've been merged
-		On(HasInternalType(pyast.Comprehension)).Roles(ForEach).Children(
-			On(HasInternalRole("iter")).Roles(ForUpdate),
+		On(HasInternalType(pyast.Comprehension)).Roles(ForEach, Expression).Children(
+			On(HasInternalRole("iter")).Roles(ForUpdate, Statement),
 			On(HasInternalRole("target")).Roles(ForExpression),
 			// FIXME: see the comment on IfCondition above
 			On(HasInternalType(pyast.Compare)).Roles(IfCondition, BinaryExpression).Children(

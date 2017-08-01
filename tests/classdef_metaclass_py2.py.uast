@@ -15,7 +15,7 @@ Module {
 .  }
 .  Children: {
 .  .  0: ClassDef {
-.  .  .  Roles: TypeDeclaration,SimpleIdentifier
+.  .  .  Roles: TypeDeclaration,SimpleIdentifier,Statement
 .  .  .  TOKEN "MySingleton"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 6
@@ -38,7 +38,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  Roles: SimpleIdentifier
+.  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
 .  .  .  .  .  .  .  TOKEN "object"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 18
@@ -63,7 +63,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Assign {
-.  .  .  .  .  .  .  Roles: Assignment
+.  .  .  .  .  .  .  Roles: Assignment,Statement
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 31
 .  .  .  .  .  .  .  .  Line: 2
@@ -76,7 +76,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: AssignmentVariable,SimpleIdentifier
+.  .  .  .  .  .  .  .  .  Roles: AssignmentVariable,SimpleIdentifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "___metaclass__"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 31
@@ -94,7 +94,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  Roles: AssignmentValue,SimpleIdentifier
+.  .  .  .  .  .  .  .  .  Roles: AssignmentValue,SimpleIdentifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "Singleton"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 48

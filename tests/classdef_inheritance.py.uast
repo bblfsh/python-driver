@@ -16,7 +16,7 @@ Module {
 .  }
 .  Children: {
 .  .  0: ClassDef {
-.  .  .  Roles: TypeDeclaration,SimpleIdentifier
+.  .  .  Roles: TypeDeclaration,SimpleIdentifier,Statement
 .  .  .  TOKEN "Dog"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 6
@@ -39,7 +39,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  Roles: SimpleIdentifier
+.  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
 .  .  .  .  .  .  .  TOKEN "Animal"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 10
@@ -64,7 +64,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Pass {
-.  .  .  .  .  .  .  Roles: Noop
+.  .  .  .  .  .  .  Roles: Noop,Statement
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 23
 .  .  .  .  .  .  .  .  Line: 2
@@ -76,7 +76,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  1: ClassDef {
-.  .  .  Roles: TypeDeclaration,SimpleIdentifier
+.  .  .  Roles: TypeDeclaration,SimpleIdentifier,Statement
 .  .  .  TOKEN "RobotDog"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 35
@@ -99,7 +99,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  Roles: SimpleIdentifier
+.  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
 .  .  .  .  .  .  .  TOKEN "Robot"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 44
@@ -149,7 +149,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  Roles: SimpleIdentifier
+.  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
 .  .  .  .  .  .  .  TOKEN "Dog"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 0
@@ -174,7 +174,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Pass {
-.  .  .  .  .  .  .  Roles: Noop
+.  .  .  .  .  .  .  Roles: Noop,Statement
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  .  .  Line: 5

@@ -31,7 +31,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Call {
-.  .  .  .  .  Roles: Call
+.  .  .  .  .  Roles: Call,Expression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 1
 .  .  .  .  .  .  Line: 1
@@ -47,7 +47,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: StringLiteral {
-.  .  .  .  .  .  .  Roles: StringLiteral,CallPositionalArgument
+.  .  .  .  .  .  .  Roles: StringLiteral,Expression,CallPositionalArgument
 .  .  .  .  .  .  .  TOKEN "something1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 11
@@ -64,7 +64,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: NumLiteral {
-.  .  .  .  .  .  .  Roles: NumberLiteral,CallPositionalArgument
+.  .  .  .  .  .  .  Roles: NumberLiteral,Expression,CallPositionalArgument
 .  .  .  .  .  .  .  TOKEN "42"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 25
@@ -82,7 +82,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Name {
-.  .  .  .  .  .  .  Roles: CallPositionalArgument,SimpleIdentifier
+.  .  .  .  .  .  .  Roles: CallPositionalArgument,SimpleIdentifier,Expression
 .  .  .  .  .  .  .  TOKEN "somesymbbol"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 29
@@ -100,7 +100,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  3: Name {
-.  .  .  .  .  .  .  Roles: CallCallee,CallCallee,SimpleIdentifier
+.  .  .  .  .  .  .  Roles: CallCallee,CallCallee,SimpleIdentifier,Expression
 .  .  .  .  .  .  .  TOKEN "normalCall"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 0
@@ -138,7 +138,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Call {
-.  .  .  .  .  Roles: Call
+.  .  .  .  .  Roles: Call,Expression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 45
 .  .  .  .  .  .  Line: 2
@@ -154,7 +154,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: StringLiteral {
-.  .  .  .  .  .  .  Roles: StringLiteral,CallPositionalArgument
+.  .  .  .  .  .  .  Roles: StringLiteral,Expression,CallPositionalArgument
 .  .  .  .  .  .  .  TOKEN "something"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 58
@@ -171,7 +171,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: NumLiteral {
-.  .  .  .  .  .  .  Roles: NumberLiteral,CallPositionalArgument
+.  .  .  .  .  .  .  Roles: NumberLiteral,Expression,CallPositionalArgument
 .  .  .  .  .  .  .  TOKEN "42"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 71
@@ -189,7 +189,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Name {
-.  .  .  .  .  .  .  Roles: CallPositionalArgument,SimpleIdentifier
+.  .  .  .  .  .  .  Roles: CallPositionalArgument,SimpleIdentifier,Expression
 .  .  .  .  .  .  .  TOKEN "somesymbol"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 75
@@ -207,7 +207,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  3: Attribute {
-.  .  .  .  .  .  .  Roles: CallCallee,CallCallee,QualifiedIdentifier
+.  .  .  .  .  .  .  Roles: CallCallee,CallCallee,QualifiedIdentifier,Expression
 .  .  .  .  .  .  .  TOKEN "qualifiedCall"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 44
@@ -225,7 +225,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier
+.  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 42
@@ -265,7 +265,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Call {
-.  .  .  .  .  Roles: Call
+.  .  .  .  .  Roles: Call,Expression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 88
 .  .  .  .  .  .  Line: 3
@@ -281,7 +281,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  Roles: CallPositionalArgument,SimpleIdentifier
+.  .  .  .  .  .  .  Roles: CallPositionalArgument,SimpleIdentifier,Expression
 .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 95
@@ -299,7 +299,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  Roles: CallCallee,CallCallee,SimpleIdentifier
+.  .  .  .  .  .  .  Roles: CallCallee,CallCallee,SimpleIdentifier,Expression
 .  .  .  .  .  .  .  TOKEN "keyCall"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 87
@@ -334,7 +334,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: NumLiteral {
-.  .  .  .  .  .  .  .  .  Roles: NumberLiteral,CallNamedArgumentValue
+.  .  .  .  .  .  .  .  .  Roles: NumberLiteral,Expression,CallNamedArgumentValue
 .  .  .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 100
@@ -371,7 +371,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: NumLiteral {
-.  .  .  .  .  .  .  .  .  Roles: NumberLiteral,CallNamedArgumentValue
+.  .  .  .  .  .  .  .  .  Roles: NumberLiteral,Expression,CallNamedArgumentValue
 .  .  .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 105
@@ -411,7 +411,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Call {
-.  .  .  .  .  Roles: Call
+.  .  .  .  .  Roles: Call,Expression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 109
 .  .  .  .  .  .  Line: 4
@@ -427,7 +427,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  Roles: CallPositionalArgument,SimpleIdentifier
+.  .  .  .  .  .  .  Roles: CallPositionalArgument,SimpleIdentifier,Expression
 .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 123
@@ -462,7 +462,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier
+.  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "expandedList"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 127
@@ -482,7 +482,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Name {
-.  .  .  .  .  .  .  Roles: CallCallee,CallCallee,SimpleIdentifier
+.  .  .  .  .  .  .  Roles: CallCallee,CallCallee,SimpleIdentifier,Expression
 .  .  .  .  .  .  .  TOKEN "expandListCall"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 108
@@ -520,7 +520,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Call {
-.  .  .  .  .  Roles: Call
+.  .  .  .  .  Roles: Call,Expression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 142
 .  .  .  .  .  .  Line: 5
@@ -536,7 +536,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  Roles: CallPositionalArgument,SimpleIdentifier
+.  .  .  .  .  .  .  Roles: CallPositionalArgument,SimpleIdentifier,Expression
 .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 155
@@ -554,7 +554,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  Roles: CallCallee,CallCallee,SimpleIdentifier
+.  .  .  .  .  .  .  Roles: CallCallee,CallCallee,SimpleIdentifier,Expression
 .  .  .  .  .  .  .  TOKEN "expandMapCall"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 141
@@ -589,7 +589,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: CallNamedArgumentValue,SimpleIdentifier
+.  .  .  .  .  .  .  .  .  Roles: CallNamedArgumentValue,SimpleIdentifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "expandedMap"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 160

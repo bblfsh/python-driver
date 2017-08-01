@@ -15,7 +15,7 @@ Module {
 .  }
 .  Children: {
 .  .  0: Print {
-.  .  .  Roles: Call,CallCallee,SimpleIdentifier
+.  .  .  Roles: Call,CallCallee,SimpleIdentifier,Expression
 .  .  .  TOKEN "print"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
@@ -34,7 +34,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: NumLiteral {
-.  .  .  .  .  Roles: NumberLiteral,CallPositionalArgument
+.  .  .  .  .  Roles: NumberLiteral,Expression,CallPositionalArgument
 .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 6
@@ -54,7 +54,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  1: Print {
-.  .  .  Roles: Call,CallCallee,SimpleIdentifier
+.  .  .  Roles: Call,CallCallee,SimpleIdentifier,Expression
 .  .  .  TOKEN "print"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 9
@@ -73,7 +73,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: NumLiteral {
-.  .  .  .  .  Roles: NumberLiteral,CallPositionalArgument
+.  .  .  .  .  Roles: NumberLiteral,Expression,CallPositionalArgument
 .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 15

@@ -46,7 +46,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: BinOp {
-.  .  .  .  .  .  .  Roles: BinaryExpression
+.  .  .  .  .  .  .  Roles: BinaryExpression,Expression
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 1
 .  .  .  .  .  .  .  .  Line: 1
@@ -62,7 +62,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: BinaryExpressionLeft,SimpleIdentifier
+.  .  .  .  .  .  .  .  .  Roles: BinaryExpressionLeft,SimpleIdentifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "i"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 1
@@ -97,7 +97,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  2: NumLiteral {
-.  .  .  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral
+.  .  .  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 3
@@ -122,7 +122,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: comprehension {
-.  .  .  .  .  .  .  .  .  Roles: ForEach
+.  .  .  .  .  .  .  .  .  Roles: ForEach,Expression
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 1
 .  .  .  .  .  .  .  .  .  .  Line: 1
@@ -160,7 +160,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: NumLiteral {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: NumberLiteral
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: NumberLiteral,Expression
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 28
@@ -179,7 +179,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,BinaryExpressionLeft
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression,BinaryExpressionLeft
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "i"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 26
@@ -221,7 +221,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,ForUpdate
+.  .  .  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression,ForUpdate,Statement
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "somelist"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 14
@@ -239,7 +239,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  2: Name {
-.  .  .  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,ForExpression
+.  .  .  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression,ForExpression
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "i"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 9
@@ -296,7 +296,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: BinOp {
-.  .  .  .  .  .  .  Roles: BinaryExpression
+.  .  .  .  .  .  .  Roles: BinaryExpression,Expression
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 32
 .  .  .  .  .  .  .  .  Line: 2
@@ -312,7 +312,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: BinaryExpressionLeft,SimpleIdentifier
+.  .  .  .  .  .  .  .  .  Roles: BinaryExpressionLeft,SimpleIdentifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "i"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 32
@@ -347,7 +347,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  2: NumLiteral {
-.  .  .  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral
+.  .  .  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 34
@@ -372,7 +372,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: comprehension {
-.  .  .  .  .  .  .  .  .  Roles: ForEach
+.  .  .  .  .  .  .  .  .  Roles: ForEach,Expression
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 32
 .  .  .  .  .  .  .  .  .  .  Line: 2
@@ -388,7 +388,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,ForUpdate
+.  .  .  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression,ForUpdate,Statement
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "somelist"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 51
@@ -406,7 +406,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,ForExpression
+.  .  .  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression,ForExpression
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "sublist"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 40
@@ -426,7 +426,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: comprehension {
-.  .  .  .  .  .  .  .  .  Roles: ForEach
+.  .  .  .  .  .  .  .  .  Roles: ForEach,Expression
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 51
 .  .  .  .  .  .  .  .  .  .  Line: 2
@@ -442,7 +442,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,ForUpdate
+.  .  .  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression,ForUpdate,Statement
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "sublist"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 69
@@ -460,7 +460,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,ForExpression
+.  .  .  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression,ForExpression
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "i"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 64

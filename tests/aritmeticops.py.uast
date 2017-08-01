@@ -31,7 +31,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: BinaryExpression
+.  .  .  .  .  Roles: BinaryExpression,Expression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  Line: 1
@@ -47,7 +47,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: NumLiteral {
-.  .  .  .  .  .  .  Roles: BinaryExpressionLeft,NumberLiteral
+.  .  .  .  .  .  .  Roles: BinaryExpressionLeft,NumberLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 0
@@ -82,7 +82,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: NumLiteral {
-.  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral
+.  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 2
@@ -120,7 +120,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: BinaryExpression
+.  .  .  .  .  Roles: BinaryExpression,Expression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 4
 .  .  .  .  .  .  Line: 2
@@ -136,7 +136,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: NumLiteral {
-.  .  .  .  .  .  .  Roles: BinaryExpressionLeft,NumberLiteral
+.  .  .  .  .  .  .  Roles: BinaryExpressionLeft,NumberLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 4
@@ -171,7 +171,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: NumLiteral {
-.  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral
+.  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 6
@@ -209,7 +209,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: BinaryExpression
+.  .  .  .  .  Roles: BinaryExpression,Expression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 8
 .  .  .  .  .  .  Line: 3
@@ -225,7 +225,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: NumLiteral {
-.  .  .  .  .  .  .  Roles: BinaryExpressionLeft,NumberLiteral
+.  .  .  .  .  .  .  Roles: BinaryExpressionLeft,NumberLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 8
@@ -260,7 +260,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: NumLiteral {
-.  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral
+.  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 10
@@ -298,7 +298,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: BinaryExpression
+.  .  .  .  .  Roles: BinaryExpression,Expression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 12
 .  .  .  .  .  .  Line: 4
@@ -314,7 +314,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: NumLiteral {
-.  .  .  .  .  .  .  Roles: BinaryExpressionLeft,NumberLiteral
+.  .  .  .  .  .  .  Roles: BinaryExpressionLeft,NumberLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 12
@@ -349,7 +349,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: NumLiteral {
-.  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral
+.  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 14
@@ -387,7 +387,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: BinaryExpression
+.  .  .  .  .  Roles: BinaryExpression,Expression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 16
 .  .  .  .  .  .  Line: 5
@@ -403,7 +403,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: NumLiteral {
-.  .  .  .  .  .  .  Roles: BinaryExpressionLeft,NumberLiteral
+.  .  .  .  .  .  .  Roles: BinaryExpressionLeft,NumberLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 16
@@ -438,7 +438,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: NumLiteral {
-.  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral
+.  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 19
@@ -476,7 +476,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: BinaryExpression
+.  .  .  .  .  Roles: BinaryExpression,Expression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 21
 .  .  .  .  .  .  Line: 6
@@ -492,7 +492,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: NumLiteral {
-.  .  .  .  .  .  .  Roles: BinaryExpressionLeft,NumberLiteral
+.  .  .  .  .  .  .  Roles: BinaryExpressionLeft,NumberLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 21
@@ -522,7 +522,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: NumLiteral {
-.  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral
+.  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 23
@@ -560,7 +560,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: BinaryExpression
+.  .  .  .  .  Roles: BinaryExpression,Expression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 25
 .  .  .  .  .  .  Line: 7
@@ -576,7 +576,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: NumLiteral {
-.  .  .  .  .  .  .  Roles: BinaryExpressionLeft,NumberLiteral
+.  .  .  .  .  .  .  Roles: BinaryExpressionLeft,NumberLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 25
@@ -611,7 +611,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: NumLiteral {
-.  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral
+.  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 28

@@ -16,7 +16,7 @@ Module {
 .  }
 .  Children: {
 .  .  0: ClassDef {
-.  .  .  Roles: TypeDeclaration,SimpleIdentifier
+.  .  .  Roles: TypeDeclaration,SimpleIdentifier,Statement
 .  .  .  TOKEN "MySingleton"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 6
@@ -39,7 +39,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Pass {
-.  .  .  .  .  .  .  Roles: Noop
+.  .  .  .  .  .  .  Roles: Noop,Statement
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 44
 .  .  .  .  .  .  .  .  Line: 2
@@ -67,7 +67,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier
+.  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "Singleton"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 28
@@ -91,7 +91,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  1: ClassDef {
-.  .  .  Roles: TypeDeclaration,SimpleIdentifier
+.  .  .  Roles: TypeDeclaration,SimpleIdentifier,Statement
 .  .  .  TOKEN "MySingleton"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 56
@@ -114,7 +114,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  Roles: SimpleIdentifier
+.  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
 .  .  .  .  .  .  .  TOKEN "ParentClass"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 68
@@ -172,7 +172,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Pass {
-.  .  .  .  .  .  .  Roles: Noop
+.  .  .  .  .  .  .  Roles: Noop,Statement
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  .  .  Line: 5
@@ -200,7 +200,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier
+.  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "Singleton"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 0
