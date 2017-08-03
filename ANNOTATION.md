@@ -21,6 +21,9 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Mult'\] | OpMultiply |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Div'\] | OpDivide |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Mod'\] | OpMod |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FloorDiv'\] | OpDivide, Incomplete |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Pow'\] | OpMultiply, Incomplete |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='MatMult'\] | OpMultiply, Incomplete |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='LShift'\] | OpBitwiseLeftShift |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='RShift'\] | OpBitwiseRightShift |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='BitOr'\] | OpBitwiseOr |
@@ -29,7 +32,7 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='And'\] | OpBooleanAnd |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Or'\] | OpBooleanOr |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Not'\] | OpBooleanNot |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='UnaryOp'\] | Expression |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='UnaryOp'\] | Expression, Incomplete |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Invert'\] | OpBitwiseComplement |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='UAdd'\] | OpPositive |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='USub'\] | OpNegative |
@@ -39,7 +42,7 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Str'\] | StringLiteral, Expression |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='BoolLiteral'\] | BooleanLiteral, Expression |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='JoinedStr'\] | StringLiteral, Expression |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='JoinedStr'\]/\*\[@InternalType='FormattedValue'\] | Expression |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='JoinedStr'\]/\*\[@InternalType='FormattedValue'\] | Expression, Incomplete |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='NoneLiteral'\] | NullLiteral, Expression |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Set'\] | SetLiteral, Expression |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='List'\] | ListLiteral, Expression |
@@ -48,12 +51,28 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Dict'\]/\*\[@internalRole\]\[@internalRole='values'\] | MapValue |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Tuple'\] | TupleLiteral, Expression |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef'\] | FunctionDeclaration, FunctionDeclarationName, SimpleIdentifier |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef'\]/\*\[@InternalType='FunctionDef\.decorator\_list'\] | Call, SimpleIdentifier, Incomplete |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef'\]/\*\[@InternalType='FunctionDef\.body'\] | FunctionDeclarationBody |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef'\]/\*\[@InternalType='arguments'\] | FunctionDeclarationArgument |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef'\]/\*\[@InternalType='arguments'\]/\*\[@internalRole\]\[@internalRole='args'\] | FunctionDeclarationArgument, FunctionDeclarationArgumentName |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef'\]/\*\[@InternalType='arguments'\]/\*\[@internalRole\]\[@internalRole='vararg'\] | FunctionDeclarationArgument, FunctionDeclarationVarArgsList, FunctionDeclarationArgumentName |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef'\]/\*\[@InternalType='arguments'\]/\*\[@internalRole\]\[@internalRole='kwarg'\] | FunctionDeclarationArgument, FunctionDeclarationVarArgsList, FunctionDeclarationArgumentName |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef'\]/\*\[@InternalType='arguments'\]/\*\[@internalRole\]\[@internalRole='kwarg'\] | FunctionDeclarationArgument, FunctionDeclarationVarArgsList, FunctionDeclarationArgumentName, Incomplete |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef'\]/\*\[@InternalType='arguments'\]/\*\[@InternalType='arguments\.defaults'\] | FunctionDeclarationArgumentDefaultValue |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='AsyncFunctionDef'\] | FunctionDeclaration, FunctionDeclarationName, SimpleIdentifier, Incomplete |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='AsyncFunctionDef'\]/\*\[@InternalType='AsyncFunctionDef\.decorator\_list'\] | Call, SimpleIdentifier, Incomplete |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='AsyncFunctionDef'\]/\*\[@InternalType='AsyncFunctionDef\.body'\] | FunctionDeclarationBody |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='AsyncFunctionDef'\]/\*\[@InternalType='arguments'\] | FunctionDeclarationArgument |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='AsyncFunctionDef'\]/\*\[@InternalType='arguments'\]/\*\[@internalRole\]\[@internalRole='args'\] | FunctionDeclarationArgument, FunctionDeclarationArgumentName |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='AsyncFunctionDef'\]/\*\[@InternalType='arguments'\]/\*\[@internalRole\]\[@internalRole='vararg'\] | FunctionDeclarationArgument, FunctionDeclarationVarArgsList, FunctionDeclarationArgumentName |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='AsyncFunctionDef'\]/\*\[@InternalType='arguments'\]/\*\[@internalRole\]\[@internalRole='kwarg'\] | FunctionDeclarationArgument, FunctionDeclarationVarArgsList, FunctionDeclarationArgumentName, Incomplete |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='AsyncFunctionDef'\]/\*\[@InternalType='arguments'\]/\*\[@InternalType='arguments\.defaults'\] | FunctionDeclarationArgumentDefaultValue |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Lambda'\] | FunctionDeclaration, SimpleIdentifier, Expression, Incomplete |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Lambda'\]/\*\[@InternalType='Lambda\.body'\] | FunctionDeclarationBody |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Lambda'\]/\*\[@InternalType='arguments'\] | FunctionDeclarationArgument |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Lambda'\]/\*\[@InternalType='arguments'\]/\*\[@internalRole\]\[@internalRole='args'\] | FunctionDeclarationArgument, FunctionDeclarationArgumentName |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Lambda'\]/\*\[@InternalType='arguments'\]/\*\[@internalRole\]\[@internalRole='vararg'\] | FunctionDeclarationArgument, FunctionDeclarationVarArgsList, FunctionDeclarationArgumentName |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Lambda'\]/\*\[@InternalType='arguments'\]/\*\[@internalRole\]\[@internalRole='kwarg'\] | FunctionDeclarationArgument, FunctionDeclarationVarArgsList, FunctionDeclarationArgumentName, Incomplete |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Lambda'\]/\*\[@InternalType='arguments'\]/\*\[@InternalType='arguments\.defaults'\] | FunctionDeclarationArgumentDefaultValue |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Call'\] | Call, Expression |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Call'\]/\*\[@internalRole\]\[@internalRole='args'\] | CallPositionalArgument |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Call'\]/\*\[@internalRole\]\[@internalRole='keywords'\] | CallNamedArgument |
@@ -61,7 +80,7 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Call'\]/\*\[@internalRole\]\[@internalRole='func'\] | CallCallee |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Call'\]/\*\[@internalRole\]\[@internalRole='func'\] | CallCallee |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Call'\]/\*\[@internalRole\]\[@internalRole='func'\]/\*\[@internalRole\]\[@internalRole='id'\] | CallReceiver, SimpleIdentifier |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Assign'\] | Assignment, Statement |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Assign'\] | Assignment, Expression |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Assign'\]/\*\[@internalRole\]\[@internalRole='targets'\] | AssignmentVariable |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Assign'\]/\*\[@internalRole\]\[@internalRole='value'\] | AssignmentValue |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='AugAssign'\] | AugmentedAssignment, Statement |
@@ -88,6 +107,8 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='TryFinally'\] | TryFinally, Statement |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Raise'\] | Throw, Statement |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='With'\] | BlockScope, Statement |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='AsyncWith'\] | BlockScope, Statement, Incomplete |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='withitem'\] | SimpleIdentifier, Incomplete |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Return'\] | Return, Statement |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Break'\] | Break, Statement |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Continue'\] | Continue, Statement |
@@ -114,6 +135,11 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='For'\]/\*\[@internalRole\]\[@internalRole='iter'\] | ForExpression |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='For'\]/\*\[@internalRole\]\[@internalRole='target'\] | ForUpdate |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='For'\]/\*\[@InternalType='For\.orelse'\] | IfElse |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='AsyncFor'\] | ForEach, Statement, Incomplete |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='AsyncFor'\]/\*\[@InternalType='AsyncFor\.body'\] | ForBody |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='AsyncFor'\]/\*\[@internalRole\]\[@internalRole='iter'\] | ForExpression |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='AsyncFor'\]/\*\[@internalRole\]\[@internalRole='target'\] | ForUpdate |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='AsyncFor'\]/\*\[@InternalType='AsyncFor\.orelse'\] | IfElse |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='While'\] | While, Statement |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='While'\]/\*\[@InternalType='While\.body'\] | WhileBody |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='While'\]/\*\[@internalRole\]\[@internalRole='test'\] | WhileCondition |
@@ -141,3 +167,13 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='comprehension'\]/\*\[@InternalType='Compare'\]/\*\[@InternalType='Compare\.ops'\] | BinaryExpressionOp |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='comprehension'\]/\*\[@InternalType='Compare'\]/\*\[@InternalType='Compare\.comparators'\] | BinaryExpressionRight |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='comprehension'\]/\*\[@InternalType='Compare'\]/\*\[@internalRole\]\[@internalRole='left'\] | BinaryExpressionLeft |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='ListComp'\] | ListLiteral, Expression, Incomplete |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='SetComp'\] | MapLiteral, Expression, Incomplete |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='SetComp'\] | SetLiteral, Expression, Incomplete |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Delete'\] | Statement, Incomplete |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Await'\] | Statement, Incomplete |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Global'\] | Statement, VisibleFromWorld, Incomplete |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Nonlocal'\] | Statement, VisibleFromModule, Incomplete |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Yield'\] | Return, Statement, Incomplete |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='YieldFrom'\] | Return, Statement, Incomplete |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Yield'\] | ListLiteral, Expression, Incomplete |

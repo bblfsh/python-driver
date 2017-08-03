@@ -1,0 +1,93 @@
+Status:  ok
+Errors: 
+UAST: 
+Module {
+.  Roles: File
+.  StartPosition: {
+.  .  Offset: 0
+.  .  Line: 1
+.  .  Col: 1
+.  }
+.  EndPosition: {
+.  .  Offset: 9
+.  .  Line: 1
+.  .  Col: 10
+.  }
+.  Children: {
+.  .  0: Expr {
+.  .  .  Roles: Expression
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 0
+.  .  .  .  Line: 1
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 9
+.  .  .  .  Line: 1
+.  .  .  .  Col: 10
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: body
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: Call {
+.  .  .  .  .  Roles: Call,Expression
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 5
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 6
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 9
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 10
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: value
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: Attribute {
+.  .  .  .  .  .  .  Roles: CallCallee,CallCallee,QualifiedIdentifier,Expression
+.  .  .  .  .  .  .  TOKEN "figure"
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 4
+.  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  Col: 5
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 9
+.  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  Col: 10
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  .  .  internalRole: func
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  0: Name {
+.  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  TOKEN "plt"
+.  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  .  .  Col: 1
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 2
+.  .  .  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  .  .  Col: 3
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  .  .  .  .  internalRole: value
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  }
+}
+

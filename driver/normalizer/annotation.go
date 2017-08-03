@@ -24,22 +24,7 @@ https://greentreesnakes.readthedocs.io/en/latest/nodes.html
 */
 
 /*
-Missing nodes or nodes needing new features from the SDK:
-
-   === With unmerged PRs:
-
-   = PR 55:
-	   Delete
-
-   = PR 56:
-	   Yield
-	   YieldFrom
-
-   = PR 57:
-	   Starred
-
-   = PR 58:
-       withitem
+Unmarked nodes or nodes needing new features from the SDK:
 
    = PR 59:
 	   Subscript
@@ -47,35 +32,12 @@ Missing nodes or nodes needing new features from the SDK:
 	   Slice
 	   ExtSlice
 
-   = PR 63:
-	   Lambda
-	   kwarg
-	   FunctionDef.decorator_list
-
-   = PR 81:
-	   ListComp
-	   SetComp
-	   DictComp
-
    = PR 79:
 	   arguments
-
-   = PR 111:
-	   FormattedValue (InterpolatedValue)
 
    = PR 112:
 	   AnnAssign
 	   annotation
-
-   = PR 113:
-	   AsyncFunctionDef (FunctionDef + async)
-	   Await
-	   AsyncFor (For + async)
-	   AsyncWith (With + async)
-
-   = PR 114:
-	   Global
-	   Nonlocal
 
    === No PR:
 
@@ -119,9 +81,9 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.Div)).Roles(OpDivide),
 		On(HasInternalType(pyast.Mod)).Roles(OpMod),
 		// TODO: currently without mapping in the UAST
-		//On(HasInternalType(pyast.FloorDiv)).Roles(OpDivide),
-		//On(HasInternalType(pyast.Pow)).Roles(???),
-		//On(HasInternalType(pyast.MatMult)).Roles(???),
+		On(HasInternalType(pyast.FloorDiv)).Roles(OpDivide, Incomplete),
+		On(HasInternalType(pyast.Pow)).Roles(OpMultiply, Incomplete),
+		On(HasInternalType(pyast.MatMult)).Roles(OpMultiply, Incomplete),
 
 		// Bitwise operators
 		On(HasInternalType(pyast.LShift)).Roles(OpBitwiseLeftShift),
@@ -135,8 +97,7 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.Or)).Roles(OpBooleanOr),
 		On(HasInternalType(pyast.Not)).Roles(OpBooleanNot),
 
-		// UnaryExpression TODO: change it to an specific UAST role if added
-		On(HasInternalType(pyast.UnaryOp)).Roles(Expression),
+		On(HasInternalType(pyast.UnaryOp)).Roles(Expression, Incomplete),
 
 		// Unary operators
 		On(HasInternalType(pyast.Invert)).Roles(OpBitwiseComplement),
@@ -149,8 +110,7 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.Str)).Roles(StringLiteral, Expression),
 		On(HasInternalType(pyast.BoolLiteral)).Roles(BooleanLiteral, Expression),
 		On(HasInternalType(pyast.JoinedStr)).Roles(StringLiteral, Expression).Children(
-			// FIXME: should be StringInterpolatedExpression or something like that
-			On(HasInternalType(pyast.FormattedValue)).Roles(Expression),
+			On(HasInternalType(pyast.FormattedValue)).Roles(Expression, Incomplete),
 		),
 		On(HasInternalType(pyast.NoneLiteral)).Roles(NullLiteral, Expression),
 		On(HasInternalType(pyast.Set)).Roles(SetLiteral, Expression),
@@ -161,11 +121,12 @@ var AnnotationRules = On(Any).Self(
 		),
 		On(HasInternalType(pyast.Tuple)).Roles(TupleLiteral, Expression),
 
-		// FIXME: decorators
 		// FIXME: the FunctionDeclarationReceiver is not set for methods; it should be taken from the parent
 		// Type node Token (2 levels up) but the SDK doesn't allow this
 		// TODO: create an issue for the SDK
-		On(HasInternalType(pyast.FunctionDef)).Roles(FunctionDeclaration, FunctionDeclarationName, SimpleIdentifier).Children(
+		On(HasInternalType(pyast.FunctionDef)).Roles(FunctionDeclaration, FunctionDeclarationName,
+		SimpleIdentifier).Children(
+			On(HasInternalType("FunctionDef.decorator_list")).Roles(Call, SimpleIdentifier, Incomplete),
 			On(HasInternalType("FunctionDef.body")).Roles(FunctionDeclarationBody),
 			// FIXME: change to FunctionDeclarationArgumentS once the PR has been merged
 			On(HasInternalType("arguments")).Roles(FunctionDeclarationArgument).Children(
@@ -175,7 +136,50 @@ var AnnotationRules = On(Any).Self(
 				// FIXME: this is really different from vararg, change it when we have FunctionDeclarationMap
 				// or something similar in the UAST
 				On(HasInternalRole("kwarg")).Roles(FunctionDeclarationArgument, FunctionDeclarationVarArgsList,
+					FunctionDeclarationArgumentName, Incomplete),
+				// Default arguments: Python's AST puts default arguments on a sibling list to the one of
+				// arguments that must be mapped to the arguments right-aligned like:
+				// a, b=2, c=3 ->
+				//		args    [a,b,c],
+				//		defaults  [2,3]
+				// TODO: create an issue for the SDK
+				On(HasInternalType("arguments.defaults")).Roles(FunctionDeclarationArgumentDefaultValue),
+			),
+		),
+		On(HasInternalType(pyast.AsyncFunctionDef)).Roles(FunctionDeclaration, FunctionDeclarationName, SimpleIdentifier,
+			Incomplete).Children(
+			On(HasInternalType("AsyncFunctionDef.decorator_list")).Roles(Call, SimpleIdentifier, Incomplete),
+			On(HasInternalType("AsyncFunctionDef.body")).Roles(FunctionDeclarationBody),
+			// FIXME: change to FunctionDeclarationArgumentS once the PR has been merged
+			On(HasInternalType("arguments")).Roles(FunctionDeclarationArgument).Children(
+				On(HasInternalRole("args")).Roles(FunctionDeclarationArgument, FunctionDeclarationArgumentName),
+				On(HasInternalRole("vararg")).Roles(FunctionDeclarationArgument, FunctionDeclarationVarArgsList,
 					FunctionDeclarationArgumentName),
+				// FIXME: this is really different from vararg, change it when we have FunctionDeclarationMap
+				// or something similar in the UAST
+				On(HasInternalRole("kwarg")).Roles(FunctionDeclarationArgument, FunctionDeclarationVarArgsList,
+					FunctionDeclarationArgumentName, Incomplete),
+				// Default arguments: Python's AST puts default arguments on a sibling list to the one of
+				// arguments that must be mapped to the arguments right-aligned like:
+				// a, b=2, c=3 ->
+				//		args    [a,b,c],
+				//		defaults  [2,3]
+				// TODO: create an issue for the SDK
+				On(HasInternalType("arguments.defaults")).Roles(FunctionDeclarationArgumentDefaultValue),
+			),
+		),
+		On(HasInternalType(pyast.Lambda)).Roles(FunctionDeclaration, SimpleIdentifier, Expression,
+		Incomplete).Children(
+			On(HasInternalType("Lambda.body")).Roles(FunctionDeclarationBody),
+			// FIXME: change to FunctionDeclarationArgumentS once the PR has been merged
+			On(HasInternalType("arguments")).Roles(FunctionDeclarationArgument).Children(
+				On(HasInternalRole("args")).Roles(FunctionDeclarationArgument, FunctionDeclarationArgumentName),
+				On(HasInternalRole("vararg")).Roles(FunctionDeclarationArgument, FunctionDeclarationVarArgsList,
+					FunctionDeclarationArgumentName),
+				// FIXME: this is really different from vararg, change it when we have FunctionDeclarationMap
+				// or something similar in the UAST
+				On(HasInternalRole("kwarg")).Roles(FunctionDeclarationArgument, FunctionDeclarationVarArgsList,
+					FunctionDeclarationArgumentName, Incomplete),
 				// Default arguments: Python's AST puts default arguments on a sibling list to the one of
 				// arguments that must be mapped to the arguments right-aligned like:
 				// a, b=2, c=3 ->
@@ -203,7 +207,7 @@ var AnnotationRules = On(Any).Self(
 		//		targets[] => AssignmentVariable
 		//		value	  => AssignmentValue
 		//
-		On(HasInternalType(pyast.Assign)).Roles(Assignment, Statement).Children(
+		On(HasInternalType(pyast.Assign)).Roles(Assignment, Expression).Children(
 			On(HasInternalRole("targets")).Roles(AssignmentVariable),
 			On(HasInternalRole("value")).Roles(AssignmentValue),
 		),
@@ -241,9 +245,9 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.TryFinally)).Roles(TryFinally, Statement),
 		On(HasInternalType(pyast.Raise)).Roles(Throw, Statement),
 		// FIXME: review, add path for the body and items childs
-		// FIXME: withitem on Python to RAII on a resource and can aditionally create and alias on it,
-		// both of which currently doesn't have representation in the UAST
 		On(HasInternalType(pyast.With)).Roles(BlockScope, Statement),
+		On(HasInternalType(pyast.AsyncWith)).Roles(BlockScope, Statement, Incomplete),
+		On(HasInternalType(pyast.Withitem)).Roles(SimpleIdentifier, Incomplete),
 		On(HasInternalType(pyast.Return)).Roles(Return, Statement),
 		On(HasInternalType(pyast.Break)).Roles(Break, Statement),
 		On(HasInternalType(pyast.Continue)).Roles(Continue, Statement),
@@ -289,6 +293,12 @@ var AnnotationRules = On(Any).Self(
 			On(HasInternalRole("iter")).Roles(ForExpression),
 			On(HasInternalRole("target")).Roles(ForUpdate),
 			On(HasInternalType("For.orelse")).Roles(IfElse),
+		),
+		On(HasInternalType(pyast.AsyncFor)).Roles(ForEach, Statement, Incomplete).Children(
+			On(HasInternalType("AsyncFor.body")).Roles(ForBody),
+			On(HasInternalRole("iter")).Roles(ForExpression),
+			On(HasInternalRole("target")).Roles(ForUpdate),
+			On(HasInternalType("AsyncFor.orelse")).Roles(IfElse),
 		),
 		On(HasInternalType(pyast.While)).Roles(While, Statement).Children(
 			On(HasInternalType("While.body")).Roles(WhileBody),
@@ -344,5 +354,17 @@ var AnnotationRules = On(Any).Self(
 				On(HasInternalRole("left")).Roles(BinaryExpressionLeft),
 			),
 		),
+		On(HasInternalType(pyast.ListComp)).Roles(ListLiteral, Expression, Incomplete),
+		On(HasInternalType(pyast.SetComp)).Roles(MapLiteral, Expression, Incomplete),
+		On(HasInternalType(pyast.SetComp)).Roles(SetLiteral, Expression, Incomplete),
+
+		On(HasInternalType(pyast.Delete)).Roles(Statement, Incomplete),
+		On(HasInternalType(pyast.Await)).Roles(Statement, Incomplete),
+		On(HasInternalType(pyast.Global)).Roles(Statement, VisibleFromWorld, Incomplete),
+		On(HasInternalType(pyast.Nonlocal)).Roles(Statement, VisibleFromModule, Incomplete),
+
+		On(HasInternalType(pyast.Yield)).Roles(Return, Statement, Incomplete),
+		On(HasInternalType(pyast.YieldFrom)).Roles(Return, Statement, Incomplete),
+		On(HasInternalType(pyast.Yield)).Roles(ListLiteral, Expression, Incomplete),
 	),
 )

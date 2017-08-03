@@ -1,0 +1,299 @@
+Status:  ok
+Errors: 
+UAST: 
+Module {
+.  Roles: File
+.  StartPosition: {
+.  .  Offset: 0
+.  .  Line: 1
+.  .  Col: 1
+.  }
+.  EndPosition: {
+.  .  Offset: 65
+.  .  Line: 7
+.  .  Col: 11
+.  }
+.  Children: {
+.  .  0: Assign {
+.  .  .  Roles: Assignment,Expression
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 0
+.  .  .  .  Line: 1
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 4
+.  .  .  .  Line: 1
+.  .  .  .  Col: 5
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: body
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: Name {
+.  .  .  .  .  Roles: AssignmentVariable,SimpleIdentifier,Expression
+.  .  .  .  .  TOKEN "a"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 1
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 1
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  ctx: Store
+.  .  .  .  .  .  internalRole: targets
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: NumLiteral {
+.  .  .  .  .  Roles: NumberLiteral,Expression,AssignmentValue
+.  .  .  .  .  TOKEN "1"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 4
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 5
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 4
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 5
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  NumType: int
+.  .  .  .  .  .  internalRole: value
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  .  1: Assign {
+.  .  .  Roles: Assignment,Expression
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 6
+.  .  .  .  Line: 2
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 10
+.  .  .  .  Line: 2
+.  .  .  .  Col: 5
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: body
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: Name {
+.  .  .  .  .  Roles: AssignmentVariable,SimpleIdentifier,Expression
+.  .  .  .  .  TOKEN "b"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 6
+.  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  Col: 1
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 6
+.  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  Col: 1
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  ctx: Store
+.  .  .  .  .  .  internalRole: targets
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: NumLiteral {
+.  .  .  .  .  Roles: NumberLiteral,Expression,AssignmentValue
+.  .  .  .  .  TOKEN "2"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 10
+.  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  Col: 5
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 10
+.  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  Col: 5
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  NumType: int
+.  .  .  .  .  .  internalRole: value
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  .  2: Delete {
+.  .  .  Roles: Statement,Incomplete
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 12
+.  .  .  .  Line: 3
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 16
+.  .  .  .  Line: 3
+.  .  .  .  Col: 5
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: body
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: Name {
+.  .  .  .  .  Roles: SimpleIdentifier,Expression
+.  .  .  .  .  TOKEN "a"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 16
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 5
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 16
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 5
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  ctx: Del
+.  .  .  .  .  .  internalRole: targets
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  .  3: FunctionDef {
+.  .  .  Roles: FunctionDeclaration,FunctionDeclarationName,SimpleIdentifier
+.  .  .  TOKEN "f"
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 22
+.  .  .  .  Line: 4
+.  .  .  .  Col: 5
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 65
+.  .  .  .  Line: 7
+.  .  .  .  Col: 11
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: body
+.  .  .  .  returns: <nil>
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: arguments {
+.  .  .  .  .  Roles: FunctionDeclarationArgument
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 18
+.  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  Col: 1
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: args
+.  .  .  .  .  .  kwarg: <nil>
+.  .  .  .  .  .  vararg: <nil>
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: FunctionDef.body {
+.  .  .  .  .  Roles: FunctionDeclarationBody
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: Global {
+.  .  .  .  .  .  .  Roles: Statement,VisibleFromWorld,Incomplete
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 31
+.  .  .  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  .  .  Col: 5
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  0: Name {
+.  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  TOKEN "a"
+.  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 30
+.  .  .  .  .  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  .  .  .  .  Col: 4
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: names
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  1: Nonlocal {
+.  .  .  .  .  .  .  Roles: Statement,VisibleFromModule,Incomplete
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 44
+.  .  .  .  .  .  .  .  Line: 6
+.  .  .  .  .  .  .  .  Col: 5
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  0: Name {
+.  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  TOKEN "b"
+.  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 43
+.  .  .  .  .  .  .  .  .  .  Line: 6
+.  .  .  .  .  .  .  .  .  .  Col: 4
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: names
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  2: Expr {
+.  .  .  .  .  .  .  Roles: Expression
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 59
+.  .  .  .  .  .  .  .  Line: 7
+.  .  .  .  .  .  .  .  Col: 5
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 65
+.  .  .  .  .  .  .  .  Line: 7
+.  .  .  .  .  .  .  .  Col: 11
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  0: Yield {
+.  .  .  .  .  .  .  .  .  Roles: Return,Statement,Incomplete,ListLiteral,Expression,Incomplete
+.  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 59
+.  .  .  .  .  .  .  .  .  .  Line: 7
+.  .  .  .  .  .  .  .  .  .  Col: 5
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 65
+.  .  .  .  .  .  .  .  .  .  Line: 7
+.  .  .  .  .  .  .  .  .  .  Col: 11
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: value
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  .  .  0: Name {
+.  .  .  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  .  .  TOKEN "b"
+.  .  .  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 65
+.  .  .  .  .  .  .  .  .  .  .  .  Line: 7
+.  .  .  .  .  .  .  .  .  .  .  .  Col: 11
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 65
+.  .  .  .  .  .  .  .  .  .  .  .  Line: 7
+.  .  .  .  .  .  .  .  .  .  .  .  Col: 11
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  .  .  .  .  .  .  internalRole: value
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  }
+}
+
