@@ -73,13 +73,15 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Lambda'\]/\*\[@InternalType='arguments'\]/\*\[@internalRole\]\[@internalRole='vararg'\] | FunctionDeclarationArgument, FunctionDeclarationVarArgsList, FunctionDeclarationArgumentName |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Lambda'\]/\*\[@InternalType='arguments'\]/\*\[@internalRole\]\[@internalRole='kwarg'\] | FunctionDeclarationArgument, FunctionDeclarationVarArgsList, FunctionDeclarationArgumentName, Incomplete |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Lambda'\]/\*\[@InternalType='arguments'\]/\*\[@InternalType='arguments\.defaults'\] | FunctionDeclarationArgumentDefaultValue |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Attribute'\] | SimpleIdentifier, Expression |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Attribute'\]/\*\[@InternalType='Name'\] | QualifiedIdentifier |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Call'\] | Call, Expression |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Call'\]/\*\[@internalRole\]\[@internalRole='args'\] | CallPositionalArgument |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Call'\]/\*\[@internalRole\]\[@internalRole='keywords'\] | CallNamedArgument |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Call'\]/\*\[@internalRole\]\[@internalRole='keywords'\]/\*\[@internalRole\]\[@internalRole='value'\] | CallNamedArgumentValue |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Call'\]/\*\[@internalRole\]\[@internalRole='func'\] | CallCallee |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Call'\]/\*\[@internalRole\]\[@internalRole='func'\] | CallCallee |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Call'\]/\*\[@internalRole\]\[@internalRole='func'\]/\*\[@internalRole\]\[@internalRole='id'\] | CallReceiver, SimpleIdentifier |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Call'\]/\*\[@internalRole\]\[@internalRole='func'\]/self::\*\[@InternalType='Name'\] | Call |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Call'\]/\*\[@internalRole\]\[@internalRole='func'\]/self::\*\[@InternalType='Attribute'\] | CallCallee |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Call'\]/\*\[@internalRole\]\[@internalRole='func'\]/self::\*\[@InternalType='Attribute'\]/\*\[@internalRole\]\[@internalRole='value'\] | CallReceiver |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Assign'\] | Assignment, Expression |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Assign'\]/\*\[@internalRole\]\[@internalRole='targets'\] | AssignmentVariable |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Assign'\]/\*\[@internalRole\]\[@internalRole='value'\] | AssignmentValue |
@@ -90,7 +92,6 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Expression'\] | Expression |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Expr'\] | Expression |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Name'\] | SimpleIdentifier, Expression |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Attribute'\] | QualifiedIdentifier, Expression |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='SameLineNoops'\] | Comment |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='PreviousNoops'\] | Whitespace |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='PreviousNoops'\]/\*\[@internalRole\]\[@internalRole='lines'\] | Comment |
