@@ -80,9 +80,8 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.Mult)).Roles(OpMultiply),
 		On(HasInternalType(pyast.Div)).Roles(OpDivide),
 		On(HasInternalType(pyast.Mod)).Roles(OpMod),
-		// TODO: currently without mapping in the UAST
 		On(HasInternalType(pyast.FloorDiv)).Roles(OpDivide, Incomplete),
-		On(HasInternalType(pyast.Pow)).Roles(OpMultiply, Incomplete),
+		On(HasInternalType(pyast.Pow)).Roles(Incomplete),
 		On(HasInternalType(pyast.MatMult)).Roles(OpMultiply, Incomplete),
 
 		// Bitwise operators
@@ -333,9 +332,9 @@ var AnnotationRules = On(Any).Self(
 		// information by themselves and this we consider it comments (some preprocessors or linters can use
 		// them, the runtimes ignore them). The TOKEN will take the annotation in the UAST node so
 		// the information is keept in any case.
-		// FIXME: change to Annotation when PR 112 is merged
-		On(HasInternalRole("annotation")).Roles(Comment),
-		On(HasInternalRole("returns")).Roles(Comment),
+		// FIXME: need annotation or type UAST roles
+		On(HasInternalRole("annotation")).Roles(Comment, Incomplete),
+		On(HasInternalRole("returns")).Roles(Comment, Incomplete),
 
 		// Python very odd ellipsis operator. Has a special rule in tonoder synthetic tokens
 		// map to load it with the token "PythonEllipsisOperator" and gets the role SimpleIdentifier

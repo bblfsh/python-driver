@@ -22,7 +22,7 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Div'\] | OpDivide |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Mod'\] | OpMod |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FloorDiv'\] | OpDivide, Incomplete |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Pow'\] | OpMultiply, Incomplete |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Pow'\] | Incomplete |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='MatMult'\] | OpMultiply, Incomplete |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='LShift'\] | OpBitwiseLeftShift |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='RShift'\] | OpBitwiseRightShift |
@@ -157,8 +157,8 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Print'\]/\*\[@internalRole\]\[@internalRole='nl'\] | CallPositionalArgument |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Print'\]/\*\[@internalRole\]\[@internalRole='values'\] | CallPositionalArgument |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Print'\]/\*\[@internalRole\]\[@internalRole='values'\]/\*\[\*\] | CallPositionalArgument |
-| /self::\*\[@InternalType='Module'\]//\*\[@internalRole\]\[@internalRole='annotation'\] | Comment |
-| /self::\*\[@InternalType='Module'\]//\*\[@internalRole\]\[@internalRole='returns'\] | Comment |
+| /self::\*\[@InternalType='Module'\]//\*\[@internalRole\]\[@internalRole='annotation'\] | Comment, Incomplete |
+| /self::\*\[@InternalType='Module'\]//\*\[@internalRole\]\[@internalRole='returns'\] | Comment, Incomplete |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Ellipsis'\] | SimpleIdentifier |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='comprehension'\] | ForEach, Expression |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='comprehension'\]/\*\[@internalRole\]\[@internalRole='iter'\] | ForUpdate, Statement |
