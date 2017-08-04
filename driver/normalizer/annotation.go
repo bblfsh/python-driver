@@ -189,16 +189,19 @@ var AnnotationRules = On(Any).Self(
 			),
 		),
 
+		On(HasInternalType(pyast.Attribute)).Roles(SimpleIdentifier, Expression).Children(
+			On(HasInternalType(pyast.Name)).Roles(QualifiedIdentifier)),
+
 		On(HasInternalType(pyast.Call)).Roles(Call, Expression).Children(
 			On(HasInternalRole("args")).Roles(CallPositionalArgument),
 			On(HasInternalRole("keywords")).Roles(CallNamedArgument).Children(
 				On(HasInternalRole("value")).Roles(CallNamedArgumentValue),
 			),
-			On(HasInternalRole("func")).Self(On(HasInternalRole("id"))).Roles(CallCallee),
-			On(HasInternalRole("func")).Self(On(HasInternalRole("attr"))).Roles(CallCallee),
-			On(HasInternalRole("func")).Self(On(HasInternalType(pyast.Attribute))).Children(
-				On(HasInternalRole("id")).Roles(CallReceiver, SimpleIdentifier),
-			),
+			On(HasInternalRole("func")).Self(
+				On(HasInternalType(pyast.Name)).Roles(Call),
+				On(HasInternalType(pyast.Attribute)).Roles(CallCallee).Children(
+					On(HasInternalRole("value")).Roles(CallReceiver),
+			)),
 		),
 
 		//
@@ -220,8 +223,6 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.Expression)).Roles(Expression),
 		On(HasInternalType(pyast.Expr)).Roles(Expression),
 		On(HasInternalType(pyast.Name)).Roles(SimpleIdentifier, Expression),
-		On(HasInternalType(pyast.Attribute)).Roles(QualifiedIdentifier, Expression),
-
 		// Comments and non significative whitespace
 		On(HasInternalType(pyast.SameLineNoops)).Roles(Comment),
 		On(HasInternalType(pyast.PreviousNoops)).Roles(Whitespace).Children(
