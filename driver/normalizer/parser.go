@@ -55,9 +55,10 @@ var ToNoder = &native.ObjectToNoder{
 	},
 	PromoteAllPropertyLists: false,
 	PromotedPropertyLists: map[string]map[string]bool{
-		"If":    {"body": true, "orelse": true},
-		"For":   {"body": true, "orelse": true},
-		"While": {"body": true, "orelse": true},
+		"If":       {"body": true, "orelse": true},
+		"For":      {"body": true, "orelse": true},
+		"AsyncFor": {"body": true, "orelse": true},
+		"While":    {"body": true, "orelse": true},
 		// FIXME: check if promotion is needed in this case
 		"Compare":    {"comparators": true, "ops": true},
 		"Import":     {"names": true},
@@ -66,6 +67,7 @@ var ToNoder = &native.ObjectToNoder{
 		//"Call"                    : { "args": true, "keywords": true},
 		"With":                    {"body": true, "items": true},
 		"FunctionDef":             {"body": true, "decorator_list": true},
+		"Lambda":                  {"body": true},
 		"arguments":               {"defaults": true},
 		"Try":                     {"body": true, "orelse": true, "finalbody": true, "handlers": true},
 		"Raise":                   {"args": true},

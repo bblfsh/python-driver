@@ -1,0 +1,159 @@
+{
+    "status": "ok",
+    "errors": [],
+    "ast": {
+        "PY3AST": {
+            "ast_type": "Module",
+            "body": [
+                {
+                    "ast_type": "Assign",
+                    "col_offset": 1,
+                    "end_col_offset": 5,
+                    "end_lineno": 1,
+                    "lineno": 1,
+                    "targets": [
+                        {
+                            "ast_type": "Name",
+                            "col_offset": 1,
+                            "ctx": "Store",
+                            "end_col_offset": 1,
+                            "end_lineno": 1,
+                            "id": "a",
+                            "lineno": 1
+                        }
+                    ],
+                    "value": {
+                        "LiteralValue": 1,
+                        "NumType": "int",
+                        "ast_type": "NumLiteral",
+                        "col_offset": 5,
+                        "end_col_offset": 5,
+                        "end_lineno": 1,
+                        "lineno": 1
+                    }
+                },
+                {
+                    "ast_type": "Assign",
+                    "col_offset": 1,
+                    "end_col_offset": 5,
+                    "end_lineno": 2,
+                    "lineno": 2,
+                    "targets": [
+                        {
+                            "ast_type": "Name",
+                            "col_offset": 1,
+                            "ctx": "Store",
+                            "end_col_offset": 1,
+                            "end_lineno": 2,
+                            "id": "b",
+                            "lineno": 2
+                        }
+                    ],
+                    "value": {
+                        "LiteralValue": 2,
+                        "NumType": "int",
+                        "ast_type": "NumLiteral",
+                        "col_offset": 5,
+                        "end_col_offset": 5,
+                        "end_lineno": 2,
+                        "lineno": 2
+                    }
+                },
+                {
+                    "ast_type": "Delete",
+                    "col_offset": 1,
+                    "end_col_offset": 5,
+                    "end_lineno": 3,
+                    "lineno": 3,
+                    "targets": [
+                        {
+                            "ast_type": "Name",
+                            "col_offset": 5,
+                            "ctx": "Del",
+                            "end_col_offset": 5,
+                            "end_lineno": 3,
+                            "id": "a",
+                            "lineno": 3
+                        }
+                    ]
+                },
+                {
+                    "args": {
+                        "args": [],
+                        "ast_type": "arguments",
+                        "col_offset": 1,
+                        "defaults": [],
+                        "kw_defaults": [],
+                        "kwarg": null,
+                        "kwonlyargs": [],
+                        "lineno": 4,
+                        "vararg": null
+                    },
+                    "ast_type": "FunctionDef",
+                    "body": [
+                        {
+                            "ast_type": "Global",
+                            "col_offset": 5,
+                            "lineno": 5,
+                            "names": [
+                                {
+                                    "ast_type": "Name",
+                                    "col_offset": 4,
+                                    "id": "a",
+                                    "lineno": 5
+                                }
+                            ]
+                        },
+                        {
+                            "ast_type": "Nonlocal",
+                            "col_offset": 5,
+                            "lineno": 6,
+                            "names": [
+                                {
+                                    "ast_type": "Name",
+                                    "col_offset": 4,
+                                    "id": "b",
+                                    "lineno": 6
+                                }
+                            ]
+                        },
+                        {
+                            "ast_type": "Expr",
+                            "col_offset": 5,
+                            "end_col_offset": 11,
+                            "end_lineno": 7,
+                            "lineno": 7,
+                            "value": {
+                                "ast_type": "Yield",
+                                "col_offset": 5,
+                                "end_col_offset": 11,
+                                "end_lineno": 7,
+                                "lineno": 7,
+                                "value": {
+                                    "ast_type": "Name",
+                                    "col_offset": 11,
+                                    "ctx": "Load",
+                                    "end_col_offset": 11,
+                                    "end_lineno": 7,
+                                    "id": "b",
+                                    "lineno": 7
+                                }
+                            }
+                        }
+                    ],
+                    "col_offset": 5,
+                    "decorator_list": [],
+                    "end_col_offset": 11,
+                    "end_lineno": 7,
+                    "lineno": 4,
+                    "name": "f",
+                    "returns": null
+                }
+            ],
+            "col_offset": 1,
+            "end_col_offset": 11,
+            "end_lineno": 7,
+            "lineno": 1
+        }
+    }
+}
