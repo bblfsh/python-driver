@@ -15,7 +15,7 @@ Module {
 .  }
 .  Children: {
 .  .  0: AnnAssign {
-.  .  .  Roles: Assignment,Statement
+.  .  .  Roles: Assignment,Comment,Incomplete
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
 .  .  .  .  Line: 1
@@ -32,7 +32,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
-.  .  .  .  .  Roles: SimpleIdentifier,Expression,Comment,Incomplete
+.  .  .  .  .  Roles: SimpleIdentifier,Expression
 .  .  .  .  .  TOKEN "int"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 3
@@ -88,7 +88,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  1: AnnAssign {
-.  .  .  Roles: Assignment,Statement
+.  .  .  Roles: Assignment,Comment,Incomplete
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 11
 .  .  .  .  Line: 2
@@ -105,7 +105,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
-.  .  .  .  .  Roles: SimpleIdentifier,Expression,Comment,Incomplete
+.  .  .  .  .  Roles: SimpleIdentifier,Expression
 .  .  .  .  .  TOKEN "str"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 14
