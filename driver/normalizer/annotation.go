@@ -26,31 +26,16 @@ https://greentreesnakes.readthedocs.io/en/latest/nodes.html
 /*
 Unmarked nodes or nodes needing new features from the SDK:
 
-   = PR 59:
-	   Subscript
-	   Index
-	   Slice
-	   ExtSlice
+   These nodes would need a list-mix feature to convert parallel lists
+   into list of parents and children:
 
-   = PR 79:
-	   arguments
-
-   = PR 112:
-	   AnnAssign
-	   annotation
-
-   === No PR:
-
-   BoolOp collapsing: needs SDK features
-   arguments.defaults: needs SDK features
+   BoolOp
+   arguments.defaults
    arguments.keywords: same
-
-   These also need SDK list-mix features:
-	   Compare.comparators
-	   Compare.ops
-	   IfCondition.left
+   Compare.comparators
+   Compare.ops
+   IfCondition.left
 	(see: https://greentreesnakes.readthedocs.io/en/latest/nodes.html#Compare)
-
 */
 
 var AnnotationRules = On(Any).Self(
@@ -128,7 +113,7 @@ var AnnotationRules = On(Any).Self(
 			On(HasInternalType("FunctionDef.decorator_list")).Roles(Call, SimpleIdentifier, Incomplete),
 			On(HasInternalType("FunctionDef.body")).Roles(FunctionDeclarationBody),
 			// FIXME: change to FunctionDeclarationArgumentS once the PR has been merged
-			On(HasInternalType("arguments")).Roles(FunctionDeclarationArgument).Children(
+			On(HasInternalType(pyast.Arguments)).Roles(FunctionDeclarationArgument, Incomplete).Children(
 				On(HasInternalRole("args")).Roles(FunctionDeclarationArgument, FunctionDeclarationArgumentName),
 				On(HasInternalRole("vararg")).Roles(FunctionDeclarationArgument, FunctionDeclarationVarArgsList,
 					FunctionDeclarationArgumentName),
@@ -142,7 +127,8 @@ var AnnotationRules = On(Any).Self(
 				//		args    [a,b,c],
 				//		defaults  [2,3]
 				// TODO: create an issue for the SDK
-				On(HasInternalType("arguments.defaults")).Roles(FunctionDeclarationArgumentDefaultValue),
+				On(HasInternalType("arguments.defaults")).Roles(FunctionDeclarationArgumentDefaultValue, Incomplete),
+				On(HasInternalType("arguments.keywords")).Roles(FunctionDeclarationArgumentDefaultValue, Incomplete),
 			),
 		),
 		On(HasInternalType(pyast.AsyncFunctionDef)).Roles(FunctionDeclaration, FunctionDeclarationName, SimpleIdentifier,
@@ -150,7 +136,7 @@ var AnnotationRules = On(Any).Self(
 			On(HasInternalType("AsyncFunctionDef.decorator_list")).Roles(Call, SimpleIdentifier, Incomplete),
 			On(HasInternalType("AsyncFunctionDef.body")).Roles(FunctionDeclarationBody),
 			// FIXME: change to FunctionDeclarationArgumentS once the PR has been merged
-			On(HasInternalType("arguments")).Roles(FunctionDeclarationArgument).Children(
+			On(HasInternalType(pyast.Arguments)).Roles(FunctionDeclarationArgument, Incomplete).Children(
 				On(HasInternalRole("args")).Roles(FunctionDeclarationArgument, FunctionDeclarationArgumentName),
 				On(HasInternalRole("vararg")).Roles(FunctionDeclarationArgument, FunctionDeclarationVarArgsList,
 					FunctionDeclarationArgumentName),
@@ -164,14 +150,15 @@ var AnnotationRules = On(Any).Self(
 				//		args    [a,b,c],
 				//		defaults  [2,3]
 				// TODO: create an issue for the SDK
-				On(HasInternalType("arguments.defaults")).Roles(FunctionDeclarationArgumentDefaultValue),
+				On(HasInternalType("arguments.defaults")).Roles(FunctionDeclarationArgumentDefaultValue, Incomplete),
+				On(HasInternalType("arguments.keywords")).Roles(FunctionDeclarationArgumentDefaultValue, Incomplete),
 			),
 		),
 		On(HasInternalType(pyast.Lambda)).Roles(FunctionDeclaration, SimpleIdentifier, Expression,
 		Incomplete).Children(
 			On(HasInternalType("Lambda.body")).Roles(FunctionDeclarationBody),
 			// FIXME: change to FunctionDeclarationArgumentS once the PR has been merged
-			On(HasInternalType("arguments")).Roles(FunctionDeclarationArgument).Children(
+			On(HasInternalType(pyast.Arguments)).Roles(FunctionDeclarationArgument, Incomplete).Children(
 				On(HasInternalRole("args")).Roles(FunctionDeclarationArgument, FunctionDeclarationArgumentName),
 				On(HasInternalRole("vararg")).Roles(FunctionDeclarationArgument, FunctionDeclarationVarArgsList,
 					FunctionDeclarationArgumentName),
@@ -185,7 +172,8 @@ var AnnotationRules = On(Any).Self(
 				//		args    [a,b,c],
 				//		defaults  [2,3]
 				// TODO: create an issue for the SDK
-				On(HasInternalType("arguments.defaults")).Roles(FunctionDeclarationArgumentDefaultValue),
+				On(HasInternalType("arguments.defaults")).Roles(FunctionDeclarationArgumentDefaultValue, Incomplete),
+				On(HasInternalType("arguments.keywords")).Roles(FunctionDeclarationArgumentDefaultValue, Incomplete),
 			),
 		),
 
@@ -219,6 +207,7 @@ var AnnotationRules = On(Any).Self(
 			On(HasInternalRole("target")).Roles(AugmentedAssignmentVariable),
 			On(HasInternalRole("value")).Roles(AugmentedAssignmentValue),
 		),
+
 
 		On(HasInternalType(pyast.Expression)).Roles(Expression),
 		On(HasInternalType(pyast.Expr)).Roles(Expression),
@@ -309,7 +298,6 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.Num)).Roles(NumberLiteral, Expression),
 		// FIXME: this is the annotated assignment (a: annotation = 3) not exactly Assignment
 		// it also lacks AssignmentValue and AssignmentVariable (see how to add them)
-		On(HasInternalType(pyast.AnnAssign)).Roles(Assignment, Statement),
 		On(HasInternalType(pyast.Assert)).Roles(Assert, Statement),
 
 		// These are AST nodes in Python2 but we convert them to functions in the UAST like
@@ -334,8 +322,9 @@ var AnnotationRules = On(Any).Self(
 		// them, the runtimes ignore them). The TOKEN will take the annotation in the UAST node so
 		// the information is keept in any case.
 		// FIXME: need annotation or type UAST roles
-		On(HasInternalRole("annotation")).Roles(Comment, Incomplete),
-		On(HasInternalRole("returns")).Roles(Comment, Incomplete),
+		On(HasInternalType(pyast.AnnAssign)).Roles(Assignment, Comment, Incomplete),
+		On(HasInternalType(pyast.Annotation)).Roles(Comment, Incomplete),
+		On(HasInternalRole(pyast.Returns)).Roles(Comment, Incomplete),
 
 		// Python very odd ellipsis operator. Has a special rule in tonoder synthetic tokens
 		// map to load it with the token "PythonEllipsisOperator" and gets the role SimpleIdentifier
@@ -366,5 +355,11 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.Yield)).Roles(Return, Statement, Incomplete),
 		On(HasInternalType(pyast.YieldFrom)).Roles(Return, Statement, Incomplete),
 		On(HasInternalType(pyast.Yield)).Roles(ListLiteral, Expression, Incomplete),
+
+		On(HasInternalType(pyast.Subscript)).Roles(Expression, Incomplete),
+		On(HasInternalType(pyast.Index)).Roles(Expression, Incomplete),
+		On(HasInternalType(pyast.Slice)).Roles(Expression, Incomplete),
+		On(HasInternalType(pyast.ExtSlice)).Roles(Expression, Incomplete),
+
 	),
 )
