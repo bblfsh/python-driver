@@ -76,6 +76,10 @@ var ToNoder = &native.ObjectToNoder{
 		"ListComp.generators":     {"ifs": true},
 		"ListComp.generators.ifs": {"comparators": true, "ops": true},
 	},
+	PromotedPropertyStrings: map[string]map[string]bool{
+		"alias":      {"asname": true},
+		"ImportFrom": {"module": true},
+	},
 	// FIXME: test[ast_type=Compare].comparators is a list?? (should be "right")
 }
 

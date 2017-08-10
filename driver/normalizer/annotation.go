@@ -109,71 +109,56 @@ var AnnotationRules = On(Any).Self(
 		// Type node Token (2 levels up) but the SDK doesn't allow this
 		// TODO: create an issue for the SDK
 		On(HasInternalType(pyast.FunctionDef)).Roles(FunctionDeclaration, FunctionDeclarationName,
-		SimpleIdentifier).Children(
-			On(HasInternalType("FunctionDef.decorator_list")).Roles(Call, SimpleIdentifier, Incomplete),
-			On(HasInternalType("FunctionDef.body")).Roles(FunctionDeclarationBody),
-			// FIXME: change to FunctionDeclarationArgumentS once the PR has been merged
-			On(HasInternalType(pyast.Arguments)).Roles(FunctionDeclarationArgument, Incomplete).Children(
-				On(HasInternalRole("args")).Roles(FunctionDeclarationArgument, FunctionDeclarationArgumentName),
-				On(HasInternalRole("vararg")).Roles(FunctionDeclarationArgument, FunctionDeclarationVarArgsList,
-					FunctionDeclarationArgumentName),
-				// FIXME: this is really different from vararg, change it when we have FunctionDeclarationMap
-				// or something similar in the UAST
-				On(HasInternalRole("kwarg")).Roles(FunctionDeclarationArgument, FunctionDeclarationVarArgsList,
-					FunctionDeclarationArgumentName, Incomplete),
-				// Default arguments: Python's AST puts default arguments on a sibling list to the one of
-				// arguments that must be mapped to the arguments right-aligned like:
-				// a, b=2, c=3 ->
-				//		args    [a,b,c],
-				//		defaults  [2,3]
-				// TODO: create an issue for the SDK
-				On(HasInternalType("arguments.defaults")).Roles(FunctionDeclarationArgumentDefaultValue, Incomplete),
-				On(HasInternalType("arguments.keywords")).Roles(FunctionDeclarationArgumentDefaultValue, Incomplete),
-			),
-		),
-		On(HasInternalType(pyast.AsyncFunctionDef)).Roles(FunctionDeclaration, FunctionDeclarationName, SimpleIdentifier,
-			Incomplete).Children(
+			SimpleIdentifier),
+		On(HasInternalType(pyast.AsyncFunctionDef)).Roles(FunctionDeclaration,
+			FunctionDeclarationName, SimpleIdentifier, Incomplete),
+		On(HasInternalType("FunctionDef.decorator_list")).Roles(Call, SimpleIdentifier, Incomplete),
+		On(HasInternalType("FunctionDef.body")).Roles(FunctionDeclarationBody),
+		// FIXME: change to FunctionDeclarationArgumentS once the PR has been merged
+		On(HasInternalType(pyast.Arguments)).Roles(FunctionDeclarationArgument, Incomplete).Children(
+			On(HasInternalRole("args")).Roles(FunctionDeclarationArgument, FunctionDeclarationArgumentName,
+				SimpleIdentifier),
+			On(HasInternalRole("vararg")).Roles(FunctionDeclarationArgument, FunctionDeclarationVarArgsList,
+				FunctionDeclarationArgumentName, SimpleIdentifier),
+			// FIXME: this is really different from vararg, change it when we have FunctionDeclarationMap
+			// or something similar in the UAST
+			On(HasInternalRole("kwarg")).Roles(FunctionDeclarationArgument, FunctionDeclarationVarArgsList,
+				FunctionDeclarationArgumentName, Incomplete, SimpleIdentifier),
+			// Default arguments: Python's AST puts default arguments on a sibling list to the one of
+			// arguments that must be mapped to the arguments right-aligned like:
+			// a, b=2, c=3 ->
+			//		args    [a,b,c],
+			//		defaults  [2,3]
+			// TODO: create an issue for the SDK
+			On(HasInternalType("arguments.defaults")).Roles(FunctionDeclarationArgumentDefaultValue, Incomplete),
+			On(HasInternalType("arguments.keywords")).Roles(FunctionDeclarationArgumentDefaultValue, Incomplete),
 			On(HasInternalType("AsyncFunctionDef.decorator_list")).Roles(Call, SimpleIdentifier, Incomplete),
 			On(HasInternalType("AsyncFunctionDef.body")).Roles(FunctionDeclarationBody),
 			// FIXME: change to FunctionDeclarationArgumentS once the PR has been merged
-			On(HasInternalType(pyast.Arguments)).Roles(FunctionDeclarationArgument, Incomplete).Children(
-				On(HasInternalRole("args")).Roles(FunctionDeclarationArgument, FunctionDeclarationArgumentName),
-				On(HasInternalRole("vararg")).Roles(FunctionDeclarationArgument, FunctionDeclarationVarArgsList,
-					FunctionDeclarationArgumentName),
-				// FIXME: this is really different from vararg, change it when we have FunctionDeclarationMap
-				// or something similar in the UAST
-				On(HasInternalRole("kwarg")).Roles(FunctionDeclarationArgument, FunctionDeclarationVarArgsList,
-					FunctionDeclarationArgumentName, Incomplete),
-				// Default arguments: Python's AST puts default arguments on a sibling list to the one of
-				// arguments that must be mapped to the arguments right-aligned like:
-				// a, b=2, c=3 ->
-				//		args    [a,b,c],
-				//		defaults  [2,3]
-				// TODO: create an issue for the SDK
-				On(HasInternalType("arguments.defaults")).Roles(FunctionDeclarationArgumentDefaultValue, Incomplete),
-				On(HasInternalType("arguments.keywords")).Roles(FunctionDeclarationArgumentDefaultValue, Incomplete),
-			),
 		),
 		On(HasInternalType(pyast.Lambda)).Roles(FunctionDeclaration, SimpleIdentifier, Expression,
-		Incomplete).Children(
+			Incomplete).Children(
 			On(HasInternalType("Lambda.body")).Roles(FunctionDeclarationBody),
 			// FIXME: change to FunctionDeclarationArgumentS once the PR has been merged
 			On(HasInternalType(pyast.Arguments)).Roles(FunctionDeclarationArgument, Incomplete).Children(
-				On(HasInternalRole("args")).Roles(FunctionDeclarationArgument, FunctionDeclarationArgumentName),
+				On(HasInternalRole("args")).Roles(FunctionDeclarationArgument, FunctionDeclarationArgumentName,
+					SimpleIdentifier),
 				On(HasInternalRole("vararg")).Roles(FunctionDeclarationArgument, FunctionDeclarationVarArgsList,
-					FunctionDeclarationArgumentName),
+					FunctionDeclarationArgumentName, SimpleIdentifier),
 				// FIXME: this is really different from vararg, change it when we have FunctionDeclarationMap
 				// or something similar in the UAST
 				On(HasInternalRole("kwarg")).Roles(FunctionDeclarationArgument, FunctionDeclarationVarArgsList,
-					FunctionDeclarationArgumentName, Incomplete),
+					FunctionDeclarationArgumentName, Incomplete, SimpleIdentifier),
 				// Default arguments: Python's AST puts default arguments on a sibling list to the one of
 				// arguments that must be mapped to the arguments right-aligned like:
 				// a, b=2, c=3 ->
 				//		args    [a,b,c],
 				//		defaults  [2,3]
 				// TODO: create an issue for the SDK
-				On(HasInternalType("arguments.defaults")).Roles(FunctionDeclarationArgumentDefaultValue, Incomplete),
-				On(HasInternalType("arguments.keywords")).Roles(FunctionDeclarationArgumentDefaultValue, Incomplete),
+				On(HasInternalType("arguments.defaults")).Roles(FunctionDeclarationArgumentDefaultValue,
+					SimpleIdentifier, Incomplete),
+				On(HasInternalType("arguments.keywords")).Roles(FunctionDeclarationArgumentDefaultValue,
+					SimpleIdentifier, Incomplete),
 			),
 		),
 
@@ -189,7 +174,7 @@ var AnnotationRules = On(Any).Self(
 				On(HasInternalType(pyast.Name)).Roles(Call),
 				On(HasInternalType(pyast.Attribute)).Roles(CallCallee).Children(
 					On(HasInternalRole("value")).Roles(CallReceiver),
-			)),
+				)),
 		),
 
 		//
@@ -207,7 +192,6 @@ var AnnotationRules = On(Any).Self(
 			On(HasInternalRole("target")).Roles(AugmentedAssignmentVariable),
 			On(HasInternalRole("value")).Roles(AugmentedAssignmentValue),
 		),
-
 
 		On(HasInternalType(pyast.Expression)).Roles(Expression),
 		On(HasInternalType(pyast.Expr)).Roles(Expression),
@@ -270,8 +254,13 @@ var AnnotationRules = On(Any).Self(
 			On(HasInternalRole("orelse")).Roles(IfElse),
 		),
 		On(HasInternalType(pyast.Import)).Roles(ImportDeclaration, Statement),
+		// "y" in "from x import y" or "import y"
+		On(HasInternalType(pyast.Alias)).Roles(ImportPath, SimpleIdentifier),
+		// "x" in "from x import y"
+		On(HasInternalType("ImportFrom.module")).Roles(ImportPath, SimpleIdentifier),
+		// "y" in "import x as y"
+		On(HasInternalType("alias.asname")).Roles(ImportAlias, SimpleIdentifier),
 		On(HasInternalType(pyast.ImportFrom)).Roles(ImportDeclaration, Statement),
-		On(HasInternalType(pyast.Alias)).Roles(ImportAlias, SimpleIdentifier),
 		On(HasInternalType(pyast.ClassDef)).Roles(TypeDeclaration, SimpleIdentifier, Statement).Children(
 			On(HasInternalType("ClassDef.body")).Roles(TypeDeclarationBody),
 			On(HasInternalType("ClassDef.bases")).Roles(TypeDeclarationBases),
@@ -360,6 +349,5 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.Index)).Roles(Expression, Incomplete),
 		On(HasInternalType(pyast.Slice)).Roles(Expression, Incomplete),
 		On(HasInternalType(pyast.ExtSlice)).Roles(Expression, Incomplete),
-
 	),
 )
