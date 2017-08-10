@@ -112,7 +112,7 @@ var AnnotationRules = On(Any).Self(
 			SimpleIdentifier),
 		On(HasInternalType(pyast.AsyncFunctionDef)).Roles(FunctionDeclaration,
 			FunctionDeclarationName, SimpleIdentifier, Incomplete),
-		On(HasInternalType("FunctionDef.decorator_list")).Roles(Call, SimpleIdentifier, Incomplete),
+		On(HasInternalType("FunctionDef.decorator_list")).Roles(Call, Incomplete),
 		On(HasInternalType("FunctionDef.body")).Roles(FunctionDeclarationBody),
 		// FIXME: change to FunctionDeclarationArgumentS once the PR has been merged
 		On(HasInternalType(pyast.Arguments)).Roles(FunctionDeclarationArgument, Incomplete).Children(
@@ -132,12 +132,11 @@ var AnnotationRules = On(Any).Self(
 			// TODO: create an issue for the SDK
 			On(HasInternalType("arguments.defaults")).Roles(FunctionDeclarationArgumentDefaultValue, Incomplete),
 			On(HasInternalType("arguments.keywords")).Roles(FunctionDeclarationArgumentDefaultValue, Incomplete),
-			On(HasInternalType("AsyncFunctionDef.decorator_list")).Roles(Call, SimpleIdentifier, Incomplete),
+			On(HasInternalType("AsyncFunctionDef.decorator_list")).Roles(Call, Incomplete),
 			On(HasInternalType("AsyncFunctionDef.body")).Roles(FunctionDeclarationBody),
 			// FIXME: change to FunctionDeclarationArgumentS once the PR has been merged
 		),
-		On(HasInternalType(pyast.Lambda)).Roles(FunctionDeclaration, SimpleIdentifier, Expression,
-			Incomplete).Children(
+		On(HasInternalType(pyast.Lambda)).Roles(FunctionDeclaration, Expression, Incomplete).Children(
 			On(HasInternalType("Lambda.body")).Roles(FunctionDeclarationBody),
 			// FIXME: change to FunctionDeclarationArgumentS once the PR has been merged
 			On(HasInternalType(pyast.Arguments)).Roles(FunctionDeclarationArgument, Incomplete).Children(
@@ -156,9 +155,9 @@ var AnnotationRules = On(Any).Self(
 				//		defaults  [2,3]
 				// TODO: create an issue for the SDK
 				On(HasInternalType("arguments.defaults")).Roles(FunctionDeclarationArgumentDefaultValue,
-					SimpleIdentifier, Incomplete),
+					Incomplete),
 				On(HasInternalType("arguments.keywords")).Roles(FunctionDeclarationArgumentDefaultValue,
-					SimpleIdentifier, Incomplete),
+					Incomplete),
 			),
 		),
 
@@ -317,7 +316,7 @@ var AnnotationRules = On(Any).Self(
 
 		// Python very odd ellipsis operator. Has a special rule in tonoder synthetic tokens
 		// map to load it with the token "PythonEllipsisOperator" and gets the role SimpleIdentifier
-		On(HasInternalType(pyast.Ellipsis)).Roles(SimpleIdentifier),
+		On(HasInternalType(pyast.Ellipsis)).Roles(SimpleIdentifier, Incomplete),
 
 		// List/Map/Set comprehensions. We map the "for x in y" to ForEach roles and the
 		// "if something" to If* roles. FIXME: missing the top comprehension roles in the UAST, change
