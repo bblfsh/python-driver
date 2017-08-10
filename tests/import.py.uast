@@ -37,7 +37,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: alias {
-.  .  .  .  .  .  .  Roles: ImportAlias,SimpleIdentifier
+.  .  .  .  .  .  .  Roles: ImportPath,SimpleIdentifier
 .  .  .  .  .  .  .  TOKEN "sys"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 7
@@ -80,7 +80,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: alias {
-.  .  .  .  .  .  .  Roles: ImportAlias,SimpleIdentifier
+.  .  .  .  .  .  .  Roles: ImportPath,SimpleIdentifier
 .  .  .  .  .  .  .  TOKEN "sys"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 18
@@ -97,7 +97,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: alias {
-.  .  .  .  .  .  .  Roles: ImportAlias,SimpleIdentifier
+.  .  .  .  .  .  .  Roles: ImportPath,SimpleIdentifier
 .  .  .  .  .  .  .  TOKEN "os"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 23
@@ -142,7 +142,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: alias {
-.  .  .  .  .  .  .  Roles: ImportAlias,SimpleIdentifier
+.  .  .  .  .  .  .  Roles: ImportPath,SimpleIdentifier
 .  .  .  .  .  .  .  TOKEN "path"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 41
@@ -158,6 +158,13 @@ Module {
 .  .  .  .  .  .  .  .  asname: <nil>
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: ImportFrom.module {
+.  .  .  .  .  Roles: ImportPath,SimpleIdentifier
+.  .  .  .  .  TOKEN "os"
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  promotedPropertyString: true
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
@@ -187,7 +194,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: alias {
-.  .  .  .  .  .  .  Roles: ImportAlias,SimpleIdentifier
+.  .  .  .  .  .  .  Roles: ImportPath,SimpleIdentifier
 .  .  .  .  .  .  .  TOKEN "join"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 66
@@ -204,7 +211,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: alias {
-.  .  .  .  .  .  .  Roles: ImportAlias,SimpleIdentifier
+.  .  .  .  .  .  .  Roles: ImportPath,SimpleIdentifier
 .  .  .  .  .  .  .  TOKEN "exists"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 72
@@ -220,6 +227,13 @@ Module {
 .  .  .  .  .  .  .  .  asname: <nil>
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: ImportFrom.module {
+.  .  .  .  .  Roles: ImportPath,SimpleIdentifier
+.  .  .  .  .  TOKEN "os.path"
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  promotedPropertyString: true
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
