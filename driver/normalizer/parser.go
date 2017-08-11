@@ -52,6 +52,7 @@ var ToNoder = &native.ObjectToNoder{
 		"UAdd":      "+",
 		"USub":      "-",
 		"Invert":    "~",
+		"Pass":      "pass",
 	},
 	PromoteAllPropertyLists: false,
 	PromotedPropertyLists: map[string]map[string]bool{
