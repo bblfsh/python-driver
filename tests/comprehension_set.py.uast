@@ -31,7 +31,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: SetComp {
-.  .  .  .  .  Roles: MapLiteral,Expression,Incomplete,SetLiteral,Expression,Incomplete
+.  .  .  .  .  Roles: SetLiteral,Expression,Incomplete
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  Line: 1
@@ -135,7 +135,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Compare {
-.  .  .  .  .  .  .  .  .  Roles: IfCondition,BinaryExpression
+.  .  .  .  .  .  .  .  .  Roles: BinaryExpression,Expression,IfCondition,BinaryExpression
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 26
 .  .  .  .  .  .  .  .  .  .  Line: 1
@@ -176,7 +176,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression,BinaryExpressionLeft
+.  .  .  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression,BinaryExpressionLeft,BinaryExpressionLeft
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "n"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 26
@@ -194,7 +194,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  2: Compare.ops {
-.  .  .  .  .  .  .  .  .  .  .  Roles: BinaryExpressionOp
+.  .  .  .  .  .  .  .  .  .  .  Roles: BinaryExpressionOp,BinaryExpressionOp
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  .  .  .  .  .  .  }

@@ -9,9 +9,9 @@ Module {
 .  .  Col: 1
 .  }
 .  EndPosition: {
-.  .  Offset: 179
-.  .  Line: 17
-.  .  Col: 16
+.  .  Offset: 189
+.  .  Line: 18
+.  .  Col: 8
 .  }
 .  Children: {
 .  .  0: If {
@@ -654,7 +654,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  2: Compare {
-.  .  .  .  .  .  .  .  .  Roles: IfCondition,BinaryExpression,Expression
+.  .  .  .  .  .  .  .  .  Roles: BinaryExpression,Expression,IfCondition
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 101
 .  .  .  .  .  .  .  .  .  .  Line: 10
@@ -741,7 +741,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  2: Compare {
-.  .  .  .  .  Roles: IfCondition,BinaryExpression,Expression
+.  .  .  .  .  Roles: BinaryExpression,Expression,IfCondition
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 65
 .  .  .  .  .  .  Line: 7
@@ -866,9 +866,9 @@ Module {
 .  .  .  .  Col: 1
 .  .  .  }
 .  .  .  EndPosition: {
-.  .  .  .  Offset: 179
-.  .  .  .  Line: 17
-.  .  .  .  Col: 16
+.  .  .  .  Offset: 189
+.  .  .  .  Line: 18
+.  .  .  .  Col: 8
 .  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
@@ -888,11 +888,16 @@ Module {
 .  .  .  .  .  .  .  .  Line: 18
 .  .  .  .  .  .  .  .  Col: 5
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 189
+.  .  .  .  .  .  .  .  Line: 18
+.  .  .  .  .  .  .  .  Col: 8
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Compare {
-.  .  .  .  .  Roles: IfCondition,BinaryExpression,Expression
+.  .  .  .  .  Roles: BinaryExpression,Expression,IfCondition
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 167
 .  .  .  .  .  .  Line: 17

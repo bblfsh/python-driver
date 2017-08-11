@@ -30,29 +30,22 @@ Module {
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: Import.names {
-.  .  .  .  .  Roles: Unannotated
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  0: alias {
+.  .  .  .  .  Roles: ImportPath,SimpleIdentifier
+.  .  .  .  .  TOKEN "sys"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 7
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 8
 .  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: alias {
-.  .  .  .  .  .  .  Roles: ImportPath,SimpleIdentifier
-.  .  .  .  .  .  .  TOKEN "sys"
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 7
-.  .  .  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  .  .  Col: 8
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 9
-.  .  .  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  .  .  Col: 10
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  asname: <nil>
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 9
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 10
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  asname: <nil>
+.  .  .  .  .  .  internalRole: names
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
@@ -73,46 +66,40 @@ Module {
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: Import.names {
-.  .  .  .  .  Roles: Unannotated
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  0: alias {
+.  .  .  .  .  Roles: ImportPath,SimpleIdentifier
+.  .  .  .  .  TOKEN "sys"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 18
+.  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  Col: 8
 .  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: alias {
-.  .  .  .  .  .  .  Roles: ImportPath,SimpleIdentifier
-.  .  .  .  .  .  .  TOKEN "sys"
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 18
-.  .  .  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  .  .  Col: 8
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 20
-.  .  .  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  .  .  Col: 10
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  asname: <nil>
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: alias {
-.  .  .  .  .  .  .  Roles: ImportPath,SimpleIdentifier
-.  .  .  .  .  .  .  TOKEN "os"
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 23
-.  .  .  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  .  .  Col: 13
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 24
-.  .  .  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  .  .  Col: 14
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  asname: <nil>
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 20
+.  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  Col: 10
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  asname: <nil>
+.  .  .  .  .  .  internalRole: names
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: alias {
+.  .  .  .  .  Roles: ImportPath,SimpleIdentifier
+.  .  .  .  .  TOKEN "os"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 23
+.  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  Col: 13
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 24
+.  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  Col: 14
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  asname: <nil>
+.  .  .  .  .  .  internalRole: names
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
@@ -135,29 +122,22 @@ Module {
 .  .  .  .  level: 0
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: ImportFrom.names {
-.  .  .  .  .  Roles: Unannotated
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  0: alias {
+.  .  .  .  .  Roles: ImportPath,SimpleIdentifier
+.  .  .  .  .  TOKEN "path"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 41
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 16
 .  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: alias {
-.  .  .  .  .  .  .  Roles: ImportPath,SimpleIdentifier
-.  .  .  .  .  .  .  TOKEN "path"
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 41
-.  .  .  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  .  .  Col: 16
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 44
-.  .  .  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  .  .  Col: 19
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  asname: <nil>
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 44
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 19
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  asname: <nil>
+.  .  .  .  .  .  internalRole: names
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: ImportFrom.module {
@@ -187,49 +167,43 @@ Module {
 .  .  .  .  level: 0
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: ImportFrom.names {
-.  .  .  .  .  Roles: Unannotated
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  0: alias {
+.  .  .  .  .  Roles: ImportPath,SimpleIdentifier
+.  .  .  .  .  TOKEN "join"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 66
+.  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  Col: 21
 .  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: alias {
-.  .  .  .  .  .  .  Roles: ImportPath,SimpleIdentifier
-.  .  .  .  .  .  .  TOKEN "join"
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 66
-.  .  .  .  .  .  .  .  Line: 4
-.  .  .  .  .  .  .  .  Col: 21
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 69
-.  .  .  .  .  .  .  .  Line: 4
-.  .  .  .  .  .  .  .  Col: 24
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  asname: <nil>
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: alias {
-.  .  .  .  .  .  .  Roles: ImportPath,SimpleIdentifier
-.  .  .  .  .  .  .  TOKEN "exists"
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 72
-.  .  .  .  .  .  .  .  Line: 4
-.  .  .  .  .  .  .  .  Col: 27
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 77
-.  .  .  .  .  .  .  .  Line: 4
-.  .  .  .  .  .  .  .  Col: 32
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  asname: <nil>
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 69
+.  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  Col: 24
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  asname: <nil>
+.  .  .  .  .  .  internalRole: names
 .  .  .  .  .  }
 .  .  .  .  }
-.  .  .  .  1: ImportFrom.module {
+.  .  .  .  1: alias {
+.  .  .  .  .  Roles: ImportPath,SimpleIdentifier
+.  .  .  .  .  TOKEN "exists"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 72
+.  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  Col: 27
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 77
+.  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  Col: 32
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  asname: <nil>
+.  .  .  .  .  .  internalRole: names
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  2: ImportFrom.module {
 .  .  .  .  .  Roles: ImportPath,SimpleIdentifier
 .  .  .  .  .  TOKEN "os.path"
 .  .  .  .  .  Properties: {

@@ -60,10 +60,7 @@ var ToNoder = &native.ObjectToNoder{
 		"For":      {"body": true, "orelse": true},
 		"AsyncFor": {"body": true, "orelse": true},
 		"While":    {"body": true, "orelse": true},
-		// FIXME: check if promotion is needed in this case
-		"Compare":    {"comparators": true, "ops": true},
-		"Import":     {"names": true},
-		"ImportFrom": {"names": true},
+		"Compare":  {"comparators": true, "ops": true},
 		// FIXME: check call.keywords
 		//"Call"                    : { "args": true, "keywords": true},
 		"With":                    {"body": true, "items": true},
@@ -73,9 +70,6 @@ var ToNoder = &native.ObjectToNoder{
 		"Try":                     {"body": true, "orelse": true, "finalbody": true, "handlers": true},
 		"Raise":                   {"args": true},
 		"ClassDef":                {"body": true, "bases": true, "decorator_list": true, "keywords": true},
-		"ListComp":                {"generators": true},
-		"ListComp.generators":     {"ifs": true},
-		"ListComp.generators.ifs": {"comparators": true, "ops": true},
 	},
 	PromotedPropertyStrings: map[string]map[string]bool{
 		"alias":      {"asname": true},
