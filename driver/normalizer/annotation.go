@@ -207,10 +207,10 @@ var AnnotationRules = On(Any).Self(
 		// TODO: check what Constant nodes are generated in the python AST and improve this
 		On(HasInternalType(pyast.Constant)).Roles(SimpleIdentifier, Expression),
 		On(HasInternalType(pyast.Try)).Roles(Try, Statement).Children(
-			On(HasInternalRole("body")).Roles(TryBody),
-			On(HasInternalRole("finalbody")).Roles(TryFinally),
-			On(HasInternalRole("handlers")).Roles(TryCatch),
-			On(HasInternalRole("orelse")).Roles(IfElse),
+			On(HasInternalType("Try.body")).Roles(TryBody),
+			On(HasInternalType("Try.finalbody")).Roles(TryFinally),
+			On(HasInternalType("Try.handlers")).Roles(TryCatch),
+			On(HasInternalType("Try.orelse")).Roles(IfElse),
 		),
 		On(HasInternalType(pyast.TryExcept)).Roles(TryCatch, Statement),     // py2
 		On(HasInternalType(pyast.ExceptHandler)).Roles(TryCatch, Statement), // py3
@@ -218,6 +218,8 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.Raise)).Roles(Throw, Statement),
 		// FIXME: review, add path for the body and items childs
 		On(HasInternalType(pyast.With)).Roles(BlockScope, Statement),
+		On(HasInternalType("With.body")).Roles(BlockScope, Expression, Incomplete),
+		On(HasInternalType("With.items")).Roles(SimpleIdentifier, Expression, Incomplete),
 		On(HasInternalType(pyast.AsyncWith)).Roles(BlockScope, Statement, Incomplete),
 		On(HasInternalType(pyast.Withitem)).Roles(SimpleIdentifier, Incomplete),
 		On(HasInternalType(pyast.Return)).Roles(Return, Statement),
@@ -236,15 +238,15 @@ var AnnotationRules = On(Any).Self(
 		// and SDK feature to mix lists (also needed for default and keyword arguments and
 		// boolean operators).
 		// "If that sounds awkward is because it is" (their words)
+		On(HasInternalType(pyast.Compare)).Roles(BinaryExpression, Expression).Children(
+			On(HasInternalType("Compare.ops")).Roles(BinaryExpressionOp),
+			On(HasInternalRole("left")).Roles(BinaryExpressionLeft),
+		),
+		On(HasInternalType("Compare.comparators")).Roles(BinaryExpressionRight),
 		On(HasInternalType(pyast.If)).Roles(If, Statement).Children(
 			On(HasInternalType("If.body")).Roles(IfBody),
 			On(HasInternalRole("test")).Roles(IfCondition),
 			On(HasInternalType("If.orelse")).Roles(IfElse),
-			On(HasInternalType(pyast.Compare)).Roles(BinaryExpression, Expression).Children(
-				On(HasInternalType("Compare.ops")).Roles(BinaryExpressionOp),
-				On(HasInternalType("Compare.comparators")).Roles(BinaryExpressionRight),
-				On(HasInternalRole("left")).Roles(BinaryExpressionLeft),
-			),
 		),
 		On(HasInternalType(pyast.IfExp)).Roles(If, Expression).Children(
 			// These are used on ifexpressions (a = 1 if x else 2)
@@ -263,7 +265,9 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.ClassDef)).Roles(TypeDeclaration, SimpleIdentifier, Statement).Children(
 			On(HasInternalType("ClassDef.body")).Roles(TypeDeclarationBody),
 			On(HasInternalType("ClassDef.bases")).Roles(TypeDeclarationBases),
-		),
+			On(HasInternalType("ClassDef.keywords")).Roles(Incomplete).Children(
+				On(HasInternalType(pyast.Keyword)).Roles(SimpleIdentifier, Incomplete),
+		)),
 
 		On(HasInternalType(pyast.For)).Roles(ForEach, Statement).Children(
 			On(HasInternalType("For.body")).Roles(ForBody),
@@ -327,12 +331,11 @@ var AnnotationRules = On(Any).Self(
 			// FIXME: see the comment on IfCondition above
 			On(HasInternalType(pyast.Compare)).Roles(IfCondition, BinaryExpression).Children(
 				On(HasInternalType("Compare.ops")).Roles(BinaryExpressionOp),
-				On(HasInternalType("Compare.comparators")).Roles(BinaryExpressionRight),
 				On(HasInternalRole("left")).Roles(BinaryExpressionLeft),
 			),
 		),
 		On(HasInternalType(pyast.ListComp)).Roles(ListLiteral, Expression, Incomplete),
-		On(HasInternalType(pyast.SetComp)).Roles(MapLiteral, Expression, Incomplete),
+		On(HasInternalType(pyast.DictComp)).Roles(MapLiteral, Expression, Incomplete),
 		On(HasInternalType(pyast.SetComp)).Roles(SetLiteral, Expression, Incomplete),
 
 		On(HasInternalType(pyast.Delete)).Roles(Statement, Incomplete),
