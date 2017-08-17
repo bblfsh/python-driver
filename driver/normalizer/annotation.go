@@ -170,7 +170,7 @@ var AnnotationRules = On(Any).Self(
 				On(HasInternalRole("value")).Roles(CallNamedArgumentValue),
 			),
 			On(HasInternalRole("func")).Self(
-				On(HasInternalType(pyast.Name)).Roles(Call),
+				On(HasInternalType(pyast.Name)).Roles(CallCallee),
 				On(HasInternalType(pyast.Attribute)).Roles(CallCallee).Children(
 					On(HasInternalRole("value")).Roles(CallReceiver),
 				)),
@@ -267,7 +267,8 @@ var AnnotationRules = On(Any).Self(
 			On(HasInternalType("ClassDef.bases")).Roles(TypeDeclarationBases),
 			On(HasInternalType("ClassDef.keywords")).Roles(Incomplete).Children(
 				On(HasInternalType(pyast.Keyword)).Roles(SimpleIdentifier, Incomplete),
-		)),
+			),
+		),
 
 		On(HasInternalType(pyast.For)).Roles(ForEach, Statement).Children(
 			On(HasInternalType("For.body")).Roles(ForBody),
