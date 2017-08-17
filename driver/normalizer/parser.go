@@ -13,8 +13,7 @@ var ToNoder = &native.ObjectToNoder{
 	EndColumnKey:    "end_col_offset",
 
 	TokenKeys: map[string]bool{
-		"module": true, // Module on ImportFrom
-		"name":   true,
+		"name": true,
 		//"asname":          true, // Alias from ImportFrom
 		"id":           true, // Name nodes
 		"attr":         true, // something.attr
