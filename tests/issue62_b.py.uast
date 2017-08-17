@@ -16,7 +16,6 @@ Module {
 .  Children: {
 .  .  0: ImportFrom {
 .  .  .  Roles: ImportDeclaration,Statement
-.  .  .  TOKEN "collections"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 5
 .  .  .  .  Line: 1
@@ -30,6 +29,7 @@ Module {
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
 .  .  .  .  level: 0
+.  .  .  .  module: collections
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: alias {
@@ -61,7 +61,6 @@ Module {
 .  .  }
 .  .  1: ImportFrom {
 .  .  .  Roles: ImportDeclaration,Statement
-.  .  .  TOKEN "ast2vec.bblfsh_roles"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 33
 .  .  .  .  Line: 3
@@ -75,6 +74,7 @@ Module {
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
 .  .  .  .  level: 0
+.  .  .  .  module: ast2vec.bblfsh_roles
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: alias {
@@ -137,7 +137,6 @@ Module {
 .  .  }
 .  .  2: ImportFrom {
 .  .  .  Roles: ImportDeclaration,Statement
-.  .  .  TOKEN "ast2vec.repo2.base"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 84
 .  .  .  .  Line: 4
@@ -151,6 +150,7 @@ Module {
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
 .  .  .  .  level: 0
+.  .  .  .  module: ast2vec.repo2.base
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: alias {
