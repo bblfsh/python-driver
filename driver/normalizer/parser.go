@@ -13,8 +13,7 @@ var ToNoder = &native.ObjectToNoder{
 	EndColumnKey:    "end_col_offset",
 
 	TokenKeys: map[string]bool{
-		"module": true, // Module on ImportFrom
-		"name":   true,
+		"name": true,
 		//"asname":          true, // Alias from ImportFrom
 		"id":           true, // Name nodes
 		"attr":         true, // something.attr
@@ -63,13 +62,13 @@ var ToNoder = &native.ObjectToNoder{
 		"Compare":  {"comparators": true, "ops": true},
 		// FIXME: check call.keywords
 		//"Call"                    : { "args": true, "keywords": true},
-		"With":                    {"body": true, "items": true},
-		"FunctionDef":             {"body": true, "decorator_list": true},
-		"Lambda":                  {"body": true},
-		"arguments":               {"defaults": true},
-		"Try":                     {"body": true, "orelse": true, "finalbody": true, "handlers": true},
-		"Raise":                   {"args": true},
-		"ClassDef":                {"body": true, "bases": true, "decorator_list": true, "keywords": true},
+		"With":        {"body": true, "items": true},
+		"FunctionDef": {"body": true, "decorator_list": true},
+		"Lambda":      {"body": true},
+		"arguments":   {"defaults": true},
+		"Try":         {"body": true, "orelse": true, "finalbody": true, "handlers": true},
+		"Raise":       {"args": true},
+		"ClassDef":    {"body": true, "bases": true, "decorator_list": true, "keywords": true},
 	},
 	PromotedPropertyStrings: map[string]map[string]bool{
 		"alias":      {"asname": true},
