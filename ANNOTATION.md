@@ -102,6 +102,7 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Try'\]/\*\[@InternalType='Try\.orelse'\] | IfElse |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='TryExcept'\] | TryCatch, Statement |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='ExceptHandler'\] | TryCatch, Statement |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='ExceptHandler\.name'\] | SimpleIdentifier |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='TryFinally'\] | TryFinally, Statement |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Raise'\] | Throw, Statement |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='With'\] | BlockScope, Statement |

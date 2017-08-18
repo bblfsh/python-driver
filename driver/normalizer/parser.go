@@ -66,13 +66,14 @@ var ToNoder = &native.ObjectToNoder{
 		"FunctionDef": {"body": true, "decorator_list": true},
 		"Lambda":      {"body": true},
 		"arguments":   {"defaults": true},
-		"Try":         {"body": true, "orelse": true, "finalbody": true, "handlers": true},
+		"Try":         {"body": true, "orelse": true, "finalbody": true},
 		"Raise":       {"args": true},
 		"ClassDef":    {"body": true, "bases": true, "decorator_list": true, "keywords": true},
 	},
 	PromotedPropertyStrings: map[string]map[string]bool{
-		"alias":      {"asname": true},
-		"ImportFrom": {"module": true},
+		"alias":         {"asname": true},
+		"ImportFrom":    {"module": true},
+		"ExceptHandler": {"name": true},
 	},
 	// FIXME: test[ast_type=Compare].comparators is a list?? (should be "right")
 }
