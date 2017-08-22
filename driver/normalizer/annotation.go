@@ -214,6 +214,7 @@ var AnnotationRules = On(Any).Self(
 		),
 		On(HasInternalType(pyast.TryExcept)).Roles(TryCatch, Statement),     // py2
 		On(HasInternalType(pyast.ExceptHandler)).Roles(TryCatch, Statement), // py3
+		On(HasInternalType("ExceptHandler.name")).Roles(SimpleIdentifier),
 		On(HasInternalType(pyast.TryFinally)).Roles(TryFinally, Statement),
 		On(HasInternalType(pyast.Raise)).Roles(Throw, Statement),
 		// FIXME: review, add path for the body and items childs
