@@ -11,6 +11,7 @@ var ToNoder = &native.ObjectToNoder{
 	EndLineKey:      "end_lineno",
 	ColumnKey:       "col_offset",
 	EndColumnKey:    "end_col_offset",
+	PositionFill:    native.OffsetFromLineCol,
 
 	TokenKeys: map[string]bool{
 		"name": true,
@@ -78,25 +79,26 @@ var ToNoder = &native.ObjectToNoder{
 	// FIXME: test[ast_type=Compare].comparators is a list?? (should be "right")
 }
 
-func transformationParser(opts driver.ParserOptions) (tr driver.Parser, err error) {
-	parser, err := native.ExecParser(ToNoder, opts.NativeBin)
-	if err != nil {
-		return tr, err
-	}
-
-	tr = &driver.TransformationParser{
-		Parser:         parser,
-		Transformation: driver.FillOffsetFromLineCol,
-	}
-
-	return tr, nil
-}
-
 // ParserBuilder creates a parser that transform source code files into *uast.Node.
-func ParserBuilder(opts driver.ParserOptions) (driver.Parser, error) {
-	parser, err := transformationParser(opts)
+func ParserBuilder(opts driver.ParserOptions) (parser driver.Parser, err error) {
+	psr, err := native.ExecParser(ToNoder, opts.NativeBin)
 	if err != nil {
-		return nil, err
+		return psr, err
+	}
+
+	switch ToNoder.PositionFill {
+	case native.None:
+		parser = psr
+	case native.OffsetFromLineCol:
+		parser = &driver.TransformationParser{
+			Parser:         psr,
+			Transformation: driver.FillOffsetFromLineCol,
+		}
+	case native.LineColFromOffset:
+		parser = &driver.TransformationParser{
+			Parser:         psr,
+			Transformation: driver.FillLineColFromOffset,
+		}
 	}
 
 	return parser, nil
