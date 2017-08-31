@@ -3,16 +3,6 @@ Errors:
 UAST: 
 Module {
 .  Roles: File
-.  StartPosition: {
-.  .  Offset: 0
-.  .  Line: 1
-.  .  Col: 1
-.  }
-.  EndPosition: {
-.  .  Offset: 61
-.  .  Line: 7
-.  .  Col: 16
-.  }
 .  Children: {
 .  .  0: Expr {
 .  .  .  Roles: Expression
@@ -20,11 +10,6 @@ Module {
 .  .  .  .  Offset: 0
 .  .  .  .  Line: 1
 .  .  .  .  Col: 1
-.  .  .  }
-.  .  .  EndPosition: {
-.  .  .  .  Offset: 4
-.  .  .  .  Line: 1
-.  .  .  .  Col: 5
 .  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
@@ -36,11 +21,6 @@ Module {
 .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  Line: 1
 .  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 4
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 5
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: value
@@ -64,24 +44,7 @@ Module {
 .  .  .  .  .  .  .  .  internalRole: left
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  .  1: BitAnd {
-.  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpBitwiseAnd
-.  .  .  .  .  .  .  TOKEN "&"
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 2
-.  .  .  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  .  .  Col: 3
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 2
-.  .  .  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  .  .  Col: 3
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: NumLiteral {
+.  .  .  .  .  .  1: NumLiteral {
 .  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
@@ -97,6 +60,13 @@ Module {
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  NumType: int
 .  .  .  .  .  .  .  .  internalRole: right
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  2: BitAnd {
+.  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpBitwiseAnd
+.  .  .  .  .  .  .  TOKEN "&"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: op
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }
@@ -110,11 +80,6 @@ Module {
 .  .  .  .  Line: 2
 .  .  .  .  Col: 1
 .  .  .  }
-.  .  .  EndPosition: {
-.  .  .  .  Offset: 10
-.  .  .  .  Line: 2
-.  .  .  .  Col: 5
-.  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
 .  .  .  }
@@ -125,11 +90,6 @@ Module {
 .  .  .  .  .  .  Offset: 6
 .  .  .  .  .  .  Line: 2
 .  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 10
-.  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  Col: 5
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: value
@@ -153,24 +113,7 @@ Module {
 .  .  .  .  .  .  .  .  internalRole: left
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  .  1: BitOr {
-.  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpBitwiseOr
-.  .  .  .  .  .  .  TOKEN "|"
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 8
-.  .  .  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  .  .  Col: 3
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 8
-.  .  .  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  .  .  Col: 3
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: NumLiteral {
+.  .  .  .  .  .  1: NumLiteral {
 .  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
@@ -186,6 +129,13 @@ Module {
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  NumType: int
 .  .  .  .  .  .  .  .  internalRole: right
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  2: BitOr {
+.  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpBitwiseOr
+.  .  .  .  .  .  .  TOKEN "|"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: op
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }
@@ -199,11 +149,6 @@ Module {
 .  .  .  .  Line: 3
 .  .  .  .  Col: 1
 .  .  .  }
-.  .  .  EndPosition: {
-.  .  .  .  Offset: 16
-.  .  .  .  Line: 3
-.  .  .  .  Col: 5
-.  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
 .  .  .  }
@@ -214,11 +159,6 @@ Module {
 .  .  .  .  .  .  Offset: 12
 .  .  .  .  .  .  Line: 3
 .  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 16
-.  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  Col: 5
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: value
@@ -242,24 +182,7 @@ Module {
 .  .  .  .  .  .  .  .  internalRole: left
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  .  1: BitXor {
-.  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpBitwiseXor
-.  .  .  .  .  .  .  TOKEN "^"
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 14
-.  .  .  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  .  .  Col: 3
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 14
-.  .  .  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  .  .  Col: 3
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: NumLiteral {
+.  .  .  .  .  .  1: NumLiteral {
 .  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
@@ -275,6 +198,13 @@ Module {
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  NumType: int
 .  .  .  .  .  .  .  .  internalRole: right
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  2: BitXor {
+.  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpBitwiseXor
+.  .  .  .  .  .  .  TOKEN "^"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: op
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }
@@ -288,11 +218,6 @@ Module {
 .  .  .  .  Line: 4
 .  .  .  .  Col: 1
 .  .  .  }
-.  .  .  EndPosition: {
-.  .  .  .  Offset: 23
-.  .  .  .  Line: 4
-.  .  .  .  Col: 6
-.  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
 .  .  .  }
@@ -303,11 +228,6 @@ Module {
 .  .  .  .  .  .  Offset: 18
 .  .  .  .  .  .  Line: 4
 .  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 23
-.  .  .  .  .  .  Line: 4
-.  .  .  .  .  .  Col: 6
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: value
@@ -331,24 +251,7 @@ Module {
 .  .  .  .  .  .  .  .  internalRole: left
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  .  1: LShift {
-.  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpBitwiseLeftShift
-.  .  .  .  .  .  .  TOKEN "<<"
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 20
-.  .  .  .  .  .  .  .  Line: 4
-.  .  .  .  .  .  .  .  Col: 3
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 21
-.  .  .  .  .  .  .  .  Line: 4
-.  .  .  .  .  .  .  .  Col: 4
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: NumLiteral {
+.  .  .  .  .  .  1: NumLiteral {
 .  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
@@ -364,6 +267,13 @@ Module {
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  NumType: int
 .  .  .  .  .  .  .  .  internalRole: right
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  2: LShift {
+.  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpBitwiseLeftShift
+.  .  .  .  .  .  .  TOKEN "<<"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: op
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }
@@ -377,11 +287,6 @@ Module {
 .  .  .  .  Line: 5
 .  .  .  .  Col: 1
 .  .  .  }
-.  .  .  EndPosition: {
-.  .  .  .  Offset: 30
-.  .  .  .  Line: 5
-.  .  .  .  Col: 6
-.  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
 .  .  .  }
@@ -392,11 +297,6 @@ Module {
 .  .  .  .  .  .  Offset: 25
 .  .  .  .  .  .  Line: 5
 .  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 30
-.  .  .  .  .  .  Line: 5
-.  .  .  .  .  .  Col: 6
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: value
@@ -420,24 +320,7 @@ Module {
 .  .  .  .  .  .  .  .  internalRole: left
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  .  1: RShift {
-.  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpBitwiseRightShift
-.  .  .  .  .  .  .  TOKEN ">>"
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 27
-.  .  .  .  .  .  .  .  Line: 5
-.  .  .  .  .  .  .  .  Col: 3
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 28
-.  .  .  .  .  .  .  .  Line: 5
-.  .  .  .  .  .  .  .  Col: 4
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: NumLiteral {
+.  .  .  .  .  .  1: NumLiteral {
 .  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
@@ -455,6 +338,13 @@ Module {
 .  .  .  .  .  .  .  .  internalRole: right
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
+.  .  .  .  .  .  2: RShift {
+.  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpBitwiseRightShift
+.  .  .  .  .  .  .  TOKEN ">>"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: op
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
@@ -465,11 +355,6 @@ Module {
 .  .  .  .  Offset: 32
 .  .  .  .  Line: 6
 .  .  .  .  Col: 1
-.  .  .  }
-.  .  .  EndPosition: {
-.  .  .  .  Offset: 44
-.  .  .  .  Line: 6
-.  .  .  .  Col: 13
 .  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
@@ -482,11 +367,6 @@ Module {
 .  .  .  .  .  .  Line: 6
 .  .  .  .  .  .  Col: 1
 .  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 44
-.  .  .  .  .  .  Line: 6
-.  .  .  .  .  .  Col: 13
-.  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
@@ -498,11 +378,6 @@ Module {
 .  .  .  .  .  .  .  .  Line: 6
 .  .  .  .  .  .  .  .  Col: 7
 .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 40
-.  .  .  .  .  .  .  .  Line: 6
-.  .  .  .  .  .  .  .  Col: 9
-.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: left
 .  .  .  .  .  .  .  }
@@ -513,11 +388,6 @@ Module {
 .  .  .  .  .  .  .  .  .  .  Offset: 32
 .  .  .  .  .  .  .  .  .  .  Line: 6
 .  .  .  .  .  .  .  .  .  .  Col: 1
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 36
-.  .  .  .  .  .  .  .  .  .  Line: 6
-.  .  .  .  .  .  .  .  .  .  Col: 5
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  internalRole: left
@@ -541,24 +411,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: left
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  1: BitAnd {
-.  .  .  .  .  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpBitwiseAnd
-.  .  .  .  .  .  .  .  .  .  .  TOKEN "&"
-.  .  .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  Offset: 34
-.  .  .  .  .  .  .  .  .  .  .  .  Line: 6
-.  .  .  .  .  .  .  .  .  .  .  .  Col: 3
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  Offset: 34
-.  .  .  .  .  .  .  .  .  .  .  .  Line: 6
-.  .  .  .  .  .  .  .  .  .  .  .  Col: 3
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  2: NumLiteral {
+.  .  .  .  .  .  .  .  .  .  1: NumLiteral {
 .  .  .  .  .  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
@@ -576,26 +429,16 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: right
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  2: BitAnd {
+.  .  .  .  .  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpBitwiseAnd
+.  .  .  .  .  .  .  .  .  .  .  TOKEN "&"
+.  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  internalRole: op
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  1: BitAnd {
-.  .  .  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpBitwiseAnd
-.  .  .  .  .  .  .  .  .  TOKEN "&"
-.  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 38
-.  .  .  .  .  .  .  .  .  .  Line: 6
-.  .  .  .  .  .  .  .  .  .  Col: 7
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 38
-.  .  .  .  .  .  .  .  .  .  Line: 6
-.  .  .  .  .  .  .  .  .  .  Col: 7
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  2: NumLiteral {
+.  .  .  .  .  .  .  .  1: NumLiteral {
 .  .  .  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "3"
 .  .  .  .  .  .  .  .  .  StartPosition: {
@@ -613,26 +456,16 @@ Module {
 .  .  .  .  .  .  .  .  .  .  internalRole: right
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  2: BitAnd {
+.  .  .  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpBitwiseAnd
+.  .  .  .  .  .  .  .  .  TOKEN "&"
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: op
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  .  1: BitOr {
-.  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpBitwiseOr
-.  .  .  .  .  .  .  TOKEN "|"
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 42
-.  .  .  .  .  .  .  .  Line: 6
-.  .  .  .  .  .  .  .  Col: 11
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 42
-.  .  .  .  .  .  .  .  Line: 6
-.  .  .  .  .  .  .  .  Col: 11
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: NumLiteral {
+.  .  .  .  .  .  1: NumLiteral {
 .  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "4"
 .  .  .  .  .  .  .  StartPosition: {
@@ -650,6 +483,13 @@ Module {
 .  .  .  .  .  .  .  .  internalRole: right
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
+.  .  .  .  .  .  2: BitOr {
+.  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpBitwiseOr
+.  .  .  .  .  .  .  TOKEN "|"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: op
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
@@ -660,11 +500,6 @@ Module {
 .  .  .  .  Offset: 46
 .  .  .  .  Line: 7
 .  .  .  .  Col: 1
-.  .  .  }
-.  .  .  EndPosition: {
-.  .  .  .  Offset: 61
-.  .  .  .  Line: 7
-.  .  .  .  Col: 16
 .  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
@@ -677,11 +512,6 @@ Module {
 .  .  .  .  .  .  Line: 7
 .  .  .  .  .  .  Col: 1
 .  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 61
-.  .  .  .  .  .  Line: 7
-.  .  .  .  .  .  Col: 16
-.  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
@@ -692,11 +522,6 @@ Module {
 .  .  .  .  .  .  .  .  Offset: 47
 .  .  .  .  .  .  .  .  Line: 7
 .  .  .  .  .  .  .  .  Col: 2
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 51
-.  .  .  .  .  .  .  .  Line: 7
-.  .  .  .  .  .  .  .  Col: 6
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: left
@@ -720,24 +545,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  internalRole: left
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  1: Add {
-.  .  .  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpAdd
-.  .  .  .  .  .  .  .  .  TOKEN "+"
-.  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 49
-.  .  .  .  .  .  .  .  .  .  Line: 7
-.  .  .  .  .  .  .  .  .  .  Col: 4
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 49
-.  .  .  .  .  .  .  .  .  .  Line: 7
-.  .  .  .  .  .  .  .  .  .  Col: 4
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  2: NumLiteral {
+.  .  .  .  .  .  .  .  1: NumLiteral {
 .  .  .  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  .  .  StartPosition: {
@@ -755,36 +563,21 @@ Module {
 .  .  .  .  .  .  .  .  .  .  internalRole: right
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  2: Add {
+.  .  .  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpAdd
+.  .  .  .  .  .  .  .  .  TOKEN "+"
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: op
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  .  1: BitOr {
-.  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpBitwiseOr
-.  .  .  .  .  .  .  TOKEN "|"
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 54
-.  .  .  .  .  .  .  .  Line: 7
-.  .  .  .  .  .  .  .  Col: 9
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 54
-.  .  .  .  .  .  .  .  Line: 7
-.  .  .  .  .  .  .  .  Col: 9
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: BinOp {
+.  .  .  .  .  .  1: BinOp {
 .  .  .  .  .  .  .  Roles: BinaryExpressionRight,BinaryExpression,Expression
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 57
 .  .  .  .  .  .  .  .  Line: 7
 .  .  .  .  .  .  .  .  Col: 12
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 61
-.  .  .  .  .  .  .  .  Line: 7
-.  .  .  .  .  .  .  .  Col: 16
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: right
@@ -808,24 +601,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  internalRole: left
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  1: Add {
-.  .  .  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpAdd
-.  .  .  .  .  .  .  .  .  TOKEN "+"
-.  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 59
-.  .  .  .  .  .  .  .  .  .  Line: 7
-.  .  .  .  .  .  .  .  .  .  Col: 14
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 59
-.  .  .  .  .  .  .  .  .  .  Line: 7
-.  .  .  .  .  .  .  .  .  .  Col: 14
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  2: NumLiteral {
+.  .  .  .  .  .  .  .  1: NumLiteral {
 .  .  .  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  .  .  StartPosition: {
@@ -843,6 +619,20 @@ Module {
 .  .  .  .  .  .  .  .  .  .  internalRole: right
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  2: Add {
+.  .  .  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpAdd
+.  .  .  .  .  .  .  .  .  TOKEN "+"
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: op
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  2: BitOr {
+.  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpBitwiseOr
+.  .  .  .  .  .  .  TOKEN "|"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: op
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }

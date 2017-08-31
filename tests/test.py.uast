@@ -3,16 +3,6 @@ Errors:
 UAST: 
 Module {
 .  Roles: File
-.  StartPosition: {
-.  .  Offset: 0
-.  .  Line: 1
-.  .  Col: 1
-.  }
-.  EndPosition: {
-.  .  Offset: 17
-.  .  Line: 2
-.  .  Col: 8
-.  }
 .  Children: {
 .  .  0: If {
 .  .  .  Roles: If,Statement
@@ -22,9 +12,9 @@ Module {
 .  .  .  .  Col: 1
 .  .  .  }
 .  .  .  EndPosition: {
-.  .  .  .  Offset: 17
-.  .  .  .  Line: 2
-.  .  .  .  Col: 8
+.  .  .  .  Offset: 1
+.  .  .  .  Line: 1
+.  .  .  .  Col: 2
 .  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
@@ -58,11 +48,6 @@ Module {
 .  .  .  .  .  .  Offset: 3
 .  .  .  .  .  .  Line: 1
 .  .  .  .  .  .  Col: 4
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 7
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 8
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: test
@@ -120,16 +105,6 @@ Module {
 .  .  .  .  .  .  .  .  0: Gt {
 .  .  .  .  .  .  .  .  .  Roles: OpGreaterThan
 .  .  .  .  .  .  .  .  .  TOKEN ">"
-.  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 5
-.  .  .  .  .  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  .  .  .  .  Col: 6
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 5
-.  .  .  .  .  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  .  .  .  .  Col: 6
-.  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }

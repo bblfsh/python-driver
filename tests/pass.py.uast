@@ -3,16 +3,6 @@ Errors:
 UAST: 
 Module {
 .  Roles: File
-.  StartPosition: {
-.  .  Offset: 0
-.  .  Line: 1
-.  .  Col: 1
-.  }
-.  EndPosition: {
-.  .  Offset: 57
-.  .  Line: 6
-.  .  Col: 8
-.  }
 .  Children: {
 .  .  0: Pass {
 .  .  .  Roles: Noop,Statement
@@ -23,9 +13,9 @@ Module {
 .  .  .  .  Col: 1
 .  .  .  }
 .  .  .  EndPosition: {
-.  .  .  .  Offset: 10
+.  .  .  .  Offset: 3
 .  .  .  .  Line: 1
-.  .  .  .  Col: 11
+.  .  .  .  Col: 4
 .  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
@@ -59,29 +49,16 @@ Module {
 .  .  .  .  Col: 5
 .  .  .  }
 .  .  .  EndPosition: {
-.  .  .  .  Offset: 31
+.  .  .  .  Offset: 23
 .  .  .  .  Line: 3
-.  .  .  .  Col: 19
+.  .  .  .  Col: 11
 .  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
 .  .  .  .  returns: <nil>
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: arguments {
-.  .  .  .  .  Roles: FunctionDeclarationArgument,Incomplete
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 13
-.  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  kwarg: <nil>
-.  .  .  .  .  .  vararg: <nil>
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: FunctionDef.body {
+.  .  .  .  0: FunctionDef.body {
 .  .  .  .  .  Roles: FunctionDeclarationBody
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  promotedPropertyList: true
@@ -136,6 +113,14 @@ Module {
 .  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
+.  .  .  .  1: arguments {
+.  .  .  .  .  Roles: FunctionDeclarationArgument,Incomplete
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: args
+.  .  .  .  .  .  kwarg: <nil>
+.  .  .  .  .  .  vararg: <nil>
+.  .  .  .  .  }
+.  .  .  .  }
 .  .  .  }
 .  .  }
 .  .  2: FunctionDef {
@@ -147,29 +132,16 @@ Module {
 .  .  .  .  Col: 5
 .  .  .  }
 .  .  .  EndPosition: {
-.  .  .  .  Offset: 57
-.  .  .  .  Line: 6
-.  .  .  .  Col: 8
+.  .  .  .  Offset: 45
+.  .  .  .  Line: 5
+.  .  .  .  Col: 12
 .  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
 .  .  .  .  returns: <nil>
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: arguments {
-.  .  .  .  .  Roles: FunctionDeclarationArgument,Incomplete
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 34
-.  .  .  .  .  .  Line: 5
-.  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  kwarg: <nil>
-.  .  .  .  .  .  vararg: <nil>
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: FunctionDef.body {
+.  .  .  .  0: FunctionDef.body {
 .  .  .  .  .  Roles: FunctionDeclarationBody
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  promotedPropertyList: true
@@ -222,6 +194,14 @@ Module {
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: arguments {
+.  .  .  .  .  Roles: FunctionDeclarationArgument,Incomplete
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: args
+.  .  .  .  .  .  kwarg: <nil>
+.  .  .  .  .  .  vararg: <nil>
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }

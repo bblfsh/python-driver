@@ -3,16 +3,6 @@ Errors:
 UAST: 
 Module {
 .  Roles: File
-.  StartPosition: {
-.  .  Offset: 0
-.  .  Line: 1
-.  .  Col: 1
-.  }
-.  EndPosition: {
-.  .  Offset: 139
-.  .  Line: 9
-.  .  Col: 8
-.  }
 .  Children: {
 .  .  0: FunctionDef {
 .  .  .  Roles: FunctionDeclaration,FunctionDeclarationName,SimpleIdentifier
@@ -23,9 +13,9 @@ Module {
 .  .  .  .  Col: 5
 .  .  .  }
 .  .  .  EndPosition: {
-.  .  .  .  Offset: 55
-.  .  .  .  Line: 3
-.  .  .  .  Col: 15
+.  .  .  .  Offset: 11
+.  .  .  .  Line: 1
+.  .  .  .  Col: 12
 .  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
@@ -34,16 +24,6 @@ Module {
 .  .  .  Children: {
 .  .  .  .  0: arguments {
 .  .  .  .  .  Roles: FunctionDeclarationArgument,Incomplete
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 14
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 15
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 28
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 29
-.  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  kwarg: <nil>
@@ -134,9 +114,9 @@ Module {
 .  .  .  .  .  .  .  .  Col: 5
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 55
+.  .  .  .  .  .  .  .  Offset: 50
 .  .  .  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  .  .  Col: 15
+.  .  .  .  .  .  .  .  Col: 10
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
@@ -172,9 +152,9 @@ Module {
 .  .  .  .  Col: 5
 .  .  .  }
 .  .  .  EndPosition: {
-.  .  .  .  Offset: 102
-.  .  .  .  Line: 6
-.  .  .  .  Col: 20
+.  .  .  .  Offset: 68
+.  .  .  .  Line: 5
+.  .  .  .  Col: 11
 .  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
@@ -183,16 +163,6 @@ Module {
 .  .  .  Children: {
 .  .  .  .  0: arguments {
 .  .  .  .  .  Roles: FunctionDeclarationArgument,Incomplete
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 71
-.  .  .  .  .  .  Line: 5
-.  .  .  .  .  .  Col: 14
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 79
-.  .  .  .  .  .  Line: 5
-.  .  .  .  .  .  Col: 22
-.  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  kwarg: <nil>
@@ -301,11 +271,6 @@ Module {
 .  .  .  .  .  .  .  .  Line: 6
 .  .  .  .  .  .  .  .  Col: 5
 .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 102
-.  .  .  .  .  .  .  .  Line: 6
-.  .  .  .  .  .  .  .  Col: 20
-.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Yield {
 .  .  .  .  .  .  .  .  .  Roles: Return,Statement,Incomplete,ListLiteral,Expression,Incomplete
@@ -315,9 +280,9 @@ Module {
 .  .  .  .  .  .  .  .  .  .  Col: 5
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 102
+.  .  .  .  .  .  .  .  .  .  Offset: 91
 .  .  .  .  .  .  .  .  .  .  Line: 6
-.  .  .  .  .  .  .  .  .  .  Col: 20
+.  .  .  .  .  .  .  .  .  .  Col: 9
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  internalRole: value
@@ -329,11 +294,6 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 93
 .  .  .  .  .  .  .  .  .  .  .  .  Line: 6
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 11
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  Offset: 102
-.  .  .  .  .  .  .  .  .  .  .  .  Line: 6
-.  .  .  .  .  .  .  .  .  .  .  .  Col: 20
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  .  .  ctx: Load
@@ -413,9 +373,9 @@ Module {
 .  .  .  .  Col: 11
 .  .  .  }
 .  .  .  EndPosition: {
-.  .  .  .  Offset: 139
-.  .  .  .  Line: 9
-.  .  .  .  Col: 8
+.  .  .  .  Offset: 123
+.  .  .  .  Line: 8
+.  .  .  .  Col: 19
 .  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
@@ -424,16 +384,6 @@ Module {
 .  .  .  Children: {
 .  .  .  .  0: arguments {
 .  .  .  .  .  Roles: FunctionDeclarationArgument,Incomplete
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 126
-.  .  .  .  .  .  Line: 8
-.  .  .  .  .  .  Col: 22
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 128
-.  .  .  .  .  .  Line: 8
-.  .  .  .  .  .  Col: 24
-.  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  kwarg: <nil>

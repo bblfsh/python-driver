@@ -3,16 +3,6 @@ Errors:
 UAST: 
 Module {
 .  Roles: File
-.  StartPosition: {
-.  .  Offset: 0
-.  .  Line: 1
-.  .  Col: 1
-.  }
-.  EndPosition: {
-.  .  Offset: 69
-.  .  Line: 5
-.  .  Col: 8
-.  }
 .  Children: {
 .  .  0: FunctionDef {
 .  .  .  Roles: FunctionDeclaration,FunctionDeclarationName,SimpleIdentifier
@@ -23,29 +13,16 @@ Module {
 .  .  .  .  Col: 5
 .  .  .  }
 .  .  .  EndPosition: {
-.  .  .  .  Offset: 69
-.  .  .  .  Line: 5
-.  .  .  .  Col: 8
+.  .  .  .  Offset: 11
+.  .  .  .  Line: 1
+.  .  .  .  Col: 12
 .  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
 .  .  .  .  returns: <nil>
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: arguments {
-.  .  .  .  .  Roles: FunctionDeclarationArgument,Incomplete
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  kwarg: <nil>
-.  .  .  .  .  .  vararg: <nil>
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: FunctionDef.body {
+.  .  .  .  0: FunctionDef.body {
 .  .  .  .  .  Roles: FunctionDeclarationBody
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  promotedPropertyList: true
@@ -57,11 +34,6 @@ Module {
 .  .  .  .  .  .  .  .  Offset: 54
 .  .  .  .  .  .  .  .  Line: 4
 .  .  .  .  .  .  .  .  Col: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 60
-.  .  .  .  .  .  .  .  Line: 4
-.  .  .  .  .  .  .  .  Col: 7
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: StringLiteral {
@@ -106,10 +78,23 @@ Module {
 .  .  .  .  .  .  .  .  Line: 6
 .  .  .  .  .  .  .  .  Col: 5
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 80
+.  .  .  .  .  .  .  .  Line: 6
+.  .  .  .  .  .  .  .  Col: 10
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  value: <nil>
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: arguments {
+.  .  .  .  .  Roles: FunctionDeclarationArgument,Incomplete
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: args
+.  .  .  .  .  .  kwarg: <nil>
+.  .  .  .  .  .  vararg: <nil>
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
