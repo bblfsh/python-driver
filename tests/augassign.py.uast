@@ -3,16 +3,6 @@ Errors:
 UAST: 
 Module {
 .  Roles: File
-.  StartPosition: {
-.  .  Offset: 0
-.  .  Line: 1
-.  .  Col: 1
-.  }
-.  EndPosition: {
-.  .  Offset: 26
-.  .  Line: 4
-.  .  Col: 6
-.  }
 .  Children: {
 .  .  0: AugAssign {
 .  .  .  Roles: AugmentedAssignment,Statement
@@ -23,27 +13,15 @@ Module {
 .  .  .  .  Col: 3
 .  .  .  }
 .  .  .  EndPosition: {
-.  .  .  .  Offset: 5
+.  .  .  .  Offset: 3
 .  .  .  .  Line: 1
-.  .  .  .  Col: 6
+.  .  .  .  Col: 4
 .  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: Add {
-.  .  .  .  .  Roles: OpAdd,AugmentedAssignmentOperator
-.  .  .  .  .  TOKEN "+"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: op
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Name {
+.  .  .  .  0: Name {
 .  .  .  .  .  Roles: AugmentedAssignmentVariable,SimpleIdentifier,Expression
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
@@ -61,7 +39,7 @@ Module {
 .  .  .  .  .  .  internalRole: target
 .  .  .  .  .  }
 .  .  .  .  }
-.  .  .  .  2: NumLiteral {
+.  .  .  .  1: NumLiteral {
 .  .  .  .  .  Roles: NumberLiteral,Expression,AugmentedAssignmentValue
 .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  StartPosition: {
@@ -77,6 +55,13 @@ Module {
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  NumType: int
 .  .  .  .  .  .  internalRole: value
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  2: Add {
+.  .  .  .  .  Roles: OpAdd,AugmentedAssignmentOperator
+.  .  .  .  .  TOKEN "+"
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: op
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
@@ -89,28 +74,11 @@ Module {
 .  .  .  .  Line: 2
 .  .  .  .  Col: 1
 .  .  .  }
-.  .  .  EndPosition: {
-.  .  .  .  Offset: 12
-.  .  .  .  Line: 2
-.  .  .  .  Col: 6
-.  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: Sub {
-.  .  .  .  .  Roles: OpSubstract,AugmentedAssignmentOperator
-.  .  .  .  .  TOKEN "-"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 7
-.  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: op
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Name {
+.  .  .  .  0: Name {
 .  .  .  .  .  Roles: AugmentedAssignmentVariable,SimpleIdentifier,Expression
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
@@ -128,7 +96,7 @@ Module {
 .  .  .  .  .  .  internalRole: target
 .  .  .  .  .  }
 .  .  .  .  }
-.  .  .  .  2: NumLiteral {
+.  .  .  .  1: NumLiteral {
 .  .  .  .  .  Roles: NumberLiteral,Expression,AugmentedAssignmentValue
 .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  StartPosition: {
@@ -144,6 +112,13 @@ Module {
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  NumType: int
 .  .  .  .  .  .  internalRole: value
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  2: Sub {
+.  .  .  .  .  Roles: OpSubstract,AugmentedAssignmentOperator
+.  .  .  .  .  TOKEN "-"
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: op
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
@@ -156,28 +131,11 @@ Module {
 .  .  .  .  Line: 3
 .  .  .  .  Col: 1
 .  .  .  }
-.  .  .  EndPosition: {
-.  .  .  .  Offset: 19
-.  .  .  .  Line: 3
-.  .  .  .  Col: 6
-.  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: Mult {
-.  .  .  .  .  Roles: OpMultiply,AugmentedAssignmentOperator
-.  .  .  .  .  TOKEN "*"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 14
-.  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: op
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Name {
+.  .  .  .  0: Name {
 .  .  .  .  .  Roles: AugmentedAssignmentVariable,SimpleIdentifier,Expression
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
@@ -195,7 +153,7 @@ Module {
 .  .  .  .  .  .  internalRole: target
 .  .  .  .  .  }
 .  .  .  .  }
-.  .  .  .  2: NumLiteral {
+.  .  .  .  1: NumLiteral {
 .  .  .  .  .  Roles: NumberLiteral,Expression,AugmentedAssignmentValue
 .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  StartPosition: {
@@ -211,6 +169,13 @@ Module {
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  NumType: int
 .  .  .  .  .  .  internalRole: value
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  2: Mult {
+.  .  .  .  .  Roles: OpMultiply,AugmentedAssignmentOperator
+.  .  .  .  .  TOKEN "*"
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: op
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
@@ -223,28 +188,11 @@ Module {
 .  .  .  .  Line: 4
 .  .  .  .  Col: 1
 .  .  .  }
-.  .  .  EndPosition: {
-.  .  .  .  Offset: 26
-.  .  .  .  Line: 4
-.  .  .  .  Col: 6
-.  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: Div {
-.  .  .  .  .  Roles: OpDivide,AugmentedAssignmentOperator
-.  .  .  .  .  TOKEN "/"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 21
-.  .  .  .  .  .  Line: 4
-.  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: op
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Name {
+.  .  .  .  0: Name {
 .  .  .  .  .  Roles: AugmentedAssignmentVariable,SimpleIdentifier,Expression
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
@@ -262,7 +210,7 @@ Module {
 .  .  .  .  .  .  internalRole: target
 .  .  .  .  .  }
 .  .  .  .  }
-.  .  .  .  2: NumLiteral {
+.  .  .  .  1: NumLiteral {
 .  .  .  .  .  Roles: NumberLiteral,Expression,AugmentedAssignmentValue
 .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  StartPosition: {
@@ -278,6 +226,13 @@ Module {
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  NumType: int
 .  .  .  .  .  .  internalRole: value
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  2: Div {
+.  .  .  .  .  Roles: OpDivide,AugmentedAssignmentOperator
+.  .  .  .  .  TOKEN "/"
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: op
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }

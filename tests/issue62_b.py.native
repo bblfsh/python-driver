@@ -8,7 +8,7 @@
                 {
                     "ast_type": "ImportFrom",
                     "col_offset": 6,
-                    "end_col_offset": 31,
+                    "end_col_offset": 16,
                     "end_lineno": 1,
                     "level": 0,
                     "lineno": 1,
@@ -17,10 +17,6 @@
                         {
                             "asname": null,
                             "ast_type": "alias",
-                            "col_offset": 25,
-                            "end_col_offset": 31,
-                            "end_lineno": 1,
-                            "lineno": 1,
                             "name": "Counter"
                         }
                     ]
@@ -28,8 +24,6 @@
                 {
                     "ast_type": "ImportFrom",
                     "col_offset": 1,
-                    "end_col_offset": 50,
-                    "end_lineno": 3,
                     "level": 0,
                     "lineno": 3,
                     "module": "ast2vec.bblfsh_roles",
@@ -37,10 +31,6 @@
                         {
                             "asname": null,
                             "ast_type": "alias",
-                            "col_offset": 34,
-                            "end_col_offset": 50,
-                            "end_lineno": 3,
-                            "lineno": 3,
                             "name": "SIMPLE_IDENTIFIER"
                         }
                     ],
@@ -63,8 +53,6 @@
                 {
                     "ast_type": "ImportFrom",
                     "col_offset": 1,
-                    "end_col_offset": 40,
-                    "end_lineno": 4,
                     "level": 0,
                     "lineno": 4,
                     "module": "ast2vec.repo2.base",
@@ -72,10 +60,6 @@
                         {
                             "asname": null,
                             "ast_type": "alias",
-                            "col_offset": 32,
-                            "end_col_offset": 40,
-                            "end_lineno": 4,
-                            "lineno": 4,
                             "name": "Repo2Base"
                         }
                     ]
@@ -87,8 +71,6 @@
                         {
                             "ast_type": "Assign",
                             "col_offset": 5,
-                            "end_col_offset": 25,
-                            "end_lineno": 8,
                             "lineno": 8,
                             "targets": [
                                 {
@@ -134,8 +116,8 @@
                     ],
                     "col_offset": 7,
                     "decorator_list": [],
-                    "end_col_offset": 25,
-                    "end_lineno": 8,
+                    "end_col_offset": 18,
+                    "end_lineno": 7,
                     "keywords": [],
                     "lineno": 7,
                     "name": "Repo2IdModel"
@@ -178,8 +160,6 @@
                         {
                             "ast_type": "Expr",
                             "col_offset": 1,
-                            "end_col_offset": 7,
-                            "end_lineno": 14,
                             "lineno": 14,
                             "value": {
                                 "LiteralValue": "\n    Print all SIMPLE_IDENTIFIERs (and counters) from repository\n    ",
@@ -193,8 +173,6 @@
                         {
                             "ast_type": "Assign",
                             "col_offset": 5,
-                            "end_col_offset": 30,
-                            "end_lineno": 15,
                             "lineno": 15,
                             "targets": [
                                 {
@@ -264,14 +242,10 @@
                                     }
                                 ],
                                 "ast_type": "arguments",
-                                "col_offset": 25,
                                 "defaults": [],
-                                "end_col_offset": 41,
-                                "end_lineno": 17,
                                 "kw_defaults": [],
                                 "kwarg": null,
                                 "kwonlyargs": [],
-                                "lineno": 17,
                                 "vararg": null
                             },
                             "ast_type": "FunctionDef",
@@ -285,27 +259,19 @@
                                                 {
                                                     "ast_type": "AugAssign",
                                                     "col_offset": 34,
-                                                    "end_col_offset": 37,
+                                                    "end_col_offset": 35,
                                                     "end_lineno": 20,
                                                     "lineno": 20,
                                                     "op": {
-                                                        "ast_type": "Add",
-                                                        "col_offset": 24,
-                                                        "lineno": 20
+                                                        "ast_type": "Add"
                                                     },
                                                     "target": {
                                                         "ast_type": "Subscript",
                                                         "col_offset": 17,
                                                         "ctx": "Store",
-                                                        "end_col_offset": 31,
-                                                        "end_lineno": 20,
                                                         "lineno": 20,
                                                         "slice": {
                                                             "ast_type": "Index",
-                                                            "col_offset": 17,
-                                                            "end_col_offset": 31,
-                                                            "end_lineno": 20,
-                                                            "lineno": 20,
                                                             "value": {
                                                                 "ast_type": "Attribute",
                                                                 "attr": "token",
@@ -347,8 +313,8 @@
                                                 }
                                             ],
                                             "col_offset": 13,
-                                            "end_col_offset": 37,
-                                            "end_lineno": 20,
+                                            "end_col_offset": 14,
+                                            "end_lineno": 19,
                                             "lineno": 19,
                                             "orelse": [],
                                             "test": {
@@ -374,8 +340,6 @@
                                                         }
                                                     }
                                                 ],
-                                                "end_col_offset": 44,
-                                                "end_lineno": 19,
                                                 "left": {
                                                     "ast_type": "Name",
                                                     "col_offset": 16,
@@ -388,11 +352,7 @@
                                                 "lineno": 19,
                                                 "ops": [
                                                     {
-                                                        "ast_type": "In",
-                                                        "col_offset": 34,
-                                                        "end_col_offset": 35,
-                                                        "end_lineno": 19,
-                                                        "lineno": 19
+                                                        "ast_type": "In"
                                                     }
                                                 ]
                                             }
@@ -400,8 +360,6 @@
                                         {
                                             "ast_type": "Expr",
                                             "col_offset": 13,
-                                            "end_col_offset": 42,
-                                            "end_lineno": 21,
                                             "lineno": 21,
                                             "value": {
                                                 "args": [
@@ -425,9 +383,7 @@
                                                     }
                                                 ],
                                                 "ast_type": "Call",
-                                                "col_offset": 19,
-                                                "end_col_offset": 42,
-                                                "end_lineno": 21,
+                                                "col_offset": 13,
                                                 "func": {
                                                     "ast_type": "Attribute",
                                                     "attr": "collect_id_cnt",
@@ -452,8 +408,8 @@
                                         }
                                     ],
                                     "col_offset": 9,
-                                    "end_col_offset": 42,
-                                    "end_lineno": 21,
+                                    "end_col_offset": 11,
+                                    "end_lineno": 18,
                                     "iter": {
                                         "ast_type": "Attribute",
                                         "attr": "children",
@@ -487,8 +443,8 @@
                             ],
                             "col_offset": 9,
                             "decorator_list": [],
-                            "end_col_offset": 42,
-                            "end_lineno": 21,
+                            "end_col_offset": 22,
+                            "end_lineno": 17,
                             "lineno": 17,
                             "name": "collect_id_cnt",
                             "returns": null
@@ -531,14 +487,10 @@
                                     }
                                 ],
                                 "ast_type": "arguments",
-                                "col_offset": 24,
                                 "defaults": [],
-                                "end_col_offset": 47,
-                                "end_lineno": 23,
                                 "kw_defaults": [],
                                 "kwarg": null,
                                 "kwonlyargs": [],
-                                "lineno": 23,
                                 "vararg": null
                             },
                             "ast_type": "FunctionDef",
@@ -549,26 +501,18 @@
                                         {
                                             "ast_type": "Expr",
                                             "col_offset": 13,
-                                            "end_col_offset": 57,
-                                            "end_lineno": 25,
                                             "lineno": 25,
                                             "value": {
                                                 "args": [
                                                     {
                                                         "ast_type": "BinOp",
                                                         "col_offset": 34,
-                                                        "end_col_offset": 57,
-                                                        "end_lineno": 25,
                                                         "left": {
                                                             "ast_type": "BinOp",
                                                             "col_offset": 19,
-                                                            "end_col_offset": 32,
-                                                            "end_lineno": 25,
                                                             "left": {
                                                                 "ast_type": "BinOp",
                                                                 "col_offset": 19,
-                                                                "end_col_offset": 26,
-                                                                "end_lineno": 25,
                                                                 "left": {
                                                                     "LiteralValue": "-",
                                                                     "ast_type": "StringLiteral",
@@ -579,11 +523,7 @@
                                                                 },
                                                                 "lineno": 25,
                                                                 "op": {
-                                                                    "ast_type": "Mult",
-                                                                    "col_offset": 23,
-                                                                    "end_col_offset": 23,
-                                                                    "end_lineno": 25,
-                                                                    "lineno": 25
+                                                                    "ast_type": "Mult"
                                                                 },
                                                                 "right": {
                                                                     "LiteralValue": 20,
@@ -597,11 +537,7 @@
                                                             },
                                                             "lineno": 25,
                                                             "op": {
-                                                                "ast_type": "Add",
-                                                                "col_offset": 28,
-                                                                "end_col_offset": 28,
-                                                                "end_lineno": 25,
-                                                                "lineno": 25
+                                                                "ast_type": "Add"
                                                             },
                                                             "right": {
                                                                 "LiteralValue": " ",
@@ -614,11 +550,7 @@
                                                         },
                                                         "lineno": 25,
                                                         "op": {
-                                                            "ast_type": "Add",
-                                                            "col_offset": 34,
-                                                            "end_col_offset": 34,
-                                                            "end_lineno": 25,
-                                                            "lineno": 25
+                                                            "ast_type": "Add"
                                                         },
                                                         "right": {
                                                             "args": [
@@ -642,9 +574,7 @@
                                                                 }
                                                             ],
                                                             "ast_type": "Call",
-                                                            "col_offset": 37,
-                                                            "end_col_offset": 57,
-                                                            "end_lineno": 25,
+                                                            "col_offset": 36,
                                                             "func": {
                                                                 "ast_type": "Name",
                                                                 "col_offset": 36,
@@ -660,9 +590,7 @@
                                                     }
                                                 ],
                                                 "ast_type": "Call",
-                                                "col_offset": 14,
-                                                "end_col_offset": 57,
-                                                "end_lineno": 25,
+                                                "col_offset": 13,
                                                 "func": {
                                                     "ast_type": "Name",
                                                     "col_offset": 13,
@@ -679,8 +607,6 @@
                                         {
                                             "ast_type": "Assign",
                                             "col_offset": 13,
-                                            "end_col_offset": 28,
-                                            "end_lineno": 26,
                                             "lineno": 26,
                                             "targets": [
                                                 {
@@ -696,9 +622,7 @@
                                             "value": {
                                                 "args": [],
                                                 "ast_type": "Call",
-                                                "col_offset": 23,
-                                                "end_col_offset": 28,
-                                                "end_lineno": 26,
+                                                "col_offset": 22,
                                                 "func": {
                                                     "ast_type": "Name",
                                                     "col_offset": 22,
@@ -715,8 +639,6 @@
                                         {
                                             "ast_type": "Expr",
                                             "col_offset": 13,
-                                            "end_col_offset": 63,
-                                            "end_lineno": 27,
                                             "lineno": 27,
                                             "value": {
                                                 "args": [
@@ -758,9 +680,7 @@
                                                     }
                                                 ],
                                                 "ast_type": "Call",
-                                                "col_offset": 19,
-                                                "end_col_offset": 63,
-                                                "end_lineno": 27,
+                                                "col_offset": 13,
                                                 "func": {
                                                     "ast_type": "Attribute",
                                                     "attr": "collect_id_cnt",
@@ -786,8 +706,6 @@
                                         {
                                             "ast_type": "Expr",
                                             "col_offset": 13,
-                                            "end_col_offset": 24,
-                                            "end_lineno": 28,
                                             "lineno": 28,
                                             "value": {
                                                 "args": [
@@ -802,9 +720,7 @@
                                                     }
                                                 ],
                                                 "ast_type": "Call",
-                                                "col_offset": 14,
-                                                "end_col_offset": 24,
-                                                "end_lineno": 28,
+                                                "col_offset": 13,
                                                 "func": {
                                                     "ast_type": "Name",
                                                     "col_offset": 13,
@@ -820,8 +736,8 @@
                                         }
                                     ],
                                     "col_offset": 9,
-                                    "end_col_offset": 24,
-                                    "end_lineno": 28,
+                                    "end_col_offset": 11,
+                                    "end_lineno": 24,
                                     "iter": {
                                         "ast_type": "Name",
                                         "col_offset": 26,
@@ -846,8 +762,8 @@
                             ],
                             "col_offset": 9,
                             "decorator_list": [],
-                            "end_col_offset": 24,
-                            "end_lineno": 28,
+                            "end_col_offset": 21,
+                            "end_lineno": 23,
                             "lineno": 23,
                             "name": "convert_uasts",
                             "returns": null
@@ -855,8 +771,8 @@
                     ],
                     "col_offset": 7,
                     "decorator_list": [],
-                    "end_col_offset": 24,
-                    "end_lineno": 28,
+                    "end_col_offset": 20,
+                    "end_lineno": 11,
                     "keywords": [],
                     "lineno": 11,
                     "name": "Repo2IdCounter"
@@ -867,8 +783,6 @@
                         {
                             "ast_type": "Assign",
                             "col_offset": 5,
-                            "end_col_offset": 26,
-                            "end_lineno": 32,
                             "lineno": 32,
                             "targets": [
                                 {
@@ -893,8 +807,6 @@
                         {
                             "ast_type": "Assign",
                             "col_offset": 5,
-                            "end_col_offset": 80,
-                            "end_lineno": 33,
                             "lineno": 33,
                             "targets": [
                                 {
@@ -910,9 +822,7 @@
                             "value": {
                                 "args": [],
                                 "ast_type": "Call",
-                                "col_offset": 12,
-                                "end_col_offset": 80,
-                                "end_lineno": 33,
+                                "col_offset": 11,
                                 "func": {
                                     "ast_type": "Name",
                                     "col_offset": 11,
@@ -926,10 +836,6 @@
                                     {
                                         "arg": "linguist",
                                         "ast_type": "keyword",
-                                        "col_offset": 26,
-                                        "end_col_offset": 48,
-                                        "end_lineno": 33,
-                                        "lineno": 33,
                                         "value": {
                                             "LiteralValue": "path/to/enry",
                                             "ast_type": "StringLiteral",
@@ -942,10 +848,6 @@
                                     {
                                         "arg": "bblfsh_endpoint",
                                         "ast_type": "keyword",
-                                        "col_offset": 51,
-                                        "end_col_offset": 80,
-                                        "end_lineno": 33,
-                                        "lineno": 33,
                                         "value": {
                                             "LiteralValue": "0.0.0.0:9432",
                                             "ast_type": "StringLiteral",
@@ -962,8 +864,6 @@
                         {
                             "ast_type": "Expr",
                             "col_offset": 5,
-                            "end_col_offset": 31,
-                            "end_lineno": 34,
                             "lineno": 34,
                             "value": {
                                 "args": [
@@ -978,9 +878,7 @@
                                     }
                                 ],
                                 "ast_type": "Call",
-                                "col_offset": 10,
-                                "end_col_offset": 31,
-                                "end_lineno": 34,
+                                "col_offset": 5,
                                 "func": {
                                     "ast_type": "Attribute",
                                     "attr": "convert_repository",
@@ -1005,8 +903,8 @@
                         }
                     ],
                     "col_offset": 1,
-                    "end_col_offset": 31,
-                    "end_lineno": 34,
+                    "end_col_offset": 2,
+                    "end_lineno": 31,
                     "lineno": 31,
                     "orelse": [],
                     "test": {
@@ -1022,8 +920,6 @@
                                 "lineno": 31
                             }
                         ],
-                        "end_col_offset": 25,
-                        "end_lineno": 31,
                         "left": {
                             "ast_type": "Name",
                             "col_offset": 4,
@@ -1057,20 +953,12 @@
                         "lineno": 31,
                         "ops": [
                             {
-                                "ast_type": "Eq",
-                                "col_offset": 13,
-                                "end_col_offset": 14,
-                                "end_lineno": 31,
-                                "lineno": 31
+                                "ast_type": "Eq"
                             }
                         ]
                     }
                 }
-            ],
-            "col_offset": 1,
-            "end_col_offset": 31,
-            "end_lineno": 34,
-            "lineno": 1
+            ]
         }
     }
 }

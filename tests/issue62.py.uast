@@ -3,16 +3,6 @@ Errors:
 UAST: 
 Module {
 .  Roles: File
-.  StartPosition: {
-.  .  Offset: 0
-.  .  Line: 1
-.  .  Col: 1
-.  }
-.  EndPosition: {
-.  .  Offset: 43
-.  .  Line: 4
-.  .  Col: 12
-.  }
 .  Children: {
 .  .  0: ImportFrom {
 .  .  .  Roles: ImportDeclaration,Statement
@@ -22,9 +12,9 @@ Module {
 .  .  .  .  Col: 6
 .  .  .  }
 .  .  .  EndPosition: {
-.  .  .  .  Offset: 18
+.  .  .  .  Offset: 6
 .  .  .  .  Line: 1
-.  .  .  .  Col: 19
+.  .  .  .  Col: 7
 .  .  .  }
 .  .  .  Properties: {
 .  .  .  .  ImportFrom.module: os
@@ -32,29 +22,19 @@ Module {
 .  .  .  .  level: 0
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: alias {
-.  .  .  .  .  Roles: ImportPath,SimpleIdentifier
-.  .  .  .  .  TOKEN "path"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 15
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 16
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 18
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 19
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  asname: <nil>
-.  .  .  .  .  .  internalRole: names
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: ImportFrom.module {
+.  .  .  .  0: ImportFrom.module {
 .  .  .  .  .  Roles: ImportPath,SimpleIdentifier
 .  .  .  .  .  TOKEN "os"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  promotedPropertyString: true
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: alias {
+.  .  .  .  .  Roles: ImportPath,SimpleIdentifier
+.  .  .  .  .  TOKEN "path"
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  asname: <nil>
+.  .  .  .  .  .  internalRole: names
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
@@ -66,11 +46,6 @@ Module {
 .  .  .  .  Line: 2
 .  .  .  .  Col: 1
 .  .  .  }
-.  .  .  EndPosition: {
-.  .  .  .  Offset: 29
-.  .  .  .  Line: 2
-.  .  .  .  Col: 10
-.  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
 .  .  .  }
@@ -78,16 +53,6 @@ Module {
 .  .  .  .  0: alias {
 .  .  .  .  .  Roles: ImportPath,SimpleIdentifier
 .  .  .  .  .  TOKEN "sys"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 27
-.  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  Col: 8
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 29
-.  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  Col: 10
-.  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  asname: <nil>
 .  .  .  .  .  .  internalRole: names
@@ -102,43 +67,11 @@ Module {
 .  .  .  .  Line: 4
 .  .  .  .  Col: 1
 .  .  .  }
-.  .  .  EndPosition: {
-.  .  .  .  Offset: 43
-.  .  .  .  Line: 4
-.  .  .  .  Col: 12
-.  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: alias {
-.  .  .  .  .  Roles: ImportPath,SimpleIdentifier
-.  .  .  .  .  TOKEN "numpy"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 39
-.  .  .  .  .  .  Line: 4
-.  .  .  .  .  .  Col: 8
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 43
-.  .  .  .  .  .  Line: 4
-.  .  .  .  .  .  Col: 12
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  alias.asname: np
-.  .  .  .  .  .  internalRole: names
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: alias.asname {
-.  .  .  .  .  .  .  Roles: ImportAlias,SimpleIdentifier
-.  .  .  .  .  .  .  TOKEN "np"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  promotedPropertyString: true
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: PreviousNoops {
+.  .  .  .  0: PreviousNoops {
 .  .  .  .  .  Roles: Whitespace
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 31
@@ -165,6 +98,23 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: lines
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: alias {
+.  .  .  .  .  Roles: ImportPath,SimpleIdentifier
+.  .  .  .  .  TOKEN "numpy"
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  alias.asname: np
+.  .  .  .  .  .  internalRole: names
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: alias.asname {
+.  .  .  .  .  .  .  Roles: ImportAlias,SimpleIdentifier
+.  .  .  .  .  .  .  TOKEN "np"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  promotedPropertyString: true
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }
