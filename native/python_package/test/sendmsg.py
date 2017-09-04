@@ -13,20 +13,13 @@ $ ./sendmsg.py [source_file.py]|docker run -it --rm python_driver:latest
 """
 import sys
 import json
-import msgpack
 import logging
 sys.path.append('../bin')
-# logging.basicConfig(filename="sendmsg.log", level=logging.DEBUG)
+
 
 def main():
     filesidx = 1
-    if len(sys.argv) > 1 and sys.argv[1] == '--msgpack':
-        outformat = 'msgpack'
-        filesidx += 1
-        outbuffer = sys.stdout.buffer
-    else:
-        outformat = 'json'
-        outbuffer = sys.stdout
+    outbuffer = sys.stdout
 
     files = sys.argv[filesidx:]
 
@@ -56,12 +49,8 @@ def main():
             'content': content,
         })
 
-        if outformat == 'json':
-            json.dump(d, sys.stdout, ensure_ascii=False)
-            outbuffer.write('\n')
-        else:
-            msg = msgpack.packb(d)
-            outbuffer.write(msg)
+        json.dump(d, sys.stdout, ensure_ascii=False)
+        outbuffer.write('\n')
     outbuffer.close()
 
 

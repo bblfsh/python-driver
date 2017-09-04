@@ -6,6 +6,7 @@ Module {
 .  Children: {
 .  .  0: If {
 .  .  .  Roles: If,Statement
+.  .  .  TOKEN "if"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
 .  .  .  .  Line: 1
@@ -60,6 +61,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: args
+.  .  .  .  .  .  .  .  .  .  .  .  value: true
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: Name {
@@ -101,12 +103,14 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: test
+.  .  .  .  .  .  value: true
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
 .  .  }
 .  .  1: If {
 .  .  .  Roles: If,Statement
+.  .  .  TOKEN "if"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 26
 .  .  .  .  Line: 4
@@ -161,6 +165,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: args
+.  .  .  .  .  .  .  .  .  .  .  .  value: true
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: Name {
@@ -255,6 +260,7 @@ Module {
 .  .  }
 .  .  2: If {
 .  .  .  Roles: If,Statement
+.  .  .  TOKEN "if"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 62
 .  .  .  .  Line: 7
@@ -377,6 +383,7 @@ Module {
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: If {
 .  .  .  .  .  .  .  Roles: If,Statement
+.  .  .  .  .  .  .  TOKEN "if"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 101
 .  .  .  .  .  .  .  .  Line: 10
@@ -760,6 +767,7 @@ Module {
 .  .  }
 .  .  3: If {
 .  .  .  Roles: If,Statement
+.  .  .  TOKEN "if"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 164
 .  .  .  .  Line: 17
