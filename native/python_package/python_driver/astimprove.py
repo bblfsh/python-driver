@@ -147,21 +147,6 @@ class LocationFixer(object):
         nodedict["end_lineno"] = token[TOKEN_ENDLOC][TOKENROW]
         nodedict["end_col_offset"] = token[TOKEN_ENDLOC][TOKENCOL]
 
-    def fix_embeded_pos(self, nodedict, add):
-        """
-        For nodes that wrongly start from 1 (like subcode inside f-strings)
-        this fixes the lineno field adding the argument (which should be
-        the parent node correct lineno)
-        """
-        nodedict["lineno"] += add - 1
-
-        for key in nodedict:
-            if isinstance(nodedict[key], dict):
-                self.fix_embeded_pos(nodedict[key], add)
-
-        self.sync_node_pos(nodedict, add = 1)
-        return nodedict
-
 
 class NoopExtractor(object):
     """
@@ -370,10 +355,6 @@ class AstImprover(object):
         self.pos_sync   = LocationFixer(codestr, token_lines)
         self.codestr    = codestr
 
-        # Some nodes (f-strings currently) must update the columns after the've done some
-        # previous line number fixing, so this state member enable or disable the checking/fixing
-        self._checkpos_enabled = True
-
         # This will store a dict of nodes to end positions, it will be filled
         # on parse()
         self._node2endpos = None
@@ -453,9 +434,7 @@ class AstImprover(object):
         meth = getattr(self, "visit_" + node_type, self.visit_other)
         visit_result = meth(node)
         self._add_noops(node, visit_result, root)
-
-        if self._checkpos_enabled:
-            self.pos_sync.sync_node_pos(visit_result)
+        self.pos_sync.sync_node_pos(visit_result)
 
         if not self.codestr:
             # empty files are the only case where 0-indexes are allowed
@@ -573,27 +552,6 @@ class AstImprover(object):
         else:
             # string attribute
             return node
-
-    def visit_FormattedValue(self, node):
-        # Subcode inside the FormattedValue.value nodes have their lineno starting from 1,
-        # so we'll fix that storing the FormattedValue lineno and adding it to the subcode
-        # nodes lineno
-        self._checkpos_enabled = False  # it wouldn't work without correct lineno
-        try:
-            value_dict = self.pos_sync.fix_embeded_pos(self.visit(node["value"]),
-                                                       node["lineno"])
-            fspec = node.get("format_spec")
-            if fspec:
-                fspec = self.visit(fspec)
-            node.update({
-                    "conversion": node["conversion"],
-                    "format_spec": fspec,
-                    "value": value_dict,
-            })
-        finally:
-            self._checkpos_enabled = True
-
-        return node
 
 
 if __name__ == '__main__':
