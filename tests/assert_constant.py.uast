@@ -6,6 +6,7 @@ Module {
 .  Children: {
 .  .  0: Assert {
 .  .  .  Roles: Assert,Statement
+.  .  .  TOKEN "assert"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
 .  .  .  .  Line: 1
@@ -36,12 +37,14 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: test
+.  .  .  .  .  .  value: true
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
 .  .  }
 .  .  1: Assert {
 .  .  .  Roles: Assert,Statement
+.  .  .  TOKEN "assert"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 13
 .  .  .  .  Line: 2
@@ -72,12 +75,14 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: test
+.  .  .  .  .  .  value: true
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
 .  .  }
 .  .  2: Assert {
 .  .  .  Roles: Assert,Statement
+.  .  .  TOKEN "assert"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 25
 .  .  .  .  Line: 3
@@ -124,6 +129,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: test
+.  .  .  .  .  .  value: true
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }

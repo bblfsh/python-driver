@@ -104,6 +104,7 @@ Module {
 .  .  }
 .  .  2: Delete {
 .  .  .  Roles: Statement,Incomplete
+.  .  .  TOKEN "delete"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 12
 .  .  .  .  Line: 3
@@ -164,6 +165,7 @@ Module {
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Global {
 .  .  .  .  .  .  .  Roles: Statement,VisibleFromWorld,Incomplete
+.  .  .  .  .  .  .  TOKEN "global"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 31
 .  .  .  .  .  .  .  .  Line: 5
@@ -191,6 +193,7 @@ Module {
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Nonlocal {
 .  .  .  .  .  .  .  Roles: Statement,VisibleFromModule,Incomplete
+.  .  .  .  .  .  .  TOKEN "nonlocal"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 44
 .  .  .  .  .  .  .  .  Line: 6
@@ -226,6 +229,7 @@ Module {
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Yield {
 .  .  .  .  .  .  .  .  .  Roles: Return,Statement,Incomplete,ListLiteral,Expression,Incomplete
+.  .  .  .  .  .  .  .  .  TOKEN "yield"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 59
 .  .  .  .  .  .  .  .  .  .  Line: 7

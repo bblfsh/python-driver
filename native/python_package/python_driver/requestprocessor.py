@@ -4,6 +4,7 @@ import logging
 from pydetector import detector
 from traceback import format_exc
 from python_driver.version import __version__
+from python_driver.astimprove import AstImprover
 from typing import (Any, IO, NewType, Tuple, cast, List, Iterator, Dict, Optional)
 
 # typing.AnyStr is bugged on this version of MyPy, so...:
@@ -19,8 +20,9 @@ InBytesBuffer  = IO[bytes]
 
 # types
 RawRequest = NewType('RawRequest', Dict[AnyStr, Any])
-Request    = NewType('Request',    Dict[str, Any])
-Response   = NewType('Response',   Dict[AnyStr, Any])
+Request    = NewType('Request', Dict[str, Any])
+Response   = NewType('Response', Dict[AnyStr, Any])
+
 
 class EmptyCodeException(Exception):
     """
@@ -129,9 +131,9 @@ class RequestProcessor(metaclass=abc.ABCMeta):
                 version  = codeinfo['version']
 
                 if version in (3, 6) and codeinfo['py3ast']:
-                    ast = codeinfo['py3ast']
+                    orig_ast = codeinfo['py3ast']["PY3AST"]
                 elif version in (1, 2) and codeinfo['py2ast']:
-                    ast = codeinfo['py2ast']
+                    orig_ast = codeinfo['py2ast']["PY2AST"]
                 else:
                     raise Exception(
                         'Errors produced trying to get an AST for both Python versions' +
@@ -139,22 +141,25 @@ class RequestProcessor(metaclass=abc.ABCMeta):
                         '\n------ Python3 errors:\n%s' % codeinfo['py3_ast_errors']
                     )
 
+                if not orig_ast:
+                    raise Exception('Empty AST generated from non empty code')
+                ast = AstImprover(code, orig_ast).parse()
                 if not ast:
                     raise Exception('Empty AST generated from non empty code')
             else:
                 # Module with empty code (like __init__.py) return a module-only AST
                 # since this would still have semantic meaning for Python
-                ast = {"PY3AST": {
+                ast = {
                         "ast_type"   : "Module",
                         "lineno"     : 1,
                         "col_offset" : 1,
-                       }}
+                       }
                 version = 3
 
             response = Response({
                 'status'           : 'ok',
                 'errors'           : self.errors,
-                'ast'              : ast,
+                'ast'              : {"PY%dAST" % version: ast},
                 'metadata'         : {
                     'language'         : 'python',
                     'language_version' : version,
