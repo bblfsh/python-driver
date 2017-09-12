@@ -188,7 +188,7 @@ Module {
 .  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
-.  .  .  .  1: StringLiteral {
+.  .  .  .  1: Str {
 .  .  .  .  .  Roles: StringLiteral,Expression,AssignmentValue
 .  .  .  .  .  TOKEN "somestring"
 .  .  .  .  .  StartPosition: {
@@ -687,7 +687,7 @@ Module {
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: StringLiteral {
+.  .  .  .  .  .  0: Str {
 .  .  .  .  .  .  .  Roles: StringLiteral,Expression,MapKey
 .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  StartPosition: {
@@ -704,7 +704,7 @@ Module {
 .  .  .  .  .  .  .  .  internalRole: keys
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  .  1: StringLiteral {
+.  .  .  .  .  .  1: Str {
 .  .  .  .  .  .  .  Roles: StringLiteral,Expression,MapKey
 .  .  .  .  .  .  .  TOKEN "b"
 .  .  .  .  .  .  .  StartPosition: {

@@ -286,7 +286,7 @@ class NoopExtractor(object):
 
 
 _TOKEN_KEYS = set(
-    ("module", "name", "id", "attr", "arg", "LiteralValue")
+    ("module", "name", "id", "attr", "arg", "LiteralValue", "s")
 )
 
 _SYNTHETIC_TOKENS = {
@@ -461,11 +461,6 @@ class AstImprover(object):
         """
         return str(node)
 
-    def visit_Str(self, node):
-        node.update({"LiteralValue": node["s"], "ast_type": "StringLiteral"})
-        node.pop("s", None)
-        return node
-
     def visit_Bytes(self, node):
         try:
             s = node["s"].decode()
@@ -475,10 +470,7 @@ class AstImprover(object):
             s = encode(node["s"], 'base64').decode().strip()
             encoding = 'base64'
 
-        node.update({"LiteralValue": s,
-                     "encoding": encoding,
-                     "ast_type": "ByteLiteral"})
-        node.pop("s", None)
+        node.update({"s": s, "encoding": encoding})
         return node
 
     def visit_NoneType(self, node):

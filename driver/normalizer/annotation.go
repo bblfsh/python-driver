@@ -88,10 +88,9 @@ var AnnotationRules = On(Any).Self(
 		On(HasInternalType(pyast.UAdd)).Roles(OpPositive),
 		On(HasInternalType(pyast.USub)).Roles(OpNegative),
 
-		On(HasInternalType(pyast.StringLiteral)).Roles(StringLiteral, Expression),
-		On(HasInternalType(pyast.ByteLiteral)).Roles(ByteStringLiteral, Expression),
-		On(HasInternalType(pyast.NumLiteral)).Roles(NumberLiteral, Expression),
 		On(HasInternalType(pyast.Str)).Roles(StringLiteral, Expression),
+		On(HasInternalType(pyast.Bytes)).Roles(ByteStringLiteral, Expression),
+		On(HasInternalType(pyast.NumLiteral)).Roles(NumberLiteral, Expression),
 		On(HasInternalType(pyast.BoolLiteral)).Roles(BooleanLiteral, Expression),
 		On(HasInternalType(pyast.JoinedStr)).Roles(StringLiteral, Expression).Children(
 			On(HasInternalType(pyast.FormattedValue)).Roles(Expression, Incomplete),

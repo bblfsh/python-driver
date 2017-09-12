@@ -225,7 +225,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  1: StringLiteral {
+.  .  .  .  .  .  .  .  1: Str {
 .  .  .  .  .  .  .  .  .  Roles: StringLiteral,Expression,AssignmentValue
 .  .  .  .  .  .  .  .  .  TOKEN "Repo2IdModel"
 .  .  .  .  .  .  .  .  .  StartPosition: {
@@ -350,7 +350,7 @@ Module {
 .  .  .  .  .  .  .  .  Col: 1
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: StringLiteral {
+.  .  .  .  .  .  .  .  0: Str {
 .  .  .  .  .  .  .  .  .  Roles: StringLiteral,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "
     Print all SIMPLE_IDENTIFIERs (and counters) from repository
@@ -1123,7 +1123,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  internalRole: left
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: StringLiteral {
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: BinaryExpressionLeft,StringLiteral,Expression
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "-"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
@@ -1167,7 +1167,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: StringLiteral {
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: Str {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: BinaryExpressionRight,StringLiteral,Expression
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN " "
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
@@ -1645,7 +1645,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  internalRole: targets
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  1: StringLiteral {
+.  .  .  .  .  .  .  .  1: Str {
 .  .  .  .  .  .  .  .  .  Roles: StringLiteral,Expression,AssignmentValue
 .  .  .  .  .  .  .  .  .  TOKEN "test/imports/"
 .  .  .  .  .  .  .  .  .  StartPosition: {
@@ -1726,7 +1726,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: keywords
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  .  .  .  .  0: StringLiteral {
+.  .  .  .  .  .  .  .  .  .  .  .  0: Str {
 .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: StringLiteral,Expression,CallNamedArgumentValue
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "path/to/enry"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
@@ -1752,7 +1752,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: keywords
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  .  .  .  .  0: StringLiteral {
+.  .  .  .  .  .  .  .  .  .  .  .  0: Str {
 .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: StringLiteral,Expression,CallNamedArgumentValue
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "0.0.0.0:9432"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
@@ -1873,7 +1873,7 @@ Module {
 .  .  .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: StringLiteral {
+.  .  .  .  .  .  .  .  0: Str {
 .  .  .  .  .  .  .  .  .  Roles: StringLiteral,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "__main__"
 .  .  .  .  .  .  .  .  .  StartPosition: {

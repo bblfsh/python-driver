@@ -19,7 +19,8 @@ var ToNoder = &native.ObjectToNoder{
 		"id":           true, // Name nodes
 		"attr":         true, // something.attr
 		"arg":          true, // function arguments
-		"LiteralValue": true, // string/num/byte/constant literal
+		"LiteralValue": true, // num/constant literal
+		"s":            true, // string/byte
 		"noop_line":    true, // Comment/Noop (non significative whitespace)
 	},
 	SyntheticTokens: map[string]string{
