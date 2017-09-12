@@ -473,11 +473,6 @@ class AstImprover(object):
         node.update({"s": s, "encoding": encoding})
         return node
 
-    def visit_NoneType(self, node):
-        node.update({"LiteralValue": "None",
-                     "ast_type": "NoneLiteral"})
-        return node
-
     def _promote_names(self, node):
         # Python AST by default stores global and nonlocal variable names
         # in a "names" array of strings. That breaks the structure of everything
