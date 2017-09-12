@@ -193,6 +193,65 @@ class NoopExtractor(object):
             self._current_line = len(lines)
         return lines
 
+    def add_noops(self, node, visit_dict, root):
+        if not isinstance(visit_dict, dict):
+            return visit_dict
+
+        def _create_nooplines_list(startline, noops_previous):
+            nooplines = []
+            curline = startline
+            for noopline in noops_previous:
+                nooplines.append({
+                    "ast_type": "NoopLine",
+                    "noop_line": noopline,
+                    "lineno": curline,
+                    "col_offset": 1,
+                })
+                curline += 1
+            return nooplines
+
+        # Add all the noop (whitespace and comments) lines between the
+        # last node and this one
+        noops_previous, startline, endline, endcol =\
+            self.previous_nooplines(node)
+        if noops_previous:
+            visit_dict['noops_previous'] = {
+                "ast_type": "PreviousNoops",
+                "lineno": startline,
+                "col_offset": 1,
+                "end_lineno": endline,
+                "end_col_offset": max(endcol, 1),
+                "lines": _create_nooplines_list(startline, noops_previous)
+            }
+
+        # Other noops at the end of its significative line except the implicit
+        # finishing newline
+        noops_sameline = self.sameline_remainder_noops(node)
+        joined_sameline = ''.join([x['value'] for x in noops_sameline])
+        if noops_sameline:
+            visit_dict['noops_sameline'] = {
+                "ast_type": "SameLineNoops",
+                "lineno": node.get("lineno", 0),
+                "col_offset": noops_sameline[0]["colstart"],
+                "noop_line": joined_sameline,
+                "end_lineno": node.get("lineno", 0),
+                "end_col_offset": max(noops_sameline[-1]["colend"], 1)
+            }
+
+        # Finally, if this is the root node, add all noops after the last op node
+        if root:
+            noops_remainder, startline, endline, endcol =\
+                    self.remainder_noops()
+            if noops_remainder:
+                visit_dict['noops_remainder'] = {
+                    "ast_type": "RemainderNoops",
+                    "lineno": startline,
+                    "col_offset": 1,
+                    "end_lineno": endline,
+                    "end_col_offset": max(endcol, 1),
+                    "lines": _create_nooplines_list(startline, noops_remainder)
+                    }
+
     def previous_nooplines(self, nodedict):
         """Return a list of the preceding comment and blank lines"""
         previous = []
@@ -360,65 +419,6 @@ class AstImprover(object):
 
         self.visit_Global = self.visit_Nonlocal = self._promote_names
 
-    def _add_noops(self, node, visit_dict, root):
-        if not isinstance(visit_dict, dict):
-            return visit_dict
-
-        def _create_nooplines_list(startline, noops_previous):
-            nooplines = []
-            curline = startline
-            for noopline in noops_previous:
-                nooplines.append({
-                    "ast_type": "NoopLine",
-                    "noop_line": noopline,
-                    "lineno": curline,
-                    "col_offset": 1,
-                })
-                curline += 1
-            return nooplines
-
-        # Add all the noop (whitespace and comments) lines between the
-        # last node and this one
-        noops_previous, startline, endline, endcol =\
-            self.noops_sync.previous_nooplines(node)
-        if noops_previous:
-            visit_dict['noops_previous'] = {
-                "ast_type": "PreviousNoops",
-                "lineno": startline,
-                "col_offset": 1,
-                "end_lineno": endline,
-                "end_col_offset": max(endcol, 1),
-                "lines": _create_nooplines_list(startline, noops_previous)
-            }
-
-        # Other noops at the end of its significative line except the implicit
-        # finishing newline
-        noops_sameline = self.noops_sync.sameline_remainder_noops(node)
-        joined_sameline = ''.join([x['value'] for x in noops_sameline])
-        if noops_sameline:
-            visit_dict['noops_sameline'] = {
-                "ast_type": "SameLineNoops",
-                "lineno": node.get("lineno", 0),
-                "col_offset": noops_sameline[0]["colstart"],
-                "noop_line": joined_sameline,
-                "end_lineno": node.get("lineno", 0),
-                "end_col_offset": max(noops_sameline[-1]["colend"], 1)
-            }
-
-        # Finally, if this is the root node, add all noops after the last op node
-        if root:
-            noops_remainder, startline, endline, endcol =\
-                    self.noops_sync.remainder_noops()
-            if noops_remainder:
-                visit_dict['noops_remainder'] = {
-                    "ast_type": "RemainderNoops",
-                    "lineno": startline,
-                    "col_offset": 1,
-                    "end_lineno": endline,
-                    "end_col_offset": max(endcol, 1),
-                    "lines": _create_nooplines_list(startline, noops_remainder)
-                    }
-
     def parse(self):
         res = self.visit(self._astdict, root=True)
         return res
@@ -434,7 +434,7 @@ class AstImprover(object):
 
         meth = getattr(self, "visit_" + node_type, self.visit_other)
         visit_result = meth(node)
-        self._add_noops(node, visit_result, root)
+        self.noops_sync.add_noops(node, visit_result, root)
         self.pos_sync.sync_node_pos(visit_result)
 
         if not self.codestr:
@@ -498,23 +498,6 @@ class AstImprover(object):
         else:
             node["ast_type"] = "NameConstant"
         return node
-
-    # def visit_Num(self, node):
-        # if isinstance(node["n"], int):
-            # ret_dict = { "NumType": "int", "LiteralValue": node["n"] }
-        # elif isinstance(node["n"], float):
-            # ret_dict = { "NumType": "float", "LiteralValue": node["n"] }
-        # elif isinstance(node["n"], complex):
-            # ret_dict = {
-                        # "NumType": "complex",
-                        # "LiteralValue": {"real": node["n"]["real"],
-                                         # "imaginary": node["n"]["imag"]},
-                       # }
-
-        # node["ast_type"] = "NumLiteral"
-        # node.update(ret_dict)
-        # node.pop("n", None)
-        # return node
 
     def visit_other(self, node):
         for field in node.get("_fields", []):
