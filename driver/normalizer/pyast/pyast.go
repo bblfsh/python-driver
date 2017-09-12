@@ -102,7 +102,6 @@ const (
 	NotEq                 = "NotEq"
 	NotIn                 = "NotIn"
 	Num                   = "Num"
-	NumLiteral            = "NumLiteral"
 	Operator              = "operator"
 	Or                    = "Or"
 	Param                 = "Param"

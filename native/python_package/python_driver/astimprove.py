@@ -286,7 +286,7 @@ class NoopExtractor(object):
 
 
 _TOKEN_KEYS = set(
-    ("module", "name", "id", "attr", "arg", "LiteralValue", "s")
+    ("module", "name", "id", "attr", "arg", "LiteralValue", "s", "n")
 )
 
 _SYNTHETIC_TOKENS = {
@@ -499,22 +499,22 @@ class AstImprover(object):
             node["ast_type"] = "NameConstant"
         return node
 
-    def visit_Num(self, node):
-        if isinstance(node["n"], int):
-            ret_dict = { "NumType": "int", "LiteralValue": node["n"] }
-        elif isinstance(node["n"], float):
-            ret_dict = { "NumType": "float", "LiteralValue": node["n"] }
-        elif isinstance(node["n"], complex):
-            ret_dict = {
-                        "NumType": "complex",
-                        "LiteralValue": {"real": node["n"]["real"],
-                                         "imaginary": node["n"]["imag"]},
-                       }
+    # def visit_Num(self, node):
+        # if isinstance(node["n"], int):
+            # ret_dict = { "NumType": "int", "LiteralValue": node["n"] }
+        # elif isinstance(node["n"], float):
+            # ret_dict = { "NumType": "float", "LiteralValue": node["n"] }
+        # elif isinstance(node["n"], complex):
+            # ret_dict = {
+                        # "NumType": "complex",
+                        # "LiteralValue": {"real": node["n"]["real"],
+                                         # "imaginary": node["n"]["imag"]},
+                       # }
 
-        node["ast_type"] = "NumLiteral"
-        node.update(ret_dict)
-        node.pop("n", None)
-        return node
+        # node["ast_type"] = "NumLiteral"
+        # node.update(ret_dict)
+        # node.pop("n", None)
+        # return node
 
     def visit_other(self, node):
         for field in node.get("_fields", []):

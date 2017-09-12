@@ -90,7 +90,7 @@ var AnnotationRules = On(Any).Self(
 
 		On(HasInternalType(pyast.Str)).Roles(StringLiteral, Expression),
 		On(HasInternalType(pyast.Bytes)).Roles(ByteStringLiteral, Expression),
-		On(HasInternalType(pyast.NumLiteral)).Roles(NumberLiteral, Expression),
+		On(HasInternalType(pyast.Num)).Roles(NumberLiteral, Expression),
 		On(HasInternalType(pyast.BoolLiteral)).Roles(BooleanLiteral, Expression),
 		On(HasInternalType(pyast.JoinedStr)).Roles(StringLiteral, Expression).Children(
 			On(HasInternalType(pyast.FormattedValue)).Roles(Expression, Incomplete),
@@ -288,7 +288,6 @@ var AnnotationRules = On(Any).Self(
 			On(HasInternalType("While.orelse")).Roles(IfElse),
 		),
 		On(HasInternalType(pyast.Pass)).Roles(Noop, Statement),
-		On(HasInternalType(pyast.Num)).Roles(NumberLiteral, Expression),
 		// FIXME: this is the annotated assignment (a: annotation = 3) not exactly Assignment
 		// it also lacks AssignmentValue and AssignmentVariable (see how to add them)
 		On(HasInternalType(pyast.Assert)).Roles(Assert, Statement),
