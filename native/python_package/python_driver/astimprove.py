@@ -114,7 +114,6 @@ class LocationFixer(object):
         the same name will not consume that token again (except for fstrings that are
         a special case of a token mapping to several possible AST nodes).
         """
-
         node_line = nodedict.get('lineno')
         if node_line is None:
             return
@@ -359,6 +358,8 @@ class AstImprover(object):
         # on parse()
         self._node2endpos = None
 
+        self.visit_Global = self.visit_Nonlocal = self._promote_names
+
     def _add_noops(self, node, visit_dict, root):
         if not isinstance(visit_dict, dict):
             return visit_dict
@@ -485,25 +486,16 @@ class AstImprover(object):
                      "ast_type": "NoneLiteral"})
         return node
 
-    def visit_Global(self, node):
+    def _promote_names(self, node):
         # Python AST by default stores global and nonlocal variable names
         # in a "names" array of strings. That breaks the structure of everything
         # else in the AST (dictionaries, properties or list of objects) so we
         # convert those names to Name objects
-        names_as_nodes = [{"ast_type": "Name",
-                          "id": i,
-                          "lineno": node["lineno"],
-                          "col_offset": node["col_offset"]} for i in node["names"]]
+        names_as_nodes = [self.visit({"ast_type": "Name",
+                                      "id": i,
+                                      "lineno": node["lineno"]})
+                          for i in node["names"]]
 
-        node["names"] = names_as_nodes
-        return node
-
-    def visit_Nonlocal(self, node):
-        # ditto
-        names_as_nodes = [{"ast_type": "Name",
-                          "id": i,
-                          "lineno": node["lineno"],
-                          "col_offset": node["col_offset"]} for i in node["names"]]
         node["names"] = names_as_nodes
         return node
 
