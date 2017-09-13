@@ -5,7 +5,7 @@ Module {
 .  Roles: File
 .  Children: {
 .  .  0: With {
-.  .  .  Roles: BlockScope,Statement
+.  .  .  Roles: Block,Scope,Statement
 .  .  .  TOKEN "with"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
@@ -22,13 +22,13 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: With.body {
-.  .  .  .  .  Roles: BlockScope,Expression,Incomplete
+.  .  .  .  .  Roles: Block,Scope,Expression,Incomplete
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Assign {
-.  .  .  .  .  .  .  Roles: Assignment,Expression
+.  .  .  .  .  .  .  Roles: Binary,Assignment,Expression
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 25
 .  .  .  .  .  .  .  .  Line: 2
@@ -36,7 +36,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: AssignmentVariable,SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Left,Identifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 25
@@ -54,7 +54,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  Roles: AssignmentValue,SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Right,Identifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "s"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 29
@@ -76,16 +76,16 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: With.items {
-.  .  .  .  .  Roles: SimpleIdentifier,Expression,Incomplete
+.  .  .  .  .  Roles: Identifier,Expression,Incomplete
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: withitem {
-.  .  .  .  .  .  .  Roles: SimpleIdentifier,Incomplete
+.  .  .  .  .  .  .  Roles: Identifier,Incomplete
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "something"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 5
@@ -103,7 +103,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "s"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 18

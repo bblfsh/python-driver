@@ -5,7 +5,7 @@ Module {
 .  Roles: File
 .  Children: {
 .  .  0: FunctionDef {
-.  .  .  Roles: FunctionDeclaration,FunctionDeclarationName,SimpleIdentifier
+.  .  .  Roles: Function,Declaration,Name,Identifier
 .  .  .  TOKEN "someFunc"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 4
@@ -23,7 +23,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: FunctionDef.body {
-.  .  .  .  .  Roles: FunctionDeclarationBody
+.  .  .  .  .  Roles: Function,Declaration,Body
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  }
@@ -37,7 +37,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  Roles: StringLiteral,Expression
+.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "
     And this is the docstring
     "
@@ -91,7 +91,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: arguments {
-.  .  .  .  .  Roles: FunctionDeclarationArgument,Incomplete
+.  .  .  .  .  Roles: Argument,Name,Identifier
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  kwarg: <nil>

@@ -5,8 +5,8 @@ import (
 
 	"github.com/bblfsh/python-driver/driver/normalizer/pyast"
 
-	. "gopkg.in/bblfsh/sdk.v0/uast"
-	. "gopkg.in/bblfsh/sdk.v0/uast/ann"
+	"gopkg.in/bblfsh/sdk.v1/uast"
+	. "gopkg.in/bblfsh/sdk.v1/uast/ann"
 )
 
 /*
@@ -17,7 +17,7 @@ import (
 */
 
 /*
-For a description of Python AST nodes:
+uast.For a description of Python AST nodes:
 
 https://greentreesnakes.readthedocs.io/en/latest/nodes.html
 
@@ -31,325 +31,299 @@ Unmarked nodes or nodes needing new features from the SDK:
 
    BoolOp
    arguments.defaults
-   arguments.keywords: same
    Compare.comparators
    Compare.ops
-   IfCondition.left
+   uast.Ifuast.Condition.left
 	(see: https://greentreesnakes.readthedocs.io/en/latest/nodes.html#Compare)
 */
 
+// AnnotationRules for the Python driver
 var AnnotationRules = On(Any).Self(
-	On(Not(HasInternalType(pyast.Module))).Error(errors.New("root must be Module")),
-	On(HasInternalType(pyast.Module)).Roles(File).Descendants(
+	On(Not(pyast.Module)).Error(errors.New("root must be uast.Module")),
+	On(pyast.Module).Roles(uast.File).Descendants(
+
 		// Binary Expressions
-		On(HasInternalType(pyast.BinOp)).Roles(BinaryExpression, Expression).Children(
-			On(HasInternalRole("op")).Roles(BinaryExpressionOp),
-			On(HasInternalRole("left")).Roles(BinaryExpressionLeft),
-			On(HasInternalRole("right")).Roles(BinaryExpressionRight),
+		On(pyast.BinOp).Roles(uast.Expression, uast.Binary).Children(
+			On(HasInternalRole("op")).Roles(uast.Expression, uast.Binary, uast.Operator),
+			On(HasInternalRole("left")).Roles(uast.Expression, uast.Binary, uast.Left),
+			On(HasInternalRole("right")).Roles(uast.Expression, uast.Binary, uast.Right),
 		),
+
 		// Comparison operators
-		On(HasInternalType(pyast.Eq)).Roles(OpEqual),
-		On(HasInternalType(pyast.NotEq)).Roles(OpNotEqual),
-		On(HasInternalType(pyast.Lt)).Roles(OpLessThan),
-		On(HasInternalType(pyast.LtE)).Roles(OpLessThanEqual),
-		On(HasInternalType(pyast.Gt)).Roles(OpGreaterThan),
-		On(HasInternalType(pyast.GtE)).Roles(OpGreaterThanEqual),
-		On(HasInternalType(pyast.Is)).Roles(OpSame),
-		On(HasInternalType(pyast.IsNot)).Roles(OpNotSame),
-		On(HasInternalType(pyast.In)).Roles(OpContains),
-		On(HasInternalType(pyast.NotIn)).Roles(OpNotContains),
+		On(pyast.Eq).Roles(uast.Operator, uast.Equal),
+		On(pyast.NotEq).Roles(uast.Operator, uast.Equal, uast.Not),
+		On(pyast.Lt).Roles(uast.Operator, uast.LessThan),
+		On(pyast.LtE).Roles(uast.Operator, uast.LessThanOrEqual),
+		On(pyast.Gt).Roles(uast.Operator, uast.GreaterThan),
+		On(pyast.GtE).Roles(uast.Operator, uast.GreaterThanOrEqual),
+		On(pyast.Is).Roles(uast.Operator, uast.Identical),
+		On(pyast.IsNot).Roles(uast.Operator, uast.Identical, uast.Not),
+		On(pyast.In).Roles(uast.Operator, uast.Contains),
+		On(pyast.NotIn).Roles(uast.Operator, uast.Contains, uast.Not),
 
 		// Aritmetic operators
-		On(HasInternalType(pyast.Add)).Roles(OpAdd),
-		On(HasInternalType(pyast.Sub)).Roles(OpSubstract),
-		On(HasInternalType(pyast.Mult)).Roles(OpMultiply),
-		On(HasInternalType(pyast.Div)).Roles(OpDivide),
-		On(HasInternalType(pyast.Mod)).Roles(OpMod),
-		On(HasInternalType(pyast.FloorDiv)).Roles(OpDivide, Incomplete),
-		On(HasInternalType(pyast.Pow)).Roles(Incomplete),
-		On(HasInternalType(pyast.MatMult)).Roles(OpMultiply, Incomplete),
+		On(pyast.Add).Roles(uast.Add),
+		On(pyast.Sub).Roles(uast.Substract),
+		On(pyast.Mult).Roles(uast.Multiply),
+		On(pyast.Div).Roles(uast.Divide),
+		On(pyast.Mod).Roles(uast.Modulo),
+		On(pyast.FloorDiv).Roles(uast.Divide, uast.Incomplete),
+		On(pyast.Pow).Roles(uast.Incomplete),
+		On(pyast.MatMult).Roles(uast.Multiply, uast.Incomplete),
 
 		// Bitwise operators
-		On(HasInternalType(pyast.LShift)).Roles(OpBitwiseLeftShift),
-		On(HasInternalType(pyast.RShift)).Roles(OpBitwiseRightShift),
-		On(HasInternalType(pyast.BitOr)).Roles(OpBitwiseOr),
-		On(HasInternalType(pyast.BitXor)).Roles(OpBitwiseXor),
-		On(HasInternalType(pyast.BitAnd)).Roles(OpBitwiseAnd),
+		On(pyast.LShift).Roles(uast.Bitwise, uast.LeftShift),
+		On(pyast.RShift).Roles(uast.Bitwise, uast.RightShift),
+		On(pyast.BitOr).Roles(uast.Bitwise, uast.Or),
+		On(pyast.BitXor).Roles(uast.Bitwise, uast.Xor),
+		On(pyast.BitAnd).Roles(uast.Bitwise, uast.And),
 
 		// Boolean operators
-		On(HasInternalType(pyast.And)).Roles(OpBooleanAnd),
-		On(HasInternalType(pyast.Or)).Roles(OpBooleanOr),
-		On(HasInternalType(pyast.Not)).Roles(OpBooleanNot),
-
-		On(HasInternalType(pyast.UnaryOp)).Roles(Expression, Incomplete),
+		// Not applying the "Binary" role since even while in the Python code
+		// boolean operators use (seemingly binary) infix notation, the generated
+		// AST nodes use prefix.
+		On(pyast.And).Roles(uast.Operator, uast.Boolean, uast.And),
+		On(pyast.Or).Roles(uast.Operator, uast.Boolean, uast.Or),
+		On(pyast.Not).Roles(uast.Operator, uast.Boolean, uast.Not),
+		On(pyast.UnaryOp).Roles(uast.Operator, uast.Unary, uast.Expression),
 
 		// Unary operators
-		On(HasInternalType(pyast.Invert)).Roles(OpBitwiseComplement),
-		On(HasInternalType(pyast.UAdd)).Roles(OpPositive),
-		On(HasInternalType(pyast.USub)).Roles(OpNegative),
+		On(pyast.Invert).Roles(uast.Operator, uast.Unary, uast.Bitwise, uast.Not),
+		On(pyast.UAdd).Roles(uast.Operator, uast.Unary, uast.Positive),
+		On(pyast.USub).Roles(uast.Operator, uast.Unary, uast.Negative),
 
-		On(HasInternalType(pyast.Str)).Roles(StringLiteral, Expression),
-		On(HasInternalType(pyast.Bytes)).Roles(ByteStringLiteral, Expression),
-		On(HasInternalType(pyast.Num)).Roles(NumberLiteral, Expression),
-		On(HasInternalType(pyast.BoolLiteral)).Roles(BooleanLiteral, Expression),
-		On(HasInternalType(pyast.JoinedStr)).Roles(StringLiteral, Expression).Children(
-			On(HasInternalType(pyast.FormattedValue)).Roles(Expression, Incomplete),
+		// Literals
+		On(pyast.Str).Roles(uast.Literal, uast.String, uast.Expression),
+		On(pyast.StringLiteral).Roles(uast.Literal, uast.String, uast.Expression),
+		On(pyast.Bytes).Roles(uast.Literal, uast.ByteString, uast.Expression),
+		On(pyast.Num).Roles(uast.Literal, uast.Number, uast.Expression).Children(
+			On(HasInternalRole("n")).Roles(uast.Literal, uast.Number, uast.Expression),
 		),
-		On(HasInternalType(pyast.NoneLiteral)).Roles(NullLiteral, Expression),
-		On(HasInternalType(pyast.Set)).Roles(SetLiteral, Expression),
-		On(HasInternalType(pyast.List)).Roles(ListLiteral, Expression),
-		On(HasInternalType(pyast.Dict)).Roles(MapLiteral, Expression).Children(
-			On(HasInternalRole("keys")).Roles(MapKey),
-			On(HasInternalRole("values")).Roles(MapValue),
+		On(pyast.BoolLiteral).Roles(uast.Literal, uast.Boolean, uast.Expression),
+		On(pyast.JoinedStr).Roles(uast.Literal, uast.String, uast.Expression).Children(
+			On(pyast.FormattedValue).Roles(uast.Expression, uast.Incomplete),
 		),
-		On(HasInternalType(pyast.Tuple)).Roles(TupleLiteral, Expression),
+		On(pyast.NoneLiteral).Roles(uast.Literal, uast.Null, uast.Expression),
+		On(pyast.Set).Roles(uast.Literal, uast.Set, uast.Expression),
+		On(pyast.List).Roles(uast.Literal, uast.List, uast.Expression),
+		On(pyast.Dict).Roles(uast.Literal, uast.Map, uast.Expression).Children(
+			On(HasInternalRole("keys")).Roles(uast.Map, uast.Key),
+			On(HasInternalRole("values")).Roles(uast.Map, uast.Value),
+		),
+		On(pyast.Tuple).Roles(uast.Literal, uast.Tuple, uast.Expression),
 
 		// FIXME: the FunctionDeclarationReceiver is not set for methods; it should be taken from the parent
 		// Type node Token (2 levels up) but the SDK doesn't allow this
+		On(pyast.FunctionDef).Roles(uast.Function, uast.Declaration, uast.Name, uast.Identifier),
+		On(pyast.AsyncFunctionDef).Roles(uast.Function, uast.Declaration, uast.Name, uast.Identifier, uast.Incomplete),
+		On(pyast.FuncDecorators).Roles(uast.Function, uast.Call, uast.Incomplete),
+		On(pyast.FuncDefBody).Roles(uast.Function, uast.Declaration, uast.Body),
+		// FIXME: arguments is a Groping node, update it we get a "Grouper" or "Container" role
+		On(HasInternalRole("arguments")).Roles(uast.Argument, uast.Incomplete),
+		On(HasInternalRole("args")).Roles(uast.Argument, uast.Name, uast.Identifier),
+		On(HasInternalRole("vararg")).Roles(uast.Argument, uast.ArgsList, uast.Name, uast.Identifier),
+		On(HasInternalRole("kwarg")).Roles(uast.Argument, uast.ArgsList, uast.Map, uast.Name, uast.Identifier),
+		On(HasInternalRole("kwonlyargs")).Roles(uast.Argument, uast.ArgsList, uast.Map, uast.Name, uast.Identifier),
+		// Default arguments: Python's AST puts default arguments on a sibling list to the one of
+		// arguments that must be mapped to the arguments right-aligned like:
+		// a, b=2, c=3 ->
+		//		args    [a,b,c],
+		//		defaults  [2,3]
 		// TODO: create an issue for the SDK
-		On(HasInternalType(pyast.FunctionDef)).Roles(FunctionDeclaration, FunctionDeclarationName,
-			SimpleIdentifier),
-		On(HasInternalType(pyast.AsyncFunctionDef)).Roles(FunctionDeclaration,
-			FunctionDeclarationName, SimpleIdentifier, Incomplete),
-		On(HasInternalType("FunctionDef.decorator_list")).Roles(Call, Incomplete),
-		On(HasInternalType("FunctionDef.body")).Roles(FunctionDeclarationBody),
-		// FIXME: change to FunctionDeclarationArgumentS once the PR has been merged
-		On(HasInternalType(pyast.Arguments)).Roles(FunctionDeclarationArgument, Incomplete).Children(
-			On(HasInternalRole("args")).Roles(FunctionDeclarationArgument, FunctionDeclarationArgumentName,
-				SimpleIdentifier),
-			On(HasInternalRole("vararg")).Roles(FunctionDeclarationArgument, FunctionDeclarationVarArgsList,
-				FunctionDeclarationArgumentName, SimpleIdentifier),
-			// FIXME: this is really different from vararg, change it when we have FunctionDeclarationMap
-			// or something similar in the UAST
-			On(HasInternalRole("kwarg")).Roles(FunctionDeclarationArgument, FunctionDeclarationVarArgsList,
-				FunctionDeclarationArgumentName, Incomplete, SimpleIdentifier),
-			// Default arguments: Python's AST puts default arguments on a sibling list to the one of
-			// arguments that must be mapped to the arguments right-aligned like:
-			// a, b=2, c=3 ->
-			//		args    [a,b,c],
-			//		defaults  [2,3]
-			// TODO: create an issue for the SDK
-			On(HasInternalType("arguments.defaults")).Roles(FunctionDeclarationArgumentDefaultValue, Incomplete),
-			On(HasInternalType("arguments.keywords")).Roles(FunctionDeclarationArgumentDefaultValue, Incomplete),
-			On(HasInternalType("AsyncFunctionDef.decorator_list")).Roles(Call, Incomplete),
-			On(HasInternalType("AsyncFunctionDef.body")).Roles(FunctionDeclarationBody),
-			// FIXME: change to FunctionDeclarationArgumentS once the PR has been merged
-		),
-		On(HasInternalType(pyast.Lambda)).Roles(FunctionDeclaration, Expression, Incomplete).Children(
-			On(HasInternalType("Lambda.body")).Roles(FunctionDeclarationBody),
-			// FIXME: change to FunctionDeclarationArgumentS once the PR has been merged
-			On(HasInternalType(pyast.Arguments)).Roles(FunctionDeclarationArgument, Incomplete).Children(
-				On(HasInternalRole("args")).Roles(FunctionDeclarationArgument, FunctionDeclarationArgumentName,
-					SimpleIdentifier),
-				On(HasInternalRole("vararg")).Roles(FunctionDeclarationArgument, FunctionDeclarationVarArgsList,
-					FunctionDeclarationArgumentName, SimpleIdentifier),
-				// FIXME: this is really different from vararg, change it when we have FunctionDeclarationMap
-				// or something similar in the UAST
-				On(HasInternalRole("kwarg")).Roles(FunctionDeclarationArgument, FunctionDeclarationVarArgsList,
-					FunctionDeclarationArgumentName, Incomplete, SimpleIdentifier),
-				// Default arguments: Python's AST puts default arguments on a sibling list to the one of
-				// arguments that must be mapped to the arguments right-aligned like:
-				// a, b=2, c=3 ->
-				//		args    [a,b,c],
-				//		defaults  [2,3]
-				// TODO: create an issue for the SDK
-				On(HasInternalType("arguments.defaults")).Roles(FunctionDeclarationArgumentDefaultValue,
-					Incomplete),
-				On(HasInternalType("arguments.keywords")).Roles(FunctionDeclarationArgumentDefaultValue,
-					Incomplete),
-			),
+		On(pyast.ArgumentDefaults).Roles(uast.Function, uast.Declaration, uast.Argument, uast.Value, uast.Incomplete),
+		On(pyast.AsyncFuncDecorators).Roles(uast.Function, uast.Call, uast.Incomplete),
+		On(pyast.AsyncFuncDefBody).Roles(uast.Function, uast.Declaration, uast.Body),
+		// FIXME: change to Function, Declaration, ArgumentS once the PR has been merged
+		On(pyast.Lambda).Roles(uast.Function, uast.Declaration, uast.Expression, uast.Incomplete).Children(
+			On(pyast.LambdaBody).Roles(uast.Function, uast.Declaration, uast.Body),
 		),
 
-		On(HasInternalType(pyast.Attribute)).Roles(SimpleIdentifier, Expression).Children(
-			On(HasInternalType(pyast.Name)).Roles(QualifiedIdentifier)),
+		On(pyast.Attribute).Roles(uast.Identifier, uast.Expression).Children(
+			On(pyast.Name).Roles(uast.Identifier, uast.Qualified)),
 
-		On(HasInternalType(pyast.Call)).Roles(Call, Expression).Children(
-			On(HasInternalRole("args")).Roles(CallPositionalArgument),
-			On(HasInternalRole("keywords")).Roles(CallNamedArgument).Children(
-				On(HasInternalRole("value")).Roles(CallNamedArgumentValue),
+		On(pyast.Call).Roles(uast.Function, uast.Call, uast.Expression).Children(
+			On(HasInternalRole("args")).Roles(uast.Call, uast.Argument, uast.Positional),
+			On(HasInternalRole("keywords")).Roles(uast.Call, uast.Argument, uast.Name).Children(
+				On(HasInternalRole("value")).Roles(uast.Call, uast.Argument, uast.Value),
 			),
 			On(HasInternalRole("func")).Self(
-				On(HasInternalType(pyast.Name)).Roles(CallCallee),
-				On(HasInternalType(pyast.Attribute)).Roles(CallCallee).Children(
-					On(HasInternalRole("value")).Roles(CallReceiver),
+				On(pyast.Name).Roles(uast.Call, uast.Callee),
+				On(pyast.Attribute).Roles(uast.Call, uast.Callee).Children(
+					On(HasInternalRole("value")).Roles(uast.Call, uast.Receiver),
 				)),
 		),
 
 		//
 		//	Assign => Assigment:
-		//		targets[] => AssignmentVariable
-		//		value	  => AssignmentValue
+		//		targets[] => Left
+		//		value	  => Right
 		//
-		On(HasInternalType(pyast.Assign)).Roles(Assignment, Expression).Children(
-			On(HasInternalRole("targets")).Roles(AssignmentVariable),
-			On(HasInternalRole("value")).Roles(AssignmentValue),
+		On(pyast.Assign).Roles(uast.Binary, uast.Assignment, uast.Expression).Children(
+			On(HasInternalRole("targets")).Roles(uast.Left),
+			On(HasInternalRole("value")).Roles(uast.Right),
 		),
 
-		On(HasInternalType(pyast.AugAssign)).Roles(AugmentedAssignment, Statement).Children(
-			On(HasInternalRole("op")).Roles(AugmentedAssignmentOperator),
-			On(HasInternalRole("target")).Roles(AugmentedAssignmentVariable),
-			On(HasInternalRole("value")).Roles(AugmentedAssignmentValue),
+		On(pyast.AugAssign).Roles(uast.Operator, uast.Binary, uast.Assignment, uast.Statement).Children(
+			On(HasInternalRole("op")).Roles(uast.Operator, uast.Binary),
+			On(HasInternalRole("target")).Roles(uast.Left),
+			On(HasInternalRole("value")).Roles(uast.Right),
 		),
 
-		On(HasInternalType(pyast.Expression)).Roles(Expression),
-		On(HasInternalType(pyast.Expr)).Roles(Expression),
-		On(HasInternalType(pyast.Name)).Roles(SimpleIdentifier, Expression),
+		On(pyast.Expression).Roles(uast.Expression),
+		On(pyast.Expr).Roles(uast.Expression),
+		On(pyast.Name).Roles(uast.Identifier, uast.Expression),
 		// Comments and non significative whitespace
-		On(HasInternalType(pyast.SameLineNoops)).Roles(Comment),
-		On(HasInternalType(pyast.PreviousNoops)).Roles(Whitespace).Children(
-			On(HasInternalRole("lines")).Roles(Comment),
+		On(pyast.SameLineNoops).Roles(uast.Comment),
+		On(pyast.PreviousNoops).Roles(uast.Whitespace).Children(
+			On(HasInternalRole("lines")).Roles(uast.Comment),
 		),
-		On(HasInternalType(pyast.RemainderNoops)).Roles(Whitespace).Children(
-			On(HasInternalRole("lines")).Roles(Comment),
+		On(pyast.RemainderNoops).Roles(uast.Whitespace).Children(
+			On(HasInternalRole("lines")).Roles(uast.Comment),
 		),
 
 		// TODO: check what Constant nodes are generated in the python AST and improve this
-		On(HasInternalType(pyast.Constant)).Roles(SimpleIdentifier, Expression),
-		On(HasInternalType(pyast.Try)).Roles(Try, Statement).Children(
-			On(HasInternalType("Try.body")).Roles(TryBody),
-			On(HasInternalType("Try.finalbody")).Roles(TryFinally),
-			On(HasInternalType("Try.handlers")).Roles(TryCatch),
-			On(HasInternalType("Try.orelse")).Roles(IfElse),
+		On(pyast.Constant).Roles(uast.Identifier, uast.Expression),
+		On(pyast.Try).Roles(uast.Try, uast.Statement).Children(
+			On(pyast.TryBody).Roles(uast.Try, uast.Body),
+			On(pyast.TryFinalBody).Roles(uast.Try, uast.Finally),
+			On(pyast.TryHandlers).Roles(uast.Try, uast.Catch),
+			On(pyast.TryElse).Roles(uast.Try, uast.Body, uast.Else),
 		),
-		On(HasInternalType(pyast.TryExcept)).Roles(TryCatch, Statement),     // py2
-		On(HasInternalType(pyast.ExceptHandler)).Roles(TryCatch, Statement), // py3
-		On(HasInternalType("ExceptHandler.name")).Roles(SimpleIdentifier),
-		On(HasInternalType(pyast.TryFinally)).Roles(TryFinally, Statement),
-		On(HasInternalType(pyast.Raise)).Roles(Throw, Statement),
+		On(pyast.TryExcept).Roles(uast.Try, uast.Catch, uast.Statement),     // py2
+		On(pyast.ExceptHandler).Roles(uast.Try, uast.Catch, uast.Statement), // py3
+		On(pyast.ExceptHandlerName).Roles(uast.Identifier),
+		On(pyast.TryFinally).Roles(uast.Try, uast.Finally, uast.Statement),
+		On(pyast.Raise).Roles(uast.Throw, uast.Statement),
 		// FIXME: review, add path for the body and items childs
-		On(HasInternalType(pyast.With)).Roles(BlockScope, Statement),
-		On(HasInternalType("With.body")).Roles(BlockScope, Expression, Incomplete),
-		On(HasInternalType("With.items")).Roles(SimpleIdentifier, Expression, Incomplete),
-		On(HasInternalType(pyast.AsyncWith)).Roles(BlockScope, Statement, Incomplete),
-		On(HasInternalType(pyast.Withitem)).Roles(SimpleIdentifier, Incomplete),
-		On(HasInternalType(pyast.Return)).Roles(Return, Statement),
-		On(HasInternalType(pyast.Break)).Roles(Break, Statement),
-		On(HasInternalType(pyast.Continue)).Roles(Continue, Statement),
-		// FIXME: IfCondition bodies in Python take the form:
-		// 1 < a < 10
-		// - left (internalRole): 1 (first element)
-		// - Compare.ops (internalType): [LessThan, LessThan]
-		// - Compare.comparators (internalType): ['a', 10]
+		On(pyast.With).Roles(uast.Block, uast.Scope, uast.Statement),
+		On(pyast.WithBody).Roles(uast.Block, uast.Scope, uast.Expression, uast.Incomplete),
+		On(pyast.WithItems).Roles(uast.Identifier, uast.Expression, uast.Incomplete),
+		On(pyast.AsyncWith).Roles(uast.Block, uast.Scope, uast.Statement, uast.Incomplete),
+		On(pyast.Withitem).Roles(uast.Identifier, uast.Incomplete),
+		On(pyast.Return).Roles(uast.Return, uast.Statement),
+		On(pyast.Break).Roles(uast.Break, uast.Statement),
+		On(pyast.Continue).Roles(uast.Continue, uast.Statement),
+
+		// - Compare.ops (internaluast.Type): [uast.LessThan, uast.LessThan]
+		// - Compare.comparators (internaluast.Type): ['a', 10]
 		// The current mapping is:
-		// - left: BinaryExpressionLeft
-		// - Compare.ops: BinaryExpressionOp
-		// - Compare.comparators: BinaryExpressionRight
+		// - left: uast.Expression, uast.Binary, uast.Left
+		// - Compare.ops: uast.Expression, uast.Binary, uast.Operator
+		// - Compare.comparators: uast.Expression, uast.Binary, uast.Right
 		// But this is obviously not correct. To fix this properly we would need
 		// and SDK feature to mix lists (also needed for default and keyword arguments and
 		// boolean operators).
-		// "If that sounds awkward is because it is" (their words)
-		On(HasInternalType(pyast.Compare)).Roles(BinaryExpression, Expression).Children(
-			On(HasInternalType("Compare.ops")).Roles(BinaryExpressionOp),
-			On(HasInternalRole("left")).Roles(BinaryExpressionLeft),
+		// "uast.If that sounds awkward is because it is" (their words)
+		On(pyast.Compare).Roles(uast.Expression, uast.Binary).Children(
+			On(pyast.CompareOps).Roles(uast.Expression, uast.Binary, uast.Operator),
+			On(HasInternalRole("left")).Roles(uast.Expression, uast.Binary, uast.Left),
 		),
-		On(HasInternalType("Compare.comparators")).Roles(BinaryExpressionRight),
-		On(HasInternalType(pyast.If)).Roles(If, Statement).Children(
-			On(HasInternalType("If.body")).Roles(IfBody),
-			On(HasInternalRole("test")).Roles(IfCondition),
-			On(HasInternalType("If.orelse")).Roles(IfElse),
+		On(pyast.CompareComparators).Roles(uast.Expression, uast.Binary, uast.Right),
+		On(pyast.If).Roles(uast.If, uast.Statement).Children(
+			On(pyast.IfBody).Roles(uast.If, uast.Body, uast.Then),
+			On(HasInternalRole("test")).Roles(uast.If, uast.Condition),
+			On(pyast.IfElse).Roles(uast.If, uast.Body, uast.Else),
 		),
-		On(HasInternalType(pyast.IfExp)).Roles(If, Expression).Children(
+		On(pyast.IfExp).Roles(uast.If, uast.Expression).Children(
 			// These are used on ifexpressions (a = 1 if x else 2)
-			On(HasInternalRole("body")).Roles(IfBody),
-			On(HasInternalRole("test")).Roles(IfCondition),
-			On(HasInternalRole("orelse")).Roles(IfElse),
+			On(HasInternalRole("body")).Roles(uast.If, uast.Body, uast.Then),
+			On(HasInternalRole("test")).Roles(uast.If, uast.Condition),
+			On(HasInternalRole("orelse")).Roles(uast.If, uast.Body, uast.Else),
 		),
-		On(HasInternalType(pyast.Import)).Roles(ImportDeclaration, Statement),
+		On(pyast.Import).Roles(uast.Import, uast.Declaration, uast.Statement),
 		// "y" in "from x import y" or "import y"
-		On(HasInternalType(pyast.Alias)).Roles(ImportPath, SimpleIdentifier),
+		On(pyast.Alias).Roles(uast.Import, uast.Pathname, uast.Identifier),
 		// "x" in "from x import y"
-		On(HasInternalType("ImportFrom.module")).Roles(ImportPath, SimpleIdentifier),
+		On(pyast.ImportFromModule).Roles(uast.Import, uast.Pathname, uast.Identifier),
 		// "y" in "import x as y"
-		On(HasInternalType("alias.asname")).Roles(ImportAlias, SimpleIdentifier),
-		On(HasInternalType(pyast.ImportFrom)).Roles(ImportDeclaration, Statement),
-		On(HasInternalType(pyast.ClassDef)).Roles(TypeDeclaration, SimpleIdentifier, Statement).Children(
-			On(HasInternalType("ClassDef.body")).Roles(TypeDeclarationBody),
-			On(HasInternalType("ClassDef.bases")).Roles(TypeDeclarationBases),
-			On(HasInternalType("ClassDef.keywords")).Roles(Incomplete).Children(
-				On(HasInternalType(pyast.Keyword)).Roles(SimpleIdentifier, Incomplete),
+		On(pyast.AliasAsName).Roles(uast.Import, uast.Alias, uast.Identifier),
+		On(pyast.ImportFrom).Roles(uast.Import, uast.Declaration, uast.Statement),
+		On(pyast.ClassDef).Roles(uast.Type, uast.Declaration, uast.Identifier, uast.Statement).Children(
+		On(pyast.ClassDefDecorators).Roles(uast.Type, uast.Call, uast.Incomplete),
+			On(pyast.ClassDefBody).Roles(uast.Type, uast.Declaration, uast.Body),
+			On(pyast.ClassDefBases).Roles(uast.Type, uast.Declaration, uast.Base),
+			On(pyast.ClassDefKeywords).Roles(uast.Incomplete).Children(
+				On(pyast.Keyword).Roles(uast.Identifier, uast.Incomplete),
 			),
 		),
 
-		On(HasInternalType(pyast.For)).Roles(ForEach, Statement).Children(
-			On(HasInternalType("For.body")).Roles(ForBody),
-			On(HasInternalRole("iter")).Roles(ForExpression),
-			On(HasInternalRole("target")).Roles(ForUpdate),
-			On(HasInternalType("For.orelse")).Roles(IfElse),
+		On(pyast.For).Roles(uast.For, uast.Iterator, uast.Statement).Children(
+			On(pyast.ForBody).Roles(uast.For, uast.Body),
+			On(HasInternalRole("iter")).Roles(uast.For, uast.Expression),
+			On(HasInternalRole("target")).Roles(uast.For, uast.Update),
+			On(pyast.ForElse).Roles(uast.For, uast.Body, uast.Else),
 		),
-		On(HasInternalType(pyast.AsyncFor)).Roles(ForEach, Statement, Incomplete).Children(
-			On(HasInternalType("AsyncFor.body")).Roles(ForBody),
-			On(HasInternalRole("iter")).Roles(ForExpression),
-			On(HasInternalRole("target")).Roles(ForUpdate),
-			On(HasInternalType("AsyncFor.orelse")).Roles(IfElse),
+		On(pyast.AsyncFor).Roles(uast.For, uast.Iterator, uast.Statement, uast.Incomplete).Children(
+			On(pyast.AsyncForBody).Roles(uast.For, uast.Body),
+			On(HasInternalRole("iter")).Roles(uast.For, uast.Expression),
+			On(HasInternalRole("target")).Roles(uast.For, uast.Update),
+			On(pyast.AsyncForElse).Roles(uast.For, uast.Body, uast.Else),
 		),
-		On(HasInternalType(pyast.While)).Roles(While, Statement).Children(
-			On(HasInternalType("While.body")).Roles(WhileBody),
-			On(HasInternalRole("test")).Roles(WhileCondition),
-			On(HasInternalType("While.orelse")).Roles(IfElse),
+		On(pyast.While).Roles(uast.While, uast.Statement).Children(
+			On(pyast.WhileBody).Roles(uast.While, uast.Body),
+			On(HasInternalRole("test")).Roles(uast.While, uast.Condition),
+			On(pyast.WhileElse).Roles(uast.While, uast.Body, uast.Else),
 		),
-		On(HasInternalType(pyast.Pass)).Roles(Noop, Statement),
-		// FIXME: this is the annotated assignment (a: annotation = 3) not exactly Assignment
-		// it also lacks AssignmentValue and AssignmentVariable (see how to add them)
-		On(HasInternalType(pyast.Assert)).Roles(Assert, Statement),
+		On(pyast.Pass).Roles(uast.Noop, uast.Statement),
+		On(pyast.Assert).Roles(uast.Assert, uast.Statement),
 
-		// These are AST nodes in Python2 but we convert them to functions in the UAST like
-		// they are in Python3
-		On(HasInternalType(pyast.Exec)).Roles(Call, Expression).Children(
-			On(HasInternalRole("body")).Roles(CallPositionalArgument),
-			On(HasInternalRole("globals")).Roles(CallPositionalArgument),
-			On(HasInternalRole("locals")).Roles(CallPositionalArgument),
+		// These are AST nodes in Python2 but we convert them to functions in the UAST
+		// like they are in Python3
+		On(pyast.Exec).Roles(uast.Function, uast.Call, uast.Expression).Children(
+			On(HasInternalRole("body")).Roles(uast.Call, uast.Argument, uast.Positional),
+			On(HasInternalRole("globals")).Roles(uast.Call, uast.Argument, uast.Positional),
+			On(HasInternalRole("locals")).Roles(uast.Call, uast.Argument, uast.Positional),
 		),
-		// Repr already comes as a Call \o/
+		// Repr already comes as a uast.Call \o/
 		// Print as a function too.
-		On(HasInternalType(pyast.Print)).Roles(Call, CallCallee, SimpleIdentifier, Expression).Children(
-			On(HasInternalRole("dest")).Roles(CallPositionalArgument),
-			On(HasInternalRole("nl")).Roles(CallPositionalArgument),
-			On(HasInternalRole("values")).Roles(CallPositionalArgument).Children(
-				On(Any).Roles(CallPositionalArgument),
+		On(pyast.Print).Roles(uast.Function, uast.Call, uast.Callee, uast.Identifier, uast.Expression).Children(
+			On(HasInternalRole("dest")).Roles(uast.Call, uast.Argument, uast.Positional),
+			On(HasInternalRole("nl")).Roles(uast.Call, uast.Argument, uast.Positional),
+			On(HasInternalRole("values")).Roles(uast.Call, uast.Argument, uast.Positional).Children(
+				On(Any).Roles(uast.Call, uast.Argument, uast.Positional),
 			),
 		),
 
-		// Python annotations for variables, function argument or return values doesn't have any semantic
-		// information by themselves and this we consider it comments (some preprocessors or linters can use
-		// them, the runtimes ignore them). The TOKEN will take the annotation in the UAST node so
-		// the information is keept in any case.
-		// FIXME: need annotation or type UAST roles
-		On(HasInternalType(pyast.AnnAssign)).Roles(Assignment, Comment, Incomplete),
-		On(HasInternalType(pyast.Annotation)).Roles(Comment, Incomplete),
-		On(HasInternalRole(pyast.Returns)).Roles(Comment, Incomplete),
+		// Python annotations for variables, function argument or return values doesn't
+		// have any semantic information by themselves and this we consider it comments
+		// (some preprocessors or linters can use them, the runtimes ignore them). The
+		// TOKEN will take the annotation in the UAST node so the information is keept in
+		// any case.  FIXME: need annotation or type UAST roles
+		On(pyast.AnnAssign).Roles(uast.Operator, uast.Binary, uast.Assignment, uast.Comment, uast.Incomplete),
+		On(HasInternalRole("annotation")).Roles(uast.Comment, uast.Incomplete),
+		On(HasInternalRole("returns")).Roles(uast.Comment, uast.Incomplete),
 
-		// Python very odd ellipsis operator. Has a special rule in tonoder synthetic tokens
-		// map to load it with the token "PythonEllipsisOperator" and gets the role SimpleIdentifier
-		On(HasInternalType(pyast.Ellipsis)).Roles(SimpleIdentifier, Incomplete),
+		// Python very odd ellipsis operatouast. Has a special rule in tonoder synthetic tokens
+		// map to load it with the token "PythonEllipsisuast.Operator" and gets the role uast.Identifier
+		On(pyast.Ellipsis).Roles(uast.Identifier, uast.Incomplete),
 
-		// List/Map/Set comprehensions. We map the "for x in y" to ForEach roles and the
-		// "if something" to If* roles. FIXME: missing the top comprehension roles in the UAST, change
-		// once they've been merged
-		On(HasInternalType(pyast.Comprehension)).Roles(ForEach, Expression).Children(
-			On(HasInternalRole("iter")).Roles(ForUpdate, Statement),
-			On(HasInternalRole("target")).Roles(ForExpression),
-			// FIXME: see the comment on IfCondition above
-			On(HasInternalType(pyast.Compare)).Roles(IfCondition, BinaryExpression).Children(
-				On(HasInternalType("Compare.ops")).Roles(BinaryExpressionOp),
-				On(HasInternalRole("left")).Roles(BinaryExpressionLeft),
+		// uast.List/uast.Map/uast.Set comprehensions. We map the "for x in y" to uast.For, uast.Iterator (foreach)
+		// roles and the "if something" to uast.If* roles. FIXME: missing the top comprehension
+		// roles in the UAST, change once they've been merged
+		On(pyast.ListComp).Roles(uast.Literal, uast.List, uast.For, uast.Expression, uast.Incomplete),
+		On(pyast.DictComp).Roles(uast.Literal, uast.Map, uast.For, uast.Expression, uast.Incomplete),
+		On(pyast.SetComp).Roles(uast.Literal, uast.Set, uast.For, uast.Expression, uast.Incomplete),
+		On(pyast.Comprehension).Roles(uast.For, uast.Iterator, uast.Expression).Children(
+			On(HasInternalRole("iter")).Roles(uast.For, uast.Update, uast.Statement),
+			On(HasInternalRole("target")).Roles(uast.For, uast.Expression),
+			// FIXME: see the comment on uast.If, uast.Condition above
+			On(pyast.Compare).Roles(uast.If, uast.Condition, uast.Expression, uast.Binary).Children(
+				On(pyast.CompareOps).Roles(uast.Expression, uast.Binary, uast.Operator),
+				On(HasInternalRole("left")).Roles(uast.Expression, uast.Binary, uast.Left),
 			),
 		),
-		On(HasInternalType(pyast.ListComp)).Roles(ListLiteral, Expression, Incomplete),
-		On(HasInternalType(pyast.DictComp)).Roles(MapLiteral, Expression, Incomplete),
-		On(HasInternalType(pyast.SetComp)).Roles(SetLiteral, Expression, Incomplete),
 
-		On(HasInternalType(pyast.Delete)).Roles(Statement, Incomplete),
-		On(HasInternalType(pyast.Await)).Roles(Statement, Incomplete),
-		On(HasInternalType(pyast.Global)).Roles(Statement, VisibleFromWorld, Incomplete),
-		On(HasInternalType(pyast.Nonlocal)).Roles(Statement, VisibleFromModule, Incomplete),
+		On(pyast.Delete).Roles(uast.Statement, uast.Incomplete),
+		On(pyast.Await).Roles(uast.Statement, uast.Incomplete),
+		On(pyast.Global).Roles(uast.Statement, uast.Visibility, uast.World, uast.Incomplete),
+		On(pyast.Nonlocal).Roles(uast.Statement, uast.Visibility, uast.Module, uast.Incomplete),
 
-		On(HasInternalType(pyast.Yield)).Roles(Return, Statement, Incomplete),
-		On(HasInternalType(pyast.YieldFrom)).Roles(Return, Statement, Incomplete),
-		On(HasInternalType(pyast.Yield)).Roles(ListLiteral, Expression, Incomplete),
+		On(pyast.Yield).Roles(uast.Return, uast.Statement, uast.Incomplete),
+		On(pyast.YieldFrom).Roles(uast.Return, uast.Statement, uast.Incomplete),
+		On(pyast.Yield).Roles(uast.Literal, uast.List, uast.Expression, uast.Incomplete),
 
-		On(HasInternalType(pyast.Subscript)).Roles(Expression, Incomplete),
-		On(HasInternalType(pyast.Index)).Roles(Expression, Incomplete),
-		On(HasInternalType(pyast.Slice)).Roles(Expression, Incomplete),
-		On(HasInternalType(pyast.ExtSlice)).Roles(Expression, Incomplete),
-	),
-)
+		On(pyast.Subscript).Roles(uast.Expression, uast.Incomplete),
+		On(pyast.Index).Roles(uast.Expression, uast.Incomplete),
+		On(pyast.Slice).Roles(uast.Expression, uast.Incomplete),
+		On(pyast.ExtSlice).Roles(uast.Expression, uast.Incomplete),
+	))
