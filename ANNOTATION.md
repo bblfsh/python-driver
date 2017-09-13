@@ -36,10 +36,9 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Invert'\] | OpBitwiseComplement |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='UAdd'\] | OpPositive |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='USub'\] | OpNegative |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='StringLiteral'\] | StringLiteral, Expression |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='ByteLiteral'\] | ByteStringLiteral, Expression |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='NumLiteral'\] | NumberLiteral, Expression |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Str'\] | StringLiteral, Expression |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Bytes'\] | ByteStringLiteral, Expression |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Num'\] | NumberLiteral, Expression |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='BoolLiteral'\] | BooleanLiteral, Expression |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='JoinedStr'\] | StringLiteral, Expression |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='JoinedStr'\]/\*\[@InternalType='FormattedValue'\] | Expression, Incomplete |
@@ -150,7 +149,6 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='While'\]/\*\[@internalRole\]\[@internalRole='test'\] | WhileCondition |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='While'\]/\*\[@InternalType='While\.orelse'\] | IfElse |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Pass'\] | Noop, Statement |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Num'\] | NumberLiteral, Expression |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Assert'\] | Assert, Statement |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Exec'\] | Call, Expression |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Exec'\]/\*\[@internalRole\]\[@internalRole='body'\] | CallPositionalArgument |

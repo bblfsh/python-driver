@@ -34,7 +34,7 @@ Module {
 .  .  .  .  .  .  internalRole: targets
 .  .  .  .  .  }
 .  .  .  .  }
-.  .  .  .  1: NumLiteral {
+.  .  .  .  1: Num {
 .  .  .  .  .  Roles: NumberLiteral,Expression,AssignmentValue
 .  .  .  .  .  TOKEN "42"
 .  .  .  .  .  StartPosition: {
@@ -48,7 +48,6 @@ Module {
 .  .  .  .  .  .  Col: 6
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  NumType: int
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  }
@@ -83,7 +82,7 @@ Module {
 .  .  .  .  .  .  internalRole: targets
 .  .  .  .  .  }
 .  .  .  .  }
-.  .  .  .  1: NumLiteral {
+.  .  .  .  1: Num {
 .  .  .  .  .  Roles: NumberLiteral,Expression,AssignmentValue
 .  .  .  .  .  TOKEN "3.14"
 .  .  .  .  .  StartPosition: {
@@ -97,7 +96,6 @@ Module {
 .  .  .  .  .  .  Col: 8
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  NumType: float
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  }
@@ -125,7 +123,7 @@ Module {
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: StringLiteral {
+.  .  .  .  .  .  0: Str {
 .  .  .  .  .  .  .  Roles: StringLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "This is an fstring with an "
 .  .  .  .  .  .  .  StartPosition: {
@@ -170,7 +168,7 @@ Module {
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  .  2: StringLiteral {
+.  .  .  .  .  .  2: Str {
 .  .  .  .  .  .  .  Roles: StringLiteral,Expression
 .  .  .  .  .  .  .  TOKEN " inserted parameter"
 .  .  .  .  .  .  .  StartPosition: {
@@ -213,7 +211,7 @@ Module {
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: StringLiteral {
+.  .  .  .  .  .  0: Str {
 .  .  .  .  .  .  .  Roles: StringLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "Another with "
 .  .  .  .  .  .  .  StartPosition: {
@@ -258,7 +256,7 @@ Module {
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  .  2: StringLiteral {
+.  .  .  .  .  .  2: Str {
 .  .  .  .  .  .  .  Roles: StringLiteral,Expression
 .  .  .  .  .  .  .  TOKEN " tostring indicator"
 .  .  .  .  .  .  .  StartPosition: {
@@ -301,7 +299,7 @@ Module {
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: StringLiteral {
+.  .  .  .  .  .  0: Str {
 .  .  .  .  .  .  .  Roles: StringLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "Another with "
 .  .  .  .  .  .  .  StartPosition: {
@@ -346,7 +344,7 @@ Module {
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  .  2: StringLiteral {
+.  .  .  .  .  .  2: Str {
 .  .  .  .  .  .  .  Roles: StringLiteral,Expression
 .  .  .  .  .  .  .  TOKEN " repr indicator"
 .  .  .  .  .  .  .  StartPosition: {
@@ -389,7 +387,7 @@ Module {
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: StringLiteral {
+.  .  .  .  .  .  0: Str {
 .  .  .  .  .  .  .  Roles: StringLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "Another with "
 .  .  .  .  .  .  .  StartPosition: {
@@ -434,7 +432,7 @@ Module {
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  .  2: StringLiteral {
+.  .  .  .  .  .  2: Str {
 .  .  .  .  .  .  .  Roles: StringLiteral,Expression
 .  .  .  .  .  .  .  TOKEN " ascii indicator"
 .  .  .  .  .  .  .  StartPosition: {
@@ -477,7 +475,7 @@ Module {
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: StringLiteral {
+.  .  .  .  .  .  0: Str {
 .  .  .  .  .  .  .  Roles: StringLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "Another with "
 .  .  .  .  .  .  .  StartPosition: {
@@ -530,7 +528,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: values
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  .  .  .  .  0: NumLiteral {
+.  .  .  .  .  .  .  .  .  .  .  .  0: Num {
 .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: NumberLiteral,Expression
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
@@ -539,13 +537,12 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 2
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  NumType: int
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  1: StringLiteral {
+.  .  .  .  .  .  .  .  .  .  1: Str {
 .  .  .  .  .  .  .  .  .  .  .  Roles: StringLiteral,Expression
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "."
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
@@ -575,7 +572,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: values
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  .  .  .  .  0: NumLiteral {
+.  .  .  .  .  .  .  .  .  .  .  .  0: Num {
 .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: NumberLiteral,Expression
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "3"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
@@ -584,7 +581,6 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 2
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  NumType: int
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  }
@@ -607,7 +603,7 @@ Module {
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  .  2: StringLiteral {
+.  .  .  .  .  .  2: Str {
 .  .  .  .  .  .  .  Roles: StringLiteral,Expression
 .  .  .  .  .  .  .  TOKEN " width and precission float indicator"
 .  .  .  .  .  .  .  StartPosition: {
@@ -756,7 +752,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: left
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  1: NumLiteral {
+.  .  .  .  .  .  .  .  .  .  1: Num {
 .  .  .  .  .  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
@@ -770,7 +766,6 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 27
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  NumType: int
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: right
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
@@ -811,7 +806,7 @@ Module {
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: StringLiteral {
+.  .  .  .  .  .  0: Str {
 .  .  .  .  .  .  .  Roles: StringLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "Another with "
 .  .  .  .  .  .  .  StartPosition: {
@@ -852,7 +847,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  .  .  0: NumLiteral {
+.  .  .  .  .  .  .  .  .  .  0: Num {
 .  .  .  .  .  .  .  .  .  .  .  Roles: NumberLiteral,Expression,CallPositionalArgument
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "10"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
@@ -861,7 +856,6 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 11
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  NumType: int
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
@@ -882,7 +876,7 @@ Module {
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  .  2: StringLiteral {
+.  .  .  .  .  .  2: Str {
 .  .  .  .  .  .  .  Roles: StringLiteral,Expression
 .  .  .  .  .  .  .  TOKEN " an embedded call"
 .  .  .  .  .  .  .  StartPosition: {
@@ -925,7 +919,7 @@ Module {
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: StringLiteral {
+.  .  .  .  .  .  0: Str {
 .  .  .  .  .  .  .  Roles: StringLiteral,Expression
 .  .  .  .  .  .  .  TOKEN "Another with "
 .  .  .  .  .  .  .  StartPosition: {
@@ -979,7 +973,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: func
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  .  .  .  .  0: StringLiteral {
+.  .  .  .  .  .  .  .  .  .  .  .  0: Str {
 .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: StringLiteral,Expression,CallReceiver
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "pok"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
@@ -997,7 +991,7 @@ Module {
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  .  2: StringLiteral {
+.  .  .  .  .  .  2: Str {
 .  .  .  .  .  .  .  Roles: StringLiteral,Expression
 .  .  .  .  .  .  .  TOKEN " an embedded expression"
 .  .  .  .  .  .  .  StartPosition: {
