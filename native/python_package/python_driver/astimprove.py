@@ -499,11 +499,17 @@ class AstImprover(object):
             node["ast_type"] = "NameConstant"
         return node
 
+    def visit_Num(self, node):
+        # complex objects are not json-serializable
+        if isinstance(node["n"], complex):
+            node.update({"n": {"real": node["n"].real,
+                               "imag": node["n"].imag}})
+        return node
+
     def visit_other(self, node):
         for field in node.get("_fields", []):
             meth = getattr(self, "visit_" + node["ast_type"], self.visit_other_field)
             node[field] = meth(node[field])
-
         return node
 
     def visit_other_field(self, node):
