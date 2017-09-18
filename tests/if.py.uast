@@ -22,7 +22,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: If.body {
-.  .  .  .  .  Roles: IfBody
+.  .  .  .  .  Roles: If,Body,Then
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  }
@@ -36,7 +36,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Call {
-.  .  .  .  .  .  .  .  .  Roles: Call,Expression
+.  .  .  .  .  .  .  .  .  Roles: Function,Call,Expression
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 13
 .  .  .  .  .  .  .  .  .  .  Line: 2
@@ -47,7 +47,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: BoolLiteral {
-.  .  .  .  .  .  .  .  .  .  .  Roles: BooleanLiteral,Expression,CallPositionalArgument
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Boolean,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "true"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 19
@@ -65,7 +65,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  .  .  Roles: CallCallee,SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  .  .  Roles: Call,Callee,Identifier,Expression
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "print"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 13
@@ -89,7 +89,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: BoolLiteral {
-.  .  .  .  .  Roles: BooleanLiteral,Expression,IfCondition
+.  .  .  .  .  Roles: Literal,Boolean,Expression,If,Condition
 .  .  .  .  .  TOKEN "true"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 3
@@ -126,7 +126,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: If.body {
-.  .  .  .  .  Roles: IfBody
+.  .  .  .  .  Roles: If,Body,Then
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  }
@@ -140,7 +140,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Call {
-.  .  .  .  .  .  .  .  .  Roles: Call,Expression
+.  .  .  .  .  .  .  .  .  Roles: Function,Call,Expression
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 49
 .  .  .  .  .  .  .  .  .  .  Line: 5
@@ -151,7 +151,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: BoolLiteral {
-.  .  .  .  .  .  .  .  .  .  .  Roles: BooleanLiteral,Expression,CallPositionalArgument
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Boolean,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "true"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 55
@@ -169,7 +169,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  .  .  Roles: CallCallee,SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  .  .  Roles: Call,Callee,Identifier,Expression
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "print"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 49
@@ -193,7 +193,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Call {
-.  .  .  .  .  Roles: Call,Expression,IfCondition
+.  .  .  .  .  Roles: Function,Call,Expression,If,Condition
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 29
 .  .  .  .  .  .  Line: 4
@@ -204,7 +204,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  Roles: CallCallee,SimpleIdentifier,Expression
+.  .  .  .  .  .  .  Roles: Call,Callee,Identifier,Expression
 .  .  .  .  .  .  .  TOKEN "functionCall"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 29
@@ -276,13 +276,13 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: If.body {
-.  .  .  .  .  Roles: IfBody
+.  .  .  .  .  Roles: If,Body,Then
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Assign {
-.  .  .  .  .  .  .  Roles: Assignment,Expression
+.  .  .  .  .  .  .  Roles: Binary,Assignment,Expression
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 76
 .  .  .  .  .  .  .  .  Line: 8
@@ -290,7 +290,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: AssignmentVariable,SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Left,Identifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 76
@@ -308,7 +308,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  .  .  Roles: NumberLiteral,Expression,AssignmentValue
+.  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Right
 .  .  .  .  .  .  .  .  .  TOKEN "1.1"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 80
@@ -327,7 +327,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Assign {
-.  .  .  .  .  .  .  Roles: Assignment,Expression
+.  .  .  .  .  .  .  Roles: Binary,Assignment,Expression
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 88
 .  .  .  .  .  .  .  .  Line: 9
@@ -335,7 +335,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: AssignmentVariable,SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Left,Identifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "x"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 88
@@ -353,7 +353,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  .  .  Roles: NumberLiteral,Expression,AssignmentValue
+.  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Right
 .  .  .  .  .  .  .  .  .  TOKEN "1.2"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 92
@@ -374,7 +374,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: If.orelse {
-.  .  .  .  .  Roles: IfElse
+.  .  .  .  .  Roles: If,Body,Else
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  }
@@ -389,13 +389,13 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: If.body {
-.  .  .  .  .  .  .  .  .  Roles: IfBody
+.  .  .  .  .  .  .  .  .  Roles: If,Body,Then
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Assign {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Assignment,Expression
+.  .  .  .  .  .  .  .  .  .  .  Roles: Binary,Assignment,Expression
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 113
 .  .  .  .  .  .  .  .  .  .  .  .  Line: 11
@@ -403,7 +403,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: AssignmentVariable,SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Left,Identifier,Expression
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "c"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 113
@@ -421,7 +421,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: NumberLiteral,Expression,AssignmentValue
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Right
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "2.1"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 117
@@ -440,7 +440,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: Assign {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Assignment,Expression
+.  .  .  .  .  .  .  .  .  .  .  Roles: Binary,Assignment,Expression
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 125
 .  .  .  .  .  .  .  .  .  .  .  .  Line: 12
@@ -448,7 +448,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: AssignmentVariable,SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Left,Identifier,Expression
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "j"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 125
@@ -466,7 +466,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: NumberLiteral,Expression,AssignmentValue
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Right
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "2.2"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 129
@@ -487,13 +487,13 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: If.orelse {
-.  .  .  .  .  .  .  .  .  Roles: IfElse
+.  .  .  .  .  .  .  .  .  Roles: If,Body,Else
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Assign {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Assignment,Expression
+.  .  .  .  .  .  .  .  .  .  .  Roles: Binary,Assignment,Expression
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 143
 .  .  .  .  .  .  .  .  .  .  .  .  Line: 14
@@ -501,7 +501,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: AssignmentVariable,SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Left,Identifier,Expression
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "b"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 143
@@ -519,7 +519,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: NumberLiteral,Expression,AssignmentValue
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Right
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "3.1"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 147
@@ -538,7 +538,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: Assign {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Assignment,Expression
+.  .  .  .  .  .  .  .  .  .  .  Roles: Binary,Assignment,Expression
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 155
 .  .  .  .  .  .  .  .  .  .  .  .  Line: 15
@@ -546,7 +546,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: AssignmentVariable,SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Left,Identifier,Expression
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "p"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 155
@@ -564,7 +564,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: NumberLiteral,Expression,AssignmentValue
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Right
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "3.2"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 159
@@ -585,7 +585,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  2: Compare {
-.  .  .  .  .  .  .  .  .  Roles: BinaryExpression,Expression,IfCondition
+.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,If,Condition
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 101
 .  .  .  .  .  .  .  .  .  .  Line: 10
@@ -596,13 +596,13 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Compare.comparators {
-.  .  .  .  .  .  .  .  .  .  .  Roles: BinaryExpressionRight
+.  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Identifier,Expression
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "c"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 106
@@ -621,7 +621,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression,BinaryExpressionLeft
+.  .  .  .  .  .  .  .  .  .  .  Roles: Identifier,Expression,Expression,Binary,Left
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "b"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 101
@@ -639,13 +639,13 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  2: Compare.ops {
-.  .  .  .  .  .  .  .  .  .  .  Roles: BinaryExpressionOp
+.  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Operator
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Eq {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: OpEqual
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Binary,Operator,Equal
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "=="
 .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  }
@@ -657,7 +657,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  2: Compare {
-.  .  .  .  .  Roles: BinaryExpression,Expression,IfCondition
+.  .  .  .  .  Roles: Expression,Binary,If,Condition
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 65
 .  .  .  .  .  .  Line: 7
@@ -668,13 +668,13 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Compare.comparators {
-.  .  .  .  .  .  .  Roles: BinaryExpressionRight
+.  .  .  .  .  .  .  Roles: Expression,Binary,Right
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "b"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 69
@@ -693,7 +693,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression,BinaryExpressionLeft
+.  .  .  .  .  .  .  Roles: Identifier,Expression,Expression,Binary,Left
 .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 65
@@ -744,13 +744,13 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Compare.ops {
-.  .  .  .  .  .  .  Roles: BinaryExpressionOp
+.  .  .  .  .  .  .  Roles: Expression,Binary,Operator
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Gt {
-.  .  .  .  .  .  .  .  .  Roles: OpGreaterThan
+.  .  .  .  .  .  .  .  .  Roles: Binary,Operator,GreaterThan
 .  .  .  .  .  .  .  .  .  TOKEN ">"
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
@@ -777,7 +777,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: If.body {
-.  .  .  .  .  Roles: IfBody
+.  .  .  .  .  Roles: If,Body,Then
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  }
@@ -799,7 +799,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Compare {
-.  .  .  .  .  Roles: BinaryExpression,Expression,IfCondition
+.  .  .  .  .  Roles: Expression,Binary,If,Condition
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 167
 .  .  .  .  .  .  Line: 17
@@ -810,13 +810,13 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Compare.comparators {
-.  .  .  .  .  .  .  Roles: BinaryExpressionRight
+.  .  .  .  .  .  .  Roles: Expression,Binary,Right
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "b"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 171
@@ -833,7 +833,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "c"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 175
@@ -850,7 +850,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  2: Name {
-.  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "d"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 179
@@ -869,7 +869,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression,BinaryExpressionLeft
+.  .  .  .  .  .  .  Roles: Identifier,Expression,Expression,Binary,Left
 .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 167
@@ -920,21 +920,21 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Compare.ops {
-.  .  .  .  .  .  .  Roles: BinaryExpressionOp
+.  .  .  .  .  .  .  Roles: Expression,Binary,Operator
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Gt {
-.  .  .  .  .  .  .  .  .  Roles: OpGreaterThan
+.  .  .  .  .  .  .  .  .  Roles: Binary,Operator,GreaterThan
 .  .  .  .  .  .  .  .  .  TOKEN ">"
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Gt {
-.  .  .  .  .  .  .  .  .  Roles: OpGreaterThan
+.  .  .  .  .  .  .  .  .  Roles: Binary,Operator,GreaterThan
 .  .  .  .  .  .  .  .  .  TOKEN ">"
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  2: Gt {
-.  .  .  .  .  .  .  .  .  Roles: OpGreaterThan
+.  .  .  .  .  .  .  .  .  Roles: Binary,Operator,GreaterThan
 .  .  .  .  .  .  .  .  .  TOKEN ">"
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }

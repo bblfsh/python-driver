@@ -16,7 +16,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Call {
-.  .  .  .  .  Roles: Call,Expression
+.  .  .  .  .  Roles: Function,Call,Expression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  Line: 1
@@ -27,7 +27,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Attribute {
-.  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression,CallCallee
+.  .  .  .  .  .  .  Roles: Identifier,Expression,Call,Callee
 .  .  .  .  .  .  .  TOKEN "method"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 4
@@ -45,7 +45,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: QualifiedIdentifier,CallReceiver,SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Identifier,Qualified,Call,Receiver,Identifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "obj"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 0
@@ -69,7 +69,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  1: Assign {
-.  .  .  Roles: Assignment,Expression
+.  .  .  Roles: Binary,Assignment,Expression
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 13
 .  .  .  .  Line: 2
@@ -80,7 +80,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Attribute {
-.  .  .  .  .  Roles: SimpleIdentifier,Expression,AssignmentVariable
+.  .  .  .  .  Roles: Identifier,Expression,Left
 .  .  .  .  .  TOKEN "b"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 15
@@ -98,7 +98,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  Roles: QualifiedIdentifier,SimpleIdentifier,Expression
+.  .  .  .  .  .  .  Roles: Identifier,Qualified,Identifier,Expression
 .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 13
@@ -118,7 +118,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Num {
-.  .  .  .  .  Roles: NumberLiteral,Expression,AssignmentValue
+.  .  .  .  .  Roles: Literal,Number,Expression,Right
 .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 19
@@ -137,7 +137,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  2: Assign {
-.  .  .  Roles: Assignment,Expression
+.  .  .  Roles: Binary,Assignment,Expression
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 21
 .  .  .  .  Line: 3
@@ -148,7 +148,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Attribute {
-.  .  .  .  .  Roles: SimpleIdentifier,Expression,AssignmentVariable
+.  .  .  .  .  Roles: Identifier,Expression,Left
 .  .  .  .  .  TOKEN "e"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 29
@@ -166,7 +166,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Attribute {
-.  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
+.  .  .  .  .  .  .  Roles: Identifier,Expression
 .  .  .  .  .  .  .  TOKEN "d"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 27
@@ -184,7 +184,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Attribute {
-.  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "c"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 25
@@ -202,7 +202,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Attribute {
-.  .  .  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  .  .  Roles: Identifier,Expression
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "b"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 23
@@ -220,7 +220,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: QualifiedIdentifier,SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Identifier,Qualified,Identifier,Expression
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 21
@@ -246,7 +246,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Num {
-.  .  .  .  .  Roles: NumberLiteral,Expression,AssignmentValue
+.  .  .  .  .  Roles: Literal,Number,Expression,Right
 .  .  .  .  .  TOKEN "5"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 33

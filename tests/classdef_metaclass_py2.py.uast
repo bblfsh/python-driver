@@ -5,7 +5,7 @@ Module {
 .  Roles: File
 .  Children: {
 .  .  0: ClassDef {
-.  .  .  Roles: TypeDeclaration,SimpleIdentifier,Statement
+.  .  .  Roles: Type,Declaration,Identifier,Statement
 .  .  .  TOKEN "MySingleton"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 6
@@ -22,13 +22,13 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: ClassDef.bases {
-.  .  .  .  .  Roles: TypeDeclarationBases
+.  .  .  .  .  Roles: Type,Declaration,Base
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
+.  .  .  .  .  .  .  Roles: Identifier,Expression
 .  .  .  .  .  .  .  TOKEN "object"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 18
@@ -47,13 +47,13 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: ClassDef.body {
-.  .  .  .  .  Roles: TypeDeclarationBody
+.  .  .  .  .  Roles: Type,Declaration,Body
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Assign {
-.  .  .  .  .  .  .  Roles: Assignment,Expression
+.  .  .  .  .  .  .  Roles: Binary,Assignment,Expression
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 31
 .  .  .  .  .  .  .  .  Line: 2
@@ -61,7 +61,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: AssignmentVariable,SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Left,Identifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "___metaclass__"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 31
@@ -79,7 +79,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  Roles: AssignmentValue,SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Right,Identifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "Singleton"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 48

@@ -5,7 +5,7 @@ Module {
 .  Roles: File
 .  Children: {
 .  .  0: FunctionDef {
-.  .  .  Roles: FunctionDeclaration,FunctionDeclarationName,SimpleIdentifier
+.  .  .  Roles: Function,Declaration,Name,Identifier
 .  .  .  TOKEN "someFunc"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
@@ -18,7 +18,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: FunctionDef.body {
-.  .  .  .  .  Roles: FunctionDeclarationBody
+.  .  .  .  .  Roles: Function,Declaration,Body
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  }
@@ -43,13 +43,13 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: FunctionDef.decorator_list {
-.  .  .  .  .  Roles: Call,Incomplete
+.  .  .  .  .  Roles: Function,Declaration,Call,Incomplete
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
+.  .  .  .  .  .  .  Roles: Identifier,Expression
 .  .  .  .  .  .  .  TOKEN "somedecorator"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 1
@@ -68,7 +68,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  2: arguments {
-.  .  .  .  .  Roles: FunctionDeclarationArgument,Incomplete
+.  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  kwarg: <nil>
@@ -78,7 +78,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  1: FunctionDef {
-.  .  .  Roles: FunctionDeclaration,FunctionDeclarationName,SimpleIdentifier
+.  .  .  Roles: Function,Declaration,Name,Identifier
 .  .  .  TOKEN "someFunc"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 43
@@ -91,7 +91,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: FunctionDef.body {
-.  .  .  .  .  Roles: FunctionDeclarationBody
+.  .  .  .  .  Roles: Function,Declaration,Body
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  }
@@ -149,13 +149,13 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: FunctionDef.decorator_list {
-.  .  .  .  .  Roles: Call,Incomplete
+.  .  .  .  .  Roles: Function,Declaration,Call,Incomplete
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Call {
-.  .  .  .  .  .  .  Roles: Call,Expression
+.  .  .  .  .  .  .  Roles: Function,Call,Expression
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 44
 .  .  .  .  .  .  .  .  Line: 5
@@ -163,7 +163,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  Roles: NumberLiteral,Expression,CallPositionalArgument
+.  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 64
@@ -180,7 +180,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  .  .  Roles: NumberLiteral,Expression,CallPositionalArgument
+.  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 67
@@ -197,7 +197,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  .  .  Roles: NumberLiteral,Expression,CallPositionalArgument
+.  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  TOKEN "3"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 70
@@ -214,7 +214,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  3: Name {
-.  .  .  .  .  .  .  .  .  Roles: CallCallee,SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Call,Callee,Identifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "somedecoratorparams"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 44
@@ -236,7 +236,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  2: arguments {
-.  .  .  .  .  Roles: FunctionDeclarationArgument,Incomplete
+.  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  kwarg: <nil>

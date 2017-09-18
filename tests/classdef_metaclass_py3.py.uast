@@ -5,7 +5,7 @@ Module {
 .  Roles: File
 .  Children: {
 .  .  0: ClassDef {
-.  .  .  Roles: TypeDeclaration,SimpleIdentifier,Statement
+.  .  .  Roles: Type,Declaration,Identifier,Statement
 .  .  .  TOKEN "MySingleton"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 6
@@ -22,7 +22,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: ClassDef.body {
-.  .  .  .  .  Roles: TypeDeclarationBody
+.  .  .  .  .  Roles: Type,Declaration,Body
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  }
@@ -50,11 +50,11 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: keyword {
-.  .  .  .  .  .  .  Roles: SimpleIdentifier,Incomplete
+.  .  .  .  .  .  .  Roles: Identifier,Incomplete
 .  .  .  .  .  .  .  TOKEN "metaclass"
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "Singleton"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 28
@@ -78,7 +78,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  1: ClassDef {
-.  .  .  Roles: TypeDeclaration,SimpleIdentifier,Statement
+.  .  .  Roles: Type,Declaration,Identifier,Statement
 .  .  .  TOKEN "MySingleton"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 56
@@ -95,13 +95,13 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: ClassDef.bases {
-.  .  .  .  .  Roles: TypeDeclarationBases
+.  .  .  .  .  Roles: Type,Declaration,Base
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
+.  .  .  .  .  .  .  Roles: Identifier,Expression
 .  .  .  .  .  .  .  TOKEN "ParentClass"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 68
@@ -153,7 +153,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: ClassDef.body {
-.  .  .  .  .  Roles: TypeDeclarationBody
+.  .  .  .  .  Roles: Type,Declaration,Body
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  }
@@ -181,11 +181,11 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: keyword {
-.  .  .  .  .  .  .  Roles: SimpleIdentifier,Incomplete
+.  .  .  .  .  .  .  Roles: Identifier,Incomplete
 .  .  .  .  .  .  .  TOKEN "metaclass"
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "Singleton"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 91

@@ -5,7 +5,7 @@ Module {
 .  Roles: File
 .  Children: {
 .  .  0: AugAssign {
-.  .  .  Roles: AugmentedAssignment,Statement
+.  .  .  Roles: Operator,Binary,Assignment,Statement
 .  .  .  TOKEN "?="
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 2
@@ -22,7 +22,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
-.  .  .  .  .  Roles: AugmentedAssignmentVariable,SimpleIdentifier,Expression
+.  .  .  .  .  Roles: Left,Identifier,Expression
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
@@ -40,7 +40,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Num {
-.  .  .  .  .  Roles: NumberLiteral,Expression,AugmentedAssignmentValue
+.  .  .  .  .  Roles: Literal,Number,Expression,Right
 .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 5
@@ -57,7 +57,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  2: Add {
-.  .  .  .  .  Roles: OpAdd,AugmentedAssignmentOperator
+.  .  .  .  .  Roles: Binary,Operator,Add,Operator,Binary
 .  .  .  .  .  TOKEN "+"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: op
@@ -66,7 +66,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  1: AugAssign {
-.  .  .  Roles: AugmentedAssignment,Statement
+.  .  .  Roles: Operator,Binary,Assignment,Statement
 .  .  .  TOKEN "?="
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 7
@@ -78,7 +78,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
-.  .  .  .  .  Roles: AugmentedAssignmentVariable,SimpleIdentifier,Expression
+.  .  .  .  .  Roles: Left,Identifier,Expression
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 7
@@ -96,7 +96,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Num {
-.  .  .  .  .  Roles: NumberLiteral,Expression,AugmentedAssignmentValue
+.  .  .  .  .  Roles: Literal,Number,Expression,Right
 .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 12
@@ -113,7 +113,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  2: Sub {
-.  .  .  .  .  Roles: OpSubstract,AugmentedAssignmentOperator
+.  .  .  .  .  Roles: Binary,Operator,Substract,Operator,Binary
 .  .  .  .  .  TOKEN "-"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: op
@@ -122,7 +122,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  2: AugAssign {
-.  .  .  Roles: AugmentedAssignment,Statement
+.  .  .  Roles: Operator,Binary,Assignment,Statement
 .  .  .  TOKEN "?="
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 14
@@ -134,7 +134,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
-.  .  .  .  .  Roles: AugmentedAssignmentVariable,SimpleIdentifier,Expression
+.  .  .  .  .  Roles: Left,Identifier,Expression
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 14
@@ -152,7 +152,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Num {
-.  .  .  .  .  Roles: NumberLiteral,Expression,AugmentedAssignmentValue
+.  .  .  .  .  Roles: Literal,Number,Expression,Right
 .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 19
@@ -169,7 +169,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  2: Mult {
-.  .  .  .  .  Roles: OpMultiply,AugmentedAssignmentOperator
+.  .  .  .  .  Roles: Binary,Operator,Multiply,Operator,Binary
 .  .  .  .  .  TOKEN "*"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: op
@@ -178,7 +178,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  3: AugAssign {
-.  .  .  Roles: AugmentedAssignment,Statement
+.  .  .  Roles: Operator,Binary,Assignment,Statement
 .  .  .  TOKEN "?="
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 21
@@ -190,7 +190,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
-.  .  .  .  .  Roles: AugmentedAssignmentVariable,SimpleIdentifier,Expression
+.  .  .  .  .  Roles: Left,Identifier,Expression
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 21
@@ -208,7 +208,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Num {
-.  .  .  .  .  Roles: NumberLiteral,Expression,AugmentedAssignmentValue
+.  .  .  .  .  Roles: Literal,Number,Expression,Right
 .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 26
@@ -225,7 +225,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  2: Div {
-.  .  .  .  .  Roles: OpDivide,AugmentedAssignmentOperator
+.  .  .  .  .  Roles: Binary,Operator,Divide,Operator,Binary
 .  .  .  .  .  TOKEN "/"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: op

@@ -5,7 +5,7 @@ Module {
 .  Roles: File
 .  Children: {
 .  .  0: AnnAssign {
-.  .  .  Roles: Assignment,Comment,Incomplete
+.  .  .  Roles: Operator,Binary,Assignment,Comment,Incomplete
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
 .  .  .  .  Line: 1
@@ -17,7 +17,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
-.  .  .  .  .  Roles: SimpleIdentifier,Expression
+.  .  .  .  .  Roles: Identifier,Expression,Comment,Incomplete
 .  .  .  .  .  TOKEN "int"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 3
@@ -35,7 +35,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Name {
-.  .  .  .  .  Roles: SimpleIdentifier,Expression
+.  .  .  .  .  Roles: Identifier,Expression
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
@@ -53,7 +53,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  2: Num {
-.  .  .  .  .  Roles: NumberLiteral,Expression
+.  .  .  .  .  Roles: Literal,Number,Expression
 .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 9
@@ -72,7 +72,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  1: AnnAssign {
-.  .  .  Roles: Assignment,Comment,Incomplete
+.  .  .  Roles: Operator,Binary,Assignment,Comment,Incomplete
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 11
 .  .  .  .  Line: 2
@@ -85,7 +85,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
-.  .  .  .  .  Roles: SimpleIdentifier,Expression
+.  .  .  .  .  Roles: Identifier,Expression,Comment,Incomplete
 .  .  .  .  .  TOKEN "float"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 14
@@ -103,7 +103,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Name {
-.  .  .  .  .  Roles: SimpleIdentifier,Expression
+.  .  .  .  .  Roles: Identifier,Expression
 .  .  .  .  .  TOKEN "b"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 11
@@ -123,7 +123,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  2: FunctionDef {
-.  .  .  Roles: FunctionDeclaration,FunctionDeclarationName,SimpleIdentifier
+.  .  .  Roles: Function,Declaration,Name,Identifier
 .  .  .  TOKEN "somefunc"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 24
@@ -140,7 +140,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: arguments {
-.  .  .  .  .  Roles: FunctionDeclarationArgument,Incomplete
+.  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  kwarg: <nil>
@@ -148,7 +148,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: arg {
-.  .  .  .  .  .  .  Roles: FunctionDeclarationArgument,FunctionDeclarationArgumentName,SimpleIdentifier
+.  .  .  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
 .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 33
@@ -165,7 +165,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression,Comment,Incomplete
 .  .  .  .  .  .  .  .  .  TOKEN "int"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 36
@@ -185,7 +185,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: arg {
-.  .  .  .  .  .  .  Roles: FunctionDeclarationArgument,FunctionDeclarationArgumentName,SimpleIdentifier
+.  .  .  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
 .  .  .  .  .  .  .  TOKEN "b"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 41
@@ -202,7 +202,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression,Comment,Incomplete
 .  .  .  .  .  .  .  .  .  TOKEN "str"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 44
@@ -224,7 +224,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: FunctionDef.body {
-.  .  .  .  .  Roles: FunctionDeclarationBody
+.  .  .  .  .  Roles: Function,Declaration,Body
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  }
@@ -244,7 +244,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  Roles: NumberLiteral,Expression
+.  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 70
@@ -265,7 +265,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  2: Name {
-.  .  .  .  .  Roles: SimpleIdentifier,Expression,Comment,Incomplete
+.  .  .  .  .  Roles: Identifier,Expression,Comment,Incomplete
 .  .  .  .  .  TOKEN "float"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 52

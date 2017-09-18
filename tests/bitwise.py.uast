@@ -16,7 +16,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: BinaryExpression,Expression
+.  .  .  .  .  Roles: Expression,Binary
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  Line: 1
@@ -27,7 +27,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: BinaryExpressionLeft,NumberLiteral,Expression
+.  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,Number,Expression
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 0
@@ -44,7 +44,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
+.  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Expression
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 4
@@ -61,7 +61,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: BitAnd {
-.  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpBitwiseAnd
+.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Bitwise,And
 .  .  .  .  .  .  .  TOKEN "&"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: op
@@ -83,7 +83,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: BinaryExpression,Expression
+.  .  .  .  .  Roles: Expression,Binary
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 6
 .  .  .  .  .  .  Line: 2
@@ -94,7 +94,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: BinaryExpressionLeft,NumberLiteral,Expression
+.  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,Number,Expression
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 6
@@ -111,7 +111,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
+.  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Expression
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 10
@@ -128,7 +128,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: BitOr {
-.  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpBitwiseOr
+.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Bitwise,Or
 .  .  .  .  .  .  .  TOKEN "|"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: op
@@ -150,7 +150,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: BinaryExpression,Expression
+.  .  .  .  .  Roles: Expression,Binary
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 12
 .  .  .  .  .  .  Line: 3
@@ -161,7 +161,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: BinaryExpressionLeft,NumberLiteral,Expression
+.  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,Number,Expression
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 12
@@ -178,7 +178,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
+.  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Expression
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 16
@@ -195,7 +195,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: BitXor {
-.  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpBitwiseXor
+.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Bitwise,Xor
 .  .  .  .  .  .  .  TOKEN "^"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: op
@@ -217,7 +217,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: BinaryExpression,Expression
+.  .  .  .  .  Roles: Expression,Binary
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 18
 .  .  .  .  .  .  Line: 4
@@ -228,7 +228,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: BinaryExpressionLeft,NumberLiteral,Expression
+.  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,Number,Expression
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 18
@@ -245,7 +245,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
+.  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Expression
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 23
@@ -262,7 +262,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: LShift {
-.  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpBitwiseLeftShift
+.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Bitwise,LeftShift
 .  .  .  .  .  .  .  TOKEN "<<"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: op
@@ -284,7 +284,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: BinaryExpression,Expression
+.  .  .  .  .  Roles: Expression,Binary
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 25
 .  .  .  .  .  .  Line: 5
@@ -295,7 +295,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: BinaryExpressionLeft,NumberLiteral,Expression
+.  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,Number,Expression
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 25
@@ -312,7 +312,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
+.  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Expression
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 30
@@ -329,7 +329,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: RShift {
-.  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpBitwiseRightShift
+.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Bitwise,RightShift
 .  .  .  .  .  .  .  TOKEN ">>"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: op
@@ -351,7 +351,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: BinaryExpression,Expression
+.  .  .  .  .  Roles: Expression,Binary
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 32
 .  .  .  .  .  .  Line: 6
@@ -362,7 +362,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: BinOp {
-.  .  .  .  .  .  .  Roles: BinaryExpressionLeft,BinaryExpression,Expression
+.  .  .  .  .  .  .  Roles: Expression,Binary,Left,Expression,Binary
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 38
 .  .  .  .  .  .  .  .  Line: 6
@@ -373,7 +373,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: BinOp {
-.  .  .  .  .  .  .  .  .  Roles: BinaryExpressionLeft,BinaryExpression,Expression
+.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Expression,Binary
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 32
 .  .  .  .  .  .  .  .  .  .  Line: 6
@@ -384,7 +384,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  Roles: BinaryExpressionLeft,NumberLiteral,Expression
+.  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,Number,Expression
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 32
@@ -401,7 +401,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
+.  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Expression
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 36
@@ -418,7 +418,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  2: BitAnd {
-.  .  .  .  .  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpBitwiseAnd
+.  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Bitwise,And
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "&"
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: op
@@ -427,7 +427,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
+.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "3"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 40
@@ -444,7 +444,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  2: BitAnd {
-.  .  .  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpBitwiseAnd
+.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Bitwise,And
 .  .  .  .  .  .  .  .  .  TOKEN "&"
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  internalRole: op
@@ -453,7 +453,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
+.  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Expression
 .  .  .  .  .  .  .  TOKEN "4"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 44
@@ -470,7 +470,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: BitOr {
-.  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpBitwiseOr
+.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Bitwise,Or
 .  .  .  .  .  .  .  TOKEN "|"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: op
@@ -492,7 +492,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: BinaryExpression,Expression
+.  .  .  .  .  Roles: Expression,Binary
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 46
 .  .  .  .  .  .  Line: 7
@@ -503,7 +503,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: BinOp {
-.  .  .  .  .  .  .  Roles: BinaryExpressionLeft,BinaryExpression,Expression
+.  .  .  .  .  .  .  Roles: Expression,Binary,Left,Expression,Binary
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 47
 .  .  .  .  .  .  .  .  Line: 7
@@ -514,7 +514,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: BinaryExpressionLeft,SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Identifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 47
@@ -532,7 +532,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
+.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 51
@@ -549,7 +549,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  2: Add {
-.  .  .  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpAdd
+.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Add
 .  .  .  .  .  .  .  .  .  TOKEN "+"
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  internalRole: op
@@ -558,7 +558,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: BinOp {
-.  .  .  .  .  .  .  Roles: BinaryExpressionRight,BinaryExpression,Expression
+.  .  .  .  .  .  .  Roles: Expression,Binary,Right,Expression,Binary
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 57
 .  .  .  .  .  .  .  .  Line: 7
@@ -569,7 +569,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: BinaryExpressionLeft,SimpleIdentifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Identifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "d"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 57
@@ -587,7 +587,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  .  .  Roles: BinaryExpressionRight,NumberLiteral,Expression
+.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 61
@@ -604,7 +604,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  2: Add {
-.  .  .  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpAdd
+.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Add
 .  .  .  .  .  .  .  .  .  TOKEN "+"
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  internalRole: op
@@ -613,7 +613,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: BitOr {
-.  .  .  .  .  .  .  Roles: BinaryExpressionOp,OpBitwiseOr
+.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Bitwise,Or
 .  .  .  .  .  .  .  TOKEN "|"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: op

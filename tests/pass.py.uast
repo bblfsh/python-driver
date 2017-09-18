@@ -41,7 +41,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  1: FunctionDef {
-.  .  .  Roles: FunctionDeclaration,FunctionDeclarationName,SimpleIdentifier
+.  .  .  Roles: Function,Declaration,Name,Identifier
 .  .  .  TOKEN "somefun"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 17
@@ -59,7 +59,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: FunctionDef.body {
-.  .  .  .  .  Roles: FunctionDeclarationBody
+.  .  .  .  .  Roles: Function,Declaration,Body
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  }
@@ -114,7 +114,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: arguments {
-.  .  .  .  .  Roles: FunctionDeclarationArgument,Incomplete
+.  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  kwarg: <nil>
@@ -124,7 +124,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  2: FunctionDef {
-.  .  .  Roles: FunctionDeclaration,FunctionDeclarationName,SimpleIdentifier
+.  .  .  Roles: Function,Declaration,Name,Identifier
 .  .  .  TOKEN "otherfun"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 38
@@ -142,7 +142,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: FunctionDef.body {
-.  .  .  .  .  Roles: FunctionDeclarationBody
+.  .  .  .  .  Roles: Function,Declaration,Body
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  }
@@ -197,7 +197,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: arguments {
-.  .  .  .  .  Roles: FunctionDeclarationArgument,Incomplete
+.  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  kwarg: <nil>

@@ -22,7 +22,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: If.body {
-.  .  .  .  .  Roles: IfBody
+.  .  .  .  .  Roles: If,Body,Then
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  }
@@ -44,7 +44,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Compare {
-.  .  .  .  .  Roles: BinaryExpression,Expression,IfCondition
+.  .  .  .  .  Roles: Expression,Binary,If,Condition
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 3
 .  .  .  .  .  .  Line: 1
@@ -55,13 +55,13 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Compare.comparators {
-.  .  .  .  .  .  .  Roles: BinaryExpressionRight
+.  .  .  .  .  .  .  Roles: Expression,Binary,Right
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  Roles: NumberLiteral,Expression
+.  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 7
@@ -77,7 +77,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  Roles: NumberLiteral,Expression,BinaryExpressionLeft
+.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Expression,Binary,Left
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 3
@@ -94,13 +94,13 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Compare.ops {
-.  .  .  .  .  .  .  Roles: BinaryExpressionOp
+.  .  .  .  .  .  .  Roles: Expression,Binary,Operator
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Gt {
-.  .  .  .  .  .  .  .  .  Roles: OpGreaterThan
+.  .  .  .  .  .  .  .  .  Roles: Binary,Operator,GreaterThan
 .  .  .  .  .  .  .  .  .  TOKEN ">"
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }

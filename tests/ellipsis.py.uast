@@ -16,7 +16,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: List {
-.  .  .  .  .  Roles: ListLiteral,Expression
+.  .  .  .  .  Roles: Literal,List,Expression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  Line: 1
@@ -28,7 +28,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Ellipsis {
-.  .  .  .  .  .  .  Roles: SimpleIdentifier,Incomplete
+.  .  .  .  .  .  .  Roles: Identifier,Incomplete
 .  .  .  .  .  .  .  TOKEN "..."
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 1
@@ -45,7 +45,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  Roles: NumberLiteral,Expression
+.  .  .  .  .  .  .  Roles: Literal,Number,Expression
 .  .  .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 6
