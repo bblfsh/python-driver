@@ -170,7 +170,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: UnaryOp {
-.  .  .  .  .  Roles: Operator,Unary,Expression
+.  .  .  .  .  Roles: Binary,Operator,Unary,Expression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 14
 .  .  .  .  .  .  Line: 3
@@ -198,7 +198,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Not {
-.  .  .  .  .  .  .  Roles: Operator,Boolean,Not
+.  .  .  .  .  .  .  Roles: Binary,Operator,Boolean,Not
 .  .  .  .  .  .  .  TOKEN "!"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: op

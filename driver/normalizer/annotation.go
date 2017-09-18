@@ -82,10 +82,10 @@ var AnnotationRules = On(Any).Self(
 		// Not applying the "Binary" role since even while in the Python code
 		// boolean operators use (seemingly binary) infix notation, the generated
 		// AST nodes use prefix.
-		On(pyast.And).Roles(uast.Operator, uast.Boolean, uast.And),
-		On(pyast.Or).Roles(uast.Operator, uast.Boolean, uast.Or),
-		On(pyast.Not).Roles(uast.Operator, uast.Boolean, uast.Not),
-		On(pyast.UnaryOp).Roles(uast.Operator, uast.Unary, uast.Expression),
+		On(pyast.And).Roles(uast.Binary, uast.Operator, uast.Boolean, uast.And),
+		On(pyast.Or).Roles(uast.Binary, uast.Operator, uast.Boolean, uast.Or),
+		On(pyast.Not).Roles(uast.Binary, uast.Operator, uast.Boolean, uast.Not),
+		On(pyast.UnaryOp).Roles(uast.Binary, uast.Operator, uast.Unary, uast.Expression),
 
 		// Unary operators
 		On(pyast.Invert).Roles(uast.Operator, uast.Unary, uast.Bitwise, uast.Not),
@@ -300,10 +300,10 @@ var AnnotationRules = On(Any).Self(
 		// uast.List/uast.Map/uast.Set comprehensions. We map the "for x in y" to uast.For, uast.Iterator (foreach)
 		// roles and the "if something" to uast.If* roles. FIXME: missing the top comprehension
 		// roles in the UAST, change once they've been merged
-		On(pyast.ListComp).Roles(uast.List, uast.For, uast.Expression, uast.Incomplete),
-		On(pyast.DictComp).Roles(uast.Map, uast.For, uast.Expression, uast.Incomplete),
-		On(pyast.SetComp).Roles(uast.Set, uast.For, uast.Expression, uast.Incomplete),
-		On(pyast.Comprehension).Roles(uast.For, uast.Iterator, uast.Expression).Children(
+		On(pyast.ListComp).Roles(uast.List, uast.For, uast.Expression),
+		On(pyast.DictComp).Roles(uast.Map, uast.For, uast.Expression),
+		On(pyast.SetComp).Roles(uast.Set, uast.For, uast.Expression),
+		On(pyast.Comprehension).Roles(uast.For, uast.Iterator, uast.Expression, uast.Incomplete).Children(
 			On(HasInternalRole("iter")).Roles(uast.For, uast.Update, uast.Statement),
 			On(HasInternalRole("target")).Roles(uast.For, uast.Expression),
 			// FIXME: see the comment on uast.If, uast.Condition above

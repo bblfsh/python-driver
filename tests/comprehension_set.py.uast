@@ -16,7 +16,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: SetComp {
-.  .  .  .  .  Roles: Set,For,Expression,Incomplete
+.  .  .  .  .  Roles: Set,For,Expression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  Line: 1
@@ -82,7 +82,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: comprehension {
-.  .  .  .  .  .  .  Roles: For,Iterator,Expression
+.  .  .  .  .  .  .  Roles: For,Iterator,Expression,Incomplete
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: generators
 .  .  .  .  .  .  .  .  is_async: 0

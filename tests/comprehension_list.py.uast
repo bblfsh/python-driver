@@ -16,7 +16,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: ListComp {
-.  .  .  .  .  Roles: List,For,Expression,Incomplete
+.  .  .  .  .  Roles: List,For,Expression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 1
 .  .  .  .  .  .  Line: 1
@@ -82,7 +82,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: comprehension {
-.  .  .  .  .  .  .  Roles: For,Iterator,Expression
+.  .  .  .  .  .  .  Roles: For,Iterator,Expression,Incomplete
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: generators
 .  .  .  .  .  .  .  .  is_async: 0
@@ -207,7 +207,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: ListComp {
-.  .  .  .  .  Roles: List,For,Expression,Incomplete
+.  .  .  .  .  Roles: List,For,Expression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 32
 .  .  .  .  .  .  Line: 2
@@ -273,7 +273,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: comprehension {
-.  .  .  .  .  .  .  Roles: For,Iterator,Expression
+.  .  .  .  .  .  .  Roles: For,Iterator,Expression,Incomplete
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: generators
 .  .  .  .  .  .  .  .  is_async: 0
@@ -318,7 +318,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: comprehension {
-.  .  .  .  .  .  .  Roles: For,Iterator,Expression
+.  .  .  .  .  .  .  Roles: For,Iterator,Expression,Incomplete
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: generators
 .  .  .  .  .  .  .  .  is_async: 0

@@ -29,10 +29,10 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='BitOr'\] | Binary, Operator, Bitwise, Or |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='BitXor'\] | Binary, Operator, Bitwise, Xor |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='BitAnd'\] | Binary, Operator, Bitwise, And |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='And'\] | Operator, Boolean, And |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Or'\] | Operator, Boolean, Or |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Not'\] | Operator, Boolean, Not |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='UnaryOp'\] | Operator, Unary, Expression |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='And'\] | Binary, Operator, Boolean, And |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Or'\] | Binary, Operator, Boolean, Or |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Not'\] | Binary, Operator, Boolean, Not |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='UnaryOp'\] | Binary, Operator, Unary, Expression |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Invert'\] | Operator, Unary, Bitwise, Not |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='UAdd'\] | Operator, Unary, Positive |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='USub'\] | Operator, Unary, Negative |
@@ -160,10 +160,10 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@internalRole\]\[@internalRole='annotation'\] | Comment, Incomplete |
 | /self::\*\[@InternalType='Module'\]//\*\[@internalRole\]\[@internalRole='returns'\] | Comment, Incomplete |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Ellipsis'\] | Identifier, Incomplete |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='ListComp'\] | List, For, Expression, Incomplete |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='DictComp'\] | Map, For, Expression, Incomplete |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='SetComp'\] | Set, For, Expression, Incomplete |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='comprehension'\] | For, Iterator, Expression |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='ListComp'\] | List, For, Expression |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='DictComp'\] | Map, For, Expression |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='SetComp'\] | Set, For, Expression |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='comprehension'\] | For, Iterator, Expression, Incomplete |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='comprehension'\]/\*\[@internalRole\]\[@internalRole='iter'\] | For, Update, Statement |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='comprehension'\]/\*\[@internalRole\]\[@internalRole='target'\] | For, Expression |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='comprehension'\]/\*\[@InternalType='Compare'\] | If, Condition, Expression, Binary |
