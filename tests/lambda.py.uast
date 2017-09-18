@@ -32,7 +32,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: arguments {
-.  .  .  .  .  .  .  Roles: Argument,Name,Identifier
+.  .  .  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  .  .  kwarg: <nil>
@@ -40,7 +40,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: arg {
-.  .  .  .  .  .  .  .  .  Roles: Argument,Name,Identifier
+.  .  .  .  .  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
 .  .  .  .  .  .  .  .  .  TOKEN "x"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 7
@@ -106,7 +106,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  2: Add {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Add
+.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Add
 .  .  .  .  .  .  .  .  .  TOKEN "+"
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  internalRole: op

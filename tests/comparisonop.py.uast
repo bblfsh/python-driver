@@ -72,7 +72,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Eq {
-.  .  .  .  .  .  .  .  .  Roles: Operator,Equal
+.  .  .  .  .  .  .  .  .  Roles: Binary,Operator,Equal
 .  .  .  .  .  .  .  .  .  TOKEN "=="
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
@@ -149,7 +149,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: NotEq {
-.  .  .  .  .  .  .  .  .  Roles: Operator,Equal,Not
+.  .  .  .  .  .  .  .  .  Roles: Binary,Operator,Equal,Not
 .  .  .  .  .  .  .  .  .  TOKEN "!="
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
@@ -290,11 +290,11 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Eq {
-.  .  .  .  .  .  .  .  .  Roles: Operator,Equal
+.  .  .  .  .  .  .  .  .  Roles: Binary,Operator,Equal
 .  .  .  .  .  .  .  .  .  TOKEN "=="
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Eq {
-.  .  .  .  .  .  .  .  .  Roles: Operator,Equal
+.  .  .  .  .  .  .  .  .  Roles: Binary,Operator,Equal
 .  .  .  .  .  .  .  .  .  TOKEN "=="
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
@@ -385,11 +385,11 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Lt {
-.  .  .  .  .  .  .  .  .  Roles: Operator,LessThan
+.  .  .  .  .  .  .  .  .  Roles: Binary,Operator,LessThan
 .  .  .  .  .  .  .  .  .  TOKEN "<"
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Gt {
-.  .  .  .  .  .  .  .  .  Roles: Operator,GreaterThan
+.  .  .  .  .  .  .  .  .  Roles: Binary,Operator,GreaterThan
 .  .  .  .  .  .  .  .  .  TOKEN ">"
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
@@ -480,11 +480,11 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Lt {
-.  .  .  .  .  .  .  .  .  Roles: Operator,LessThan
+.  .  .  .  .  .  .  .  .  Roles: Binary,Operator,LessThan
 .  .  .  .  .  .  .  .  .  TOKEN "<"
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: NotEq {
-.  .  .  .  .  .  .  .  .  Roles: Operator,Equal,Not
+.  .  .  .  .  .  .  .  .  Roles: Binary,Operator,Equal,Not
 .  .  .  .  .  .  .  .  .  TOKEN "!="
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }

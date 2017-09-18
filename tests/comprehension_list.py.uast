@@ -16,7 +16,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: ListComp {
-.  .  .  .  .  Roles: Literal,List,For,Expression,Incomplete
+.  .  .  .  .  Roles: List,For,Expression,Incomplete
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 1
 .  .  .  .  .  .  Line: 1
@@ -73,7 +73,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  2: Mult {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Multiply
+.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Multiply
 .  .  .  .  .  .  .  .  .  TOKEN "*"
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  internalRole: op
@@ -146,7 +146,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Gt {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Operator,GreaterThan
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Binary,Operator,GreaterThan
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN ">"
 .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  }
@@ -207,7 +207,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: ListComp {
-.  .  .  .  .  Roles: Literal,List,For,Expression,Incomplete
+.  .  .  .  .  Roles: List,For,Expression,Incomplete
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 32
 .  .  .  .  .  .  Line: 2
@@ -264,7 +264,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  2: Mult {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Multiply
+.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Multiply
 .  .  .  .  .  .  .  .  .  TOKEN "*"
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  internalRole: op

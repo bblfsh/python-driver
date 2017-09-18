@@ -61,7 +61,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: BitAnd {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Bitwise,And
+.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Bitwise,And
 .  .  .  .  .  .  .  TOKEN "&"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: op
@@ -128,7 +128,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: BitOr {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Bitwise,Or
+.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Bitwise,Or
 .  .  .  .  .  .  .  TOKEN "|"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: op
@@ -195,7 +195,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: BitXor {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Bitwise,Xor
+.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Bitwise,Xor
 .  .  .  .  .  .  .  TOKEN "^"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: op
@@ -262,7 +262,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: LShift {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Bitwise,LeftShift
+.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Bitwise,LeftShift
 .  .  .  .  .  .  .  TOKEN "<<"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: op
@@ -329,7 +329,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: RShift {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Bitwise,RightShift
+.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Bitwise,RightShift
 .  .  .  .  .  .  .  TOKEN ">>"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: op
@@ -418,7 +418,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  2: BitAnd {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Bitwise,And
+.  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Bitwise,And
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "&"
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: op
@@ -444,7 +444,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  2: BitAnd {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Bitwise,And
+.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Bitwise,And
 .  .  .  .  .  .  .  .  .  TOKEN "&"
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  internalRole: op
@@ -470,7 +470,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: BitOr {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Bitwise,Or
+.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Bitwise,Or
 .  .  .  .  .  .  .  TOKEN "|"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: op
@@ -549,7 +549,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  2: Add {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Add
+.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Add
 .  .  .  .  .  .  .  .  .  TOKEN "+"
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  internalRole: op
@@ -604,7 +604,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  2: Add {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Add
+.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Add
 .  .  .  .  .  .  .  .  .  TOKEN "+"
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  internalRole: op
@@ -613,7 +613,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: BitOr {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Bitwise,Or
+.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Bitwise,Or
 .  .  .  .  .  .  .  TOKEN "|"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: op

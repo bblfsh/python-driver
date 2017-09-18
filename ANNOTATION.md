@@ -6,29 +6,29 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='BinOp'\]/\*\[@internalRole\]\[@internalRole='op'\] | Expression, Binary, Operator |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='BinOp'\]/\*\[@internalRole\]\[@internalRole='left'\] | Expression, Binary, Left |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='BinOp'\]/\*\[@internalRole\]\[@internalRole='right'\] | Expression, Binary, Right |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Eq'\] | Operator, Equal |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='NotEq'\] | Operator, Equal, Not |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Lt'\] | Operator, LessThan |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='LtE'\] | Operator, LessThanOrEqual |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Gt'\] | Operator, GreaterThan |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='GtE'\] | Operator, GreaterThanOrEqual |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Is'\] | Operator, Identical |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='IsNot'\] | Operator, Identical, Not |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='In'\] | Operator, Contains |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='NotIn'\] | Operator, Contains, Not |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Add'\] | Add |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Sub'\] | Substract |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Mult'\] | Multiply |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Div'\] | Divide |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Mod'\] | Modulo |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FloorDiv'\] | Divide, Incomplete |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Pow'\] | Incomplete |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='MatMult'\] | Multiply, Incomplete |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='LShift'\] | Bitwise, LeftShift |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='RShift'\] | Bitwise, RightShift |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='BitOr'\] | Bitwise, Or |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='BitXor'\] | Bitwise, Xor |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='BitAnd'\] | Bitwise, And |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Eq'\] | Binary, Operator, Equal |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='NotEq'\] | Binary, Operator, Equal, Not |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Lt'\] | Binary, Operator, LessThan |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='LtE'\] | Binary, Operator, LessThanOrEqual |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Gt'\] | Binary, Operator, GreaterThan |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='GtE'\] | Binary, Operator, GreaterThanOrEqual |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Is'\] | Binary, Operator, Identical |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='IsNot'\] | Binary, Operator, Identical, Not |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='In'\] | Binary, Operator, Contains |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='NotIn'\] | Binary, Operator, Contains, Not |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Add'\] | Binary, Operator, Add |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Sub'\] | Binary, Operator, Substract |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Mult'\] | Binary, Operator, Multiply |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Div'\] | Binary, Operator, Divide |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Mod'\] | Binary, Operator, Modulo |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FloorDiv'\] | Binary, Operator, Divide, Incomplete |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Pow'\] | Binary, Operator, Incomplete |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='MatMult'\] | Binary, Operator, Multiply, Incomplete |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='LShift'\] | Binary, Operator, Bitwise, LeftShift |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='RShift'\] | Binary, Operator, Bitwise, RightShift |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='BitOr'\] | Binary, Operator, Bitwise, Or |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='BitXor'\] | Binary, Operator, Bitwise, Xor |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='BitAnd'\] | Binary, Operator, Bitwise, And |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='And'\] | Operator, Boolean, And |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Or'\] | Operator, Boolean, Or |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Not'\] | Operator, Boolean, Not |
@@ -53,15 +53,15 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Tuple'\] | Literal, Tuple, Expression |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef'\] | Function, Declaration, Name, Identifier |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='AsyncFunctionDef'\] | Function, Declaration, Name, Identifier, Incomplete |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef\.decorator\_list'\] | Function, Call, Incomplete |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef\.decorator\_list'\] | Function, Declaration, Call, Incomplete |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef\.body'\] | Function, Declaration, Body |
-| /self::\*\[@InternalType='Module'\]//\*\[@internalRole\]\[@internalRole='arguments'\] | Argument, Incomplete |
-| /self::\*\[@InternalType='Module'\]//\*\[@internalRole\]\[@internalRole='args'\] | Argument, Name, Identifier |
-| /self::\*\[@InternalType='Module'\]//\*\[@internalRole\]\[@internalRole='vararg'\] | Argument, ArgsList, Name, Identifier |
-| /self::\*\[@InternalType='Module'\]//\*\[@internalRole\]\[@internalRole='kwarg'\] | Argument, ArgsList, Map, Name, Identifier |
-| /self::\*\[@InternalType='Module'\]//\*\[@internalRole\]\[@internalRole='kwonlyargs'\] | Argument, ArgsList, Map, Name, Identifier |
+| /self::\*\[@InternalType='Module'\]//\*\[@internalRole\]\[@internalRole='arguments'\] | Function, Declaration, Argument, Incomplete |
+| /self::\*\[@InternalType='Module'\]//\*\[@internalRole\]\[@internalRole='args'\] | Function, Declaration, Argument, Name, Identifier |
+| /self::\*\[@InternalType='Module'\]//\*\[@internalRole\]\[@internalRole='vararg'\] | Function, Declaration, Argument, ArgsList, Name, Identifier |
+| /self::\*\[@InternalType='Module'\]//\*\[@internalRole\]\[@internalRole='kwarg'\] | Function, Declaration, Argument, ArgsList, Map, Name, Identifier |
+| /self::\*\[@InternalType='Module'\]//\*\[@internalRole\]\[@internalRole='kwonlyargs'\] | Function, Declaration, Argument, ArgsList, Map, Name, Identifier |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='arguments\.defaults'\] | Function, Declaration, Argument, Value, Incomplete |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='AsyncFunctionDef\.decorator\_list'\] | Function, Call, Incomplete |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='AsyncFunctionDef\.decorator\_list'\] | Function, Declaration, Call, Incomplete |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='AsyncFunctionDef\.body'\] | Function, Declaration, Body |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Lambda'\] | Function, Declaration, Expression, Incomplete |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Lambda'\]/\*\[@InternalType='Lambda\.body'\] | Function, Declaration, Body |
@@ -97,7 +97,7 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Try'\]/\*\[@InternalType='Try\.orelse'\] | Try, Body, Else |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='TryExcept'\] | Try, Catch, Statement |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='ExceptHandler'\] | Try, Catch, Statement |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='ExceptHandler\.name'\] | Identifier |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='ExceptHandler\.name'\] | Try, Catch, Identifier |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='TryFinally'\] | Try, Finally, Statement |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Raise'\] | Throw, Statement |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='With'\] | Block, Scope, Statement |
@@ -160,9 +160,9 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@internalRole\]\[@internalRole='annotation'\] | Comment, Incomplete |
 | /self::\*\[@InternalType='Module'\]//\*\[@internalRole\]\[@internalRole='returns'\] | Comment, Incomplete |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Ellipsis'\] | Identifier, Incomplete |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='ListComp'\] | Literal, List, For, Expression, Incomplete |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='DictComp'\] | Literal, Map, For, Expression, Incomplete |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='SetComp'\] | Literal, Set, For, Expression, Incomplete |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='ListComp'\] | List, For, Expression, Incomplete |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='DictComp'\] | Map, For, Expression, Incomplete |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='SetComp'\] | Set, For, Expression, Incomplete |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='comprehension'\] | For, Iterator, Expression |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='comprehension'\]/\*\[@internalRole\]\[@internalRole='iter'\] | For, Update, Statement |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='comprehension'\]/\*\[@internalRole\]\[@internalRole='target'\] | For, Expression |

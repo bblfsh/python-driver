@@ -50,33 +50,33 @@ var AnnotationRules = On(Any).Self(
 		),
 
 		// Comparison operators
-		On(pyast.Eq).Roles(uast.Operator, uast.Equal),
-		On(pyast.NotEq).Roles(uast.Operator, uast.Equal, uast.Not),
-		On(pyast.Lt).Roles(uast.Operator, uast.LessThan),
-		On(pyast.LtE).Roles(uast.Operator, uast.LessThanOrEqual),
-		On(pyast.Gt).Roles(uast.Operator, uast.GreaterThan),
-		On(pyast.GtE).Roles(uast.Operator, uast.GreaterThanOrEqual),
-		On(pyast.Is).Roles(uast.Operator, uast.Identical),
-		On(pyast.IsNot).Roles(uast.Operator, uast.Identical, uast.Not),
-		On(pyast.In).Roles(uast.Operator, uast.Contains),
-		On(pyast.NotIn).Roles(uast.Operator, uast.Contains, uast.Not),
+		On(pyast.Eq).Roles(uast.Binary, uast.Operator, uast.Equal),
+		On(pyast.NotEq).Roles(uast.Binary, uast.Operator, uast.Equal, uast.Not),
+		On(pyast.Lt).Roles(uast.Binary, uast.Operator, uast.LessThan),
+		On(pyast.LtE).Roles(uast.Binary, uast.Operator, uast.LessThanOrEqual),
+		On(pyast.Gt).Roles(uast.Binary, uast.Operator, uast.GreaterThan),
+		On(pyast.GtE).Roles(uast.Binary, uast.Operator, uast.GreaterThanOrEqual),
+		On(pyast.Is).Roles(uast.Binary, uast.Operator, uast.Identical),
+		On(pyast.IsNot).Roles(uast.Binary, uast.Operator, uast.Identical, uast.Not),
+		On(pyast.In).Roles(uast.Binary, uast.Operator, uast.Contains),
+		On(pyast.NotIn).Roles(uast.Binary, uast.Operator, uast.Contains, uast.Not),
 
 		// Aritmetic operators
-		On(pyast.Add).Roles(uast.Add),
-		On(pyast.Sub).Roles(uast.Substract),
-		On(pyast.Mult).Roles(uast.Multiply),
-		On(pyast.Div).Roles(uast.Divide),
-		On(pyast.Mod).Roles(uast.Modulo),
-		On(pyast.FloorDiv).Roles(uast.Divide, uast.Incomplete),
-		On(pyast.Pow).Roles(uast.Incomplete),
-		On(pyast.MatMult).Roles(uast.Multiply, uast.Incomplete),
+		On(pyast.Add).Roles(uast.Binary, uast.Operator, uast.Add),
+		On(pyast.Sub).Roles(uast.Binary, uast.Operator, uast.Substract),
+		On(pyast.Mult).Roles(uast.Binary, uast.Operator, uast.Multiply),
+		On(pyast.Div).Roles(uast.Binary, uast.Operator, uast.Divide),
+		On(pyast.Mod).Roles(uast.Binary, uast.Operator, uast.Modulo),
+		On(pyast.FloorDiv).Roles(uast.Binary, uast.Operator, uast.Divide, uast.Incomplete),
+		On(pyast.Pow).Roles(uast.Binary, uast.Operator, uast.Incomplete),
+		On(pyast.MatMult).Roles(uast.Binary, uast.Operator, uast.Multiply, uast.Incomplete),
 
 		// Bitwise operators
-		On(pyast.LShift).Roles(uast.Bitwise, uast.LeftShift),
-		On(pyast.RShift).Roles(uast.Bitwise, uast.RightShift),
-		On(pyast.BitOr).Roles(uast.Bitwise, uast.Or),
-		On(pyast.BitXor).Roles(uast.Bitwise, uast.Xor),
-		On(pyast.BitAnd).Roles(uast.Bitwise, uast.And),
+		On(pyast.LShift).Roles(uast.Binary, uast.Operator, uast.Bitwise, uast.LeftShift),
+		On(pyast.RShift).Roles(uast.Binary, uast.Operator, uast.Bitwise, uast.RightShift),
+		On(pyast.BitOr).Roles(uast.Binary, uast.Operator, uast.Bitwise, uast.Or),
+		On(pyast.BitXor).Roles(uast.Binary, uast.Operator, uast.Bitwise, uast.Xor),
+		On(pyast.BitAnd).Roles(uast.Binary, uast.Operator, uast.Bitwise, uast.And),
 
 		// Boolean operators
 		// Not applying the "Binary" role since even while in the Python code
@@ -116,14 +116,14 @@ var AnnotationRules = On(Any).Self(
 		// Type node Token (2 levels up) but the SDK doesn't allow this
 		On(pyast.FunctionDef).Roles(uast.Function, uast.Declaration, uast.Name, uast.Identifier),
 		On(pyast.AsyncFunctionDef).Roles(uast.Function, uast.Declaration, uast.Name, uast.Identifier, uast.Incomplete),
-		On(pyast.FuncDecorators).Roles(uast.Function, uast.Call, uast.Incomplete),
+		On(pyast.FuncDecorators).Roles(uast.Function, uast.Declaration, uast.Call, uast.Incomplete),
 		On(pyast.FuncDefBody).Roles(uast.Function, uast.Declaration, uast.Body),
 		// FIXME: arguments is a Groping node, update it we get a "Grouper" or "Container" role
-		On(HasInternalRole("arguments")).Roles(uast.Argument, uast.Incomplete),
-		On(HasInternalRole("args")).Roles(uast.Argument, uast.Name, uast.Identifier),
-		On(HasInternalRole("vararg")).Roles(uast.Argument, uast.ArgsList, uast.Name, uast.Identifier),
-		On(HasInternalRole("kwarg")).Roles(uast.Argument, uast.ArgsList, uast.Map, uast.Name, uast.Identifier),
-		On(HasInternalRole("kwonlyargs")).Roles(uast.Argument, uast.ArgsList, uast.Map, uast.Name, uast.Identifier),
+		On(HasInternalRole("arguments")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.Incomplete),
+		On(HasInternalRole("args")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.Name, uast.Identifier),
+		On(HasInternalRole("vararg")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.ArgsList, uast.Name, uast.Identifier),
+		On(HasInternalRole("kwarg")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.ArgsList, uast.Map, uast.Name, uast.Identifier),
+		On(HasInternalRole("kwonlyargs")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.ArgsList, uast.Map, uast.Name, uast.Identifier),
 		// Default arguments: Python's AST puts default arguments on a sibling list to the one of
 		// arguments that must be mapped to the arguments right-aligned like:
 		// a, b=2, c=3 ->
@@ -131,7 +131,7 @@ var AnnotationRules = On(Any).Self(
 		//		defaults  [2,3]
 		// TODO: create an issue for the SDK
 		On(pyast.ArgumentDefaults).Roles(uast.Function, uast.Declaration, uast.Argument, uast.Value, uast.Incomplete),
-		On(pyast.AsyncFuncDecorators).Roles(uast.Function, uast.Call, uast.Incomplete),
+		On(pyast.AsyncFuncDecorators).Roles(uast.Function, uast.Declaration, uast.Call, uast.Incomplete),
 		On(pyast.AsyncFuncDefBody).Roles(uast.Function, uast.Declaration, uast.Body),
 		// FIXME: change to Function, Declaration, ArgumentS once the PR has been merged
 		On(pyast.Lambda).Roles(uast.Function, uast.Declaration, uast.Expression, uast.Incomplete).Children(
@@ -191,7 +191,7 @@ var AnnotationRules = On(Any).Self(
 		),
 		On(pyast.TryExcept).Roles(uast.Try, uast.Catch, uast.Statement),     // py2
 		On(pyast.ExceptHandler).Roles(uast.Try, uast.Catch, uast.Statement), // py3
-		On(pyast.ExceptHandlerName).Roles(uast.Identifier),
+		On(pyast.ExceptHandlerName).Roles(uast.Try, uast.Catch, uast.Identifier),
 		On(pyast.TryFinally).Roles(uast.Try, uast.Finally, uast.Statement),
 		On(pyast.Raise).Roles(uast.Throw, uast.Statement),
 		// FIXME: review, add path for the body and items childs
@@ -300,9 +300,9 @@ var AnnotationRules = On(Any).Self(
 		// uast.List/uast.Map/uast.Set comprehensions. We map the "for x in y" to uast.For, uast.Iterator (foreach)
 		// roles and the "if something" to uast.If* roles. FIXME: missing the top comprehension
 		// roles in the UAST, change once they've been merged
-		On(pyast.ListComp).Roles(uast.Literal, uast.List, uast.For, uast.Expression, uast.Incomplete),
-		On(pyast.DictComp).Roles(uast.Literal, uast.Map, uast.For, uast.Expression, uast.Incomplete),
-		On(pyast.SetComp).Roles(uast.Literal, uast.Set, uast.For, uast.Expression, uast.Incomplete),
+		On(pyast.ListComp).Roles(uast.List, uast.For, uast.Expression, uast.Incomplete),
+		On(pyast.DictComp).Roles(uast.Map, uast.For, uast.Expression, uast.Incomplete),
+		On(pyast.SetComp).Roles(uast.Set, uast.For, uast.Expression, uast.Incomplete),
 		On(pyast.Comprehension).Roles(uast.For, uast.Iterator, uast.Expression).Children(
 			On(HasInternalRole("iter")).Roles(uast.For, uast.Update, uast.Statement),
 			On(HasInternalRole("target")).Roles(uast.For, uast.Expression),
