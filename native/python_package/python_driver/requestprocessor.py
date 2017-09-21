@@ -1,6 +1,5 @@
 import abc
 import json
-import logging
 from pydetector import detector
 from traceback import format_exc
 from python_driver.version import __version__
@@ -93,7 +92,6 @@ class RequestProcessor(metaclass=abc.ABCMeta):
         """
 
         ret_ast = None if status == 'fatal' else ast
-        logging.error('Filepath: {}, Errors: {}'.format(filepath, self.errors))
         response = Response({
             'status': status,
             'errors': self.errors,
