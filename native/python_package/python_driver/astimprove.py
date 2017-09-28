@@ -103,7 +103,7 @@ class LocationFixer(object):
         raise TokenNotFoundException("Token named '{}' not found in line {}"
                 .format(token_value, lineno))
 
-    def sync_node_pos(self, nodedict, add = 0):
+    def sync_node_pos(self, nodedict):
         """
         Check the column position, updating the column if needed (this changes the
         nodedict argument). Some Nodes have questionable column positions in the Python
@@ -137,14 +137,8 @@ class LocationFixer(object):
             # position in that case is fine (uses the last line in that case)
             return
 
-        token_startline = token[TOKEN_STARTLOC][TOKENROW]
-        if nodedict.get("lineno") != token_startline:
-            nodedict["lineno"] = token_startline
-
-        token_startcolumn = token[TOKEN_STARTLOC][TOKENCOL]
-        if nodedict.get('col_offset') != token_startcolumn:
-            nodedict["col_offset"] = token_startcolumn + add
-
+        nodedict["lineno"] = token[TOKEN_STARTLOC][TOKENROW]
+        nodedict["col_offset"] = token[TOKEN_STARTLOC][TOKENCOL]
         nodedict["end_lineno"] = token[TOKEN_ENDLOC][TOKENROW]
         nodedict["end_col_offset"] = token[TOKEN_ENDLOC][TOKENCOL]
 
