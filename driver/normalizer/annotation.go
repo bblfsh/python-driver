@@ -224,7 +224,7 @@ var AnnotationRules = On(Any).Self(
 		// Parent of all comparisons
 		On(pyast.Compare).Roles(uast.Expression, uast.Binary).Children(
 			// Operators
-			On(pyast.CompareOps).Roles(uast.Expression, uast.Operator, uast.Incomplete),
+			On(pyast.CompareOps).Roles(uast.Expression),
 			// Leftmost element (the others are the comparators below)
 			On(HasInternalRole("left")).Roles(uast.Expression, uast.Left),
 			// These hold the members of the comparison (not the operators)
@@ -318,10 +318,7 @@ var AnnotationRules = On(Any).Self(
 			On(HasInternalRole("iter")).Roles(uast.For, uast.Update, uast.Statement),
 			On(HasInternalRole("target")).Roles(uast.For, uast.Expression),
 			// FIXME: see the comment on uast.If, uast.Condition above
-			On(pyast.Compare).Roles(uast.If, uast.Condition, uast.Expression, uast.Binary).Children(
-				On(pyast.CompareOps).Roles(uast.Expression, uast.Binary, uast.Operator),
-				On(HasInternalRole("left")).Roles(uast.Expression, uast.Binary, uast.Left),
-			),
+			On(pyast.Compare).Roles(uast.If, uast.Condition),
 		),
 
 		On(pyast.Delete).Roles(uast.Statement, uast.Incomplete),

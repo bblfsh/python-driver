@@ -90,7 +90,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Compare.comparators {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right
+.  .  .  .  .  .  .  .  .  Roles: Expression,Right
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  .  .  .  .  }
@@ -112,7 +112,13 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Num {
+<<<<<<< HEAD
 .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Expression,Binary,Left
+||||||| merged common ancestors
+.  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Expression,Binary,Left
+=======
+.  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Expression,Left
+>>>>>>> Misc annotation fixes
 .  .  .  .  .  .  .  .  .  TOKEN "3"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 9
@@ -129,7 +135,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  2: Compare.ops {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Operator
+.  .  .  .  .  .  .  .  .  Roles: Expression
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  .  .  .  .  }

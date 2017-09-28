@@ -292,9 +292,9 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Break'\] | Break, Statement |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Continue'\] | Continue, Statement |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Compare'\] | Expression, Binary |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Compare'\]/\*\[@InternalType='Compare\.ops'\] | Expression, Binary, Operator |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Compare'\]/\*\[@internalRole\]\[@internalRole='left'\] | Expression, Binary, Left |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Compare\.comparators'\] | Expression, Binary, Right |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Compare'\]/\*\[@InternalType='Compare\.ops'\] | Expression |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Compare'\]/\*\[@internalRole\]\[@internalRole='left'\] | Expression, Left |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Compare'\]/\*\[@InternalType='Compare\.comparators'\] | Expression, Right |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='If'\] | If, Statement |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='If'\]/\*\[@InternalType='If\.body'\] | If, Body, Then |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='If'\]/\*\[@internalRole\]\[@internalRole='test'\] | If, Condition |
@@ -349,9 +349,7 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='comprehension'\] | For, Iterator, Expression, Incomplete |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='comprehension'\]/\*\[@internalRole\]\[@internalRole='iter'\] | For, Update, Statement |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='comprehension'\]/\*\[@internalRole\]\[@internalRole='target'\] | For, Expression |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='comprehension'\]/\*\[@InternalType='Compare'\] | If, Condition, Expression, Binary |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='comprehension'\]/\*\[@InternalType='Compare'\]/\*\[@InternalType='Compare\.ops'\] | Expression, Binary, Operator |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='comprehension'\]/\*\[@InternalType='Compare'\]/\*\[@internalRole\]\[@internalRole='left'\] | Expression, Binary, Left |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='comprehension'\]/\*\[@InternalType='Compare'\] | If, Condition |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Delete'\] | Statement, Incomplete |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Await'\] | Statement, Incomplete |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Global'\] | Statement, Visibility, World, Incomplete |
