@@ -2,7 +2,7 @@ Status:  ok
 Errors: 
 UAST: 
 Module {
-.  Roles: File
+.  Roles: File,Module
 .  Children: {
 .  .  0: AnnAssign {
 .  .  .  Roles: Operator,Binary,Assignment,Comment,Incomplete
@@ -140,7 +140,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: arguments {
-.  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
+.  .  .  .  .  Roles: Argument,Name,Identifier
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  kwarg: <nil>
@@ -148,7 +148,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: arg {
-.  .  .  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
+.  .  .  .  .  .  .  Roles: Argument,Name,Identifier
 .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 33
@@ -185,7 +185,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: arg {
-.  .  .  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
+.  .  .  .  .  .  .  Roles: Argument,Name,Identifier
 .  .  .  .  .  .  .  TOKEN "b"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 41

@@ -53,7 +53,7 @@ var Transformers = []transformer.Tranformer{
 // https://godoc.org/gopkg.in/bblfsh/sdk.v1/uast/ann
 var AnnotationRules = On(Any).Self(
 	On(Not(pyast.Module)).Error(errors.New("root must be uast.Module")),
-	On(pyast.Module).Roles(uast.File).Descendants(
+	On(pyast.Module).Roles(uast.File, uast.Module).Descendants(
 
 		// Binary Expressions
 		On(pyast.BinOp).Roles(uast.Expression, uast.Binary).Children(
@@ -133,10 +133,10 @@ var AnnotationRules = On(Any).Self(
 		On(pyast.FuncDefBody).Roles(uast.Function, uast.Declaration, uast.Body),
 		// FIXME: arguments is a Groping node, update it we get a "Grouper" or "Container" role
 		On(HasInternalRole("arguments")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.Incomplete),
-		On(HasInternalRole("args")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.Name, uast.Identifier),
-		On(HasInternalRole("vararg")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.ArgsList, uast.Name, uast.Identifier),
-		On(HasInternalRole("kwarg")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.ArgsList, uast.Map, uast.Name, uast.Identifier),
-		On(HasInternalRole("kwonlyargs")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.ArgsList, uast.Map, uast.Name, uast.Identifier),
+		On(HasInternalRole("args")).Roles(uast.Argument, uast.Name, uast.Identifier),
+		On(HasInternalRole("vararg")).Roles(uast.Argument, uast.ArgsList, uast.Name, uast.Identifier),
+		On(HasInternalRole("kwarg")).Roles(uast.Argument, uast.ArgsList, uast.Map, uast.Name, uast.Identifier),
+		On(HasInternalRole("kwonlyargs")).Roles(uast.Argument, uast.ArgsList, uast.Map, uast.Name, uast.Identifier),
 		// Default arguments: Python's AST puts default arguments on a sibling list to the one of
 		// arguments that must be mapped to the arguments right-aligned like:
 		// a, b=2, c=3 ->
@@ -155,9 +155,9 @@ var AnnotationRules = On(Any).Self(
 			On(pyast.Name).Roles(uast.Identifier, uast.Qualified)),
 
 		On(pyast.Call).Roles(uast.Function, uast.Call, uast.Expression).Children(
-			On(HasInternalRole("args")).Roles(uast.Call, uast.Argument, uast.Positional),
-			On(HasInternalRole("keywords")).Roles(uast.Call, uast.Argument, uast.Name).Children(
-				On(HasInternalRole("value")).Roles(uast.Call, uast.Argument, uast.Value),
+			On(HasInternalRole("args")).Roles(uast.Argument, uast.Positional),
+			On(HasInternalRole("keywords")).Roles(uast.Argument, uast.Name).Children(
+				On(HasInternalRole("value")).Roles(uast.Argument, uast.Value),
 			),
 			On(HasInternalRole("func")).Self(
 				On(pyast.Name).Roles(uast.Call, uast.Callee),

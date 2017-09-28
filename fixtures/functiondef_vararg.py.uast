@@ -2,7 +2,7 @@ Status:  ok
 Errors: 
 UAST: 
 Module {
-.  Roles: File
+.  Roles: File,Module
 .  Children: {
 .  .  0: FunctionDef {
 .  .  .  Roles: Function,Declaration,Name,Identifier
@@ -23,14 +23,14 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: arguments {
-.  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
+.  .  .  .  .  Roles: Argument,Name,Identifier
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  kwarg: <nil>
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: arg {
-.  .  .  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
+.  .  .  .  .  .  .  Roles: Argument,Name,Identifier
 .  .  .  .  .  .  .  TOKEN "arg1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 13
@@ -48,7 +48,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: arg {
-.  .  .  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
+.  .  .  .  .  .  .  Roles: Argument,Name,Identifier
 .  .  .  .  .  .  .  TOKEN "arg2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 19
@@ -66,7 +66,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: arg {
-.  .  .  .  .  .  .  Roles: Function,Declaration,Argument,ArgsList,Name,Identifier
+.  .  .  .  .  .  .  Roles: Argument,ArgsList,Name,Identifier
 .  .  .  .  .  .  .  TOKEN "otherargs"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 26
