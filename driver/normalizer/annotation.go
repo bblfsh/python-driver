@@ -106,24 +106,24 @@ var AnnotationRules = On(Any).Self(
 		On(pyast.USub).Roles(uast.Operator, uast.Unary, uast.Negative),
 
 		// Literals
-		On(pyast.Str).Roles(uast.Literal, uast.String, uast.Expression),
-		On(pyast.StringLiteral).Roles(uast.Literal, uast.String, uast.Expression),
-		On(pyast.Bytes).Roles(uast.Literal, uast.ByteString, uast.Expression),
-		On(pyast.Num).Roles(uast.Literal, uast.Number, uast.Expression).Children(
+		On(pyast.Str).Roles(uast.Literal, uast.String, uast.Expression, uast.Primitive),
+		On(pyast.StringLiteral).Roles(uast.Literal, uast.String, uast.Expression, uast.Primitive),
+		On(pyast.Bytes).Roles(uast.Literal, uast.ByteString, uast.Expression, uast.Primitive),
+		On(pyast.Num).Roles(uast.Literal, uast.Number, uast.Expression, uast.Primitive).Children(
 			On(HasInternalRole("n")).Roles(uast.Literal, uast.Number, uast.Expression),
 		),
-		On(pyast.BoolLiteral).Roles(uast.Literal, uast.Boolean, uast.Expression),
-		On(pyast.JoinedStr).Roles(uast.Literal, uast.String, uast.Expression).Children(
+		On(pyast.BoolLiteral).Roles(uast.Literal, uast.Boolean, uast.Expression, uast.Primitive),
+		On(pyast.JoinedStr).Roles(uast.Literal, uast.String, uast.Expression, uast.Primitive).Children(
 			On(pyast.FormattedValue).Roles(uast.Expression, uast.Incomplete),
 		),
-		On(pyast.NoneLiteral).Roles(uast.Literal, uast.Null, uast.Expression),
-		On(pyast.Set).Roles(uast.Literal, uast.Set, uast.Expression),
-		On(pyast.List).Roles(uast.Literal, uast.List, uast.Expression),
-		On(pyast.Dict).Roles(uast.Literal, uast.Map, uast.Expression).Children(
+		On(pyast.NoneLiteral).Roles(uast.Literal, uast.Null, uast.Expression, uast.Primitive),
+		On(pyast.Set).Roles(uast.Literal, uast.Set, uast.Expression, uast.Primitive),
+		On(pyast.List).Roles(uast.Literal, uast.List, uast.Expression, uast.Primitive),
+		On(pyast.Dict).Roles(uast.Literal, uast.Map, uast.Expression, uast.Primitive).Children(
 			On(HasInternalRole("keys")).Roles(uast.Map, uast.Key),
 			On(HasInternalRole("values")).Roles(uast.Map, uast.Value),
 		),
-		On(pyast.Tuple).Roles(uast.Literal, uast.Tuple, uast.Expression),
+		On(pyast.Tuple).Roles(uast.Literal, uast.Tuple, uast.Expression, uast.Primitive),
 
 		// FIXME: the FunctionDeclarationReceiver is not set for methods; it should be taken from the parent
 		// Type node Token (2 levels up) but the SDK doesn't allow this
