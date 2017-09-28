@@ -217,21 +217,19 @@ var AnnotationRules = On(Any).Self(
 		On(pyast.Break).Roles(uast.Break, uast.Statement),
 		On(pyast.Continue).Roles(uast.Continue, uast.Statement),
 
-		// - Compare.ops (internaluast.Type): [uast.LessThan, uast.LessThan]
-		// - Compare.comparators (internaluast.Type): ['a', 10]
-		// The current mapping is:
-		// - left: uast.Expression, uast.Binary, uast.Left
-		// - Compare.ops: uast.Expression, uast.Binary, uast.Operator
-		// - Compare.comparators: uast.Expression, uast.Binary, uast.Right
-		// But this is obviously not correct. To fix this properly we would need
-		// and SDK feature to mix lists (also needed for default and keyword arguments and
-		// boolean operators).
-		// "uast.If that sounds awkward is because it is" (their words)
+		// Comparison nodes in Python are oddly structured. Probably one if the first
+		// things that could be changed once we can normalize tree structures. Check:
+		// https://greentreesnakes.readthedocs.io/en/latest/nodes.html#Compare
+
+		// Parent of all comparisons
 		On(pyast.Compare).Roles(uast.Expression, uast.Binary).Children(
-			On(pyast.CompareOps).Roles(uast.Expression, uast.Binary, uast.Operator),
-			On(HasInternalRole("left")).Roles(uast.Expression, uast.Binary, uast.Left),
+			// Operators
+			On(pyast.CompareOps).Roles(uast.Expression, uast.Operator, uast.Incomplete),
+			// Leftmost element (the others are the comparators below)
+			On(HasInternalRole("left")).Roles(uast.Expression, uast.Left),
+			// These hold the members of the comparison (not the operators)
+			On(pyast.CompareComparators).Roles(uast.Expression, uast.Right),
 		),
-		On(pyast.CompareComparators).Roles(uast.Expression, uast.Binary, uast.Right),
 		On(pyast.If).Roles(uast.If, uast.Statement).Children(
 			On(pyast.IfBody).Roles(uast.If, uast.Body, uast.Then),
 			On(HasInternalRole("test")).Roles(uast.If, uast.Condition),
