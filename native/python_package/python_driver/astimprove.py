@@ -137,10 +137,12 @@ class LocationFixer(object):
             # position in that case is fine (uses the last line in that case)
             return
 
-        node_column = nodedict.get('col_offset')
-        token_startcolumn = token[TOKEN_STARTLOC][TOKENCOL]
+        token_startline = token[TOKEN_STARTLOC][TOKENROW]
+        if nodedict.get("lineno") != token_startline:
+            nodedict["lineno"] = token_startline
 
-        if node_column is None or node_column != token_startcolumn:
+        token_startcolumn = token[TOKEN_STARTLOC][TOKENCOL]
+        if nodedict.get('col_offset') != token_startcolumn:
             nodedict["col_offset"] = token_startcolumn + add
 
         nodedict["end_lineno"] = token[TOKEN_ENDLOC][TOKENROW]

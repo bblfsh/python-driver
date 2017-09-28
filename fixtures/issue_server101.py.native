@@ -14,7 +14,7 @@
                         "col_offset": 1,
                         "end_col_offset": 3,
                         "end_lineno": 21,
-                        "lineno": 21,
+                        "lineno": 9,
                         "noops_previous": {
                             "ast_type": "PreviousNoops",
                             "col_offset": 1,
@@ -444,7 +444,7 @@
                         "col_offset": 1,
                         "end_col_offset": 30,
                         "end_lineno": 56,
-                        "lineno": 56,
+                        "lineno": 49,
                         "s": "A cache containing the API documentation for values that we've\nalready seen.  This cache is implemented as a dictionary that maps a\nvalue's pyid to its L{ValueDoc}.\n\nNote that if we encounter a value but decide not to introspect it\n(because it's imported from another module), then C{_valuedoc_cache}\nwill contain an entry for the value, but the value will not be listed\nin L{_introspected_values}."
                     }
                 },
@@ -495,7 +495,7 @@
                         "col_offset": 1,
                         "end_col_offset": 19,
                         "end_lineno": 60,
-                        "lineno": 60,
+                        "lineno": 59,
                         "s": "A record which values we've introspected, encoded as a dictionary from\npyid to C{bool}."
                     }
                 },
@@ -518,7 +518,7 @@
                                 "col_offset": 5,
                                 "end_col_offset": 7,
                                 "end_lineno": 66,
-                                "lineno": 66,
+                                "lineno": 63,
                                 "noops_previous": {
                                     "ast_type": "PreviousNoops",
                                     "col_offset": 1,
@@ -777,7 +777,7 @@
                                 "col_offset": 5,
                                 "end_col_offset": 7,
                                 "end_lineno": 99,
-                                "lineno": 99,
+                                "lineno": 76,
                                 "s": "\n    Generate the API documentation for a specified object by\n    introspecting Python values, and return it as a L{ValueDoc}.  The\n    object to generate documentation for may be specified using\n    the C{value} parameter, the C{filename} parameter, I{or} the\n    C{name} parameter.  (It is an error to specify more than one\n    of these three parameters, or to not specify any of them.)\n\n    @param value: The python object that should be documented.\n    @param filename: The name of the file that contains the python\n        source code for a package, module, or script.  If\n        C{filename} is specified, then C{introspect} will return a\n        C{ModuleDoc} describing its contents.\n    @param name: The fully-qualified python dotted name of any\n        value (including packages, modules, classes, and\n        functions).  C{DocParser} will automatically figure out\n        which module(s) it needs to import in order to find the\n        documentation for the specified object.\n    @param context: The API documentation for the class of module\n        that contains C{value} (if available).\n    @param module_name: The name of the module where the value is defined.\n        Useful to retrieve the docstring encoding if there is no way to\n        detect the module by introspection (such as in properties)\n    "
                             }
                         },
@@ -2606,7 +2606,7 @@
                                 "col_offset": 5,
                                 "end_col_offset": 7,
                                 "end_lineno": 156,
-                                "lineno": 156,
+                                "lineno": 150,
                                 "s": "\n    If a C{ValueDoc} for the given value exists in the valuedoc\n    cache, then return it; otherwise, create a new C{ValueDoc},\n    add it to the cache, and return it.  When possible, the new\n    C{ValueDoc}'s C{pyval}, C{repr}, and C{canonical_name}\n    attributes will be set appropriately.\n    "
                             }
                         },
@@ -3686,7 +3686,7 @@
                                 "col_offset": 5,
                                 "end_col_offset": 7,
                                 "end_lineno": 194,
-                                "lineno": 194,
+                                "lineno": 191,
                                 "s": "\n    Add API documentation information about the module C{module}\n    to C{module_doc}.\n    "
                             }
                         },
@@ -7375,7 +7375,7 @@
                                 "col_offset": 5,
                                 "end_col_offset": 7,
                                 "end_lineno": 330,
-                                "lineno": 330,
+                                "lineno": 327,
                                 "s": "\n    Add API documentation information about the class C{cls}\n    to C{class_doc}.\n    "
                             }
                         },
@@ -9739,7 +9739,7 @@
                                 "col_offset": 5,
                                 "end_col_offset": 72,
                                 "end_lineno": 416,
-                                "lineno": 416,
+                                "lineno": 415,
                                 "s": "Add API documentation information about the function\n    C{routine} to C{routine_doc} (specializing it to C{Routine_doc})."
                             }
                         },
@@ -11772,7 +11772,7 @@
                                 "col_offset": 5,
                                 "end_col_offset": 66,
                                 "end_lineno": 482,
-                                "lineno": 482,
+                                "lineno": 481,
                                 "s": "Add API documentation information about the property\n    C{prop} to C{prop_doc} (specializing it to C{PropertyDoc})."
                             }
                         },
@@ -12432,7 +12432,7 @@
                                 "col_offset": 5,
                                 "end_col_offset": 7,
                                 "end_lineno": 518,
-                                "lineno": 518,
+                                "lineno": 510,
                                 "s": "\n    Return true if the given object is a class.  In particular, return\n    true if object is an instance of C{types.TypeType} or of\n    C{types.ClassType}.  This is used instead of C{inspect.isclass()},\n    because the latter returns true for objects that are not classes\n    (in particular, it returns true for any object that has a\n    C{__bases__} attribute, including objects that define\n    C{__getattr__} to always return a value).\n    "
                             }
                         },
@@ -12640,7 +12640,7 @@
                                 "col_offset": 5,
                                 "end_col_offset": 20,
                                 "end_lineno": 527,
-                                "lineno": 527,
+                                "lineno": 525,
                                 "s": "Add a type to the lists of types that should be treated as\n    classes.  By default, this list contains C{TypeType} and\n    C{ClassType}."
                             }
                         },
@@ -12778,7 +12778,7 @@
                                 "col_offset": 5,
                                 "end_col_offset": 7,
                                 "end_lineno": 536,
-                                "lineno": 536,
+                                "lineno": 533,
                                 "s": "\n    Return True if C{object} results from a C{from __future__ import feature}\n    statement.\n    "
                             }
                         },
@@ -13186,7 +13186,7 @@
                                 "col_offset": 5,
                                 "end_col_offset": 7,
                                 "end_lineno": 560,
-                                "lineno": 560,
+                                "lineno": 556,
                                 "s": "\n    Return the docstring for the given value; or C{None} if it\n    does not have a docstring.\n    @rtype: C{unicode}\n    "
                             }
                         },
@@ -14454,7 +14454,7 @@
                                 "col_offset": 5,
                                 "end_col_offset": 7,
                                 "end_lineno": 605,
-                                "lineno": 605,
+                                "lineno": 597,
                                 "s": "\n    @return: the canonical name for C{value}, or C{UNKNOWN} if no\n    canonical name can be found.  Currently, C{get_canonical_name}\n    can find canonical names for: modules; functions; non-nested\n    classes; methods of non-nested classes; and some class methods\n    of non-nested classes.\n    \n    @rtype: L{DottedName} or C{UNKNOWN}\n    "
                             }
                         },
@@ -16463,7 +16463,7 @@
                                 "col_offset": 5,
                                 "end_col_offset": 7,
                                 "end_lineno": 658,
-                                "lineno": 658,
+                                "lineno": 655,
                                 "s": "\n    Verify the name.  E.g., if it's a nested class, then we won't be\n    able to find it with the name we constructed.\n    "
                             }
                         },
@@ -17288,7 +17288,7 @@
                                 "col_offset": 5,
                                 "end_col_offset": 7,
                                 "end_lineno": 687,
-                                "lineno": 687,
+                                "lineno": 683,
                                 "s": "\n    Return the name of the module containing the given value, or\n    C{None} if the module name can't be determined.\n    @rtype: L{DottedName}\n    "
                             }
                         },
@@ -18008,7 +18008,7 @@
                                 "col_offset": 5,
                                 "end_col_offset": 7,
                                 "end_lineno": 710,
-                                "lineno": 710,
+                                "lineno": 705,
                                 "s": "\n    @return: The module that defines the given function.\n    @rtype: C{module}\n    @param func: The function whose module should be found.\n    @type func: C{function}\n    "
                             }
                         },
@@ -18634,7 +18634,7 @@
                                 "col_offset": 5,
                                 "end_col_offset": 7,
                                 "end_lineno": 752,
-                                "lineno": 752,
+                                "lineno": 736,
                                 "s": "\n    Register an introspecter function.  Introspecter functions take\n    two arguments, a python value and a C{ValueDoc} object, and should\n    add information about the given value to the the C{ValueDoc}.\n    Usually, the first line of an inspecter function will specialize\n    it to a sublass of C{ValueDoc}, using L{ValueDoc.specialize_to()}:\n\n        >>> def typical_introspecter(value, value_doc):\n        ...     value_doc.specialize_to(SomeSubclassOfValueDoc)\n        ...     <add info to value_doc>\n\n    @param priority: The priority of this introspecter, which determines\n    the order in which introspecters are tried -- introspecters with lower\n    numbers are tried first.  The standard introspecters have priorities\n    ranging from 20 to 30.  The default priority (10) will place new\n    introspecters before standard introspecters.\n    "
                             }
                         },
@@ -21835,7 +21835,7 @@
                                 "col_offset": 5,
                                 "end_col_offset": 7,
                                 "end_lineno": 859,
-                                "lineno": 859,
+                                "lineno": 854,
                                 "s": "\n    Given a name, return the corresponding value.\n    \n    @param globs: A namespace to check for the value, if there is no\n        module containing the named value.  Defaults to __builtin__.\n    "
                             }
                         },
@@ -23161,7 +23161,7 @@
                                 "col_offset": 5,
                                 "end_col_offset": 7,
                                 "end_lineno": 897,
-                                "lineno": 897,
+                                "lineno": 893,
                                 "s": "\n    Run the given callable in a 'sandboxed' environment.\n    Currently, this includes saving and restoring the contents of\n    sys and __builtins__; and suppressing stdin, stdout, and stderr.\n    "
                             }
                         },
@@ -24541,7 +24541,7 @@
                                 "col_offset": 5,
                                 "end_col_offset": 7,
                                 "end_lineno": 950,
-                                "lineno": 950,
+                                "lineno": 945,
                                 "s": "\n    Try to determine the line number on which the given item's\n    docstring begins.  Return the line number, or C{None} if the line\n    number can't be determined.  The line number of the first line in\n    the file is 1.\n    "
                             }
                         },
@@ -25319,7 +25319,7 @@
                                 "col_offset": 5,
                                 "end_col_offset": 7,
                                 "end_lineno": 974,
-                                "lineno": 974,
+                                "lineno": 969,
                                 "noops_previous": {
                                     "ast_type": "PreviousNoops",
                                     "col_offset": 1,
@@ -26673,7 +26673,7 @@
                         "col_offset": 1,
                         "end_col_offset": 3,
                         "end_lineno": 1056,
-                        "lineno": 1056,
+                        "lineno": 1029,
                         "s": "\n######################################################################\n## Zope Extension...\n######################################################################\nclass ZopeIntrospecter(Introspecter):\n    VALUEDOC_CLASSES = Introspecter.VALUEDOC_CLASSES.copy()\n    VALUEDOC_CLASSES.update({\n        'module': ZopeModuleDoc,\n        'class': ZopeClassDoc,\n        'interface': ZopeInterfaceDoc,\n        'attribute': ZopeAttributeDoc,\n        })\n    \n    def add_module_child(self, child, child_name, module_doc):\n        if isinstance(child, zope.interfaces.Interface):\n            module_doc.add_zope_interface(child_name)\n        else:\n            Introspecter.add_module_child(self, child, child_name, module_doc)\n\n    def add_class_child(self, child, child_name, class_doc):\n        if isinstance(child, zope.interfaces.Interface):\n            class_doc.add_zope_interface(child_name)\n        else:\n            Introspecter.add_class_child(self, child, child_name, class_doc)\n\n    def introspect_zope_interface(self, interface, interfacename):\n        pass # etc...\n"
                     }
                 }
