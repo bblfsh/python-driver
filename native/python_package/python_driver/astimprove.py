@@ -486,7 +486,7 @@ class AstImprover(object):
         if "value" in node:
             repr_val = repr(node["value"])
             if repr_val in ("True", "False"):
-                node.update({"LiteralValue": node["value"],
+                node.update({"LiteralValue": "True" if node["value"] else "False",
                              "ast_type": "BoolLiteral"})
             elif repr_val == "None":
                 node.update({"LiteralValue": "None",
