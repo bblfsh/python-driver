@@ -235,15 +235,14 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Dict'\]/\*\[@internalRole\]\[@internalRole='values'\] | Map, Value |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Tuple'\] | Literal, Tuple, Expression |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef'\] | Function, Declaration, Name, Identifier |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef'\]/\*\[@InternalType='arguments'\] | Function, Declaration, Incomplete |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef'\]/\*\[@InternalType='arguments'\]/\*\[@internalRole\]\[@internalRole='args'\] | Function, Declaration |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef'\]/\*\[@InternalType='arguments'\] | Function, Declaration, Incomplete, Argument |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef'\]/\*\[@InternalType='arguments'\]/\*\[@internalRole\]\[@internalRole='args'\] | Function, Declaration, Argument, Name, Identifier |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef'\]/\*\[@InternalType='arguments'\]/\*\[@internalRole\]\[@internalRole='vararg'\] | Function, Declaration, Argument, ArgsList, Name, Identifier |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef'\]/\*\[@InternalType='arguments'\]/\*\[@internalRole\]\[@internalRole='kwarg'\] | Function, Declaration, Argument, ArgsList, Map, Name, Identifier |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef'\]/\*\[@InternalType='arguments'\]/\*\[@internalRole\]\[@internalRole='kwonlyargs'\] | Function, Declaration, Argument, ArgsList, Map, Name, Identifier |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='AsyncFunctionDef'\] | Function, Declaration, Name, Identifier, Incomplete |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef\.decorator\_list'\] | Function, Declaration, Call, Incomplete |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='FunctionDef\.body'\] | Function, Declaration, Body |
-| /self::\*\[@InternalType='Module'\]//\*\[@internalRole\]\[@internalRole='args'\] | Argument, Name, Identifier |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='arguments\.defaults'\] | Function, Declaration, Argument, Value, Incomplete |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='AsyncFunctionDef\.decorator\_list'\] | Function, Declaration, Call, Incomplete |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='AsyncFunctionDef\.body'\] | Function, Declaration, Body |
@@ -252,7 +251,7 @@
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Attribute'\] | Identifier, Expression |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Attribute'\]/\*\[@InternalType='Name'\] | Identifier, Qualified |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Call'\] | Function, Call, Expression |
-| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Call'\]/\*\[@internalRole\]\[@internalRole='args'\] | Function, Call, Positional |
+| /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Call'\]/\*\[@internalRole\]\[@internalRole='args'\] | Function, Call, Positional, Argument, Name |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Call'\]/\*\[@internalRole\]\[@internalRole='keywords'\] | Function, Call, Argument, Name |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Call'\]/\*\[@internalRole\]\[@internalRole='keywords'\]/\*\[@internalRole\]\[@internalRole='value'\] | Argument, Value |
 | /self::\*\[@InternalType='Module'\]//\*\[@InternalType='Call'\]/\*\[@internalRole\]\[@internalRole='func'\]/self::\*\[@InternalType='Name'\] | Call, Callee |

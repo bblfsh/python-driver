@@ -128,9 +128,8 @@ var AnnotationRules = On(Any).Self(
 		// FIXME: the FunctionDeclarationReceiver is not set for methods; it should be taken from the parent
 		// Type node Token (2 levels up) but the SDK doesn't allow this
 		On(pyast.FunctionDef).Roles(uast.Function, uast.Declaration, uast.Name, uast.Identifier).Children(
-			// Other roles are set on the generic HasInternalRole("args") below
-			On(pyast.Arguments).Roles(uast.Function, uast.Declaration, uast.Incomplete).Children(
-				On(HasInternalRole("args")).Roles(uast.Function, uast.Declaration),
+			On(pyast.Arguments).Roles(uast.Function, uast.Declaration, uast.Incomplete, uast.Argument).Children(
+				On(HasInternalRole("args")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.Name, uast.Identifier),
 				On(HasInternalRole("vararg")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.ArgsList, uast.Name, uast.Identifier),
 				On(HasInternalRole("kwarg")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.ArgsList, uast.Map, uast.Name, uast.Identifier),
 				On(HasInternalRole("kwonlyargs")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.ArgsList, uast.Map, uast.Name, uast.Identifier),
@@ -139,7 +138,6 @@ var AnnotationRules = On(Any).Self(
 		On(pyast.AsyncFunctionDef).Roles(uast.Function, uast.Declaration, uast.Name, uast.Identifier, uast.Incomplete),
 		On(pyast.FuncDecorators).Roles(uast.Function, uast.Declaration, uast.Call, uast.Incomplete),
 		On(pyast.FuncDefBody).Roles(uast.Function, uast.Declaration, uast.Body),
-		On(HasInternalRole("args")).Roles(uast.Argument, uast.Name, uast.Identifier),
 		// Default arguments: Python's AST puts default arguments on a sibling list to the one of
 		// arguments that must be mapped to the arguments right-aligned like:
 		// a, b=2, c=3 ->
@@ -158,7 +156,7 @@ var AnnotationRules = On(Any).Self(
 			On(pyast.Name).Roles(uast.Identifier, uast.Qualified)),
 
 		On(pyast.Call).Roles(uast.Function, uast.Call, uast.Expression).Children(
-			On(HasInternalRole("args")).Roles(uast.Function, uast.Call, uast.Positional),
+			On(HasInternalRole("args")).Roles(uast.Function, uast.Call, uast.Positional, uast.Argument, uast.Name),
 			On(HasInternalRole("keywords")).Roles(uast.Function, uast.Call, uast.Argument, uast.Name).Children(
 				On(HasInternalRole("value")).Roles(uast.Argument, uast.Value),
 			),
