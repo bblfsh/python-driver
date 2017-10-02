@@ -47,7 +47,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "surely here"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 23
@@ -127,7 +127,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "while's else"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 64
@@ -185,7 +185,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 10
@@ -201,7 +201,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Expression,Binary,Left
+.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Expression,Binary,Left
 .  .  .  .  .  .  .  TOKEN "3"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 6

@@ -94,7 +94,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Call,Receiver
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Call,Receiver
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "
 "
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
@@ -229,7 +229,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "row_vocab.txt"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 36
@@ -306,7 +306,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "w"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 54

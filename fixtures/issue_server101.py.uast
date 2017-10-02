@@ -16,7 +16,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Str {
-.  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  TOKEN "
 Extract API documentation about python objects by directly introspecting
 their values.
@@ -200,7 +200,7 @@ special value types.
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Str {
-.  .  .  .  .  Roles: Literal,String,Expression,Right
+.  .  .  .  .  Roles: Literal,String,Expression,Primitive,Right
 .  .  .  .  .  TOKEN "epytext en"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 714
@@ -888,7 +888,7 @@ special value types.
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Dict {
-.  .  .  .  .  Roles: Literal,Map,Expression,Right
+.  .  .  .  .  Roles: Literal,Map,Expression,Primitive,Right
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 1435
 .  .  .  .  .  .  Line: 48
@@ -912,7 +912,7 @@ special value types.
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Str {
-.  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  TOKEN "A cache containing the API documentation for values that we've
 already seen.  This cache is implemented as a dictionary that maps a
 value's pyid to its L{ValueDoc}.
@@ -1000,7 +1000,7 @@ in L{_introspected_values}."
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Dict {
-.  .  .  .  .  Roles: Literal,Map,Expression,Right
+.  .  .  .  .  Roles: Literal,Map,Expression,Primitive,Right
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 1867
 .  .  .  .  .  .  Line: 58
@@ -1024,7 +1024,7 @@ in L{_introspected_values}."
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Str {
-.  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  TOKEN "A record which values we've introspected, encoded as a dictionary from
 pyid to C{bool}."
 .  .  .  .  .  StartPosition: {
@@ -1075,7 +1075,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  TOKEN "
     Discard any cached C{APIDoc} values that have been computed for
     introspected values.
@@ -1612,7 +1612,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  TOKEN "
     Generate the API documentation for a specified object by
     introspecting Python values, and return it as a L{ValueDoc}.  The
@@ -2144,7 +2144,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "Expected exactly one of the following arguments: value, name, filename"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 4269
@@ -4772,7 +4772,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,String,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "Module %s is shadowed by a variable with the same name."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 5552
@@ -4974,7 +4974,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,String,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "'"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 5713
@@ -5397,7 +5397,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  TOKEN "
     If a C{ValueDoc} for the given value exists in the valuedoc
     cache, then return it; otherwise, create a new C{ValueDoc},
@@ -5958,7 +5958,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Call,Argument,Value
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Call,Argument,Value
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "introspecter"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 6416
@@ -7209,7 +7209,7 @@ pyid to C{bool}."
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Tuple {
-.  .  .  .  .  Roles: Literal,Tuple,Expression,Right
+.  .  .  .  .  Roles: Literal,Tuple,Expression,Primitive,Right
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 7395
 .  .  .  .  .  .  Line: 187
@@ -7221,7 +7221,7 @@ pyid to C{bool}."
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  TOKEN "__builtins__"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 7395
@@ -7238,7 +7238,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  TOKEN "__doc__"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 7411
@@ -7255,7 +7255,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  TOKEN "__all__"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 7422
@@ -7272,7 +7272,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  3: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  TOKEN "__file__"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 7433
@@ -7289,7 +7289,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  4: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  TOKEN "__path__"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 7445
@@ -7306,7 +7306,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  5: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  TOKEN "__name__"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 7461
@@ -7323,7 +7323,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  6: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  TOKEN "__extra_epydoc_fields__"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 7473
@@ -7340,7 +7340,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  7: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  TOKEN "__docformat__"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 7500
@@ -7549,7 +7549,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  TOKEN "
     Add API documentation information about the module C{module}
     to C{module_doc}.
@@ -7824,7 +7824,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "__docformat__"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 7801
@@ -8471,7 +8471,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "__file__"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 7973
@@ -8687,7 +8687,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Dict {
-.  .  .  .  .  .  .  .  .  Roles: Literal,Map,Expression,Right
+.  .  .  .  .  .  .  .  .  Roles: Literal,Map,Expression,Primitive,Right
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 8508
 .  .  .  .  .  .  .  .  .  .  Line: 214
@@ -8911,7 +8911,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "__doc__"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 8598
@@ -9462,7 +9462,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "__path__"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 8809
@@ -9915,7 +9915,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "'"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 9273
@@ -9932,7 +9932,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 9215
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 235
@@ -10580,7 +10580,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 9375
@@ -10801,7 +10801,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: List {
-.  .  .  .  .  .  .  .  .  Roles: Literal,List,Expression,Right
+.  .  .  .  .  .  .  .  .  Roles: Literal,List,Expression,Primitive,Right
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 9682
 .  .  .  .  .  .  .  .  .  .  Line: 247
@@ -10975,7 +10975,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Tuple {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Tuple,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Tuple,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 9782
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 250
@@ -11557,7 +11557,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "__all__"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 9964
@@ -11688,7 +11688,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Dict {
-.  .  .  .  .  .  .  .  .  Roles: Literal,Map,Expression,Right
+.  .  .  .  .  .  .  .  .  Roles: Literal,Map,Expression,Primitive,Right
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 10186
 .  .  .  .  .  .  .  .  .  .  Line: 262
@@ -12420,7 +12420,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Call,Argument,Value
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Call,Argument,Value
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "introspecter"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 11132
@@ -12898,7 +12898,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Call,Argument,Value
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Call,Argument,Value
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "introspecter"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 11678
@@ -13213,7 +13213,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Call,Argument,Value
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Call,Argument,Value
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "introspecter"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 12086
@@ -14733,7 +14733,7 @@ pyid to C{bool}."
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Tuple {
-.  .  .  .  .  Roles: Literal,Tuple,Expression,Right
+.  .  .  .  .  Roles: Literal,Tuple,Expression,Primitive,Right
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 12897
 .  .  .  .  .  .  Line: 323
@@ -14745,7 +14745,7 @@ pyid to C{bool}."
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  TOKEN "__doc__"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 12897
@@ -14762,7 +14762,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  TOKEN "__module__"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 12908
@@ -14779,7 +14779,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  TOKEN "__dict__"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 12922
@@ -14796,7 +14796,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  3: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  TOKEN "__weakref__"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 12934
@@ -14813,7 +14813,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  4: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  TOKEN "__slots__"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 12949
@@ -14830,7 +14830,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  5: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  TOKEN "__pyx_vtable__"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 12966
@@ -15004,7 +15004,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  TOKEN "
     Add API documentation information about the class C{cls}
     to C{class_doc}.
@@ -15683,7 +15683,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "__all__"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 13363
@@ -15814,7 +15814,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: List {
-.  .  .  .  .  .  .  .  .  Roles: Literal,List,Expression,Right
+.  .  .  .  .  .  .  .  .  Roles: Literal,List,Expression,Primitive,Right
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 13579
 .  .  .  .  .  .  .  .  .  .  Line: 345
@@ -16043,7 +16043,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Dict {
-.  .  .  .  .  .  .  .  .  Roles: Literal,Map,Expression,Right
+.  .  .  .  .  .  .  .  .  Roles: Literal,Map,Expression,Primitive,Right
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 14379
 .  .  .  .  .  .  .  .  .  .  Line: 359
@@ -16283,7 +16283,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,String,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "Class '%s' defines __bases__, but it does not contain an iterable; ignoring base list."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 14626
@@ -16326,7 +16326,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "__name__"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 14781
@@ -16343,7 +16343,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  2: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "??"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 14793
@@ -16501,7 +16501,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: List {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,List,Expression,Right
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,List,Expression,Primitive,Right
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 14860
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 371
@@ -17126,7 +17126,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "__dict__"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 15148
@@ -17310,7 +17310,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "__bases__"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 14506
@@ -17671,7 +17671,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Tuple {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Tuple,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Tuple,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 15384
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 384
@@ -17876,7 +17876,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Dict {
-.  .  .  .  .  .  .  .  .  Roles: Literal,Map,Expression,Right
+.  .  .  .  .  .  .  .  .  Roles: Literal,Map,Expression,Primitive,Right
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 15540
 .  .  .  .  .  .  .  .  .  .  Line: 388
@@ -17946,7 +17946,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,String,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "_%s__"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 15601
@@ -17994,7 +17994,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "__name__"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 15624
@@ -18011,7 +18011,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  2: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "<none>"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 15636
@@ -18440,7 +18440,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 15942
@@ -18982,7 +18982,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Call,Argument,Value
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Call,Argument,Value
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "introspecter"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 16309
@@ -19394,7 +19394,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  2: Tuple {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Tuple,Expression,For,Update
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Tuple,Expression,Primitive,For,Update
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 15658
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 391
@@ -19479,7 +19479,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "__dict__"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 15563
@@ -19794,7 +19794,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  TOKEN "Add API documentation information about the function
     C{routine} to C{routine_doc} (specializing it to C{Routine_doc})."
 .  .  .  .  .  .  .  .  .  StartPosition: {
@@ -20043,7 +20043,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 17084
@@ -20182,7 +20182,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 17161
@@ -20735,7 +20735,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Tuple {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Tuple,Expression,Left
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Tuple,Expression,Primitive,Left
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 17381
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 434
@@ -21241,7 +21241,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: List {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,List,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,List,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 17668
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 442
@@ -22052,7 +22052,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 18133
@@ -22179,7 +22179,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 18207
@@ -22625,7 +22625,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "func_code"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 18278
@@ -22849,7 +22849,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  1: List {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,List,Expression,Right
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,List,Expression,Primitive,Right
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 18608
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 463
@@ -22861,7 +22861,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "..."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 18609
@@ -22928,7 +22928,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  1: List {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,List,Expression,Right
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,List,Expression,Primitive,Right
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 18654
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 464
@@ -23883,7 +23883,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  TOKEN "Add API documentation information about the property
     C{prop} to C{prop_doc} (specializing it to C{PropertyDoc})."
 .  .  .  .  .  .  .  .  .  StartPosition: {
@@ -24566,7 +24566,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "fget"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 19535
@@ -24927,7 +24927,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  TOKEN "Specialize val_doc to a C{GenericValueDoc} and return it."
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 19936
@@ -25209,7 +25209,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  TOKEN "
     Return true if the given object is a class.  In particular, return
     true if object is an instance of C{types.TypeType} or of
@@ -25433,7 +25433,7 @@ pyid to C{bool}."
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: List {
-.  .  .  .  .  .  .  Roles: Literal,List,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  Roles: Literal,List,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 20753
 .  .  .  .  .  .  .  .  Line: 521
@@ -25516,7 +25516,7 @@ pyid to C{bool}."
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Str {
-.  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  TOKEN "A list of types that should be treated as classes."
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 20776
@@ -25627,7 +25627,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  TOKEN "Add a type to the lists of types that should be treated as
     classes.  By default, this list contains C{TypeType} and
     C{ClassType}."
@@ -25907,7 +25907,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  TOKEN "
     Return True if C{object} results from a C{from __future__ import feature}
     statement.
@@ -26440,7 +26440,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "Troubles inspecting __future__. Python implementation may have been changed."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 21704
@@ -26746,7 +26746,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  TOKEN "
     Return the docstring for the given value; or C{None} if it
     does not have a docstring.
@@ -26826,7 +26826,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "__doc__"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 22045
@@ -27073,7 +27073,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "ascii"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 22250
@@ -28107,7 +28107,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "__name__"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 22827
@@ -28181,7 +28181,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,String,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "%s's docstring is not a unicode string, but it contains non-ascii data -- treating it as latin-1."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 22923
@@ -28310,7 +28310,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "latin-1"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 23123
@@ -28709,7 +28709,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "__name__"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 23302
@@ -28780,7 +28780,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,String,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "%s's docstring is not a string -- ignoring it."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 23390
@@ -29329,7 +29329,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  TOKEN "
     @return: the canonical name for C{value}, or C{UNKNOWN} if no
     canonical name can be found.  Currently, C{get_canonical_name}
@@ -29454,7 +29454,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "__name__"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 23912
@@ -29714,7 +29714,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,String,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "Module %s is shadowed by a variable with the same name."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 24382
@@ -29871,7 +29871,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,String,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "'"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 24601
@@ -30206,7 +30206,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,String,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "%s"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 24793
@@ -30417,7 +30417,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "__file__"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 24753
@@ -30891,7 +30891,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "__builtin__"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 24949
@@ -32265,7 +32265,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "<"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 25887
@@ -32469,7 +32469,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "<"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 25613
@@ -32882,7 +32882,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "<"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 25332
@@ -33436,7 +33436,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  TOKEN "
     Verify the name.  E.g., if it's a nested class, then we won't be
     able to find it with the name we constructed.
@@ -33668,7 +33668,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 26392
@@ -33798,7 +33798,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 26431
@@ -33924,7 +33924,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 26509
@@ -34355,7 +34355,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 26590
@@ -34731,7 +34731,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,String,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "%r"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 26837
@@ -35139,7 +35139,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  TOKEN "
     Return the name of the module containing the given value, or
     C{None} if the module name can't be determined.
@@ -36641,7 +36641,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  TOKEN "
     @return: The module that defines the given function.
     @rtype: C{module}
@@ -36772,7 +36772,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "__module__"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 28003
@@ -37244,7 +37244,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "__dict__"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 28528
@@ -37312,7 +37312,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "func_globals"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 28570
@@ -37799,7 +37799,7 @@ pyid to C{bool}."
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: List {
-.  .  .  .  .  Roles: Literal,List,Expression,Right
+.  .  .  .  .  Roles: Literal,List,Expression,Primitive,Right
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 28874
 .  .  .  .  .  .  Line: 734
@@ -37898,7 +37898,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  TOKEN "10"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 28946
@@ -37930,7 +37930,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  TOKEN "
     Register an introspecter function.  Introspecter functions take
     two arguments, a python value and a C{ValueDoc} object, and should
@@ -37986,7 +37986,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Tuple {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Tuple,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Tuple,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 29849
 .  .  .  .  .  .  .  .  .  .  .  .  Line: 753
@@ -38438,7 +38438,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  3: Tuple {
-.  .  .  .  .  .  .  .  .  Roles: Literal,Tuple,Expression,For,Update
+.  .  .  .  .  .  .  .  .  Roles: Literal,Tuple,Expression,Primitive,For,Update
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 30009
 .  .  .  .  .  .  .  .  .  .  Line: 758
@@ -39083,7 +39083,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Call,Argument,Value
+.  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Call,Argument,Value
 .  .  .  .  .  .  .  .  .  TOKEN "20"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 30476
@@ -39191,7 +39191,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Call,Argument,Value
+.  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Call,Argument,Value
 .  .  .  .  .  .  .  .  .  TOKEN "24"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 30538
@@ -39319,7 +39319,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Call,Argument,Value
+.  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Call,Argument,Value
 .  .  .  .  .  .  .  .  .  TOKEN "28"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 30612
@@ -39427,7 +39427,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Call,Argument,Value
+.  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Call,Argument,Value
 .  .  .  .  .  .  .  .  .  TOKEN "30"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 30681
@@ -39910,7 +39910,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Call,Argument,Value
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Call,Argument,Value
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "32"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 30933
@@ -40427,7 +40427,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Call,Argument,Value
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Call,Argument,Value
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "34"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 31211
@@ -41004,7 +41004,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 31729
@@ -41162,7 +41162,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 31788
@@ -41212,7 +41212,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 31784
@@ -41416,7 +41416,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Tuple {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Tuple,Expression,Left
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Tuple,Expression,Primitive,Left
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 31826
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 807
@@ -41578,7 +41578,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "__init__"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 31806
@@ -41755,7 +41755,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Tuple {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Tuple,Expression,Left
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Tuple,Expression,Primitive,Left
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 32381
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 818
@@ -42467,7 +42467,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 32884
@@ -42645,7 +42645,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 32932
@@ -42844,7 +42844,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Tuple {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Tuple,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Tuple,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 32814
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 827
@@ -43286,7 +43286,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 33243
@@ -44371,7 +44371,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  TOKEN "
     Given a name, return the corresponding value.
     
@@ -44601,7 +44601,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 34221
@@ -44931,7 +44931,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 34379
@@ -45012,7 +45012,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 34389
@@ -45212,7 +45212,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 34323
@@ -45617,7 +45617,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 34682
@@ -45683,7 +45683,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Call,Receiver
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Call,Receiver
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 34665
@@ -45802,7 +45802,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 34725
@@ -45848,7 +45848,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 34729
@@ -45933,7 +45933,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 34546
@@ -46453,7 +46453,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,String,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "no variable named %s in %s"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 34936
@@ -46470,7 +46470,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: Tuple {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Tuple,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Tuple,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 34991
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 888
@@ -46544,7 +46544,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 35018
@@ -46628,7 +46628,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Call,Receiver
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Call,Receiver
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 35003
@@ -46809,7 +46809,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  2: Tuple {
-.  .  .  .  .  .  .  .  .  Roles: Literal,Tuple,Expression,For,Update
+.  .  .  .  .  .  .  .  .  Roles: Literal,Tuple,Expression,Primitive,For,Update
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 34804
 .  .  .  .  .  .  .  .  .  .  Line: 884
@@ -47034,7 +47034,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  TOKEN "
     Run the given callable in a 'sandboxed' environment.
     Currently, this includes saving and restoring the contents of
@@ -47428,7 +47428,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 35896
 .  .  .  .  .  .  .  .  .  .  .  .  Line: 909
@@ -48026,7 +48026,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: List {
-.  .  .  .  .  .  .  .  .  Roles: Literal,List,Expression,Right
+.  .  .  .  .  .  .  .  .  Roles: Literal,List,Expression,Primitive,Right
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 36168
 .  .  .  .  .  .  .  .  .  .  Line: 917
@@ -48038,7 +48038,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "(imported)"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 36169
@@ -48495,7 +48495,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Tuple {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Tuple,Expression,Left
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Tuple,Expression,Primitive,Left
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 36461
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 928
@@ -48678,7 +48678,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,String,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "%s"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 36558
@@ -48695,7 +48695,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: Tuple {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Tuple,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Tuple,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 36566
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 930
@@ -48783,7 +48783,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,String,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "%s: %s"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 36617
@@ -48800,7 +48800,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: Tuple {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Tuple,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Tuple,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 36629
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 932
@@ -49019,7 +49019,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,String,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN " (line %d)"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 36723
@@ -49036,7 +49036,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: Tuple {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Tuple,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Tuple,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 36739
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 934
@@ -49874,7 +49874,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  TOKEN "
     Try to determine the line number on which the given item's
     docstring begins.  Return the line number, or C{None} if the line
@@ -50103,7 +50103,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Tuple {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Tuple,Expression,Left
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Tuple,Expression,Primitive,Left
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 37527
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 955
@@ -50301,7 +50301,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Right
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Right
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 37638
@@ -50538,7 +50538,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 37808
@@ -50609,7 +50609,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 37846
@@ -50688,7 +50688,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 37740
@@ -50720,7 +50720,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "#"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 37732
@@ -50737,7 +50737,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 37737
@@ -51111,7 +51111,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,String,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "inspect.findsource(%s) raised IndexError"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 37959
@@ -51488,7 +51488,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  TOKEN "
     A "file-like" object that discards anything that is written and
     always reports end-of-file when read.  C{_DevNull} is used by
@@ -51639,7 +51639,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Right
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Right
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 38385
@@ -51704,7 +51704,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Right
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Right
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "r+"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 38407
@@ -51769,7 +51769,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Right
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Right
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 38437
@@ -51834,7 +51834,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Right
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Right
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "</dev/null>"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 38457
@@ -52053,7 +52053,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 38547
@@ -52091,7 +52091,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 38558
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 982
@@ -52177,7 +52177,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 38589
@@ -52215,7 +52215,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 38600
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 983
@@ -52301,7 +52301,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 38636
@@ -52339,7 +52339,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: List {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,List,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,List,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 38647
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 984
@@ -52439,7 +52439,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 38684
@@ -52543,7 +52543,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 38720
@@ -52630,7 +52630,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 38751
@@ -53868,7 +53868,7 @@ pyid to C{bool}."
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  1: Tuple {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Tuple,Expression,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Tuple,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 39900
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 1019
@@ -54071,7 +54071,7 @@ pyid to C{bool}."
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Num {
-.  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 40056
@@ -54203,7 +54203,7 @@ pyid to C{bool}."
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Str {
-.  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  TOKEN "
 ######################################################################
 ## Zope Extension...
