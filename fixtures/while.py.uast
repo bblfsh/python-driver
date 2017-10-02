@@ -47,7 +47,13 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Str {
+<<<<<<< HEAD
 .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+||||||| merged common ancestors
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Argument,Name,Identifier,Function,Call,Positional
+=======
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Call,Positional,Argument,Name
+>>>>>>> Remove Identifier from the arguments grouping node. Remove dups
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "surely here"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 23
@@ -127,7 +133,13 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Str {
+<<<<<<< HEAD
 .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
+||||||| merged common ancestors
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Argument,Name,Identifier,Function,Call,Positional
+=======
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Call,Positional,Argument,Name
+>>>>>>> Remove Identifier from the arguments grouping node. Remove dups
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "while's else"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 64
@@ -179,7 +191,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Compare.comparators {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Right
+.  .  .  .  .  .  .  Roles: Expression,Right
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  .  .  }
@@ -201,7 +213,13 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Num {
+<<<<<<< HEAD
 .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Expression,Binary,Left
+||||||| merged common ancestors
+.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Expression,Binary,Left
+=======
+.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Expression,Left
+>>>>>>> Misc annotation fixes
 .  .  .  .  .  .  .  TOKEN "3"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 6
@@ -218,7 +236,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Compare.ops {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator
+.  .  .  .  .  .  .  Roles: Expression
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  .  .  }

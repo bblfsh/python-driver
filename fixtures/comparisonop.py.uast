@@ -2,7 +2,7 @@ Status:  ok
 Errors: 
 UAST: 
 Module {
-.  Roles: File
+.  Roles: File,Module
 .  Children: {
 .  .  0: Expr {
 .  .  .  Roles: Expression
@@ -27,7 +27,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Compare.comparators {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Right
+.  .  .  .  .  .  .  Roles: Expression,Right
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  .  .  }
@@ -49,7 +49,13 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Num {
+<<<<<<< HEAD
 .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Expression,Binary,Left
+||||||| merged common ancestors
+.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Expression,Binary,Left
+=======
+.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Expression,Left
+>>>>>>> Misc annotation fixes
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 0
@@ -66,7 +72,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Compare.ops {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator
+.  .  .  .  .  .  .  Roles: Expression
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  .  .  }
@@ -104,7 +110,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Compare.comparators {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Right
+.  .  .  .  .  .  .  Roles: Expression,Right
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  .  .  }
@@ -126,7 +132,13 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Num {
+<<<<<<< HEAD
 .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Expression,Binary,Left
+||||||| merged common ancestors
+.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Expression,Binary,Left
+=======
+.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Expression,Left
+>>>>>>> Misc annotation fixes
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 7
@@ -143,7 +155,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Compare.ops {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator
+.  .  .  .  .  .  .  Roles: Expression
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  .  .  }
@@ -231,7 +243,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Compare.comparators {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Right
+.  .  .  .  .  .  .  Roles: Expression,Right
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  .  .  }
@@ -267,7 +279,13 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Num {
+<<<<<<< HEAD
 .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Expression,Binary,Left
+||||||| merged common ancestors
+.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Expression,Binary,Left
+=======
+.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Expression,Left
+>>>>>>> Misc annotation fixes
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 20
@@ -284,7 +302,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Compare.ops {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator
+.  .  .  .  .  .  .  Roles: Expression
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  .  .  }
@@ -326,7 +344,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Compare.comparators {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Right
+.  .  .  .  .  .  .  Roles: Expression,Right
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  .  .  }
@@ -362,7 +380,13 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Num {
+<<<<<<< HEAD
 .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Expression,Binary,Left
+||||||| merged common ancestors
+.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Expression,Binary,Left
+=======
+.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Expression,Left
+>>>>>>> Misc annotation fixes
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 32
@@ -379,7 +403,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Compare.ops {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator
+.  .  .  .  .  .  .  Roles: Expression
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  .  .  }
@@ -421,7 +445,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Compare.comparators {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Right
+.  .  .  .  .  .  .  Roles: Expression,Right
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  .  .  }
@@ -457,7 +481,13 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Num {
+<<<<<<< HEAD
 .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Expression,Binary,Left
+||||||| merged common ancestors
+.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Expression,Binary,Left
+=======
+.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Expression,Left
+>>>>>>> Misc annotation fixes
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 42
@@ -474,7 +504,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Compare.ops {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator
+.  .  .  .  .  .  .  Roles: Expression
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  promotedPropertyList: true
 .  .  .  .  .  .  .  }

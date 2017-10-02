@@ -53,7 +53,7 @@ var Transformers = []transformer.Tranformer{
 // https://godoc.org/gopkg.in/bblfsh/sdk.v1/uast/ann
 var AnnotationRules = On(Any).Self(
 	On(Not(pyast.Module)).Error(errors.New("root must be uast.Module")),
-	On(pyast.Module).Roles(uast.File).Descendants(
+	On(pyast.Module).Roles(uast.File, uast.Module).Descendants(
 
 		// Binary Expressions
 		On(pyast.BinOp).Roles(uast.Expression, uast.Binary).Children(
@@ -127,16 +127,17 @@ var AnnotationRules = On(Any).Self(
 
 		// FIXME: the FunctionDeclarationReceiver is not set for methods; it should be taken from the parent
 		// Type node Token (2 levels up) but the SDK doesn't allow this
-		On(pyast.FunctionDef).Roles(uast.Function, uast.Declaration, uast.Name, uast.Identifier),
+		On(pyast.FunctionDef).Roles(uast.Function, uast.Declaration, uast.Name, uast.Identifier).Children(
+			On(pyast.Arguments).Roles(uast.Function, uast.Declaration, uast.Incomplete, uast.Argument).Children(
+				On(HasInternalRole("args")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.Name, uast.Identifier),
+				On(HasInternalRole("vararg")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.ArgsList, uast.Name, uast.Identifier),
+				On(HasInternalRole("kwarg")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.ArgsList, uast.Map, uast.Name, uast.Identifier),
+				On(HasInternalRole("kwonlyargs")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.ArgsList, uast.Map, uast.Name, uast.Identifier),
+			),
+		),
 		On(pyast.AsyncFunctionDef).Roles(uast.Function, uast.Declaration, uast.Name, uast.Identifier, uast.Incomplete),
 		On(pyast.FuncDecorators).Roles(uast.Function, uast.Declaration, uast.Call, uast.Incomplete),
 		On(pyast.FuncDefBody).Roles(uast.Function, uast.Declaration, uast.Body),
-		// FIXME: arguments is a Groping node, update it we get a "Grouper" or "Container" role
-		On(HasInternalRole("arguments")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.Incomplete),
-		On(HasInternalRole("args")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.Name, uast.Identifier),
-		On(HasInternalRole("vararg")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.ArgsList, uast.Name, uast.Identifier),
-		On(HasInternalRole("kwarg")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.ArgsList, uast.Map, uast.Name, uast.Identifier),
-		On(HasInternalRole("kwonlyargs")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.ArgsList, uast.Map, uast.Name, uast.Identifier),
 		// Default arguments: Python's AST puts default arguments on a sibling list to the one of
 		// arguments that must be mapped to the arguments right-aligned like:
 		// a, b=2, c=3 ->
@@ -155,9 +156,9 @@ var AnnotationRules = On(Any).Self(
 			On(pyast.Name).Roles(uast.Identifier, uast.Qualified)),
 
 		On(pyast.Call).Roles(uast.Function, uast.Call, uast.Expression).Children(
-			On(HasInternalRole("args")).Roles(uast.Call, uast.Argument, uast.Positional),
-			On(HasInternalRole("keywords")).Roles(uast.Call, uast.Argument, uast.Name).Children(
-				On(HasInternalRole("value")).Roles(uast.Call, uast.Argument, uast.Value),
+			On(HasInternalRole("args")).Roles(uast.Function, uast.Call, uast.Positional, uast.Argument, uast.Name),
+			On(HasInternalRole("keywords")).Roles(uast.Function, uast.Call, uast.Argument, uast.Name).Children(
+				On(HasInternalRole("value")).Roles(uast.Argument, uast.Value),
 			),
 			On(HasInternalRole("func")).Self(
 				On(pyast.Name).Roles(uast.Call, uast.Callee),
@@ -217,21 +218,19 @@ var AnnotationRules = On(Any).Self(
 		On(pyast.Break).Roles(uast.Break, uast.Statement),
 		On(pyast.Continue).Roles(uast.Continue, uast.Statement),
 
-		// - Compare.ops (internaluast.Type): [uast.LessThan, uast.LessThan]
-		// - Compare.comparators (internaluast.Type): ['a', 10]
-		// The current mapping is:
-		// - left: uast.Expression, uast.Binary, uast.Left
-		// - Compare.ops: uast.Expression, uast.Binary, uast.Operator
-		// - Compare.comparators: uast.Expression, uast.Binary, uast.Right
-		// But this is obviously not correct. To fix this properly we would need
-		// and SDK feature to mix lists (also needed for default and keyword arguments and
-		// boolean operators).
-		// "uast.If that sounds awkward is because it is" (their words)
+		// Comparison nodes in Python are oddly structured. Probably one if the first
+		// things that could be changed once we can normalize tree structures. Check:
+		// https://greentreesnakes.readthedocs.io/en/latest/nodes.html#Compare
+
+		// Parent of all comparisons
 		On(pyast.Compare).Roles(uast.Expression, uast.Binary).Children(
-			On(pyast.CompareOps).Roles(uast.Expression, uast.Binary, uast.Operator),
-			On(HasInternalRole("left")).Roles(uast.Expression, uast.Binary, uast.Left),
+			// Operators
+			On(pyast.CompareOps).Roles(uast.Expression),
+			// Leftmost element (the others are the comparators below)
+			On(HasInternalRole("left")).Roles(uast.Expression, uast.Left),
+			// These hold the members of the comparison (not the operators)
+			On(pyast.CompareComparators).Roles(uast.Expression, uast.Right),
 		),
-		On(pyast.CompareComparators).Roles(uast.Expression, uast.Binary, uast.Right),
 		On(pyast.If).Roles(uast.If, uast.Statement).Children(
 			On(pyast.IfBody).Roles(uast.If, uast.Body, uast.Then),
 			On(HasInternalRole("test")).Roles(uast.If, uast.Condition),
@@ -320,10 +319,7 @@ var AnnotationRules = On(Any).Self(
 			On(HasInternalRole("iter")).Roles(uast.For, uast.Update, uast.Statement),
 			On(HasInternalRole("target")).Roles(uast.For, uast.Expression),
 			// FIXME: see the comment on uast.If, uast.Condition above
-			On(pyast.Compare).Roles(uast.If, uast.Condition, uast.Expression, uast.Binary).Children(
-				On(pyast.CompareOps).Roles(uast.Expression, uast.Binary, uast.Operator),
-				On(HasInternalRole("left")).Roles(uast.Expression, uast.Binary, uast.Left),
-			),
+			On(pyast.Compare).Roles(uast.If, uast.Condition),
 		),
 
 		On(pyast.Delete).Roles(uast.Statement, uast.Incomplete),
