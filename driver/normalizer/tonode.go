@@ -1,17 +1,17 @@
 package normalizer
 
-import (
-	"gopkg.in/bblfsh/sdk.v1/protocol/driver"
-	"gopkg.in/bblfsh/sdk.v1/protocol/native"
-)
+import "gopkg.in/bblfsh/sdk.v1/uast"
 
-var ToNoder = &native.ObjectToNoder{
+// ToNode is an instance of `uast.ObjectToNode`, defining how to transform an
+// into a UAST (`uast.Node`).
+//
+// https://godoc.org/gopkg.in/bblfsh/sdk.v1/uast#ObjectToNode
+var ToNode = &uast.ObjectToNode{
 	InternalTypeKey: "ast_type",
 	LineKey:         "lineno",
 	EndLineKey:      "end_lineno",
 	ColumnKey:       "col_offset",
 	EndColumnKey:    "end_col_offset",
-	PositionFill:    native.OffsetFromLineCol,
 
 	TokenKeys: map[string]bool{
 		"name": true,
@@ -32,45 +32,45 @@ var ToNoder = &native.ObjectToNoder{
 		"BitOr":     "|",
 		"BitXor":    "^",
 		"Break":     "break",
-		"Continue": "continue",
-		"Delete":   "delete",
-		"Div":      "/",
-		"Ellipsis": "...",
-		"Eq":       "==",
-		"False":    "false",
-		"For":      "for",
-		"FloorDiv": "//",
-		"Global":   "global",
-		"Gt":       ">",
-		"GtE":      ">=",
-		"If":       "if",
-		"In":       "in",
-		"Invert":   "~",
-		"Is":       "is",
-		"IsNot":    "not is",
-		"LShift":   "<<",
-		"Lt":       "<",
-		"LtE":      "<=",
-		"Mod":      "%%",
-		"Mult":     "*",
-		"None":     "None",
-		"Nonlocal": "nonlocal",
-		"Not":      "!",
-		"NotEq":    "!=",
-		"NotIn":    "not in",
-		"Pass":     "pass",
-		"Pow":      "**",
-		"Print":    "print",
-		"Raise":    "raise",
-		"Return":   "return",
-		"RShift":   ">>",
-		"Sub":      "-",
-		"True":     "true",
-		"UAdd":     "+",
-		"USub":     "-",
-		"While":    "while",
-		"With":     "with",
-		"Yield":    "yield",
+		"Continue":  "continue",
+		"Delete":    "delete",
+		"Div":       "/",
+		"Ellipsis":  "...",
+		"Eq":        "==",
+		"False":     "false",
+		"For":       "for",
+		"FloorDiv":  "//",
+		"Global":    "global",
+		"Gt":        ">",
+		"GtE":       ">=",
+		"If":        "if",
+		"In":        "in",
+		"Invert":    "~",
+		"Is":        "is",
+		"IsNot":     "not is",
+		"LShift":    "<<",
+		"Lt":        "<",
+		"LtE":       "<=",
+		"Mod":       "%%",
+		"Mult":      "*",
+		"None":      "None",
+		"Nonlocal":  "nonlocal",
+		"Not":       "!",
+		"NotEq":     "!=",
+		"NotIn":     "not in",
+		"Pass":      "pass",
+		"Pow":       "**",
+		"Print":     "print",
+		"Raise":     "raise",
+		"Return":    "return",
+		"RShift":    ">>",
+		"Sub":       "-",
+		"True":      "true",
+		"UAdd":      "+",
+		"USub":      "-",
+		"While":     "while",
+		"With":      "with",
+		"Yield":     "yield",
 	},
 	PromoteAllPropertyLists: false,
 	PromotedPropertyLists: map[string]map[string]bool{
@@ -95,27 +95,4 @@ var ToNoder = &native.ObjectToNoder{
 		"ExceptHandler": {"name": true},
 	},
 	// FIXME: test[ast_type=Compare].comparators is a list?? (should be "right")
-}
-
-// ParserBuilder creates a parser that transform source code files into *uast.Node.
-func ParserBuilder(opts driver.ParserOptions) (parser driver.Parser, err error) {
-	parser, err = native.ExecParser(ToNoder, opts.NativeBin)
-	if err != nil {
-		return
-	}
-
-	switch ToNoder.PositionFill {
-	case native.OffsetFromLineCol:
-		parser = &driver.TransformationParser{
-			Parser:         parser,
-			Transformation: driver.FillOffsetFromLineCol,
-		}
-	case native.LineColFromOffset:
-		parser = &driver.TransformationParser{
-			Parser:         parser,
-			Transformation: driver.FillLineColFromOffset,
-		}
-	}
-
-	return
 }

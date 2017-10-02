@@ -7,7 +7,6 @@ ARG PYDETECTOR_VER=0.14.2
 
 RUN apk add --no-cache --update python python3 py-pip py2-pip git
 
-ADD build /opt/driver/bin
 ADD native/python_package /tmp/python_driver
 
 ADD ${DEVDEPS} ${CONTAINER_DEVDEPS}
@@ -20,4 +19,5 @@ RUN yes|rm -rf ${CONTAINER_DEVDEPS}
 RUN pip3 install /tmp/python_driver
 RUN yes|rm -rf /tmp/python_driver
 
-CMD /opt/driver/bin/driver
+ADD build /opt/driver
+ENTRYPOINT ["/opt/driver/bin/driver"]

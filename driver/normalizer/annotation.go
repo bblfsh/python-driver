@@ -7,6 +7,9 @@ import (
 
 	"gopkg.in/bblfsh/sdk.v1/uast"
 	. "gopkg.in/bblfsh/sdk.v1/uast/ann"
+	"gopkg.in/bblfsh/sdk.v1/uast/transformer"
+	"gopkg.in/bblfsh/sdk.v1/uast/transformer/annotatter"
+	"gopkg.in/bblfsh/sdk.v1/uast/transformer/positioner"
 )
 
 /*
@@ -37,7 +40,17 @@ Unmarked nodes or nodes needing new features from the SDK:
 	(see: https://greentreesnakes.readthedocs.io/en/latest/nodes.html#Compare)
 */
 
-// AnnotationRules for the Python driver
+// Transformers is the of list `transformer.Transfomer` to apply to a UAST, to
+// learn more about the Transformers and the available ones take a look to:
+// https://godoc.org/gopkg.in/bblfsh/sdk.v1/uast/transformers
+var Transformers = []transformer.Tranformer{
+	annotatter.NewAnnotatter(AnnotationRules),
+	positioner.NewFillOffsetFromLineCol(),
+}
+
+// AnnotationRules describes how a UAST should be annotated with `uast.Role`.
+//
+// https://godoc.org/gopkg.in/bblfsh/sdk.v1/uast/ann
 var AnnotationRules = On(Any).Self(
 	On(Not(pyast.Module)).Error(errors.New("root must be uast.Module")),
 	On(pyast.Module).Roles(uast.File).Descendants(
@@ -239,7 +252,7 @@ var AnnotationRules = On(Any).Self(
 		On(pyast.AliasAsName).Roles(uast.Import, uast.Alias, uast.Identifier),
 		On(pyast.ImportFrom).Roles(uast.Import, uast.Declaration, uast.Statement),
 		On(pyast.ClassDef).Roles(uast.Type, uast.Declaration, uast.Identifier, uast.Statement).Children(
-		On(pyast.ClassDefDecorators).Roles(uast.Type, uast.Call, uast.Incomplete),
+			On(pyast.ClassDefDecorators).Roles(uast.Type, uast.Call, uast.Incomplete),
 			On(pyast.ClassDefBody).Roles(uast.Type, uast.Declaration, uast.Body),
 			On(pyast.ClassDefBases).Roles(uast.Type, uast.Declaration, uast.Base),
 			On(pyast.ClassDefKeywords).Roles(uast.Incomplete).Children(
