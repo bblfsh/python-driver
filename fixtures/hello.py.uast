@@ -2,7 +2,7 @@ Status:  ok
 Errors: 
 UAST: 
 Module {
-.  Roles: File
+.  Roles: File,Module
 .  Children: {
 .  .  0: Expr {
 .  .  .  Roles: Expression
@@ -27,13 +27,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Str {
-<<<<<<< HEAD
-.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
-||||||| merged common ancestors
-.  .  .  .  .  .  .  Roles: Literal,String,Expression,Argument,Name,Identifier,Function,Call,Positional
-=======
-.  .  .  .  .  .  .  Roles: Literal,String,Expression,Function,Call,Positional,Argument,Name
->>>>>>> Remove Identifier from the arguments grouping node. Remove dups
+.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Call,Positional,Argument,Name
 .  .  .  .  .  .  .  TOKEN "hello world"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 6
@@ -73,4 +67,5 @@ Module {
 .  .  }
 .  }
 }
+
 
