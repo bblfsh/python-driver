@@ -483,13 +483,13 @@ class AstImprover(object):
         return node
 
     def visit_NameConstant(self, node):
-        if 'value' in node:
+        if "value" in node:
             repr_val = repr(node["value"])
-            if repr_val in ('True', 'False'):
-                node.update({"LiteralValue": node["value"],
+            if repr_val in ("True", "False"):
+                node.update({"LiteralValue": "True" if node["value"] else "False",
                              "ast_type": "BoolLiteral"})
-            elif repr_val == 'None':
-                node.update({"LiteralValue": node["value"],
+            elif repr_val == "None":
+                node.update({"LiteralValue": "None",
                              "ast_type": "NoneLiteral"})
         else:
             node["ast_type"] = "NameConstant"
