@@ -3,7 +3,7 @@ Errors:
  .  column out of bounds: 11 [1, 7]
 UAST: 
 Module {
-.  Roles: File
+.  Roles: File,Module
 .  Children: {
 .  .  0: Assign {
 .  .  .  Roles: Binary,Assignment,Expression
@@ -643,13 +643,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: arguments {
-<<<<<<< HEAD
-.  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
-||||||| merged common ancestors
-.  .  .  .  .  Roles: Function,Declaration,Incomplete,Argument,Name,Identifier
-=======
 .  .  .  .  .  Roles: Function,Declaration,Incomplete,Argument
->>>>>>> Remove Identifier from the arguments grouping node. Remove dups
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  kwarg: <nil>
@@ -854,13 +848,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Num {
-<<<<<<< HEAD
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional
-||||||| merged common ancestors
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Argument,Name,Identifier,Function,Call,Positional
-=======
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Function,Call,Positional,Argument,Name
->>>>>>> Remove Identifier from the arguments grouping node. Remove dups
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Function,Call,Positional,Argument,Name
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "10"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 0
@@ -1057,4 +1045,5 @@ Module {
 .  .  }
 .  }
 }
+
 

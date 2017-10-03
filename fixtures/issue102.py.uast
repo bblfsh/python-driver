@@ -2,7 +2,7 @@ Status:  ok
 Errors: 
 UAST: 
 Module {
-.  Roles: File
+.  Roles: File,Module
 .  Children: {
 .  .  0: Expr {
 .  .  .  Roles: Expression
@@ -16,7 +16,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Str {
-.  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  TOKEN "
         select message.*, user.* from message, user
         where message.author_id = user.user_id and (
@@ -42,4 +42,5 @@ Module {
 .  .  }
 .  }
 }
+
 
