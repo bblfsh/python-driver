@@ -2,7 +2,7 @@ Status:  ok
 Errors: 
 UAST: 
 Module {
-.  Roles: File
+.  Roles: File,Module
 .  Children: {
 .  .  0: FunctionDef {
 .  .  .  Roles: Function,Declaration,Name,Identifier
@@ -23,7 +23,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: arguments {
-.  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
+.  .  .  .  .  Roles: Function,Declaration,Incomplete,Argument
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  kwarg: <nil>
@@ -127,7 +127,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 30
@@ -141,7 +141,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  .  .  .  .  TOKEN "polompos"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 38
@@ -155,8 +155,8 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  2: NoneLiteral {
-.  .  .  .  .  .  .  .  .  Roles: Literal,Null,Expression
-.  .  .  .  .  .  .  .  .  TOKEN "<nil>"
+.  .  .  .  .  .  .  .  .  Roles: Literal,Null,Expression,Primitive
+.  .  .  .  .  .  .  .  .  TOKEN "None"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 55
 .  .  .  .  .  .  .  .  .  .  Line: 1
@@ -218,14 +218,14 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: arguments {
-.  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
+.  .  .  .  .  Roles: Function,Declaration,Incomplete,Argument
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  kwarg: <nil>
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  TOKEN "3"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 92
@@ -305,5 +305,4 @@ Module {
 .  .  }
 .  }
 }
-
 

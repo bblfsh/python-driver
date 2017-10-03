@@ -2,7 +2,7 @@ Status:  ok
 Errors: 
 UAST: 
 Module {
-.  Roles: File
+.  Roles: File,Module
 .  Children: {
 .  .  0: Assign {
 .  .  .  Roles: Binary,Assignment,Expression
@@ -16,7 +16,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Tuple {
-.  .  .  .  .  Roles: Literal,Tuple,Expression,Left
+.  .  .  .  .  Roles: Literal,Tuple,Expression,Primitive,Left
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  Line: 1
@@ -66,7 +66,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Tuple {
-.  .  .  .  .  Roles: Literal,Tuple,Expression,Right
+.  .  .  .  .  Roles: Literal,Tuple,Expression,Primitive,Right
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 7
 .  .  .  .  .  .  Line: 1
@@ -78,7 +78,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 7
@@ -95,8 +95,8 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: NoneLiteral {
-.  .  .  .  .  .  .  Roles: Literal,Null,Expression
-.  .  .  .  .  .  .  TOKEN "<nil>"
+.  .  .  .  .  .  .  Roles: Literal,Null,Expression,Primitive
+.  .  .  .  .  .  .  TOKEN "None"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 10
 .  .  .  .  .  .  .  .  Line: 1
@@ -118,5 +118,4 @@ Module {
 .  .  }
 .  }
 }
-
 

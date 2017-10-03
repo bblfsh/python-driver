@@ -2,7 +2,7 @@ Status:  ok
 Errors: 
 UAST: 
 Module {
-.  Roles: File
+.  Roles: File,Module
 .  Children: {
 .  .  0: Assign {
 .  .  .  Roles: Binary,Assignment,Expression
@@ -53,7 +53,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Num {
-.  .  .  .  .  Roles: Literal,Number,Expression,Right
+.  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Right
 .  .  .  .  .  TOKEN "3"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 4
@@ -120,7 +120,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Num {
-.  .  .  .  .  Roles: Literal,Number,Expression,Right
+.  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Right
 .  .  .  .  .  TOKEN "3.14"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 16
@@ -187,7 +187,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Str {
-.  .  .  .  .  Roles: Literal,String,Expression,Right
+.  .  .  .  .  Roles: Literal,String,Expression,Primitive,Right
 .  .  .  .  .  TOKEN "somestring"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 33
@@ -254,8 +254,8 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: NoneLiteral {
-.  .  .  .  .  Roles: Literal,Null,Expression,Right
-.  .  .  .  .  TOKEN "<nil>"
+.  .  .  .  .  Roles: Literal,Null,Expression,Primitive,Right
+.  .  .  .  .  TOKEN "None"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 59
 .  .  .  .  .  .  Line: 4
@@ -322,7 +322,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: List {
-.  .  .  .  .  Roles: Literal,List,Expression,Right
+.  .  .  .  .  Roles: Literal,List,Expression,Primitive,Right
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 75
 .  .  .  .  .  .  Line: 5
@@ -334,7 +334,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 76
@@ -351,7 +351,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 79
@@ -368,7 +368,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  TOKEN "3"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 82
@@ -437,7 +437,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Tuple {
-.  .  .  .  .  Roles: Literal,Tuple,Expression,Right
+.  .  .  .  .  Roles: Literal,Tuple,Expression,Primitive,Right
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 105
 .  .  .  .  .  .  Line: 6
@@ -449,7 +449,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 105
@@ -466,7 +466,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 108
@@ -483,7 +483,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  TOKEN "3"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 111
@@ -552,7 +552,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Set {
-.  .  .  .  .  Roles: Literal,Set,Expression,Right
+.  .  .  .  .  Roles: Literal,Set,Expression,Primitive,Right
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 134
 .  .  .  .  .  .  Line: 7
@@ -563,7 +563,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 135
@@ -580,7 +580,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 138
@@ -597,7 +597,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Literal,Number,Expression
+.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  TOKEN "3"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 141
@@ -666,7 +666,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Dict {
-.  .  .  .  .  Roles: Literal,Map,Expression,Right
+.  .  .  .  .  Roles: Literal,Map,Expression,Primitive,Right
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 162
 .  .  .  .  .  .  Line: 8
@@ -677,7 +677,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression,Map,Key
+.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Map,Key
 .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 163
@@ -694,7 +694,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression,Map,Key
+.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Map,Key
 .  .  .  .  .  .  .  TOKEN "b"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 171
@@ -711,7 +711,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Map,Value
+.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Map,Value
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 168
@@ -728,7 +728,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  3: Num {
-.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Map,Value
+.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Map,Value
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 176
@@ -875,7 +875,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier,Call,Argument,Positional,Identifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Function,Call,Positional,Argument,Name,Identifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "d"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 210
@@ -925,5 +925,4 @@ Module {
 .  .  }
 .  }
 }
-
 

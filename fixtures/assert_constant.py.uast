@@ -2,7 +2,7 @@ Status:  ok
 Errors: 
 UAST: 
 Module {
-.  Roles: File
+.  Roles: File,Module
 .  Children: {
 .  .  0: Assert {
 .  .  .  Roles: Assert,Statement
@@ -23,8 +23,8 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BoolLiteral {
-.  .  .  .  .  Roles: Literal,Boolean,Expression
-.  .  .  .  .  TOKEN "true"
+.  .  .  .  .  Roles: Literal,Boolean,Expression,Primitive
+.  .  .  .  .  TOKEN "True"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 7
 .  .  .  .  .  .  Line: 1
@@ -61,8 +61,8 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BoolLiteral {
-.  .  .  .  .  Roles: Literal,Boolean,Expression
-.  .  .  .  .  TOKEN "true"
+.  .  .  .  .  Roles: Literal,Boolean,Expression,Primitive
+.  .  .  .  .  TOKEN "True"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 20
 .  .  .  .  .  .  Line: 2
@@ -98,7 +98,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Str {
-.  .  .  .  .  Roles: Literal,String,Expression
+.  .  .  .  .  Roles: Literal,String,Expression,Primitive
 .  .  .  .  .  TOKEN "assert message"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 38
@@ -115,8 +115,8 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: BoolLiteral {
-.  .  .  .  .  Roles: Literal,Boolean,Expression
-.  .  .  .  .  TOKEN "true"
+.  .  .  .  .  Roles: Literal,Boolean,Expression,Primitive
+.  .  .  .  .  TOKEN "True"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 32
 .  .  .  .  .  .  Line: 3
@@ -136,5 +136,4 @@ Module {
 .  .  }
 .  }
 }
-
 
