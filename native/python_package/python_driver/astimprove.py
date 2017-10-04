@@ -503,9 +503,7 @@ class AstImprover(object):
         return node
 
     def visit_NoneType(self, node):
-        if node:
-            ret = node
-
+        ret = node if node else {}
         ret.update({"LiteralValue": "None",
                     "ast_type": "NoneLiteral"})
         return ret
