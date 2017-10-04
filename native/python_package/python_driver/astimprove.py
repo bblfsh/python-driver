@@ -189,9 +189,9 @@ class NoopExtractor(object):
             self._current_line = len(lines)
         return lines
 
-    def add_noops(self, node, visit_dict, root):
-        if not isinstance(visit_dict, dict):
-            return visit_dict
+    def add_noops(self, node, root):
+        if not isinstance(node, dict):
+            return node
 
         def _create_nooplines_list(startline, noops_previous):
             nooplines = []
@@ -208,10 +208,9 @@ class NoopExtractor(object):
 
         # Add all the noop (whitespace and comments) lines between the
         # last node and this one
-        noops_previous, startline, endline, endcol =\
-            self.previous_nooplines(node)
+        noops_previous, startline, endline, endcol = self.previous_nooplines(node)
         if noops_previous:
-            visit_dict['noops_previous'] = {
+            node['noops_previous'] = {
                 "ast_type": "PreviousNoops",
                 "lineno": startline,
                 "col_offset": 1,
@@ -225,7 +224,7 @@ class NoopExtractor(object):
         noops_sameline = self.sameline_remainder_noops(node)
         joined_sameline = ''.join([x['value'] for x in noops_sameline])
         if noops_sameline:
-            visit_dict['noops_sameline'] = {
+            node['noops_sameline'] = {
                 "ast_type": "SameLineNoops",
                 "lineno": node.get("lineno", 0),
                 "col_offset": noops_sameline[0]["colstart"],
@@ -239,7 +238,7 @@ class NoopExtractor(object):
             noops_remainder, startline, endline, endcol =\
                     self.remainder_noops()
             if noops_remainder:
-                visit_dict['noops_remainder'] = {
+                node['noops_remainder'] = {
                     "ast_type": "RemainderNoops",
                     "lineno": startline,
                     "col_offset": 1,
@@ -423,14 +422,16 @@ class AstImprover(object):
         # the ctx property always has a "Load"/"Store"/etc dictionary that
         # can be perfectly converted to a string value since they don't
         # hold anything more than the name
-        node_type = node["ast_type"] if isinstance(node, dict) else node.__class__.__name__
-        ctx = node.get("ctx")
-        if ctx:
-            node["ctx"] = ctx["ast_type"]
+        if isinstance(node, dict):
+            node_type = node["ast_type"]
+            if "ctx" in node:
+                node["ctx"] = node["ctx"]["ast_type"]
+        else:
+            node_type = node.__class__.__name__
 
         meth = getattr(self, "visit_" + node_type, self.visit_other)
         visit_result = meth(node)
-        self.noops_sync.add_noops(node, visit_result, root)
+        self.noops_sync.add_noops(node, root)
         self.pos_sync.sync_node_pos(visit_result)
 
         if not self.codestr:
@@ -489,8 +490,7 @@ class AstImprover(object):
                 node.update({"LiteralValue": "True" if node["value"] else "False",
                              "ast_type": "BoolLiteral"})
             elif repr_val == "None":
-                node.update({"LiteralValue": "None",
-                             "ast_type": "NoneLiteral"})
+                node = self.visit_NoneType(node)
         else:
             node["ast_type"] = "NameConstant"
         return node
@@ -501,6 +501,12 @@ class AstImprover(object):
             node.update({"n": {"real": node["n"].real,
                                "imag": node["n"].imag}})
         return node
+
+    def visit_NoneType(self, node):
+        ret = node if node else {}
+        ret.update({"LiteralValue": "None",
+                    "ast_type": "NoneLiteral"})
+        return ret
 
     def visit_other(self, node):
         for field in node.get("_fields", []):
