@@ -157,7 +157,7 @@ var AnnotationRules = On(Any).Self(
 		),
 
 		On(pyast.Attribute).Roles(uast.Identifier, uast.Expression).Children(
-			On(pyast.Name).Roles(uast.Identifier, uast.Qualified)),
+			On(pyast.Name).Roles(uast.Qualified)),
 
 		On(pyast.Call).Roles(uast.Function, uast.Call, uast.Expression).Children(
 			On(HasInternalRole("args")).Roles(uast.Function, uast.Call, uast.Positional, uast.Argument, uast.Name),
