@@ -48,6 +48,14 @@ var Transformers = []transformer.Tranformer{
 	positioner.NewFillOffsetFromLineCol(),
 }
 
+// Common for FunctionDef, AsyncFunctionDef and Lambda
+var argumentsAnn = On(pyast.Arguments).Roles(uast.Function, uast.Declaration, uast.Incomplete, uast.Argument).Children(
+	On(HasInternalRole("args")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.Name, uast.Identifier),
+	On(HasInternalRole("vararg")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.ArgsList, uast.Name, uast.Identifier),
+	On(HasInternalRole("kwarg")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.ArgsList, uast.Map, uast.Name, uast.Identifier),
+	On(HasInternalRole("kwonlyargs")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.ArgsList, uast.Map, uast.Name, uast.Identifier),
+)
+
 // AnnotationRules describes how a UAST should be annotated with `uast.Role`.
 //
 // https://godoc.org/gopkg.in/bblfsh/sdk.v1/uast/ann
@@ -113,6 +121,8 @@ var AnnotationRules = On(Any).Self(
 			On(HasInternalRole("n")).Roles(uast.Literal, uast.Number, uast.Expression),
 		),
 		On(pyast.BoolLiteral).Roles(uast.Literal, uast.Boolean, uast.Expression, uast.Primitive),
+		// another grouping node like "arguments"
+		On(pyast.BoolOp).Roles(uast.Expression, uast.Boolean, uast.Incomplete),
 		On(pyast.JoinedStr).Roles(uast.Literal, uast.String, uast.Expression, uast.Primitive).Children(
 			On(pyast.FormattedValue).Roles(uast.Expression, uast.Incomplete),
 		),
@@ -127,15 +137,8 @@ var AnnotationRules = On(Any).Self(
 
 		// FIXME: the FunctionDeclarationReceiver is not set for methods; it should be taken from the parent
 		// Type node Token (2 levels up) but the SDK doesn't allow this
-		On(pyast.FunctionDef).Roles(uast.Function, uast.Declaration, uast.Name, uast.Identifier).Children(
-			On(pyast.Arguments).Roles(uast.Function, uast.Declaration, uast.Incomplete, uast.Argument).Children(
-				On(HasInternalRole("args")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.Name, uast.Identifier),
-				On(HasInternalRole("vararg")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.ArgsList, uast.Name, uast.Identifier),
-				On(HasInternalRole("kwarg")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.ArgsList, uast.Map, uast.Name, uast.Identifier),
-				On(HasInternalRole("kwonlyargs")).Roles(uast.Function, uast.Declaration, uast.Argument, uast.ArgsList, uast.Map, uast.Name, uast.Identifier),
-			),
-		),
-		On(pyast.AsyncFunctionDef).Roles(uast.Function, uast.Declaration, uast.Name, uast.Identifier, uast.Incomplete),
+		On(pyast.FunctionDef).Roles(uast.Function, uast.Declaration, uast.Name, uast.Identifier).Children(argumentsAnn),
+		On(pyast.AsyncFunctionDef).Roles(uast.Function, uast.Declaration, uast.Name, uast.Identifier, uast.Incomplete).Children(argumentsAnn),
 		On(pyast.FuncDecorators).Roles(uast.Function, uast.Declaration, uast.Call, uast.Incomplete),
 		On(pyast.FuncDefBody).Roles(uast.Function, uast.Declaration, uast.Body),
 		// Default arguments: Python's AST puts default arguments on a sibling list to the one of
@@ -150,6 +153,7 @@ var AnnotationRules = On(Any).Self(
 		// FIXME: change to Function, Declaration, ArgumentS once the PR has been merged
 		On(pyast.Lambda).Roles(uast.Function, uast.Declaration, uast.Expression, uast.Incomplete).Children(
 			On(pyast.LambdaBody).Roles(uast.Function, uast.Declaration, uast.Body),
+			argumentsAnn,
 		),
 
 		On(pyast.Attribute).Roles(uast.Identifier, uast.Expression).Children(
