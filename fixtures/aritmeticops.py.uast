@@ -61,7 +61,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Add {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Add
+.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Add,Arithmetic
 .  .  .  .  .  .  .  TOKEN "+"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: op
@@ -128,7 +128,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Sub {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Substract
+.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Substract,Arithmetic
 .  .  .  .  .  .  .  TOKEN "-"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: op
@@ -195,7 +195,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Mult {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Multiply
+.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Multiply,Arithmetic
 .  .  .  .  .  .  .  TOKEN "*"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: op
@@ -262,7 +262,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Div {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Divide
+.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Divide,Arithmetic
 .  .  .  .  .  .  .  TOKEN "/"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: op
@@ -329,7 +329,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: FloorDiv {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Divide,Incomplete
+.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Divide,Arithmetic,Incomplete
 .  .  .  .  .  .  .  TOKEN "//"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: op
@@ -396,7 +396,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Mod {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Modulo
+.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Modulo,Arithmetic
 .  .  .  .  .  .  .  TOKEN "%%"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: op
@@ -463,7 +463,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Pow {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Incomplete
+.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Arithmetic,Incomplete
 .  .  .  .  .  .  .  TOKEN "**"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: op

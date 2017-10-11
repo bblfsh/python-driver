@@ -645,7 +645,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Eq {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Binary,Operator,Equal
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Binary,Operator,Equal,Relational
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "=="
 .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  }
@@ -750,7 +750,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Gt {
-.  .  .  .  .  .  .  .  .  Roles: Binary,Operator,GreaterThan
+.  .  .  .  .  .  .  .  .  Roles: Binary,Operator,GreaterThan,Relational
 .  .  .  .  .  .  .  .  .  TOKEN ">"
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
@@ -926,15 +926,15 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Gt {
-.  .  .  .  .  .  .  .  .  Roles: Binary,Operator,GreaterThan
+.  .  .  .  .  .  .  .  .  Roles: Binary,Operator,GreaterThan,Relational
 .  .  .  .  .  .  .  .  .  TOKEN ">"
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Gt {
-.  .  .  .  .  .  .  .  .  Roles: Binary,Operator,GreaterThan
+.  .  .  .  .  .  .  .  .  Roles: Binary,Operator,GreaterThan,Relational
 .  .  .  .  .  .  .  .  .  TOKEN ">"
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  2: Gt {
-.  .  .  .  .  .  .  .  .  Roles: Binary,Operator,GreaterThan
+.  .  .  .  .  .  .  .  .  Roles: Binary,Operator,GreaterThan,Relational
 .  .  .  .  .  .  .  .  .  TOKEN ">"
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }

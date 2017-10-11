@@ -71,26 +71,26 @@ var AnnotationRules = On(Any).Self(
 		),
 
 		// Comparison operators
-		On(pyast.Eq).Roles(uast.Binary, uast.Operator, uast.Equal),
-		On(pyast.NotEq).Roles(uast.Binary, uast.Operator, uast.Equal, uast.Not),
-		On(pyast.Lt).Roles(uast.Binary, uast.Operator, uast.LessThan),
-		On(pyast.LtE).Roles(uast.Binary, uast.Operator, uast.LessThanOrEqual),
-		On(pyast.Gt).Roles(uast.Binary, uast.Operator, uast.GreaterThan),
-		On(pyast.GtE).Roles(uast.Binary, uast.Operator, uast.GreaterThanOrEqual),
-		On(pyast.Is).Roles(uast.Binary, uast.Operator, uast.Identical),
-		On(pyast.IsNot).Roles(uast.Binary, uast.Operator, uast.Identical, uast.Not),
-		On(pyast.In).Roles(uast.Binary, uast.Operator, uast.Contains),
-		On(pyast.NotIn).Roles(uast.Binary, uast.Operator, uast.Contains, uast.Not),
+		On(pyast.Eq).Roles(uast.Binary, uast.Operator, uast.Equal, uast.Relational),
+		On(pyast.NotEq).Roles(uast.Binary, uast.Operator, uast.Equal, uast.Not, uast.Relational),
+		On(pyast.Lt).Roles(uast.Binary, uast.Operator, uast.LessThan, uast.Relational),
+		On(pyast.LtE).Roles(uast.Binary, uast.Operator, uast.LessThanOrEqual, uast.Relational),
+		On(pyast.Gt).Roles(uast.Binary, uast.Operator, uast.GreaterThan, uast.Relational),
+		On(pyast.GtE).Roles(uast.Binary, uast.Operator, uast.GreaterThanOrEqual, uast.Relational),
+		On(pyast.Is).Roles(uast.Binary, uast.Operator, uast.Identical, uast.Relational),
+		On(pyast.IsNot).Roles(uast.Binary, uast.Operator, uast.Identical, uast.Not, uast.Relational),
+		On(pyast.In).Roles(uast.Binary, uast.Operator, uast.Contains, uast.Relational),
+		On(pyast.NotIn).Roles(uast.Binary, uast.Operator, uast.Contains, uast.Not, uast.Relational),
 
-		// Aritmetic operators
-		On(pyast.Add).Roles(uast.Binary, uast.Operator, uast.Add),
-		On(pyast.Sub).Roles(uast.Binary, uast.Operator, uast.Substract),
-		On(pyast.Mult).Roles(uast.Binary, uast.Operator, uast.Multiply),
-		On(pyast.Div).Roles(uast.Binary, uast.Operator, uast.Divide),
-		On(pyast.Mod).Roles(uast.Binary, uast.Operator, uast.Modulo),
-		On(pyast.FloorDiv).Roles(uast.Binary, uast.Operator, uast.Divide, uast.Incomplete),
-		On(pyast.Pow).Roles(uast.Binary, uast.Operator, uast.Incomplete),
-		On(pyast.MatMult).Roles(uast.Binary, uast.Operator, uast.Multiply, uast.Incomplete),
+		// Arithmetic operators
+		On(pyast.Add).Roles(uast.Binary, uast.Operator, uast.Add, uast.Arithmetic),
+		On(pyast.Sub).Roles(uast.Binary, uast.Operator, uast.Substract, uast.Arithmetic),
+		On(pyast.Mult).Roles(uast.Binary, uast.Operator, uast.Multiply, uast.Arithmetic),
+		On(pyast.Div).Roles(uast.Binary, uast.Operator, uast.Divide, uast.Arithmetic),
+		On(pyast.Mod).Roles(uast.Binary, uast.Operator, uast.Modulo, uast.Arithmetic),
+		On(pyast.FloorDiv).Roles(uast.Binary, uast.Operator, uast.Divide, uast.Arithmetic, uast.Incomplete),
+		On(pyast.Pow).Roles(uast.Binary, uast.Operator, uast.Arithmetic, uast.Incomplete),
+		On(pyast.MatMult).Roles(uast.Binary, uast.Operator, uast.Multiply, uast.Arithmetic, uast.Incomplete),
 
 		// Bitwise operators
 		On(pyast.LShift).Roles(uast.Binary, uast.Operator, uast.Bitwise, uast.LeftShift),
@@ -151,7 +151,7 @@ var AnnotationRules = On(Any).Self(
 		On(pyast.AsyncFuncDecorators).Roles(uast.Function, uast.Declaration, uast.Call, uast.Incomplete),
 		On(pyast.AsyncFuncDefBody).Roles(uast.Function, uast.Declaration, uast.Body),
 		// FIXME: change to Function, Declaration, ArgumentS once the PR has been merged
-		On(pyast.Lambda).Roles(uast.Function, uast.Declaration, uast.Expression, uast.Incomplete).Children(
+		On(pyast.Lambda).Roles(uast.Function, uast.Declaration, uast.Expression, uast.Anonymous).Children(
 			On(pyast.LambdaBody).Roles(uast.Function, uast.Declaration, uast.Body),
 			argumentsAnn,
 		),
@@ -304,12 +304,12 @@ var AnnotationRules = On(Any).Self(
 		// have any semantic information by themselves and this we consider it comments
 		// (some preprocessors or linters can use them, the runtimes ignore them). The
 		// TOKEN will take the annotation in the UAST node so the information is keept in
-		// any case.  FIXME: need annotation or type UAST roles
-		On(pyast.AnnAssign).Roles(uast.Operator, uast.Binary, uast.Assignment, uast.Comment, uast.Incomplete),
-		On(HasInternalRole("annotation")).Roles(uast.Comment, uast.Incomplete),
-		On(HasInternalRole("returns")).Roles(uast.Comment, uast.Incomplete),
+		// any case.
+		On(pyast.AnnAssign).Roles(uast.Operator, uast.Binary, uast.Assignment),
+		On(HasInternalRole("annotation")).Roles(uast.Annotation),
+		On(HasInternalRole("returns")).Roles(uast.Annotation),
 
-		// Python very odd ellipsis operatouast. Has a special rule in tonoder synthetic tokens
+		// Python very odd ellipsis operator. Has a special rule in tonoder synthetic tokens
 		// map to load it with the token "PythonEllipsisuast.Operator" and gets the role uast.Identifier
 		On(pyast.Ellipsis).Roles(uast.Identifier, uast.Incomplete),
 
