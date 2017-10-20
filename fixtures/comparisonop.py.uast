@@ -180,7 +180,14 @@ Module {
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Num {
+.  .  .  .  .  .  0: Not {
+.  .  .  .  .  .  .  Roles: Binary,Operator,Boolean,Not
+.  .  .  .  .  .  .  TOKEN "!"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: op
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  1: Num {
 .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
@@ -195,13 +202,6 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: operand
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Not {
-.  .  .  .  .  .  .  Roles: Binary,Operator,Boolean,Not
-.  .  .  .  .  .  .  TOKEN "!"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }

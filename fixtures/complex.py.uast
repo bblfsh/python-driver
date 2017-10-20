@@ -65,7 +65,14 @@ Module {
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  .  1: Num {
+.  .  .  .  .  .  1: Mult {
+.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Multiply,Arithmetic
+.  .  .  .  .  .  .  TOKEN "*"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: op
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  2: Num {
 .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Expression,Primitive
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 9
@@ -84,13 +91,6 @@ Module {
 .  .  .  .  .  .  .  .  .  .  real: 0
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Mult {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Multiply,Arithmetic
-.  .  .  .  .  .  .  TOKEN "*"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }

@@ -71,7 +71,24 @@ Module {
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: PreviousNoops {
+.  .  .  .  0: alias {
+.  .  .  .  .  Roles: Import,Pathname,Identifier
+.  .  .  .  .  TOKEN "numpy"
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  alias.asname: np
+.  .  .  .  .  .  internalRole: names
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: alias.asname {
+.  .  .  .  .  .  .  Roles: Import,Alias,Identifier
+.  .  .  .  .  .  .  TOKEN "np"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  promotedPropertyString: true
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: PreviousNoops {
 .  .  .  .  .  Roles: Whitespace
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 31
@@ -98,23 +115,6 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: lines
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: alias {
-.  .  .  .  .  Roles: Import,Pathname,Identifier
-.  .  .  .  .  TOKEN "numpy"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  alias.asname: np
-.  .  .  .  .  .  internalRole: names
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: alias.asname {
-.  .  .  .  .  .  .  Roles: Import,Alias,Identifier
-.  .  .  .  .  .  .  TOKEN "np"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  promotedPropertyString: true
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }

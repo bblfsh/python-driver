@@ -284,7 +284,14 @@ Module {
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  .  1: Name {
+.  .  .  .  .  .  1: ExceptHandler.name {
+.  .  .  .  .  .  .  Roles: Try,Catch,Identifier
+.  .  .  .  .  .  .  TOKEN "e"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  promotedPropertyString: true
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  2: Name {
 .  .  .  .  .  .  .  Roles: Identifier,Expression
 .  .  .  .  .  .  .  TOKEN "SomeException"
 .  .  .  .  .  .  .  StartPosition: {
@@ -300,13 +307,6 @@ Module {
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  ctx: Load
 .  .  .  .  .  .  .  .  internalRole: type
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: ExceptHandler.name {
-.  .  .  .  .  .  .  Roles: Try,Catch,Identifier
-.  .  .  .  .  .  .  TOKEN "e"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  promotedPropertyString: true
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }
