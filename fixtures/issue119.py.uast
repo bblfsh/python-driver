@@ -22,7 +22,15 @@ Module {
 .  .  .  .  returns: <nil>
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: FunctionDef.body {
+.  .  .  .  0: arguments {
+.  .  .  .  .  Roles: Function,Declaration,Incomplete,Argument
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: args
+.  .  .  .  .  .  kwarg: <nil>
+.  .  .  .  .  .  vararg: <nil>
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: FunctionDef.body {
 .  .  .  .  .  Roles: Function,Declaration,Body
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  promotedPropertyList: true
@@ -203,7 +211,21 @@ Module {
 .  .  .  .  .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  .  .  0: Name {
+.  .  .  .  .  .  .  .  .  .  0: NoneLiteral {
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Null,Expression,Primitive,Map,Key
+.  .  .  .  .  .  .  .  .  .  .  TOKEN "None"
+.  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  internalRole: keys
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  1: NoneLiteral {
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Null,Expression,Primitive,Map,Key
+.  .  .  .  .  .  .  .  .  .  .  TOKEN "None"
+.  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  internalRole: keys
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  2: Name {
 .  .  .  .  .  .  .  .  .  .  .  Roles: Map,Value,Identifier,Expression
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
@@ -221,7 +243,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: values
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  1: Name {
+.  .  .  .  .  .  .  .  .  .  3: Name {
 .  .  .  .  .  .  .  .  .  .  .  Roles: Map,Value,Identifier,Expression
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "b"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
@@ -239,32 +261,10 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: values
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  2: NoneLiteral {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Null,Expression,Primitive,Map,Key
-.  .  .  .  .  .  .  .  .  .  .  TOKEN "None"
-.  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  internalRole: keys
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  3: NoneLiteral {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Null,Expression,Primitive,Map,Key
-.  .  .  .  .  .  .  .  .  .  .  TOKEN "None"
-.  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  internalRole: keys
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: arguments {
-.  .  .  .  .  Roles: Function,Declaration,Incomplete,Argument
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  kwarg: <nil>
-.  .  .  .  .  .  vararg: <nil>
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
