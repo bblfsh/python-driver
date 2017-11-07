@@ -67,7 +67,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Identifier,Expression,Expression,Left
+.  .  .  .  .  .  .  .  .  .  .  Roles: Identifier,Expression,Left
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "n"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 29
@@ -117,7 +117,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  2: Name {
-.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression,For,Expression
+.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression,For
 .  .  .  .  .  .  .  .  .  TOKEN "n"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 12
@@ -166,7 +166,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Identifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Identifier
 .  .  .  .  .  .  .  .  .  TOKEN "n"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 4
@@ -184,14 +184,14 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Mult {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Multiply,Arithmetic
+.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Multiply,Arithmetic
 .  .  .  .  .  .  .  .  .  TOKEN "*"
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  internalRole: op
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Expression,Primitive
+.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Primitive
 .  .  .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 6
