@@ -808,7 +808,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: BinOp {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Left,Expression,Binary
+.  .  .  .  .  .  .  Roles: Expression,Binary,Left
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 198
 .  .  .  .  .  .  .  .  Line: 9
@@ -819,7 +819,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Identifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Identifier
 .  .  .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 198
@@ -837,14 +837,14 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Add {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Add,Arithmetic
+.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Add,Arithmetic
 .  .  .  .  .  .  .  .  .  TOKEN "+"
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  internalRole: op
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  2: Name {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Identifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Identifier
 .  .  .  .  .  .  .  .  .  TOKEN "b"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 202
@@ -864,14 +864,14 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Sub {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Binary,Operator,Substract,Arithmetic
+.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Substract,Arithmetic
 .  .  .  .  .  .  .  TOKEN "-"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: op
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Call {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Right,Function,Call,Expression
+.  .  .  .  .  .  .  Roles: Expression,Binary,Right,Function,Call
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 206
 .  .  .  .  .  .  .  .  Line: 9
