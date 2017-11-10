@@ -1,4 +1,5 @@
 Status:  ok
+Language:  
 Errors: 
 UAST: 
 Module {
@@ -66,7 +67,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Attribute {
-.  .  .  .  .  .  .  Roles: Identifier,Expression,Call,Callee
+.  .  .  .  .  .  .  Roles: Call,Callee,Qualified,Identifier,Expression
 .  .  .  .  .  .  .  TOKEN "write"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 22
@@ -84,7 +85,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Attribute {
-.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression,Call,Receiver
+.  .  .  .  .  .  .  .  .  Roles: Call,Receiver,Qualified,Identifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "stdout"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 15

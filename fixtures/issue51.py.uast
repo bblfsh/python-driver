@@ -1,4 +1,5 @@
 Status:  ok
+Language:  
 Errors: 
 UAST: 
 Module {
@@ -27,7 +28,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Attribute {
-.  .  .  .  .  .  .  Roles: Identifier,Expression,Call,Callee
+.  .  .  .  .  .  .  Roles: Call,Callee,Qualified,Identifier,Expression
 .  .  .  .  .  .  .  TOKEN "figure"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 4
@@ -45,7 +46,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Qualified,Call,Receiver,Identifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Call,Receiver,Qualified,Identifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "plt"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 0
