@@ -156,9 +156,6 @@ var AnnotationRules = On(Any).Self(
 			argumentsAnn,
 		),
 
-		On(pyast.Attribute).Roles(uast.Identifier, uast.Expression).Children(
-			On(pyast.Name).Roles(uast.Qualified)),
-
 		On(pyast.Call).Roles(uast.Function, uast.Call, uast.Expression).Children(
 			On(HasInternalRole("args")).Roles(uast.Function, uast.Call, uast.Positional, uast.Argument, uast.Name),
 			On(HasInternalRole("keywords")).Roles(uast.Function, uast.Call, uast.Argument, uast.Name).Children(
@@ -185,6 +182,16 @@ var AnnotationRules = On(Any).Self(
 			On(HasInternalRole("op")).Roles(uast.Operator, uast.Binary),
 			On(HasInternalRole("target")).Roles(uast.Left),
 			On(HasInternalRole("value")).Roles(uast.Right),
+		),
+
+		// a.b.c ("a" and "b" will be Qualified, "c" will be just Identifier). Python does the
+		// reverse thing
+		On(pyast.Attribute).Self(
+			On(HasProperty("ctx", "Load")).Roles(uast.Qualified, uast.Identifier, uast.Expression),
+			On(HasProperty("ctx", "Store")).Roles(uast.Identifier, uast.Expression),
+			On(HasChild(pyast.Name)).Children(
+				On(Any).Roles(uast.Qualified), // Identifier and Expr added on all Name(s) below
+			),
 		),
 
 		On(pyast.Expression).Roles(uast.Expression),

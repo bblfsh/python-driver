@@ -1,4 +1,5 @@
 Status:  ok
+Language:  
 Errors: 
 UAST: 
 Module {
@@ -56,7 +57,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Attribute {
-.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression,Call,Callee
+.  .  .  .  .  .  .  .  .  Roles: Call,Callee,Qualified,Identifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "basename"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 21
@@ -74,7 +75,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Attribute {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Identifier,Expression,Call,Receiver
+.  .  .  .  .  .  .  .  .  .  .  Roles: Call,Receiver,Qualified,Identifier,Expression
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "path"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 16
@@ -116,7 +117,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Attribute {
-.  .  .  .  .  .  .  Roles: Identifier,Expression,Call,Callee
+.  .  .  .  .  .  .  Roles: Call,Callee,Qualified,Identifier,Expression
 .  .  .  .  .  .  .  TOKEN "which"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 7
@@ -134,7 +135,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Qualified,Call,Receiver,Identifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Call,Receiver,Qualified,Identifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "shutil"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 0
@@ -243,7 +244,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  3: Attribute {
-.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression,Call,Callee
+.  .  .  .  .  .  .  .  .  Roles: Call,Callee,Qualified,Identifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "join"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 63
@@ -261,7 +262,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Attribute {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Identifier,Expression,Call,Receiver
+.  .  .  .  .  .  .  .  .  .  .  Roles: Call,Receiver,Qualified,Identifier,Expression
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "path"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 58
@@ -321,7 +322,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Attribute {
-.  .  .  .  .  .  .  Roles: Identifier,Expression,Call,Callee
+.  .  .  .  .  .  .  Roles: Call,Callee,Qualified,Identifier,Expression
 .  .  .  .  .  .  .  TOKEN "copyfile"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 46
@@ -339,7 +340,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Qualified,Call,Receiver,Identifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Call,Receiver,Qualified,Identifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "shutil"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 39
@@ -431,7 +432,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Attribute {
-.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression,Call,Callee
+.  .  .  .  .  .  .  .  .  Roles: Call,Callee,Qualified,Identifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "abspath"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 133
@@ -449,7 +450,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Attribute {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Identifier,Expression,Call,Receiver
+.  .  .  .  .  .  .  .  .  .  .  Roles: Call,Receiver,Qualified,Identifier,Expression
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "path"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 128
@@ -491,7 +492,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Attribute {
-.  .  .  .  .  .  .  Roles: Identifier,Expression,Call,Callee
+.  .  .  .  .  .  .  Roles: Call,Callee,Qualified,Identifier,Expression
 .  .  .  .  .  .  .  TOKEN "info"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 104
@@ -509,7 +510,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Qualified,Call,Receiver,Identifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Call,Receiver,Qualified,Identifier,Expression
 .  .  .  .  .  .  .  .  .  TOKEN "log"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 100
