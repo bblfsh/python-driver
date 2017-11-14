@@ -186,12 +186,11 @@ var AnnotationRules = On(Any).Self(
 
 		// a.b.c ("a" and "b" will be Qualified, "c" will be just Identifier). Python does the
 		// reverse thing
-		On(pyast.Attribute).Self(
-			On(HasProperty("ctx", "Load")).Roles(uast.Qualified, uast.Identifier, uast.Expression),
-			On(HasProperty("ctx", "Store")).Roles(uast.Identifier, uast.Expression),
+		On(pyast.Attribute).Roles(uast.Identifier, uast.Expression).Self(
 			On(HasChild(pyast.Name)).Children(
-				On(Any).Roles(uast.Qualified), // Identifier and Expr added on all Name(s) below
+				On(pyast.Name).Roles(uast.Qualified), // Identifier and Expr added on all Name(s) below
 			),
+			On(HasInternalRole("value")).Roles(uast.Qualified),
 		),
 
 		On(pyast.Expression).Roles(uast.Expression),
