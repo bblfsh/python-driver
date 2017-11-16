@@ -3,7 +3,7 @@ import json
 from pydetector import detector
 from traceback import format_exc
 from python_driver.version import __version__
-from python_driver.astimprove import AstImprover
+from python_driver.astimprove import AstImprover, VisitResult
 from typing import (Any, IO, NewType, Tuple, cast, List, Iterator, Dict, Optional)
 
 # typing.AnyStr is bugged on this version of MyPy, so...:
@@ -81,7 +81,7 @@ class RequestProcessor(metaclass=abc.ABCMeta):
         pass
 
     def _return_error(self, filepath: AnyStr='', status: AnyStr='error',
-            ast: Optional[Dict[Any, Any]] = None) -> None:
+            ast: Optional[VisitResult] = None) -> None:
         """
         Build and send to stdout and error response. Also log
         the errors to the python_driver.log.
