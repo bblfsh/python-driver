@@ -116,7 +116,7 @@ class LocationFixer(object):
                 return t
 
         raise TokenNotFoundException("Token named '{}' not found in line {}"
-                .format(t.value, lineno))
+                .format(token_value, lineno))
 
     def sync_node_pos(self, nodedict: Node) -> None:
         """
