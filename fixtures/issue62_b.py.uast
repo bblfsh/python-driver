@@ -34,6 +34,7 @@ Module {
 .  .  .  .  .  Roles: Import,Pathname,Identifier
 .  .  .  .  .  TOKEN "Counter"
 .  .  .  .  .  Properties: {
+.  .  .  .  .  .  asname: <nil>
 .  .  .  .  .  .  internalRole: names
 .  .  .  .  .  }
 .  .  .  .  }
@@ -63,6 +64,7 @@ Module {
 .  .  .  .  .  Roles: Import,Pathname,Identifier
 .  .  .  .  .  TOKEN "SIMPLE_IDENTIFIER"
 .  .  .  .  .  Properties: {
+.  .  .  .  .  .  asname: <nil>
 .  .  .  .  .  .  internalRole: names
 .  .  .  .  .  }
 .  .  .  .  }
@@ -108,6 +110,7 @@ Module {
 .  .  .  .  .  Roles: Import,Pathname,Identifier
 .  .  .  .  .  TOKEN "Repo2Base"
 .  .  .  .  .  Properties: {
+.  .  .  .  .  .  asname: <nil>
 .  .  .  .  .  .  internalRole: names
 .  .  .  .  .  }
 .  .  .  .  }
@@ -357,11 +360,16 @@ Module {
 .  .  .  .  .  .  .  .  Line: 17
 .  .  .  .  .  .  .  .  Col: 22
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  returns: <nil>
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: arguments {
 .  .  .  .  .  .  .  .  .  Roles: Function,Declaration,Incomplete,Argument
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  internalRole: args
+.  .  .  .  .  .  .  .  .  .  kwarg: <nil>
+.  .  .  .  .  .  .  .  .  .  vararg: <nil>
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: arg {
@@ -378,6 +386,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 27
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  annotation: <nil>
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
@@ -413,6 +422,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 33
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  annotation: <nil>
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
@@ -430,6 +440,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 41
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  annotation: <nil>
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
@@ -865,11 +876,16 @@ Module {
 .  .  .  .  .  .  .  .  Line: 23
 .  .  .  .  .  .  .  .  Col: 21
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  returns: <nil>
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: arguments {
 .  .  .  .  .  .  .  .  .  Roles: Function,Declaration,Incomplete,Argument
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  internalRole: args
+.  .  .  .  .  .  .  .  .  .  kwarg: <nil>
+.  .  .  .  .  .  .  .  .  .  vararg: <nil>
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: arg {
@@ -886,6 +902,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 26
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  annotation: <nil>
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
@@ -921,6 +938,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 47
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  annotation: <nil>
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }

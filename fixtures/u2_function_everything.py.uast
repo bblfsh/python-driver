@@ -85,6 +85,7 @@ Module {
 .  .  .  .  .  .  .  .  Col: 17
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  annotation: <nil>
 .  .  .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
@@ -198,6 +199,7 @@ Module {
 .  .  .  .  .  .  .  .  Col: 46
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  annotation: <nil>
 .  .  .  .  .  .  .  .  internalRole: kwarg
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
@@ -215,6 +217,7 @@ Module {
 .  .  .  .  .  .  .  .  Col: 41
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  annotation: <nil>
 .  .  .  .  .  .  .  .  internalRole: vararg
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
@@ -433,6 +436,8 @@ Module {
 .  .  .  .  .  .  .  .  .  Roles: Function,Declaration,Incomplete,Argument
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  internalRole: args
+.  .  .  .  .  .  .  .  .  .  kwarg: <nil>
+.  .  .  .  .  .  .  .  .  .  vararg: <nil>
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: arg {
@@ -449,6 +454,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 16
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  annotation: <nil>
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
@@ -466,6 +472,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 19
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  annotation: <nil>
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
@@ -546,12 +553,15 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: body
+.  .  .  .  .  .  returns: <nil>
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: arguments {
 .  .  .  .  .  .  .  Roles: Function,Declaration,Incomplete,Argument
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: args
+.  .  .  .  .  .  .  .  kwarg: <nil>
+.  .  .  .  .  .  .  .  vararg: <nil>
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: FunctionDef.body {
@@ -1034,6 +1044,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: returns
+.  .  .  .  .  .  value: <nil>
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }

@@ -5,35 +5,38 @@ UAST:
 Module {
 .  Roles: File,Module
 .  Children: {
-.  .  0: ImportFrom {
+.  .  0: Import {
 .  .  .  Roles: Import,Declaration,Statement
 .  .  .  StartPosition: {
-.  .  .  .  Offset: 5
+.  .  .  .  Offset: 0
 .  .  .  .  Line: 1
-.  .  .  .  Col: 6
-.  .  .  }
-.  .  .  EndPosition: {
-.  .  .  .  Offset: 5
-.  .  .  .  Line: 1
-.  .  .  .  Col: 6
+.  .  .  .  Col: 1
 .  .  .  }
 .  .  .  Properties: {
-.  .  .  .  ImportFrom.module: a
 .  .  .  .  internalRole: body
-.  .  .  .  level: 0
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: ImportFrom.module {
+.  .  .  .  0: alias {
 .  .  .  .  .  Roles: Import,Pathname,Identifier
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  promotedPropertyString: true
+.  .  .  .  .  .  asname: <nil>
+.  .  .  .  .  .  internalRole: names
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: alias {
 .  .  .  .  .  Roles: Import,Pathname,Identifier
-.  .  .  .  .  TOKEN "*"
+.  .  .  .  .  TOKEN "b"
 .  .  .  .  .  Properties: {
+.  .  .  .  .  .  asname: <nil>
+.  .  .  .  .  .  internalRole: names
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  2: alias {
+.  .  .  .  .  Roles: Import,Pathname,Identifier
+.  .  .  .  .  TOKEN "c"
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  asname: <nil>
 .  .  .  .  .  .  internalRole: names
 .  .  .  .  .  }
 .  .  .  .  }
