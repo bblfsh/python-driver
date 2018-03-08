@@ -30,13 +30,13 @@
                                         "ast_type": "NoopLine",
                                         "col_offset": 1,
                                         "lineno": 1,
-                                        "noop_line": "# comment above\n"
+                                        "noop_line": " comment above\n"
                                     },
                                     {
                                         "ast_type": "NoopLine",
                                         "col_offset": 1,
                                         "lineno": 2,
-                                        "noop_line": "# second comment above\n"
+                                        "noop_line": " second comment above\n"
                                     }
                                 ]
                             },
@@ -46,7 +46,9 @@
                                 "end_col_offset": 29,
                                 "end_lineno": 3,
                                 "lineno": 3,
-                                "noop_line": "# line trailing comment"
+                                "noop_line": [
+                                    "# line trailing comment"
+                                ]
                             }
                         }
                     ],
@@ -64,20 +66,20 @@
                 "ast_type": "RemainderNoops",
                 "col_offset": 1,
                 "end_col_offset": 1,
-                "end_lineno": 5,
+                "end_lineno": 8,
                 "lineno": 4,
                 "lines": [
                     {
                         "ast_type": "NoopLine",
                         "col_offset": 1,
                         "lineno": 4,
-                        "noop_line": "# file trailing comment\n"
+                        "noop_line": " file trailing comment\n"
                     },
                     {
                         "ast_type": "NoopLine",
                         "col_offset": 1,
-                        "lineno": 5,
-                        "noop_line": "# second file trailing comment\n"
+                        "lineno": 8,
+                        "noop_line": " second file trailing comment\n"
                     }
                 ]
             }

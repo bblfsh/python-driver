@@ -322,7 +322,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  1: RemainderNoops {
-.  .  .  Roles: Whitespace
+.  .  .  Roles: Noop
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 79
 .  .  .  .  Line: 6
@@ -335,21 +335,6 @@ Module {
 .  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: noops_remainder
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: NoopLine {
-.  .  .  .  .  Roles: Comment
-.  .  .  .  .  TOKEN "
-"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 79
-.  .  .  .  .  .  Line: 6
-.  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: lines
-.  .  .  .  .  }
-.  .  .  .  }
 .  .  .  }
 .  .  }
 .  }

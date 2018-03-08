@@ -198,11 +198,17 @@ var AnnotationRules = On(Any).Self(
 		On(pyast.Name).Roles(uast.Identifier, uast.Expression),
 		// Comments and non significative whitespace
 		On(pyast.SameLineNoops).Roles(uast.Comment),
-		On(pyast.PreviousNoops).Roles(uast.Whitespace).Children(
-			On(HasInternalRole("lines")).Roles(uast.Comment),
+		On(pyast.PreviousNoops).Roles(uast.Noop).Children(
+			On(HasInternalRole("lines")).Self(
+				On(HasProperty("noop_line", "\n")).Roles(uast.Noop, uast.Whitespace),
+				On(Not(HasProperty("noop_line", "\n"))).Roles(uast.Noop, uast.Comment),
+			),
 		),
-		On(pyast.RemainderNoops).Roles(uast.Whitespace).Children(
-			On(HasInternalRole("lines")).Roles(uast.Comment),
+		On(pyast.RemainderNoops).Roles(uast.Noop).Children(
+			On(HasInternalRole("lines")).Self(
+				On(HasProperty("noop_line", "\n")).Roles(uast.Noop, uast.Whitespace),
+				On(Not(HasProperty("noop_line", "\n"))).Roles(uast.Noop, uast.Comment),
+			),
 		),
 
 		// TODO: check what Constant nodes are generated in the python AST and improve this

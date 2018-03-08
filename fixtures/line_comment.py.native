@@ -23,13 +23,13 @@
                                 "ast_type": "NoopLine",
                                 "col_offset": 1,
                                 "lineno": 1,
-                                "noop_line": "# thse are\n"
+                                "noop_line": " thse are\n"
                             },
                             {
                                 "ast_type": "NoopLine",
                                 "col_offset": 1,
                                 "lineno": 2,
-                                "noop_line": "# previous comments\n"
+                                "noop_line": " previous comments\n"
                             }
                         ]
                     },
@@ -39,7 +39,9 @@
                         "end_col_offset": 23,
                         "end_lineno": 3,
                         "lineno": 3,
-                        "noop_line": "# sameline comment"
+                        "noop_line": [
+                            "# sameline comment"
+                        ]
                     }
                 }
             ],
@@ -53,20 +55,14 @@
                     {
                         "ast_type": "NoopLine",
                         "col_offset": 1,
-                        "lineno": 4,
-                        "noop_line": "\n"
-                    },
-                    {
-                        "ast_type": "NoopLine",
-                        "col_offset": 1,
                         "lineno": 5,
-                        "noop_line": "# remainder comment and newline\n"
+                        "noop_line": " remainder comment and newline\n"
                     },
                     {
                         "ast_type": "NoopLine",
                         "col_offset": 1,
                         "lineno": 6,
-                        "noop_line": "# last remainder comment line\n"
+                        "noop_line": " last remainder comment line\n"
                     }
                 ]
             }

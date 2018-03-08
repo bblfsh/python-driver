@@ -475,7 +475,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  7: RemainderNoops {
-.  .  .  Roles: Whitespace
+.  .  .  Roles: Noop
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 30
 .  .  .  .  Line: 8
@@ -491,8 +491,8 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: NoopLine {
-.  .  .  .  .  Roles: Comment
-.  .  .  .  .  TOKEN "# 1@2 FIXME: matmul
+.  .  .  .  .  Roles: Noop,Comment
+.  .  .  .  .  TOKEN " 1@2 FIXME: matmul
 "
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 30
