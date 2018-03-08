@@ -45,7 +45,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: PreviousNoops {
-.  .  .  .  .  .  .  .  .  Roles: Whitespace
+.  .  .  .  .  .  .  .  .  Roles: Noop
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  .  .  .  .  Line: 1
@@ -61,8 +61,8 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: NoopLine {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  .  .  .  .  TOKEN "# before comment
+.  .  .  .  .  .  .  .  .  .  .  Roles: Noop,Comment
+.  .  .  .  .  .  .  .  .  .  .  TOKEN " before comment
 "
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 0
@@ -77,7 +77,7 @@ Module {
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: SameLineNoops {
 .  .  .  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  .  .  TOKEN "# linetrailing comment"
+.  .  .  .  .  .  .  .  .  TOKEN "[# linetrailing comment]"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 20
 .  .  .  .  .  .  .  .  .  .  Line: 2
@@ -123,7 +123,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  1: RemainderNoops {
-.  .  .  Roles: Whitespace
+.  .  .  Roles: Noop
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 44
 .  .  .  .  Line: 3
@@ -139,8 +139,8 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: NoopLine {
-.  .  .  .  .  Roles: Comment
-.  .  .  .  .  TOKEN "# remaining comment
+.  .  .  .  .  Roles: Noop,Comment
+.  .  .  .  .  TOKEN " remaining comment
 "
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 44

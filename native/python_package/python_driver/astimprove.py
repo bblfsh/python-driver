@@ -212,12 +212,16 @@ class NoopExtractor(object):
             nooplines: List[Node] = []
             curline = startline
             for noopline in noops_previous:
-                nooplines.append({
-                    "ast_type": "NoopLine",
-                    "noop_line": noopline,
-                    "lineno": curline,
-                    "col_offset": 1,
-                })
+                if noopline != '\n':
+                    if noopline.lstrip().startswith('#'):
+                        noopline = noopline.lstrip()[1:]
+
+                    nooplines.append({
+                        "ast_type": "NoopLine",
+                        "noop_line": noopline,
+                        "lineno": curline,
+                        "col_offset": 1,
+                    })
                 curline += 1
             return nooplines
 
@@ -237,7 +241,13 @@ class NoopExtractor(object):
         # Other noops at the end of its significative line except the implicit
         # finishing newline
         noops_sameline: List[Token] = [i for i in self.sameline_remainder_noops(node) if i]
-        joined_sameline = ''.join([tok.value for tok in noops_sameline])
+
+        joined_sameline = []
+        for tok in noops_sameline:
+            if tok.value.lstrip().startswith('\n'):
+                joined_sameline.append(tok.value.lstrip()[1:])
+            else:
+                joined_sameline.append(tok.value)
 
         if noops_sameline:
             node['noops_sameline'] = {

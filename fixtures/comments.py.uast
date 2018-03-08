@@ -35,7 +35,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: PreviousNoops {
-.  .  .  .  .  .  .  Roles: Whitespace
+.  .  .  .  .  .  .  Roles: Noop
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  .  .  Line: 1
@@ -51,8 +51,8 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: NoopLine {
-.  .  .  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  .  .  TOKEN "# comment above
+.  .  .  .  .  .  .  .  .  Roles: Noop,Comment
+.  .  .  .  .  .  .  .  .  TOKEN " comment above
 "
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 0
@@ -64,8 +64,8 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: NoopLine {
-.  .  .  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  .  .  TOKEN "# second comment above
+.  .  .  .  .  .  .  .  .  Roles: Noop,Comment
+.  .  .  .  .  .  .  .  .  TOKEN " second comment above
 "
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 16
@@ -80,7 +80,7 @@ Module {
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: SameLineNoops {
 .  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  TOKEN "# line trailing comment"
+.  .  .  .  .  .  .  TOKEN "[# line trailing comment]"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 44
 .  .  .  .  .  .  .  .  Line: 3
@@ -117,15 +117,15 @@ Module {
 .  .  .  }
 .  .  }
 .  .  1: RemainderNoops {
-.  .  .  Roles: Whitespace
+.  .  .  Roles: Noop
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 69
 .  .  .  .  Line: 4
 .  .  .  .  Col: 1
 .  .  .  }
 .  .  .  EndPosition: {
-.  .  .  .  Offset: 93
-.  .  .  .  Line: 5
+.  .  .  .  Offset: 96
+.  .  .  .  Line: 8
 .  .  .  .  Col: 1
 .  .  .  }
 .  .  .  Properties: {
@@ -133,8 +133,8 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: NoopLine {
-.  .  .  .  .  Roles: Comment
-.  .  .  .  .  TOKEN "# file trailing comment
+.  .  .  .  .  Roles: Noop,Comment
+.  .  .  .  .  TOKEN " file trailing comment
 "
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 69
@@ -146,12 +146,12 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: NoopLine {
-.  .  .  .  .  Roles: Comment
-.  .  .  .  .  TOKEN "# second file trailing comment
+.  .  .  .  .  Roles: Noop,Comment
+.  .  .  .  .  TOKEN " second file trailing comment
 "
 .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 93
-.  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  Offset: 96
+.  .  .  .  .  .  Line: 8
 .  .  .  .  .  .  Col: 1
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {

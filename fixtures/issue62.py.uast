@@ -34,7 +34,6 @@ Module {
 .  .  .  .  .  Roles: Import,Pathname,Identifier
 .  .  .  .  .  TOKEN "path"
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  asname: <nil>
 .  .  .  .  .  .  internalRole: names
 .  .  .  .  .  }
 .  .  .  .  }
@@ -55,7 +54,6 @@ Module {
 .  .  .  .  .  Roles: Import,Pathname,Identifier
 .  .  .  .  .  TOKEN "sys"
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  asname: <nil>
 .  .  .  .  .  .  internalRole: names
 .  .  .  .  .  }
 .  .  .  .  }
@@ -90,7 +88,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: PreviousNoops {
-.  .  .  .  .  Roles: Whitespace
+.  .  .  .  .  Roles: Noop
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 31
 .  .  .  .  .  .  Line: 3
@@ -103,21 +101,6 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: noops_previous
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: NoopLine {
-.  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  TOKEN "
-"
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 31
-.  .  .  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  .  .  Col: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: lines
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }

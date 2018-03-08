@@ -31,7 +31,7 @@
                                         "ast_type": "NoopLine",
                                         "col_offset": 1,
                                         "lineno": 1,
-                                        "noop_line": "# before comment\n"
+                                        "noop_line": " before comment\n"
                                     }
                                 ]
                             },
@@ -41,7 +41,9 @@
                                 "end_col_offset": 26,
                                 "end_lineno": 2,
                                 "lineno": 2,
-                                "noop_line": "# linetrailing comment"
+                                "noop_line": [
+                                    "# linetrailing comment"
+                                ]
                             }
                         },
                         "lineno": 2,
@@ -70,7 +72,7 @@
                         "ast_type": "NoopLine",
                         "col_offset": 1,
                         "lineno": 3,
-                        "noop_line": "# remaining comment\n"
+                        "noop_line": " remaining comment\n"
                     }
                 ]
             }

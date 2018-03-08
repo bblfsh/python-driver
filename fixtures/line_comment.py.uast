@@ -23,7 +23,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: PreviousNoops {
-.  .  .  .  .  Roles: Whitespace
+.  .  .  .  .  Roles: Noop
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  Line: 1
@@ -39,8 +39,8 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: NoopLine {
-.  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  TOKEN "# thse are
+.  .  .  .  .  .  .  Roles: Noop,Comment
+.  .  .  .  .  .  .  TOKEN " thse are
 "
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 0
@@ -52,8 +52,8 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: NoopLine {
-.  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  TOKEN "# previous comments
+.  .  .  .  .  .  .  Roles: Noop,Comment
+.  .  .  .  .  .  .  TOKEN " previous comments
 "
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 11
@@ -68,7 +68,7 @@ Module {
 .  .  .  .  }
 .  .  .  .  1: SameLineNoops {
 .  .  .  .  .  Roles: Comment
-.  .  .  .  .  TOKEN "# sameline comment"
+.  .  .  .  .  TOKEN "[# sameline comment]"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 35
 .  .  .  .  .  .  Line: 3
@@ -86,7 +86,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  1: RemainderNoops {
-.  .  .  Roles: Whitespace
+.  .  .  Roles: Noop
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 55
 .  .  .  .  Line: 4
@@ -102,21 +102,8 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: NoopLine {
-.  .  .  .  .  Roles: Comment
-.  .  .  .  .  TOKEN "
-"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 55
-.  .  .  .  .  .  Line: 4
-.  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: lines
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: NoopLine {
-.  .  .  .  .  Roles: Comment
-.  .  .  .  .  TOKEN "# remainder comment and newline
+.  .  .  .  .  Roles: Noop,Comment
+.  .  .  .  .  TOKEN " remainder comment and newline
 "
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 56
@@ -127,9 +114,9 @@ Module {
 .  .  .  .  .  .  internalRole: lines
 .  .  .  .  .  }
 .  .  .  .  }
-.  .  .  .  2: NoopLine {
-.  .  .  .  .  Roles: Comment
-.  .  .  .  .  TOKEN "# last remainder comment line
+.  .  .  .  1: NoopLine {
+.  .  .  .  .  Roles: Noop,Comment
+.  .  .  .  .  TOKEN " last remainder comment line
 "
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 88
