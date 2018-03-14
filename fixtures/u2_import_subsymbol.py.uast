@@ -1,0 +1,112 @@
+Status:  ok
+Language:  python
+Errors: 
+UAST: 
+Module {
+.  Roles: File,Module
+.  Children: {
+.  .  0: Import {
+.  .  .  Roles: Import,Declaration,Statement
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 0
+.  .  .  .  Line: 1
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: body
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: alias {
+.  .  .  .  .  Roles: Import,Pathname,Identifier
+.  .  .  .  .  TOKEN "a.b"
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: names
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  .  1: ImportFrom {
+.  .  .  Roles: Import,Declaration,Statement
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 16
+.  .  .  .  Line: 2
+.  .  .  .  Col: 6
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 16
+.  .  .  .  Line: 2
+.  .  .  .  Col: 6
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  ImportFrom.module: f
+.  .  .  .  internalRole: body
+.  .  .  .  level: 0
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: ImportFrom.module {
+.  .  .  .  .  Roles: Import,Pathname,Identifier
+.  .  .  .  .  TOKEN "f"
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  promotedPropertyString: true
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: alias {
+.  .  .  .  .  Roles: Import,Pathname,Identifier
+.  .  .  .  .  TOKEN "g"
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: names
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  .  2: ImportFrom {
+.  .  .  Roles: Import,Declaration,Statement
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 32
+.  .  .  .  Line: 3
+.  .  .  .  Col: 6
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 32
+.  .  .  .  Line: 3
+.  .  .  .  Col: 6
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  ImportFrom.module: h
+.  .  .  .  internalRole: body
+.  .  .  .  level: 0
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: ImportFrom.module {
+.  .  .  .  .  Roles: Import,Pathname,Identifier
+.  .  .  .  .  TOKEN "h"
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  promotedPropertyString: true
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: alias {
+.  .  .  .  .  Roles: Import,Pathname,Identifier
+.  .  .  .  .  TOKEN "i"
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: names
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  2: alias {
+.  .  .  .  .  Roles: Import,Pathname,Identifier
+.  .  .  .  .  TOKEN "j"
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: names
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  3: alias {
+.  .  .  .  .  Roles: Import,Pathname,Identifier
+.  .  .  .  .  TOKEN "k"
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: names
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  }
+}
+

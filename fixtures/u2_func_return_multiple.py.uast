@@ -1,0 +1,107 @@
+Status:  ok
+Language:  python
+Errors: 
+UAST: 
+Module {
+.  Roles: File,Module
+.  Children: {
+.  .  0: FunctionDef {
+.  .  .  Roles: Function,Declaration,Name,Identifier
+.  .  .  TOKEN "testfnc1"
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 4
+.  .  .  .  Line: 1
+.  .  .  .  Col: 5
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 11
+.  .  .  .  Line: 1
+.  .  .  .  Col: 12
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: body
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: arguments {
+.  .  .  .  .  Roles: Function,Declaration,Incomplete,Argument
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: args
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: FunctionDef.body {
+.  .  .  .  .  Roles: Function,Declaration,Body
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: Return {
+.  .  .  .  .  .  .  Roles: Return,Statement
+.  .  .  .  .  .  .  TOKEN "return"
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 20
+.  .  .  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  .  .  Col: 5
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 25
+.  .  .  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  .  .  Col: 10
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  0: Tuple {
+.  .  .  .  .  .  .  .  .  Roles: Literal,Tuple,Expression,Primitive
+.  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 27
+.  .  .  .  .  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  .  .  .  .  Col: 12
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  .  .  .  .  internalRole: value
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  .  .  0: Num {
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
+.  .  .  .  .  .  .  .  .  .  .  TOKEN "1"
+.  .  .  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 27
+.  .  .  .  .  .  .  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  .  .  .  .  .  .  Col: 12
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 27
+.  .  .  .  .  .  .  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  .  .  .  .  .  .  Col: 12
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  internalRole: elts
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  1: Num {
+.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
+.  .  .  .  .  .  .  .  .  .  .  TOKEN "2"
+.  .  .  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 30
+.  .  .  .  .  .  .  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  .  .  .  .  .  .  Col: 15
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 30
+.  .  .  .  .  .  .  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  .  .  .  .  .  .  Col: 15
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  internalRole: elts
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  }
+}
+

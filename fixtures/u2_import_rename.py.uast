@@ -1,0 +1,84 @@
+Status:  ok
+Language:  python
+Errors: 
+UAST: 
+Module {
+.  Roles: File,Module
+.  Children: {
+.  .  0: Import {
+.  .  .  Roles: Import,Declaration,Statement
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 0
+.  .  .  .  Line: 1
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: body
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: alias {
+.  .  .  .  .  Roles: Import,Pathname,Identifier
+.  .  .  .  .  TOKEN "a"
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  alias.asname: b
+.  .  .  .  .  .  internalRole: names
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: alias.asname {
+.  .  .  .  .  .  .  Roles: Import,Alias,Identifier
+.  .  .  .  .  .  .  TOKEN "b"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  promotedPropertyString: true
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  .  1: ImportFrom {
+.  .  .  Roles: Import,Declaration,Statement
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 19
+.  .  .  .  Line: 2
+.  .  .  .  Col: 6
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 19
+.  .  .  .  Line: 2
+.  .  .  .  Col: 6
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  ImportFrom.module: c
+.  .  .  .  internalRole: body
+.  .  .  .  level: 0
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: ImportFrom.module {
+.  .  .  .  .  Roles: Import,Pathname,Identifier
+.  .  .  .  .  TOKEN "c"
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  promotedPropertyString: true
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: alias {
+.  .  .  .  .  Roles: Import,Pathname,Identifier
+.  .  .  .  .  TOKEN "e"
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  alias.asname: f
+.  .  .  .  .  .  internalRole: names
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: alias.asname {
+.  .  .  .  .  .  .  Roles: Import,Alias,Identifier
+.  .  .  .  .  .  .  TOKEN "f"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  promotedPropertyString: true
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  }
+}
+
