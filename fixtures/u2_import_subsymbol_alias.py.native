@@ -1,0 +1,40 @@
+{
+    "status": "ok",
+    "language": "python",
+    "errors": [],
+    "ast": {
+        "PY3AST": {
+            "ast_type": "Module",
+            "body": [
+                {
+                    "ast_type": "Import",
+                    "col_offset": 1,
+                    "lineno": 1,
+                    "names": [
+                        {
+                            "asname": "z",
+                            "ast_type": "alias",
+                            "name": "x.y"
+                        }
+                    ]
+                },
+                {
+                    "ast_type": "ImportFrom",
+                    "col_offset": 6,
+                    "end_col_offset": 6,
+                    "end_lineno": 2,
+                    "level": 0,
+                    "lineno": 2,
+                    "module": "a",
+                    "names": [
+                        {
+                            "asname": "c",
+                            "ast_type": "alias",
+                            "name": "b"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

@@ -1,3 +1,3 @@
 class testcls1:
-    def testfnc1(self):
+    class testcls2:
         pass

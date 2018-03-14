@@ -1,0 +1,225 @@
+Status:  ok
+Language:  python
+Errors: 
+UAST: 
+Module {
+.  Roles: File,Module
+.  Children: {
+.  .  0: FunctionDef {
+.  .  .  Roles: Function,Declaration,Name,Identifier
+.  .  .  TOKEN "testfnc1"
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 4
+.  .  .  .  Line: 1
+.  .  .  .  Col: 5
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 11
+.  .  .  .  Line: 1
+.  .  .  .  Col: 12
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: body
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: arguments {
+.  .  .  .  .  Roles: Function,Declaration,Incomplete,Argument
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: args
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: arg {
+.  .  .  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
+.  .  .  .  .  .  .  TOKEN "a"
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 13
+.  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  Col: 14
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 13
+.  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  Col: 14
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: args
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  0: Name {
+.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression,Annotation
+.  .  .  .  .  .  .  .  .  TOKEN "int"
+.  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 16
+.  .  .  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  .  .  Col: 17
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 18
+.  .  .  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  .  .  Col: 19
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  .  .  .  .  internalRole: annotation
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  1: arg {
+.  .  .  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
+.  .  .  .  .  .  .  TOKEN "b"
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 21
+.  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  Col: 22
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 21
+.  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  Col: 22
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: args
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  0: Name {
+.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression,Annotation
+.  .  .  .  .  .  .  .  .  TOKEN "str"
+.  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 24
+.  .  .  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  .  .  Col: 25
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 26
+.  .  .  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  .  .  Col: 27
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  .  .  .  .  internalRole: annotation
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  2: arg {
+.  .  .  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
+.  .  .  .  .  .  .  TOKEN "c"
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 29
+.  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  Col: 30
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 29
+.  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  Col: 30
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: args
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  0: Name {
+.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression,Annotation
+.  .  .  .  .  .  .  .  .  TOKEN "List"
+.  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 32
+.  .  .  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  .  .  Col: 33
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 35
+.  .  .  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  .  .  Col: 36
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  .  .  .  .  internalRole: annotation
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  3: arg {
+.  .  .  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
+.  .  .  .  .  .  .  TOKEN "d"
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 38
+.  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  Col: 39
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 38
+.  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  Col: 39
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: args
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  0: Name {
+.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression,Annotation
+.  .  .  .  .  .  .  .  .  TOKEN "MyType"
+.  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 41
+.  .  .  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  .  .  Col: 42
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 46
+.  .  .  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  .  .  Col: 47
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  .  .  .  .  internalRole: annotation
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: FunctionDef.body {
+.  .  .  .  .  Roles: Function,Declaration,Body
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: Pass {
+.  .  .  .  .  .  .  Roles: Noop,Statement
+.  .  .  .  .  .  .  TOKEN "pass"
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 61
+.  .  .  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  .  .  Col: 5
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 64
+.  .  .  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  .  .  Col: 8
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  2: Name {
+.  .  .  .  .  Roles: Identifier,Expression,Annotation
+.  .  .  .  .  TOKEN "str"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 52
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 53
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 54
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 55
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  internalRole: returns
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  }
+}
+

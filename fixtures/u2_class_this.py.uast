@@ -30,7 +30,7 @@ Module {
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: FunctionDef {
 .  .  .  .  .  .  .  Roles: Function,Declaration,Name,Identifier
-.  .  .  .  .  .  .  TOKEN "__init__"
+.  .  .  .  .  .  .  TOKEN "testfnc1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 24
 .  .  .  .  .  .  .  .  Line: 2
@@ -81,18 +81,84 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 9
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  .  .  .  .  0: Name {
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Left,Identifier,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "a"
+.  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 48
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 9
+.  .  .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 48
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 9
+.  .  .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  ctx: Store
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  internalRole: targets
+.  .  .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  .  1: Attribute {
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Right,Identifier,Expression,Qualified
+.  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "__class__"
+.  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 57
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 18
+.  .  .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 65
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 26
+.  .  .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  internalRole: value
+.  .  .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Name {
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Qualified,Identifier,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "self"
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 52
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 13
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 55
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 16
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  internalRole: value
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  1: Assign {
+.  .  .  .  .  .  .  .  .  .  .  Roles: Binary,Assignment,Expression
+.  .  .  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 75
+.  .  .  .  .  .  .  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  .  .  .  .  .  .  Col: 9
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Attribute {
 .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Left,Identifier,Expression
-.  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "instance_member"
+.  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "var"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 53
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 80
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 4
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 14
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 67
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 28
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 82
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 16
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  ctx: Store
@@ -103,13 +169,13 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Qualified,Identifier,Expression
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "self"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 48
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 75
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 4
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 9
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 51
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 78
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 4
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 12
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Properties: {
@@ -121,16 +187,16 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  1: Num {
 .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Right
-.  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "2"
+.  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 71
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 32
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 86
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 20
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 71
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 32
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 86
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 20
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  internalRole: value

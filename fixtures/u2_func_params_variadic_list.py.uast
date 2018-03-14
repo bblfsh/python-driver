@@ -1,0 +1,76 @@
+Status:  ok
+Language:  python
+Errors: 
+UAST: 
+Module {
+.  Roles: File,Module
+.  Children: {
+.  .  0: FunctionDef {
+.  .  .  Roles: Function,Declaration,Name,Identifier
+.  .  .  TOKEN "testfnc1"
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 4
+.  .  .  .  Line: 1
+.  .  .  .  Col: 5
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 11
+.  .  .  .  Line: 1
+.  .  .  .  Col: 12
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: body
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: arguments {
+.  .  .  .  .  Roles: Function,Declaration,Incomplete,Argument
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: args
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: arg {
+.  .  .  .  .  .  .  Roles: Function,Declaration,Argument,ArgsList,Name,Identifier
+.  .  .  .  .  .  .  TOKEN "a"
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 14
+.  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  Col: 15
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 14
+.  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  Col: 15
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: vararg
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: FunctionDef.body {
+.  .  .  .  .  Roles: Function,Declaration,Body
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: Pass {
+.  .  .  .  .  .  .  Roles: Noop,Statement
+.  .  .  .  .  .  .  TOKEN "pass"
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 18
+.  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  Col: 19
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 21
+.  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  Col: 22
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  }
+}
+

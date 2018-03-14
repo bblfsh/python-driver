@@ -1,0 +1,195 @@
+Status:  ok
+Language:  python
+Errors: 
+UAST: 
+Module {
+.  Roles: File,Module
+.  Children: {
+.  .  0: ClassDef {
+.  .  .  Roles: Type,Declaration,Identifier,Statement
+.  .  .  TOKEN "testcls1"
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 0
+.  .  .  .  Line: 1
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: body
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: ClassDef.body {
+.  .  .  .  .  Roles: Type,Declaration,Body
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: Pass {
+.  .  .  .  .  .  .  Roles: Noop,Statement
+.  .  .  .  .  .  .  TOKEN "pass"
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 30
+.  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  Col: 5
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 33
+.  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  Col: 8
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: ClassDef.decorator_list {
+.  .  .  .  .  Roles: Type,Call,Incomplete
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: Name {
+.  .  .  .  .  .  .  Roles: Identifier,Expression
+.  .  .  .  .  .  .  TOKEN "testtag1"
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 1
+.  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  Col: 2
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 8
+.  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  Col: 9
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  .  1: ClassDef {
+.  .  .  Roles: Type,Declaration,Identifier,Statement
+.  .  .  TOKEN "testcls2"
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 36
+.  .  .  .  Line: 5
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: body
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: ClassDef.body {
+.  .  .  .  .  Roles: Type,Declaration,Body
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: Pass {
+.  .  .  .  .  .  .  Roles: Noop,Statement
+.  .  .  .  .  .  .  TOKEN "pass"
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 72
+.  .  .  .  .  .  .  .  Line: 7
+.  .  .  .  .  .  .  .  Col: 5
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 75
+.  .  .  .  .  .  .  .  Line: 7
+.  .  .  .  .  .  .  .  Col: 8
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  0: PreviousNoops {
+.  .  .  .  .  .  .  .  .  Roles: Noop
+.  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 35
+.  .  .  .  .  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  .  .  .  .  Col: 1
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 35
+.  .  .  .  .  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  .  .  .  .  Col: 1
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: noops_previous
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: ClassDef.decorator_list {
+.  .  .  .  .  Roles: Type,Call,Incomplete
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: Call {
+.  .  .  .  .  .  .  Roles: Function,Call,Expression
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 37
+.  .  .  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  .  .  Col: 2
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  0: Num {
+.  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Function,Call,Positional,Argument,Name
+.  .  .  .  .  .  .  .  .  TOKEN "1"
+.  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 46
+.  .  .  .  .  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  .  .  .  .  Col: 11
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 46
+.  .  .  .  .  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  .  .  .  .  Col: 11
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: args
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  1: Num {
+.  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Function,Call,Positional,Argument,Name
+.  .  .  .  .  .  .  .  .  TOKEN "2"
+.  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 49
+.  .  .  .  .  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  .  .  .  .  Col: 14
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 49
+.  .  .  .  .  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  .  .  .  .  Col: 14
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: args
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  2: Name {
+.  .  .  .  .  .  .  .  .  Roles: Call,Callee,Identifier,Expression
+.  .  .  .  .  .  .  .  .  TOKEN "testtag2"
+.  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 37
+.  .  .  .  .  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  .  .  .  .  Col: 2
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 44
+.  .  .  .  .  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  .  .  .  .  Col: 9
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  .  .  .  .  internalRole: func
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  }
+}
+

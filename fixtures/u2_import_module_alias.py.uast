@@ -1,0 +1,40 @@
+Status:  ok
+Language:  python
+Errors: 
+UAST: 
+Module {
+.  Roles: File,Module
+.  Children: {
+.  .  0: Import {
+.  .  .  Roles: Import,Declaration,Statement
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 0
+.  .  .  .  Line: 1
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: body
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: alias {
+.  .  .  .  .  Roles: Import,Pathname,Identifier
+.  .  .  .  .  TOKEN "x"
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  alias.asname: y
+.  .  .  .  .  .  internalRole: names
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: alias.asname {
+.  .  .  .  .  .  .  Roles: Import,Alias,Identifier
+.  .  .  .  .  .  .  TOKEN "y"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  promotedPropertyString: true
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  }
+}
+
