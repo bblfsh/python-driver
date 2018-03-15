@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM alpine:3.7
 MAINTAINER source{d}
 
 ARG DEVDEPS=native/dev_deps
