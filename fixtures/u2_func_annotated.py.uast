@@ -6,7 +6,7 @@ Module {
 .  Roles: File,Module
 .  Children: {
 .  .  0: FunctionDef {
-.  .  .  Roles: Function,Declaration,Name,Identifier
+.  .  .  Roles: Declaration,Function,Identifier,Name
 .  .  .  TOKEN "testfnc1"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 4
@@ -22,15 +22,20 @@ Module {
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: arguments {
-.  .  .  .  .  Roles: Function,Declaration,Incomplete,Argument
+.  .  .  .  0: FunctionDef.decorators {
+.  .  .  .  .  Roles: Declaration,Function,Incomplete
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: decorator_list
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: arguments {
+.  .  .  .  .  Roles: Argument,Declaration,Function,Incomplete
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: arg {
-.  .  .  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
-.  .  .  .  .  .  .  TOKEN "a"
+.  .  .  .  .  .  .  Roles: Argument,Declaration,Function,Identifier,Name
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 13
 .  .  .  .  .  .  .  .  Line: 1
@@ -42,11 +47,12 @@ Module {
 .  .  .  .  .  .  .  .  Col: 14
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  arg: a
 .  .  .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression,Annotation
+.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
 .  .  .  .  .  .  .  .  .  TOKEN "int"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 16
@@ -66,8 +72,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: arg {
-.  .  .  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
-.  .  .  .  .  .  .  TOKEN "b"
+.  .  .  .  .  .  .  Roles: Argument,Declaration,Function,Identifier,Name
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 21
 .  .  .  .  .  .  .  .  Line: 1
@@ -79,11 +84,12 @@ Module {
 .  .  .  .  .  .  .  .  Col: 22
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  arg: b
 .  .  .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression,Annotation
+.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
 .  .  .  .  .  .  .  .  .  TOKEN "str"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 24
@@ -103,8 +109,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: arg {
-.  .  .  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
-.  .  .  .  .  .  .  TOKEN "c"
+.  .  .  .  .  .  .  Roles: Argument,Declaration,Function,Identifier,Name
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 29
 .  .  .  .  .  .  .  .  Line: 1
@@ -116,11 +121,12 @@ Module {
 .  .  .  .  .  .  .  .  Col: 30
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  arg: c
 .  .  .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression,Annotation
+.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
 .  .  .  .  .  .  .  .  .  TOKEN "List"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 32
@@ -140,8 +146,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  3: arg {
-.  .  .  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
-.  .  .  .  .  .  .  TOKEN "d"
+.  .  .  .  .  .  .  Roles: Argument,Declaration,Function,Identifier,Name
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 38
 .  .  .  .  .  .  .  .  Line: 1
@@ -153,11 +158,12 @@ Module {
 .  .  .  .  .  .  .  .  Col: 39
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  arg: d
 .  .  .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression,Annotation
+.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
 .  .  .  .  .  .  .  .  .  TOKEN "MyType"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 41
@@ -178,10 +184,28 @@ Module {
 .  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
-.  .  .  .  1: FunctionDef.body {
-.  .  .  .  .  Roles: Function,Declaration,Body
+.  .  .  .  2: Name {
+.  .  .  .  .  Roles: Expression,Identifier
+.  .  .  .  .  TOKEN "str"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 52
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 53
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 54
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 55
+.  .  .  .  .  }
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  internalRole: returns
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  3: FunctionDef.body {
+.  .  .  .  .  Roles: Body,Declaration,Function
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: body
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Pass {
@@ -197,25 +221,10 @@ Module {
 .  .  .  .  .  .  .  .  Line: 2
 .  .  .  .  .  .  .  .  Col: 8
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: body_stmts
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  2: Name {
-.  .  .  .  .  Roles: Identifier,Expression,Annotation
-.  .  .  .  .  TOKEN "str"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 52
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 53
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 54
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 55
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  internalRole: returns
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }

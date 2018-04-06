@@ -23,7 +23,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BoolLiteral {
-.  .  .  .  .  Roles: Literal,Boolean,Expression,Primitive
+.  .  .  .  .  Roles: Boolean,Expression,Literal,Primitive
 .  .  .  .  .  TOKEN "True"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 7
@@ -60,7 +60,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BoolLiteral {
-.  .  .  .  .  Roles: Literal,Boolean,Expression,Primitive
+.  .  .  .  .  Roles: Boolean,Expression,Literal,Primitive
 .  .  .  .  .  TOKEN "True"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 20
@@ -96,25 +96,8 @@ Module {
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: Str {
-.  .  .  .  .  Roles: Literal,String,Expression,Primitive
-.  .  .  .  .  TOKEN "assert message"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 38
-.  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  Col: 14
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 53
-.  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  Col: 29
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: msg
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: BoolLiteral {
-.  .  .  .  .  Roles: Literal,Boolean,Expression,Primitive
+.  .  .  .  0: BoolLiteral {
+.  .  .  .  .  Roles: Boolean,Expression,Literal,Primitive
 .  .  .  .  .  TOKEN "True"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 32
@@ -129,6 +112,23 @@ Module {
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: test
 .  .  .  .  .  .  value: true
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: Str {
+.  .  .  .  .  Roles: Expression,Literal,Primitive,String
+.  .  .  .  .  TOKEN "assert message"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 38
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 14
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 53
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 29
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: msg
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }

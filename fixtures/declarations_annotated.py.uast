@@ -6,7 +6,7 @@ Module {
 .  Roles: File,Module
 .  Children: {
 .  .  0: AnnAssign {
-.  .  .  Roles: Operator,Binary,Assignment
+.  .  .  Roles: Assignment,Binary,Operator
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
 .  .  .  .  Line: 1
@@ -18,25 +18,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
-.  .  .  .  .  Roles: Identifier,Expression,Annotation
-.  .  .  .  .  TOKEN "int"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 3
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 4
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 5
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 6
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  internalRole: annotation
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Name {
-.  .  .  .  .  Roles: Identifier,Expression
+.  .  .  .  .  Roles: Expression,Identifier
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
@@ -53,8 +35,26 @@ Module {
 .  .  .  .  .  .  internalRole: target
 .  .  .  .  .  }
 .  .  .  .  }
+.  .  .  .  1: Name {
+.  .  .  .  .  Roles: Expression,Identifier
+.  .  .  .  .  TOKEN "int"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 3
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 4
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 5
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 6
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  internalRole: annotation
+.  .  .  .  .  }
+.  .  .  .  }
 .  .  .  .  2: Num {
-.  .  .  .  .  Roles: Literal,Number,Expression,Primitive
+.  .  .  .  .  Roles: Expression,Literal,Number,Primitive
 .  .  .  .  .  TOKEN "3"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 9
@@ -73,7 +73,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  1: AnnAssign {
-.  .  .  Roles: Operator,Binary,Assignment
+.  .  .  Roles: Assignment,Binary,Operator
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 11
 .  .  .  .  Line: 2
@@ -85,25 +85,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
-.  .  .  .  .  Roles: Identifier,Expression,Annotation
-.  .  .  .  .  TOKEN "str"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 14
-.  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  Col: 4
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 16
-.  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  Col: 6
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  internalRole: annotation
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Name {
-.  .  .  .  .  Roles: Identifier,Expression
+.  .  .  .  .  Roles: Expression,Identifier
 .  .  .  .  .  TOKEN "b"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 11
@@ -120,8 +102,26 @@ Module {
 .  .  .  .  .  .  internalRole: target
 .  .  .  .  .  }
 .  .  .  .  }
+.  .  .  .  1: Name {
+.  .  .  .  .  Roles: Expression,Identifier
+.  .  .  .  .  TOKEN "str"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 14
+.  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  Col: 4
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 16
+.  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  Col: 6
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  internalRole: annotation
+.  .  .  .  .  }
+.  .  .  .  }
 .  .  .  .  2: Str {
-.  .  .  .  .  Roles: Literal,String,Expression,Primitive
+.  .  .  .  .  Roles: Expression,Literal,Primitive,String
 .  .  .  .  .  TOKEN "foo"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 20

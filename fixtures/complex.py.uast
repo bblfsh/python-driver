@@ -6,7 +6,7 @@ Module {
 .  Roles: File,Module
 .  Children: {
 .  .  0: Assign {
-.  .  .  Roles: Binary,Assignment,Expression
+.  .  .  Roles: Assignment,Binary,Expression
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
 .  .  .  .  Line: 1
@@ -17,7 +17,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
-.  .  .  .  .  Roles: Left,Identifier,Expression
+.  .  .  .  .  Roles: Expression,Identifier,Left
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
@@ -35,7 +35,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: BinOp {
-.  .  .  .  .  Roles: Expression,Binary,Right
+.  .  .  .  .  Roles: Binary,Expression,Right
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 4
 .  .  .  .  .  .  Line: 1
@@ -45,8 +45,15 @@ Module {
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,Number,Primitive
+.  .  .  .  .  .  0: Mult {
+.  .  .  .  .  .  .  Roles: Arithmetic,Binary,Multiply,Operator
+.  .  .  .  .  .  .  TOKEN "*"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: op
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  1: Num {
+.  .  .  .  .  .  .  Roles: Binary,Expression,Left,Literal,Number,Primitive
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 4
 .  .  .  .  .  .  .  .  Line: 1
@@ -55,26 +62,9 @@ Module {
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: left
 .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0:  {
-.  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  imag: 1
-.  .  .  .  .  .  .  .  .  .  internalRole: n
-.  .  .  .  .  .  .  .  .  .  real: 0
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Mult {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Multiply,Arithmetic
-.  .  .  .  .  .  .  TOKEN "*"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Primitive
+.  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 9
 .  .  .  .  .  .  .  .  Line: 1
@@ -82,16 +72,6 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: right
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0:  {
-.  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  imag: 1
-.  .  .  .  .  .  .  .  .  .  internalRole: n
-.  .  .  .  .  .  .  .  .  .  real: 0
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }

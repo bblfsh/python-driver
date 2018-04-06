@@ -17,7 +17,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: UnaryOp {
-.  .  .  .  .  Roles: Binary,Operator,Unary,Expression
+.  .  .  .  .  Roles: Boolean,Expression,Operator,Unary
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  Line: 1
@@ -28,14 +28,14 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Invert {
-.  .  .  .  .  .  .  Roles: Operator,Unary,Bitwise,Not
+.  .  .  .  .  .  .  Roles: Bitwise,Not,Operator,Unary
 .  .  .  .  .  .  .  TOKEN "~"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: op
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
+.  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 1
@@ -67,7 +67,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: UnaryOp {
-.  .  .  .  .  Roles: Binary,Operator,Unary,Expression
+.  .  .  .  .  Roles: Boolean,Expression,Operator,Unary
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 3
 .  .  .  .  .  .  Line: 2
@@ -78,14 +78,14 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: USub {
-.  .  .  .  .  .  .  Roles: Operator,Unary,Negative
+.  .  .  .  .  .  .  Roles: Bitwise,Negative,Operator,Unary
 .  .  .  .  .  .  .  TOKEN "-"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: op
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  Roles: Identifier,Expression
+.  .  .  .  .  .  .  Roles: Expression,Identifier
 .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 4
@@ -118,7 +118,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: UnaryOp {
-.  .  .  .  .  Roles: Binary,Operator,Unary,Expression
+.  .  .  .  .  Roles: Boolean,Expression,Operator,Unary
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 6
 .  .  .  .  .  .  Line: 3
@@ -129,14 +129,14 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: UAdd {
-.  .  .  .  .  .  .  Roles: Operator,Unary,Positive
+.  .  .  .  .  .  .  Roles: Bitwise,Operator,Positive,Unary
 .  .  .  .  .  .  .  TOKEN "+"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: op
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  Roles: Identifier,Expression
+.  .  .  .  .  .  .  Roles: Expression,Identifier
 .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 7

@@ -6,7 +6,7 @@ Module {
 .  Roles: File,Module
 .  Children: {
 .  .  0: FunctionDef {
-.  .  .  Roles: Function,Declaration,Name,Identifier
+.  .  .  Roles: Declaration,Function,Identifier,Name
 .  .  .  TOKEN "foo"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 4
@@ -23,27 +23,36 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: arguments {
-.  .  .  .  .  Roles: Function,Declaration,Incomplete,Argument
+.  .  .  .  .  Roles: Argument,Declaration,Function,Incomplete
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  }
 .  .  .  .  }
-.  .  .  .  1: FunctionDef.body {
-.  .  .  .  .  Roles: Function,Declaration,Body
+.  .  .  .  1: FunctionDef.decorators {
+.  .  .  .  .  Roles: Declaration,Function,Incomplete
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  .  .  internalRole: decorator_list
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  2: FunctionDef.body {
+.  .  .  .  .  Roles: Body,Declaration,Function
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: body
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Assign {
-.  .  .  .  .  .  .  Roles: Binary,Assignment,Expression
+.  .  .  .  .  .  .  Roles: Assignment,Binary,Expression
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 15
 .  .  .  .  .  .  .  .  Line: 2
 .  .  .  .  .  .  .  .  Col: 5
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: body_stmts
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Left,Identifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier,Left
 .  .  .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 15
@@ -61,7 +70,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Dict {
-.  .  .  .  .  .  .  .  .  Roles: Literal,Map,Expression,Primitive,Right
+.  .  .  .  .  .  .  .  .  Roles: Expression,Literal,Map,Primitive,Right
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 19
 .  .  .  .  .  .  .  .  .  .  Line: 2
@@ -72,7 +81,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Map,Key
+.  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Key,Literal,Map,Primitive,String
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 20
@@ -89,7 +98,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Map,Value
+.  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Literal,Map,Number,Primitive,Value
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 25
@@ -110,15 +119,18 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Assign {
-.  .  .  .  .  .  .  Roles: Binary,Assignment,Expression
+.  .  .  .  .  .  .  Roles: Assignment,Binary,Expression
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 32
 .  .  .  .  .  .  .  .  Line: 3
 .  .  .  .  .  .  .  .  Col: 5
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: body_stmts
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Left,Identifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier,Left
 .  .  .  .  .  .  .  .  .  TOKEN "b"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 32
@@ -136,7 +148,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Dict {
-.  .  .  .  .  .  .  .  .  Roles: Literal,Map,Expression,Primitive,Right
+.  .  .  .  .  .  .  .  .  Roles: Expression,Literal,Map,Primitive,Right
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 36
 .  .  .  .  .  .  .  .  .  .  Line: 3
@@ -147,7 +159,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Map,Key
+.  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Key,Literal,Map,Primitive,String
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 37
@@ -164,7 +176,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Map,Value
+.  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Literal,Map,Number,Primitive,Value
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 42
@@ -197,9 +209,12 @@ Module {
 .  .  .  .  .  .  .  .  Line: 4
 .  .  .  .  .  .  .  .  Col: 10
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: body_stmts
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Dict {
-.  .  .  .  .  .  .  .  .  Roles: Literal,Map,Expression,Primitive
+.  .  .  .  .  .  .  .  .  Roles: Expression,Literal,Map,Primitive
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 56
 .  .  .  .  .  .  .  .  .  .  Line: 4
@@ -210,21 +225,23 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: NoneLiteral {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Null,Expression,Primitive,Map,Key
+.  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Key,Literal,Map,Null,Primitive
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "None"
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  LiteralValue: None
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: keys
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: NoneLiteral {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Null,Expression,Primitive,Map,Key
+.  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Key,Literal,Map,Null,Primitive
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "None"
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  LiteralValue: None
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: keys
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  2: Name {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Map,Value,Identifier,Expression
+.  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Identifier,Map,Value
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 59
@@ -242,7 +259,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  3: Name {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Map,Value,Identifier,Expression
+.  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Identifier,Map,Value
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "b"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 64

@@ -17,7 +17,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Str {
-.  .  .  .  .  Roles: Literal,String,Expression,Primitive
+.  .  .  .  .  Roles: Expression,Literal,Primitive,String
 .  .  .  .  .  TOKEN "
         select message.*, user.* from message, user
         where message.author_id = user.user_id and (

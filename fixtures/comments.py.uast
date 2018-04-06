@@ -6,7 +6,7 @@ Module {
 .  Roles: File,Module
 .  Children: {
 .  .  0: Assign {
-.  .  .  Roles: Binary,Assignment,Expression
+.  .  .  Roles: Assignment,Binary,Expression
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 39
 .  .  .  .  Line: 3
@@ -17,7 +17,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
-.  .  .  .  .  Roles: Left,Identifier,Expression
+.  .  .  .  .  Roles: Expression,Identifier,Left
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 39
@@ -51,7 +51,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: NoopLine {
-.  .  .  .  .  .  .  .  .  Roles: Noop,Comment
+.  .  .  .  .  .  .  .  .  Roles: Comment,Noop
 .  .  .  .  .  .  .  .  .  TOKEN " comment above
 "
 .  .  .  .  .  .  .  .  .  StartPosition: {
@@ -64,7 +64,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: NoopLine {
-.  .  .  .  .  .  .  .  .  Roles: Noop,Comment
+.  .  .  .  .  .  .  .  .  Roles: Comment,Noop
 .  .  .  .  .  .  .  .  .  TOKEN " second comment above
 "
 .  .  .  .  .  .  .  .  .  StartPosition: {
@@ -80,7 +80,6 @@ Module {
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: SameLineNoops {
 .  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  TOKEN "[# line trailing comment]"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 44
 .  .  .  .  .  .  .  .  Line: 3
@@ -94,11 +93,20 @@ Module {
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: noops_sameline
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  0: NoopSameLine {
+.  .  .  .  .  .  .  .  .  Roles: Comment,Noop
+.  .  .  .  .  .  .  .  .  TOKEN "# line trailing comment"
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: noop_lines
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Num {
-.  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Right
+.  .  .  .  .  Roles: Expression,Literal,Number,Primitive,Right
 .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 43
@@ -133,7 +141,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: NoopLine {
-.  .  .  .  .  Roles: Noop,Comment
+.  .  .  .  .  Roles: Comment,Noop
 .  .  .  .  .  TOKEN " file trailing comment
 "
 .  .  .  .  .  StartPosition: {
@@ -146,7 +154,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: NoopLine {
-.  .  .  .  .  Roles: Noop,Comment
+.  .  .  .  .  Roles: Comment,Noop
 .  .  .  .  .  TOKEN " second file trailing comment
 "
 .  .  .  .  .  StartPosition: {

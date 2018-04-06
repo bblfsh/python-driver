@@ -6,7 +6,7 @@ Module {
 .  Roles: File,Module
 .  Children: {
 .  .  0: Assign {
-.  .  .  Roles: Binary,Assignment,Expression
+.  .  .  Roles: Assignment,Binary,Expression
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
 .  .  .  .  Line: 1
@@ -17,7 +17,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
-.  .  .  .  .  Roles: Left,Identifier,Expression
+.  .  .  .  .  Roles: Expression,Identifier,Left
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
@@ -35,7 +35,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Num {
-.  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Right
+.  .  .  .  .  Roles: Expression,Literal,Number,Primitive,Right
 .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 4
@@ -54,7 +54,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  1: Assign {
-.  .  .  Roles: Binary,Assignment,Expression
+.  .  .  Roles: Assignment,Binary,Expression
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 6
 .  .  .  .  Line: 2
@@ -65,7 +65,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
-.  .  .  .  .  Roles: Left,Identifier,Expression
+.  .  .  .  .  Roles: Expression,Identifier,Left
 .  .  .  .  .  TOKEN "b"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 6
@@ -83,7 +83,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Num {
-.  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Right
+.  .  .  .  .  Roles: Expression,Literal,Number,Primitive,Right
 .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 10
@@ -102,8 +102,8 @@ Module {
 .  .  .  }
 .  .  }
 .  .  2: Delete {
-.  .  .  Roles: Statement,Incomplete
-.  .  .  TOKEN "delete"
+.  .  .  Roles: Incomplete,Statement
+.  .  .  TOKEN "del"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 12
 .  .  .  .  Line: 3
@@ -119,7 +119,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
-.  .  .  .  .  Roles: Identifier,Expression
+.  .  .  .  .  Roles: Expression,Identifier
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 16
@@ -139,7 +139,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  3: FunctionDef {
-.  .  .  Roles: Function,Declaration,Name,Identifier
+.  .  .  Roles: Declaration,Function,Identifier,Name
 .  .  .  TOKEN "f"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 22
@@ -156,19 +156,25 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: arguments {
-.  .  .  .  .  Roles: Function,Declaration,Incomplete,Argument
+.  .  .  .  .  Roles: Argument,Declaration,Function,Incomplete
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  }
 .  .  .  .  }
-.  .  .  .  1: FunctionDef.body {
-.  .  .  .  .  Roles: Function,Declaration,Body
+.  .  .  .  1: FunctionDef.decorators {
+.  .  .  .  .  Roles: Declaration,Function,Incomplete
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  .  .  internalRole: decorator_list
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  2: FunctionDef.body {
+.  .  .  .  .  Roles: Body,Declaration,Function
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: body
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Global {
-.  .  .  .  .  .  .  Roles: Statement,Visibility,World,Incomplete
+.  .  .  .  .  .  .  Roles: Incomplete,Statement,Visibility,World
 .  .  .  .  .  .  .  TOKEN "global"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 31
@@ -180,9 +186,12 @@ Module {
 .  .  .  .  .  .  .  .  Line: 5
 .  .  .  .  .  .  .  .  Col: 10
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: body_stmts
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
 .  .  .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 38
@@ -201,7 +210,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Nonlocal {
-.  .  .  .  .  .  .  Roles: Statement,Visibility,Module,Incomplete
+.  .  .  .  .  .  .  Roles: Incomplete,Module,Statement,Visibility
 .  .  .  .  .  .  .  TOKEN "nonlocal"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 44
@@ -213,9 +222,12 @@ Module {
 .  .  .  .  .  .  .  .  Line: 6
 .  .  .  .  .  .  .  .  Col: 12
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: body_stmts
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
 .  .  .  .  .  .  .  .  .  TOKEN "b"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 53
@@ -240,9 +252,12 @@ Module {
 .  .  .  .  .  .  .  .  Line: 7
 .  .  .  .  .  .  .  .  Col: 5
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: body_stmts
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Yield {
-.  .  .  .  .  .  .  .  .  Roles: Return,Statement,Incomplete,Literal,List,Expression
+.  .  .  .  .  .  .  .  .  Roles: Incomplete,Return,Statement
 .  .  .  .  .  .  .  .  .  TOKEN "yield"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 59
@@ -259,7 +274,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Identifier,Expression
+.  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "b"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 65

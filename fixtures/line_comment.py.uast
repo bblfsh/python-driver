@@ -39,7 +39,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: NoopLine {
-.  .  .  .  .  .  .  Roles: Noop,Comment
+.  .  .  .  .  .  .  Roles: Comment,Noop
 .  .  .  .  .  .  .  TOKEN " thse are
 "
 .  .  .  .  .  .  .  StartPosition: {
@@ -52,7 +52,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: NoopLine {
-.  .  .  .  .  .  .  Roles: Noop,Comment
+.  .  .  .  .  .  .  Roles: Comment,Noop
 .  .  .  .  .  .  .  TOKEN " previous comments
 "
 .  .  .  .  .  .  .  StartPosition: {
@@ -68,7 +68,6 @@ Module {
 .  .  .  .  }
 .  .  .  .  1: SameLineNoops {
 .  .  .  .  .  Roles: Comment
-.  .  .  .  .  TOKEN "[# sameline comment]"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 35
 .  .  .  .  .  .  Line: 3
@@ -81,6 +80,15 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: noops_sameline
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: NoopSameLine {
+.  .  .  .  .  .  .  Roles: Comment,Noop
+.  .  .  .  .  .  .  TOKEN "# sameline comment"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: noop_lines
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
@@ -102,7 +110,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: NoopLine {
-.  .  .  .  .  Roles: Noop,Comment
+.  .  .  .  .  Roles: Comment,Noop
 .  .  .  .  .  TOKEN " remainder comment and newline
 "
 .  .  .  .  .  StartPosition: {
@@ -115,7 +123,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: NoopLine {
-.  .  .  .  .  Roles: Noop,Comment
+.  .  .  .  .  Roles: Comment,Noop
 .  .  .  .  .  TOKEN " last remainder comment line
 "
 .  .  .  .  .  StartPosition: {
