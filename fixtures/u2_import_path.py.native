@@ -1,8 +1,69 @@
 {
-    "status": "fatal",
+    "status": "ok",
     "language": "python",
-    "errors": [
-        "Traceback (most recent call last):\n  File \"/usr/lib/python3.6/site-packages/python_driver/requestprocessor.py\", line 139, in process_request\n    '\\n------ Python3 errors:\\n%s' % codeinfo['py3_ast_errors']\nException: Errors produced trying to get an AST for both Python versions\n------ Python2 errors:\n[b'Traceback (most recent call last):\\n  File \"<string>\", line 1, in <module>\\n  File \"/usr/lib/python2.7/site-packages/pydetector/ast2dict.py\", line 19, in ast2dict\\n    return visitor.parse()\\n  File \"/usr/lib/python2.7/site-packages/pydetector/ast2dict.py\", line 45, in parse\\n    tree = ast.parse(self.codestr, mode=\\'exec\\')\\n  File \"/usr/lib/python2.7/ast.py\", line 37, in parse\\n    return compile(source, filename, mode, PyCF_ONLY_AST)\\n  File \"<unknown>\", line 2\\n    import ..c\\n           ^\\nSyntaxError: invalid syntax\\n']\n------ Python3 errors:\n['Traceback (most recent call last):\\n  File \"/usr/lib/python3.6/site-packages/pydetector/ast_checks.py\", line 53, in check_ast\\n    current_ast = ast2dict(code)\\n  File \"/usr/lib/python3.6/site-packages/pydetector/ast2dict.py\", line 19, in ast2dict\\n    return visitor.parse()\\n  File \"/usr/lib/python3.6/site-packages/pydetector/ast2dict.py\", line 45, in parse\\n    tree = ast.parse(self.codestr, mode=\\'exec\\')\\n  File \"/usr/lib/python3.6/ast.py\", line 35, in parse\\n    return compile(source, filename, mode, PyCF_ONLY_AST)\\n  File \"<unknown>\", line 2\\n    import ..c\\n           ^\\nSyntaxError: invalid syntax\\n']\n"
-    ],
-    "ast": null
+    "errors": [],
+    "ast": {
+        "PY3AST": {
+            "ast_type": "Module",
+            "body": [
+                {
+                    "ast_type": "Assign",
+                    "col_offset": 1,
+                    "lineno": 1,
+                    "targets": [
+                        {
+                            "ast_type": "Name",
+                            "col_offset": 1,
+                            "ctx": "Store",
+                            "end_col_offset": 1,
+                            "end_lineno": 1,
+                            "id": "a",
+                            "lineno": 1
+                        }
+                    ],
+                    "value": {
+                        "args": [
+                            {
+                                "ast_type": "Str",
+                                "col_offset": 16,
+                                "end_col_offset": 25,
+                                "end_lineno": 1,
+                                "lineno": 1,
+                                "s": "/a/b/c/d"
+                            }
+                        ],
+                        "ast_type": "Call",
+                        "col_offset": 5,
+                        "func": {
+                            "ast_type": "Name",
+                            "col_offset": 5,
+                            "ctx": "Load",
+                            "end_col_offset": 14,
+                            "end_lineno": 1,
+                            "id": "__import__",
+                            "lineno": 1
+                        },
+                        "keywords": [],
+                        "lineno": 1
+                    }
+                },
+                {
+                    "ast_type": "ImportFrom",
+                    "col_offset": 1,
+                    "end_col_offset": 9,
+                    "end_lineno": 2,
+                    "level": 3,
+                    "lineno": 2,
+                    "module": "c",
+                    "names": [
+                        {
+                            "asname": null,
+                            "ast_type": "alias",
+                            "name": "x"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
 }

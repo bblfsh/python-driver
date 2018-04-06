@@ -1,4 +1,4 @@
-def testcls1:
+def testcls1():
     def __init__(self):
         pass
 
