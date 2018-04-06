@@ -21,7 +21,6 @@ Node = Dict[str, Any]
 AstDict = Dict[Any, Any]
 VisitResult = Union[Node, List[Node]]
 
-
 class TokenPos():
     def __init__(self, row: int, col: int) -> None:
         self.row = row
@@ -152,8 +151,11 @@ class LocationFixer(object):
             # position in that case is fine (uses the last line in that case)
             return
 
-        nodedict["lineno"] = token.start.row
-        nodedict["col_offset"] = token.start.col
+        if nodedict['ast_type'] != 'ImportFrom':
+            # ImportFrom takes the module as token, we don't want that position, default
+            # is fine
+            nodedict["lineno"] = token.start.row
+            nodedict["col_offset"] = token.start.col
         nodedict["end_lineno"] = token.end.row
         nodedict["end_col_offset"] = token.end.col
 
