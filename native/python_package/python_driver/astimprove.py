@@ -21,6 +21,7 @@ Node = Dict[str, Any]
 AstDict = Dict[Any, Any]
 VisitResult = Union[Node, List[Node]]
 
+
 class TokenPos():
     def __init__(self, row: int, col: int) -> None:
         self.row = row
