@@ -1,2 +1,2 @@
 a = __import__('/a/b/c/d')
-import ..c
+from ...c import x

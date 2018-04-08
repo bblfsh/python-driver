@@ -96,7 +96,7 @@ class LocationFixer(object):
                     # fstring: token identify as STRING but they parse into the AST as a
                     # collection of nodes so the token_value is  different. To find the
                     # real token position we'll search  inside the fstring token value.
-                    tok_subpos = t.value.find(token_value)
+                    tok_subpos = t.value.find(str(token_value))
                     if tok_subpos != -1:
 
                         # We don't remove the fstring token from the line in this case; other
@@ -152,8 +152,11 @@ class LocationFixer(object):
             # position in that case is fine (uses the last line in that case)
             return
 
-        nodedict["lineno"] = token.start.row
-        nodedict["col_offset"] = token.start.col
+        if nodedict['ast_type'] != 'ImportFrom':
+            # ImportFrom takes the module as token, we don't want that position, default
+            # is fine
+            nodedict["lineno"] = token.start.row
+            nodedict["col_offset"] = token.start.col
         nodedict["end_lineno"] = token.end.row
         nodedict["end_col_offset"] = token.end.col
 

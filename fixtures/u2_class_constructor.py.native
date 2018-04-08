@@ -1,8 +1,117 @@
 {
-    "status": "fatal",
+    "status": "ok",
     "language": "python",
-    "errors": [
-        "Traceback (most recent call last):\n  File \"/usr/lib/python3.6/site-packages/python_driver/requestprocessor.py\", line 139, in process_request\n    '\\n------ Python3 errors:\\n%s' % codeinfo['py3_ast_errors']\nException: Errors produced trying to get an AST for both Python versions\n------ Python2 errors:\n[b'Traceback (most recent call last):\\n  File \"<string>\", line 1, in <module>\\n  File \"/usr/lib/python2.7/site-packages/pydetector/ast2dict.py\", line 19, in ast2dict\\n    return visitor.parse()\\n  File \"/usr/lib/python2.7/site-packages/pydetector/ast2dict.py\", line 45, in parse\\n    tree = ast.parse(self.codestr, mode=\\'exec\\')\\n  File \"/usr/lib/python2.7/ast.py\", line 37, in parse\\n    return compile(source, filename, mode, PyCF_ONLY_AST)\\n  File \"<unknown>\", line 1\\n    def testcls1:\\n                ^\\nSyntaxError: invalid syntax\\n']\n------ Python3 errors:\n['Traceback (most recent call last):\\n  File \"/usr/lib/python3.6/site-packages/pydetector/ast_checks.py\", line 53, in check_ast\\n    current_ast = ast2dict(code)\\n  File \"/usr/lib/python3.6/site-packages/pydetector/ast2dict.py\", line 19, in ast2dict\\n    return visitor.parse()\\n  File \"/usr/lib/python3.6/site-packages/pydetector/ast2dict.py\", line 45, in parse\\n    tree = ast.parse(self.codestr, mode=\\'exec\\')\\n  File \"/usr/lib/python3.6/ast.py\", line 35, in parse\\n    return compile(source, filename, mode, PyCF_ONLY_AST)\\n  File \"<unknown>\", line 1\\n    def testcls1:\\n                ^\\nSyntaxError: invalid syntax\\n']\n"
-    ],
-    "ast": null
+    "errors": [],
+    "ast": {
+        "PY3AST": {
+            "ast_type": "Module",
+            "body": [
+                {
+                    "args": {
+                        "args": [],
+                        "ast_type": "arguments",
+                        "defaults": [],
+                        "kw_defaults": [],
+                        "kwarg": null,
+                        "kwonlyargs": [],
+                        "vararg": null
+                    },
+                    "ast_type": "FunctionDef",
+                    "body": [
+                        {
+                            "args": {
+                                "args": [
+                                    {
+                                        "annotation": null,
+                                        "arg": "self",
+                                        "ast_type": "arg",
+                                        "col_offset": 18,
+                                        "end_col_offset": 21,
+                                        "end_lineno": 2,
+                                        "lineno": 2
+                                    }
+                                ],
+                                "ast_type": "arguments",
+                                "defaults": [],
+                                "kw_defaults": [],
+                                "kwarg": null,
+                                "kwonlyargs": [],
+                                "vararg": null
+                            },
+                            "ast_type": "FunctionDef",
+                            "body": [
+                                {
+                                    "ast_type": "Pass",
+                                    "col_offset": 9,
+                                    "end_col_offset": 12,
+                                    "end_lineno": 3,
+                                    "lineno": 3
+                                }
+                            ],
+                            "col_offset": 9,
+                            "decorator_list": [],
+                            "end_col_offset": 16,
+                            "end_lineno": 2,
+                            "lineno": 2,
+                            "name": "__init__",
+                            "returns": null
+                        },
+                        {
+                            "args": {
+                                "args": [
+                                    {
+                                        "annotation": null,
+                                        "arg": "self",
+                                        "ast_type": "arg",
+                                        "col_offset": 17,
+                                        "end_col_offset": 20,
+                                        "end_lineno": 5,
+                                        "lineno": 5,
+                                        "noops_previous": {
+                                            "ast_type": "PreviousNoops",
+                                            "col_offset": 1,
+                                            "end_col_offset": 1,
+                                            "end_lineno": 4,
+                                            "lineno": 4,
+                                            "lines": []
+                                        }
+                                    }
+                                ],
+                                "ast_type": "arguments",
+                                "defaults": [],
+                                "kw_defaults": [],
+                                "kwarg": null,
+                                "kwonlyargs": [],
+                                "vararg": null
+                            },
+                            "ast_type": "FunctionDef",
+                            "body": [
+                                {
+                                    "ast_type": "Pass",
+                                    "col_offset": 9,
+                                    "end_col_offset": 12,
+                                    "end_lineno": 6,
+                                    "lineno": 6
+                                }
+                            ],
+                            "col_offset": 9,
+                            "decorator_list": [],
+                            "end_col_offset": 15,
+                            "end_lineno": 5,
+                            "lineno": 5,
+                            "name": "__new__",
+                            "returns": null
+                        }
+                    ],
+                    "col_offset": 5,
+                    "decorator_list": [],
+                    "end_col_offset": 12,
+                    "end_lineno": 1,
+                    "lineno": 1,
+                    "name": "testcls1",
+                    "returns": null
+                }
+            ]
+        }
+    }
 }

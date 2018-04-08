@@ -31,7 +31,7 @@ setup(
         ]
     },
     install_requires=[
-        "pydetector-bblfsh==0.14.2"
+        "pydetector-bblfsh==0.14.3"
     ],
     classifiers=[
         "Development Status :: 4 - Beta",
