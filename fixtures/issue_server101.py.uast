@@ -362,7 +362,6 @@ special value types.
 .  .  }
 .  .  3: ImportFrom {
 .  .  .  Roles: Declaration,Import,Statement
-.  .  .  TOKEN "import from"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 950
 .  .  .  .  Line: 30
@@ -373,14 +372,14 @@ special value types.
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: ImportFrom.level {
-.  .  .  .  .  Roles: Identifier,Import,Incomplete
+.  .  .  .  .  Roles: Import,Incomplete
 .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: level
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: ImportFrom.module {
-.  .  .  .  .  Roles: Identifier,Import
+.  .  .  .  .  Roles: Identifier,Import,Pathname
 .  .  .  .  .  TOKEN "epydoc.apidoc"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: module
@@ -444,7 +443,6 @@ special value types.
 .  .  }
 .  .  4: ImportFrom {
 .  .  .  Roles: Declaration,Import,Statement
-.  .  .  TOKEN "import from"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 998
 .  .  .  .  Line: 32
@@ -460,14 +458,14 @@ special value types.
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: ImportFrom.level {
-.  .  .  .  .  Roles: Identifier,Import,Incomplete
+.  .  .  .  .  Roles: Import,Incomplete
 .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: level
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: ImportFrom.module {
-.  .  .  .  .  Roles: Identifier,Import
+.  .  .  .  .  Roles: Identifier,Import,Pathname
 .  .  .  .  .  TOKEN "types"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: module
@@ -531,7 +529,6 @@ special value types.
 .  .  }
 .  .  5: ImportFrom {
 .  .  .  Roles: Declaration,Import,Statement
-.  .  .  TOKEN "import from"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 1037
 .  .  .  .  Line: 34
@@ -547,14 +544,14 @@ special value types.
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: ImportFrom.level {
-.  .  .  .  .  Roles: Identifier,Import,Incomplete
+.  .  .  .  .  Roles: Import,Incomplete
 .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: level
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: ImportFrom.module {
-.  .  .  .  .  Roles: Identifier,Import
+.  .  .  .  .  Roles: Identifier,Import,Pathname
 .  .  .  .  .  TOKEN "epydoc"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: module
@@ -618,7 +615,6 @@ special value types.
 .  .  }
 .  .  6: ImportFrom {
 .  .  .  Roles: Declaration,Import,Statement
-.  .  .  TOKEN "import from"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 1080
 .  .  .  .  Line: 36
@@ -629,14 +625,14 @@ special value types.
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: ImportFrom.level {
-.  .  .  .  .  Roles: Identifier,Import,Incomplete
+.  .  .  .  .  Roles: Import,Incomplete
 .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: level
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: ImportFrom.module {
-.  .  .  .  .  Roles: Identifier,Import
+.  .  .  .  .  Roles: Identifier,Import,Pathname
 .  .  .  .  .  TOKEN "epydoc.util"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: module
@@ -836,7 +832,6 @@ special value types.
 .  .  }
 .  .  9: ImportFrom {
 .  .  .  Roles: Declaration,Import,Statement
-.  .  .  TOKEN "import from"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 1234
 .  .  .  .  Line: 42
@@ -847,14 +842,14 @@ special value types.
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: ImportFrom.level {
-.  .  .  .  .  Roles: Identifier,Import,Incomplete
+.  .  .  .  .  Roles: Import,Incomplete
 .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: level
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: ImportFrom.module {
-.  .  .  .  .  Roles: Identifier,Import
+.  .  .  .  .  Roles: Identifier,Import,Pathname
 .  .  .  .  .  TOKEN "epydoc.compat"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: module
@@ -53141,7 +53136,6 @@ pyid to C{bool}."
 .  .  .  Children: {
 .  .  .  .  0: ImportFrom {
 .  .  .  .  .  Roles: Declaration,Import,Statement
-.  .  .  .  .  TOKEN "import from"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 39062
 .  .  .  .  .  .  Line: 998
@@ -53152,14 +53146,14 @@ pyid to C{bool}."
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: ImportFrom.level {
-.  .  .  .  .  .  .  Roles: Identifier,Import,Incomplete
+.  .  .  .  .  .  .  Roles: Import,Incomplete
 .  .  .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: level
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: ImportFrom.module {
-.  .  .  .  .  .  .  Roles: Identifier,Import
+.  .  .  .  .  .  .  Roles: Identifier,Import,Pathname
 .  .  .  .  .  .  .  TOKEN "zope.interface.interface"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: module
@@ -53355,7 +53349,6 @@ pyid to C{bool}."
 .  .  .  Children: {
 .  .  .  .  0: ImportFrom {
 .  .  .  .  .  Roles: Declaration,Import,Statement
-.  .  .  .  .  TOKEN "import from"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 39429
 .  .  .  .  .  .  Line: 1009
@@ -53371,14 +53364,14 @@ pyid to C{bool}."
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: ImportFrom.level {
-.  .  .  .  .  .  .  Roles: Identifier,Import,Incomplete
+.  .  .  .  .  .  .  Roles: Import,Incomplete
 .  .  .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: level
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: ImportFrom.module {
-.  .  .  .  .  .  .  Roles: Identifier,Import
+.  .  .  .  .  .  .  Roles: Identifier,Import,Pathname
 .  .  .  .  .  .  .  TOKEN "ExtensionClass"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: module
@@ -53787,7 +53780,6 @@ pyid to C{bool}."
 .  .  .  .  }
 .  .  .  .  4: ImportFrom {
 .  .  .  .  .  Roles: Declaration,Import,Statement
-.  .  .  .  .  TOKEN "import from"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 39704
 .  .  .  .  .  .  Line: 1016
@@ -53803,14 +53795,14 @@ pyid to C{bool}."
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: ImportFrom.level {
-.  .  .  .  .  .  .  Roles: Identifier,Import,Incomplete
+.  .  .  .  .  .  .  Roles: Import,Incomplete
 .  .  .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: level
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: ImportFrom.module {
-.  .  .  .  .  .  .  Roles: Identifier,Import
+.  .  .  .  .  .  .  Roles: Identifier,Import,Pathname
 .  .  .  .  .  .  .  TOKEN "ExtensionClass"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: module
@@ -53875,7 +53867,6 @@ pyid to C{bool}."
 .  .  .  .  }
 .  .  .  .  5: ImportFrom {
 .  .  .  .  .  Roles: Declaration,Import,Statement
-.  .  .  .  .  TOKEN "import from"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 39771
 .  .  .  .  .  .  Line: 1017
@@ -53891,14 +53882,14 @@ pyid to C{bool}."
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: ImportFrom.level {
-.  .  .  .  .  .  .  Roles: Identifier,Import,Incomplete
+.  .  .  .  .  .  .  Roles: Import,Incomplete
 .  .  .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: level
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: ImportFrom.module {
-.  .  .  .  .  .  .  Roles: Identifier,Import
+.  .  .  .  .  .  .  Roles: Identifier,Import,Pathname
 .  .  .  .  .  .  .  TOKEN "ExtensionClass"
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: module

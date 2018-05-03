@@ -3,7 +3,7 @@ MAINTAINER source{d}
 
 ARG DEVDEPS=native/dev_deps
 ARG CONTAINER_DEVDEPS=/tmp/dev_deps
-ARG PYDETECTOR_VER=0.14.2
+ARG PYDETECTOR_VER=0.14.3
 
 RUN apk add --no-cache --update python python3 py-pip py2-pip git
 

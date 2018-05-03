@@ -119,7 +119,6 @@ Module {
 .  .  }
 .  .  3: ImportFrom {
 .  .  .  Roles: Declaration,Import,Statement
-.  .  .  TOKEN "import from"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 56
 .  .  .  .  Line: 4
@@ -135,14 +134,14 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: ImportFrom.level {
-.  .  .  .  .  Roles: Identifier,Import,Incomplete
+.  .  .  .  .  Roles: Import,Incomplete
 .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: level
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: ImportFrom.module {
-.  .  .  .  .  Roles: Identifier,Import
+.  .  .  .  .  Roles: Identifier,Import,Pathname
 .  .  .  .  .  TOKEN "lib4"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: module
@@ -175,7 +174,6 @@ Module {
 .  .  }
 .  .  4: ImportFrom {
 .  .  .  Roles: Declaration,Import,Statement
-.  .  .  TOKEN "import from"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 79
 .  .  .  .  Line: 5
@@ -186,14 +184,14 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: ImportFrom.level {
-.  .  .  .  .  Roles: Identifier,Import,Incomplete
+.  .  .  .  .  Roles: Import,Incomplete
 .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: level
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: ImportFrom.module {
-.  .  .  .  .  Roles: Identifier,Import
+.  .  .  .  .  Roles: Identifier,Import,Pathname
 .  .  .  .  .  TOKEN "lib5.lib51"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: module
@@ -226,7 +224,6 @@ Module {
 .  .  }
 .  .  5: ImportFrom {
 .  .  .  Roles: Declaration,Import,Statement
-.  .  .  TOKEN "import from"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 109
 .  .  .  .  Line: 6
@@ -242,14 +239,14 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: ImportFrom.level {
-.  .  .  .  .  Roles: Identifier,Import,Incomplete
+.  .  .  .  .  Roles: Import,Incomplete
 .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: level
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: ImportFrom.module {
-.  .  .  .  .  Roles: Identifier,Import
+.  .  .  .  .  Roles: Identifier,Import,Pathname
 .  .  .  .  .  TOKEN "lib6"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: module

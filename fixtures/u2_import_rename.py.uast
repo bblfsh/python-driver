@@ -45,7 +45,6 @@ Module {
 .  .  }
 .  .  1: ImportFrom {
 .  .  .  Roles: Declaration,Import,Statement
-.  .  .  TOKEN "import from"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 14
 .  .  .  .  Line: 2
@@ -61,14 +60,14 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: ImportFrom.level {
-.  .  .  .  .  Roles: Identifier,Import,Incomplete
+.  .  .  .  .  Roles: Import,Incomplete
 .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: level
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: ImportFrom.module {
-.  .  .  .  .  Roles: Identifier,Import
+.  .  .  .  .  Roles: Identifier,Import,Pathname
 .  .  .  .  .  TOKEN "c"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: module

@@ -7,7 +7,6 @@ Module {
 .  Children: {
 .  .  0: ImportFrom {
 .  .  .  Roles: Declaration,Import,Statement
-.  .  .  TOKEN "import from"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
 .  .  .  .  Line: 1
@@ -23,14 +22,14 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: ImportFrom.level {
-.  .  .  .  .  Roles: Identifier,Import,Incomplete
+.  .  .  .  .  Roles: Import,Incomplete
 .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: level
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: ImportFrom.module {
-.  .  .  .  .  Roles: Identifier,Import
+.  .  .  .  .  Roles: Identifier,Import,Pathname
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: module
@@ -63,7 +62,6 @@ Module {
 .  .  }
 .  .  1: ImportFrom {
 .  .  .  Roles: Declaration,Import,Statement
-.  .  .  TOKEN "import from"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 17
 .  .  .  .  Line: 2
@@ -79,14 +77,14 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: ImportFrom.level {
-.  .  .  .  .  Roles: Identifier,Import,Incomplete
+.  .  .  .  .  Roles: Import,Incomplete
 .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: level
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: ImportFrom.module {
-.  .  .  .  .  Roles: Identifier,Import
+.  .  .  .  .  Roles: Identifier,Import,Pathname
 .  .  .  .  .  TOKEN "c"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: module
@@ -119,7 +117,6 @@ Module {
 .  .  }
 .  .  2: ImportFrom {
 .  .  .  Roles: Declaration,Import,Statement
-.  .  .  TOKEN "import from"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 35
 .  .  .  .  Line: 3
@@ -130,14 +127,14 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: ImportFrom.level {
-.  .  .  .  .  Roles: Identifier,Import,Incomplete
+.  .  .  .  .  Roles: Import,Incomplete
 .  .  .  .  .  TOKEN "3"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: level
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: ImportFrom.module {
-.  .  .  .  .  Roles: Identifier,Import
+.  .  .  .  .  Roles: Identifier,Import,Pathname
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: module
 .  .  .  .  .  }

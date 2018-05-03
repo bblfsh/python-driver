@@ -1,10 +1,10 @@
 package normalizer
 
 import (
-	"gopkg.in/bblfsh/sdk.v1/uast"
-	"gopkg.in/bblfsh/sdk.v1/uast/role"
-	. "gopkg.in/bblfsh/sdk.v1/uast/transformer"
-	"gopkg.in/bblfsh/sdk.v1/uast/transformer/positioner"
+	"gopkg.in/bblfsh/sdk.v2/uast"
+	"gopkg.in/bblfsh/sdk.v2/uast/role"
+	. "gopkg.in/bblfsh/sdk.v2/uast/transformer"
+	"gopkg.in/bblfsh/sdk.v2/uast/transformer/positioner"
 )
 
 var Native = Transformers([][]Transformer{
@@ -22,7 +22,7 @@ var Code = []CodeTransformer{
 }
 
 func annotateTypeToken(typ, token string, roles ...role.Role) Mapping {
-	return AnnotateTypeFields(typ,
+	return AnnotateType(typ,
 		FieldRoles{
 			uast.KeyToken: {Add: true, Op: String(token)},
 		}, roles...)
@@ -185,9 +185,9 @@ var Annotations = []Mapping{
 	annotateTypeToken("Pass", "pass", role.Noop, role.Statement),
 	annotateTypeToken("Assert", "assert", role.Assert, role.Statement),
 
-	AnnotateTypeFields("Name", FieldRoles{"id": {Rename: uast.KeyToken}},
+	AnnotateType("Name", FieldRoles{"id": {Rename: uast.KeyToken}},
 		role.Identifier, role.Expression),
-	AnnotateTypeFields("Attribute", FieldRoles{"attr": {Rename: uast.KeyToken}},
+	AnnotateType("Attribute", FieldRoles{"attr": {Rename: uast.KeyToken}},
 		role.Identifier, role.Expression),
 
 	// Binary Expressions
@@ -198,20 +198,20 @@ var Annotations = []Mapping{
 	}, role.Expression, role.Binary),
 
 	// Primitive Literals
-	AnnotateTypeFields("Str", FieldRoles{"s": {Rename: uast.KeyToken}},
+	AnnotateType("Str", FieldRoles{"s": {Rename: uast.KeyToken}},
 		role.Literal, role.String, role.Expression, role.Primitive),
-	AnnotateTypeFields("Bytes", FieldRoles{"s": {Rename: uast.KeyToken}},
+	AnnotateType("Bytes", FieldRoles{"s": {Rename: uast.KeyToken}},
 		role.Literal, role.ByteString, role.Expression, role.Primitive),
-	AnnotateTypeFields("StringLiteral", FieldRoles{"s": {Rename: uast.KeyToken}},
+	AnnotateType("StringLiteral", FieldRoles{"s": {Rename: uast.KeyToken}},
 		role.Literal, role.String, role.Expression, role.Primitive),
-	AnnotateTypeFields("BoolLiteral", FieldRoles{"LiteralValue": {Rename: uast.KeyToken}},
+	AnnotateType("BoolLiteral", FieldRoles{"LiteralValue": {Rename: uast.KeyToken}},
 		role.Literal, role.Boolean, role.Expression, role.Primitive),
 	annotateTypeToken("NoneLiteral", "None", role.Literal, role.Null, role.Expression, role.Primitive),
-	AnnotateTypeFields("Num", FieldRoles{"n": {Rename: uast.KeyToken}},
+	AnnotateType("Num", FieldRoles{"n": {Rename: uast.KeyToken}},
 		role.Expression, role.Literal, role.Number, role.Primitive),
-	AnnotateTypeFields("BoolLiteral", FieldRoles{"LiteralValue": {Rename: uast.KeyToken}},
+	AnnotateType("BoolLiteral", FieldRoles{"LiteralValue": {Rename: uast.KeyToken}},
 		role.Expression, role.Literal, role.Boolean, role.Primitive),
-	AnnotateTypeFields("Dict", FieldRoles{
+	AnnotateType("Dict", FieldRoles{
 		"keys":   {Arr: true, Roles: role.Roles{role.Map, role.Key}},
 		"values": {Arr: true, Roles: role.Roles{role.Map, role.Value}},
 	}, role.Expression, role.Literal, role.Primitive, role.Map),
@@ -225,7 +225,7 @@ var Annotations = []Mapping{
 	//		targets[] => Left
 	//		value	  => Right
 	//
-	AnnotateTypeFields("Assign", FieldRoles{
+	AnnotateType("Assign", FieldRoles{
 		"targets": {Arr: true, Roles: role.Roles{role.Left}},
 		"value":   {Roles: role.Roles{role.Right}},
 	}, role.Binary, role.Expression, role.Assignment),
@@ -271,12 +271,12 @@ var Annotations = []Mapping{
 
 	// python 2 exception handling
 	AnnotateType("TryExcept", nil, role.Try, role.Catch, role.Statement),
-	AnnotateTypeFields("ExceptHandler", FieldRoles{"name": {Rename: uast.KeyToken}},
+	AnnotateType("ExceptHandler", FieldRoles{"name": {Rename: uast.KeyToken}},
 		role.Try, role.Catch, role.Identifier),
 	AnnotateType("TryFinally", nil, role.Try, role.Finally, role.Statement),
 	AnnotateType("Raise", nil, role.Throw),
 
-	AnnotateTypeFields("Raise",
+	AnnotateType("Raise",
 		FieldRoles{
 			"exc":         {Opt: true, Roles: role.Roles{role.Call}},
 			uast.KeyToken: {Add: true, Op: String("raise")},
@@ -296,7 +296,7 @@ var Annotations = []Mapping{
 	AnnotateType("SetComp", nil, role.Set, role.For, role.Expression),
 
 	// FIXME: once we have an async Role we should interpret the is_async property
-	AnnotateTypeFields("comprehension", FieldRoles{
+	AnnotateType("comprehension", FieldRoles{
 		"ifs":    {Arr: true, Roles: role.Roles{role.If, role.Condition}},
 		"iter":   {Roles: role.Roles{role.For, role.Update, role.Statement}},
 		"target": {Roles: role.Roles{role.For, role.Expression}},
@@ -327,7 +327,7 @@ var Annotations = []Mapping{
 
 	// Formal Arguments
 	// FIXME: opt: true + arr: true seems to cause a crash in the SDK
-	AnnotateTypeFields("arguments", FieldRoles{
+	AnnotateType("arguments", FieldRoles{
 		"args":     {Arr: true, Roles: role.Roles{role.Function, role.Declaration, role.Argument, role.Name, role.Identifier}},
 		"defaults": {Arr: true, Roles: role.Roles{role.Function, role.Declaration, role.ArgsList, role.Value, role.Default}},
 		// Default arguments: Python's AST puts default arguments on a sibling list to the one of
@@ -341,7 +341,7 @@ var Annotations = []Mapping{
 		"vararg":      {Opt: true, Roles: role.Roles{role.Function, role.Declaration, role.ArgsList, role.Name, role.Identifier}},
 	}, role.Function, role.Declaration, role.Argument, role.Incomplete),
 
-	AnnotateTypeFields("arguments", FieldRoles{
+	AnnotateType("arguments", FieldRoles{
 		"args":     {Arr: true, Roles: role.Roles{role.Function, role.Declaration, role.Argument, role.Name, role.Identifier}},
 		"defaults": {Arr: true, Roles: role.Roles{role.Function, role.Declaration, role.ArgsList, role.Value, role.Default}},
 		"kwarg":    {Opt: true, Roles: role.Roles{role.Function, role.Declaration, role.ArgsList, role.Map, role.Name, role.Identifier}},
@@ -349,14 +349,14 @@ var Annotations = []Mapping{
 	}, role.Function, role.Declaration, role.Argument, role.Incomplete),
 
 	// Function Calls
-	AnnotateTypeFields("Call", FieldRoles{
+	AnnotateType("Call", FieldRoles{
 		"args":     {Arr: true, Roles: role.Roles{role.Function, role.Call, role.Positional, role.Argument, role.Name}},
 		"func":     {Roles: role.Roles{role.Call, role.Callee}},
 		"keywords": {Arr: true, Roles: role.Roles{role.Function, role.Call, role.Argument}},
 	}, role.Function, role.Call, role.Expression),
 
 	// Keywords are additionally annotated in FunctionDef and ClassDef
-	AnnotateTypeFields("keyword", FieldRoles{
+	AnnotateType("keyword", FieldRoles{
 		"value": {Roles: role.Roles{role.Argument, role.Value}},
 		"arg":   {Rename: uast.KeyToken},
 	}, role.Name),
@@ -364,25 +364,25 @@ var Annotations = []Mapping{
 	// Comments and non significative whitespace
 	AnnotateType("SameLineNoops", nil, role.Comment),
 
-	AnnotateTypeFields("PreviousNoops", FieldRoles{
+	AnnotateType("PreviousNoops", FieldRoles{
 		"lines": {Arr: true, Roles: role.Roles{role.Noop}},
 	}, role.Noop),
 
-	AnnotateTypeFields("RemainderNoops", FieldRoles{
+	AnnotateType("RemainderNoops", FieldRoles{
 		"lines": {Arr: true, Roles: role.Roles{role.Noop}},
 	}, role.Noop),
 
-	AnnotateTypeFields("NoopLine", FieldRoles{
+	AnnotateType("NoopLine", FieldRoles{
 		"noop_line": {Rename: uast.KeyToken},
 	}, role.Noop, role.Comment),
 
-	AnnotateTypeFields("NoopSameLine", FieldRoles{
+	AnnotateType("NoopSameLine", FieldRoles{
 		"s": {Rename: uast.KeyToken},
 	}, role.Noop, role.Comment),
 
 	// Qualified Identifiers
 	// a.b.c ("a" and "b" will be Qualified+Identifier, "c" will be just Identifier)
-	AnnotateTypeFields("Attribute", FieldRoles{
+	AnnotateType("Attribute", FieldRoles{
 		"value": {Arr: true, Roles: role.Roles{role.Qualified}},
 	}),
 
@@ -458,20 +458,20 @@ var Annotations = []Mapping{
 		},
 	}, role.Type, role.Declaration, role.Identifier, role.Statement),
 
-	AnnotateTypeFields("ClassDef", FieldRoles{
+	AnnotateType("ClassDef", FieldRoles{
 		"keywords": {Arr: true, Roles: role.Roles{role.Incomplete}},
 	}),
 
 	// These two (exec & print) are AST nodes in Python2 but we convert them to functions
 	// in the UAST like they are in Python3
-	AnnotateTypeFields("Exec", FieldRoles{
+	AnnotateType("Exec", FieldRoles{
 		"body":        {Roles: role.Roles{role.Call, role.Argument, role.Positional}},
 		"globals":     {Roles: role.Roles{role.Call, role.Argument, role.Positional}},
 		"locals":      {Roles: role.Roles{role.Call, role.Argument, role.Positional}},
 		uast.KeyToken: {Add: true, Op: String("exec")},
 	}, role.Function, role.Call, role.Expression),
 
-	AnnotateTypeFields("Print", FieldRoles{
+	AnnotateType("Print", FieldRoles{
 		"values":      {Arr: true, Roles: role.Roles{role.Call, role.Argument, role.Positional}},
 		uast.KeyToken: {Add: true, Op: String("print")},
 	}, role.Function, role.Call, role.Callee, role.Identifier, role.Expression),

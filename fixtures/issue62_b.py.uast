@@ -7,7 +7,6 @@ Module {
 .  Children: {
 .  .  0: ImportFrom {
 .  .  .  Roles: Declaration,Import,Statement
-.  .  .  TOKEN "import from"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
 .  .  .  .  Line: 1
@@ -23,14 +22,14 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: ImportFrom.level {
-.  .  .  .  .  Roles: Identifier,Import,Incomplete
+.  .  .  .  .  Roles: Import,Incomplete
 .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: level
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: ImportFrom.module {
-.  .  .  .  .  Roles: Identifier,Import
+.  .  .  .  .  Roles: Identifier,Import,Pathname
 .  .  .  .  .  TOKEN "collections"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: module
@@ -63,7 +62,6 @@ Module {
 .  .  }
 .  .  1: ImportFrom {
 .  .  .  Roles: Declaration,Import,Statement
-.  .  .  TOKEN "import from"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 33
 .  .  .  .  Line: 3
@@ -74,14 +72,14 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: ImportFrom.level {
-.  .  .  .  .  Roles: Identifier,Import,Incomplete
+.  .  .  .  .  Roles: Import,Incomplete
 .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: level
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: ImportFrom.module {
-.  .  .  .  .  Roles: Identifier,Import
+.  .  .  .  .  Roles: Identifier,Import,Pathname
 .  .  .  .  .  TOKEN "ast2vec.bblfsh_roles"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: module
@@ -130,7 +128,6 @@ Module {
 .  .  }
 .  .  2: ImportFrom {
 .  .  .  Roles: Declaration,Import,Statement
-.  .  .  TOKEN "import from"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 84
 .  .  .  .  Line: 4
@@ -141,14 +138,14 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: ImportFrom.level {
-.  .  .  .  .  Roles: Identifier,Import,Incomplete
+.  .  .  .  .  Roles: Import,Incomplete
 .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: level
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: ImportFrom.module {
-.  .  .  .  .  Roles: Identifier,Import
+.  .  .  .  .  Roles: Identifier,Import,Pathname
 .  .  .  .  .  TOKEN "ast2vec.repo2.base"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: module
