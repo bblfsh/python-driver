@@ -19,11 +19,12 @@ Module {
 .  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
+.  .  .  .  num_level: 1
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: ImportFrom.level {
 .  .  .  .  .  Roles: Import,Incomplete
-.  .  .  .  .  TOKEN "1"
+.  .  .  .  .  TOKEN "."
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: level
 .  .  .  .  .  }
@@ -74,11 +75,12 @@ Module {
 .  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
+.  .  .  .  num_level: 2
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: ImportFrom.level {
 .  .  .  .  .  Roles: Import,Incomplete
-.  .  .  .  .  TOKEN "2"
+.  .  .  .  .  TOKEN ".."
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: level
 .  .  .  .  .  }
@@ -124,11 +126,12 @@ Module {
 .  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
+.  .  .  .  num_level: 3
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: ImportFrom.level {
 .  .  .  .  .  Roles: Import,Incomplete
-.  .  .  .  .  TOKEN "3"
+.  .  .  .  .  TOKEN "..."
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: level
 .  .  .  .  .  }

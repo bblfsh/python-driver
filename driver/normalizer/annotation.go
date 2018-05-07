@@ -1,6 +1,8 @@
 package normalizer
 
 import (
+	"strings"
+
 	"gopkg.in/bblfsh/sdk.v2/uast"
 	"gopkg.in/bblfsh/sdk.v2/uast/role"
 	. "gopkg.in/bblfsh/sdk.v2/uast/transformer"
@@ -86,6 +88,54 @@ func loopAnnotate(typ string, mainRole role.Role, roles ...role.Role) Mapping {
 			uast.KeyToken: String("else"),
 		},
 	}, roles...)
+}
+
+
+func num2dots(n uast.Value) uast.Value {
+	if intval, ok := n.(uast.Int); ok {
+		i64val := int(intval)
+		return uast.String(strings.Repeat(".", int(i64val)))
+	}
+	return n
+}
+
+type opLevelDotsNumConv struct {
+	op        Op
+	orig      Op
+}
+
+func (op opLevelDotsNumConv) Check(st *State, n uast.Node) (bool, error) {
+	v, ok := n.(uast.Value)
+	if !ok {
+		return false, nil
+	}
+
+	nv := num2dots(v)
+	res1, err := op.op.Check(st, nv)
+	if err != nil || !res1{
+		return false, err
+	}
+
+	res2, err := op.orig.Check(st, v)
+	if err != nil || !res2{
+		return false, err
+	}
+
+	return res1 && res2, nil
+}
+
+func (op opLevelDotsNumConv) Construct(st *State, n uast.Node) (uast.Node, error) {
+	n, err := op.orig.Construct(st, n)
+	if err != nil {
+		return nil, err
+	}
+
+	v, ok := n.(uast.Int)
+	if !ok {
+		return nil, ErrExpectedValue.New(n)
+	}
+
+	return v, nil
 }
 
 var Annotations = []Mapping{
@@ -402,7 +452,7 @@ var Annotations = []Mapping{
 
 	MapAST("ImportFrom", Obj{
 		"module": Var("module"),
-		"level":  Var("level"),
+		"level":  opLevelDotsNumConv{op: Var("level"), orig: Var("origlevel")},
 		"names":  Var("names"),
 	}, Obj{
 		"names": Obj{
@@ -417,10 +467,11 @@ var Annotations = []Mapping{
 			uast.KeyRoles: Roles(role.Import, role.Incomplete),
 		},
 		"module": Obj{
-			uast.KeyType: String("ImportFrom.module"),
+			uast.KeyType:  String("ImportFrom.module"),
 			uast.KeyToken: Var("module"),
 			uast.KeyRoles: Roles(role.Import, role.Pathname, role.Identifier),
 		},
+		"num_level": Var("origlevel"),
 	}, role.Import, role.Declaration, role.Statement),
 
 	MapAST("alias", Obj{
