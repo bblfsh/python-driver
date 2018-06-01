@@ -17,7 +17,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Compare {
-.  .  .  .  .  Roles: Expression,Binary
+.  .  .  .  .  Roles: Binary,Condition,Expression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  Line: 1
@@ -27,50 +27,30 @@ Module {
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Compare.comparators {
-.  .  .  .  .  .  .  Roles: Expression,Right
+.  .  .  .  .  .  0: Compare.ops {
+.  .  .  .  .  .  .  Roles: Expression
 .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  .  .  .  .  internalRole: ops
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression
-.  .  .  .  .  .  .  .  .  TOKEN "var2"
-.  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 8
-.  .  .  .  .  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  .  .  .  .  Col: 9
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 11
-.  .  .  .  .  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  .  .  .  .  Col: 12
-.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  0: Eq {
+.  .  .  .  .  .  .  .  .  Roles: Equal,Operator,Relational
+.  .  .  .  .  .  .  .  .  TOKEN "=="
 .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  .  .  .  .  internalRole: ops
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression
-.  .  .  .  .  .  .  .  .  TOKEN "var3"
-.  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 16
-.  .  .  .  .  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  .  .  .  .  Col: 17
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 19
-.  .  .  .  .  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  .  .  .  .  Col: 20
-.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  1: Eq {
+.  .  .  .  .  .  .  .  .  Roles: Equal,Operator,Relational
+.  .  .  .  .  .  .  .  .  TOKEN "=="
 .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  .  .  .  .  internalRole: ops
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  Roles: Identifier,Expression,Left
+.  .  .  .  .  .  .  Roles: Expression,Identifier,Left
 .  .  .  .  .  .  .  TOKEN "var1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 0
@@ -87,19 +67,47 @@ Module {
 .  .  .  .  .  .  .  .  internalRole: left
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  .  2: Compare.ops {
-.  .  .  .  .  .  .  Roles: Expression
+.  .  .  .  .  .  2: Compare.comparators {
+.  .  .  .  .  .  .  Roles: Expression,Right
 .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  .  .  .  .  internalRole: comparators
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Eq {
-.  .  .  .  .  .  .  .  .  Roles: Binary,Operator,Equal,Relational
-.  .  .  .  .  .  .  .  .  TOKEN "=="
+.  .  .  .  .  .  .  .  0: Name {
+.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
+.  .  .  .  .  .  .  .  .  TOKEN "var2"
+.  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 8
+.  .  .  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  .  .  Col: 9
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 11
+.  .  .  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  .  .  Col: 12
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  .  .  .  .  internalRole: comparators
+.  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  1: Eq {
-.  .  .  .  .  .  .  .  .  Roles: Binary,Operator,Equal,Relational
-.  .  .  .  .  .  .  .  .  TOKEN "=="
+.  .  .  .  .  .  .  .  1: Name {
+.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
+.  .  .  .  .  .  .  .  .  TOKEN "var3"
+.  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 16
+.  .  .  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  .  .  Col: 17
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 19
+.  .  .  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  .  .  Col: 20
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  .  .  .  .  internalRole: comparators
+.  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }

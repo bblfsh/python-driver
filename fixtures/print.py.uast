@@ -6,7 +6,7 @@ Module {
 .  Roles: File,Module
 .  Children: {
 .  .  0: Print {
-.  .  .  Roles: Function,Call,Callee,Identifier,Expression
+.  .  .  Roles: Call,Callee,Expression,Function,Identifier
 .  .  .  TOKEN "print"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
@@ -24,7 +24,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Num {
-.  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Call,Argument,Positional
+.  .  .  .  .  Roles: Argument,Call,Expression,Literal,Number,Positional,Primitive
 .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 6
@@ -43,7 +43,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  1: Print {
-.  .  .  Roles: Function,Call,Callee,Identifier,Expression
+.  .  .  Roles: Call,Callee,Expression,Function,Identifier
 .  .  .  TOKEN "print"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 9
@@ -61,7 +61,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Num {
-.  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Call,Argument,Positional
+.  .  .  .  .  Roles: Argument,Call,Expression,Literal,Number,Positional,Primitive
 .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 15

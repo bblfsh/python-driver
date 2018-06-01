@@ -17,7 +17,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: Expression,Binary
+.  .  .  .  .  Roles: Binary,Expression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 17
 .  .  .  .  .  .  Line: 2
@@ -27,8 +27,15 @@ Module {
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,Number,Primitive
+.  .  .  .  .  .  0: Add {
+.  .  .  .  .  .  .  Roles: Add,Arithmetic,Binary,Operator
+.  .  .  .  .  .  .  TOKEN "+"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: op
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  1: Num {
+.  .  .  .  .  .  .  Roles: Binary,Expression,Left,Literal,Number,Primitive
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 17
@@ -61,7 +68,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: NoopLine {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Noop,Comment
+.  .  .  .  .  .  .  .  .  .  .  Roles: Comment,Noop
 .  .  .  .  .  .  .  .  .  .  .  TOKEN " before comment
 "
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
@@ -77,7 +84,6 @@ Module {
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: SameLineNoops {
 .  .  .  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  .  .  TOKEN "[# linetrailing comment]"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 20
 .  .  .  .  .  .  .  .  .  .  Line: 2
@@ -91,18 +97,20 @@ Module {
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  internalRole: noops_sameline
 .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  .  .  0: NoopSameLine {
+.  .  .  .  .  .  .  .  .  .  .  Roles: Comment,Noop
+.  .  .  .  .  .  .  .  .  .  .  TOKEN "# linetrailing comment"
+.  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  internalRole: noop_lines
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  .  1: Add {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Add,Arithmetic
-.  .  .  .  .  .  .  TOKEN "+"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
 .  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Primitive
+.  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 19
@@ -139,7 +147,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: NoopLine {
-.  .  .  .  .  Roles: Noop,Comment
+.  .  .  .  .  Roles: Comment,Noop
 .  .  .  .  .  TOKEN " remaining comment
 "
 .  .  .  .  .  StartPosition: {

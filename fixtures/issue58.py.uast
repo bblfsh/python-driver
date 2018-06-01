@@ -6,7 +6,7 @@ Module {
 .  Roles: File,Module
 .  Children: {
 .  .  0: Assign {
-.  .  .  Roles: Binary,Assignment,Expression
+.  .  .  Roles: Assignment,Binary,Expression
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
 .  .  .  .  Line: 1
@@ -17,7 +17,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Tuple {
-.  .  .  .  .  Roles: Literal,Tuple,Expression,Primitive,Left
+.  .  .  .  .  Roles: Expression,Left,Literal,Primitive,Tuple
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  Line: 1
@@ -29,7 +29,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  Roles: Identifier,Expression
+.  .  .  .  .  .  .  Roles: Expression,Identifier
 .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 0
@@ -47,7 +47,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  Roles: Identifier,Expression
+.  .  .  .  .  .  .  Roles: Expression,Identifier
 .  .  .  .  .  .  .  TOKEN "b"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 3
@@ -67,7 +67,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Tuple {
-.  .  .  .  .  Roles: Literal,Tuple,Expression,Primitive,Right
+.  .  .  .  .  Roles: Expression,Literal,Primitive,Right,Tuple
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 7
 .  .  .  .  .  .  Line: 1
@@ -79,7 +79,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
+.  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
 .  .  .  .  .  .  .  TOKEN "0"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 7
@@ -96,7 +96,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: NoneLiteral {
-.  .  .  .  .  .  .  Roles: Literal,Null,Expression,Primitive
+.  .  .  .  .  .  .  Roles: Expression,Literal,Null,Primitive
 .  .  .  .  .  .  .  TOKEN "None"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 10
@@ -109,6 +109,7 @@ Module {
 .  .  .  .  .  .  .  .  Col: 14
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  LiteralValue: None
 .  .  .  .  .  .  .  .  internalRole: elts
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }

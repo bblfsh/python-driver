@@ -17,7 +17,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: SetComp {
-.  .  .  .  .  Roles: Set,For,Expression
+.  .  .  .  .  Roles: Expression,For,Set
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  Line: 1
@@ -28,7 +28,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: BinOp {
-.  .  .  .  .  .  .  Roles: Expression,Binary
+.  .  .  .  .  .  .  Roles: Binary,Expression
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 1
 .  .  .  .  .  .  .  .  Line: 1
@@ -38,8 +38,15 @@ Module {
 .  .  .  .  .  .  .  .  internalRole: elt
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Identifier
+.  .  .  .  .  .  .  .  0: Mult {
+.  .  .  .  .  .  .  .  .  Roles: Arithmetic,Binary,Multiply,Operator
+.  .  .  .  .  .  .  .  .  TOKEN "*"
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: op
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  1: Name {
+.  .  .  .  .  .  .  .  .  Roles: Binary,Expression,Identifier,Left
 .  .  .  .  .  .  .  .  .  TOKEN "n"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 1
@@ -56,15 +63,8 @@ Module {
 .  .  .  .  .  .  .  .  .  .  internalRole: left
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  1: Mult {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Multiply,Arithmetic
-.  .  .  .  .  .  .  .  .  TOKEN "*"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Primitive
+.  .  .  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
 .  .  .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 3
@@ -83,79 +83,32 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: comprehension {
-.  .  .  .  .  .  .  Roles: For,Iterator,Expression,Incomplete
+.  .  .  .  .  .  .  Roles: Expression,For,Incomplete,Iterator
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: generators
 .  .  .  .  .  .  .  .  is_async: 0
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Compare {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,If,Condition
+.  .  .  .  .  .  .  .  0: Name {
+.  .  .  .  .  .  .  .  .  Roles: Expression,For,Identifier
+.  .  .  .  .  .  .  .  .  TOKEN "n"
 .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 26
+.  .  .  .  .  .  .  .  .  .  Offset: 9
 .  .  .  .  .  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  .  .  .  .  Col: 27
+.  .  .  .  .  .  .  .  .  .  Col: 10
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 9
+.  .  .  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  .  .  Col: 10
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: ifs
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  .  .  0: Compare.comparators {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Right
-.  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  promotedPropertyList: true
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
-.  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "2"
-.  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 28
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 29
-.  .  .  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 28
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 29
-.  .  .  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Identifier,Expression,Left
-.  .  .  .  .  .  .  .  .  .  .  TOKEN "n"
-.  .  .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  Offset: 26
-.  .  .  .  .  .  .  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  .  .  .  .  .  .  Col: 27
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  Offset: 26
-.  .  .  .  .  .  .  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  .  .  .  .  .  .  Col: 27
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  .  .  internalRole: left
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  2: Compare.ops {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Expression
-.  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  promotedPropertyList: true
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  .  .  .  .  0: Gt {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Binary,Operator,GreaterThan,Relational
-.  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN ">"
-.  .  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  ctx: Store
+.  .  .  .  .  .  .  .  .  .  internalRole: target
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression,For,Update,Statement
+.  .  .  .  .  .  .  .  .  Roles: Expression,For,Identifier,Statement,Update
 .  .  .  .  .  .  .  .  .  TOKEN "somelist"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 14
@@ -172,22 +125,75 @@ Module {
 .  .  .  .  .  .  .  .  .  .  internalRole: iter
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  2: Name {
-.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression,For
-.  .  .  .  .  .  .  .  .  TOKEN "n"
+.  .  .  .  .  .  .  .  2: Compare {
+.  .  .  .  .  .  .  .  .  Roles: Binary,Condition,Expression,If
 .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 9
+.  .  .  .  .  .  .  .  .  .  Offset: 26
 .  .  .  .  .  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  .  .  .  .  Col: 10
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 9
-.  .  .  .  .  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  .  .  .  .  Col: 10
+.  .  .  .  .  .  .  .  .  .  Col: 27
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  .  .  .  .  internalRole: target
+.  .  .  .  .  .  .  .  .  .  internalRole: ifs
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  .  .  0: Compare.ops {
+.  .  .  .  .  .  .  .  .  .  .  Roles: Expression
+.  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  internalRole: ops
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  .  .  .  .  0: Gt {
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: GreaterThan,Operator,Relational
+.  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN ">"
+.  .  .  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  internalRole: ops
+.  .  .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  1: Name {
+.  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Identifier,Left
+.  .  .  .  .  .  .  .  .  .  .  TOKEN "n"
+.  .  .  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 26
+.  .  .  .  .  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  .  .  .  .  Col: 27
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 26
+.  .  .  .  .  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  .  .  .  .  Col: 27
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  .  .  .  .  .  .  internalRole: left
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  2: Compare.comparators {
+.  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Right
+.  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  internalRole: comparators
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  .  .  .  .  0: Num {
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
+.  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "2"
+.  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 28
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 29
+.  .  .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 28
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  Col: 29
+.  .  .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  internalRole: comparators
+.  .  .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }

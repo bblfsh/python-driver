@@ -6,8 +6,7 @@ Module {
 .  Roles: File,Module
 .  Children: {
 .  .  0: ClassDef {
-.  .  .  Roles: Type,Declaration,Identifier,Statement
-.  .  .  TOKEN "testcls1"
+.  .  .  Roles: Declaration,Identifier,Statement,Type
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 6
 .  .  .  .  Line: 1
@@ -20,17 +19,29 @@ Module {
 .  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
+.  .  .  .  name: testcls1
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: ClassDef.body {
-.  .  .  .  .  Roles: Type,Declaration,Body
+.  .  .  .  0: ClassDef.bases {
+.  .  .  .  .  Roles: Base,Declaration,Type
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  .  .  internalRole: bases
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: ClassDef.decorator_list {
+.  .  .  .  .  Roles: Call,Declaration,Incomplete,Type
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: decorator_list
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  2: ClassDef.body {
+.  .  .  .  .  Roles: Body,Declaration,Type
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: body
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: ClassDef {
-.  .  .  .  .  .  .  Roles: Type,Declaration,Identifier,Statement
-.  .  .  .  .  .  .  TOKEN "testcls2"
+.  .  .  .  .  .  .  Roles: Declaration,Identifier,Statement,Type
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 26
 .  .  .  .  .  .  .  .  Line: 2
@@ -41,11 +52,27 @@ Module {
 .  .  .  .  .  .  .  .  Line: 2
 .  .  .  .  .  .  .  .  Col: 18
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: body_stmts
+.  .  .  .  .  .  .  .  name: testcls2
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: ClassDef.body {
-.  .  .  .  .  .  .  .  .  Roles: Type,Declaration,Body
+.  .  .  .  .  .  .  .  0: ClassDef.bases {
+.  .  .  .  .  .  .  .  .  Roles: Base,Declaration,Type
 .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  .  .  .  .  .  .  internalRole: bases
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  1: ClassDef.decorator_list {
+.  .  .  .  .  .  .  .  .  Roles: Call,Declaration,Incomplete,Type
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: decorator_list
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  2: ClassDef.body {
+.  .  .  .  .  .  .  .  .  Roles: Body,Declaration,Type
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: body
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Pass {
@@ -60,6 +87,9 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 47
 .  .  .  .  .  .  .  .  .  .  .  .  Line: 3
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 12
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  internalRole: body_stmts
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  }

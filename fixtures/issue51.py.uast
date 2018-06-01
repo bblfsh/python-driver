@@ -17,7 +17,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Call {
-.  .  .  .  .  Roles: Function,Call,Expression
+.  .  .  .  .  Roles: Call,Expression,Function
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  Line: 1
@@ -28,7 +28,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Attribute {
-.  .  .  .  .  .  .  Roles: Call,Callee,Identifier,Expression
+.  .  .  .  .  .  .  Roles: Call,Callee,Expression,Identifier
 .  .  .  .  .  .  .  TOKEN "figure"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 4
@@ -46,7 +46,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Call,Receiver,Qualified,Identifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
 .  .  .  .  .  .  .  .  .  TOKEN "plt"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 0

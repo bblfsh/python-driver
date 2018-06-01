@@ -6,7 +6,7 @@ Module {
 .  Roles: File,Module
 .  Children: {
 .  .  0: ImportFrom {
-.  .  .  Roles: Import,Declaration,Statement
+.  .  .  Roles: Declaration,Import,Statement
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
 .  .  .  .  Line: 1
@@ -18,29 +18,51 @@ Module {
 .  .  .  .  Col: 7
 .  .  .  }
 .  .  .  Properties: {
-.  .  .  .  ImportFrom.module: os
 .  .  .  .  internalRole: body
-.  .  .  .  level: 0
+.  .  .  .  num_level: 0
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: ImportFrom.module {
-.  .  .  .  .  Roles: Import,Pathname,Identifier
-.  .  .  .  .  TOKEN "os"
+.  .  .  .  0: ImportFrom.level {
+.  .  .  .  .  Roles: Import,Incomplete
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  promotedPropertyString: true
+.  .  .  .  .  .  internalRole: level
 .  .  .  .  .  }
 .  .  .  .  }
-.  .  .  .  1: alias {
-.  .  .  .  .  Roles: Import,Pathname,Identifier
-.  .  .  .  .  TOKEN "path"
+.  .  .  .  1: ImportFrom.module {
+.  .  .  .  .  Roles: Identifier,Import,Pathname
+.  .  .  .  .  TOKEN "os"
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: module
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  2: ImportFrom.names {
+.  .  .  .  .  Roles: Identifier,Import,Incomplete,Pathname
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: names
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: alias {
+.  .  .  .  .  .  .  Roles: Identifier,Import,Pathname
+.  .  .  .  .  .  .  TOKEN "path"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: name_list
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  0: alias.asname {
+.  .  .  .  .  .  .  .  .  Roles: Alias,Identifier,Import,Pathname
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: asname
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
 .  .  }
 .  .  1: Import {
-.  .  .  Roles: Import,Declaration,Statement
+.  .  .  Roles: Declaration,Import,Statement
+.  .  .  TOKEN "import"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 20
 .  .  .  .  Line: 2
@@ -50,17 +72,34 @@ Module {
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: alias {
-.  .  .  .  .  Roles: Import,Pathname,Identifier
-.  .  .  .  .  TOKEN "sys"
+.  .  .  .  0: ImportFrom.names {
+.  .  .  .  .  Roles: Identifier,Import,Incomplete,Pathname
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: names
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: alias {
+.  .  .  .  .  .  .  Roles: Identifier,Import,Pathname
+.  .  .  .  .  .  .  TOKEN "sys"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: name_list
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  0: alias.asname {
+.  .  .  .  .  .  .  .  .  Roles: Alias,Identifier,Import,Pathname
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: asname
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
 .  .  }
 .  .  2: Import {
-.  .  .  Roles: Import,Declaration,Statement
+.  .  .  Roles: Declaration,Import,Statement
+.  .  .  TOKEN "import"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 32
 .  .  .  .  Line: 4
@@ -70,19 +109,26 @@ Module {
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: alias {
-.  .  .  .  .  Roles: Import,Pathname,Identifier
-.  .  .  .  .  TOKEN "numpy"
+.  .  .  .  0: ImportFrom.names {
+.  .  .  .  .  Roles: Identifier,Import,Incomplete,Pathname
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  alias.asname: np
 .  .  .  .  .  .  internalRole: names
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: alias.asname {
-.  .  .  .  .  .  .  Roles: Import,Alias,Identifier
-.  .  .  .  .  .  .  TOKEN "np"
+.  .  .  .  .  .  0: alias {
+.  .  .  .  .  .  .  Roles: Identifier,Import,Pathname
+.  .  .  .  .  .  .  TOKEN "numpy"
 .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  promotedPropertyString: true
+.  .  .  .  .  .  .  .  internalRole: name_list
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  0: alias.asname {
+.  .  .  .  .  .  .  .  .  Roles: Alias,Identifier,Import,Pathname
+.  .  .  .  .  .  .  .  .  TOKEN "np"
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: asname
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }

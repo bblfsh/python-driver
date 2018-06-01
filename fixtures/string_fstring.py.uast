@@ -6,7 +6,7 @@ Module {
 .  Roles: File,Module
 .  Children: {
 .  .  0: Assign {
-.  .  .  Roles: Binary,Assignment,Expression
+.  .  .  Roles: Assignment,Binary,Expression
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
 .  .  .  .  Line: 1
@@ -17,7 +17,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
-.  .  .  .  .  Roles: Left,Identifier,Expression
+.  .  .  .  .  Roles: Expression,Identifier,Left
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
@@ -35,7 +35,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Num {
-.  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Right
+.  .  .  .  .  Roles: Expression,Literal,Number,Primitive,Right
 .  .  .  .  .  TOKEN "42"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 4
@@ -54,7 +54,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  1: Assign {
-.  .  .  Roles: Binary,Assignment,Expression
+.  .  .  Roles: Assignment,Binary,Expression
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 7
 .  .  .  .  Line: 2
@@ -65,7 +65,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
-.  .  .  .  .  Roles: Left,Identifier,Expression
+.  .  .  .  .  Roles: Expression,Identifier,Left
 .  .  .  .  .  TOKEN "b"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 7
@@ -83,7 +83,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Num {
-.  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Right
+.  .  .  .  .  Roles: Expression,Literal,Number,Primitive,Right
 .  .  .  .  .  TOKEN "3.14"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 11
@@ -113,7 +113,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: JoinedStr {
-.  .  .  .  .  Roles: Literal,String,Expression,Primitive
+.  .  .  .  .  Roles: Expression,Incomplete,Literal,Primitive,String
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 16
 .  .  .  .  .  .  Line: 3
@@ -123,24 +123,7 @@ Module {
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
-.  .  .  .  .  .  .  TOKEN "This is an fstring with an "
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 18
-.  .  .  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  .  .  Col: 3
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 67
-.  .  .  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  .  .  Col: 52
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: values
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: FormattedValue {
+.  .  .  .  .  .  0: FormattedValue {
 .  .  .  .  .  .  .  Roles: Expression,Incomplete
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 16
@@ -153,7 +136,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
 .  .  .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 26
@@ -172,8 +155,25 @@ Module {
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
+.  .  .  .  .  .  1: Str {
+.  .  .  .  .  .  .  Roles: Expression,Literal,Primitive,String
+.  .  .  .  .  .  .  TOKEN "This is an fstring with an "
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 18
+.  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  Col: 3
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 67
+.  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  Col: 52
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: values
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
 .  .  .  .  .  .  2: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
+.  .  .  .  .  .  .  Roles: Expression,Literal,Primitive,String
 .  .  .  .  .  .  .  TOKEN " inserted parameter"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 48
@@ -205,7 +205,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: JoinedStr {
-.  .  .  .  .  Roles: Literal,String,Expression,Primitive
+.  .  .  .  .  Roles: Expression,Incomplete,Literal,Primitive,String
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 69
 .  .  .  .  .  .  Line: 4
@@ -215,24 +215,7 @@ Module {
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
-.  .  .  .  .  .  .  TOKEN "Another with "
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 71
-.  .  .  .  .  .  .  .  Line: 4
-.  .  .  .  .  .  .  .  Col: 3
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 108
-.  .  .  .  .  .  .  .  Line: 4
-.  .  .  .  .  .  .  .  Col: 40
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: values
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: FormattedValue {
+.  .  .  .  .  .  0: FormattedValue {
 .  .  .  .  .  .  .  Roles: Expression,Incomplete
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 69
@@ -245,7 +228,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
 .  .  .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 85
@@ -264,8 +247,25 @@ Module {
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
+.  .  .  .  .  .  1: Str {
+.  .  .  .  .  .  .  Roles: Expression,Literal,Primitive,String
+.  .  .  .  .  .  .  TOKEN "Another with "
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 71
+.  .  .  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  .  .  Col: 3
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 108
+.  .  .  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  .  .  Col: 40
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: values
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
 .  .  .  .  .  .  2: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
+.  .  .  .  .  .  .  Roles: Expression,Literal,Primitive,String
 .  .  .  .  .  .  .  TOKEN " tostring indicator"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 89
@@ -297,7 +297,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: JoinedStr {
-.  .  .  .  .  Roles: Literal,String,Expression,Primitive
+.  .  .  .  .  Roles: Expression,Incomplete,Literal,Primitive,String
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 110
 .  .  .  .  .  .  Line: 5
@@ -307,24 +307,7 @@ Module {
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
-.  .  .  .  .  .  .  TOKEN "Another with "
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 112
-.  .  .  .  .  .  .  .  Line: 5
-.  .  .  .  .  .  .  .  Col: 3
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 145
-.  .  .  .  .  .  .  .  Line: 5
-.  .  .  .  .  .  .  .  Col: 36
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: values
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: FormattedValue {
+.  .  .  .  .  .  0: FormattedValue {
 .  .  .  .  .  .  .  Roles: Expression,Incomplete
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 110
@@ -337,7 +320,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
 .  .  .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 126
@@ -356,8 +339,25 @@ Module {
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
+.  .  .  .  .  .  1: Str {
+.  .  .  .  .  .  .  Roles: Expression,Literal,Primitive,String
+.  .  .  .  .  .  .  TOKEN "Another with "
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 112
+.  .  .  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  .  .  Col: 3
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 145
+.  .  .  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  .  .  Col: 36
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: values
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
 .  .  .  .  .  .  2: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
+.  .  .  .  .  .  .  Roles: Expression,Literal,Primitive,String
 .  .  .  .  .  .  .  TOKEN " repr indicator"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 130
@@ -389,7 +389,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: JoinedStr {
-.  .  .  .  .  Roles: Literal,String,Expression,Primitive
+.  .  .  .  .  Roles: Expression,Incomplete,Literal,Primitive,String
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 147
 .  .  .  .  .  .  Line: 6
@@ -399,24 +399,7 @@ Module {
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
-.  .  .  .  .  .  .  TOKEN "Another with "
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 149
-.  .  .  .  .  .  .  .  Line: 6
-.  .  .  .  .  .  .  .  Col: 3
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 183
-.  .  .  .  .  .  .  .  Line: 6
-.  .  .  .  .  .  .  .  Col: 37
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: values
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: FormattedValue {
+.  .  .  .  .  .  0: FormattedValue {
 .  .  .  .  .  .  .  Roles: Expression,Incomplete
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 147
@@ -429,7 +412,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
 .  .  .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 163
@@ -448,8 +431,25 @@ Module {
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
+.  .  .  .  .  .  1: Str {
+.  .  .  .  .  .  .  Roles: Expression,Literal,Primitive,String
+.  .  .  .  .  .  .  TOKEN "Another with "
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 149
+.  .  .  .  .  .  .  .  Line: 6
+.  .  .  .  .  .  .  .  Col: 3
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 183
+.  .  .  .  .  .  .  .  Line: 6
+.  .  .  .  .  .  .  .  Col: 37
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: values
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
 .  .  .  .  .  .  2: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
+.  .  .  .  .  .  .  Roles: Expression,Literal,Primitive,String
 .  .  .  .  .  .  .  TOKEN " ascii indicator"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 167
@@ -481,7 +481,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: JoinedStr {
-.  .  .  .  .  Roles: Literal,String,Expression,Primitive
+.  .  .  .  .  Roles: Expression,Incomplete,Literal,Primitive,String
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 185
 .  .  .  .  .  .  Line: 7
@@ -491,24 +491,7 @@ Module {
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
-.  .  .  .  .  .  .  TOKEN "Another with "
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 187
-.  .  .  .  .  .  .  .  Line: 7
-.  .  .  .  .  .  .  .  Col: 3
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 248
-.  .  .  .  .  .  .  .  Line: 7
-.  .  .  .  .  .  .  .  Col: 64
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: values
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: FormattedValue {
+.  .  .  .  .  .  0: FormattedValue {
 .  .  .  .  .  .  .  Roles: Expression,Incomplete
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 185
@@ -521,7 +504,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: JoinedStr {
-.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
+.  .  .  .  .  .  .  .  .  Roles: Expression,Incomplete,Literal,Primitive,String
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 185
 .  .  .  .  .  .  .  .  .  .  Line: 7
@@ -544,7 +527,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 204
@@ -562,24 +545,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
-.  .  .  .  .  .  .  .  .  .  .  TOKEN "."
-.  .  .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  Offset: 206
-.  .  .  .  .  .  .  .  .  .  .  .  Line: 7
-.  .  .  .  .  .  .  .  .  .  .  .  Col: 22
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  Offset: 248
-.  .  .  .  .  .  .  .  .  .  .  .  Line: 7
-.  .  .  .  .  .  .  .  .  .  .  .  Col: 64
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  internalRole: values
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  2: FormattedValue {
+.  .  .  .  .  .  .  .  .  .  1: FormattedValue {
 .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Incomplete
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 185
@@ -592,7 +558,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "3"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 208
@@ -610,10 +576,27 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  2: Str {
+.  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Literal,Primitive,String
+.  .  .  .  .  .  .  .  .  .  .  TOKEN "."
+.  .  .  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 206
+.  .  .  .  .  .  .  .  .  .  .  .  Line: 7
+.  .  .  .  .  .  .  .  .  .  .  .  Col: 22
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 248
+.  .  .  .  .  .  .  .  .  .  .  .  Line: 7
+.  .  .  .  .  .  .  .  .  .  .  .  Col: 64
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  internalRole: values
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  Roles: Identifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
 .  .  .  .  .  .  .  .  .  TOKEN "b"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 201
@@ -632,8 +615,25 @@ Module {
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
+.  .  .  .  .  .  1: Str {
+.  .  .  .  .  .  .  Roles: Expression,Literal,Primitive,String
+.  .  .  .  .  .  .  TOKEN "Another with "
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 187
+.  .  .  .  .  .  .  .  Line: 7
+.  .  .  .  .  .  .  .  Col: 3
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 248
+.  .  .  .  .  .  .  .  Line: 7
+.  .  .  .  .  .  .  .  Col: 64
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: values
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
 .  .  .  .  .  .  2: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
+.  .  .  .  .  .  .  Roles: Expression,Literal,Primitive,String
 .  .  .  .  .  .  .  TOKEN " width and precission float indicator"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 211
@@ -654,7 +654,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  7: FunctionDef {
-.  .  .  Roles: Function,Declaration,Name,Identifier
+.  .  .  Roles: Declaration,Function,Identifier,Name
 .  .  .  TOKEN "somefunc"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 255
@@ -670,15 +670,20 @@ Module {
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: arguments {
-.  .  .  .  .  Roles: Function,Declaration,Incomplete,Argument
+.  .  .  .  0: FunctionDef.decorators {
+.  .  .  .  .  Roles: Declaration,Function,Incomplete
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: decorator_list
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: arguments {
+.  .  .  .  .  Roles: Argument,Declaration,Function,Incomplete
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: arg {
-.  .  .  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
-.  .  .  .  .  .  .  TOKEN "i"
+.  .  .  .  .  .  .  Roles: Argument,Declaration,Function,Identifier,Name
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 264
 .  .  .  .  .  .  .  .  Line: 9
@@ -690,6 +695,7 @@ Module {
 .  .  .  .  .  .  .  .  Col: 14
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  arg: i
 .  .  .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
@@ -713,10 +719,10 @@ Module {
 .  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
-.  .  .  .  1: FunctionDef.body {
-.  .  .  .  .  Roles: Function,Declaration,Body
+.  .  .  .  2: FunctionDef.body {
+.  .  .  .  .  Roles: Body,Declaration,Function
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  .  .  internalRole: body
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Return {
@@ -732,9 +738,12 @@ Module {
 .  .  .  .  .  .  .  .  Line: 9
 .  .  .  .  .  .  .  .  Col: 23
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: body_stmts
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: BinOp {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Binary
+.  .  .  .  .  .  .  .  .  Roles: Binary,Expression
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 275
 .  .  .  .  .  .  .  .  .  .  Line: 9
@@ -744,8 +753,15 @@ Module {
 .  .  .  .  .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Identifier
+.  .  .  .  .  .  .  .  .  .  0: Mult {
+.  .  .  .  .  .  .  .  .  .  .  Roles: Arithmetic,Binary,Multiply,Operator
+.  .  .  .  .  .  .  .  .  .  .  TOKEN "*"
+.  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  internalRole: op
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  1: Name {
+.  .  .  .  .  .  .  .  .  .  .  Roles: Binary,Expression,Identifier,Left
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "i"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 275
@@ -762,15 +778,8 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: left
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  1: Mult {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Multiply,Arithmetic
-.  .  .  .  .  .  .  .  .  .  .  TOKEN "*"
-.  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Primitive
+.  .  .  .  .  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 277
@@ -806,7 +815,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: JoinedStr {
-.  .  .  .  .  Roles: Literal,String,Expression,Primitive
+.  .  .  .  .  Roles: Expression,Incomplete,Literal,Primitive,String
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 279
 .  .  .  .  .  .  Line: 10
@@ -816,24 +825,7 @@ Module {
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
-.  .  .  .  .  .  .  TOKEN "Another with "
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 281
-.  .  .  .  .  .  .  .  Line: 10
-.  .  .  .  .  .  .  .  Col: 3
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 325
-.  .  .  .  .  .  .  .  Line: 10
-.  .  .  .  .  .  .  .  Col: 47
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: values
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: FormattedValue {
+.  .  .  .  .  .  0: FormattedValue {
 .  .  .  .  .  .  .  Roles: Expression,Incomplete
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 279
@@ -846,7 +838,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Call {
-.  .  .  .  .  .  .  .  .  Roles: Function,Call,Expression
+.  .  .  .  .  .  .  .  .  Roles: Call,Expression,Function
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 295
 .  .  .  .  .  .  .  .  .  .  Line: 10
@@ -856,25 +848,8 @@ Module {
 .  .  .  .  .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Function,Call,Positional,Argument,Name
-.  .  .  .  .  .  .  .  .  .  .  TOKEN "10"
-.  .  .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  Offset: 304
-.  .  .  .  .  .  .  .  .  .  .  .  Line: 10
-.  .  .  .  .  .  .  .  .  .  .  .  Col: 26
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  Offset: 325
-.  .  .  .  .  .  .  .  .  .  .  .  Line: 10
-.  .  .  .  .  .  .  .  .  .  .  .  Col: 47
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Call,Callee,Identifier,Expression
+.  .  .  .  .  .  .  .  .  .  0: Name {
+.  .  .  .  .  .  .  .  .  .  .  Roles: Call,Callee,Expression,Identifier
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "somefunc"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 295
@@ -891,12 +866,46 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: func
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  1: Num {
+.  .  .  .  .  .  .  .  .  .  .  Roles: Argument,Call,Expression,Function,Literal,Name,Number,Positional,Primitive
+.  .  .  .  .  .  .  .  .  .  .  TOKEN "10"
+.  .  .  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 304
+.  .  .  .  .  .  .  .  .  .  .  .  Line: 10
+.  .  .  .  .  .  .  .  .  .  .  .  Col: 26
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 325
+.  .  .  .  .  .  .  .  .  .  .  .  Line: 10
+.  .  .  .  .  .  .  .  .  .  .  .  Col: 47
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  internalRole: args
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
+.  .  .  .  .  .  1: Str {
+.  .  .  .  .  .  .  Roles: Expression,Literal,Primitive,String
+.  .  .  .  .  .  .  TOKEN "Another with "
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 281
+.  .  .  .  .  .  .  .  Line: 10
+.  .  .  .  .  .  .  .  Col: 3
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 325
+.  .  .  .  .  .  .  .  Line: 10
+.  .  .  .  .  .  .  .  Col: 47
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: values
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
 .  .  .  .  .  .  2: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
+.  .  .  .  .  .  .  Roles: Expression,Literal,Primitive,String
 .  .  .  .  .  .  .  TOKEN " an embedded call"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 308
@@ -928,7 +937,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: JoinedStr {
-.  .  .  .  .  Roles: Literal,String,Expression,Primitive
+.  .  .  .  .  Roles: Expression,Incomplete,Literal,Primitive,String
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 327
 .  .  .  .  .  .  Line: 11
@@ -938,24 +947,7 @@ Module {
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
-.  .  .  .  .  .  .  TOKEN "Another with "
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 329
-.  .  .  .  .  .  .  .  Line: 11
-.  .  .  .  .  .  .  .  Col: 3
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 380
-.  .  .  .  .  .  .  .  Line: 11
-.  .  .  .  .  .  .  .  Col: 54
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: values
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: FormattedValue {
+.  .  .  .  .  .  0: FormattedValue {
 .  .  .  .  .  .  .  Roles: Expression,Incomplete
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 327
@@ -968,7 +960,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Call {
-.  .  .  .  .  .  .  .  .  Roles: Function,Call,Expression
+.  .  .  .  .  .  .  .  .  Roles: Call,Expression,Function
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 343
 .  .  .  .  .  .  .  .  .  .  Line: 11
@@ -979,7 +971,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Attribute {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Call,Callee,Identifier,Expression
+.  .  .  .  .  .  .  .  .  .  .  Roles: Call,Callee,Expression,Identifier
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "upper"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 349
@@ -997,7 +989,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Call,Receiver
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Literal,Primitive,String
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "pok"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 344
@@ -1019,8 +1011,25 @@ Module {
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
+.  .  .  .  .  .  1: Str {
+.  .  .  .  .  .  .  Roles: Expression,Literal,Primitive,String
+.  .  .  .  .  .  .  TOKEN "Another with "
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 329
+.  .  .  .  .  .  .  .  Line: 11
+.  .  .  .  .  .  .  .  Col: 3
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 380
+.  .  .  .  .  .  .  .  Line: 11
+.  .  .  .  .  .  .  .  Col: 54
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: values
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
 .  .  .  .  .  .  2: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
+.  .  .  .  .  .  .  Roles: Expression,Literal,Primitive,String
 .  .  .  .  .  .  .  TOKEN " an embedded expression"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 357

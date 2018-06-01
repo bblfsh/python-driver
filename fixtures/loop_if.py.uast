@@ -22,30 +22,26 @@ Module {
 .  .  .  .  internalRole: body
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: For.body {
-.  .  .  .  .  Roles: For,Body
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  0: Name {
+.  .  .  .  .  Roles: Expression,For,Identifier,Update
+.  .  .  .  .  TOKEN "i"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 4
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 5
 .  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Pass {
-.  .  .  .  .  .  .  Roles: Noop,Statement
-.  .  .  .  .  .  .  TOKEN "pass"
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 24
-.  .  .  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  .  .  Col: 5
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 27
-.  .  .  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  .  .  Col: 8
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 4
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 5
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  ctx: Store
+.  .  .  .  .  .  internalRole: target
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Name {
-.  .  .  .  .  Roles: Identifier,Expression,For
+.  .  .  .  .  Roles: Expression,For,Identifier
 .  .  .  .  .  TOKEN "something"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 9
@@ -62,10 +58,36 @@ Module {
 .  .  .  .  .  .  internalRole: iter
 .  .  .  .  .  }
 .  .  .  .  }
-.  .  .  .  2: For.orelse {
-.  .  .  .  .  Roles: For,Body,Else
+.  .  .  .  2: For.body {
+.  .  .  .  .  Roles: Body,For,Then
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  .  .  internalRole: body
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: Pass {
+.  .  .  .  .  .  .  Roles: Noop,Statement
+.  .  .  .  .  .  .  TOKEN "pass"
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 24
+.  .  .  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  .  .  Col: 5
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 27
+.  .  .  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  .  .  Col: 8
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: body_stmts
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  3: For.orelse {
+.  .  .  .  .  Roles: Body,Else,For
+.  .  .  .  .  TOKEN "else"
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: orelse
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Expr {
@@ -75,9 +97,12 @@ Module {
 .  .  .  .  .  .  .  .  Line: 4
 .  .  .  .  .  .  .  .  Col: 5
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: else_stmts
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Call {
-.  .  .  .  .  .  .  .  .  Roles: Function,Call,Expression
+.  .  .  .  .  .  .  .  .  Roles: Call,Expression,Function
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 39
 .  .  .  .  .  .  .  .  .  .  Line: 4
@@ -87,25 +112,8 @@ Module {
 .  .  .  .  .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Function,Call,Positional,Argument,Name
-.  .  .  .  .  .  .  .  .  .  .  TOKEN "Python fors have elses"
-.  .  .  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  Offset: 45
-.  .  .  .  .  .  .  .  .  .  .  .  Line: 4
-.  .  .  .  .  .  .  .  .  .  .  .  Col: 11
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  .  .  .  .  Offset: 68
-.  .  .  .  .  .  .  .  .  .  .  .  Line: 4
-.  .  .  .  .  .  .  .  .  .  .  .  Col: 34
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Call,Callee,Identifier,Expression
+.  .  .  .  .  .  .  .  .  .  0: Name {
+.  .  .  .  .  .  .  .  .  .  .  Roles: Call,Callee,Expression,Identifier
 .  .  .  .  .  .  .  .  .  .  .  TOKEN "print"
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 39
@@ -122,28 +130,27 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: func
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  1: Str {
+.  .  .  .  .  .  .  .  .  .  .  Roles: Argument,Call,Expression,Function,Literal,Name,Positional,Primitive,String
+.  .  .  .  .  .  .  .  .  .  .  TOKEN "Python fors have elses"
+.  .  .  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 45
+.  .  .  .  .  .  .  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  .  .  .  .  .  .  Col: 11
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 68
+.  .  .  .  .  .  .  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  .  .  .  .  .  .  Col: 34
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  internalRole: args
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  3: Name {
-.  .  .  .  .  Roles: Identifier,Expression,For,Update
-.  .  .  .  .  TOKEN "i"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 4
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 5
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 4
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 5
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  internalRole: target
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }

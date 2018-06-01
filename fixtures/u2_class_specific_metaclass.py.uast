@@ -6,8 +6,7 @@ Module {
 .  Roles: File,Module
 .  Children: {
 .  .  0: ClassDef {
-.  .  .  Roles: Type,Declaration,Identifier,Statement
-.  .  .  TOKEN "testcls1"
+.  .  .  Roles: Declaration,Identifier,Statement,Type
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 6
 .  .  .  .  Line: 1
@@ -20,16 +19,23 @@ Module {
 .  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
+.  .  .  .  name: testcls1
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: ClassDef.bases {
-.  .  .  .  .  Roles: Type,Declaration,Base
+.  .  .  .  0: ClassDef.decorator_list {
+.  .  .  .  .  Roles: Call,Declaration,Incomplete,Type
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  .  .  internalRole: decorator_list
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: ClassDef.bases {
+.  .  .  .  .  Roles: Base,Declaration,Type
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: bases
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  Roles: Identifier,Expression
+.  .  .  .  .  .  .  Roles: Expression,Identifier
 .  .  .  .  .  .  .  TOKEN "object"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 15
@@ -43,26 +49,30 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  .  .  internalRole: bases
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
-.  .  .  .  1: ClassDef.body {
-.  .  .  .  .  Roles: Type,Declaration,Body
+.  .  .  .  2: ClassDef.body {
+.  .  .  .  .  Roles: Body,Declaration,Type
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  .  .  internalRole: body
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Assign {
-.  .  .  .  .  .  .  Roles: Binary,Assignment,Expression
+.  .  .  .  .  .  .  Roles: Assignment,Binary,Expression
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 28
 .  .  .  .  .  .  .  .  Line: 2
 .  .  .  .  .  .  .  .  Col: 5
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: body_stmts
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Left,Identifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier,Left
 .  .  .  .  .  .  .  .  .  TOKEN "__metaclass__"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 28
@@ -80,7 +90,7 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  Roles: Right,Identifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier,Right
 .  .  .  .  .  .  .  .  .  TOKEN "object"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 44

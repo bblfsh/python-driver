@@ -6,7 +6,7 @@ Module {
 .  Roles: File,Module
 .  Children: {
 .  .  0: Assign {
-.  .  .  Roles: Binary,Assignment,Expression
+.  .  .  Roles: Assignment,Binary,Expression
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 0
 .  .  .  .  Line: 1
@@ -17,7 +17,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
-.  .  .  .  .  Roles: Left,Identifier,Expression
+.  .  .  .  .  Roles: Expression,Identifier,Left
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
@@ -36,7 +36,6 @@ Module {
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: SameLineNoops {
 .  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  TOKEN "[# int]"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 5
 .  .  .  .  .  .  .  .  Line: 1
@@ -50,11 +49,20 @@ Module {
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: noops_sameline
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  0: NoopSameLine {
+.  .  .  .  .  .  .  .  .  Roles: Comment,Noop
+.  .  .  .  .  .  .  .  .  TOKEN "# int"
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: noop_lines
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Num {
-.  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Right
+.  .  .  .  .  Roles: Expression,Literal,Number,Primitive,Right
 .  .  .  .  .  TOKEN "3"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 4
@@ -73,7 +81,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  1: Assign {
-.  .  .  Roles: Binary,Assignment,Expression
+.  .  .  Roles: Assignment,Binary,Expression
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 12
 .  .  .  .  Line: 2
@@ -84,7 +92,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
-.  .  .  .  .  Roles: Left,Identifier,Expression
+.  .  .  .  .  Roles: Expression,Identifier,Left
 .  .  .  .  .  TOKEN "b"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 12
@@ -103,7 +111,6 @@ Module {
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: SameLineNoops {
 .  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  TOKEN "[# float]"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 20
 .  .  .  .  .  .  .  .  Line: 2
@@ -117,11 +124,20 @@ Module {
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: noops_sameline
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  0: NoopSameLine {
+.  .  .  .  .  .  .  .  .  Roles: Comment,Noop
+.  .  .  .  .  .  .  .  .  TOKEN "# float"
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: noop_lines
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Num {
-.  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Right
+.  .  .  .  .  Roles: Expression,Literal,Number,Primitive,Right
 .  .  .  .  .  TOKEN "3.14"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 16
@@ -140,7 +156,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  2: Assign {
-.  .  .  Roles: Binary,Assignment,Expression
+.  .  .  Roles: Assignment,Binary,Expression
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 29
 .  .  .  .  Line: 3
@@ -151,7 +167,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
-.  .  .  .  .  Roles: Left,Identifier,Expression
+.  .  .  .  .  Roles: Expression,Identifier,Left
 .  .  .  .  .  TOKEN "c"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 29
@@ -170,7 +186,6 @@ Module {
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: SameLineNoops {
 .  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  TOKEN "[# string]"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 45
 .  .  .  .  .  .  .  .  Line: 3
@@ -184,11 +199,20 @@ Module {
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: noops_sameline
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  0: NoopSameLine {
+.  .  .  .  .  .  .  .  .  Roles: Comment,Noop
+.  .  .  .  .  .  .  .  .  TOKEN "# string"
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: noop_lines
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Str {
-.  .  .  .  .  Roles: Literal,String,Expression,Primitive,Right
+.  .  .  .  .  Roles: Expression,Literal,Primitive,Right,String
 .  .  .  .  .  TOKEN "somestring"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 33
@@ -207,7 +231,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  3: Assign {
-.  .  .  Roles: Binary,Assignment,Expression
+.  .  .  Roles: Assignment,Binary,Expression
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 55
 .  .  .  .  Line: 4
@@ -218,7 +242,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
-.  .  .  .  .  Roles: Left,Identifier,Expression
+.  .  .  .  .  Roles: Expression,Identifier,Left
 .  .  .  .  .  TOKEN "d"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 55
@@ -237,7 +261,6 @@ Module {
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: SameLineNoops {
 .  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  TOKEN "[# None]"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 63
 .  .  .  .  .  .  .  .  Line: 4
@@ -251,11 +274,20 @@ Module {
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: noops_sameline
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  0: NoopSameLine {
+.  .  .  .  .  .  .  .  .  Roles: Comment,Noop
+.  .  .  .  .  .  .  .  .  TOKEN "# None"
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: noop_lines
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: NoneLiteral {
-.  .  .  .  .  Roles: Literal,Null,Expression,Primitive,Right
+.  .  .  .  .  Roles: Expression,Literal,Null,Primitive,Right
 .  .  .  .  .  TOKEN "None"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 59
@@ -268,13 +300,14 @@ Module {
 .  .  .  .  .  .  Col: 8
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
+.  .  .  .  .  .  LiteralValue: None
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
 .  .  }
 .  .  4: Assign {
-.  .  .  Roles: Binary,Assignment,Expression
+.  .  .  Roles: Assignment,Binary,Expression
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 71
 .  .  .  .  Line: 5
@@ -285,7 +318,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
-.  .  .  .  .  Roles: Left,Identifier,Expression
+.  .  .  .  .  Roles: Expression,Identifier,Left
 .  .  .  .  .  TOKEN "e"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 71
@@ -304,7 +337,6 @@ Module {
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: SameLineNoops {
 .  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  TOKEN "[# list literal]"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 84
 .  .  .  .  .  .  .  .  Line: 5
@@ -318,11 +350,20 @@ Module {
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: noops_sameline
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  0: NoopSameLine {
+.  .  .  .  .  .  .  .  .  Roles: Comment,Noop
+.  .  .  .  .  .  .  .  .  TOKEN "# list literal"
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: noop_lines
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: List {
-.  .  .  .  .  Roles: Literal,List,Expression,Primitive,Right
+.  .  .  .  .  Roles: Expression,List,Literal,Primitive,Right
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 75
 .  .  .  .  .  .  Line: 5
@@ -334,7 +375,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
+.  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 76
@@ -351,7 +392,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
+.  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 79
@@ -368,7 +409,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
+.  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
 .  .  .  .  .  .  .  TOKEN "3"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 82
@@ -389,7 +430,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  5: Assign {
-.  .  .  Roles: Binary,Assignment,Expression
+.  .  .  Roles: Assignment,Binary,Expression
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 100
 .  .  .  .  Line: 6
@@ -400,7 +441,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
-.  .  .  .  .  Roles: Left,Identifier,Expression
+.  .  .  .  .  Roles: Expression,Identifier,Left
 .  .  .  .  .  TOKEN "f"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 100
@@ -419,7 +460,6 @@ Module {
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: SameLineNoops {
 .  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  TOKEN "[# tuple literal]"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 113
 .  .  .  .  .  .  .  .  Line: 6
@@ -433,11 +473,20 @@ Module {
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: noops_sameline
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  0: NoopSameLine {
+.  .  .  .  .  .  .  .  .  Roles: Comment,Noop
+.  .  .  .  .  .  .  .  .  TOKEN "# tuple literal"
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: noop_lines
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Tuple {
-.  .  .  .  .  Roles: Literal,Tuple,Expression,Primitive,Right
+.  .  .  .  .  Roles: Expression,Literal,Primitive,Right,Tuple
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 105
 .  .  .  .  .  .  Line: 6
@@ -449,7 +498,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
+.  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 105
@@ -466,7 +515,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
+.  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 108
@@ -483,7 +532,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
+.  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
 .  .  .  .  .  .  .  TOKEN "3"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 111
@@ -504,7 +553,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  6: Assign {
-.  .  .  Roles: Binary,Assignment,Expression
+.  .  .  Roles: Assignment,Binary,Expression
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 130
 .  .  .  .  Line: 7
@@ -515,7 +564,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
-.  .  .  .  .  Roles: Left,Identifier,Expression
+.  .  .  .  .  Roles: Expression,Identifier,Left
 .  .  .  .  .  TOKEN "g"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 130
@@ -534,7 +583,6 @@ Module {
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: SameLineNoops {
 .  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  TOKEN "[# set literal]"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 143
 .  .  .  .  .  .  .  .  Line: 7
@@ -548,11 +596,20 @@ Module {
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: noops_sameline
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  0: NoopSameLine {
+.  .  .  .  .  .  .  .  .  Roles: Comment,Noop
+.  .  .  .  .  .  .  .  .  TOKEN "# set literal"
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: noop_lines
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Set {
-.  .  .  .  .  Roles: Literal,Set,Expression,Primitive,Right
+.  .  .  .  .  Roles: Expression,Literal,Primitive,Right,Set
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 134
 .  .  .  .  .  .  Line: 7
@@ -563,7 +620,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
+.  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 135
@@ -580,7 +637,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
+.  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 138
@@ -597,7 +654,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive
+.  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
 .  .  .  .  .  .  .  TOKEN "3"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 141
@@ -618,7 +675,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  7: Assign {
-.  .  .  Roles: Binary,Assignment,Expression
+.  .  .  Roles: Assignment,Binary,Expression
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 158
 .  .  .  .  Line: 8
@@ -629,7 +686,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
-.  .  .  .  .  Roles: Left,Identifier,Expression
+.  .  .  .  .  Roles: Expression,Identifier,Left
 .  .  .  .  .  TOKEN "h"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 158
@@ -648,7 +705,6 @@ Module {
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: SameLineNoops {
 .  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  TOKEN "[# dict literal]"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 178
 .  .  .  .  .  .  .  .  Line: 8
@@ -662,11 +718,20 @@ Module {
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: noops_sameline
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  0: NoopSameLine {
+.  .  .  .  .  .  .  .  .  Roles: Comment,Noop
+.  .  .  .  .  .  .  .  .  TOKEN "# dict literal"
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: noop_lines
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Dict {
-.  .  .  .  .  Roles: Literal,Map,Expression,Primitive,Right
+.  .  .  .  .  Roles: Expression,Literal,Map,Primitive,Right
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 162
 .  .  .  .  .  .  Line: 8
@@ -677,7 +742,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Map,Key
+.  .  .  .  .  .  .  Roles: Expression,Key,Literal,Map,Primitive,String
 .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 163
@@ -693,25 +758,8 @@ Module {
 .  .  .  .  .  .  .  .  internalRole: keys
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive,Map,Key
-.  .  .  .  .  .  .  TOKEN "b"
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 171
-.  .  .  .  .  .  .  .  Line: 8
-.  .  .  .  .  .  .  .  Col: 14
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 173
-.  .  .  .  .  .  .  .  Line: 8
-.  .  .  .  .  .  .  .  Col: 16
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: keys
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Map,Value
+.  .  .  .  .  .  1: Num {
+.  .  .  .  .  .  .  Roles: Expression,Literal,Map,Number,Primitive,Value
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 168
@@ -727,8 +775,25 @@ Module {
 .  .  .  .  .  .  .  .  internalRole: values
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
+.  .  .  .  .  .  2: Str {
+.  .  .  .  .  .  .  Roles: Expression,Key,Literal,Map,Primitive,String
+.  .  .  .  .  .  .  TOKEN "b"
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 171
+.  .  .  .  .  .  .  .  Line: 8
+.  .  .  .  .  .  .  .  Col: 14
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 173
+.  .  .  .  .  .  .  .  Line: 8
+.  .  .  .  .  .  .  .  Col: 16
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: keys
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
 .  .  .  .  .  .  3: Num {
-.  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Map,Value
+.  .  .  .  .  .  .  Roles: Expression,Literal,Map,Number,Primitive,Value
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 176
@@ -749,7 +814,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  8: Assign {
-.  .  .  Roles: Binary,Assignment,Expression
+.  .  .  Roles: Assignment,Binary,Expression
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 194
 .  .  .  .  Line: 9
@@ -760,7 +825,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
-.  .  .  .  .  Roles: Left,Identifier,Expression
+.  .  .  .  .  Roles: Expression,Identifier,Left
 .  .  .  .  .  TOKEN "i"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 194
@@ -779,7 +844,6 @@ Module {
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: SameLineNoops {
 .  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  TOKEN "[# expression assignment]"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 212
 .  .  .  .  .  .  .  .  Line: 9
@@ -793,11 +857,20 @@ Module {
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: noops_sameline
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  0: NoopSameLine {
+.  .  .  .  .  .  .  .  .  Roles: Comment,Noop
+.  .  .  .  .  .  .  .  .  TOKEN "# expression assignment"
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: noop_lines
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: BinOp {
-.  .  .  .  .  Roles: Expression,Binary,Right
+.  .  .  .  .  Roles: Binary,Expression,Right
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 204
 .  .  .  .  .  .  Line: 9
@@ -807,8 +880,15 @@ Module {
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: BinOp {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Left
+.  .  .  .  .  .  0: Sub {
+.  .  .  .  .  .  .  Roles: Arithmetic,Binary,Operator,Substract
+.  .  .  .  .  .  .  TOKEN "-"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: op
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  1: BinOp {
+.  .  .  .  .  .  .  Roles: Binary,Expression,Left
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 198
 .  .  .  .  .  .  .  .  Line: 9
@@ -818,8 +898,15 @@ Module {
 .  .  .  .  .  .  .  .  internalRole: left
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Left,Identifier
+.  .  .  .  .  .  .  .  0: Add {
+.  .  .  .  .  .  .  .  .  Roles: Add,Arithmetic,Binary,Operator
+.  .  .  .  .  .  .  .  .  TOKEN "+"
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: op
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  1: Name {
+.  .  .  .  .  .  .  .  .  Roles: Binary,Expression,Identifier,Left
 .  .  .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 198
@@ -836,15 +923,8 @@ Module {
 .  .  .  .  .  .  .  .  .  .  internalRole: left
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  1: Add {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Add,Arithmetic
-.  .  .  .  .  .  .  .  .  TOKEN "+"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  2: Name {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Binary,Right,Identifier
+.  .  .  .  .  .  .  .  .  Roles: Binary,Expression,Identifier,Right
 .  .  .  .  .  .  .  .  .  TOKEN "b"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 202
@@ -863,15 +943,8 @@ Module {
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  .  1: Sub {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Substract,Arithmetic
-.  .  .  .  .  .  .  TOKEN "-"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
 .  .  .  .  .  .  2: Call {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Right,Function,Call
+.  .  .  .  .  .  .  Roles: Binary,Call,Expression,Function,Right
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 206
 .  .  .  .  .  .  .  .  Line: 9
@@ -882,25 +955,7 @@ Module {
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Function,Call,Positional,Argument,Name,Identifier,Expression
-.  .  .  .  .  .  .  .  .  TOKEN "d"
-.  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 210
-.  .  .  .  .  .  .  .  .  .  Line: 9
-.  .  .  .  .  .  .  .  .  .  Col: 17
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 210
-.  .  .  .  .  .  .  .  .  .  Line: 9
-.  .  .  .  .  .  .  .  .  .  Col: 17
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  Roles: Call,Callee,Identifier,Expression
+.  .  .  .  .  .  .  .  .  Roles: Call,Callee,Expression,Identifier
 .  .  .  .  .  .  .  .  .  TOKEN "int"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 206
@@ -915,6 +970,24 @@ Module {
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  ctx: Load
 .  .  .  .  .  .  .  .  .  .  internalRole: func
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  1: Name {
+.  .  .  .  .  .  .  .  .  Roles: Argument,Call,Expression,Function,Identifier,Name,Positional
+.  .  .  .  .  .  .  .  .  TOKEN "d"
+.  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 210
+.  .  .  .  .  .  .  .  .  .  Line: 9
+.  .  .  .  .  .  .  .  .  .  Col: 17
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 210
+.  .  .  .  .  .  .  .  .  .  Line: 9
+.  .  .  .  .  .  .  .  .  .  Col: 17
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }

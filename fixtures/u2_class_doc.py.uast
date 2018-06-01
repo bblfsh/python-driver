@@ -6,8 +6,7 @@ Module {
 .  Roles: File,Module
 .  Children: {
 .  .  0: ClassDef {
-.  .  .  Roles: Type,Declaration,Identifier,Statement
-.  .  .  TOKEN "testcls1"
+.  .  .  Roles: Declaration,Identifier,Statement,Type
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 6
 .  .  .  .  Line: 1
@@ -20,12 +19,25 @@ Module {
 .  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
+.  .  .  .  name: testcls1
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: ClassDef.body {
-.  .  .  .  .  Roles: Type,Declaration,Body
+.  .  .  .  0: ClassDef.bases {
+.  .  .  .  .  Roles: Base,Declaration,Type
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  .  .  internalRole: bases
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: ClassDef.decorator_list {
+.  .  .  .  .  Roles: Call,Declaration,Incomplete,Type
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: decorator_list
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  2: ClassDef.body {
+.  .  .  .  .  Roles: Body,Declaration,Type
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: body
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Expr {
@@ -35,9 +47,12 @@ Module {
 .  .  .  .  .  .  .  .  Line: 4
 .  .  .  .  .  .  .  .  Col: 1
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: body_stmts
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  Roles: Literal,String,Expression,Primitive
+.  .  .  .  .  .  .  .  .  Roles: Expression,Literal,Primitive,String
 .  .  .  .  .  .  .  .  .  TOKEN "
     This is the docstring
     "

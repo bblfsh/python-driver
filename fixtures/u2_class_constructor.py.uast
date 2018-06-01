@@ -6,7 +6,7 @@ Module {
 .  Roles: File,Module
 .  Children: {
 .  .  0: FunctionDef {
-.  .  .  Roles: Function,Declaration,Name,Identifier
+.  .  .  Roles: Declaration,Function,Identifier,Name
 .  .  .  TOKEN "testcls1"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 4
@@ -23,19 +23,25 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: arguments {
-.  .  .  .  .  Roles: Function,Declaration,Incomplete,Argument
+.  .  .  .  .  Roles: Argument,Declaration,Function,Incomplete
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  }
 .  .  .  .  }
-.  .  .  .  1: FunctionDef.body {
-.  .  .  .  .  Roles: Function,Declaration,Body
+.  .  .  .  1: FunctionDef.decorators {
+.  .  .  .  .  Roles: Declaration,Function,Incomplete
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  .  .  internalRole: decorator_list
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  2: FunctionDef.body {
+.  .  .  .  .  Roles: Body,Declaration,Function
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: body
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: FunctionDef {
-.  .  .  .  .  .  .  Roles: Function,Declaration,Name,Identifier
+.  .  .  .  .  .  .  Roles: Declaration,Function,Identifier,Name
 .  .  .  .  .  .  .  TOKEN "__init__"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 24
@@ -47,16 +53,24 @@ Module {
 .  .  .  .  .  .  .  .  Line: 2
 .  .  .  .  .  .  .  .  Col: 16
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: body_stmts
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: arguments {
-.  .  .  .  .  .  .  .  .  Roles: Function,Declaration,Incomplete,Argument
+.  .  .  .  .  .  .  .  0: FunctionDef.decorators {
+.  .  .  .  .  .  .  .  .  Roles: Declaration,Function,Incomplete
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: decorator_list
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  1: arguments {
+.  .  .  .  .  .  .  .  .  Roles: Argument,Declaration,Function,Incomplete
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: arg {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
-.  .  .  .  .  .  .  .  .  .  .  TOKEN "self"
+.  .  .  .  .  .  .  .  .  .  .  Roles: Argument,Declaration,Function,Identifier,Name
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 33
 .  .  .  .  .  .  .  .  .  .  .  .  Line: 2
@@ -68,15 +82,16 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 21
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  arg: self
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  1: FunctionDef.body {
-.  .  .  .  .  .  .  .  .  Roles: Function,Declaration,Body
+.  .  .  .  .  .  .  .  2: FunctionDef.body {
+.  .  .  .  .  .  .  .  .  Roles: Body,Declaration,Function
 .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  .  .  .  .  .  .  internalRole: body
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Pass {
@@ -92,13 +107,16 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  Line: 3
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 12
 .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  internalRole: body_stmts
+.  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: FunctionDef {
-.  .  .  .  .  .  .  Roles: Function,Declaration,Name,Identifier
+.  .  .  .  .  .  .  Roles: Declaration,Function,Identifier,Name
 .  .  .  .  .  .  .  TOKEN "__new__"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 62
@@ -110,16 +128,24 @@ Module {
 .  .  .  .  .  .  .  .  Line: 5
 .  .  .  .  .  .  .  .  Col: 15
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: body_stmts
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: arguments {
-.  .  .  .  .  .  .  .  .  Roles: Function,Declaration,Incomplete,Argument
+.  .  .  .  .  .  .  .  0: FunctionDef.decorators {
+.  .  .  .  .  .  .  .  .  Roles: Declaration,Function,Incomplete
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: decorator_list
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  1: arguments {
+.  .  .  .  .  .  .  .  .  Roles: Argument,Declaration,Function,Incomplete
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: arg {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
-.  .  .  .  .  .  .  .  .  .  .  TOKEN "self"
+.  .  .  .  .  .  .  .  .  .  .  Roles: Argument,Declaration,Function,Identifier,Name
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 70
 .  .  .  .  .  .  .  .  .  .  .  .  Line: 5
@@ -131,6 +157,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 20
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  arg: self
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
@@ -154,10 +181,10 @@ Module {
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  1: FunctionDef.body {
-.  .  .  .  .  .  .  .  .  Roles: Function,Declaration,Body
+.  .  .  .  .  .  .  .  2: FunctionDef.body {
+.  .  .  .  .  .  .  .  .  Roles: Body,Declaration,Function
 .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  .  .  .  .  .  .  internalRole: body
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Pass {
@@ -172,6 +199,9 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 88
 .  .  .  .  .  .  .  .  .  .  .  .  Line: 6
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 12
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  internalRole: body_stmts
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  }

@@ -6,7 +6,7 @@ Module {
 .  Roles: File,Module
 .  Children: {
 .  .  0: AsyncFunctionDef {
-.  .  .  Roles: Function,Declaration,Name,Identifier,Incomplete
+.  .  .  Roles: Declaration,Function,Identifier,Incomplete,Name
 .  .  .  TOKEN "testfnc1"
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 10
@@ -23,26 +23,40 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: arguments {
-.  .  .  .  .  Roles: Function,Declaration,Incomplete,Argument
+.  .  .  .  .  Roles: Argument,Declaration,Function,Incomplete
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  }
 .  .  .  .  }
-.  .  .  .  1: Pass {
-.  .  .  .  .  Roles: Noop,Statement
-.  .  .  .  .  TOKEN "pass"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 26
-.  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  Col: 5
+.  .  .  .  1: FunctionDef.decorators {
+.  .  .  .  .  Roles: Declaration,Function,Incomplete
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: decorator_list
 .  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 29
-.  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  Col: 8
-.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  2: FunctionDef.body {
+.  .  .  .  .  Roles: Body,Declaration,Function
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: body
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: Pass {
+.  .  .  .  .  .  .  Roles: Noop,Statement
+.  .  .  .  .  .  .  TOKEN "pass"
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 26
+.  .  .  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  .  .  Col: 5
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 29
+.  .  .  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  .  .  Col: 8
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: body_stmts
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }

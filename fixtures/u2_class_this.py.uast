@@ -6,8 +6,7 @@ Module {
 .  Roles: File,Module
 .  Children: {
 .  .  0: ClassDef {
-.  .  .  Roles: Type,Declaration,Identifier,Statement
-.  .  .  TOKEN "testcls1"
+.  .  .  Roles: Declaration,Identifier,Statement,Type
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 6
 .  .  .  .  Line: 1
@@ -20,16 +19,29 @@ Module {
 .  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
+.  .  .  .  name: testcls1
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: ClassDef.body {
-.  .  .  .  .  Roles: Type,Declaration,Body
+.  .  .  .  0: ClassDef.bases {
+.  .  .  .  .  Roles: Base,Declaration,Type
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  .  .  internalRole: bases
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: ClassDef.decorator_list {
+.  .  .  .  .  Roles: Call,Declaration,Incomplete,Type
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: decorator_list
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  2: ClassDef.body {
+.  .  .  .  .  Roles: Body,Declaration,Type
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: body
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: FunctionDef {
-.  .  .  .  .  .  .  Roles: Function,Declaration,Name,Identifier
+.  .  .  .  .  .  .  Roles: Declaration,Function,Identifier,Name
 .  .  .  .  .  .  .  TOKEN "testfnc1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 24
@@ -41,16 +53,24 @@ Module {
 .  .  .  .  .  .  .  .  Line: 2
 .  .  .  .  .  .  .  .  Col: 16
 .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: body_stmts
+.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: arguments {
-.  .  .  .  .  .  .  .  .  Roles: Function,Declaration,Incomplete,Argument
+.  .  .  .  .  .  .  .  0: FunctionDef.decorators {
+.  .  .  .  .  .  .  .  .  Roles: Declaration,Function,Incomplete
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: decorator_list
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  1: arguments {
+.  .  .  .  .  .  .  .  .  Roles: Argument,Declaration,Function,Incomplete
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: arg {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Function,Declaration,Argument,Name,Identifier
-.  .  .  .  .  .  .  .  .  .  .  TOKEN "self"
+.  .  .  .  .  .  .  .  .  .  .  Roles: Argument,Declaration,Function,Identifier,Name
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 33
 .  .  .  .  .  .  .  .  .  .  .  .  Line: 2
@@ -62,27 +82,31 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 21
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  arg: self
 .  .  .  .  .  .  .  .  .  .  .  .  internalRole: args
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  1: FunctionDef.body {
-.  .  .  .  .  .  .  .  .  Roles: Function,Declaration,Body
+.  .  .  .  .  .  .  .  2: FunctionDef.body {
+.  .  .  .  .  .  .  .  .  Roles: Body,Declaration,Function
 .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  promotedPropertyList: true
+.  .  .  .  .  .  .  .  .  .  internalRole: body
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  0: Assign {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Binary,Assignment,Expression
+.  .  .  .  .  .  .  .  .  .  .  Roles: Assignment,Binary,Expression
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 48
 .  .  .  .  .  .  .  .  .  .  .  .  Line: 3
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 9
 .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  internalRole: body_stmts
+.  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Left,Identifier,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Identifier,Left
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 48
@@ -100,7 +124,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  1: Attribute {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Right,Identifier,Expression,Qualified
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Identifier,Right
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "__class__"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 57
@@ -118,7 +142,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Qualified,Identifier,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "self"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 52
@@ -140,15 +164,18 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  1: Assign {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Binary,Assignment,Expression
+.  .  .  .  .  .  .  .  .  .  .  Roles: Assignment,Binary,Expression
 .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  Offset: 75
 .  .  .  .  .  .  .  .  .  .  .  .  Line: 4
 .  .  .  .  .  .  .  .  .  .  .  .  Col: 9
 .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  internalRole: body_stmts
+.  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  0: Attribute {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Left,Identifier,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Identifier,Left
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "var"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 80
@@ -166,7 +193,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Qualified,Identifier,Expression
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "self"
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 75
@@ -186,7 +213,7 @@ Module {
 .  .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Right
+.  .  .  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive,Right
 .  .  .  .  .  .  .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  Offset: 86

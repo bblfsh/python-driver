@@ -6,8 +6,7 @@ Module {
 .  Roles: File,Module
 .  Children: {
 .  .  0: AugAssign {
-.  .  .  Roles: Operator,Binary,Assignment,Statement
-.  .  .  TOKEN "?="
+.  .  .  Roles: Assignment,Binary,Expression,Operator
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 2
 .  .  .  .  Line: 1
@@ -23,14 +22,14 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Add {
-.  .  .  .  .  Roles: Binary,Operator,Add,Arithmetic
+.  .  .  .  .  Roles: Add,Arithmetic,Operator
 .  .  .  .  .  TOKEN "+"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: op
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Name {
-.  .  .  .  .  Roles: Left,Identifier,Expression
+.  .  .  .  .  Roles: Expression,Identifier,Right
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
@@ -48,7 +47,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  2: Num {
-.  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Right
+.  .  .  .  .  Roles: Expression,Left,Literal,Number,Primitive
 .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 5
@@ -67,8 +66,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  1: AugAssign {
-.  .  .  Roles: Operator,Binary,Assignment,Statement
-.  .  .  TOKEN "?="
+.  .  .  Roles: Assignment,Binary,Expression,Operator
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 7
 .  .  .  .  Line: 2
@@ -79,14 +77,14 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Sub {
-.  .  .  .  .  Roles: Binary,Operator,Substract,Arithmetic
+.  .  .  .  .  Roles: Arithmetic,Operator,Substract
 .  .  .  .  .  TOKEN "-"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: op
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Name {
-.  .  .  .  .  Roles: Left,Identifier,Expression
+.  .  .  .  .  Roles: Expression,Identifier,Right
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 7
@@ -104,7 +102,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  2: Num {
-.  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Right
+.  .  .  .  .  Roles: Expression,Left,Literal,Number,Primitive
 .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 12
@@ -123,8 +121,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  2: AugAssign {
-.  .  .  Roles: Operator,Binary,Assignment,Statement
-.  .  .  TOKEN "?="
+.  .  .  Roles: Assignment,Binary,Expression,Operator
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 14
 .  .  .  .  Line: 3
@@ -135,14 +132,14 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Mult {
-.  .  .  .  .  Roles: Binary,Operator,Multiply,Arithmetic
+.  .  .  .  .  Roles: Arithmetic,Multiply,Operator
 .  .  .  .  .  TOKEN "*"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: op
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Name {
-.  .  .  .  .  Roles: Left,Identifier,Expression
+.  .  .  .  .  Roles: Expression,Identifier,Right
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 14
@@ -160,7 +157,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  2: Num {
-.  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Right
+.  .  .  .  .  Roles: Expression,Left,Literal,Number,Primitive
 .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 19
@@ -179,8 +176,7 @@ Module {
 .  .  .  }
 .  .  }
 .  .  3: AugAssign {
-.  .  .  Roles: Operator,Binary,Assignment,Statement
-.  .  .  TOKEN "?="
+.  .  .  Roles: Assignment,Binary,Expression,Operator
 .  .  .  StartPosition: {
 .  .  .  .  Offset: 21
 .  .  .  .  Line: 4
@@ -191,14 +187,14 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Div {
-.  .  .  .  .  Roles: Binary,Operator,Divide,Arithmetic
+.  .  .  .  .  Roles: Arithmetic,Divide,Operator
 .  .  .  .  .  TOKEN "/"
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: op
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Name {
-.  .  .  .  .  Roles: Left,Identifier,Expression
+.  .  .  .  .  Roles: Expression,Identifier,Right
 .  .  .  .  .  TOKEN "a"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 21
@@ -216,7 +212,7 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  2: Num {
-.  .  .  .  .  Roles: Literal,Number,Expression,Primitive,Right
+.  .  .  .  .  Roles: Expression,Left,Literal,Number,Primitive
 .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 26

@@ -17,7 +17,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: Expression,Binary
+.  .  .  .  .  Roles: Binary,Expression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 0
 .  .  .  .  .  .  Line: 1
@@ -27,8 +27,15 @@ Module {
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,Number,Primitive
+.  .  .  .  .  .  0: Add {
+.  .  .  .  .  .  .  Roles: Add,Arithmetic,Binary,Operator
+.  .  .  .  .  .  .  TOKEN "+"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: op
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  1: Num {
+.  .  .  .  .  .  .  Roles: Binary,Expression,Left,Literal,Number,Primitive
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 0
@@ -44,15 +51,8 @@ Module {
 .  .  .  .  .  .  .  .  internalRole: left
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  .  1: Add {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Add,Arithmetic
-.  .  .  .  .  .  .  TOKEN "+"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
 .  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Primitive
+.  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 2
@@ -84,7 +84,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: Expression,Binary
+.  .  .  .  .  Roles: Binary,Expression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 4
 .  .  .  .  .  .  Line: 2
@@ -94,8 +94,15 @@ Module {
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,Number,Primitive
+.  .  .  .  .  .  0: Sub {
+.  .  .  .  .  .  .  Roles: Arithmetic,Binary,Operator,Substract
+.  .  .  .  .  .  .  TOKEN "-"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: op
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  1: Num {
+.  .  .  .  .  .  .  Roles: Binary,Expression,Left,Literal,Number,Primitive
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 4
@@ -111,15 +118,8 @@ Module {
 .  .  .  .  .  .  .  .  internalRole: left
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  .  1: Sub {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Substract,Arithmetic
-.  .  .  .  .  .  .  TOKEN "-"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
 .  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Primitive
+.  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 6
@@ -151,7 +151,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: Expression,Binary
+.  .  .  .  .  Roles: Binary,Expression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 8
 .  .  .  .  .  .  Line: 3
@@ -161,8 +161,15 @@ Module {
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,Number,Primitive
+.  .  .  .  .  .  0: Mult {
+.  .  .  .  .  .  .  Roles: Arithmetic,Binary,Multiply,Operator
+.  .  .  .  .  .  .  TOKEN "*"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: op
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  1: Num {
+.  .  .  .  .  .  .  Roles: Binary,Expression,Left,Literal,Number,Primitive
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 8
@@ -178,15 +185,8 @@ Module {
 .  .  .  .  .  .  .  .  internalRole: left
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  .  1: Mult {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Multiply,Arithmetic
-.  .  .  .  .  .  .  TOKEN "*"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
 .  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Primitive
+.  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 10
@@ -218,7 +218,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: Expression,Binary
+.  .  .  .  .  Roles: Binary,Expression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 12
 .  .  .  .  .  .  Line: 4
@@ -228,8 +228,15 @@ Module {
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,Number,Primitive
+.  .  .  .  .  .  0: Div {
+.  .  .  .  .  .  .  Roles: Arithmetic,Binary,Divide,Operator
+.  .  .  .  .  .  .  TOKEN "/"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: op
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  1: Num {
+.  .  .  .  .  .  .  Roles: Binary,Expression,Left,Literal,Number,Primitive
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 12
@@ -245,15 +252,8 @@ Module {
 .  .  .  .  .  .  .  .  internalRole: left
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  .  1: Div {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Divide,Arithmetic
-.  .  .  .  .  .  .  TOKEN "/"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
 .  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Primitive
+.  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 14
@@ -285,7 +285,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: Expression,Binary
+.  .  .  .  .  Roles: Binary,Expression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 16
 .  .  .  .  .  .  Line: 5
@@ -295,8 +295,15 @@ Module {
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,Number,Primitive
+.  .  .  .  .  .  0: FloorDiv {
+.  .  .  .  .  .  .  Roles: Arithmetic,Binary,Divide,Incomplete,Operator
+.  .  .  .  .  .  .  TOKEN "//"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: op
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  1: Num {
+.  .  .  .  .  .  .  Roles: Binary,Expression,Left,Literal,Number,Primitive
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 16
@@ -312,15 +319,8 @@ Module {
 .  .  .  .  .  .  .  .  internalRole: left
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  .  1: FloorDiv {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Divide,Arithmetic,Incomplete
-.  .  .  .  .  .  .  TOKEN "//"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
 .  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Primitive
+.  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 19
@@ -352,7 +352,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: Expression,Binary
+.  .  .  .  .  Roles: Binary,Expression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 21
 .  .  .  .  .  .  Line: 6
@@ -362,8 +362,15 @@ Module {
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,Number,Primitive
+.  .  .  .  .  .  0: Mod {
+.  .  .  .  .  .  .  Roles: Arithmetic,Binary,Module,Operator
+.  .  .  .  .  .  .  TOKEN "%"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: op
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  1: Num {
+.  .  .  .  .  .  .  Roles: Binary,Expression,Left,Literal,Number,Primitive
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 21
@@ -379,15 +386,8 @@ Module {
 .  .  .  .  .  .  .  .  internalRole: left
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  .  1: Mod {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Modulo,Arithmetic
-.  .  .  .  .  .  .  TOKEN "%%"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
 .  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Primitive
+.  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 23
@@ -419,7 +419,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: Expression,Binary
+.  .  .  .  .  Roles: Binary,Expression
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 25
 .  .  .  .  .  .  Line: 7
@@ -429,8 +429,15 @@ Module {
 .  .  .  .  .  .  internalRole: value
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Left,Literal,Number,Primitive
+.  .  .  .  .  .  0: Pow {
+.  .  .  .  .  .  .  Roles: Arithmetic,Binary,Incomplete,Operator
+.  .  .  .  .  .  .  TOKEN "**"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: op
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  1: Num {
+.  .  .  .  .  .  .  Roles: Binary,Expression,Left,Literal,Number,Primitive
 .  .  .  .  .  .  .  TOKEN "1"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 25
@@ -446,15 +453,8 @@ Module {
 .  .  .  .  .  .  .  .  internalRole: left
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
-.  .  .  .  .  .  1: Pow {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Operator,Arithmetic,Incomplete
-.  .  .  .  .  .  .  TOKEN "**"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
 .  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Expression,Binary,Right,Literal,Number,Primitive
+.  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
 .  .  .  .  .  .  .  TOKEN "2"
 .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  Offset: 28
@@ -491,7 +491,7 @@ Module {
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: NoopLine {
-.  .  .  .  .  Roles: Noop,Comment
+.  .  .  .  .  Roles: Comment,Noop
 .  .  .  .  .  TOKEN " 1@2 FIXME: matmul
 "
 .  .  .  .  .  StartPosition: {
