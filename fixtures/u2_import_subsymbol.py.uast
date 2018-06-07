@@ -8,13 +8,10 @@ Module {
 .  .  0: Import {
 .  .  .  Roles: Declaration,Import,Statement
 .  .  .  TOKEN "import"
-.  .  .  StartPosition: {
-.  .  .  .  Offset: 0
-.  .  .  .  Line: 1
-.  .  .  .  Col: 1
-.  .  .  }
 .  .  .  Properties: {
+.  .  .  .  col_offset: 1
 .  .  .  .  internalRole: body
+.  .  .  .  lineno: 1
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: ImportFrom.names {
@@ -44,18 +41,12 @@ Module {
 .  .  }
 .  .  1: ImportFrom {
 .  .  .  Roles: Declaration,Import,Statement
-.  .  .  StartPosition: {
-.  .  .  .  Offset: 11
-.  .  .  .  Line: 2
-.  .  .  .  Col: 1
-.  .  .  }
-.  .  .  EndPosition: {
-.  .  .  .  Offset: 16
-.  .  .  .  Line: 2
-.  .  .  .  Col: 6
-.  .  .  }
 .  .  .  Properties: {
+.  .  .  .  col_offset: 1
+.  .  .  .  end_col_offset: 6
+.  .  .  .  end_lineno: 2
 .  .  .  .  internalRole: body
+.  .  .  .  lineno: 2
 .  .  .  .  num_level: 0
 .  .  .  }
 .  .  .  Children: {
@@ -99,18 +90,12 @@ Module {
 .  .  }
 .  .  2: ImportFrom {
 .  .  .  Roles: Declaration,Import,Statement
-.  .  .  StartPosition: {
-.  .  .  .  Offset: 27
-.  .  .  .  Line: 3
-.  .  .  .  Col: 1
-.  .  .  }
-.  .  .  EndPosition: {
-.  .  .  .  Offset: 32
-.  .  .  .  Line: 3
-.  .  .  .  Col: 6
-.  .  .  }
 .  .  .  Properties: {
+.  .  .  .  col_offset: 1
+.  .  .  .  end_col_offset: 6
+.  .  .  .  end_lineno: 3
 .  .  .  .  internalRole: body
+.  .  .  .  lineno: 3
 .  .  .  .  num_level: 0
 .  .  .  }
 .  .  .  Children: {

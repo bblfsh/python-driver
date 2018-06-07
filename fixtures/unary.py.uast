@@ -7,24 +7,18 @@ Module {
 .  Children: {
 .  .  0: Expr {
 .  .  .  Roles: Expression
-.  .  .  StartPosition: {
-.  .  .  .  Offset: 0
-.  .  .  .  Line: 1
-.  .  .  .  Col: 1
-.  .  .  }
 .  .  .  Properties: {
+.  .  .  .  col_offset: 1
 .  .  .  .  internalRole: body
+.  .  .  .  lineno: 1
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: UnaryOp {
 .  .  .  .  .  Roles: Boolean,Expression,Operator,Unary
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
 .  .  .  .  .  Properties: {
+.  .  .  .  .  .  col_offset: 1
 .  .  .  .  .  .  internalRole: value
+.  .  .  .  .  .  lineno: 1
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: Invert {
@@ -37,18 +31,12 @@ Module {
 .  .  .  .  .  .  1: Num {
 .  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
 .  .  .  .  .  .  .  TOKEN "1"
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 1
-.  .  .  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  .  .  Col: 2
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 1
-.  .  .  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  .  .  Col: 2
-.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  col_offset: 2
+.  .  .  .  .  .  .  .  end_col_offset: 2
+.  .  .  .  .  .  .  .  end_lineno: 1
 .  .  .  .  .  .  .  .  internalRole: operand
+.  .  .  .  .  .  .  .  lineno: 1
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }
@@ -57,24 +45,18 @@ Module {
 .  .  }
 .  .  1: Expr {
 .  .  .  Roles: Expression
-.  .  .  StartPosition: {
-.  .  .  .  Offset: 3
-.  .  .  .  Line: 2
-.  .  .  .  Col: 1
-.  .  .  }
 .  .  .  Properties: {
+.  .  .  .  col_offset: 1
 .  .  .  .  internalRole: body
+.  .  .  .  lineno: 2
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: UnaryOp {
 .  .  .  .  .  Roles: Boolean,Expression,Operator,Unary
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 3
-.  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
 .  .  .  .  .  Properties: {
+.  .  .  .  .  .  col_offset: 1
 .  .  .  .  .  .  internalRole: value
+.  .  .  .  .  .  lineno: 2
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: USub {
@@ -87,19 +69,13 @@ Module {
 .  .  .  .  .  .  1: Name {
 .  .  .  .  .  .  .  Roles: Expression,Identifier
 .  .  .  .  .  .  .  TOKEN "a"
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 4
-.  .  .  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  .  .  Col: 2
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 4
-.  .  .  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  .  .  Col: 2
-.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  col_offset: 2
 .  .  .  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  .  .  end_col_offset: 2
+.  .  .  .  .  .  .  .  end_lineno: 2
 .  .  .  .  .  .  .  .  internalRole: operand
+.  .  .  .  .  .  .  .  lineno: 2
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }
@@ -108,24 +84,18 @@ Module {
 .  .  }
 .  .  2: Expr {
 .  .  .  Roles: Expression
-.  .  .  StartPosition: {
-.  .  .  .  Offset: 6
-.  .  .  .  Line: 3
-.  .  .  .  Col: 1
-.  .  .  }
 .  .  .  Properties: {
+.  .  .  .  col_offset: 1
 .  .  .  .  internalRole: body
+.  .  .  .  lineno: 3
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: UnaryOp {
 .  .  .  .  .  Roles: Boolean,Expression,Operator,Unary
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 6
-.  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
 .  .  .  .  .  Properties: {
+.  .  .  .  .  .  col_offset: 1
 .  .  .  .  .  .  internalRole: value
+.  .  .  .  .  .  lineno: 3
 .  .  .  .  .  }
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: UAdd {
@@ -138,19 +108,13 @@ Module {
 .  .  .  .  .  .  1: Name {
 .  .  .  .  .  .  .  Roles: Expression,Identifier
 .  .  .  .  .  .  .  TOKEN "a"
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 7
-.  .  .  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  .  .  Col: 2
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 7
-.  .  .  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  .  .  Col: 2
-.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  col_offset: 2
 .  .  .  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  .  .  end_col_offset: 2
+.  .  .  .  .  .  .  .  end_lineno: 3
 .  .  .  .  .  .  .  .  internalRole: operand
+.  .  .  .  .  .  .  .  lineno: 3
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }

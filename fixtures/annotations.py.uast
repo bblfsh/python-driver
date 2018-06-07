@@ -7,117 +7,81 @@ Module {
 .  Children: {
 .  .  0: AnnAssign {
 .  .  .  Roles: Assignment,Binary,Operator
-.  .  .  StartPosition: {
-.  .  .  .  Offset: 0
-.  .  .  .  Line: 1
-.  .  .  .  Col: 1
-.  .  .  }
 .  .  .  Properties: {
+.  .  .  .  col_offset: 1
 .  .  .  .  internalRole: body
+.  .  .  .  lineno: 1
 .  .  .  .  simple: 1
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
 .  .  .  .  .  Roles: Expression,Identifier
-.  .  .  .  .  TOKEN "a"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
+.  .  .  .  .  TOKEN "int"
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  internalRole: target
+.  .  .  .  .  .  col_offset: 4
+.  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  end_col_offset: 6
+.  .  .  .  .  .  end_lineno: 1
+.  .  .  .  .  .  internalRole: annotation
+.  .  .  .  .  .  lineno: 1
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Name {
 .  .  .  .  .  Roles: Expression,Identifier
-.  .  .  .  .  TOKEN "int"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 3
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 4
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 5
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 6
-.  .  .  .  .  }
+.  .  .  .  .  TOKEN "a"
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  internalRole: annotation
+.  .  .  .  .  .  col_offset: 1
+.  .  .  .  .  .  ctx: Store
+.  .  .  .  .  .  end_col_offset: 1
+.  .  .  .  .  .  end_lineno: 1
+.  .  .  .  .  .  internalRole: target
+.  .  .  .  .  .  lineno: 1
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  2: Num {
 .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
 .  .  .  .  .  TOKEN "1"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 9
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 10
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 9
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 10
-.  .  .  .  .  }
 .  .  .  .  .  Properties: {
+.  .  .  .  .  .  col_offset: 10
+.  .  .  .  .  .  end_col_offset: 10
+.  .  .  .  .  .  end_lineno: 1
 .  .  .  .  .  .  internalRole: value
+.  .  .  .  .  .  lineno: 1
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
 .  .  }
 .  .  1: AnnAssign {
 .  .  .  Roles: Assignment,Binary,Operator
-.  .  .  StartPosition: {
-.  .  .  .  Offset: 11
-.  .  .  .  Line: 2
-.  .  .  .  Col: 1
-.  .  .  }
 .  .  .  Properties: {
+.  .  .  .  col_offset: 1
 .  .  .  .  internalRole: body
+.  .  .  .  lineno: 2
 .  .  .  .  simple: 1
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Name {
 .  .  .  .  .  Roles: Expression,Identifier
-.  .  .  .  .  TOKEN "b"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 11
-.  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 11
-.  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
+.  .  .  .  .  TOKEN "float"
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  internalRole: target
+.  .  .  .  .  .  col_offset: 4
+.  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  end_col_offset: 8
+.  .  .  .  .  .  end_lineno: 2
+.  .  .  .  .  .  internalRole: annotation
+.  .  .  .  .  .  lineno: 2
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  .  1: Name {
 .  .  .  .  .  Roles: Expression,Identifier
-.  .  .  .  .  TOKEN "float"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 14
-.  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  Col: 4
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 18
-.  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  Col: 8
-.  .  .  .  .  }
+.  .  .  .  .  TOKEN "b"
 .  .  .  .  .  Properties: {
-.  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  internalRole: annotation
+.  .  .  .  .  .  col_offset: 1
+.  .  .  .  .  .  ctx: Store
+.  .  .  .  .  .  end_col_offset: 1
+.  .  .  .  .  .  end_lineno: 2
+.  .  .  .  .  .  internalRole: target
+.  .  .  .  .  .  lineno: 2
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
@@ -125,27 +89,15 @@ Module {
 .  .  2: FunctionDef {
 .  .  .  Roles: Declaration,Function,Identifier,Name
 .  .  .  TOKEN "somefunc"
-.  .  .  StartPosition: {
-.  .  .  .  Offset: 24
-.  .  .  .  Line: 3
-.  .  .  .  Col: 5
-.  .  .  }
-.  .  .  EndPosition: {
-.  .  .  .  Offset: 31
-.  .  .  .  Line: 3
-.  .  .  .  Col: 12
-.  .  .  }
 .  .  .  Properties: {
+.  .  .  .  col_offset: 5
+.  .  .  .  end_col_offset: 12
+.  .  .  .  end_lineno: 3
 .  .  .  .  internalRole: body
+.  .  .  .  lineno: 3
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: FunctionDef.decorators {
-.  .  .  .  .  Roles: Declaration,Function,Incomplete
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: decorator_list
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: arguments {
+.  .  .  .  0: arguments {
 .  .  .  .  .  Roles: Argument,Declaration,Function,Incomplete
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: args
@@ -153,99 +105,57 @@ Module {
 .  .  .  .  .  Children: {
 .  .  .  .  .  .  0: arg {
 .  .  .  .  .  .  .  Roles: Argument,Declaration,Function,Identifier,Name
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 33
-.  .  .  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  .  .  Col: 14
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 33
-.  .  .  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  .  .  Col: 14
-.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  arg: a
+.  .  .  .  .  .  .  .  col_offset: 14
+.  .  .  .  .  .  .  .  end_col_offset: 14
+.  .  .  .  .  .  .  .  end_lineno: 3
 .  .  .  .  .  .  .  .  internalRole: args
+.  .  .  .  .  .  .  .  lineno: 3
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
 .  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
 .  .  .  .  .  .  .  .  .  TOKEN "int"
-.  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 36
-.  .  .  .  .  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  .  .  .  .  Col: 17
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 38
-.  .  .  .  .  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  .  .  .  .  Col: 19
-.  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  col_offset: 17
 .  .  .  .  .  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  .  .  .  .  end_col_offset: 19
+.  .  .  .  .  .  .  .  .  .  end_lineno: 3
 .  .  .  .  .  .  .  .  .  .  internalRole: annotation
+.  .  .  .  .  .  .  .  .  .  lineno: 3
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  .  1: arg {
 .  .  .  .  .  .  .  Roles: Argument,Declaration,Function,Identifier,Name
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 41
-.  .  .  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  .  .  Col: 22
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 41
-.  .  .  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  .  .  Col: 22
-.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  arg: b
+.  .  .  .  .  .  .  .  col_offset: 22
+.  .  .  .  .  .  .  .  end_col_offset: 22
+.  .  .  .  .  .  .  .  end_lineno: 3
 .  .  .  .  .  .  .  .  internalRole: args
+.  .  .  .  .  .  .  .  lineno: 3
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Name {
 .  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
 .  .  .  .  .  .  .  .  .  TOKEN "str"
-.  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 44
-.  .  .  .  .  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  .  .  .  .  Col: 25
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 46
-.  .  .  .  .  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  .  .  .  .  Col: 27
-.  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  col_offset: 25
 .  .  .  .  .  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  .  .  .  .  end_col_offset: 27
+.  .  .  .  .  .  .  .  .  .  end_lineno: 3
 .  .  .  .  .  .  .  .  .  .  internalRole: annotation
+.  .  .  .  .  .  .  .  .  .  lineno: 3
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
-.  .  .  .  2: Name {
-.  .  .  .  .  Roles: Expression,Identifier
-.  .  .  .  .  TOKEN "float"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 52
-.  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  Col: 33
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 56
-.  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  Col: 37
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  internalRole: returns
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  3: FunctionDef.body {
+.  .  .  .  1: FunctionDef.body {
 .  .  .  .  .  Roles: Body,Declaration,Function
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: body
@@ -254,39 +164,45 @@ Module {
 .  .  .  .  .  .  0: Return {
 .  .  .  .  .  .  .  Roles: Return,Statement
 .  .  .  .  .  .  .  TOKEN "return"
-.  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  Offset: 63
-.  .  .  .  .  .  .  .  Line: 4
-.  .  .  .  .  .  .  .  Col: 5
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 68
-.  .  .  .  .  .  .  .  Line: 4
-.  .  .  .  .  .  .  .  Col: 10
-.  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  col_offset: 5
+.  .  .  .  .  .  .  .  end_col_offset: 10
+.  .  .  .  .  .  .  .  end_lineno: 4
 .  .  .  .  .  .  .  .  internalRole: body_stmts
+.  .  .  .  .  .  .  .  lineno: 4
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: Num {
 .  .  .  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
 .  .  .  .  .  .  .  .  .  TOKEN "0"
-.  .  .  .  .  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 70
-.  .  .  .  .  .  .  .  .  .  Line: 4
-.  .  .  .  .  .  .  .  .  .  Col: 12
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  .  .  Offset: 72
-.  .  .  .  .  .  .  .  .  .  Line: 4
-.  .  .  .  .  .  .  .  .  .  Col: 14
-.  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  col_offset: 12
+.  .  .  .  .  .  .  .  .  .  end_col_offset: 14
+.  .  .  .  .  .  .  .  .  .  end_lineno: 4
 .  .  .  .  .  .  .  .  .  .  internalRole: value
+.  .  .  .  .  .  .  .  .  .  lineno: 4
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  2: FunctionDef.decorators {
+.  .  .  .  .  Roles: Declaration,Function,Incomplete
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: decorator_list
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  3: Name {
+.  .  .  .  .  Roles: Expression,Identifier
+.  .  .  .  .  TOKEN "float"
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  col_offset: 33
+.  .  .  .  .  .  ctx: Load
+.  .  .  .  .  .  end_col_offset: 37
+.  .  .  .  .  .  end_lineno: 3
+.  .  .  .  .  .  internalRole: returns
+.  .  .  .  .  .  lineno: 3
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }

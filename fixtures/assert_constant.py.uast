@@ -8,35 +8,23 @@ Module {
 .  .  0: Assert {
 .  .  .  Roles: Assert,Statement
 .  .  .  TOKEN "assert"
-.  .  .  StartPosition: {
-.  .  .  .  Offset: 0
-.  .  .  .  Line: 1
-.  .  .  .  Col: 1
-.  .  .  }
-.  .  .  EndPosition: {
-.  .  .  .  Offset: 5
-.  .  .  .  Line: 1
-.  .  .  .  Col: 6
-.  .  .  }
 .  .  .  Properties: {
+.  .  .  .  col_offset: 1
+.  .  .  .  end_col_offset: 6
+.  .  .  .  end_lineno: 1
 .  .  .  .  internalRole: body
+.  .  .  .  lineno: 1
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BoolLiteral {
 .  .  .  .  .  Roles: Boolean,Expression,Literal,Primitive
 .  .  .  .  .  TOKEN "True"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 7
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 8
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 10
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 11
-.  .  .  .  .  }
 .  .  .  .  .  Properties: {
+.  .  .  .  .  .  col_offset: 8
+.  .  .  .  .  .  end_col_offset: 11
+.  .  .  .  .  .  end_lineno: 1
 .  .  .  .  .  .  internalRole: test
+.  .  .  .  .  .  lineno: 1
 .  .  .  .  .  .  value: true
 .  .  .  .  .  }
 .  .  .  .  }
@@ -45,35 +33,23 @@ Module {
 .  .  1: Assert {
 .  .  .  Roles: Assert,Statement
 .  .  .  TOKEN "assert"
-.  .  .  StartPosition: {
-.  .  .  .  Offset: 13
-.  .  .  .  Line: 2
-.  .  .  .  Col: 1
-.  .  .  }
-.  .  .  EndPosition: {
-.  .  .  .  Offset: 18
-.  .  .  .  Line: 2
-.  .  .  .  Col: 6
-.  .  .  }
 .  .  .  Properties: {
+.  .  .  .  col_offset: 1
+.  .  .  .  end_col_offset: 6
+.  .  .  .  end_lineno: 2
 .  .  .  .  internalRole: body
+.  .  .  .  lineno: 2
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: BoolLiteral {
 .  .  .  .  .  Roles: Boolean,Expression,Literal,Primitive
 .  .  .  .  .  TOKEN "True"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 20
-.  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  Col: 8
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 23
-.  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  Col: 11
-.  .  .  .  .  }
 .  .  .  .  .  Properties: {
+.  .  .  .  .  .  col_offset: 8
+.  .  .  .  .  .  end_col_offset: 11
+.  .  .  .  .  .  end_lineno: 2
 .  .  .  .  .  .  internalRole: test
+.  .  .  .  .  .  lineno: 2
 .  .  .  .  .  .  value: true
 .  .  .  .  .  }
 .  .  .  .  }
@@ -82,53 +58,35 @@ Module {
 .  .  2: Assert {
 .  .  .  Roles: Assert,Statement
 .  .  .  TOKEN "assert"
-.  .  .  StartPosition: {
-.  .  .  .  Offset: 25
-.  .  .  .  Line: 3
-.  .  .  .  Col: 1
-.  .  .  }
-.  .  .  EndPosition: {
-.  .  .  .  Offset: 30
-.  .  .  .  Line: 3
-.  .  .  .  Col: 6
-.  .  .  }
 .  .  .  Properties: {
+.  .  .  .  col_offset: 1
+.  .  .  .  end_col_offset: 6
+.  .  .  .  end_lineno: 3
 .  .  .  .  internalRole: body
+.  .  .  .  lineno: 3
 .  .  .  }
 .  .  .  Children: {
-.  .  .  .  0: BoolLiteral {
-.  .  .  .  .  Roles: Boolean,Expression,Literal,Primitive
-.  .  .  .  .  TOKEN "True"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 32
-.  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  Col: 8
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 35
-.  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  Col: 11
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: test
-.  .  .  .  .  .  value: true
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Str {
+.  .  .  .  0: Str {
 .  .  .  .  .  Roles: Expression,Literal,Primitive,String
 .  .  .  .  .  TOKEN "assert message"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 38
-.  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  Col: 14
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 53
-.  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  Col: 29
-.  .  .  .  .  }
 .  .  .  .  .  Properties: {
+.  .  .  .  .  .  col_offset: 14
+.  .  .  .  .  .  end_col_offset: 29
+.  .  .  .  .  .  end_lineno: 3
 .  .  .  .  .  .  internalRole: msg
+.  .  .  .  .  .  lineno: 3
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: BoolLiteral {
+.  .  .  .  .  Roles: Boolean,Expression,Literal,Primitive
+.  .  .  .  .  TOKEN "True"
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  col_offset: 8
+.  .  .  .  .  .  end_col_offset: 11
+.  .  .  .  .  .  end_lineno: 3
+.  .  .  .  .  .  internalRole: test
+.  .  .  .  .  .  lineno: 3
+.  .  .  .  .  .  value: true
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }

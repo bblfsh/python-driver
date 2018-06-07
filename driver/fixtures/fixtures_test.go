@@ -19,10 +19,25 @@ var Suite = &fixtures.Suite{
 		return driver.NewExecDriverAt(filepath.Join(projectRoot, "build/bin/native"))
 	},
 	Transforms: driver.Transforms{
+		Preprocess: normalizer.Preprocess,
+		Normalize: normalizer.Normalize,
 		Native: normalizer.Native,
 		Code:   normalizer.Code,
 	},
 	BenchName: "issue_server101",
+	// XXX check this
+	//Semantic: fixtures.SemanticConfig{
+		//BlacklistTypes: []string{
+			//"StringLiteral",
+			//"SimpleName",
+			//"QualifiedName",
+			//"BlockComment",
+			//"LineComment",
+			//"Block",
+			//"ImportDeclaration",
+			//"MethodDeclaration",
+		//},
+	//},
 }
 
 func TestPythonDriver(t *testing.T) {

@@ -7,13 +7,10 @@ Module {
 .  Children: {
 .  .  0: Expr {
 .  .  .  Roles: Expression
-.  .  .  StartPosition: {
-.  .  .  .  Offset: 254
-.  .  .  .  Line: 7
-.  .  .  .  Col: 1
-.  .  .  }
 .  .  .  Properties: {
+.  .  .  .  col_offset: 1
 .  .  .  .  internalRole: body
+.  .  .  .  lineno: 7
 .  .  .  }
 .  .  .  Children: {
 .  .  .  .  0: Str {
@@ -25,18 +22,12 @@ Module {
             user.user_id in (select whom_id from follower
                                     where who_id = ?))
         order by message.pub_date desc limit ?"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 302
-.  .  .  .  .  .  Line: 7
-.  .  .  .  .  .  Col: 49
-.  .  .  .  .  }
 .  .  .  .  .  Properties: {
+.  .  .  .  .  .  col_offset: 1
+.  .  .  .  .  .  end_col_offset: 49
+.  .  .  .  .  .  end_lineno: 7
 .  .  .  .  .  .  internalRole: value
+.  .  .  .  .  .  lineno: 1
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }

@@ -4,6 +4,7 @@ import (
 	"strings"
 
 	"gopkg.in/bblfsh/sdk.v2/uast"
+	"gopkg.in/bblfsh/sdk.v2/uast/nodes"
 	"gopkg.in/bblfsh/sdk.v2/uast/role"
 	. "gopkg.in/bblfsh/sdk.v2/uast/transformer"
 	"gopkg.in/bblfsh/sdk.v2/uast/transformer/positioner"
@@ -34,7 +35,7 @@ var funcBodyRoles = Roles(role.Function, role.Declaration, role.Body)
 var funcDecoRoles = Roles(role.Function, role.Declaration, role.Incomplete)
 
 func functionAnnotate(typ string, roles ...role.Role) Mapping {
-	return MapAST(typ, Obj{
+	return AnnotateType(typ, MapObj(Obj{
 		"decorator_list": Var("decors"),
 		"body":           Var("body_stmts"),
 		"name":           Var("name"),
@@ -50,11 +51,11 @@ func functionAnnotate(typ string, roles ...role.Role) Mapping {
 			"body_stmts":  Var("body_stmts"),
 		},
 		uast.KeyToken: Var("name"),
-	}, roles...)
+	}), roles...)
 }
 
 func withAnnotate(typ string, roles ...role.Role) Mapping {
-	return MapAST(typ, Obj{
+	return AnnotateType(typ, MapObj(Obj{
 		"body":  Var("body_stmts"),
 		"items": Var("itms"),
 	}, Obj{
@@ -68,11 +69,11 @@ func withAnnotate(typ string, roles ...role.Role) Mapping {
 			uast.KeyRoles: Roles(role.Block, role.Scope, role.Incomplete),
 			"items":       Var("itms"),
 		},
-	}, role.Block, role.Scope, role.Statement)
+	}), role.Block, role.Scope, role.Statement)
 }
 
 func loopAnnotate(typ string, mainRole role.Role, roles ...role.Role) Mapping {
-	return MapAST(typ, Obj{
+	return AnnotateType(typ, MapObj(Obj{
 		"body":   Var("body_stmts"),
 		"orelse": Var("else_stmts"),
 	}, Obj{
@@ -87,50 +88,53 @@ func loopAnnotate(typ string, mainRole role.Role, roles ...role.Role) Mapping {
 			"else_stmts":  Var("else_stmts"),
 			uast.KeyToken: String("else"),
 		},
-	}, roles...)
+	}), roles...)
 }
 
-
-func num2dots(n uast.Value) uast.Value {
-	if intval, ok := n.(uast.Int); ok {
+func num2dots(n nodes.Value) nodes.Value {
+	if intval, ok := n.(nodes.Int); ok {
 		i64val := int(intval)
-		return uast.String(strings.Repeat(".", int(i64val)))
+		return nodes.String(strings.Repeat(".", int(i64val)))
 	}
 	return n
 }
 
 type opLevelDotsNumConv struct {
-	op        Op
-	orig      Op
+	op   Op
+	orig Op
 }
 
-func (op opLevelDotsNumConv) Check(st *State, n uast.Node) (bool, error) {
-	v, ok := n.(uast.Value)
+func (op opLevelDotsNumConv) Kinds() nodes.Kind {
+	return nodes.KindString | nodes.KindInt
+}
+
+func (op opLevelDotsNumConv) Check(st *State, n nodes.Node) (bool, error) {
+	v, ok := n.(nodes.Value)
 	if !ok {
 		return false, nil
 	}
 
 	nv := num2dots(v)
 	res1, err := op.op.Check(st, nv)
-	if err != nil || !res1{
+	if err != nil || !res1 {
 		return false, err
 	}
 
 	res2, err := op.orig.Check(st, v)
-	if err != nil || !res2{
+	if err != nil || !res2 {
 		return false, err
 	}
 
 	return res1 && res2, nil
 }
 
-func (op opLevelDotsNumConv) Construct(st *State, n uast.Node) (uast.Node, error) {
+func (op opLevelDotsNumConv) Construct(st *State, n nodes.Node) (nodes.Node, error) {
 	n, err := op.orig.Construct(st, n)
 	if err != nil {
 		return nil, err
 	}
 
-	v, ok := n.(uast.Int)
+	v, ok := n.(nodes.Int)
 	if !ok {
 		return nil, ErrExpectedValue.New(n)
 	}
@@ -138,19 +142,9 @@ func (op opLevelDotsNumConv) Construct(st *State, n uast.Node) (uast.Node, error
 	return v, nil
 }
 
-var Annotations = []Mapping{
-	ObjectToNode{
-		InternalTypeKey: "ast_type",
-	}.Mapping(),
-	ObjectToNode{
-		LineKey:   "lineno",
-		ColumnKey: "col_offset",
-	}.Mapping(),
-	ObjectToNode{
-		EndLineKey:   "end_lineno",
-		EndColumnKey: "end_col_offset",
-	}.Mapping(),
+var _ Op = opLevelDotsNumConv{}
 
+var Annotations = []Mapping{
 	AnnotateType("Module", nil, role.File, role.Module),
 
 	// Comparison operators
@@ -289,7 +283,7 @@ var Annotations = []Mapping{
 
 	// Exceptions
 	// Adds a parent node for each these properties with direct list values
-	MapAST("Try", Obj{
+	AnnotateType("Try", MapObj(Obj{
 		"body":      Var("body_stmts"),
 		"finalbody": Var("final_stmts"),
 		"handlers":  Var("handlers_list"),
@@ -317,7 +311,7 @@ var Annotations = []Mapping{
 			uast.KeyRoles: Roles(role.Try, role.Else),
 			uast.KeyToken: String("else"),
 		},
-	}, role.Try, role.Statement),
+	}), role.Try, role.Statement),
 
 	// python 2 exception handling
 	AnnotateType("TryExcept", nil, role.Try, role.Catch, role.Statement),
@@ -365,7 +359,7 @@ var Annotations = []Mapping{
 	functionAnnotate("FunctionDef", role.Function, role.Declaration, role.Name, role.Identifier),
 	// FIXME: Incomplete for lacking of an Async role
 	functionAnnotate("AsyncFunctionDef", role.Function, role.Declaration, role.Name, role.Identifier, role.Incomplete),
-	MapAST("Lambda", Obj{
+	AnnotateType("Lambda", MapObj(Obj{
 		"body": Var("body_stmts"),
 	}, Obj{
 		"body": Obj{
@@ -373,7 +367,7 @@ var Annotations = []Mapping{
 			uast.KeyRoles: funcBodyRoles,
 			"body_stmts":  Var("body_stmts"),
 		},
-	}, role.Function, role.Declaration, role.Value, role.Anonymous),
+	}), role.Function, role.Declaration, role.Value, role.Anonymous),
 
 	// Formal Arguments
 	// FIXME: opt: true + arr: true seems to cause a crash in the SDK
@@ -385,10 +379,12 @@ var Annotations = []Mapping{
 		// a, b=2, c=3 ->
 		//		args    [a,b,c],
 		//		defaults  [2,3]
-		"kw_defaults": {Arr: true, Roles: role.Roles{role.Function, role.Declaration, role.ArgsList, role.Map, role.Value, role.Default}},
 		"kwarg":       {Opt: true, Roles: role.Roles{role.Function, role.Declaration, role.ArgsList, role.Map, role.Name, role.Identifier}},
-		"kwonlyargs":  {Arr: true, Roles: role.Roles{role.Function, role.Declaration, role.ArgsList, role.Map, role.Name, role.Identifier}},
 		"vararg":      {Opt: true, Roles: role.Roles{role.Function, role.Declaration, role.ArgsList, role.Name, role.Identifier}},
+		// forced keyword parameters (def kwonly(*, a=1, b=2))
+		"kwonlyargs":  {Arr: true, Roles: role.Roles{role.Function, role.Declaration, role.ArgsList, role.Name, role.Identifier, role.Incomplete}},
+		// the defaults of the above, same right-align matching
+		"kw_defaults": {Arr: true, Roles: role.Roles{role.Function, role.Declaration, role.ArgsList, role.Map, role.Value, role.Default}},
 	}, role.Function, role.Declaration, role.Argument, role.Incomplete),
 
 	AnnotateType("arguments", FieldRoles{
@@ -438,7 +434,7 @@ var Annotations = []Mapping{
 
 	// Import
 	AnnotateType("Import", nil, role.Import, role.Declaration, role.Statement),
-	MapAST("Import", Obj{
+	AnnotateType("Import", MapObj(Obj{
 		"names": Var("names"),
 	}, Obj{
 		"names": Obj{
@@ -448,9 +444,9 @@ var Annotations = []Mapping{
 			"name_list":   Var("names"),
 		},
 		uast.KeyToken: String("import"),
-	}, role.Import, role.Declaration, role.Statement),
+	}), role.Import, role.Declaration, role.Statement),
 
-	MapAST("ImportFrom", Obj{
+	AnnotateType("ImportFrom", MapObj(Obj{
 		"module": Var("module"),
 		"level":  opLevelDotsNumConv{op: Var("level"), orig: Var("origlevel")},
 		"names":  Var("names"),
@@ -472,9 +468,9 @@ var Annotations = []Mapping{
 			uast.KeyRoles: Roles(role.Import, role.Pathname, role.Identifier),
 		},
 		"num_level": Var("origlevel"),
-	}, role.Import, role.Declaration, role.Statement),
+	}), role.Import, role.Declaration, role.Statement),
 
-	MapAST("alias", Obj{
+	AnnotateType("alias", MapObj(Obj{
 		"asname": Var("asname"),
 		"name":   Var("name"),
 	}, Obj{
@@ -484,10 +480,10 @@ var Annotations = []Mapping{
 			uast.KeyToken: Var("asname"),
 		},
 		uast.KeyToken: Var("name"),
-	}, role.Import, role.Pathname, role.Identifier),
+	}), role.Import, role.Pathname, role.Identifier),
 
 	// Class Definitions
-	MapAST("ClassDef", Obj{
+	AnnotateType("ClassDef", MapObj(Obj{
 		"decorator_list": Var("decors"),
 		"body":           Var("body_stmts"),
 		"bases":          Var("bases"),
@@ -507,7 +503,7 @@ var Annotations = []Mapping{
 			uast.KeyRoles: Roles(role.Type, role.Declaration, role.Base),
 			"bases":       Var("bases"),
 		},
-	}, role.Type, role.Declaration, role.Identifier, role.Statement),
+	}), role.Type, role.Declaration, role.Identifier, role.Statement),
 
 	AnnotateType("ClassDef", FieldRoles{
 		"keywords": {Arr: true, Roles: role.Roles{role.Incomplete}},
@@ -528,7 +524,7 @@ var Annotations = []Mapping{
 	}, role.Function, role.Call, role.Callee, role.Identifier, role.Expression),
 
 	// If and IfExpr
-	MapAST("If", Obj{
+	AnnotateType("If", MapObj(Obj{
 		"body":   Var("body_stmts"),
 		"orelse": Var("else_stmts"),
 		"test":   ObjectRoles("test"),
@@ -545,7 +541,7 @@ var Annotations = []Mapping{
 			uast.KeyToken: String("else"),
 		},
 		"test": ObjectRoles("test", role.If, role.Condition),
-	}, role.If, role.Expression),
+	}), role.If, role.Expression),
 
 	AnnotateType("IfExp", ObjRoles{
 		"body":   {role.If, role.Body, role.Then},
@@ -572,7 +568,7 @@ var Annotations = []Mapping{
 	// Comparison nodes in Python are oddly structured. Probably one if the first
 	// things that could be changed once we can normalize tree structures. Check:
 	// https://greentreesnakes.readthedocs.io/en/latest/nodes.html#Compare
-	MapAST("Compare", Obj{
+	AnnotateType("Compare", MapObj(Obj{
 		"ops":         Var("ops"),
 		"comparators": Var("comparators"),
 	}, Obj{
@@ -586,7 +582,7 @@ var Annotations = []Mapping{
 			uast.KeyRoles: Roles(role.Expression, role.Right),
 			"comparators": Var("comparators"),
 		},
-	}, role.Expression, role.Binary, role.Condition),
+	}), role.Expression, role.Binary, role.Condition),
 
 	AnnotateType("Compare", ObjRoles{
 		"left": {role.Expression, role.Left},
