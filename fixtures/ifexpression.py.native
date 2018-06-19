@@ -1,77 +1,72 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "ast_type": "Assign",
-                    "col_offset": 1,
-                    "lineno": 1,
-                    "targets": [
-                        {
-                            "ast_type": "Name",
-                            "col_offset": 1,
-                            "ctx": "Store",
-                            "end_col_offset": 1,
-                            "end_lineno": 1,
-                            "id": "a",
-                            "lineno": 1
-                        }
-                    ],
-                    "value": {
-                        "ast_type": "IfExp",
-                        "body": {
-                            "ast_type": "Num",
-                            "col_offset": 5,
-                            "end_col_offset": 5,
-                            "end_lineno": 1,
-                            "lineno": 1,
-                            "n": 1
-                        },
-                        "col_offset": 5,
-                        "lineno": 1,
-                        "orelse": {
-                            "ast_type": "Num",
-                            "col_offset": 21,
-                            "end_col_offset": 21,
-                            "end_lineno": 1,
-                            "lineno": 1,
-                            "n": 2
-                        },
-                        "test": {
-                            "ast_type": "Compare",
-                            "col_offset": 10,
-                            "comparators": [
-                                {
-                                    "ast_type": "Num",
-                                    "col_offset": 14,
-                                    "end_col_offset": 14,
-                                    "end_lineno": 1,
-                                    "lineno": 1,
-                                    "n": 4
-                                }
-                            ],
-                            "left": {
-                                "ast_type": "Num",
-                                "col_offset": 10,
-                                "end_col_offset": 10,
-                                "end_lineno": 1,
-                                "lineno": 1,
-                                "n": 3
-                            },
-                            "lineno": 1,
-                            "ops": [
-                                {
-                                    "ast_type": "Gt"
-                                }
-                            ]
-                        }
-                    }
-                }
-            ]
-        }
-    }
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "Assign",
+            'col_offset': 1,
+            lineno: 1,
+            targets: [
+               {
+                  'ast_type': "Name",
+                  'col_offset': 1,
+                  ctx: "Store",
+                  'end_col_offset': 1,
+                  'end_lineno': 1,
+                  id: "a",
+                  lineno: 1,
+               },
+            ],
+            value: {
+               'ast_type': "IfExp",
+               body: {
+                  'ast_type': "Num",
+                  'col_offset': 5,
+                  'end_col_offset': 5,
+                  'end_lineno': 1,
+                  lineno: 1,
+                  'n': 1,
+               },
+               'col_offset': 5,
+               lineno: 1,
+               orelse: {
+                  'ast_type': "Num",
+                  'col_offset': 21,
+                  'end_col_offset': 21,
+                  'end_lineno': 1,
+                  lineno: 1,
+                  'n': 2,
+               },
+               test: {
+                  'ast_type': "Compare",
+                  'col_offset': 10,
+                  comparators: [
+                     {
+                        'ast_type': "Num",
+                        'col_offset': 14,
+                        'end_col_offset': 14,
+                        'end_lineno': 1,
+                        lineno: 1,
+                        'n': 4,
+                     },
+                  ],
+                  left: {
+                     'ast_type': "Num",
+                     'col_offset': 10,
+                     'end_col_offset': 10,
+                     'end_lineno': 1,
+                     lineno: 1,
+                     'n': 3,
+                  },
+                  lineno: 1,
+                  ops: [
+                     {
+                        'ast_type': "Gt",
+                     },
+                  ],
+               },
+            },
+         },
+      ],
+   },
 }

@@ -1,154 +1,174 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: Pass {
-.  .  .  Roles: Noop,Statement
-.  .  .  TOKEN "pass"
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  end_col_offset: 4
-.  .  .  .  end_lineno: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 1
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: SameLineNoops {
-.  .  .  .  .  Roles: Comment
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  end_col_offset: 11
-.  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  internalRole: noops_sameline
-.  .  .  .  .  .  lineno: 1
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: NoopSameLine {
-.  .  .  .  .  .  .  Roles: Comment,Noop
-.  .  .  .  .  .  .  TOKEN "# easy"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: noop_lines
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  1: FunctionDef {
-.  .  .  Roles: Declaration,Function,Identifier,Name
-.  .  .  TOKEN "somefun"
-.  .  .  Properties: {
-.  .  .  .  col_offset: 5
-.  .  .  .  end_col_offset: 11
-.  .  .  .  end_lineno: 3
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 3
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: arguments {
-.  .  .  .  .  Roles: Argument,Declaration,Function,Incomplete
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: args
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: FunctionDef.body {
-.  .  .  .  .  Roles: Body,Declaration,Function
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: body
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Pass {
-.  .  .  .  .  .  .  Roles: Noop,Statement
-.  .  .  .  .  .  .  TOKEN "pass"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 16
-.  .  .  .  .  .  .  .  end_col_offset: 19
-.  .  .  .  .  .  .  .  end_lineno: 3
-.  .  .  .  .  .  .  .  internalRole: body_stmts
-.  .  .  .  .  .  .  .  lineno: 3
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: PreviousNoops {
-.  .  .  .  .  .  .  .  .  Roles: Noop
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  .  .  .  .  internalRole: noops_previous
-.  .  .  .  .  .  .  .  .  .  lineno: 2
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  2: FunctionDef.decorators {
-.  .  .  .  .  Roles: Declaration,Function,Incomplete
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: decorator_list
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  2: FunctionDef {
-.  .  .  Roles: Declaration,Function,Identifier,Name
-.  .  .  TOKEN "otherfun"
-.  .  .  Properties: {
-.  .  .  .  col_offset: 5
-.  .  .  .  end_col_offset: 12
-.  .  .  .  end_lineno: 5
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 5
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: arguments {
-.  .  .  .  .  Roles: Argument,Declaration,Function,Incomplete
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: args
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: FunctionDef.body {
-.  .  .  .  .  Roles: Body,Declaration,Function
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: body
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Pass {
-.  .  .  .  .  .  .  Roles: Noop,Statement
-.  .  .  .  .  .  .  TOKEN "pass"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  .  .  end_col_offset: 8
-.  .  .  .  .  .  .  .  end_lineno: 6
-.  .  .  .  .  .  .  .  internalRole: body_stmts
-.  .  .  .  .  .  .  .  lineno: 6
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: PreviousNoops {
-.  .  .  .  .  .  .  .  .  Roles: Noop
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  .  .  .  .  end_lineno: 4
-.  .  .  .  .  .  .  .  .  .  internalRole: noops_previous
-.  .  .  .  .  .  .  .  .  .  lineno: 4
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  2: FunctionDef.decorators {
-.  .  .  .  .  Roles: Declaration,Function,Incomplete
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: decorator_list
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "Pass",
+         '@token': "pass",
+         '@role': [Noop, Statement],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 0,
+               line: 1,
+               col: 1,
+            },
+            end: { '@type': "uast:Position",
+               offset: 3,
+               line: 1,
+               col: 4,
+            },
+         },
+         'noops_sameline': { '@type': "SameLineNoops",
+            '@role': [Comment],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 4,
+                  line: 1,
+                  col: 5,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 10,
+                  line: 1,
+                  col: 11,
+               },
+            },
+            'noop_lines': [
+               { '@type': "NoopSameLine",
+                  '@token': "# easy",
+                  '@role': [Comment, Noop],
+                  '@pos': { '@type': "uast:Positions",
+                  },
+               },
+            ],
+         },
+      },
+      { '@type': "FunctionDef",
+         '@token': "somefun",
+         '@role': [Declaration, Function, Identifier, Name],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 17,
+               line: 3,
+               col: 5,
+            },
+            end: { '@type': "uast:Position",
+               offset: 23,
+               line: 3,
+               col: 11,
+            },
+         },
+         args: { '@type': "arguments",
+            '@role': [Argument, Declaration, Function, Incomplete],
+            '@pos': { '@type': "uast:Positions",
+            },
+            args: [],
+         },
+         body: { '@type': "FunctionDef.body",
+            '@role': [Body, Declaration, Function],
+            'body_stmts': [
+               { '@type': "Pass",
+                  '@token': "pass",
+                  '@role': [Noop, Statement],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 28,
+                        line: 3,
+                        col: 16,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 31,
+                        line: 3,
+                        col: 19,
+                     },
+                  },
+                  'noops_previous': { '@type': "PreviousNoops",
+                     '@role': [Noop],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 12,
+                           line: 2,
+                           col: 1,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 12,
+                           line: 2,
+                           col: 1,
+                        },
+                     },
+                     lines: [],
+                  },
+               },
+            ],
+         },
+         'decorator_list': { '@type': "FunctionDef.decorators",
+            '@role': [Declaration, Function, Incomplete],
+            decorators: [],
+         },
+         returns: ~,
+      },
+      { '@type': "FunctionDef",
+         '@token': "otherfun",
+         '@role': [Declaration, Function, Identifier, Name],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 38,
+               line: 5,
+               col: 5,
+            },
+            end: { '@type': "uast:Position",
+               offset: 45,
+               line: 5,
+               col: 12,
+            },
+         },
+         args: { '@type': "arguments",
+            '@role': [Argument, Declaration, Function, Incomplete],
+            '@pos': { '@type': "uast:Positions",
+            },
+            args: [],
+         },
+         body: { '@type': "FunctionDef.body",
+            '@role': [Body, Declaration, Function],
+            'body_stmts': [
+               { '@type': "Pass",
+                  '@token': "pass",
+                  '@role': [Noop, Statement],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 54,
+                        line: 6,
+                        col: 5,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 57,
+                        line: 6,
+                        col: 8,
+                     },
+                  },
+                  'noops_previous': { '@type': "PreviousNoops",
+                     '@role': [Noop],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 33,
+                           line: 4,
+                           col: 1,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 33,
+                           line: 4,
+                           col: 1,
+                        },
+                     },
+                     lines: [],
+                  },
+               },
+            ],
+         },
+         'decorator_list': { '@type': "FunctionDef.decorators",
+            '@role': [Declaration, Function, Incomplete],
+            decorators: [],
+         },
+         returns: ~,
+      },
+   ],
 }
-

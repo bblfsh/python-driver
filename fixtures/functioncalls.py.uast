@@ -1,371 +1,483 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: Expr {
-.  .  .  Roles: Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 1
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Call {
-.  .  .  .  .  Roles: Call,Expression,Function
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 1
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  Roles: Argument,Call,Expression,Function,Literal,Name,Positional,Primitive,String
-.  .  .  .  .  .  .  TOKEN "something1"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 12
-.  .  .  .  .  .  .  .  end_col_offset: 23
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  Roles: Argument,Call,Expression,Function,Literal,Name,Number,Positional,Primitive
-.  .  .  .  .  .  .  TOKEN "42"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 26
-.  .  .  .  .  .  .  .  end_col_offset: 27
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Name {
-.  .  .  .  .  .  .  Roles: Argument,Call,Expression,Function,Identifier,Name,Positional
-.  .  .  .  .  .  .  TOKEN "somesymbbol"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 30
-.  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  end_col_offset: 40
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  3: Name {
-.  .  .  .  .  .  .  Roles: Call,Callee,Expression,Identifier
-.  .  .  .  .  .  .  TOKEN "normalCall"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  end_col_offset: 10
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: func
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  1: Expr {
-.  .  .  Roles: Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 2
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Call {
-.  .  .  .  .  Roles: Call,Expression,Function
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 2
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  Roles: Argument,Call,Expression,Function,Literal,Name,Positional,Primitive,String
-.  .  .  .  .  .  .  TOKEN "something"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 17
-.  .  .  .  .  .  .  .  end_col_offset: 27
-.  .  .  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  .  .  lineno: 2
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  Roles: Argument,Call,Expression,Function,Literal,Name,Number,Positional,Primitive
-.  .  .  .  .  .  .  TOKEN "42"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 30
-.  .  .  .  .  .  .  .  end_col_offset: 31
-.  .  .  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  .  .  lineno: 2
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Name {
-.  .  .  .  .  .  .  Roles: Argument,Call,Expression,Function,Identifier,Name,Positional
-.  .  .  .  .  .  .  TOKEN "somesymbol"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 34
-.  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  end_col_offset: 43
-.  .  .  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  .  .  lineno: 2
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  3: Attribute {
-.  .  .  .  .  .  .  Roles: Call,Callee,Expression,Identifier
-.  .  .  .  .  .  .  TOKEN "qualifiedCall"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 3
-.  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  end_col_offset: 15
-.  .  .  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  .  .  internalRole: func
-.  .  .  .  .  .  .  .  lineno: 2
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
-.  .  .  .  .  .  .  .  .  TOKEN "a"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  .  .  .  .  lineno: 2
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  2: Expr {
-.  .  .  Roles: Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 3
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Call {
-.  .  .  .  .  Roles: Call,Expression,Function
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 3
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  Roles: Argument,Call,Expression,Function,Identifier,Name,Positional
-.  .  .  .  .  .  .  TOKEN "a"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 9
-.  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  end_col_offset: 9
-.  .  .  .  .  .  .  .  end_lineno: 3
-.  .  .  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  .  .  lineno: 3
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  Roles: Call,Callee,Expression,Identifier
-.  .  .  .  .  .  .  TOKEN "keyCall"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  end_col_offset: 7
-.  .  .  .  .  .  .  .  end_lineno: 3
-.  .  .  .  .  .  .  .  internalRole: func
-.  .  .  .  .  .  .  .  lineno: 3
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: keyword {
-.  .  .  .  .  .  .  Roles: Argument,Call,Function,Name
-.  .  .  .  .  .  .  TOKEN "b"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: keywords
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  Roles: Argument,Expression,Literal,Number,Primitive,Value
-.  .  .  .  .  .  .  .  .  TOKEN "1"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 14
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 14
-.  .  .  .  .  .  .  .  .  .  end_lineno: 3
-.  .  .  .  .  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  .  .  .  .  lineno: 3
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  3: keyword {
-.  .  .  .  .  .  .  Roles: Argument,Call,Function,Name
-.  .  .  .  .  .  .  TOKEN "c"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: keywords
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  Roles: Argument,Expression,Literal,Number,Primitive,Value
-.  .  .  .  .  .  .  .  .  TOKEN "2"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 19
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 19
-.  .  .  .  .  .  .  .  .  .  end_lineno: 3
-.  .  .  .  .  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  .  .  .  .  lineno: 3
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  3: Expr {
-.  .  .  Roles: Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 4
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Call {
-.  .  .  .  .  Roles: Call,Expression,Function
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 4
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  Roles: Argument,Call,Expression,Function,Identifier,Name,Positional
-.  .  .  .  .  .  .  TOKEN "a"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 16
-.  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  end_col_offset: 16
-.  .  .  .  .  .  .  .  end_lineno: 4
-.  .  .  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  .  .  lineno: 4
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Starred {
-.  .  .  .  .  .  .  Roles: Argument,Call,Function,Name,Positional
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 19
-.  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  .  .  lineno: 4
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
-.  .  .  .  .  .  .  .  .  TOKEN "expandedList"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 20
-.  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 31
-.  .  .  .  .  .  .  .  .  .  end_lineno: 4
-.  .  .  .  .  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  .  .  .  .  lineno: 4
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Name {
-.  .  .  .  .  .  .  Roles: Call,Callee,Expression,Identifier
-.  .  .  .  .  .  .  TOKEN "expandListCall"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  end_col_offset: 14
-.  .  .  .  .  .  .  .  end_lineno: 4
-.  .  .  .  .  .  .  .  internalRole: func
-.  .  .  .  .  .  .  .  lineno: 4
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  4: Expr {
-.  .  .  Roles: Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 5
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Call {
-.  .  .  .  .  Roles: Call,Expression,Function
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 5
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  Roles: Argument,Call,Expression,Function,Identifier,Name,Positional
-.  .  .  .  .  .  .  TOKEN "a"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 15
-.  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  end_col_offset: 15
-.  .  .  .  .  .  .  .  end_lineno: 5
-.  .  .  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  .  .  lineno: 5
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  Roles: Call,Callee,Expression,Identifier
-.  .  .  .  .  .  .  TOKEN "expandMapCall"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  end_col_offset: 13
-.  .  .  .  .  .  .  .  end_lineno: 5
-.  .  .  .  .  .  .  .  internalRole: func
-.  .  .  .  .  .  .  .  lineno: 5
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: keyword {
-.  .  .  .  .  .  .  Roles: Argument,Call,Function,Name
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: keywords
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Argument,Expression,Identifier,Value
-.  .  .  .  .  .  .  .  .  TOKEN "expandedMap"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 20
-.  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 30
-.  .  .  .  .  .  .  .  .  .  end_lineno: 5
-.  .  .  .  .  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  .  .  .  .  lineno: 5
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "Expr",
+         '@role': [Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 0,
+               line: 1,
+               col: 1,
+            },
+         },
+         value: { '@type': "Call",
+            '@role': [Call, Expression, Function],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 0,
+                  line: 1,
+                  col: 1,
+               },
+            },
+            args: [
+               { '@type': "Str",
+                  '@token': "something1",
+                  '@role': [Argument, Call, Expression, Function, Literal, Name, Positional, Primitive, String],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 11,
+                        line: 1,
+                        col: 12,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 22,
+                        line: 1,
+                        col: 23,
+                     },
+                  },
+               },
+               { '@type': "Num",
+                  '@token': 42,
+                  '@role': [Argument, Call, Expression, Function, Literal, Name, Number, Positional, Primitive],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 25,
+                        line: 1,
+                        col: 26,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 26,
+                        line: 1,
+                        col: 27,
+                     },
+                  },
+               },
+               { '@type': "Name",
+                  '@token': "somesymbbol",
+                  '@role': [Argument, Call, Expression, Function, Identifier, Name, Positional],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 29,
+                        line: 1,
+                        col: 30,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 39,
+                        line: 1,
+                        col: 40,
+                     },
+                  },
+                  ctx: "Load",
+               },
+            ],
+            func: { '@type': "Name",
+               '@token': "normalCall",
+               '@role': [Call, Callee, Expression, Identifier],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 0,
+                     line: 1,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 9,
+                     line: 1,
+                     col: 10,
+                  },
+               },
+               ctx: "Load",
+            },
+            keywords: [],
+         },
+      },
+      { '@type': "Expr",
+         '@role': [Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 42,
+               line: 2,
+               col: 1,
+            },
+         },
+         value: { '@type': "Call",
+            '@role': [Call, Expression, Function],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 42,
+                  line: 2,
+                  col: 1,
+               },
+            },
+            args: [
+               { '@type': "Str",
+                  '@token': "something",
+                  '@role': [Argument, Call, Expression, Function, Literal, Name, Positional, Primitive, String],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 58,
+                        line: 2,
+                        col: 17,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 68,
+                        line: 2,
+                        col: 27,
+                     },
+                  },
+               },
+               { '@type': "Num",
+                  '@token': 42,
+                  '@role': [Argument, Call, Expression, Function, Literal, Name, Number, Positional, Primitive],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 71,
+                        line: 2,
+                        col: 30,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 72,
+                        line: 2,
+                        col: 31,
+                     },
+                  },
+               },
+               { '@type': "Name",
+                  '@token': "somesymbol",
+                  '@role': [Argument, Call, Expression, Function, Identifier, Name, Positional],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 75,
+                        line: 2,
+                        col: 34,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 84,
+                        line: 2,
+                        col: 43,
+                     },
+                  },
+                  ctx: "Load",
+               },
+            ],
+            func: { '@type': "QualifiedIdentifier",
+               '@role': [Call, Callee, Expression, Identifier, Qualified],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 43,
+                     line: 2,
+                     col: 2,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 42,
+                     line: 2,
+                     col: 1,
+                  },
+               },
+               ctx: "Load",
+               identifiers: [
+                  { '@type': "Name",
+                     '@token': "a",
+                     '@role': [Expression, Identifier],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 42,
+                           line: 2,
+                           col: 1,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 42,
+                           line: 2,
+                           col: 1,
+                        },
+                     },
+                     ctx: "Load",
+                  },
+                  { '@type': "Attribute",
+                     '@token': "qualifiedCall",
+                     '@role': [Expression, Identifier],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 42,
+                           line: 2,
+                           col: 1,
+                        },
+                     },
+                     ctx: "Load",
+                  },
+               ],
+            },
+            keywords: [],
+         },
+      },
+      { '@type': "Expr",
+         '@role': [Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 87,
+               line: 3,
+               col: 1,
+            },
+         },
+         value: { '@type': "Call",
+            '@role': [Call, Expression, Function],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 87,
+                  line: 3,
+                  col: 1,
+               },
+            },
+            args: [
+               { '@type': "Name",
+                  '@token': "a",
+                  '@role': [Argument, Call, Expression, Function, Identifier, Name, Positional],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 95,
+                        line: 3,
+                        col: 9,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 95,
+                        line: 3,
+                        col: 9,
+                     },
+                  },
+                  ctx: "Load",
+               },
+            ],
+            func: { '@type': "Name",
+               '@token': "keyCall",
+               '@role': [Call, Callee, Expression, Identifier],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 87,
+                     line: 3,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 93,
+                     line: 3,
+                     col: 7,
+                  },
+               },
+               ctx: "Load",
+            },
+            keywords: [
+               { '@type': "keyword",
+                  '@token': "b",
+                  '@role': [Argument, Call, Function, Name],
+                  '@pos': { '@type': "uast:Positions",
+                  },
+                  value: { '@type': "Num",
+                     '@token': 1,
+                     '@role': [Argument, Expression, Literal, Number, Primitive, Value],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 100,
+                           line: 3,
+                           col: 14,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 100,
+                           line: 3,
+                           col: 14,
+                        },
+                     },
+                  },
+               },
+               { '@type': "keyword",
+                  '@token': "c",
+                  '@role': [Argument, Call, Function, Name],
+                  '@pos': { '@type': "uast:Positions",
+                  },
+                  value: { '@type': "Num",
+                     '@token': 2,
+                     '@role': [Argument, Expression, Literal, Number, Primitive, Value],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 105,
+                           line: 3,
+                           col: 19,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 105,
+                           line: 3,
+                           col: 19,
+                        },
+                     },
+                  },
+               },
+            ],
+         },
+      },
+      { '@type': "Expr",
+         '@role': [Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 108,
+               line: 4,
+               col: 1,
+            },
+         },
+         value: { '@type': "Call",
+            '@role': [Call, Expression, Function],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 108,
+                  line: 4,
+                  col: 1,
+               },
+            },
+            args: [
+               { '@type': "Name",
+                  '@token': "a",
+                  '@role': [Argument, Call, Expression, Function, Identifier, Name, Positional],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 123,
+                        line: 4,
+                        col: 16,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 123,
+                        line: 4,
+                        col: 16,
+                     },
+                  },
+                  ctx: "Load",
+               },
+               { '@type': "Starred",
+                  '@role': [Argument, Call, Function, Name, Positional],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 126,
+                        line: 4,
+                        col: 19,
+                     },
+                  },
+                  ctx: "Load",
+                  value: { '@type': "Name",
+                     '@token': "expandedList",
+                     '@role': [Expression, Identifier],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 127,
+                           line: 4,
+                           col: 20,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 138,
+                           line: 4,
+                           col: 31,
+                        },
+                     },
+                     ctx: "Load",
+                  },
+               },
+            ],
+            func: { '@type': "Name",
+               '@token': "expandListCall",
+               '@role': [Call, Callee, Expression, Identifier],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 108,
+                     line: 4,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 121,
+                     line: 4,
+                     col: 14,
+                  },
+               },
+               ctx: "Load",
+            },
+            keywords: [],
+         },
+      },
+      { '@type': "Expr",
+         '@role': [Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 141,
+               line: 5,
+               col: 1,
+            },
+         },
+         value: { '@type': "Call",
+            '@role': [Call, Expression, Function],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 141,
+                  line: 5,
+                  col: 1,
+               },
+            },
+            args: [
+               { '@type': "Name",
+                  '@token': "a",
+                  '@role': [Argument, Call, Expression, Function, Identifier, Name, Positional],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 155,
+                        line: 5,
+                        col: 15,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 155,
+                        line: 5,
+                        col: 15,
+                     },
+                  },
+                  ctx: "Load",
+               },
+            ],
+            func: { '@type': "Name",
+               '@token': "expandMapCall",
+               '@role': [Call, Callee, Expression, Identifier],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 141,
+                     line: 5,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 153,
+                     line: 5,
+                     col: 13,
+                  },
+               },
+               ctx: "Load",
+            },
+            keywords: [
+               { '@type': "keyword",
+                  '@role': [Argument, Call, Function, Name],
+                  '@pos': { '@type': "uast:Positions",
+                  },
+                  '@token': ~,
+                  value: { '@type': "Name",
+                     '@token': "expandedMap",
+                     '@role': [Argument, Expression, Identifier, Value],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 160,
+                           line: 5,
+                           col: 20,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 170,
+                           line: 5,
+                           col: 30,
+                        },
+                     },
+                     ctx: "Load",
+                  },
+               },
+            ],
+         },
+      },
+   ],
 }
-

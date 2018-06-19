@@ -1,89 +1,100 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: FunctionDef {
-.  .  .  Roles: Declaration,Function,Identifier,Name
-.  .  .  TOKEN "testfnc1"
-.  .  .  Properties: {
-.  .  .  .  col_offset: 5
-.  .  .  .  end_col_offset: 12
-.  .  .  .  end_lineno: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 1
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: arguments {
-.  .  .  .  .  Roles: Argument,Declaration,Function,Incomplete
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: args
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: FunctionDef.body {
-.  .  .  .  .  Roles: Body,Declaration,Function
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: body
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Return {
-.  .  .  .  .  .  .  Roles: Return,Statement
-.  .  .  .  .  .  .  TOKEN "return"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  .  .  end_col_offset: 10
-.  .  .  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  .  .  internalRole: body_stmts
-.  .  .  .  .  .  .  .  lineno: 2
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Tuple {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Literal,Primitive,Tuple
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 12
-.  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  .  .  .  .  lineno: 2
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
-.  .  .  .  .  .  .  .  .  .  .  TOKEN "1"
-.  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  col_offset: 12
-.  .  .  .  .  .  .  .  .  .  .  .  end_col_offset: 12
-.  .  .  .  .  .  .  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  .  .  .  .  .  .  internalRole: elts
-.  .  .  .  .  .  .  .  .  .  .  .  lineno: 2
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
-.  .  .  .  .  .  .  .  .  .  .  TOKEN "2"
-.  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  col_offset: 15
-.  .  .  .  .  .  .  .  .  .  .  .  end_col_offset: 15
-.  .  .  .  .  .  .  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  .  .  .  .  .  .  internalRole: elts
-.  .  .  .  .  .  .  .  .  .  .  .  lineno: 2
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  2: FunctionDef.decorators {
-.  .  .  .  .  Roles: Declaration,Function,Incomplete
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: decorator_list
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "FunctionDef",
+         '@token': "testfnc1",
+         '@role': [Declaration, Function, Identifier, Name],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 4,
+               line: 1,
+               col: 5,
+            },
+            end: { '@type': "uast:Position",
+               offset: 11,
+               line: 1,
+               col: 12,
+            },
+         },
+         args: { '@type': "arguments",
+            '@role': [Argument, Declaration, Function, Incomplete],
+            '@pos': { '@type': "uast:Positions",
+            },
+            args: [],
+         },
+         body: { '@type': "FunctionDef.body",
+            '@role': [Body, Declaration, Function],
+            'body_stmts': [
+               { '@type': "Return",
+                  '@token': "return",
+                  '@role': [Return, Statement],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 20,
+                        line: 2,
+                        col: 5,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 25,
+                        line: 2,
+                        col: 10,
+                     },
+                  },
+                  value: { '@type': "Tuple",
+                     '@role': [Expression, Literal, Primitive, Tuple],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 27,
+                           line: 2,
+                           col: 12,
+                        },
+                     },
+                     ctx: "Load",
+                     elts: [
+                        { '@type': "Num",
+                           '@token': 1,
+                           '@role': [Expression, Literal, Number, Primitive],
+                           '@pos': { '@type': "uast:Positions",
+                              start: { '@type': "uast:Position",
+                                 offset: 27,
+                                 line: 2,
+                                 col: 12,
+                              },
+                              end: { '@type': "uast:Position",
+                                 offset: 27,
+                                 line: 2,
+                                 col: 12,
+                              },
+                           },
+                        },
+                        { '@type': "Num",
+                           '@token': 2,
+                           '@role': [Expression, Literal, Number, Primitive],
+                           '@pos': { '@type': "uast:Positions",
+                              start: { '@type': "uast:Position",
+                                 offset: 30,
+                                 line: 2,
+                                 col: 15,
+                              },
+                              end: { '@type': "uast:Position",
+                                 offset: 30,
+                                 line: 2,
+                                 col: 15,
+                              },
+                           },
+                        },
+                     ],
+                  },
+               },
+            ],
+         },
+         'decorator_list': { '@type': "FunctionDef.decorators",
+            '@role': [Declaration, Function, Incomplete],
+            decorators: [],
+         },
+         returns: ~,
+      },
+   ],
 }
-

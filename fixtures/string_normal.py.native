@@ -1,38 +1,33 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "ast_type": "Expr",
-                    "col_offset": 1,
-                    "lineno": 1,
-                    "value": {
-                        "ast_type": "Str",
-                        "col_offset": 1,
-                        "end_col_offset": 29,
-                        "end_lineno": 1,
-                        "lineno": 1,
-                        "s": "Normal double quoted string"
-                    }
-                },
-                {
-                    "ast_type": "Expr",
-                    "col_offset": 1,
-                    "lineno": 2,
-                    "value": {
-                        "ast_type": "Str",
-                        "col_offset": 1,
-                        "end_col_offset": 29,
-                        "end_lineno": 2,
-                        "lineno": 2,
-                        "s": "Normal single quoted string"
-                    }
-                }
-            ]
-        }
-    }
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "Expr",
+            'col_offset': 1,
+            lineno: 1,
+            value: {
+               'ast_type': "Str",
+               'col_offset': 1,
+               'end_col_offset': 29,
+               'end_lineno': 1,
+               lineno: 1,
+               s: "Normal double quoted string",
+            },
+         },
+         {
+            'ast_type': "Expr",
+            'col_offset': 1,
+            lineno: 2,
+            value: {
+               'ast_type': "Str",
+               'col_offset': 1,
+               'end_col_offset': 29,
+               'end_lineno': 2,
+               lineno: 2,
+               s: "Normal single quoted string",
+            },
+         },
+      ],
+   },
 }

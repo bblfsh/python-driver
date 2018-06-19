@@ -1,375 +1,441 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: Expr {
-.  .  .  Roles: Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 1
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: Binary,Expression
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 1
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Left,Literal,Number,Primitive
-.  .  .  .  .  .  .  TOKEN "1"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: left
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Add {
-.  .  .  .  .  .  .  Roles: Add,Arithmetic,Binary,Operator
-.  .  .  .  .  .  .  TOKEN "+"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
-.  .  .  .  .  .  .  TOKEN "2"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 3
-.  .  .  .  .  .  .  .  end_col_offset: 3
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: right
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  1: Expr {
-.  .  .  Roles: Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 2
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: Binary,Expression
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 2
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Left,Literal,Number,Primitive
-.  .  .  .  .  .  .  TOKEN "1"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  .  .  internalRole: left
-.  .  .  .  .  .  .  .  lineno: 2
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Sub {
-.  .  .  .  .  .  .  Roles: Arithmetic,Binary,Operator,Substract
-.  .  .  .  .  .  .  TOKEN "-"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
-.  .  .  .  .  .  .  TOKEN "2"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 3
-.  .  .  .  .  .  .  .  end_col_offset: 3
-.  .  .  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  .  .  internalRole: right
-.  .  .  .  .  .  .  .  lineno: 2
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  2: Expr {
-.  .  .  Roles: Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 3
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: Binary,Expression
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 3
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Left,Literal,Number,Primitive
-.  .  .  .  .  .  .  TOKEN "1"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  .  .  end_lineno: 3
-.  .  .  .  .  .  .  .  internalRole: left
-.  .  .  .  .  .  .  .  lineno: 3
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Mult {
-.  .  .  .  .  .  .  Roles: Arithmetic,Binary,Multiply,Operator
-.  .  .  .  .  .  .  TOKEN "*"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
-.  .  .  .  .  .  .  TOKEN "2"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 3
-.  .  .  .  .  .  .  .  end_col_offset: 3
-.  .  .  .  .  .  .  .  end_lineno: 3
-.  .  .  .  .  .  .  .  internalRole: right
-.  .  .  .  .  .  .  .  lineno: 3
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  3: Expr {
-.  .  .  Roles: Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 4
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: Binary,Expression
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 4
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Left,Literal,Number,Primitive
-.  .  .  .  .  .  .  TOKEN "1"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  .  .  end_lineno: 4
-.  .  .  .  .  .  .  .  internalRole: left
-.  .  .  .  .  .  .  .  lineno: 4
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Div {
-.  .  .  .  .  .  .  Roles: Arithmetic,Binary,Divide,Operator
-.  .  .  .  .  .  .  TOKEN "/"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
-.  .  .  .  .  .  .  TOKEN "2"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 3
-.  .  .  .  .  .  .  .  end_col_offset: 3
-.  .  .  .  .  .  .  .  end_lineno: 4
-.  .  .  .  .  .  .  .  internalRole: right
-.  .  .  .  .  .  .  .  lineno: 4
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  4: Expr {
-.  .  .  Roles: Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 5
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: Binary,Expression
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 5
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Left,Literal,Number,Primitive
-.  .  .  .  .  .  .  TOKEN "1"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  .  .  end_lineno: 5
-.  .  .  .  .  .  .  .  internalRole: left
-.  .  .  .  .  .  .  .  lineno: 5
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: FloorDiv {
-.  .  .  .  .  .  .  Roles: Arithmetic,Binary,Divide,Incomplete,Operator
-.  .  .  .  .  .  .  TOKEN "//"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
-.  .  .  .  .  .  .  TOKEN "2"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 4
-.  .  .  .  .  .  .  .  end_col_offset: 4
-.  .  .  .  .  .  .  .  end_lineno: 5
-.  .  .  .  .  .  .  .  internalRole: right
-.  .  .  .  .  .  .  .  lineno: 5
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  5: Expr {
-.  .  .  Roles: Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 6
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: Binary,Expression
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 6
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Left,Literal,Number,Primitive
-.  .  .  .  .  .  .  TOKEN "1"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  .  .  end_lineno: 6
-.  .  .  .  .  .  .  .  internalRole: left
-.  .  .  .  .  .  .  .  lineno: 6
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Mod {
-.  .  .  .  .  .  .  Roles: Arithmetic,Binary,Module,Operator
-.  .  .  .  .  .  .  TOKEN "%"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
-.  .  .  .  .  .  .  TOKEN "2"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 3
-.  .  .  .  .  .  .  .  end_col_offset: 3
-.  .  .  .  .  .  .  .  end_lineno: 6
-.  .  .  .  .  .  .  .  internalRole: right
-.  .  .  .  .  .  .  .  lineno: 6
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  6: Expr {
-.  .  .  Roles: Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 7
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: Binary,Expression
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 7
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Left,Literal,Number,Primitive
-.  .  .  .  .  .  .  TOKEN "1"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  .  .  end_lineno: 7
-.  .  .  .  .  .  .  .  internalRole: left
-.  .  .  .  .  .  .  .  lineno: 7
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Pow {
-.  .  .  .  .  .  .  Roles: Arithmetic,Binary,Incomplete,Operator
-.  .  .  .  .  .  .  TOKEN "**"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
-.  .  .  .  .  .  .  TOKEN "2"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 4
-.  .  .  .  .  .  .  .  end_col_offset: 4
-.  .  .  .  .  .  .  .  end_lineno: 7
-.  .  .  .  .  .  .  .  internalRole: right
-.  .  .  .  .  .  .  .  lineno: 7
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  7: RemainderNoops {
-.  .  .  Roles: Noop
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  end_col_offset: 1
-.  .  .  .  end_lineno: 8
-.  .  .  .  internalRole: noops_remainder
-.  .  .  .  lineno: 8
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: NoopLine {
-.  .  .  .  .  Roles: Comment,Noop
-.  .  .  .  .  TOKEN " 1@2 FIXME: matmul
-"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  internalRole: lines
-.  .  .  .  .  .  lineno: 8
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "Expr",
+         '@role': [Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 0,
+               line: 1,
+               col: 1,
+            },
+         },
+         value: { '@type': "BinOp",
+            '@role': [Binary, Expression],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 0,
+                  line: 1,
+                  col: 1,
+               },
+            },
+            left: { '@type': "Num",
+               '@token': 1,
+               '@role': [Binary, Expression, Left, Literal, Number, Primitive],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 0,
+                     line: 1,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 0,
+                     line: 1,
+                     col: 1,
+                  },
+               },
+            },
+            op: { '@type': "Add",
+               '@token': "+",
+               '@role': [Add, Arithmetic, Binary, Operator],
+               '@pos': { '@type': "uast:Positions",
+               },
+            },
+            right: { '@type': "Num",
+               '@token': 2,
+               '@role': [Binary, Expression, Literal, Number, Primitive, Right],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 2,
+                     line: 1,
+                     col: 3,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 2,
+                     line: 1,
+                     col: 3,
+                  },
+               },
+            },
+         },
+      },
+      { '@type': "Expr",
+         '@role': [Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 4,
+               line: 2,
+               col: 1,
+            },
+         },
+         value: { '@type': "BinOp",
+            '@role': [Binary, Expression],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 4,
+                  line: 2,
+                  col: 1,
+               },
+            },
+            left: { '@type': "Num",
+               '@token': 1,
+               '@role': [Binary, Expression, Left, Literal, Number, Primitive],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 4,
+                     line: 2,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 4,
+                     line: 2,
+                     col: 1,
+                  },
+               },
+            },
+            op: { '@type': "Sub",
+               '@token': "-",
+               '@role': [Arithmetic, Binary, Operator, Substract],
+               '@pos': { '@type': "uast:Positions",
+               },
+            },
+            right: { '@type': "Num",
+               '@token': 2,
+               '@role': [Binary, Expression, Literal, Number, Primitive, Right],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 6,
+                     line: 2,
+                     col: 3,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 6,
+                     line: 2,
+                     col: 3,
+                  },
+               },
+            },
+         },
+      },
+      { '@type': "Expr",
+         '@role': [Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 8,
+               line: 3,
+               col: 1,
+            },
+         },
+         value: { '@type': "BinOp",
+            '@role': [Binary, Expression],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 8,
+                  line: 3,
+                  col: 1,
+               },
+            },
+            left: { '@type': "Num",
+               '@token': 1,
+               '@role': [Binary, Expression, Left, Literal, Number, Primitive],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 8,
+                     line: 3,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 8,
+                     line: 3,
+                     col: 1,
+                  },
+               },
+            },
+            op: { '@type': "Mult",
+               '@token': "*",
+               '@role': [Arithmetic, Binary, Multiply, Operator],
+               '@pos': { '@type': "uast:Positions",
+               },
+            },
+            right: { '@type': "Num",
+               '@token': 2,
+               '@role': [Binary, Expression, Literal, Number, Primitive, Right],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 10,
+                     line: 3,
+                     col: 3,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 10,
+                     line: 3,
+                     col: 3,
+                  },
+               },
+            },
+         },
+      },
+      { '@type': "Expr",
+         '@role': [Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 12,
+               line: 4,
+               col: 1,
+            },
+         },
+         value: { '@type': "BinOp",
+            '@role': [Binary, Expression],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 12,
+                  line: 4,
+                  col: 1,
+               },
+            },
+            left: { '@type': "Num",
+               '@token': 1,
+               '@role': [Binary, Expression, Left, Literal, Number, Primitive],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 12,
+                     line: 4,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 12,
+                     line: 4,
+                     col: 1,
+                  },
+               },
+            },
+            op: { '@type': "Div",
+               '@token': "/",
+               '@role': [Arithmetic, Binary, Divide, Operator],
+               '@pos': { '@type': "uast:Positions",
+               },
+            },
+            right: { '@type': "Num",
+               '@token': 2,
+               '@role': [Binary, Expression, Literal, Number, Primitive, Right],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 14,
+                     line: 4,
+                     col: 3,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 14,
+                     line: 4,
+                     col: 3,
+                  },
+               },
+            },
+         },
+      },
+      { '@type': "Expr",
+         '@role': [Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 16,
+               line: 5,
+               col: 1,
+            },
+         },
+         value: { '@type': "BinOp",
+            '@role': [Binary, Expression],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 16,
+                  line: 5,
+                  col: 1,
+               },
+            },
+            left: { '@type': "Num",
+               '@token': 1,
+               '@role': [Binary, Expression, Left, Literal, Number, Primitive],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 16,
+                     line: 5,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 16,
+                     line: 5,
+                     col: 1,
+                  },
+               },
+            },
+            op: { '@type': "FloorDiv",
+               '@token': "//",
+               '@role': [Arithmetic, Binary, Divide, Incomplete, Operator],
+               '@pos': { '@type': "uast:Positions",
+               },
+            },
+            right: { '@type': "Num",
+               '@token': 2,
+               '@role': [Binary, Expression, Literal, Number, Primitive, Right],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 19,
+                     line: 5,
+                     col: 4,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 19,
+                     line: 5,
+                     col: 4,
+                  },
+               },
+            },
+         },
+      },
+      { '@type': "Expr",
+         '@role': [Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 21,
+               line: 6,
+               col: 1,
+            },
+         },
+         value: { '@type': "BinOp",
+            '@role': [Binary, Expression],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 21,
+                  line: 6,
+                  col: 1,
+               },
+            },
+            left: { '@type': "Num",
+               '@token': 1,
+               '@role': [Binary, Expression, Left, Literal, Number, Primitive],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 21,
+                     line: 6,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 21,
+                     line: 6,
+                     col: 1,
+                  },
+               },
+            },
+            op: { '@type': "Mod",
+               '@token': "%",
+               '@role': [Arithmetic, Binary, Module, Operator],
+               '@pos': { '@type': "uast:Positions",
+               },
+            },
+            right: { '@type': "Num",
+               '@token': 2,
+               '@role': [Binary, Expression, Literal, Number, Primitive, Right],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 23,
+                     line: 6,
+                     col: 3,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 23,
+                     line: 6,
+                     col: 3,
+                  },
+               },
+            },
+         },
+      },
+      { '@type': "Expr",
+         '@role': [Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 25,
+               line: 7,
+               col: 1,
+            },
+         },
+         value: { '@type': "BinOp",
+            '@role': [Binary, Expression],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 25,
+                  line: 7,
+                  col: 1,
+               },
+            },
+            left: { '@type': "Num",
+               '@token': 1,
+               '@role': [Binary, Expression, Left, Literal, Number, Primitive],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 25,
+                     line: 7,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 25,
+                     line: 7,
+                     col: 1,
+                  },
+               },
+            },
+            op: { '@type': "Pow",
+               '@token': "**",
+               '@role': [Arithmetic, Binary, Incomplete, Operator],
+               '@pos': { '@type': "uast:Positions",
+               },
+            },
+            right: { '@type': "Num",
+               '@token': 2,
+               '@role': [Binary, Expression, Literal, Number, Primitive, Right],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 28,
+                     line: 7,
+                     col: 4,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 28,
+                     line: 7,
+                     col: 4,
+                  },
+               },
+            },
+         },
+      },
+   ],
+   'noops_remainder': { '@type': "RemainderNoops",
+      '@role': [Noop],
+      '@pos': { '@type': "uast:Positions",
+         start: { '@type': "uast:Position",
+            offset: 30,
+            line: 8,
+            col: 1,
+         },
+         end: { '@type': "uast:Position",
+            offset: 30,
+            line: 8,
+            col: 1,
+         },
+      },
+      lines: [
+         { '@type': "NoopLine",
+            '@token': " 1@2 FIXME: matmul\n",
+            '@role': [Comment, Noop],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 30,
+                  line: 8,
+                  col: 1,
+               },
+            },
+         },
+      ],
+   },
 }
-

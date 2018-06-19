@@ -1,87 +1,83 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: ClassDef {
-.  .  .  Roles: Declaration,Identifier,Statement,Type
-.  .  .  Properties: {
-.  .  .  .  col_offset: 7
-.  .  .  .  end_col_offset: 14
-.  .  .  .  end_lineno: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 1
-.  .  .  .  name: testcls1
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: ClassDef.bases {
-.  .  .  .  .  Roles: Base,Declaration,Type
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: bases
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: ClassDef.body {
-.  .  .  .  .  Roles: Body,Declaration,Type
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: body
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: ClassDef {
-.  .  .  .  .  .  .  Roles: Declaration,Identifier,Statement,Type
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 11
-.  .  .  .  .  .  .  .  end_col_offset: 18
-.  .  .  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  .  .  internalRole: body_stmts
-.  .  .  .  .  .  .  .  lineno: 2
-.  .  .  .  .  .  .  .  name: testcls2
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: ClassDef.bases {
-.  .  .  .  .  .  .  .  .  Roles: Base,Declaration,Type
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: bases
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  1: ClassDef.body {
-.  .  .  .  .  .  .  .  .  Roles: Body,Declaration,Type
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: body
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  .  .  0: Pass {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Noop,Statement
-.  .  .  .  .  .  .  .  .  .  .  TOKEN "pass"
-.  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  col_offset: 9
-.  .  .  .  .  .  .  .  .  .  .  .  end_col_offset: 12
-.  .  .  .  .  .  .  .  .  .  .  .  end_lineno: 3
-.  .  .  .  .  .  .  .  .  .  .  .  internalRole: body_stmts
-.  .  .  .  .  .  .  .  .  .  .  .  lineno: 3
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  2: ClassDef.decorator_list {
-.  .  .  .  .  .  .  .  .  Roles: Call,Declaration,Incomplete,Type
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: decorator_list
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  2: ClassDef.decorator_list {
-.  .  .  .  .  Roles: Call,Declaration,Incomplete,Type
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: decorator_list
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "ClassDef",
+         '@role': [Declaration, Identifier, Statement, Type],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 6,
+               line: 1,
+               col: 7,
+            },
+            end: { '@type': "uast:Position",
+               offset: 13,
+               line: 1,
+               col: 14,
+            },
+         },
+         bases: { '@type': "ClassDef.bases",
+            '@role': [Base, Declaration, Type],
+            bases: [],
+         },
+         body: { '@type': "ClassDef.body",
+            '@role': [Body, Declaration, Type],
+            'body_stmts': [
+               { '@type': "ClassDef",
+                  '@role': [Declaration, Identifier, Statement, Type],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 26,
+                        line: 2,
+                        col: 11,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 33,
+                        line: 2,
+                        col: 18,
+                     },
+                  },
+                  bases: { '@type': "ClassDef.bases",
+                     '@role': [Base, Declaration, Type],
+                     bases: [],
+                  },
+                  body: { '@type': "ClassDef.body",
+                     '@role': [Body, Declaration, Type],
+                     'body_stmts': [
+                        { '@type': "Pass",
+                           '@token': "pass",
+                           '@role': [Noop, Statement],
+                           '@pos': { '@type': "uast:Positions",
+                              start: { '@type': "uast:Position",
+                                 offset: 44,
+                                 line: 3,
+                                 col: 9,
+                              },
+                              end: { '@type': "uast:Position",
+                                 offset: 47,
+                                 line: 3,
+                                 col: 12,
+                              },
+                           },
+                        },
+                     ],
+                  },
+                  'decorator_list': { '@type': "ClassDef.decorator_list",
+                     '@role': [Call, Declaration, Incomplete, Type],
+                     decorators: [],
+                  },
+                  keywords: [],
+                  name: "testcls2",
+               },
+            ],
+         },
+         'decorator_list': { '@type': "ClassDef.decorator_list",
+            '@role': [Call, Declaration, Incomplete, Type],
+            decorators: [],
+         },
+         keywords: [],
+         name: "testcls1",
+      },
+   ],
 }
-

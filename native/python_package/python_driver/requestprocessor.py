@@ -1,10 +1,17 @@
 import abc
 import json
-from pydetector import detector
+import sys
+try:
+    from pydetector import detector
+except ImportError:
+    # local test mode
+    sys.path.insert(0, '../../../build/.local/lib/python3.6/site-packages')
+    from pydetector import detector
+
 from traceback import format_exc
 from python_driver.version import __version__
 from python_driver.astimprove import AstImprover, VisitResult
-from typing import (Any, IO, NewType, Tuple, cast, List, Iterator, Dict, Optional)
+from typing import (Any, IO, NewType, cast, List, Iterator, Dict, Optional)
 
 # typing.AnyStr is bugged on this version of MyPy, so...:
 AnyStr = Any

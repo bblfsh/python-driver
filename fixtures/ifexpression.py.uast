@@ -1,119 +1,136 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: Assign {
-.  .  .  Roles: Assignment,Binary,Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 1
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Name {
-.  .  .  .  .  Roles: Expression,Identifier,Left
-.  .  .  .  .  TOKEN "a"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  internalRole: targets
-.  .  .  .  .  .  lineno: 1
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: IfExp {
-.  .  .  .  .  Roles: Expression,If,Right
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 1
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Body,Expression,If,Literal,Number,Primitive,Then
-.  .  .  .  .  .  .  TOKEN "1"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  .  .  end_col_offset: 5
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: body
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  Roles: Body,Else,Expression,If,Literal,Number,Primitive
-.  .  .  .  .  .  .  TOKEN "2"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 21
-.  .  .  .  .  .  .  .  end_col_offset: 21
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: orelse
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Compare {
-.  .  .  .  .  .  .  Roles: Binary,Condition,Expression,If
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 10
-.  .  .  .  .  .  .  .  internalRole: test
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Compare.comparators {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Right
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: comparators
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
-.  .  .  .  .  .  .  .  .  .  .  TOKEN "4"
-.  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  col_offset: 14
-.  .  .  .  .  .  .  .  .  .  .  .  end_col_offset: 14
-.  .  .  .  .  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  .  .  .  .  internalRole: comparators
-.  .  .  .  .  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Left,Literal,Number,Primitive
-.  .  .  .  .  .  .  .  .  TOKEN "3"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 10
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 10
-.  .  .  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  .  .  internalRole: left
-.  .  .  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  2: Compare.ops {
-.  .  .  .  .  .  .  .  .  Roles: Expression
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: ops
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  .  .  0: Gt {
-.  .  .  .  .  .  .  .  .  .  .  Roles: GreaterThan,Operator,Relational
-.  .  .  .  .  .  .  .  .  .  .  TOKEN ">"
-.  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  internalRole: ops
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "Assign",
+         '@role': [Assignment, Binary, Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 0,
+               line: 1,
+               col: 1,
+            },
+         },
+         targets: [
+            { '@type': "Name",
+               '@token': "a",
+               '@role': [Expression, Identifier, Left],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 0,
+                     line: 1,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 0,
+                     line: 1,
+                     col: 1,
+                  },
+               },
+               ctx: "Store",
+            },
+         ],
+         value: { '@type': "IfExp",
+            '@role': [Expression, If, Right],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 4,
+                  line: 1,
+                  col: 5,
+               },
+            },
+            body: { '@type': "Num",
+               '@token': 1,
+               '@role': [Body, Expression, If, Literal, Number, Primitive, Then],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 4,
+                     line: 1,
+                     col: 5,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 4,
+                     line: 1,
+                     col: 5,
+                  },
+               },
+            },
+            orelse: { '@type': "Num",
+               '@token': 2,
+               '@role': [Body, Else, Expression, If, Literal, Number, Primitive],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 20,
+                     line: 1,
+                     col: 21,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 20,
+                     line: 1,
+                     col: 21,
+                  },
+               },
+            },
+            test: { '@type': "Compare",
+               '@role': [Binary, Condition, Expression, If],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 9,
+                     line: 1,
+                     col: 10,
+                  },
+               },
+               comparators: { '@type': "Compare.comparators",
+                  '@role': [Expression, Right],
+                  comparators: [
+                     { '@type': "Num",
+                        '@token': 4,
+                        '@role': [Expression, Literal, Number, Primitive],
+                        '@pos': { '@type': "uast:Positions",
+                           start: { '@type': "uast:Position",
+                              offset: 13,
+                              line: 1,
+                              col: 14,
+                           },
+                           end: { '@type': "uast:Position",
+                              offset: 13,
+                              line: 1,
+                              col: 14,
+                           },
+                        },
+                     },
+                  ],
+               },
+               left: { '@type': "Num",
+                  '@token': 3,
+                  '@role': [Expression, Left, Literal, Number, Primitive],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 9,
+                        line: 1,
+                        col: 10,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 9,
+                        line: 1,
+                        col: 10,
+                     },
+                  },
+               },
+               ops: { '@type': "Compare.ops",
+                  '@role': [Expression],
+                  ops: [
+                     { '@type': "Gt",
+                        '@token': ">",
+                        '@role': [GreaterThan, Operator, Relational],
+                        '@pos': { '@type': "uast:Positions",
+                        },
+                     },
+                  ],
+               },
+            },
+         },
+      },
+   ],
 }
-

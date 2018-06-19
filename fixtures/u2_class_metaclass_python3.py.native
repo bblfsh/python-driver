@@ -1,76 +1,71 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "ast_type": "ClassDef",
-                    "bases": [
-                        {
-                            "ast_type": "Name",
-                            "col_offset": 12,
-                            "ctx": "Load",
-                            "end_col_offset": 15,
-                            "end_lineno": 1,
-                            "id": "type",
-                            "lineno": 1
-                        }
-                    ],
-                    "body": [
-                        {
-                            "ast_type": "Pass",
-                            "col_offset": 19,
-                            "end_col_offset": 22,
-                            "end_lineno": 1,
-                            "lineno": 1
-                        }
-                    ],
-                    "col_offset": 7,
-                    "decorator_list": [],
-                    "end_col_offset": 10,
-                    "end_lineno": 1,
-                    "keywords": [],
-                    "lineno": 1,
-                    "name": "meta"
-                },
-                {
-                    "ast_type": "ClassDef",
-                    "bases": [],
-                    "body": [
-                        {
-                            "ast_type": "Pass",
-                            "col_offset": 29,
-                            "end_col_offset": 32,
-                            "end_lineno": 2,
-                            "lineno": 2
-                        }
-                    ],
-                    "col_offset": 7,
-                    "decorator_list": [],
-                    "end_col_offset": 10,
-                    "end_lineno": 2,
-                    "keywords": [
-                        {
-                            "arg": "metaclass",
-                            "ast_type": "keyword",
-                            "value": {
-                                "ast_type": "Name",
-                                "col_offset": 22,
-                                "ctx": "Load",
-                                "end_col_offset": 25,
-                                "end_lineno": 2,
-                                "id": "meta",
-                                "lineno": 2
-                            }
-                        }
-                    ],
-                    "lineno": 2,
-                    "name": "cls1"
-                }
-            ]
-        }
-    }
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "ClassDef",
+            bases: [
+               {
+                  'ast_type': "Name",
+                  'col_offset': 12,
+                  ctx: "Load",
+                  'end_col_offset': 15,
+                  'end_lineno': 1,
+                  id: "type",
+                  lineno: 1,
+               },
+            ],
+            body: [
+               {
+                  'ast_type': "Pass",
+                  'col_offset': 19,
+                  'end_col_offset': 22,
+                  'end_lineno': 1,
+                  lineno: 1,
+               },
+            ],
+            'col_offset': 7,
+            'decorator_list': [],
+            'end_col_offset': 10,
+            'end_lineno': 1,
+            keywords: [],
+            lineno: 1,
+            name: "meta",
+         },
+         {
+            'ast_type': "ClassDef",
+            bases: [],
+            body: [
+               {
+                  'ast_type': "Pass",
+                  'col_offset': 29,
+                  'end_col_offset': 32,
+                  'end_lineno': 2,
+                  lineno: 2,
+               },
+            ],
+            'col_offset': 7,
+            'decorator_list': [],
+            'end_col_offset': 10,
+            'end_lineno': 2,
+            keywords: [
+               {
+                  arg: "metaclass",
+                  'ast_type': "keyword",
+                  value: {
+                     'ast_type': "Name",
+                     'col_offset': 22,
+                     ctx: "Load",
+                     'end_col_offset': 25,
+                     'end_lineno': 2,
+                     id: "meta",
+                     lineno: 2,
+                  },
+               },
+            ],
+            lineno: 2,
+            name: "cls1",
+         },
+      ],
+   },
 }

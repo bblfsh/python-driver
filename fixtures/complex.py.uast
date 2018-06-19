@@ -1,65 +1,80 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: Assign {
-.  .  .  Roles: Assignment,Binary,Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 1
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Name {
-.  .  .  .  .  Roles: Expression,Identifier,Left
-.  .  .  .  .  TOKEN "a"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  internalRole: targets
-.  .  .  .  .  .  lineno: 1
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: BinOp {
-.  .  .  .  .  Roles: Binary,Expression,Right
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 1
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Left,Literal,Number,Primitive
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  .  .  internalRole: left
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Mult {
-.  .  .  .  .  .  .  Roles: Arithmetic,Binary,Multiply,Operator
-.  .  .  .  .  .  .  TOKEN "*"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 10
-.  .  .  .  .  .  .  .  internalRole: right
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "Assign",
+         '@role': [Assignment, Binary, Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 0,
+               line: 1,
+               col: 1,
+            },
+         },
+         targets: [
+            { '@type': "Name",
+               '@token': "a",
+               '@role': [Expression, Identifier, Left],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 0,
+                     line: 1,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 0,
+                     line: 1,
+                     col: 1,
+                  },
+               },
+               ctx: "Store",
+            },
+         ],
+         value: { '@type': "BinOp",
+            '@role': [Binary, Expression, Right],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 4,
+                  line: 1,
+                  col: 5,
+               },
+            },
+            left: { '@type': "Num",
+               '@role': [Binary, Expression, Left, Literal, Number, Primitive],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 4,
+                     line: 1,
+                     col: 5,
+                  },
+               },
+               '@token': {
+                  imag: 1,
+                  real: 0,
+               },
+            },
+            op: { '@type': "Mult",
+               '@token': "*",
+               '@role': [Arithmetic, Binary, Multiply, Operator],
+               '@pos': { '@type': "uast:Positions",
+               },
+            },
+            right: { '@type': "Num",
+               '@role': [Binary, Expression, Literal, Number, Primitive, Right],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 9,
+                     line: 1,
+                     col: 10,
+                  },
+               },
+               '@token': {
+                  imag: 1,
+                  real: 0,
+               },
+            },
+         },
+      },
+   ],
 }
-

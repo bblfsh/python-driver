@@ -1,105 +1,118 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: With {
-.  .  .  Roles: Block,Scope,Statement
-.  .  .  TOKEN "with"
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  end_col_offset: 4
-.  .  .  .  end_lineno: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 1
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: With.body {
-.  .  .  .  .  Roles: Block,Body,Incomplete,Scope
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: body
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Assign {
-.  .  .  .  .  .  .  Roles: Assignment,Binary,Expression
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  .  .  internalRole: body_stmts
-.  .  .  .  .  .  .  .  lineno: 2
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier,Left
-.  .  .  .  .  .  .  .  .  TOKEN "a"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 5
-.  .  .  .  .  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  .  .  .  .  internalRole: targets
-.  .  .  .  .  .  .  .  .  .  lineno: 2
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier,Right
-.  .  .  .  .  .  .  .  .  TOKEN "s"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 9
-.  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 9
-.  .  .  .  .  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  .  .  .  .  lineno: 2
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: With.items {
-.  .  .  .  .  Roles: Block,Incomplete,Scope
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: items
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: withitem {
-.  .  .  .  .  .  .  Roles: Expression,Identifier,Incomplete
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: items
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
-.  .  .  .  .  .  .  .  .  TOKEN "something"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 6
-.  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 14
-.  .  .  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  .  .  internalRole: context_expr
-.  .  .  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
-.  .  .  .  .  .  .  .  .  TOKEN "s"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 19
-.  .  .  .  .  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 19
-.  .  .  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  .  .  internalRole: optional_vars
-.  .  .  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "With",
+         '@token': "with",
+         '@role': [Block, Scope, Statement],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 0,
+               line: 1,
+               col: 1,
+            },
+            end: { '@type': "uast:Position",
+               offset: 3,
+               line: 1,
+               col: 4,
+            },
+         },
+         body: { '@type': "With.body",
+            '@role': [Block, Body, Incomplete, Scope],
+            'body_stmts': [
+               { '@type': "Assign",
+                  '@role': [Assignment, Binary, Expression],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 25,
+                        line: 2,
+                        col: 5,
+                     },
+                  },
+                  targets: [
+                     { '@type': "Name",
+                        '@token': "a",
+                        '@role': [Expression, Identifier, Left],
+                        '@pos': { '@type': "uast:Positions",
+                           start: { '@type': "uast:Position",
+                              offset: 25,
+                              line: 2,
+                              col: 5,
+                           },
+                           end: { '@type': "uast:Position",
+                              offset: 25,
+                              line: 2,
+                              col: 5,
+                           },
+                        },
+                        ctx: "Store",
+                     },
+                  ],
+                  value: { '@type': "Name",
+                     '@token': "s",
+                     '@role': [Expression, Identifier, Right],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 29,
+                           line: 2,
+                           col: 9,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 29,
+                           line: 2,
+                           col: 9,
+                        },
+                     },
+                     ctx: "Load",
+                  },
+               },
+            ],
+         },
+         items: { '@type': "With.items",
+            '@role': [Block, Incomplete, Scope],
+            items: [
+               { '@type': "withitem",
+                  '@role': [Expression, Identifier, Incomplete],
+                  '@pos': { '@type': "uast:Positions",
+                  },
+                  'context_expr': { '@type': "Name",
+                     '@token': "something",
+                     '@role': [Expression, Identifier],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 5,
+                           line: 1,
+                           col: 6,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 13,
+                           line: 1,
+                           col: 14,
+                        },
+                     },
+                     ctx: "Load",
+                  },
+                  'optional_vars': { '@type': "Name",
+                     '@token': "s",
+                     '@role': [Expression, Identifier],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 18,
+                           line: 1,
+                           col: 19,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 18,
+                           line: 1,
+                           col: 19,
+                        },
+                     },
+                     ctx: "Store",
+                  },
+               },
+            ],
+         },
+      },
+   ],
 }
-

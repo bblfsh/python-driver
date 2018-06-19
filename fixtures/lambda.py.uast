@@ -1,99 +1,108 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: Expr {
-.  .  .  Roles: Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 1
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Lambda {
-.  .  .  .  .  Roles: Anonymous,Declaration,Function,Value
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  end_col_offset: 6
-.  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 1
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: arguments {
-.  .  .  .  .  .  .  Roles: Argument,Declaration,Function,Incomplete
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: arg {
-.  .  .  .  .  .  .  .  .  Roles: Argument,Declaration,Function,Identifier,Name
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  arg: x
-.  .  .  .  .  .  .  .  .  .  col_offset: 8
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 8
-.  .  .  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: FunctionDef.body {
-.  .  .  .  .  .  .  Roles: Body,Declaration,Function
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: body
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: BinOp {
-.  .  .  .  .  .  .  .  .  Roles: Binary,Expression
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 11
-.  .  .  .  .  .  .  .  .  .  internalRole: body_stmts
-.  .  .  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Binary,Expression,Identifier,Left
-.  .  .  .  .  .  .  .  .  .  .  TOKEN "x"
-.  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  col_offset: 11
-.  .  .  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  .  .  end_col_offset: 11
-.  .  .  .  .  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  .  .  .  .  internalRole: left
-.  .  .  .  .  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  1: Add {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Add,Arithmetic,Binary,Operator
-.  .  .  .  .  .  .  .  .  .  .  TOKEN "+"
-.  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
-.  .  .  .  .  .  .  .  .  .  .  TOKEN "1"
-.  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  col_offset: 13
-.  .  .  .  .  .  .  .  .  .  .  .  end_col_offset: 13
-.  .  .  .  .  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  .  .  .  .  internalRole: right
-.  .  .  .  .  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "Expr",
+         '@role': [Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 0,
+               line: 1,
+               col: 1,
+            },
+         },
+         value: { '@type': "Lambda",
+            '@role': [Anonymous, Declaration, Function, Value],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 0,
+                  line: 1,
+                  col: 1,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 5,
+                  line: 1,
+                  col: 6,
+               },
+            },
+            args: { '@type': "arguments",
+               '@role': [Argument, Declaration, Function, Incomplete],
+               '@pos': { '@type': "uast:Positions",
+               },
+               args: [
+                  { '@type': "arg",
+                     '@token': "x",
+                     '@role': [Argument, Declaration, Function, Name],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 7,
+                           line: 1,
+                           col: 8,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 7,
+                           line: 1,
+                           col: 8,
+                        },
+                     },
+                     annotation: ~,
+                  },
+               ],
+            },
+            body: { '@type': "FunctionDef.body",
+               '@role': [Body, Declaration, Function],
+               'body_stmts': { '@type': "BinOp",
+                  '@role': [Binary, Expression],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 10,
+                        line: 1,
+                        col: 11,
+                     },
+                  },
+                  left: { '@type': "Name",
+                     '@token': "x",
+                     '@role': [Binary, Expression, Identifier, Left],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 10,
+                           line: 1,
+                           col: 11,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 10,
+                           line: 1,
+                           col: 11,
+                        },
+                     },
+                     ctx: "Load",
+                  },
+                  op: { '@type': "Add",
+                     '@token': "+",
+                     '@role': [Add, Arithmetic, Binary, Operator],
+                     '@pos': { '@type': "uast:Positions",
+                     },
+                  },
+                  right: { '@type': "Num",
+                     '@token': 1,
+                     '@role': [Binary, Expression, Literal, Number, Primitive, Right],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 12,
+                           line: 1,
+                           col: 13,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 12,
+                           line: 1,
+                           col: 13,
+                        },
+                     },
+                  },
+               },
+            },
+         },
+      },
+   ],
 }
-

@@ -1,74 +1,53 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: Import {
-.  .  .  Roles: Declaration,Import,Statement
-.  .  .  TOKEN "import"
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 1
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: ImportFrom.names {
-.  .  .  .  .  Roles: Identifier,Import,Incomplete,Pathname
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: names
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: alias {
-.  .  .  .  .  .  .  Roles: Identifier,Import,Pathname
-.  .  .  .  .  .  .  TOKEN "a"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: name_list
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: alias.asname {
-.  .  .  .  .  .  .  .  .  Roles: Alias,Identifier,Import,Pathname
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: asname
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: alias {
-.  .  .  .  .  .  .  Roles: Identifier,Import,Pathname
-.  .  .  .  .  .  .  TOKEN "b"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: name_list
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: alias.asname {
-.  .  .  .  .  .  .  .  .  Roles: Alias,Identifier,Import,Pathname
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: asname
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: alias {
-.  .  .  .  .  .  .  Roles: Identifier,Import,Pathname
-.  .  .  .  .  .  .  TOKEN "c"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: name_list
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: alias.asname {
-.  .  .  .  .  .  .  .  .  Roles: Alias,Identifier,Import,Pathname
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: asname
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "Import",
+         '@token': "import",
+         '@role': [Declaration, Import, Statement],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 0,
+               line: 1,
+               col: 1,
+            },
+         },
+         names: { '@type': "ImportFrom.names",
+            '@role': [Identifier, Import, Incomplete, Pathname],
+            'name_list': [
+               { '@type': "alias",
+                  '@token': "a",
+                  '@role': [Identifier, Import, Pathname],
+                  '@pos': { '@type': "uast:Positions",
+                  },
+                  asname: { '@type': "alias.asname",
+                     '@role': [Alias, Identifier, Import, Pathname],
+                     '@token': ~,
+                  },
+               },
+               { '@type': "alias",
+                  '@token': "b",
+                  '@role': [Identifier, Import, Pathname],
+                  '@pos': { '@type': "uast:Positions",
+                  },
+                  asname: { '@type': "alias.asname",
+                     '@role': [Alias, Identifier, Import, Pathname],
+                     '@token': ~,
+                  },
+               },
+               { '@type': "alias",
+                  '@token': "c",
+                  '@role': [Identifier, Import, Pathname],
+                  '@pos': { '@type': "uast:Positions",
+                  },
+                  asname: { '@type': "alias.asname",
+                     '@role': [Alias, Identifier, Import, Pathname],
+                     '@token': ~,
+                  },
+               },
+            ],
+         },
+      },
+   ],
 }
-

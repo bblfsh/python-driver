@@ -1,67 +1,73 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: FunctionDef {
-.  .  .  Roles: Declaration,Function,Identifier,Name
-.  .  .  TOKEN "testfnc1"
-.  .  .  Properties: {
-.  .  .  .  col_offset: 5
-.  .  .  .  end_col_offset: 12
-.  .  .  .  end_lineno: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 1
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: arguments {
-.  .  .  .  .  Roles: Argument,Declaration,Function,Incomplete
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: args
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: arg {
-.  .  .  .  .  .  .  Roles: ArgsList,Declaration,Function,Identifier,Map,Name
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  arg: kwargs
-.  .  .  .  .  .  .  .  col_offset: 16
-.  .  .  .  .  .  .  .  end_col_offset: 21
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: kwarg
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: FunctionDef.body {
-.  .  .  .  .  Roles: Body,Declaration,Function
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: body
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Pass {
-.  .  .  .  .  .  .  Roles: Noop,Statement
-.  .  .  .  .  .  .  TOKEN "pass"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 25
-.  .  .  .  .  .  .  .  end_col_offset: 28
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: body_stmts
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  2: FunctionDef.decorators {
-.  .  .  .  .  Roles: Declaration,Function,Incomplete
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: decorator_list
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "FunctionDef",
+         '@token': "testfnc1",
+         '@role': [Declaration, Function, Identifier, Name],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 4,
+               line: 1,
+               col: 5,
+            },
+            end: { '@type': "uast:Position",
+               offset: 11,
+               line: 1,
+               col: 12,
+            },
+         },
+         args: { '@type': "arguments",
+            '@role': [Argument, Declaration, Function, Incomplete],
+            '@pos': { '@type': "uast:Positions",
+            },
+            args: [
+               { '@type': "kwarg",
+                  '@token': "kwargs",
+                  '@role': [ArgsList, Declaration, Function, Map, Name],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 15,
+                        line: 1,
+                        col: 16,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 20,
+                        line: 1,
+                        col: 21,
+                     },
+                  },
+                  annotation: ~,
+               },
+            ],
+         },
+         body: { '@type': "FunctionDef.body",
+            '@role': [Body, Declaration, Function],
+            'body_stmts': [
+               { '@type': "Pass",
+                  '@token': "pass",
+                  '@role': [Noop, Statement],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 24,
+                        line: 1,
+                        col: 25,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 27,
+                        line: 1,
+                        col: 28,
+                     },
+                  },
+               },
+            ],
+         },
+         'decorator_list': { '@type': "FunctionDef.decorators",
+            '@role': [Declaration, Function, Incomplete],
+            decorators: [],
+         },
+         returns: ~,
+      },
+   ],
 }
-

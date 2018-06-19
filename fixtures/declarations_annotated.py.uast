@@ -1,102 +1,129 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: AnnAssign {
-.  .  .  Roles: Assignment,Binary,Operator
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 1
-.  .  .  .  simple: 1
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Name {
-.  .  .  .  .  Roles: Expression,Identifier
-.  .  .  .  .  TOKEN "int"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 4
-.  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  end_col_offset: 6
-.  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  internalRole: annotation
-.  .  .  .  .  .  lineno: 1
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Name {
-.  .  .  .  .  Roles: Expression,Identifier
-.  .  .  .  .  TOKEN "a"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  internalRole: target
-.  .  .  .  .  .  lineno: 1
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  2: Num {
-.  .  .  .  .  Roles: Expression,Literal,Number,Primitive
-.  .  .  .  .  TOKEN "3"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 10
-.  .  .  .  .  .  end_col_offset: 10
-.  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 1
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  1: AnnAssign {
-.  .  .  Roles: Assignment,Binary,Operator
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 2
-.  .  .  .  simple: 1
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Name {
-.  .  .  .  .  Roles: Expression,Identifier
-.  .  .  .  .  TOKEN "str"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 4
-.  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  end_col_offset: 6
-.  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  internalRole: annotation
-.  .  .  .  .  .  lineno: 2
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Name {
-.  .  .  .  .  Roles: Expression,Identifier
-.  .  .  .  .  TOKEN "b"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  internalRole: target
-.  .  .  .  .  .  lineno: 2
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  2: Str {
-.  .  .  .  .  Roles: Expression,Literal,Primitive,String
-.  .  .  .  .  TOKEN "foo"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 10
-.  .  .  .  .  .  end_col_offset: 14
-.  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 2
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "AnnAssign",
+         '@role': [Assignment, Binary, Operator],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 0,
+               line: 1,
+               col: 1,
+            },
+         },
+         annotation: { '@type': "Name",
+            '@token': "int",
+            '@role': [Expression, Identifier],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 3,
+                  line: 1,
+                  col: 4,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 5,
+                  line: 1,
+                  col: 6,
+               },
+            },
+            ctx: "Load",
+         },
+         simple: 1,
+         target: { '@type': "Name",
+            '@token': "a",
+            '@role': [Expression, Identifier],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 0,
+                  line: 1,
+                  col: 1,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 0,
+                  line: 1,
+                  col: 1,
+               },
+            },
+            ctx: "Store",
+         },
+         value: { '@type': "Num",
+            '@token': 3,
+            '@role': [Expression, Literal, Number, Primitive],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 9,
+                  line: 1,
+                  col: 10,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 9,
+                  line: 1,
+                  col: 10,
+               },
+            },
+         },
+      },
+      { '@type': "AnnAssign",
+         '@role': [Assignment, Binary, Operator],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 11,
+               line: 2,
+               col: 1,
+            },
+         },
+         annotation: { '@type': "Name",
+            '@token': "str",
+            '@role': [Expression, Identifier],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 14,
+                  line: 2,
+                  col: 4,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 16,
+                  line: 2,
+                  col: 6,
+               },
+            },
+            ctx: "Load",
+         },
+         simple: 1,
+         target: { '@type': "Name",
+            '@token': "b",
+            '@role': [Expression, Identifier],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 11,
+                  line: 2,
+                  col: 1,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 11,
+                  line: 2,
+                  col: 1,
+               },
+            },
+            ctx: "Store",
+         },
+         value: { '@type': "Str",
+            '@token': "foo",
+            '@role': [Expression, Literal, Primitive, String],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 20,
+                  line: 2,
+                  col: 10,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 24,
+                  line: 2,
+                  col: 14,
+               },
+            },
+         },
+      },
+   ],
 }
-

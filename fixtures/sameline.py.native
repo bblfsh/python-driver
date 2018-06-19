@@ -1,72 +1,67 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "ast_type": "Expr",
-                    "col_offset": 1,
-                    "lineno": 1,
-                    "value": {
-                        "args": [
-                            {
-                                "ast_type": "Str",
-                                "col_offset": 7,
-                                "end_col_offset": 22,
-                                "end_lineno": 1,
-                                "lineno": 1,
-                                "s": "same line test"
-                            }
-                        ],
-                        "ast_type": "Call",
-                        "col_offset": 1,
-                        "func": {
-                            "ast_type": "Name",
-                            "col_offset": 1,
-                            "ctx": "Load",
-                            "end_col_offset": 5,
-                            "end_lineno": 1,
-                            "id": "print",
-                            "lineno": 1
-                        },
-                        "keywords": [],
-                        "lineno": 1
-                    }
-                },
-                {
-                    "ast_type": "Expr",
-                    "col_offset": 26,
-                    "lineno": 1,
-                    "value": {
-                        "args": [
-                            {
-                                "ast_type": "Str",
-                                "col_offset": 32,
-                                "end_col_offset": 45,
-                                "end_lineno": 1,
-                                "lineno": 1,
-                                "s": "another call"
-                            }
-                        ],
-                        "ast_type": "Call",
-                        "col_offset": 26,
-                        "func": {
-                            "ast_type": "Name",
-                            "col_offset": 26,
-                            "ctx": "Load",
-                            "end_col_offset": 30,
-                            "end_lineno": 1,
-                            "id": "print",
-                            "lineno": 1
-                        },
-                        "keywords": [],
-                        "lineno": 1
-                    }
-                }
-            ]
-        }
-    }
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "Expr",
+            'col_offset': 1,
+            lineno: 1,
+            value: {
+               args: [
+                  {
+                     'ast_type': "Str",
+                     'col_offset': 7,
+                     'end_col_offset': 22,
+                     'end_lineno': 1,
+                     lineno: 1,
+                     s: "same line test",
+                  },
+               ],
+               'ast_type': "Call",
+               'col_offset': 1,
+               func: {
+                  'ast_type': "Name",
+                  'col_offset': 1,
+                  ctx: "Load",
+                  'end_col_offset': 5,
+                  'end_lineno': 1,
+                  id: "print",
+                  lineno: 1,
+               },
+               keywords: [],
+               lineno: 1,
+            },
+         },
+         {
+            'ast_type': "Expr",
+            'col_offset': 26,
+            lineno: 1,
+            value: {
+               args: [
+                  {
+                     'ast_type': "Str",
+                     'col_offset': 32,
+                     'end_col_offset': 45,
+                     'end_lineno': 1,
+                     lineno: 1,
+                     s: "another call",
+                  },
+               ],
+               'ast_type': "Call",
+               'col_offset': 26,
+               func: {
+                  'ast_type': "Name",
+                  'col_offset': 26,
+                  ctx: "Load",
+                  'end_col_offset': 30,
+                  'end_lineno': 1,
+                  id: "print",
+                  lineno: 1,
+               },
+               keywords: [],
+               lineno: 1,
+            },
+         },
+      ],
+   },
 }

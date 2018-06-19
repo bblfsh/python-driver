@@ -1,96 +1,100 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: Expr {
-.  .  .  Roles: Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 1
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Compare {
-.  .  .  .  .  Roles: Binary,Condition,Expression
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 1
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Compare.comparators {
-.  .  .  .  .  .  .  Roles: Expression,Right
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: comparators
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
-.  .  .  .  .  .  .  .  .  TOKEN "var2"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 9
-.  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 12
-.  .  .  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  .  .  internalRole: comparators
-.  .  .  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
-.  .  .  .  .  .  .  .  .  TOKEN "var3"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 17
-.  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 20
-.  .  .  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  .  .  internalRole: comparators
-.  .  .  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  Roles: Expression,Identifier,Left
-.  .  .  .  .  .  .  TOKEN "var1"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  end_col_offset: 4
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: left
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Compare.ops {
-.  .  .  .  .  .  .  Roles: Expression
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: ops
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Eq {
-.  .  .  .  .  .  .  .  .  Roles: Equal,Operator,Relational
-.  .  .  .  .  .  .  .  .  TOKEN "=="
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: ops
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  1: Eq {
-.  .  .  .  .  .  .  .  .  Roles: Equal,Operator,Relational
-.  .  .  .  .  .  .  .  .  TOKEN "=="
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: ops
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "Expr",
+         '@role': [Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 0,
+               line: 1,
+               col: 1,
+            },
+         },
+         value: { '@type': "Compare",
+            '@role': [Binary, Condition, Expression],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 0,
+                  line: 1,
+                  col: 1,
+               },
+            },
+            comparators: { '@type': "Compare.comparators",
+               '@role': [Expression, Right],
+               comparators: [
+                  { '@type': "Name",
+                     '@token': "var2",
+                     '@role': [Expression, Identifier],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 8,
+                           line: 1,
+                           col: 9,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 11,
+                           line: 1,
+                           col: 12,
+                        },
+                     },
+                     ctx: "Load",
+                  },
+                  { '@type': "Name",
+                     '@token': "var3",
+                     '@role': [Expression, Identifier],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 16,
+                           line: 1,
+                           col: 17,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 19,
+                           line: 1,
+                           col: 20,
+                        },
+                     },
+                     ctx: "Load",
+                  },
+               ],
+            },
+            left: { '@type': "Name",
+               '@token': "var1",
+               '@role': [Expression, Identifier, Left],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 0,
+                     line: 1,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 3,
+                     line: 1,
+                     col: 4,
+                  },
+               },
+               ctx: "Load",
+            },
+            ops: { '@type': "Compare.ops",
+               '@role': [Expression],
+               ops: [
+                  { '@type': "Eq",
+                     '@token': "==",
+                     '@role': [Equal, Operator, Relational],
+                     '@pos': { '@type': "uast:Positions",
+                     },
+                  },
+                  { '@type': "Eq",
+                     '@token': "==",
+                     '@role': [Equal, Operator, Relational],
+                     '@pos': { '@type': "uast:Positions",
+                     },
+                  },
+               ],
+            },
+         },
+      },
+   ],
 }
-

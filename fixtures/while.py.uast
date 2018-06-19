@@ -1,192 +1,220 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: While {
-.  .  .  Roles: Statement,While
-.  .  .  TOKEN "while"
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  end_col_offset: 5
-.  .  .  .  end_lineno: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 1
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: For.body {
-.  .  .  .  .  Roles: Body,Then,While
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: body
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Expr {
-.  .  .  .  .  .  .  Roles: Expression
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  .  .  internalRole: body_stmts
-.  .  .  .  .  .  .  .  lineno: 2
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Call {
-.  .  .  .  .  .  .  .  .  Roles: Call,Expression,Function
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  .  .  .  .  lineno: 2
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Argument,Call,Expression,Function,Literal,Name,Positional,Primitive,String
-.  .  .  .  .  .  .  .  .  .  .  TOKEN "surely here"
-.  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  col_offset: 11
-.  .  .  .  .  .  .  .  .  .  .  .  end_col_offset: 23
-.  .  .  .  .  .  .  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  .  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  .  .  .  .  .  .  lineno: 2
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Call,Callee,Expression,Identifier
-.  .  .  .  .  .  .  .  .  .  .  TOKEN "print"
-.  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  .  .  end_col_offset: 9
-.  .  .  .  .  .  .  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  .  .  .  .  .  .  internalRole: func
-.  .  .  .  .  .  .  .  .  .  .  .  lineno: 2
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Break {
-.  .  .  .  .  .  .  Roles: Break,Statement
-.  .  .  .  .  .  .  TOKEN "break"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  .  .  end_col_offset: 9
-.  .  .  .  .  .  .  .  end_lineno: 3
-.  .  .  .  .  .  .  .  internalRole: body_stmts
-.  .  .  .  .  .  .  .  lineno: 3
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: For.orelse {
-.  .  .  .  .  Roles: Body,Else,While
-.  .  .  .  .  TOKEN "else"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: orelse
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Expr {
-.  .  .  .  .  .  .  Roles: Expression
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  .  .  internalRole: else_stmts
-.  .  .  .  .  .  .  .  lineno: 5
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Call {
-.  .  .  .  .  .  .  .  .  Roles: Call,Expression,Function
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  .  .  .  .  lineno: 5
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Argument,Call,Expression,Function,Literal,Name,Positional,Primitive,String
-.  .  .  .  .  .  .  .  .  .  .  TOKEN "while's else"
-.  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  col_offset: 11
-.  .  .  .  .  .  .  .  .  .  .  .  end_col_offset: 24
-.  .  .  .  .  .  .  .  .  .  .  .  end_lineno: 5
-.  .  .  .  .  .  .  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  .  .  .  .  .  .  lineno: 5
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Call,Callee,Expression,Identifier
-.  .  .  .  .  .  .  .  .  .  .  TOKEN "print"
-.  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  .  .  end_col_offset: 9
-.  .  .  .  .  .  .  .  .  .  .  .  end_lineno: 5
-.  .  .  .  .  .  .  .  .  .  .  .  internalRole: func
-.  .  .  .  .  .  .  .  .  .  .  .  lineno: 5
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  2: Compare {
-.  .  .  .  .  Roles: Binary,Condition,Expression,While
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 7
-.  .  .  .  .  .  internalRole: test
-.  .  .  .  .  .  lineno: 1
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Compare.comparators {
-.  .  .  .  .  .  .  Roles: Expression,Right
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: comparators
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
-.  .  .  .  .  .  .  .  .  TOKEN "2"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 11
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 11
-.  .  .  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  .  .  internalRole: comparators
-.  .  .  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  Roles: Expression,Left,Literal,Number,Primitive
-.  .  .  .  .  .  .  TOKEN "3"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 7
-.  .  .  .  .  .  .  .  end_col_offset: 7
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: left
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Compare.ops {
-.  .  .  .  .  .  .  Roles: Expression
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: ops
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Gt {
-.  .  .  .  .  .  .  .  .  Roles: GreaterThan,Operator,Relational
-.  .  .  .  .  .  .  .  .  TOKEN ">"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: ops
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "While",
+         '@token': "while",
+         '@role': [Statement, While],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 0,
+               line: 1,
+               col: 1,
+            },
+            end: { '@type': "uast:Position",
+               offset: 4,
+               line: 1,
+               col: 5,
+            },
+         },
+         body: { '@type': "For.body",
+            '@role': [Body, Then, While],
+            'body_stmts': [
+               { '@type': "Expr",
+                  '@role': [Expression],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 17,
+                        line: 2,
+                        col: 5,
+                     },
+                  },
+                  value: { '@type': "Call",
+                     '@role': [Call, Expression, Function],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 17,
+                           line: 2,
+                           col: 5,
+                        },
+                     },
+                     args: [
+                        { '@type': "Str",
+                           '@token': "surely here",
+                           '@role': [Argument, Call, Expression, Function, Literal, Name, Positional, Primitive, String],
+                           '@pos': { '@type': "uast:Positions",
+                              start: { '@type': "uast:Position",
+                                 offset: 23,
+                                 line: 2,
+                                 col: 11,
+                              },
+                              end: { '@type': "uast:Position",
+                                 offset: 35,
+                                 line: 2,
+                                 col: 23,
+                              },
+                           },
+                        },
+                     ],
+                     func: { '@type': "Name",
+                        '@token': "print",
+                        '@role': [Call, Callee, Expression, Identifier],
+                        '@pos': { '@type': "uast:Positions",
+                           start: { '@type': "uast:Position",
+                              offset: 17,
+                              line: 2,
+                              col: 5,
+                           },
+                           end: { '@type': "uast:Position",
+                              offset: 21,
+                              line: 2,
+                              col: 9,
+                           },
+                        },
+                        ctx: "Load",
+                     },
+                     keywords: [],
+                  },
+               },
+               { '@type': "Break",
+                  '@token': "break",
+                  '@role': [Break, Statement],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 42,
+                        line: 3,
+                        col: 5,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 46,
+                        line: 3,
+                        col: 9,
+                     },
+                  },
+               },
+            ],
+         },
+         orelse: { '@type': "For.orelse",
+            '@token': "else",
+            '@role': [Body, Else, While],
+            'else_stmts': [
+               { '@type': "Expr",
+                  '@role': [Expression],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 58,
+                        line: 5,
+                        col: 5,
+                     },
+                  },
+                  value: { '@type': "Call",
+                     '@role': [Call, Expression, Function],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 58,
+                           line: 5,
+                           col: 5,
+                        },
+                     },
+                     args: [
+                        { '@type': "Str",
+                           '@token': "while's else",
+                           '@role': [Argument, Call, Expression, Function, Literal, Name, Positional, Primitive, String],
+                           '@pos': { '@type': "uast:Positions",
+                              start: { '@type': "uast:Position",
+                                 offset: 64,
+                                 line: 5,
+                                 col: 11,
+                              },
+                              end: { '@type': "uast:Position",
+                                 offset: 77,
+                                 line: 5,
+                                 col: 24,
+                              },
+                           },
+                        },
+                     ],
+                     func: { '@type': "Name",
+                        '@token': "print",
+                        '@role': [Call, Callee, Expression, Identifier],
+                        '@pos': { '@type': "uast:Positions",
+                           start: { '@type': "uast:Position",
+                              offset: 58,
+                              line: 5,
+                              col: 5,
+                           },
+                           end: { '@type': "uast:Position",
+                              offset: 62,
+                              line: 5,
+                              col: 9,
+                           },
+                        },
+                        ctx: "Load",
+                     },
+                     keywords: [],
+                  },
+               },
+            ],
+         },
+         test: { '@type': "Compare",
+            '@role': [Binary, Condition, Expression, While],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 6,
+                  line: 1,
+                  col: 7,
+               },
+            },
+            comparators: { '@type': "Compare.comparators",
+               '@role': [Expression, Right],
+               comparators: [
+                  { '@type': "Num",
+                     '@token': 2,
+                     '@role': [Expression, Literal, Number, Primitive],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 10,
+                           line: 1,
+                           col: 11,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 10,
+                           line: 1,
+                           col: 11,
+                        },
+                     },
+                  },
+               ],
+            },
+            left: { '@type': "Num",
+               '@token': 3,
+               '@role': [Expression, Left, Literal, Number, Primitive],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 6,
+                     line: 1,
+                     col: 7,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 6,
+                     line: 1,
+                     col: 7,
+                  },
+               },
+            },
+            ops: { '@type': "Compare.ops",
+               '@role': [Expression],
+               ops: [
+                  { '@type': "Gt",
+                     '@token': ">",
+                     '@role': [GreaterThan, Operator, Relational],
+                     '@pos': { '@type': "uast:Positions",
+                     },
+                  },
+               ],
+            },
+         },
+      },
+   ],
 }
-

@@ -1,57 +1,52 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "ast_type": "If",
-                    "body": [
-                        {
-                            "ast_type": "Pass",
-                            "col_offset": 5,
-                            "end_col_offset": 8,
-                            "end_lineno": 2,
-                            "lineno": 2
-                        }
-                    ],
-                    "col_offset": 1,
-                    "end_col_offset": 2,
-                    "end_lineno": 1,
-                    "lineno": 1,
-                    "orelse": [],
-                    "test": {
-                        "ast_type": "Compare",
-                        "col_offset": 4,
-                        "comparators": [
-                            {
-                                "ast_type": "Num",
-                                "col_offset": 8,
-                                "end_col_offset": 8,
-                                "end_lineno": 1,
-                                "lineno": 1,
-                                "n": 2
-                            }
-                        ],
-                        "left": {
-                            "ast_type": "Num",
-                            "col_offset": 4,
-                            "end_col_offset": 4,
-                            "end_lineno": 1,
-                            "lineno": 1,
-                            "n": 1
-                        },
-                        "lineno": 1,
-                        "ops": [
-                            {
-                                "ast_type": "Gt"
-                            }
-                        ]
-                    }
-                }
-            ]
-        }
-    }
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "If",
+            body: [
+               {
+                  'ast_type': "Pass",
+                  'col_offset': 5,
+                  'end_col_offset': 8,
+                  'end_lineno': 2,
+                  lineno: 2,
+               },
+            ],
+            'col_offset': 1,
+            'end_col_offset': 2,
+            'end_lineno': 1,
+            lineno: 1,
+            orelse: [],
+            test: {
+               'ast_type': "Compare",
+               'col_offset': 4,
+               comparators: [
+                  {
+                     'ast_type': "Num",
+                     'col_offset': 8,
+                     'end_col_offset': 8,
+                     'end_lineno': 1,
+                     lineno: 1,
+                     'n': 2,
+                  },
+               ],
+               left: {
+                  'ast_type': "Num",
+                  'col_offset': 4,
+                  'end_col_offset': 4,
+                  'end_lineno': 1,
+                  lineno: 1,
+                  'n': 1,
+               },
+               lineno: 1,
+               ops: [
+                  {
+                     'ast_type': "Gt",
+                  },
+               ],
+            },
+         },
+      ],
+   },
 }

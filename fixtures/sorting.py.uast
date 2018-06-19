@@ -1,124 +1,144 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: Expr {
-.  .  .  Roles: Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 2
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: Binary,Expression
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 2
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Left,Literal,Number,Primitive
-.  .  .  .  .  .  .  TOKEN "1"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  .  .  internalRole: left
-.  .  .  .  .  .  .  .  lineno: 2
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: PreviousNoops {
-.  .  .  .  .  .  .  .  .  Roles: Noop
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 16
-.  .  .  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  .  .  internalRole: noops_previous
-.  .  .  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  .  .  0: NoopLine {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Comment,Noop
-.  .  .  .  .  .  .  .  .  .  .  TOKEN " before comment
-"
-.  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  .  .  .  .  .  .  internalRole: lines
-.  .  .  .  .  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  1: SameLineNoops {
-.  .  .  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 4
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 26
-.  .  .  .  .  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  .  .  .  .  internalRole: noops_sameline
-.  .  .  .  .  .  .  .  .  .  lineno: 2
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  .  .  0: NoopSameLine {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Comment,Noop
-.  .  .  .  .  .  .  .  .  .  .  TOKEN "# linetrailing comment"
-.  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  internalRole: noop_lines
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Add {
-.  .  .  .  .  .  .  Roles: Add,Arithmetic,Binary,Operator
-.  .  .  .  .  .  .  TOKEN "+"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
-.  .  .  .  .  .  .  TOKEN "2"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 3
-.  .  .  .  .  .  .  .  end_col_offset: 3
-.  .  .  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  .  .  internalRole: right
-.  .  .  .  .  .  .  .  lineno: 2
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  1: RemainderNoops {
-.  .  .  Roles: Noop
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  end_col_offset: 1
-.  .  .  .  end_lineno: 3
-.  .  .  .  internalRole: noops_remainder
-.  .  .  .  lineno: 3
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: NoopLine {
-.  .  .  .  .  Roles: Comment,Noop
-.  .  .  .  .  TOKEN " remaining comment
-"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  internalRole: lines
-.  .  .  .  .  .  lineno: 3
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "Expr",
+         '@role': [Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 17,
+               line: 2,
+               col: 1,
+            },
+         },
+         value: { '@type': "BinOp",
+            '@role': [Binary, Expression],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 17,
+                  line: 2,
+                  col: 1,
+               },
+            },
+            left: { '@type': "Num",
+               '@token': 1,
+               '@role': [Binary, Expression, Left, Literal, Number, Primitive],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 17,
+                     line: 2,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 17,
+                     line: 2,
+                     col: 1,
+                  },
+               },
+               'noops_previous': { '@type': "PreviousNoops",
+                  '@role': [Noop],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 0,
+                        line: 1,
+                        col: 1,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 15,
+                        line: 1,
+                        col: 16,
+                     },
+                  },
+                  lines: [
+                     { '@type': "NoopLine",
+                        '@token': " before comment\n",
+                        '@role': [Comment, Noop],
+                        '@pos': { '@type': "uast:Positions",
+                           start: { '@type': "uast:Position",
+                              offset: 0,
+                              line: 1,
+                              col: 1,
+                           },
+                        },
+                     },
+                  ],
+               },
+               'noops_sameline': { '@type': "SameLineNoops",
+                  '@role': [Comment],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 20,
+                        line: 2,
+                        col: 4,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 42,
+                        line: 2,
+                        col: 26,
+                     },
+                  },
+                  'noop_lines': [
+                     { '@type': "NoopSameLine",
+                        '@token': "# linetrailing comment",
+                        '@role': [Comment, Noop],
+                        '@pos': { '@type': "uast:Positions",
+                        },
+                     },
+                  ],
+               },
+            },
+            op: { '@type': "Add",
+               '@token': "+",
+               '@role': [Add, Arithmetic, Binary, Operator],
+               '@pos': { '@type': "uast:Positions",
+               },
+            },
+            right: { '@type': "Num",
+               '@token': 2,
+               '@role': [Binary, Expression, Literal, Number, Primitive, Right],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 19,
+                     line: 2,
+                     col: 3,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 19,
+                     line: 2,
+                     col: 3,
+                  },
+               },
+            },
+         },
+      },
+   ],
+   'noops_remainder': { '@type': "RemainderNoops",
+      '@role': [Noop],
+      '@pos': { '@type': "uast:Positions",
+         start: { '@type': "uast:Position",
+            offset: 44,
+            line: 3,
+            col: 1,
+         },
+         end: { '@type': "uast:Position",
+            offset: 44,
+            line: 3,
+            col: 1,
+         },
+      },
+      lines: [
+         { '@type': "NoopLine",
+            '@token': " remaining comment\n",
+            '@role': [Comment, Noop],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 44,
+                  line: 3,
+                  col: 1,
+               },
+            },
+         },
+      ],
+   },
 }
-

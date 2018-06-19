@@ -1,467 +1,543 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: Expr {
-.  .  .  Roles: Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 1
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: Binary,Expression
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 1
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Left,Literal,Number,Primitive
-.  .  .  .  .  .  .  TOKEN "1"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: left
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: BitAnd {
-.  .  .  .  .  .  .  Roles: And,Binary,Bitwise,Operator
-.  .  .  .  .  .  .  TOKEN "&"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
-.  .  .  .  .  .  .  TOKEN "2"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  .  .  end_col_offset: 5
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: right
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  1: Expr {
-.  .  .  Roles: Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 2
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: Binary,Expression
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 2
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Left,Literal,Number,Primitive
-.  .  .  .  .  .  .  TOKEN "1"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  .  .  internalRole: left
-.  .  .  .  .  .  .  .  lineno: 2
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: BitOr {
-.  .  .  .  .  .  .  Roles: Binary,Bitwise,Operator,Or
-.  .  .  .  .  .  .  TOKEN "|"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
-.  .  .  .  .  .  .  TOKEN "2"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  .  .  end_col_offset: 5
-.  .  .  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  .  .  internalRole: right
-.  .  .  .  .  .  .  .  lineno: 2
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  2: Expr {
-.  .  .  Roles: Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 3
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: Binary,Expression
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 3
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Left,Literal,Number,Primitive
-.  .  .  .  .  .  .  TOKEN "1"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  .  .  end_lineno: 3
-.  .  .  .  .  .  .  .  internalRole: left
-.  .  .  .  .  .  .  .  lineno: 3
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: BitXor {
-.  .  .  .  .  .  .  Roles: Binary,Bitwise,Operator,Xor
-.  .  .  .  .  .  .  TOKEN "^"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
-.  .  .  .  .  .  .  TOKEN "2"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  .  .  end_col_offset: 5
-.  .  .  .  .  .  .  .  end_lineno: 3
-.  .  .  .  .  .  .  .  internalRole: right
-.  .  .  .  .  .  .  .  lineno: 3
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  3: Expr {
-.  .  .  Roles: Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 4
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: Binary,Expression
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 4
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Left,Literal,Number,Primitive
-.  .  .  .  .  .  .  TOKEN "1"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  .  .  end_lineno: 4
-.  .  .  .  .  .  .  .  internalRole: left
-.  .  .  .  .  .  .  .  lineno: 4
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: LShift {
-.  .  .  .  .  .  .  Roles: Binary,Bitwise,LeftShift,Operator
-.  .  .  .  .  .  .  TOKEN "<<"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
-.  .  .  .  .  .  .  TOKEN "2"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 6
-.  .  .  .  .  .  .  .  end_col_offset: 6
-.  .  .  .  .  .  .  .  end_lineno: 4
-.  .  .  .  .  .  .  .  internalRole: right
-.  .  .  .  .  .  .  .  lineno: 4
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  4: Expr {
-.  .  .  Roles: Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 5
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: Binary,Expression
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 5
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Left,Literal,Number,Primitive
-.  .  .  .  .  .  .  TOKEN "1"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  .  .  end_lineno: 5
-.  .  .  .  .  .  .  .  internalRole: left
-.  .  .  .  .  .  .  .  lineno: 5
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: RShift {
-.  .  .  .  .  .  .  Roles: Binary,Bitwise,Operator,RightShift
-.  .  .  .  .  .  .  TOKEN ">>"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
-.  .  .  .  .  .  .  TOKEN "2"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 6
-.  .  .  .  .  .  .  .  end_col_offset: 6
-.  .  .  .  .  .  .  .  end_lineno: 5
-.  .  .  .  .  .  .  .  internalRole: right
-.  .  .  .  .  .  .  .  lineno: 5
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  5: Expr {
-.  .  .  Roles: Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 6
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: Binary,Expression
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 6
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: BinOp {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Left
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 7
-.  .  .  .  .  .  .  .  internalRole: left
-.  .  .  .  .  .  .  .  lineno: 6
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: BinOp {
-.  .  .  .  .  .  .  .  .  Roles: Binary,Expression,Left
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  .  .  .  .  internalRole: left
-.  .  .  .  .  .  .  .  .  .  lineno: 6
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Binary,Expression,Left,Literal,Number,Primitive
-.  .  .  .  .  .  .  .  .  .  .  TOKEN "1"
-.  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  .  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  .  .  .  .  .  .  end_lineno: 6
-.  .  .  .  .  .  .  .  .  .  .  .  internalRole: left
-.  .  .  .  .  .  .  .  .  .  .  .  lineno: 6
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  1: BitAnd {
-.  .  .  .  .  .  .  .  .  .  .  Roles: And,Binary,Bitwise,Operator
-.  .  .  .  .  .  .  .  .  .  .  TOKEN "&"
-.  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
-.  .  .  .  .  .  .  .  .  .  .  TOKEN "2"
-.  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  .  .  .  .  .  .  end_col_offset: 5
-.  .  .  .  .  .  .  .  .  .  .  .  end_lineno: 6
-.  .  .  .  .  .  .  .  .  .  .  .  internalRole: right
-.  .  .  .  .  .  .  .  .  .  .  .  lineno: 6
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  1: BitAnd {
-.  .  .  .  .  .  .  .  .  Roles: And,Binary,Bitwise,Operator
-.  .  .  .  .  .  .  .  .  TOKEN "&"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
-.  .  .  .  .  .  .  .  .  TOKEN "3"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 9
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 9
-.  .  .  .  .  .  .  .  .  .  end_lineno: 6
-.  .  .  .  .  .  .  .  .  .  internalRole: right
-.  .  .  .  .  .  .  .  .  .  lineno: 6
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: BitOr {
-.  .  .  .  .  .  .  Roles: Binary,Bitwise,Operator,Or
-.  .  .  .  .  .  .  TOKEN "|"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
-.  .  .  .  .  .  .  TOKEN "4"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 13
-.  .  .  .  .  .  .  .  end_col_offset: 13
-.  .  .  .  .  .  .  .  end_lineno: 6
-.  .  .  .  .  .  .  .  internalRole: right
-.  .  .  .  .  .  .  .  lineno: 6
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  6: Expr {
-.  .  .  Roles: Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 7
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: BinOp {
-.  .  .  .  .  Roles: Binary,Expression
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 7
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: BinOp {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Left
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 2
-.  .  .  .  .  .  .  .  internalRole: left
-.  .  .  .  .  .  .  .  lineno: 7
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Binary,Expression,Identifier,Left
-.  .  .  .  .  .  .  .  .  TOKEN "a"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 2
-.  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 2
-.  .  .  .  .  .  .  .  .  .  end_lineno: 7
-.  .  .  .  .  .  .  .  .  .  internalRole: left
-.  .  .  .  .  .  .  .  .  .  lineno: 7
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  1: Add {
-.  .  .  .  .  .  .  .  .  Roles: Add,Arithmetic,Binary,Operator
-.  .  .  .  .  .  .  .  .  TOKEN "+"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
-.  .  .  .  .  .  .  .  .  TOKEN "1"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 6
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 6
-.  .  .  .  .  .  .  .  .  .  end_lineno: 7
-.  .  .  .  .  .  .  .  .  .  internalRole: right
-.  .  .  .  .  .  .  .  .  .  lineno: 7
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: BitOr {
-.  .  .  .  .  .  .  Roles: Binary,Bitwise,Operator,Or
-.  .  .  .  .  .  .  TOKEN "|"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: BinOp {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Right
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 12
-.  .  .  .  .  .  .  .  internalRole: right
-.  .  .  .  .  .  .  .  lineno: 7
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Binary,Expression,Identifier,Left
-.  .  .  .  .  .  .  .  .  TOKEN "d"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 12
-.  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 12
-.  .  .  .  .  .  .  .  .  .  end_lineno: 7
-.  .  .  .  .  .  .  .  .  .  internalRole: left
-.  .  .  .  .  .  .  .  .  .  lineno: 7
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  1: Add {
-.  .  .  .  .  .  .  .  .  Roles: Add,Arithmetic,Binary,Operator
-.  .  .  .  .  .  .  .  .  TOKEN "+"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  .  .  Roles: Binary,Expression,Literal,Number,Primitive,Right
-.  .  .  .  .  .  .  .  .  TOKEN "2"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 16
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 16
-.  .  .  .  .  .  .  .  .  .  end_lineno: 7
-.  .  .  .  .  .  .  .  .  .  internalRole: right
-.  .  .  .  .  .  .  .  .  .  lineno: 7
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "Expr",
+         '@role': [Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 0,
+               line: 1,
+               col: 1,
+            },
+         },
+         value: { '@type': "BinOp",
+            '@role': [Binary, Expression],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 0,
+                  line: 1,
+                  col: 1,
+               },
+            },
+            left: { '@type': "Num",
+               '@token': 1,
+               '@role': [Binary, Expression, Left, Literal, Number, Primitive],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 0,
+                     line: 1,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 0,
+                     line: 1,
+                     col: 1,
+                  },
+               },
+            },
+            op: { '@type': "BitAnd",
+               '@token': "&",
+               '@role': [And, Binary, Bitwise, Operator],
+               '@pos': { '@type': "uast:Positions",
+               },
+            },
+            right: { '@type': "Num",
+               '@token': 2,
+               '@role': [Binary, Expression, Literal, Number, Primitive, Right],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 4,
+                     line: 1,
+                     col: 5,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 4,
+                     line: 1,
+                     col: 5,
+                  },
+               },
+            },
+         },
+      },
+      { '@type': "Expr",
+         '@role': [Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 6,
+               line: 2,
+               col: 1,
+            },
+         },
+         value: { '@type': "BinOp",
+            '@role': [Binary, Expression],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 6,
+                  line: 2,
+                  col: 1,
+               },
+            },
+            left: { '@type': "Num",
+               '@token': 1,
+               '@role': [Binary, Expression, Left, Literal, Number, Primitive],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 6,
+                     line: 2,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 6,
+                     line: 2,
+                     col: 1,
+                  },
+               },
+            },
+            op: { '@type': "BitOr",
+               '@token': "|",
+               '@role': [Binary, Bitwise, Operator, Or],
+               '@pos': { '@type': "uast:Positions",
+               },
+            },
+            right: { '@type': "Num",
+               '@token': 2,
+               '@role': [Binary, Expression, Literal, Number, Primitive, Right],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 10,
+                     line: 2,
+                     col: 5,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 10,
+                     line: 2,
+                     col: 5,
+                  },
+               },
+            },
+         },
+      },
+      { '@type': "Expr",
+         '@role': [Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 12,
+               line: 3,
+               col: 1,
+            },
+         },
+         value: { '@type': "BinOp",
+            '@role': [Binary, Expression],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 12,
+                  line: 3,
+                  col: 1,
+               },
+            },
+            left: { '@type': "Num",
+               '@token': 1,
+               '@role': [Binary, Expression, Left, Literal, Number, Primitive],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 12,
+                     line: 3,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 12,
+                     line: 3,
+                     col: 1,
+                  },
+               },
+            },
+            op: { '@type': "BitXor",
+               '@token': "^",
+               '@role': [Binary, Bitwise, Operator, Xor],
+               '@pos': { '@type': "uast:Positions",
+               },
+            },
+            right: { '@type': "Num",
+               '@token': 2,
+               '@role': [Binary, Expression, Literal, Number, Primitive, Right],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 16,
+                     line: 3,
+                     col: 5,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 16,
+                     line: 3,
+                     col: 5,
+                  },
+               },
+            },
+         },
+      },
+      { '@type': "Expr",
+         '@role': [Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 18,
+               line: 4,
+               col: 1,
+            },
+         },
+         value: { '@type': "BinOp",
+            '@role': [Binary, Expression],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 18,
+                  line: 4,
+                  col: 1,
+               },
+            },
+            left: { '@type': "Num",
+               '@token': 1,
+               '@role': [Binary, Expression, Left, Literal, Number, Primitive],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 18,
+                     line: 4,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 18,
+                     line: 4,
+                     col: 1,
+                  },
+               },
+            },
+            op: { '@type': "LShift",
+               '@token': "<<",
+               '@role': [Binary, Bitwise, LeftShift, Operator],
+               '@pos': { '@type': "uast:Positions",
+               },
+            },
+            right: { '@type': "Num",
+               '@token': 2,
+               '@role': [Binary, Expression, Literal, Number, Primitive, Right],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 23,
+                     line: 4,
+                     col: 6,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 23,
+                     line: 4,
+                     col: 6,
+                  },
+               },
+            },
+         },
+      },
+      { '@type': "Expr",
+         '@role': [Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 25,
+               line: 5,
+               col: 1,
+            },
+         },
+         value: { '@type': "BinOp",
+            '@role': [Binary, Expression],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 25,
+                  line: 5,
+                  col: 1,
+               },
+            },
+            left: { '@type': "Num",
+               '@token': 1,
+               '@role': [Binary, Expression, Left, Literal, Number, Primitive],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 25,
+                     line: 5,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 25,
+                     line: 5,
+                     col: 1,
+                  },
+               },
+            },
+            op: { '@type': "RShift",
+               '@token': ">>",
+               '@role': [Binary, Bitwise, Operator, RightShift],
+               '@pos': { '@type': "uast:Positions",
+               },
+            },
+            right: { '@type': "Num",
+               '@token': 2,
+               '@role': [Binary, Expression, Literal, Number, Primitive, Right],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 30,
+                     line: 5,
+                     col: 6,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 30,
+                     line: 5,
+                     col: 6,
+                  },
+               },
+            },
+         },
+      },
+      { '@type': "Expr",
+         '@role': [Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 32,
+               line: 6,
+               col: 1,
+            },
+         },
+         value: { '@type': "BinOp",
+            '@role': [Binary, Expression],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 32,
+                  line: 6,
+                  col: 1,
+               },
+            },
+            left: { '@type': "BinOp",
+               '@role': [Binary, Expression, Left],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 38,
+                     line: 6,
+                     col: 7,
+                  },
+               },
+               left: { '@type': "BinOp",
+                  '@role': [Binary, Expression, Left],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 32,
+                        line: 6,
+                        col: 1,
+                     },
+                  },
+                  left: { '@type': "Num",
+                     '@token': 1,
+                     '@role': [Binary, Expression, Left, Literal, Number, Primitive],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 32,
+                           line: 6,
+                           col: 1,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 32,
+                           line: 6,
+                           col: 1,
+                        },
+                     },
+                  },
+                  op: { '@type': "BitAnd",
+                     '@token': "&",
+                     '@role': [And, Binary, Bitwise, Operator],
+                     '@pos': { '@type': "uast:Positions",
+                     },
+                  },
+                  right: { '@type': "Num",
+                     '@token': 2,
+                     '@role': [Binary, Expression, Literal, Number, Primitive, Right],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 36,
+                           line: 6,
+                           col: 5,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 36,
+                           line: 6,
+                           col: 5,
+                        },
+                     },
+                  },
+               },
+               op: { '@type': "BitAnd",
+                  '@token': "&",
+                  '@role': [And, Binary, Bitwise, Operator],
+                  '@pos': { '@type': "uast:Positions",
+                  },
+               },
+               right: { '@type': "Num",
+                  '@token': 3,
+                  '@role': [Binary, Expression, Literal, Number, Primitive, Right],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 40,
+                        line: 6,
+                        col: 9,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 40,
+                        line: 6,
+                        col: 9,
+                     },
+                  },
+               },
+            },
+            op: { '@type': "BitOr",
+               '@token': "|",
+               '@role': [Binary, Bitwise, Operator, Or],
+               '@pos': { '@type': "uast:Positions",
+               },
+            },
+            right: { '@type': "Num",
+               '@token': 4,
+               '@role': [Binary, Expression, Literal, Number, Primitive, Right],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 44,
+                     line: 6,
+                     col: 13,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 44,
+                     line: 6,
+                     col: 13,
+                  },
+               },
+            },
+         },
+      },
+      { '@type': "Expr",
+         '@role': [Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 46,
+               line: 7,
+               col: 1,
+            },
+         },
+         value: { '@type': "BinOp",
+            '@role': [Binary, Expression],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 46,
+                  line: 7,
+                  col: 1,
+               },
+            },
+            left: { '@type': "BinOp",
+               '@role': [Binary, Expression, Left],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 47,
+                     line: 7,
+                     col: 2,
+                  },
+               },
+               left: { '@type': "Name",
+                  '@token': "a",
+                  '@role': [Binary, Expression, Identifier, Left],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 47,
+                        line: 7,
+                        col: 2,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 47,
+                        line: 7,
+                        col: 2,
+                     },
+                  },
+                  ctx: "Load",
+               },
+               op: { '@type': "Add",
+                  '@token': "+",
+                  '@role': [Add, Arithmetic, Binary, Operator],
+                  '@pos': { '@type': "uast:Positions",
+                  },
+               },
+               right: { '@type': "Num",
+                  '@token': 1,
+                  '@role': [Binary, Expression, Literal, Number, Primitive, Right],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 51,
+                        line: 7,
+                        col: 6,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 51,
+                        line: 7,
+                        col: 6,
+                     },
+                  },
+               },
+            },
+            op: { '@type': "BitOr",
+               '@token': "|",
+               '@role': [Binary, Bitwise, Operator, Or],
+               '@pos': { '@type': "uast:Positions",
+               },
+            },
+            right: { '@type': "BinOp",
+               '@role': [Binary, Expression, Right],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 57,
+                     line: 7,
+                     col: 12,
+                  },
+               },
+               left: { '@type': "Name",
+                  '@token': "d",
+                  '@role': [Binary, Expression, Identifier, Left],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 57,
+                        line: 7,
+                        col: 12,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 57,
+                        line: 7,
+                        col: 12,
+                     },
+                  },
+                  ctx: "Load",
+               },
+               op: { '@type': "Add",
+                  '@token': "+",
+                  '@role': [Add, Arithmetic, Binary, Operator],
+                  '@pos': { '@type': "uast:Positions",
+                  },
+               },
+               right: { '@type': "Num",
+                  '@token': 2,
+                  '@role': [Binary, Expression, Literal, Number, Primitive, Right],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 61,
+                        line: 7,
+                        col: 16,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 61,
+                        line: 7,
+                        col: 16,
+                     },
+                  },
+               },
+            },
+         },
+      },
+   ],
 }
-

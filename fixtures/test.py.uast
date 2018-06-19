@@ -1,104 +1,107 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: If {
-.  .  .  Roles: Expression,If
-.  .  .  TOKEN "if"
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  end_col_offset: 2
-.  .  .  .  end_lineno: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 1
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: If.body {
-.  .  .  .  .  Roles: Body,If,Then
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: body
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Pass {
-.  .  .  .  .  .  .  Roles: Noop,Statement
-.  .  .  .  .  .  .  TOKEN "pass"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  .  .  end_col_offset: 8
-.  .  .  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  .  .  internalRole: body_stmts
-.  .  .  .  .  .  .  .  lineno: 2
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: If.orelse {
-.  .  .  .  .  Roles: Body,Else,If
-.  .  .  .  .  TOKEN "else"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: orelse
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  2: Compare {
-.  .  .  .  .  Roles: Binary,Condition,Expression,If
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 4
-.  .  .  .  .  .  internalRole: test
-.  .  .  .  .  .  lineno: 1
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Compare.comparators {
-.  .  .  .  .  .  .  Roles: Expression,Right
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: comparators
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
-.  .  .  .  .  .  .  .  .  TOKEN "2"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 8
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 8
-.  .  .  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  .  .  internalRole: comparators
-.  .  .  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  Roles: Expression,Left,Literal,Number,Primitive
-.  .  .  .  .  .  .  TOKEN "1"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 4
-.  .  .  .  .  .  .  .  end_col_offset: 4
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: left
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Compare.ops {
-.  .  .  .  .  .  .  Roles: Expression
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: ops
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Gt {
-.  .  .  .  .  .  .  .  .  Roles: GreaterThan,Operator,Relational
-.  .  .  .  .  .  .  .  .  TOKEN ">"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: ops
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "If",
+         '@token': "if",
+         '@role': [Expression, If],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 0,
+               line: 1,
+               col: 1,
+            },
+            end: { '@type': "uast:Position",
+               offset: 1,
+               line: 1,
+               col: 2,
+            },
+         },
+         body: { '@type': "If.body",
+            '@role': [Body, If, Then],
+            'body_stmts': [
+               { '@type': "Pass",
+                  '@token': "pass",
+                  '@role': [Noop, Statement],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 14,
+                        line: 2,
+                        col: 5,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 17,
+                        line: 2,
+                        col: 8,
+                     },
+                  },
+               },
+            ],
+         },
+         orelse: { '@type': "If.orelse",
+            '@token': "else",
+            '@role': [Body, Else, If],
+            'else_stmts': [],
+         },
+         test: { '@type': "Compare",
+            '@role': [Binary, Condition, Expression, If],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 3,
+                  line: 1,
+                  col: 4,
+               },
+            },
+            comparators: { '@type': "Compare.comparators",
+               '@role': [Expression, Right],
+               comparators: [
+                  { '@type': "Num",
+                     '@token': 2,
+                     '@role': [Expression, Literal, Number, Primitive],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 7,
+                           line: 1,
+                           col: 8,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 7,
+                           line: 1,
+                           col: 8,
+                        },
+                     },
+                  },
+               ],
+            },
+            left: { '@type': "Num",
+               '@token': 1,
+               '@role': [Expression, Left, Literal, Number, Primitive],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 3,
+                     line: 1,
+                     col: 4,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 3,
+                     line: 1,
+                     col: 4,
+                  },
+               },
+            },
+            ops: { '@type': "Compare.ops",
+               '@role': [Expression],
+               ops: [
+                  { '@type': "Gt",
+                     '@token': ">",
+                     '@role': [GreaterThan, Operator, Relational],
+                     '@pos': { '@type': "uast:Positions",
+                     },
+                  },
+               ],
+            },
+         },
+      },
+   ],
 }
-

@@ -1,719 +1,914 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: Assign {
-.  .  .  Roles: Assignment,Binary,Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 1
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Name {
-.  .  .  .  .  Roles: Expression,Identifier,Left
-.  .  .  .  .  TOKEN "a"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  internalRole: targets
-.  .  .  .  .  .  lineno: 1
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: SameLineNoops {
-.  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 6
-.  .  .  .  .  .  .  .  end_col_offset: 11
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: noops_sameline
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: NoopSameLine {
-.  .  .  .  .  .  .  .  .  Roles: Comment,Noop
-.  .  .  .  .  .  .  .  .  TOKEN "# int"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: noop_lines
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Num {
-.  .  .  .  .  Roles: Expression,Literal,Number,Primitive,Right
-.  .  .  .  .  TOKEN "3"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  end_col_offset: 5
-.  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 1
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  1: Assign {
-.  .  .  Roles: Assignment,Binary,Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 2
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Name {
-.  .  .  .  .  Roles: Expression,Identifier,Left
-.  .  .  .  .  TOKEN "b"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  internalRole: targets
-.  .  .  .  .  .  lineno: 2
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: SameLineNoops {
-.  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 9
-.  .  .  .  .  .  .  .  end_col_offset: 16
-.  .  .  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  .  .  internalRole: noops_sameline
-.  .  .  .  .  .  .  .  lineno: 2
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: NoopSameLine {
-.  .  .  .  .  .  .  .  .  Roles: Comment,Noop
-.  .  .  .  .  .  .  .  .  TOKEN "# float"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: noop_lines
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Num {
-.  .  .  .  .  Roles: Expression,Literal,Number,Primitive,Right
-.  .  .  .  .  TOKEN "3.14"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  end_col_offset: 8
-.  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 2
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  2: Assign {
-.  .  .  Roles: Assignment,Binary,Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 3
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Name {
-.  .  .  .  .  Roles: Expression,Identifier,Left
-.  .  .  .  .  TOKEN "c"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  end_lineno: 3
-.  .  .  .  .  .  internalRole: targets
-.  .  .  .  .  .  lineno: 3
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: SameLineNoops {
-.  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 17
-.  .  .  .  .  .  .  .  end_col_offset: 25
-.  .  .  .  .  .  .  .  end_lineno: 3
-.  .  .  .  .  .  .  .  internalRole: noops_sameline
-.  .  .  .  .  .  .  .  lineno: 3
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: NoopSameLine {
-.  .  .  .  .  .  .  .  .  Roles: Comment,Noop
-.  .  .  .  .  .  .  .  .  TOKEN "# string"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: noop_lines
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Str {
-.  .  .  .  .  Roles: Expression,Literal,Primitive,Right,String
-.  .  .  .  .  TOKEN "somestring"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  end_col_offset: 16
-.  .  .  .  .  .  end_lineno: 3
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 3
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  3: Assign {
-.  .  .  Roles: Assignment,Binary,Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 4
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Name {
-.  .  .  .  .  Roles: Expression,Identifier,Left
-.  .  .  .  .  TOKEN "d"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  end_lineno: 4
-.  .  .  .  .  .  internalRole: targets
-.  .  .  .  .  .  lineno: 4
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: SameLineNoops {
-.  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 9
-.  .  .  .  .  .  .  .  end_col_offset: 15
-.  .  .  .  .  .  .  .  end_lineno: 4
-.  .  .  .  .  .  .  .  internalRole: noops_sameline
-.  .  .  .  .  .  .  .  lineno: 4
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: NoopSameLine {
-.  .  .  .  .  .  .  .  .  Roles: Comment,Noop
-.  .  .  .  .  .  .  .  .  TOKEN "# None"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: noop_lines
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: NoneLiteral {
-.  .  .  .  .  Roles: Expression,Literal,Null,Primitive,Right
-.  .  .  .  .  TOKEN "None"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  LiteralValue: None
-.  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  end_col_offset: 8
-.  .  .  .  .  .  end_lineno: 4
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 4
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  4: Assign {
-.  .  .  Roles: Assignment,Binary,Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 5
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Name {
-.  .  .  .  .  Roles: Expression,Identifier,Left
-.  .  .  .  .  TOKEN "e"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  end_lineno: 5
-.  .  .  .  .  .  internalRole: targets
-.  .  .  .  .  .  lineno: 5
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: SameLineNoops {
-.  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 14
-.  .  .  .  .  .  .  .  end_col_offset: 28
-.  .  .  .  .  .  .  .  end_lineno: 5
-.  .  .  .  .  .  .  .  internalRole: noops_sameline
-.  .  .  .  .  .  .  .  lineno: 5
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: NoopSameLine {
-.  .  .  .  .  .  .  .  .  Roles: Comment,Noop
-.  .  .  .  .  .  .  .  .  TOKEN "# list literal"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: noop_lines
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: List {
-.  .  .  .  .  Roles: Expression,List,Literal,Primitive,Right
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 5
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
-.  .  .  .  .  .  .  TOKEN "1"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 6
-.  .  .  .  .  .  .  .  end_col_offset: 6
-.  .  .  .  .  .  .  .  end_lineno: 5
-.  .  .  .  .  .  .  .  internalRole: elts
-.  .  .  .  .  .  .  .  lineno: 5
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
-.  .  .  .  .  .  .  TOKEN "2"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 9
-.  .  .  .  .  .  .  .  end_col_offset: 9
-.  .  .  .  .  .  .  .  end_lineno: 5
-.  .  .  .  .  .  .  .  internalRole: elts
-.  .  .  .  .  .  .  .  lineno: 5
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
-.  .  .  .  .  .  .  TOKEN "3"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 12
-.  .  .  .  .  .  .  .  end_col_offset: 12
-.  .  .  .  .  .  .  .  end_lineno: 5
-.  .  .  .  .  .  .  .  internalRole: elts
-.  .  .  .  .  .  .  .  lineno: 5
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  5: Assign {
-.  .  .  Roles: Assignment,Binary,Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 6
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Name {
-.  .  .  .  .  Roles: Expression,Identifier,Left
-.  .  .  .  .  TOKEN "f"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  end_lineno: 6
-.  .  .  .  .  .  internalRole: targets
-.  .  .  .  .  .  lineno: 6
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: SameLineNoops {
-.  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 14
-.  .  .  .  .  .  .  .  end_col_offset: 29
-.  .  .  .  .  .  .  .  end_lineno: 6
-.  .  .  .  .  .  .  .  internalRole: noops_sameline
-.  .  .  .  .  .  .  .  lineno: 6
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: NoopSameLine {
-.  .  .  .  .  .  .  .  .  Roles: Comment,Noop
-.  .  .  .  .  .  .  .  .  TOKEN "# tuple literal"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: noop_lines
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Tuple {
-.  .  .  .  .  Roles: Expression,Literal,Primitive,Right,Tuple
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 6
-.  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 6
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
-.  .  .  .  .  .  .  TOKEN "1"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 6
-.  .  .  .  .  .  .  .  end_col_offset: 6
-.  .  .  .  .  .  .  .  end_lineno: 6
-.  .  .  .  .  .  .  .  internalRole: elts
-.  .  .  .  .  .  .  .  lineno: 6
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
-.  .  .  .  .  .  .  TOKEN "2"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 9
-.  .  .  .  .  .  .  .  end_col_offset: 9
-.  .  .  .  .  .  .  .  end_lineno: 6
-.  .  .  .  .  .  .  .  internalRole: elts
-.  .  .  .  .  .  .  .  lineno: 6
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
-.  .  .  .  .  .  .  TOKEN "3"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 12
-.  .  .  .  .  .  .  .  end_col_offset: 12
-.  .  .  .  .  .  .  .  end_lineno: 6
-.  .  .  .  .  .  .  .  internalRole: elts
-.  .  .  .  .  .  .  .  lineno: 6
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  6: Assign {
-.  .  .  Roles: Assignment,Binary,Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 7
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Name {
-.  .  .  .  .  Roles: Expression,Identifier,Left
-.  .  .  .  .  TOKEN "g"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  end_lineno: 7
-.  .  .  .  .  .  internalRole: targets
-.  .  .  .  .  .  lineno: 7
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: SameLineNoops {
-.  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 14
-.  .  .  .  .  .  .  .  end_col_offset: 27
-.  .  .  .  .  .  .  .  end_lineno: 7
-.  .  .  .  .  .  .  .  internalRole: noops_sameline
-.  .  .  .  .  .  .  .  lineno: 7
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: NoopSameLine {
-.  .  .  .  .  .  .  .  .  Roles: Comment,Noop
-.  .  .  .  .  .  .  .  .  TOKEN "# set literal"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: noop_lines
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Set {
-.  .  .  .  .  Roles: Expression,Literal,Primitive,Right,Set
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 7
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
-.  .  .  .  .  .  .  TOKEN "1"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 6
-.  .  .  .  .  .  .  .  end_col_offset: 6
-.  .  .  .  .  .  .  .  end_lineno: 7
-.  .  .  .  .  .  .  .  internalRole: elts
-.  .  .  .  .  .  .  .  lineno: 7
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
-.  .  .  .  .  .  .  TOKEN "2"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 9
-.  .  .  .  .  .  .  .  end_col_offset: 9
-.  .  .  .  .  .  .  .  end_lineno: 7
-.  .  .  .  .  .  .  .  internalRole: elts
-.  .  .  .  .  .  .  .  lineno: 7
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
-.  .  .  .  .  .  .  TOKEN "3"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 12
-.  .  .  .  .  .  .  .  end_col_offset: 12
-.  .  .  .  .  .  .  .  end_lineno: 7
-.  .  .  .  .  .  .  .  internalRole: elts
-.  .  .  .  .  .  .  .  lineno: 7
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  7: Assign {
-.  .  .  Roles: Assignment,Binary,Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 8
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Name {
-.  .  .  .  .  Roles: Expression,Identifier,Left
-.  .  .  .  .  TOKEN "h"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  end_lineno: 8
-.  .  .  .  .  .  internalRole: targets
-.  .  .  .  .  .  lineno: 8
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: SameLineNoops {
-.  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 21
-.  .  .  .  .  .  .  .  end_col_offset: 35
-.  .  .  .  .  .  .  .  end_lineno: 8
-.  .  .  .  .  .  .  .  internalRole: noops_sameline
-.  .  .  .  .  .  .  .  lineno: 8
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: NoopSameLine {
-.  .  .  .  .  .  .  .  .  Roles: Comment,Noop
-.  .  .  .  .  .  .  .  .  TOKEN "# dict literal"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: noop_lines
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Dict {
-.  .  .  .  .  Roles: Expression,Literal,Map,Primitive,Right
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 8
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  Roles: Expression,Key,Literal,Map,Primitive,String
-.  .  .  .  .  .  .  TOKEN "a"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 6
-.  .  .  .  .  .  .  .  end_col_offset: 8
-.  .  .  .  .  .  .  .  end_lineno: 8
-.  .  .  .  .  .  .  .  internalRole: keys
-.  .  .  .  .  .  .  .  lineno: 8
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Str {
-.  .  .  .  .  .  .  Roles: Expression,Key,Literal,Map,Primitive,String
-.  .  .  .  .  .  .  TOKEN "b"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 14
-.  .  .  .  .  .  .  .  end_col_offset: 16
-.  .  .  .  .  .  .  .  end_lineno: 8
-.  .  .  .  .  .  .  .  internalRole: keys
-.  .  .  .  .  .  .  .  lineno: 8
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: Expression,Literal,Map,Number,Primitive,Value
-.  .  .  .  .  .  .  TOKEN "1"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 11
-.  .  .  .  .  .  .  .  end_col_offset: 11
-.  .  .  .  .  .  .  .  end_lineno: 8
-.  .  .  .  .  .  .  .  internalRole: values
-.  .  .  .  .  .  .  .  lineno: 8
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  3: Num {
-.  .  .  .  .  .  .  Roles: Expression,Literal,Map,Number,Primitive,Value
-.  .  .  .  .  .  .  TOKEN "2"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 19
-.  .  .  .  .  .  .  .  end_col_offset: 19
-.  .  .  .  .  .  .  .  end_lineno: 8
-.  .  .  .  .  .  .  .  internalRole: values
-.  .  .  .  .  .  .  .  lineno: 8
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  8: Assign {
-.  .  .  Roles: Assignment,Binary,Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 9
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Name {
-.  .  .  .  .  Roles: Expression,Identifier,Left
-.  .  .  .  .  TOKEN "i"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  end_lineno: 9
-.  .  .  .  .  .  internalRole: targets
-.  .  .  .  .  .  lineno: 9
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: SameLineNoops {
-.  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 19
-.  .  .  .  .  .  .  .  end_col_offset: 42
-.  .  .  .  .  .  .  .  end_lineno: 9
-.  .  .  .  .  .  .  .  internalRole: noops_sameline
-.  .  .  .  .  .  .  .  lineno: 9
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: NoopSameLine {
-.  .  .  .  .  .  .  .  .  Roles: Comment,Noop
-.  .  .  .  .  .  .  .  .  TOKEN "# expression assignment"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: noop_lines
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: BinOp {
-.  .  .  .  .  Roles: Binary,Expression,Right
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 11
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 9
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: BinOp {
-.  .  .  .  .  .  .  Roles: Binary,Expression,Left
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  .  .  internalRole: left
-.  .  .  .  .  .  .  .  lineno: 9
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Binary,Expression,Identifier,Left
-.  .  .  .  .  .  .  .  .  TOKEN "a"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 5
-.  .  .  .  .  .  .  .  .  .  end_lineno: 9
-.  .  .  .  .  .  .  .  .  .  internalRole: left
-.  .  .  .  .  .  .  .  .  .  lineno: 9
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  1: Add {
-.  .  .  .  .  .  .  .  .  Roles: Add,Arithmetic,Binary,Operator
-.  .  .  .  .  .  .  .  .  TOKEN "+"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  2: Name {
-.  .  .  .  .  .  .  .  .  Roles: Binary,Expression,Identifier,Right
-.  .  .  .  .  .  .  .  .  TOKEN "b"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 9
-.  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 9
-.  .  .  .  .  .  .  .  .  .  end_lineno: 9
-.  .  .  .  .  .  .  .  .  .  internalRole: right
-.  .  .  .  .  .  .  .  .  .  lineno: 9
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Sub {
-.  .  .  .  .  .  .  Roles: Arithmetic,Binary,Operator,Substract
-.  .  .  .  .  .  .  TOKEN "-"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: op
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Call {
-.  .  .  .  .  .  .  Roles: Binary,Call,Expression,Function,Right
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 13
-.  .  .  .  .  .  .  .  internalRole: right
-.  .  .  .  .  .  .  .  lineno: 9
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Argument,Call,Expression,Function,Identifier,Name,Positional
-.  .  .  .  .  .  .  .  .  TOKEN "d"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 17
-.  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 17
-.  .  .  .  .  .  .  .  .  .  end_lineno: 9
-.  .  .  .  .  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  .  .  .  .  lineno: 9
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  .  .  Roles: Call,Callee,Expression,Identifier
-.  .  .  .  .  .  .  .  .  TOKEN "int"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 13
-.  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 15
-.  .  .  .  .  .  .  .  .  .  end_lineno: 9
-.  .  .  .  .  .  .  .  .  .  internalRole: func
-.  .  .  .  .  .  .  .  .  .  lineno: 9
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "Assign",
+         '@role': [Assignment, Binary, Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 0,
+               line: 1,
+               col: 1,
+            },
+         },
+         targets: [
+            { '@type': "Name",
+               '@token': "a",
+               '@role': [Expression, Identifier, Left],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 0,
+                     line: 1,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 0,
+                     line: 1,
+                     col: 1,
+                  },
+               },
+               ctx: "Store",
+               'noops_sameline': { '@type': "SameLineNoops",
+                  '@role': [Comment],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 5,
+                        line: 1,
+                        col: 6,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 10,
+                        line: 1,
+                        col: 11,
+                     },
+                  },
+                  'noop_lines': [
+                     { '@type': "NoopSameLine",
+                        '@token': "# int",
+                        '@role': [Comment, Noop],
+                        '@pos': { '@type': "uast:Positions",
+                        },
+                     },
+                  ],
+               },
+            },
+         ],
+         value: { '@type': "Num",
+            '@token': 3,
+            '@role': [Expression, Literal, Number, Primitive, Right],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 4,
+                  line: 1,
+                  col: 5,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 4,
+                  line: 1,
+                  col: 5,
+               },
+            },
+         },
+      },
+      { '@type': "Assign",
+         '@role': [Assignment, Binary, Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 12,
+               line: 2,
+               col: 1,
+            },
+         },
+         targets: [
+            { '@type': "Name",
+               '@token': "b",
+               '@role': [Expression, Identifier, Left],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 12,
+                     line: 2,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 12,
+                     line: 2,
+                     col: 1,
+                  },
+               },
+               ctx: "Store",
+               'noops_sameline': { '@type': "SameLineNoops",
+                  '@role': [Comment],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 20,
+                        line: 2,
+                        col: 9,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 27,
+                        line: 2,
+                        col: 16,
+                     },
+                  },
+                  'noop_lines': [
+                     { '@type': "NoopSameLine",
+                        '@token': "# float",
+                        '@role': [Comment, Noop],
+                        '@pos': { '@type': "uast:Positions",
+                        },
+                     },
+                  ],
+               },
+            },
+         ],
+         value: { '@type': "Num",
+            '@token': 3.14,
+            '@role': [Expression, Literal, Number, Primitive, Right],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 16,
+                  line: 2,
+                  col: 5,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 19,
+                  line: 2,
+                  col: 8,
+               },
+            },
+         },
+      },
+      { '@type': "Assign",
+         '@role': [Assignment, Binary, Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 29,
+               line: 3,
+               col: 1,
+            },
+         },
+         targets: [
+            { '@type': "Name",
+               '@token': "c",
+               '@role': [Expression, Identifier, Left],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 29,
+                     line: 3,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 29,
+                     line: 3,
+                     col: 1,
+                  },
+               },
+               ctx: "Store",
+               'noops_sameline': { '@type': "SameLineNoops",
+                  '@role': [Comment],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 45,
+                        line: 3,
+                        col: 17,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 53,
+                        line: 3,
+                        col: 25,
+                     },
+                  },
+                  'noop_lines': [
+                     { '@type': "NoopSameLine",
+                        '@token': "# string",
+                        '@role': [Comment, Noop],
+                        '@pos': { '@type': "uast:Positions",
+                        },
+                     },
+                  ],
+               },
+            },
+         ],
+         value: { '@type': "Str",
+            '@token': "somestring",
+            '@role': [Expression, Literal, Primitive, Right, String],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 33,
+                  line: 3,
+                  col: 5,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 44,
+                  line: 3,
+                  col: 16,
+               },
+            },
+         },
+      },
+      { '@type': "Assign",
+         '@role': [Assignment, Binary, Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 55,
+               line: 4,
+               col: 1,
+            },
+         },
+         targets: [
+            { '@type': "Name",
+               '@token': "d",
+               '@role': [Expression, Identifier, Left],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 55,
+                     line: 4,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 55,
+                     line: 4,
+                     col: 1,
+                  },
+               },
+               ctx: "Store",
+               'noops_sameline': { '@type': "SameLineNoops",
+                  '@role': [Comment],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 63,
+                        line: 4,
+                        col: 9,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 69,
+                        line: 4,
+                        col: 15,
+                     },
+                  },
+                  'noop_lines': [
+                     { '@type': "NoopSameLine",
+                        '@token': "# None",
+                        '@role': [Comment, Noop],
+                        '@pos': { '@type': "uast:Positions",
+                        },
+                     },
+                  ],
+               },
+            },
+         ],
+         value: { '@type': "NoneLiteral",
+            '@token': "None",
+            '@role': [Expression, Literal, 'Null', Primitive, Right],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 59,
+                  line: 4,
+                  col: 5,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 62,
+                  line: 4,
+                  col: 8,
+               },
+            },
+            LiteralValue: "None",
+            value: ~,
+         },
+      },
+      { '@type': "Assign",
+         '@role': [Assignment, Binary, Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 71,
+               line: 5,
+               col: 1,
+            },
+         },
+         targets: [
+            { '@type': "Name",
+               '@token': "e",
+               '@role': [Expression, Identifier, Left],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 71,
+                     line: 5,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 71,
+                     line: 5,
+                     col: 1,
+                  },
+               },
+               ctx: "Store",
+               'noops_sameline': { '@type': "SameLineNoops",
+                  '@role': [Comment],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 84,
+                        line: 5,
+                        col: 14,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 98,
+                        line: 5,
+                        col: 28,
+                     },
+                  },
+                  'noop_lines': [
+                     { '@type': "NoopSameLine",
+                        '@token': "# list literal",
+                        '@role': [Comment, Noop],
+                        '@pos': { '@type': "uast:Positions",
+                        },
+                     },
+                  ],
+               },
+            },
+         ],
+         value: { '@type': "List",
+            '@role': [Expression, List, Literal, Primitive, Right],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 75,
+                  line: 5,
+                  col: 5,
+               },
+            },
+            ctx: "Load",
+            elts: [
+               { '@type': "Num",
+                  '@token': 1,
+                  '@role': [Expression, Literal, Number, Primitive],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 76,
+                        line: 5,
+                        col: 6,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 76,
+                        line: 5,
+                        col: 6,
+                     },
+                  },
+               },
+               { '@type': "Num",
+                  '@token': 2,
+                  '@role': [Expression, Literal, Number, Primitive],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 79,
+                        line: 5,
+                        col: 9,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 79,
+                        line: 5,
+                        col: 9,
+                     },
+                  },
+               },
+               { '@type': "Num",
+                  '@token': 3,
+                  '@role': [Expression, Literal, Number, Primitive],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 82,
+                        line: 5,
+                        col: 12,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 82,
+                        line: 5,
+                        col: 12,
+                     },
+                  },
+               },
+            ],
+         },
+      },
+      { '@type': "Assign",
+         '@role': [Assignment, Binary, Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 100,
+               line: 6,
+               col: 1,
+            },
+         },
+         targets: [
+            { '@type': "Name",
+               '@token': "f",
+               '@role': [Expression, Identifier, Left],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 100,
+                     line: 6,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 100,
+                     line: 6,
+                     col: 1,
+                  },
+               },
+               ctx: "Store",
+               'noops_sameline': { '@type': "SameLineNoops",
+                  '@role': [Comment],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 113,
+                        line: 6,
+                        col: 14,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 128,
+                        line: 6,
+                        col: 29,
+                     },
+                  },
+                  'noop_lines': [
+                     { '@type': "NoopSameLine",
+                        '@token': "# tuple literal",
+                        '@role': [Comment, Noop],
+                        '@pos': { '@type': "uast:Positions",
+                        },
+                     },
+                  ],
+               },
+            },
+         ],
+         value: { '@type': "Tuple",
+            '@role': [Expression, Literal, Primitive, Right, Tuple],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 105,
+                  line: 6,
+                  col: 6,
+               },
+            },
+            ctx: "Load",
+            elts: [
+               { '@type': "Num",
+                  '@token': 1,
+                  '@role': [Expression, Literal, Number, Primitive],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 105,
+                        line: 6,
+                        col: 6,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 105,
+                        line: 6,
+                        col: 6,
+                     },
+                  },
+               },
+               { '@type': "Num",
+                  '@token': 2,
+                  '@role': [Expression, Literal, Number, Primitive],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 108,
+                        line: 6,
+                        col: 9,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 108,
+                        line: 6,
+                        col: 9,
+                     },
+                  },
+               },
+               { '@type': "Num",
+                  '@token': 3,
+                  '@role': [Expression, Literal, Number, Primitive],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 111,
+                        line: 6,
+                        col: 12,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 111,
+                        line: 6,
+                        col: 12,
+                     },
+                  },
+               },
+            ],
+         },
+      },
+      { '@type': "Assign",
+         '@role': [Assignment, Binary, Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 130,
+               line: 7,
+               col: 1,
+            },
+         },
+         targets: [
+            { '@type': "Name",
+               '@token': "g",
+               '@role': [Expression, Identifier, Left],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 130,
+                     line: 7,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 130,
+                     line: 7,
+                     col: 1,
+                  },
+               },
+               ctx: "Store",
+               'noops_sameline': { '@type': "SameLineNoops",
+                  '@role': [Comment],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 143,
+                        line: 7,
+                        col: 14,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 156,
+                        line: 7,
+                        col: 27,
+                     },
+                  },
+                  'noop_lines': [
+                     { '@type': "NoopSameLine",
+                        '@token': "# set literal",
+                        '@role': [Comment, Noop],
+                        '@pos': { '@type': "uast:Positions",
+                        },
+                     },
+                  ],
+               },
+            },
+         ],
+         value: { '@type': "Set",
+            '@role': [Expression, Literal, Primitive, Right, Set],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 134,
+                  line: 7,
+                  col: 5,
+               },
+            },
+            elts: [
+               { '@type': "Num",
+                  '@token': 1,
+                  '@role': [Expression, Literal, Number, Primitive],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 135,
+                        line: 7,
+                        col: 6,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 135,
+                        line: 7,
+                        col: 6,
+                     },
+                  },
+               },
+               { '@type': "Num",
+                  '@token': 2,
+                  '@role': [Expression, Literal, Number, Primitive],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 138,
+                        line: 7,
+                        col: 9,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 138,
+                        line: 7,
+                        col: 9,
+                     },
+                  },
+               },
+               { '@type': "Num",
+                  '@token': 3,
+                  '@role': [Expression, Literal, Number, Primitive],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 141,
+                        line: 7,
+                        col: 12,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 141,
+                        line: 7,
+                        col: 12,
+                     },
+                  },
+               },
+            ],
+         },
+      },
+      { '@type': "Assign",
+         '@role': [Assignment, Binary, Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 158,
+               line: 8,
+               col: 1,
+            },
+         },
+         targets: [
+            { '@type': "Name",
+               '@token': "h",
+               '@role': [Expression, Identifier, Left],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 158,
+                     line: 8,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 158,
+                     line: 8,
+                     col: 1,
+                  },
+               },
+               ctx: "Store",
+               'noops_sameline': { '@type': "SameLineNoops",
+                  '@role': [Comment],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 178,
+                        line: 8,
+                        col: 21,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 192,
+                        line: 8,
+                        col: 35,
+                     },
+                  },
+                  'noop_lines': [
+                     { '@type': "NoopSameLine",
+                        '@token': "# dict literal",
+                        '@role': [Comment, Noop],
+                        '@pos': { '@type': "uast:Positions",
+                        },
+                     },
+                  ],
+               },
+            },
+         ],
+         value: { '@type': "Dict",
+            '@role': [Expression, Literal, Map, Primitive, Right],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 162,
+                  line: 8,
+                  col: 5,
+               },
+            },
+            keys: [
+               { '@type': "Str",
+                  '@token': "a",
+                  '@role': [Expression, Key, Literal, Map, Primitive, String],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 163,
+                        line: 8,
+                        col: 6,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 165,
+                        line: 8,
+                        col: 8,
+                     },
+                  },
+               },
+               { '@type': "Str",
+                  '@token': "b",
+                  '@role': [Expression, Key, Literal, Map, Primitive, String],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 171,
+                        line: 8,
+                        col: 14,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 173,
+                        line: 8,
+                        col: 16,
+                     },
+                  },
+               },
+            ],
+            values: [
+               { '@type': "Num",
+                  '@token': 1,
+                  '@role': [Expression, Literal, Map, Number, Primitive, Value],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 168,
+                        line: 8,
+                        col: 11,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 168,
+                        line: 8,
+                        col: 11,
+                     },
+                  },
+               },
+               { '@type': "Num",
+                  '@token': 2,
+                  '@role': [Expression, Literal, Map, Number, Primitive, Value],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 176,
+                        line: 8,
+                        col: 19,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 176,
+                        line: 8,
+                        col: 19,
+                     },
+                  },
+               },
+            ],
+         },
+      },
+      { '@type': "Assign",
+         '@role': [Assignment, Binary, Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 194,
+               line: 9,
+               col: 1,
+            },
+         },
+         targets: [
+            { '@type': "Name",
+               '@token': "i",
+               '@role': [Expression, Identifier, Left],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 194,
+                     line: 9,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 194,
+                     line: 9,
+                     col: 1,
+                  },
+               },
+               ctx: "Store",
+               'noops_sameline': { '@type': "SameLineNoops",
+                  '@role': [Comment],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 212,
+                        line: 9,
+                        col: 19,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 235,
+                        line: 9,
+                        col: 42,
+                     },
+                  },
+                  'noop_lines': [
+                     { '@type': "NoopSameLine",
+                        '@token': "# expression assignment",
+                        '@role': [Comment, Noop],
+                        '@pos': { '@type': "uast:Positions",
+                        },
+                     },
+                  ],
+               },
+            },
+         ],
+         value: { '@type': "BinOp",
+            '@role': [Binary, Expression, Right],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 204,
+                  line: 9,
+                  col: 11,
+               },
+            },
+            left: { '@type': "BinOp",
+               '@role': [Binary, Expression, Left],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 198,
+                     line: 9,
+                     col: 5,
+                  },
+               },
+               left: { '@type': "Name",
+                  '@token': "a",
+                  '@role': [Binary, Expression, Identifier, Left],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 198,
+                        line: 9,
+                        col: 5,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 198,
+                        line: 9,
+                        col: 5,
+                     },
+                  },
+                  ctx: "Load",
+               },
+               op: { '@type': "Add",
+                  '@token': "+",
+                  '@role': [Add, Arithmetic, Binary, Operator],
+                  '@pos': { '@type': "uast:Positions",
+                  },
+               },
+               right: { '@type': "Name",
+                  '@token': "b",
+                  '@role': [Binary, Expression, Identifier, Right],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 202,
+                        line: 9,
+                        col: 9,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 202,
+                        line: 9,
+                        col: 9,
+                     },
+                  },
+                  ctx: "Load",
+               },
+            },
+            op: { '@type': "Sub",
+               '@token': "-",
+               '@role': [Arithmetic, Binary, Operator, Substract],
+               '@pos': { '@type': "uast:Positions",
+               },
+            },
+            right: { '@type': "Call",
+               '@role': [Binary, Call, Expression, Function, Right],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 206,
+                     line: 9,
+                     col: 13,
+                  },
+               },
+               args: [
+                  { '@type': "Name",
+                     '@token': "d",
+                     '@role': [Argument, Call, Expression, Function, Identifier, Name, Positional],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 210,
+                           line: 9,
+                           col: 17,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 210,
+                           line: 9,
+                           col: 17,
+                        },
+                     },
+                     ctx: "Load",
+                  },
+               ],
+               func: { '@type': "Name",
+                  '@token': "int",
+                  '@role': [Call, Callee, Expression, Identifier],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 206,
+                        line: 9,
+                        col: 13,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 208,
+                        line: 9,
+                        col: 15,
+                     },
+                  },
+                  ctx: "Load",
+               },
+               keywords: [],
+            },
+         },
+      },
+   ],
 }
-

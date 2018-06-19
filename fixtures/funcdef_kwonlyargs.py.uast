@@ -1,100 +1,123 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: FunctionDef {
-.  .  .  Roles: Declaration,Function,Identifier,Name
-.  .  .  TOKEN "testfnc1"
-.  .  .  Properties: {
-.  .  .  .  col_offset: 5
-.  .  .  .  end_col_offset: 12
-.  .  .  .  end_lineno: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 1
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: arguments {
-.  .  .  .  .  Roles: Argument,Declaration,Function,Incomplete
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: args
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: arg {
-.  .  .  .  .  .  .  Roles: Argument,Declaration,Function,Identifier,Name
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  arg: a
-.  .  .  .  .  .  .  .  col_offset: 14
-.  .  .  .  .  .  .  .  end_col_offset: 14
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: arg {
-.  .  .  .  .  .  .  Roles: Argument,Declaration,Function,Identifier,Name
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  arg: b
-.  .  .  .  .  .  .  .  col_offset: 17
-.  .  .  .  .  .  .  .  end_col_offset: 17
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Num {
-.  .  .  .  .  .  .  Roles: ArgsList,Declaration,Default,Expression,Function,Literal,Map,Number,Primitive,Value
-.  .  .  .  .  .  .  TOKEN "1"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 25
-.  .  .  .  .  .  .  .  end_col_offset: 25
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: kw_defaults
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  3: arg {
-.  .  .  .  .  .  .  Roles: ArgsList,Declaration,Function,Identifier,Incomplete,Name
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  arg: c
-.  .  .  .  .  .  .  .  col_offset: 23
-.  .  .  .  .  .  .  .  end_col_offset: 23
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: kwonlyargs
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: FunctionDef.body {
-.  .  .  .  .  Roles: Body,Declaration,Function
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: body
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Pass {
-.  .  .  .  .  .  .  Roles: Noop,Statement
-.  .  .  .  .  .  .  TOKEN "pass"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 29
-.  .  .  .  .  .  .  .  end_col_offset: 32
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: body_stmts
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  2: FunctionDef.decorators {
-.  .  .  .  .  Roles: Declaration,Function,Incomplete
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: decorator_list
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "FunctionDef",
+         '@token': "testfnc1",
+         '@role': [Declaration, Function, Identifier, Name],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 4,
+               line: 1,
+               col: 5,
+            },
+            end: { '@type': "uast:Position",
+               offset: 11,
+               line: 1,
+               col: 12,
+            },
+         },
+         args: { '@type': "arguments",
+            '@role': [Argument, Declaration, Function, Incomplete],
+            '@pos': { '@type': "uast:Positions",
+            },
+            args: [
+               { '@type': "arg",
+                  '@token': "a",
+                  '@role': [Argument, Declaration, Function, Name],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 13,
+                        line: 1,
+                        col: 14,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 13,
+                        line: 1,
+                        col: 14,
+                     },
+                  },
+                  annotation: ~,
+               },
+               { '@type': "arg",
+                  '@token': "b",
+                  '@role': [Argument, Declaration, Function, Name],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 16,
+                        line: 1,
+                        col: 17,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 16,
+                        line: 1,
+                        col: 17,
+                     },
+                  },
+                  annotation: ~,
+               },
+               { '@type': "kwonly_arg",
+                  '@token': "c",
+                  '@role': [Argument, Declaration, Function, Incomplete, Name],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 22,
+                        line: 1,
+                        col: 23,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 22,
+                        line: 1,
+                        col: 23,
+                     },
+                  },
+                  annotation: ~,
+                  default: { '@type': "Num",
+                     '@token': 1,
+                     '@role': [Argument, Default, Expression, Literal, Number, Primitive],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 24,
+                           line: 1,
+                           col: 25,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 24,
+                           line: 1,
+                           col: 25,
+                        },
+                     },
+                  },
+               },
+            ],
+         },
+         body: { '@type': "FunctionDef.body",
+            '@role': [Body, Declaration, Function],
+            'body_stmts': [
+               { '@type': "Pass",
+                  '@token': "pass",
+                  '@role': [Noop, Statement],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 28,
+                        line: 1,
+                        col: 29,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 31,
+                        line: 1,
+                        col: 32,
+                     },
+                  },
+               },
+            ],
+         },
+         'decorator_list': { '@type': "FunctionDef.decorators",
+            '@role': [Declaration, Function, Incomplete],
+            decorators: [],
+         },
+         returns: ~,
+      },
+   ],
 }
-

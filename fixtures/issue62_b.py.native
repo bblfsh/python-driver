@@ -1,903 +1,952 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "ast_type": "ImportFrom",
-                    "col_offset": 1,
-                    "end_col_offset": 16,
-                    "end_lineno": 1,
-                    "level": 0,
-                    "lineno": 1,
-                    "module": "collections",
-                    "names": [
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "ImportFrom",
+            'col_offset': 1,
+            'end_col_offset': 16,
+            'end_lineno': 1,
+            level: 0,
+            lineno: 1,
+            module: "collections",
+            names: [
+               {
+                  asname: ~,
+                  'ast_type': "alias",
+                  name: "Counter",
+               },
+            ],
+         },
+         {
+            'ast_type': "ImportFrom",
+            'col_offset': 1,
+            level: 0,
+            lineno: 3,
+            module: "ast2vec.bblfsh_roles",
+            names: [
+               {
+                  asname: ~,
+                  'ast_type': "alias",
+                  name: "SIMPLE_IDENTIFIER",
+               },
+            ],
+            'noops_previous': {
+               'ast_type': "PreviousNoops",
+               'col_offset': 1,
+               'end_col_offset': 1,
+               'end_lineno': 2,
+               lineno: 2,
+               lines: [],
+            },
+         },
+         {
+            'ast_type': "ImportFrom",
+            'col_offset': 1,
+            level: 0,
+            lineno: 4,
+            module: "ast2vec.repo2.base",
+            names: [
+               {
+                  asname: ~,
+                  'ast_type': "alias",
+                  name: "Repo2Base",
+               },
+            ],
+         },
+         {
+            'ast_type': "ClassDef",
+            bases: [],
+            body: [
+               {
+                  'ast_type': "Assign",
+                  'col_offset': 5,
+                  lineno: 8,
+                  targets: [
+                     {
+                        'ast_type': "Name",
+                        'col_offset': 5,
+                        ctx: "Store",
+                        'end_col_offset': 8,
+                        'end_lineno': 8,
+                        id: "NAME",
+                        lineno: 8,
+                        'noops_previous': {
+                           'ast_type': "PreviousNoops",
+                           'col_offset': 1,
+                           'end_col_offset': 1,
+                           'end_lineno': 6,
+                           lineno: 5,
+                           lines: [],
+                        },
+                     },
+                  ],
+                  value: {
+                     'ast_type': "Str",
+                     'col_offset': 12,
+                     'end_col_offset': 25,
+                     'end_lineno': 8,
+                     lineno: 8,
+                     s: "Repo2IdModel",
+                  },
+               },
+            ],
+            'col_offset': 7,
+            'decorator_list': [],
+            'end_col_offset': 18,
+            'end_lineno': 7,
+            keywords: [],
+            lineno: 7,
+            name: "Repo2IdModel",
+         },
+         {
+            'ast_type': "ClassDef",
+            bases: [
+               {
+                  'ast_type': "Name",
+                  'col_offset': 22,
+                  ctx: "Load",
+                  'end_col_offset': 30,
+                  'end_lineno': 11,
+                  id: "Repo2Base",
+                  lineno: 11,
+                  'noops_previous': {
+                     'ast_type': "PreviousNoops",
+                     'col_offset': 1,
+                     'end_col_offset': 1,
+                     'end_lineno': 10,
+                     lineno: 9,
+                     lines: [],
+                  },
+               },
+            ],
+            body: [
+               {
+                  'ast_type': "Expr",
+                  'col_offset': 1,
+                  lineno: 14,
+                  value: {
+                     'ast_type': "Str",
+                     'col_offset': 5,
+                     'end_col_offset': 7,
+                     'end_lineno': 14,
+                     lineno: 12,
+                     s: "\n    Print all SIMPLE_IDENTIFIERs (and counters) from repository\n    ",
+                  },
+               },
+               {
+                  'ast_type': "Assign",
+                  'col_offset': 5,
+                  lineno: 15,
+                  targets: [
+                     {
+                        'ast_type': "Name",
+                        'col_offset': 5,
+                        ctx: "Store",
+                        'end_col_offset': 15,
+                        'end_lineno': 15,
+                        id: "MODEL_CLASS",
+                        lineno: 15,
+                     },
+                  ],
+                  value: {
+                     'ast_type': "Name",
+                     'col_offset': 19,
+                     ctx: "Load",
+                     'end_col_offset': 30,
+                     'end_lineno': 15,
+                     id: "Repo2IdModel",
+                     lineno: 15,
+                  },
+               },
+               {
+                  args: {
+                     args: [
                         {
-                            "asname": null,
-                            "ast_type": "alias",
-                            "name": "Counter"
-                        }
-                    ]
-                },
-                {
-                    "ast_type": "ImportFrom",
-                    "col_offset": 1,
-                    "level": 0,
-                    "lineno": 3,
-                    "module": "ast2vec.bblfsh_roles",
-                    "names": [
-                        {
-                            "asname": null,
-                            "ast_type": "alias",
-                            "name": "SIMPLE_IDENTIFIER"
-                        }
-                    ],
-                    "noops_previous": {
-                        "ast_type": "PreviousNoops",
-                        "col_offset": 1,
-                        "end_col_offset": 1,
-                        "end_lineno": 2,
-                        "lineno": 2,
-                        "lines": []
-                    }
-                },
-                {
-                    "ast_type": "ImportFrom",
-                    "col_offset": 1,
-                    "level": 0,
-                    "lineno": 4,
-                    "module": "ast2vec.repo2.base",
-                    "names": [
-                        {
-                            "asname": null,
-                            "ast_type": "alias",
-                            "name": "Repo2Base"
-                        }
-                    ]
-                },
-                {
-                    "ast_type": "ClassDef",
-                    "bases": [],
-                    "body": [
-                        {
-                            "ast_type": "Assign",
-                            "col_offset": 5,
-                            "lineno": 8,
-                            "targets": [
-                                {
-                                    "ast_type": "Name",
-                                    "col_offset": 5,
-                                    "ctx": "Store",
-                                    "end_col_offset": 8,
-                                    "end_lineno": 8,
-                                    "id": "NAME",
-                                    "lineno": 8,
-                                    "noops_previous": {
-                                        "ast_type": "PreviousNoops",
-                                        "col_offset": 1,
-                                        "end_col_offset": 1,
-                                        "end_lineno": 6,
-                                        "lineno": 5,
-                                        "lines": []
-                                    }
-                                }
-                            ],
-                            "value": {
-                                "ast_type": "Str",
-                                "col_offset": 12,
-                                "end_col_offset": 25,
-                                "end_lineno": 8,
-                                "lineno": 8,
-                                "s": "Repo2IdModel"
-                            }
-                        }
-                    ],
-                    "col_offset": 7,
-                    "decorator_list": [],
-                    "end_col_offset": 18,
-                    "end_lineno": 7,
-                    "keywords": [],
-                    "lineno": 7,
-                    "name": "Repo2IdModel"
-                },
-                {
-                    "ast_type": "ClassDef",
-                    "bases": [
-                        {
-                            "ast_type": "Name",
-                            "col_offset": 22,
-                            "ctx": "Load",
-                            "end_col_offset": 30,
-                            "end_lineno": 11,
-                            "id": "Repo2Base",
-                            "lineno": 11,
-                            "noops_previous": {
-                                "ast_type": "PreviousNoops",
-                                "col_offset": 1,
-                                "end_col_offset": 1,
-                                "end_lineno": 10,
-                                "lineno": 9,
-                                "lines": []
-                            }
-                        }
-                    ],
-                    "body": [
-                        {
-                            "ast_type": "Expr",
-                            "col_offset": 1,
-                            "lineno": 14,
-                            "value": {
-                                "ast_type": "Str",
-                                "col_offset": 5,
-                                "end_col_offset": 7,
-                                "end_lineno": 14,
-                                "lineno": 12,
-                                "s": "\n    Print all SIMPLE_IDENTIFIERs (and counters) from repository\n    "
-                            }
+                           '@token': "self",
+                           annotation: ~,
+                           'ast_type': "arg",
+                           'col_offset': 24,
+                           'end_col_offset': 27,
+                           'end_lineno': 17,
+                           lineno: 17,
+                           'noops_previous': {
+                              'ast_type': "PreviousNoops",
+                              'col_offset': 1,
+                              'end_col_offset': 1,
+                              'end_lineno': 16,
+                              lineno: 16,
+                              lines: [],
+                           },
                         },
                         {
-                            "ast_type": "Assign",
-                            "col_offset": 5,
-                            "lineno": 15,
-                            "targets": [
-                                {
-                                    "ast_type": "Name",
-                                    "col_offset": 5,
-                                    "ctx": "Store",
-                                    "end_col_offset": 15,
-                                    "end_lineno": 15,
-                                    "id": "MODEL_CLASS",
-                                    "lineno": 15
-                                }
-                            ],
-                            "value": {
-                                "ast_type": "Name",
-                                "col_offset": 19,
-                                "ctx": "Load",
-                                "end_col_offset": 30,
-                                "end_lineno": 15,
-                                "id": "Repo2IdModel",
-                                "lineno": 15
-                            }
+                           '@token': "root",
+                           annotation: ~,
+                           'ast_type': "arg",
+                           'col_offset': 30,
+                           'end_col_offset': 33,
+                           'end_lineno': 17,
+                           lineno: 17,
                         },
                         {
-                            "args": {
-                                "args": [
-                                    {
-                                        "annotation": null,
-                                        "arg": "self",
-                                        "ast_type": "arg",
-                                        "col_offset": 24,
-                                        "end_col_offset": 27,
-                                        "end_lineno": 17,
-                                        "lineno": 17,
-                                        "noops_previous": {
-                                            "ast_type": "PreviousNoops",
-                                            "col_offset": 1,
-                                            "end_col_offset": 1,
-                                            "end_lineno": 16,
-                                            "lineno": 16,
-                                            "lines": []
-                                        }
+                           '@token': "id_cnt",
+                           annotation: ~,
+                           'ast_type': "arg",
+                           'col_offset': 36,
+                           'end_col_offset': 41,
+                           'end_lineno': 17,
+                           lineno: 17,
+                        },
+                     ],
+                     'ast_type': "arguments",
+                  },
+                  'ast_type': "FunctionDef",
+                  body: [
+                     {
+                        'ast_type': "For",
+                        body: [
+                           {
+                              'ast_type': "If",
+                              body: [
+                                 {
+                                    'ast_type': "AugAssign",
+                                    'col_offset': 34,
+                                    'end_col_offset': 35,
+                                    'end_lineno': 20,
+                                    lineno: 20,
+                                    op: {
+                                       'ast_type': "Add",
                                     },
-                                    {
-                                        "annotation": null,
-                                        "arg": "root",
-                                        "ast_type": "arg",
-                                        "col_offset": 30,
-                                        "end_col_offset": 33,
-                                        "end_lineno": 17,
-                                        "lineno": 17
-                                    },
-                                    {
-                                        "annotation": null,
-                                        "arg": "id_cnt",
-                                        "ast_type": "arg",
-                                        "col_offset": 36,
-                                        "end_col_offset": 41,
-                                        "end_lineno": 17,
-                                        "lineno": 17
-                                    }
-                                ],
-                                "ast_type": "arguments",
-                                "defaults": [],
-                                "kw_defaults": [],
-                                "kwarg": null,
-                                "kwonlyargs": [],
-                                "vararg": null
-                            },
-                            "ast_type": "FunctionDef",
-                            "body": [
-                                {
-                                    "ast_type": "For",
-                                    "body": [
-                                        {
-                                            "ast_type": "If",
-                                            "body": [
+                                    target: {
+                                       'ast_type': "Subscript",
+                                       'col_offset': 17,
+                                       ctx: "Store",
+                                       lineno: 20,
+                                       slice: {
+                                          'ast_type': "Index",
+                                          value: {
+                                             'ast_type': "QualifiedIdentifier",
+                                             'col_offset': 25,
+                                             ctx: "Load",
+                                             'end_col_offset': 25,
+                                             'end_lineno': 20,
+                                             identifiers: [
                                                 {
-                                                    "ast_type": "AugAssign",
-                                                    "col_offset": 34,
-                                                    "end_col_offset": 35,
-                                                    "end_lineno": 20,
-                                                    "lineno": 20,
-                                                    "op": {
-                                                        "ast_type": "Add"
-                                                    },
-                                                    "target": {
-                                                        "ast_type": "Subscript",
-                                                        "col_offset": 17,
-                                                        "ctx": "Store",
-                                                        "lineno": 20,
-                                                        "slice": {
-                                                            "ast_type": "Index",
-                                                            "value": {
-                                                                "ast_type": "Attribute",
-                                                                "attr": "token",
-                                                                "col_offset": 27,
-                                                                "ctx": "Load",
-                                                                "end_col_offset": 31,
-                                                                "end_lineno": 20,
-                                                                "lineno": 20,
-                                                                "value": {
-                                                                    "ast_type": "Name",
-                                                                    "col_offset": 24,
-                                                                    "ctx": "Load",
-                                                                    "end_col_offset": 25,
-                                                                    "end_lineno": 20,
-                                                                    "id": "ch",
-                                                                    "lineno": 20
-                                                                }
-                                                            }
-                                                        },
-                                                        "value": {
-                                                            "ast_type": "Name",
-                                                            "col_offset": 17,
-                                                            "ctx": "Load",
-                                                            "end_col_offset": 22,
-                                                            "end_lineno": 20,
-                                                            "id": "id_cnt",
-                                                            "lineno": 20
-                                                        }
-                                                    },
-                                                    "value": {
-                                                        "ast_type": "Num",
-                                                        "col_offset": 37,
-                                                        "end_col_offset": 37,
-                                                        "end_lineno": 20,
-                                                        "lineno": 20,
-                                                        "n": 1
-                                                    }
-                                                }
-                                            ],
-                                            "col_offset": 13,
-                                            "end_col_offset": 14,
-                                            "end_lineno": 19,
-                                            "lineno": 19,
-                                            "orelse": [],
-                                            "test": {
-                                                "ast_type": "Compare",
-                                                "col_offset": 16,
-                                                "comparators": [
-                                                    {
-                                                        "ast_type": "Attribute",
-                                                        "attr": "roles",
-                                                        "col_offset": 40,
-                                                        "ctx": "Load",
-                                                        "end_col_offset": 44,
-                                                        "end_lineno": 19,
-                                                        "lineno": 19,
-                                                        "value": {
-                                                            "ast_type": "Name",
-                                                            "col_offset": 37,
-                                                            "ctx": "Load",
-                                                            "end_col_offset": 38,
-                                                            "end_lineno": 19,
-                                                            "id": "ch",
-                                                            "lineno": 19
-                                                        }
-                                                    }
-                                                ],
-                                                "left": {
-                                                    "ast_type": "Name",
-                                                    "col_offset": 16,
-                                                    "ctx": "Load",
-                                                    "end_col_offset": 32,
-                                                    "end_lineno": 19,
-                                                    "id": "SIMPLE_IDENTIFIER",
-                                                    "lineno": 19
+                                                   'ast_type': "Name",
+                                                   'col_offset': 24,
+                                                   ctx: "Load",
+                                                   'end_col_offset': 25,
+                                                   'end_lineno': 20,
+                                                   id: "ch",
+                                                   lineno: 20,
                                                 },
-                                                "lineno": 19,
-                                                "ops": [
-                                                    {
-                                                        "ast_type": "In"
-                                                    }
-                                                ]
-                                            }
-                                        },
-                                        {
-                                            "ast_type": "Expr",
-                                            "col_offset": 13,
-                                            "lineno": 21,
-                                            "value": {
-                                                "args": [
-                                                    {
-                                                        "ast_type": "Name",
-                                                        "col_offset": 33,
-                                                        "ctx": "Load",
-                                                        "end_col_offset": 34,
-                                                        "end_lineno": 21,
-                                                        "id": "ch",
-                                                        "lineno": 21
-                                                    },
-                                                    {
-                                                        "ast_type": "Name",
-                                                        "col_offset": 37,
-                                                        "ctx": "Load",
-                                                        "end_col_offset": 42,
-                                                        "end_lineno": 21,
-                                                        "id": "id_cnt",
-                                                        "lineno": 21
-                                                    }
-                                                ],
-                                                "ast_type": "Call",
-                                                "col_offset": 13,
-                                                "func": {
-                                                    "ast_type": "Attribute",
-                                                    "attr": "collect_id_cnt",
-                                                    "col_offset": 18,
-                                                    "ctx": "Load",
-                                                    "end_col_offset": 31,
-                                                    "end_lineno": 21,
-                                                    "lineno": 21,
-                                                    "value": {
-                                                        "ast_type": "Name",
-                                                        "col_offset": 13,
-                                                        "ctx": "Load",
-                                                        "end_col_offset": 16,
-                                                        "end_lineno": 21,
-                                                        "id": "self",
-                                                        "lineno": 21
-                                                    }
-                                                },
-                                                "keywords": [],
-                                                "lineno": 21
-                                            }
-                                        }
-                                    ],
-                                    "col_offset": 9,
-                                    "end_col_offset": 11,
-                                    "end_lineno": 18,
-                                    "iter": {
-                                        "ast_type": "Attribute",
-                                        "attr": "children",
-                                        "col_offset": 24,
-                                        "ctx": "Load",
-                                        "end_col_offset": 31,
-                                        "end_lineno": 18,
-                                        "lineno": 18,
-                                        "value": {
-                                            "ast_type": "Name",
-                                            "col_offset": 19,
-                                            "ctx": "Load",
-                                            "end_col_offset": 22,
-                                            "end_lineno": 18,
-                                            "id": "root",
-                                            "lineno": 18
-                                        }
-                                    },
-                                    "lineno": 18,
-                                    "orelse": [],
-                                    "target": {
-                                        "ast_type": "Name",
-                                        "col_offset": 13,
-                                        "ctx": "Store",
-                                        "end_col_offset": 14,
-                                        "end_lineno": 18,
-                                        "id": "ch",
-                                        "lineno": 18
-                                    }
-                                }
-                            ],
-                            "col_offset": 9,
-                            "decorator_list": [],
-                            "end_col_offset": 22,
-                            "end_lineno": 17,
-                            "lineno": 17,
-                            "name": "collect_id_cnt",
-                            "returns": null
-                        },
-                        {
-                            "args": {
-                                "args": [
-                                    {
-                                        "annotation": null,
-                                        "arg": "self",
-                                        "ast_type": "arg",
-                                        "col_offset": 23,
-                                        "end_col_offset": 26,
-                                        "end_lineno": 23,
-                                        "lineno": 23,
-                                        "noops_previous": {
-                                            "ast_type": "PreviousNoops",
-                                            "col_offset": 1,
-                                            "end_col_offset": 1,
-                                            "end_lineno": 22,
-                                            "lineno": 22,
-                                            "lines": []
-                                        }
-                                    },
-                                    {
-                                        "annotation": null,
-                                        "arg": "file_uast_generator",
-                                        "ast_type": "arg",
-                                        "col_offset": 29,
-                                        "end_col_offset": 47,
-                                        "end_lineno": 23,
-                                        "lineno": 23
-                                    }
-                                ],
-                                "ast_type": "arguments",
-                                "defaults": [],
-                                "kw_defaults": [],
-                                "kwarg": null,
-                                "kwonlyargs": [],
-                                "vararg": null
-                            },
-                            "ast_type": "FunctionDef",
-                            "body": [
-                                {
-                                    "ast_type": "For",
-                                    "body": [
-                                        {
-                                            "ast_type": "Expr",
-                                            "col_offset": 13,
-                                            "lineno": 25,
-                                            "value": {
-                                                "args": [
-                                                    {
-                                                        "ast_type": "BinOp",
-                                                        "col_offset": 34,
-                                                        "left": {
-                                                            "ast_type": "BinOp",
-                                                            "col_offset": 19,
-                                                            "left": {
-                                                                "ast_type": "BinOp",
-                                                                "col_offset": 19,
-                                                                "left": {
-                                                                    "ast_type": "Str",
-                                                                    "col_offset": 19,
-                                                                    "end_col_offset": 21,
-                                                                    "end_lineno": 25,
-                                                                    "lineno": 25,
-                                                                    "s": "-"
-                                                                },
-                                                                "lineno": 25,
-                                                                "op": {
-                                                                    "ast_type": "Mult"
-                                                                },
-                                                                "right": {
-                                                                    "ast_type": "Num",
-                                                                    "col_offset": 25,
-                                                                    "end_col_offset": 26,
-                                                                    "end_lineno": 25,
-                                                                    "lineno": 25,
-                                                                    "n": 20
-                                                                }
-                                                            },
-                                                            "lineno": 25,
-                                                            "op": {
-                                                                "ast_type": "Add"
-                                                            },
-                                                            "right": {
-                                                                "ast_type": "Str",
-                                                                "col_offset": 30,
-                                                                "end_col_offset": 32,
-                                                                "end_lineno": 25,
-                                                                "lineno": 25,
-                                                                "s": " "
-                                                            }
-                                                        },
-                                                        "lineno": 25,
-                                                        "op": {
-                                                            "ast_type": "Add"
-                                                        },
-                                                        "right": {
-                                                            "args": [
-                                                                {
-                                                                    "ast_type": "Attribute",
-                                                                    "attr": "filepath",
-                                                                    "col_offset": 50,
-                                                                    "ctx": "Load",
-                                                                    "end_col_offset": 57,
-                                                                    "end_lineno": 25,
-                                                                    "lineno": 25,
-                                                                    "value": {
-                                                                        "ast_type": "Name",
-                                                                        "col_offset": 40,
-                                                                        "ctx": "Load",
-                                                                        "end_col_offset": 48,
-                                                                        "end_lineno": 25,
-                                                                        "id": "file_uast",
-                                                                        "lineno": 25
-                                                                    }
-                                                                }
-                                                            ],
-                                                            "ast_type": "Call",
-                                                            "col_offset": 36,
-                                                            "func": {
-                                                                "ast_type": "Name",
-                                                                "col_offset": 36,
-                                                                "ctx": "Load",
-                                                                "end_col_offset": 38,
-                                                                "end_lineno": 25,
-                                                                "id": "str",
-                                                                "lineno": 25
-                                                            },
-                                                            "keywords": [],
-                                                            "lineno": 25
-                                                        }
-                                                    }
-                                                ],
-                                                "ast_type": "Call",
-                                                "col_offset": 13,
-                                                "func": {
-                                                    "ast_type": "Name",
-                                                    "col_offset": 13,
-                                                    "ctx": "Load",
-                                                    "end_col_offset": 17,
-                                                    "end_lineno": 25,
-                                                    "id": "print",
-                                                    "lineno": 25
-                                                },
-                                                "keywords": [],
-                                                "lineno": 25
-                                            }
-                                        },
-                                        {
-                                            "ast_type": "Assign",
-                                            "col_offset": 13,
-                                            "lineno": 26,
-                                            "targets": [
                                                 {
-                                                    "ast_type": "Name",
-                                                    "col_offset": 13,
-                                                    "ctx": "Store",
-                                                    "end_col_offset": 18,
-                                                    "end_lineno": 26,
-                                                    "id": "id_cnt",
-                                                    "lineno": 26
-                                                }
-                                            ],
-                                            "value": {
-                                                "args": [],
-                                                "ast_type": "Call",
-                                                "col_offset": 22,
-                                                "func": {
-                                                    "ast_type": "Name",
-                                                    "col_offset": 22,
-                                                    "ctx": "Load",
-                                                    "end_col_offset": 28,
-                                                    "end_lineno": 26,
-                                                    "id": "Counter",
-                                                    "lineno": 26
+                                                   'ast_type': "Attribute",
+                                                   attr: "token",
+                                                   'col_offset': 24,
+                                                   ctx: "Load",
+                                                   lineno: 20,
                                                 },
-                                                "keywords": [],
-                                                "lineno": 26
-                                            }
-                                        },
-                                        {
-                                            "ast_type": "Expr",
-                                            "col_offset": 13,
-                                            "lineno": 27,
-                                            "value": {
-                                                "args": [
-                                                    {
-                                                        "ast_type": "Attribute",
-                                                        "attr": "uast",
-                                                        "col_offset": 52,
-                                                        "ctx": "Load",
-                                                        "end_col_offset": 55,
-                                                        "end_lineno": 27,
-                                                        "lineno": 27,
-                                                        "value": {
-                                                            "ast_type": "Attribute",
-                                                            "attr": "response",
-                                                            "col_offset": 43,
-                                                            "ctx": "Load",
-                                                            "end_col_offset": 50,
-                                                            "end_lineno": 27,
-                                                            "lineno": 27,
-                                                            "value": {
-                                                                "ast_type": "Name",
-                                                                "col_offset": 33,
-                                                                "ctx": "Load",
-                                                                "end_col_offset": 41,
-                                                                "end_lineno": 27,
-                                                                "id": "file_uast",
-                                                                "lineno": 27
-                                                            }
-                                                        }
-                                                    },
-                                                    {
-                                                        "ast_type": "Name",
-                                                        "col_offset": 58,
-                                                        "ctx": "Load",
-                                                        "end_col_offset": 63,
-                                                        "end_lineno": 27,
-                                                        "id": "id_cnt",
-                                                        "lineno": 27
-                                                    }
-                                                ],
-                                                "ast_type": "Call",
-                                                "col_offset": 13,
-                                                "func": {
-                                                    "ast_type": "Attribute",
-                                                    "attr": "collect_id_cnt",
-                                                    "col_offset": 18,
-                                                    "ctx": "Load",
-                                                    "end_col_offset": 31,
-                                                    "end_lineno": 27,
-                                                    "lineno": 27,
-                                                    "value": {
-                                                        "ast_type": "Name",
-                                                        "col_offset": 13,
-                                                        "ctx": "Load",
-                                                        "end_col_offset": 16,
-                                                        "end_lineno": 27,
-                                                        "id": "self",
-                                                        "lineno": 27
-                                                    }
-                                                },
-                                                "keywords": [],
-                                                "lineno": 27
-                                            }
-                                        },
-                                        {
-                                            "ast_type": "Expr",
-                                            "col_offset": 13,
-                                            "lineno": 28,
-                                            "value": {
-                                                "args": [
-                                                    {
-                                                        "ast_type": "Name",
-                                                        "col_offset": 19,
-                                                        "ctx": "Load",
-                                                        "end_col_offset": 24,
-                                                        "end_lineno": 28,
-                                                        "id": "id_cnt",
-                                                        "lineno": 28
-                                                    }
-                                                ],
-                                                "ast_type": "Call",
-                                                "col_offset": 13,
-                                                "func": {
-                                                    "ast_type": "Name",
-                                                    "col_offset": 13,
-                                                    "ctx": "Load",
-                                                    "end_col_offset": 17,
-                                                    "end_lineno": 28,
-                                                    "id": "print",
-                                                    "lineno": 28
-                                                },
-                                                "keywords": [],
-                                                "lineno": 28
-                                            }
-                                        }
+                                             ],
+                                             lineno: 20,
+                                          },
+                                       },
+                                       value: {
+                                          'ast_type': "Name",
+                                          'col_offset': 17,
+                                          ctx: "Load",
+                                          'end_col_offset': 22,
+                                          'end_lineno': 20,
+                                          id: "id_cnt",
+                                          lineno: 20,
+                                       },
+                                    },
+                                    value: {
+                                       'ast_type': "Num",
+                                       'col_offset': 37,
+                                       'end_col_offset': 37,
+                                       'end_lineno': 20,
+                                       lineno: 20,
+                                       'n': 1,
+                                    },
+                                 },
+                              ],
+                              'col_offset': 13,
+                              'end_col_offset': 14,
+                              'end_lineno': 19,
+                              lineno: 19,
+                              orelse: [],
+                              test: {
+                                 'ast_type': "Compare",
+                                 'col_offset': 16,
+                                 comparators: [
+                                    {
+                                       'ast_type': "QualifiedIdentifier",
+                                       'col_offset': 38,
+                                       ctx: "Load",
+                                       'end_col_offset': 38,
+                                       'end_lineno': 19,
+                                       identifiers: [
+                                          {
+                                             'ast_type': "Name",
+                                             'col_offset': 37,
+                                             ctx: "Load",
+                                             'end_col_offset': 38,
+                                             'end_lineno': 19,
+                                             id: "ch",
+                                             lineno: 19,
+                                          },
+                                          {
+                                             'ast_type': "Attribute",
+                                             attr: "roles",
+                                             'col_offset': 37,
+                                             ctx: "Load",
+                                             lineno: 19,
+                                          },
+                                       ],
+                                       lineno: 19,
+                                    },
+                                 ],
+                                 left: {
+                                    'ast_type': "Name",
+                                    'col_offset': 16,
+                                    ctx: "Load",
+                                    'end_col_offset': 32,
+                                    'end_lineno': 19,
+                                    id: "SIMPLE_IDENTIFIER",
+                                    lineno: 19,
+                                 },
+                                 lineno: 19,
+                                 ops: [
+                                    {
+                                       'ast_type': "In",
+                                    },
+                                 ],
+                              },
+                           },
+                           {
+                              'ast_type': "Expr",
+                              'col_offset': 13,
+                              lineno: 21,
+                              value: {
+                                 args: [
+                                    {
+                                       'ast_type': "Name",
+                                       'col_offset': 33,
+                                       ctx: "Load",
+                                       'end_col_offset': 34,
+                                       'end_lineno': 21,
+                                       id: "ch",
+                                       lineno: 21,
+                                    },
+                                    {
+                                       'ast_type': "Name",
+                                       'col_offset': 37,
+                                       ctx: "Load",
+                                       'end_col_offset': 42,
+                                       'end_lineno': 21,
+                                       id: "id_cnt",
+                                       lineno: 21,
+                                    },
+                                 ],
+                                 'ast_type': "Call",
+                                 'col_offset': 13,
+                                 func: {
+                                    'ast_type': "QualifiedIdentifier",
+                                    'col_offset': 14,
+                                    ctx: "Load",
+                                    'end_col_offset': 16,
+                                    'end_lineno': 21,
+                                    identifiers: [
+                                       {
+                                          'ast_type': "Name",
+                                          'col_offset': 13,
+                                          ctx: "Load",
+                                          'end_col_offset': 16,
+                                          'end_lineno': 21,
+                                          id: "self",
+                                          lineno: 21,
+                                       },
+                                       {
+                                          'ast_type': "Attribute",
+                                          attr: "collect_id_cnt",
+                                          'col_offset': 13,
+                                          ctx: "Load",
+                                          lineno: 21,
+                                       },
                                     ],
-                                    "col_offset": 9,
-                                    "end_col_offset": 11,
-                                    "end_lineno": 24,
-                                    "iter": {
-                                        "ast_type": "Name",
-                                        "col_offset": 26,
-                                        "ctx": "Load",
-                                        "end_col_offset": 44,
-                                        "end_lineno": 24,
-                                        "id": "file_uast_generator",
-                                        "lineno": 24
-                                    },
-                                    "lineno": 24,
-                                    "orelse": [],
-                                    "target": {
-                                        "ast_type": "Name",
-                                        "col_offset": 13,
-                                        "ctx": "Store",
-                                        "end_col_offset": 21,
-                                        "end_lineno": 24,
-                                        "id": "file_uast",
-                                        "lineno": 24
-                                    }
-                                }
-                            ],
-                            "col_offset": 9,
-                            "decorator_list": [],
-                            "end_col_offset": 21,
-                            "end_lineno": 23,
-                            "lineno": 23,
-                            "name": "convert_uasts",
-                            "returns": null
-                        }
-                    ],
-                    "col_offset": 7,
-                    "decorator_list": [],
-                    "end_col_offset": 20,
-                    "end_lineno": 11,
-                    "keywords": [],
-                    "lineno": 11,
-                    "name": "Repo2IdCounter"
-                },
-                {
-                    "ast_type": "If",
-                    "body": [
-                        {
-                            "ast_type": "Assign",
-                            "col_offset": 5,
-                            "lineno": 32,
-                            "targets": [
-                                {
-                                    "ast_type": "Name",
-                                    "col_offset": 5,
-                                    "ctx": "Store",
-                                    "end_col_offset": 8,
-                                    "end_lineno": 32,
-                                    "id": "repo",
-                                    "lineno": 32
-                                }
-                            ],
-                            "value": {
-                                "ast_type": "Str",
-                                "col_offset": 12,
-                                "end_col_offset": 26,
-                                "end_lineno": 32,
-                                "lineno": 32,
-                                "s": "test/imports/"
-                            }
-                        },
-                        {
-                            "ast_type": "Assign",
-                            "col_offset": 5,
-                            "lineno": 33,
-                            "targets": [
-                                {
-                                    "ast_type": "Name",
-                                    "col_offset": 5,
-                                    "ctx": "Store",
-                                    "end_col_offset": 7,
-                                    "end_lineno": 33,
-                                    "id": "c2v",
-                                    "lineno": 33
-                                }
-                            ],
-                            "value": {
-                                "args": [],
-                                "ast_type": "Call",
-                                "col_offset": 11,
-                                "func": {
-                                    "ast_type": "Name",
-                                    "col_offset": 11,
-                                    "ctx": "Load",
-                                    "end_col_offset": 24,
-                                    "end_lineno": 33,
-                                    "id": "Repo2IdCounter",
-                                    "lineno": 33
-                                },
-                                "keywords": [
-                                    {
-                                        "arg": "linguist",
-                                        "ast_type": "keyword",
-                                        "value": {
-                                            "ast_type": "Str",
-                                            "col_offset": 35,
-                                            "end_col_offset": 48,
-                                            "end_lineno": 33,
-                                            "lineno": 33,
-                                            "s": "path/to/enry"
-                                        }
-                                    },
-                                    {
-                                        "arg": "bblfsh_endpoint",
-                                        "ast_type": "keyword",
-                                        "value": {
-                                            "ast_type": "Str",
-                                            "col_offset": 67,
-                                            "end_col_offset": 80,
-                                            "end_lineno": 33,
-                                            "lineno": 33,
-                                            "s": "0.0.0.0:9432"
-                                        }
-                                    }
-                                ],
-                                "lineno": 33
-                            }
-                        },
-                        {
-                            "ast_type": "Expr",
-                            "col_offset": 5,
-                            "lineno": 34,
-                            "value": {
-                                "args": [
-                                    {
-                                        "ast_type": "Name",
-                                        "col_offset": 28,
-                                        "ctx": "Load",
-                                        "end_col_offset": 31,
-                                        "end_lineno": 34,
-                                        "id": "repo",
-                                        "lineno": 34
-                                    }
-                                ],
-                                "ast_type": "Call",
-                                "col_offset": 5,
-                                "func": {
-                                    "ast_type": "Attribute",
-                                    "attr": "convert_repository",
-                                    "col_offset": 9,
-                                    "ctx": "Load",
-                                    "end_col_offset": 26,
-                                    "end_lineno": 34,
-                                    "lineno": 34,
-                                    "value": {
-                                        "ast_type": "Name",
-                                        "col_offset": 5,
-                                        "ctx": "Load",
-                                        "end_col_offset": 7,
-                                        "end_lineno": 34,
-                                        "id": "c2v",
-                                        "lineno": 34
-                                    }
-                                },
-                                "keywords": [],
-                                "lineno": 34
-                            }
-                        }
-                    ],
-                    "col_offset": 1,
-                    "end_col_offset": 2,
-                    "end_lineno": 31,
-                    "lineno": 31,
-                    "orelse": [],
-                    "test": {
-                        "ast_type": "Compare",
-                        "col_offset": 4,
-                        "comparators": [
-                            {
-                                "ast_type": "Str",
-                                "col_offset": 16,
-                                "end_col_offset": 25,
-                                "end_lineno": 31,
-                                "lineno": 31,
-                                "s": "__main__"
-                            }
+                                    lineno: 21,
+                                 },
+                                 keywords: [],
+                                 lineno: 21,
+                              },
+                           },
                         ],
-                        "left": {
-                            "ast_type": "Name",
-                            "col_offset": 4,
-                            "ctx": "Load",
-                            "end_col_offset": 11,
-                            "end_lineno": 31,
-                            "id": "__name__",
-                            "lineno": 31,
-                            "noops_previous": {
-                                "ast_type": "PreviousNoops",
-                                "col_offset": 1,
-                                "end_col_offset": 1,
-                                "end_lineno": 30,
-                                "lineno": 29,
-                                "lines": []
-                            }
+                        'col_offset': 9,
+                        'end_col_offset': 11,
+                        'end_lineno': 18,
+                        iter: {
+                           'ast_type': "QualifiedIdentifier",
+                           'col_offset': 20,
+                           ctx: "Load",
+                           'end_col_offset': 22,
+                           'end_lineno': 18,
+                           identifiers: [
+                              {
+                                 'ast_type': "Name",
+                                 'col_offset': 19,
+                                 ctx: "Load",
+                                 'end_col_offset': 22,
+                                 'end_lineno': 18,
+                                 id: "root",
+                                 lineno: 18,
+                              },
+                              {
+                                 'ast_type': "Attribute",
+                                 attr: "children",
+                                 'col_offset': 19,
+                                 ctx: "Load",
+                                 lineno: 18,
+                              },
+                           ],
+                           lineno: 18,
                         },
-                        "lineno": 31,
-                        "ops": [
-                            {
-                                "ast_type": "Eq"
-                            }
-                        ]
-                    }
-                }
-            ]
-        }
-    }
+                        lineno: 18,
+                        orelse: [],
+                        target: {
+                           'ast_type': "Name",
+                           'col_offset': 13,
+                           ctx: "Store",
+                           'end_col_offset': 14,
+                           'end_lineno': 18,
+                           id: "ch",
+                           lineno: 18,
+                        },
+                     },
+                  ],
+                  'col_offset': 9,
+                  'decorator_list': [],
+                  'end_col_offset': 22,
+                  'end_lineno': 17,
+                  lineno: 17,
+                  name: "collect_id_cnt",
+                  returns: ~,
+               },
+               {
+                  args: {
+                     args: [
+                        {
+                           '@token': "self",
+                           annotation: ~,
+                           'ast_type': "arg",
+                           'col_offset': 23,
+                           'end_col_offset': 26,
+                           'end_lineno': 23,
+                           lineno: 23,
+                           'noops_previous': {
+                              'ast_type': "PreviousNoops",
+                              'col_offset': 1,
+                              'end_col_offset': 1,
+                              'end_lineno': 22,
+                              lineno: 22,
+                              lines: [],
+                           },
+                        },
+                        {
+                           '@token': "file_uast_generator",
+                           annotation: ~,
+                           'ast_type': "arg",
+                           'col_offset': 29,
+                           'end_col_offset': 47,
+                           'end_lineno': 23,
+                           lineno: 23,
+                        },
+                     ],
+                     'ast_type': "arguments",
+                  },
+                  'ast_type': "FunctionDef",
+                  body: [
+                     {
+                        'ast_type': "For",
+                        body: [
+                           {
+                              'ast_type': "Expr",
+                              'col_offset': 13,
+                              lineno: 25,
+                              value: {
+                                 args: [
+                                    {
+                                       'ast_type': "BinOp",
+                                       'col_offset': 34,
+                                       left: {
+                                          'ast_type': "BinOp",
+                                          'col_offset': 19,
+                                          left: {
+                                             'ast_type': "BinOp",
+                                             'col_offset': 19,
+                                             left: {
+                                                'ast_type': "Str",
+                                                'col_offset': 19,
+                                                'end_col_offset': 21,
+                                                'end_lineno': 25,
+                                                lineno: 25,
+                                                s: "-",
+                                             },
+                                             lineno: 25,
+                                             op: {
+                                                'ast_type': "Mult",
+                                             },
+                                             right: {
+                                                'ast_type': "Num",
+                                                'col_offset': 25,
+                                                'end_col_offset': 26,
+                                                'end_lineno': 25,
+                                                lineno: 25,
+                                                'n': 20,
+                                             },
+                                          },
+                                          lineno: 25,
+                                          op: {
+                                             'ast_type': "Add",
+                                          },
+                                          right: {
+                                             'ast_type': "Str",
+                                             'col_offset': 30,
+                                             'end_col_offset': 32,
+                                             'end_lineno': 25,
+                                             lineno: 25,
+                                             s: " ",
+                                          },
+                                       },
+                                       lineno: 25,
+                                       op: {
+                                          'ast_type': "Add",
+                                       },
+                                       right: {
+                                          args: [
+                                             {
+                                                'ast_type': "QualifiedIdentifier",
+                                                'col_offset': 41,
+                                                ctx: "Load",
+                                                'end_col_offset': 48,
+                                                'end_lineno': 25,
+                                                identifiers: [
+                                                   {
+                                                      'ast_type': "Name",
+                                                      'col_offset': 40,
+                                                      ctx: "Load",
+                                                      'end_col_offset': 48,
+                                                      'end_lineno': 25,
+                                                      id: "file_uast",
+                                                      lineno: 25,
+                                                   },
+                                                   {
+                                                      'ast_type': "Attribute",
+                                                      attr: "filepath",
+                                                      'col_offset': 40,
+                                                      ctx: "Load",
+                                                      lineno: 25,
+                                                   },
+                                                ],
+                                                lineno: 25,
+                                             },
+                                          ],
+                                          'ast_type': "Call",
+                                          'col_offset': 36,
+                                          func: {
+                                             'ast_type': "Name",
+                                             'col_offset': 36,
+                                             ctx: "Load",
+                                             'end_col_offset': 38,
+                                             'end_lineno': 25,
+                                             id: "str",
+                                             lineno: 25,
+                                          },
+                                          keywords: [],
+                                          lineno: 25,
+                                       },
+                                    },
+                                 ],
+                                 'ast_type': "Call",
+                                 'col_offset': 13,
+                                 func: {
+                                    'ast_type': "Name",
+                                    'col_offset': 13,
+                                    ctx: "Load",
+                                    'end_col_offset': 17,
+                                    'end_lineno': 25,
+                                    id: "print",
+                                    lineno: 25,
+                                 },
+                                 keywords: [],
+                                 lineno: 25,
+                              },
+                           },
+                           {
+                              'ast_type': "Assign",
+                              'col_offset': 13,
+                              lineno: 26,
+                              targets: [
+                                 {
+                                    'ast_type': "Name",
+                                    'col_offset': 13,
+                                    ctx: "Store",
+                                    'end_col_offset': 18,
+                                    'end_lineno': 26,
+                                    id: "id_cnt",
+                                    lineno: 26,
+                                 },
+                              ],
+                              value: {
+                                 args: [],
+                                 'ast_type': "Call",
+                                 'col_offset': 22,
+                                 func: {
+                                    'ast_type': "Name",
+                                    'col_offset': 22,
+                                    ctx: "Load",
+                                    'end_col_offset': 28,
+                                    'end_lineno': 26,
+                                    id: "Counter",
+                                    lineno: 26,
+                                 },
+                                 keywords: [],
+                                 lineno: 26,
+                              },
+                           },
+                           {
+                              'ast_type': "Expr",
+                              'col_offset': 13,
+                              lineno: 27,
+                              value: {
+                                 args: [
+                                    {
+                                       'ast_type': "QualifiedIdentifier",
+                                       'col_offset': 34,
+                                       ctx: "Load",
+                                       'end_col_offset': 41,
+                                       'end_lineno': 27,
+                                       identifiers: [
+                                          {
+                                             'ast_type': "Name",
+                                             'col_offset': 33,
+                                             ctx: "Load",
+                                             'end_col_offset': 41,
+                                             'end_lineno': 27,
+                                             id: "file_uast",
+                                             lineno: 27,
+                                          },
+                                          {
+                                             'ast_type': "Attribute",
+                                             attr: "response",
+                                             'col_offset': 43,
+                                             ctx: "Load",
+                                             'end_col_offset': 50,
+                                             'end_lineno': 27,
+                                             lineno: 27,
+                                          },
+                                          {
+                                             'ast_type': "Attribute",
+                                             attr: "uast",
+                                             'col_offset': 33,
+                                             ctx: "Load",
+                                             lineno: 27,
+                                          },
+                                       ],
+                                       lineno: 27,
+                                    },
+                                    {
+                                       'ast_type': "Name",
+                                       'col_offset': 58,
+                                       ctx: "Load",
+                                       'end_col_offset': 63,
+                                       'end_lineno': 27,
+                                       id: "id_cnt",
+                                       lineno: 27,
+                                    },
+                                 ],
+                                 'ast_type': "Call",
+                                 'col_offset': 13,
+                                 func: {
+                                    'ast_type': "QualifiedIdentifier",
+                                    'col_offset': 14,
+                                    ctx: "Load",
+                                    'end_col_offset': 16,
+                                    'end_lineno': 27,
+                                    identifiers: [
+                                       {
+                                          'ast_type': "Name",
+                                          'col_offset': 13,
+                                          ctx: "Load",
+                                          'end_col_offset': 16,
+                                          'end_lineno': 27,
+                                          id: "self",
+                                          lineno: 27,
+                                       },
+                                       {
+                                          'ast_type': "Attribute",
+                                          attr: "collect_id_cnt",
+                                          'col_offset': 13,
+                                          ctx: "Load",
+                                          lineno: 27,
+                                       },
+                                    ],
+                                    lineno: 27,
+                                 },
+                                 keywords: [],
+                                 lineno: 27,
+                              },
+                           },
+                           {
+                              'ast_type': "Expr",
+                              'col_offset': 13,
+                              lineno: 28,
+                              value: {
+                                 args: [
+                                    {
+                                       'ast_type': "Name",
+                                       'col_offset': 19,
+                                       ctx: "Load",
+                                       'end_col_offset': 24,
+                                       'end_lineno': 28,
+                                       id: "id_cnt",
+                                       lineno: 28,
+                                    },
+                                 ],
+                                 'ast_type': "Call",
+                                 'col_offset': 13,
+                                 func: {
+                                    'ast_type': "Name",
+                                    'col_offset': 13,
+                                    ctx: "Load",
+                                    'end_col_offset': 17,
+                                    'end_lineno': 28,
+                                    id: "print",
+                                    lineno: 28,
+                                 },
+                                 keywords: [],
+                                 lineno: 28,
+                              },
+                           },
+                        ],
+                        'col_offset': 9,
+                        'end_col_offset': 11,
+                        'end_lineno': 24,
+                        iter: {
+                           'ast_type': "Name",
+                           'col_offset': 26,
+                           ctx: "Load",
+                           'end_col_offset': 44,
+                           'end_lineno': 24,
+                           id: "file_uast_generator",
+                           lineno: 24,
+                        },
+                        lineno: 24,
+                        orelse: [],
+                        target: {
+                           'ast_type': "Name",
+                           'col_offset': 13,
+                           ctx: "Store",
+                           'end_col_offset': 21,
+                           'end_lineno': 24,
+                           id: "file_uast",
+                           lineno: 24,
+                        },
+                     },
+                  ],
+                  'col_offset': 9,
+                  'decorator_list': [],
+                  'end_col_offset': 21,
+                  'end_lineno': 23,
+                  lineno: 23,
+                  name: "convert_uasts",
+                  returns: ~,
+               },
+            ],
+            'col_offset': 7,
+            'decorator_list': [],
+            'end_col_offset': 20,
+            'end_lineno': 11,
+            keywords: [],
+            lineno: 11,
+            name: "Repo2IdCounter",
+         },
+         {
+            'ast_type': "If",
+            body: [
+               {
+                  'ast_type': "Assign",
+                  'col_offset': 5,
+                  lineno: 32,
+                  targets: [
+                     {
+                        'ast_type': "Name",
+                        'col_offset': 5,
+                        ctx: "Store",
+                        'end_col_offset': 8,
+                        'end_lineno': 32,
+                        id: "repo",
+                        lineno: 32,
+                     },
+                  ],
+                  value: {
+                     'ast_type': "Str",
+                     'col_offset': 12,
+                     'end_col_offset': 26,
+                     'end_lineno': 32,
+                     lineno: 32,
+                     s: "test/imports/",
+                  },
+               },
+               {
+                  'ast_type': "Assign",
+                  'col_offset': 5,
+                  lineno: 33,
+                  targets: [
+                     {
+                        'ast_type': "Name",
+                        'col_offset': 5,
+                        ctx: "Store",
+                        'end_col_offset': 7,
+                        'end_lineno': 33,
+                        id: "c2v",
+                        lineno: 33,
+                     },
+                  ],
+                  value: {
+                     args: [],
+                     'ast_type': "Call",
+                     'col_offset': 11,
+                     func: {
+                        'ast_type': "Name",
+                        'col_offset': 11,
+                        ctx: "Load",
+                        'end_col_offset': 24,
+                        'end_lineno': 33,
+                        id: "Repo2IdCounter",
+                        lineno: 33,
+                     },
+                     keywords: [
+                        {
+                           arg: "linguist",
+                           'ast_type': "keyword",
+                           value: {
+                              'ast_type': "Str",
+                              'col_offset': 35,
+                              'end_col_offset': 48,
+                              'end_lineno': 33,
+                              lineno: 33,
+                              s: "path/to/enry",
+                           },
+                        },
+                        {
+                           arg: "bblfsh_endpoint",
+                           'ast_type': "keyword",
+                           value: {
+                              'ast_type': "Str",
+                              'col_offset': 67,
+                              'end_col_offset': 80,
+                              'end_lineno': 33,
+                              lineno: 33,
+                              s: "0.0.0.0:9432",
+                           },
+                        },
+                     ],
+                     lineno: 33,
+                  },
+               },
+               {
+                  'ast_type': "Expr",
+                  'col_offset': 5,
+                  lineno: 34,
+                  value: {
+                     args: [
+                        {
+                           'ast_type': "Name",
+                           'col_offset': 28,
+                           ctx: "Load",
+                           'end_col_offset': 31,
+                           'end_lineno': 34,
+                           id: "repo",
+                           lineno: 34,
+                        },
+                     ],
+                     'ast_type': "Call",
+                     'col_offset': 5,
+                     func: {
+                        'ast_type': "QualifiedIdentifier",
+                        'col_offset': 6,
+                        ctx: "Load",
+                        'end_col_offset': 7,
+                        'end_lineno': 34,
+                        identifiers: [
+                           {
+                              'ast_type': "Name",
+                              'col_offset': 5,
+                              ctx: "Load",
+                              'end_col_offset': 7,
+                              'end_lineno': 34,
+                              id: "c2v",
+                              lineno: 34,
+                           },
+                           {
+                              'ast_type': "Attribute",
+                              attr: "convert_repository",
+                              'col_offset': 5,
+                              ctx: "Load",
+                              lineno: 34,
+                           },
+                        ],
+                        lineno: 34,
+                     },
+                     keywords: [],
+                     lineno: 34,
+                  },
+               },
+            ],
+            'col_offset': 1,
+            'end_col_offset': 2,
+            'end_lineno': 31,
+            lineno: 31,
+            orelse: [],
+            test: {
+               'ast_type': "Compare",
+               'col_offset': 4,
+               comparators: [
+                  {
+                     'ast_type': "Str",
+                     'col_offset': 16,
+                     'end_col_offset': 25,
+                     'end_lineno': 31,
+                     lineno: 31,
+                     s: "__main__",
+                  },
+               ],
+               left: {
+                  'ast_type': "Name",
+                  'col_offset': 4,
+                  ctx: "Load",
+                  'end_col_offset': 11,
+                  'end_lineno': 31,
+                  id: "__name__",
+                  lineno: 31,
+                  'noops_previous': {
+                     'ast_type': "PreviousNoops",
+                     'col_offset': 1,
+                     'end_col_offset': 1,
+                     'end_lineno': 30,
+                     lineno: 29,
+                     lines: [],
+                  },
+               },
+               lineno: 31,
+               ops: [
+                  {
+                     'ast_type': "Eq",
+                  },
+               ],
+            },
+         },
+      ],
+   },
 }

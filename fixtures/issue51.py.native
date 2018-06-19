@@ -1,42 +1,45 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "ast_type": "Expr",
-                    "col_offset": 1,
-                    "lineno": 1,
-                    "value": {
-                        "args": [],
-                        "ast_type": "Call",
-                        "col_offset": 1,
-                        "func": {
-                            "ast_type": "Attribute",
-                            "attr": "figure",
-                            "col_offset": 5,
-                            "ctx": "Load",
-                            "end_col_offset": 10,
-                            "end_lineno": 1,
-                            "lineno": 1,
-                            "value": {
-                                "ast_type": "Name",
-                                "col_offset": 1,
-                                "ctx": "Load",
-                                "end_col_offset": 3,
-                                "end_lineno": 1,
-                                "id": "plt",
-                                "lineno": 1
-                            }
-                        },
-                        "keywords": [],
-                        "lineno": 1
-                    }
-                }
-            ]
-        }
-    }
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "Expr",
+            'col_offset': 1,
+            lineno: 1,
+            value: {
+               args: [],
+               'ast_type': "Call",
+               'col_offset': 1,
+               func: {
+                  'ast_type': "QualifiedIdentifier",
+                  'col_offset': 2,
+                  ctx: "Load",
+                  'end_col_offset': 3,
+                  'end_lineno': 1,
+                  identifiers: [
+                     {
+                        'ast_type': "Name",
+                        'col_offset': 1,
+                        ctx: "Load",
+                        'end_col_offset': 3,
+                        'end_lineno': 1,
+                        id: "plt",
+                        lineno: 1,
+                     },
+                     {
+                        'ast_type': "Attribute",
+                        attr: "figure",
+                        'col_offset': 1,
+                        ctx: "Load",
+                        lineno: 1,
+                     },
+                  ],
+                  lineno: 1,
+               },
+               keywords: [],
+               lineno: 1,
+            },
+         },
+      ],
+   },
 }

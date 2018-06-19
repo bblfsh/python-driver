@@ -1,668 +1,652 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "ast_type": "Import",
-                    "col_offset": 1,
-                    "lineno": 1,
-                    "names": [
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "Import",
+            'col_offset': 1,
+            lineno: 1,
+            names: [
+               {
+                  asname: ~,
+                  'ast_type': "alias",
+                  name: "lib1",
+               },
+            ],
+         },
+         {
+            'ast_type': "Import",
+            'col_offset': 1,
+            lineno: 2,
+            names: [
+               {
+                  asname: ~,
+                  'ast_type': "alias",
+                  name: "lib2.lib21",
+               },
+            ],
+         },
+         {
+            'ast_type': "Import",
+            'col_offset': 1,
+            lineno: 3,
+            names: [
+               {
+                  asname: "lib3_alias",
+                  'ast_type': "alias",
+                  name: "lib3",
+               },
+            ],
+         },
+         {
+            'ast_type': "ImportFrom",
+            'col_offset': 1,
+            'end_col_offset': 9,
+            'end_lineno': 4,
+            level: 0,
+            lineno: 4,
+            module: "lib4",
+            names: [
+               {
+                  asname: ~,
+                  'ast_type': "alias",
+                  name: "lib41",
+               },
+            ],
+         },
+         {
+            'ast_type': "ImportFrom",
+            'col_offset': 1,
+            level: 0,
+            lineno: 5,
+            module: "lib5.lib51",
+            names: [
+               {
+                  asname: ~,
+                  'ast_type': "alias",
+                  name: "lib511",
+               },
+            ],
+         },
+         {
+            'ast_type': "ImportFrom",
+            'col_offset': 1,
+            'end_col_offset': 9,
+            'end_lineno': 6,
+            level: 0,
+            lineno: 6,
+            module: "lib6",
+            names: [
+               {
+                  asname: "lib611",
+                  'ast_type': "alias",
+                  name: "lib61",
+               },
+            ],
+         },
+         {
+            'ast_type': "Assign",
+            'col_offset': 1,
+            lineno: 8,
+            targets: [
+               {
+                  'ast_type': "Name",
+                  'col_offset': 1,
+                  ctx: "Store",
+                  'end_col_offset': 4,
+                  'end_lineno': 8,
+                  id: "var1",
+                  lineno: 8,
+                  'noops_previous': {
+                     'ast_type': "PreviousNoops",
+                     'col_offset': 1,
+                     'end_col_offset': 1,
+                     'end_lineno': 7,
+                     lineno: 7,
+                     lines: [],
+                  },
+               },
+            ],
+            value: {
+               LiteralValue: "None",
+               'ast_type': "NoneLiteral",
+               'col_offset': 8,
+               'end_col_offset': 11,
+               'end_lineno': 8,
+               lineno: 8,
+               value: ~,
+            },
+         },
+         {
+            'ast_type': "Assign",
+            'col_offset': 1,
+            lineno: 9,
+            targets: [
+               {
+                  'ast_type': "Name",
+                  'col_offset': 1,
+                  ctx: "Store",
+                  'end_col_offset': 4,
+                  'end_lineno': 9,
+                  id: "var2",
+                  lineno: 9,
+               },
+            ],
+            value: {
+               LiteralValue: "None",
+               'ast_type': "NoneLiteral",
+               'col_offset': 8,
+               'end_col_offset': 11,
+               'end_lineno': 9,
+               lineno: 9,
+               value: ~,
+            },
+         },
+         {
+            'ast_type': "ClassDef",
+            bases: [],
+            body: [
+               {
+                  'ast_type': "Assign",
+                  'col_offset': 2,
+                  lineno: 12,
+                  targets: [
+                     {
+                        'ast_type': "Name",
+                        'col_offset': 2,
+                        ctx: "Store",
+                        'end_col_offset': 6,
+                        'end_lineno': 12,
+                        id: "var11",
+                        lineno: 12,
+                        'noops_previous': {
+                           'ast_type': "PreviousNoops",
+                           'col_offset': 1,
+                           'end_col_offset': 1,
+                           'end_lineno': 10,
+                           lineno: 10,
+                           lines: [],
+                        },
+                     },
+                  ],
+                  value: {
+                     LiteralValue: "None",
+                     'ast_type': "NoneLiteral",
+                     'col_offset': 10,
+                     'end_col_offset': 13,
+                     'end_lineno': 12,
+                     lineno: 12,
+                     value: ~,
+                  },
+               },
+               {
+                  args: {
+                     args: [
                         {
-                            "asname": null,
-                            "ast_type": "alias",
-                            "name": "lib1"
-                        }
-                    ]
-                },
-                {
-                    "ast_type": "Import",
-                    "col_offset": 1,
-                    "lineno": 2,
-                    "names": [
+                           '@token': "self",
+                           annotation: ~,
+                           'ast_type': "arg",
+                           'col_offset': 15,
+                           'end_col_offset': 18,
+                           'end_lineno': 14,
+                           lineno: 14,
+                           'noops_previous': {
+                              'ast_type': "PreviousNoops",
+                              'col_offset': 1,
+                              'end_col_offset': 1,
+                              'end_lineno': 13,
+                              lineno: 13,
+                              lines: [],
+                           },
+                        },
+                     ],
+                     'ast_type': "arguments",
+                  },
+                  'ast_type': "FunctionDef",
+                  body: [
+                     {
+                        'ast_type': "Assign",
+                        'col_offset': 3,
+                        lineno: 15,
+                        targets: [
+                           {
+                              'ast_type': "QualifiedIdentifier",
+                              'col_offset': 4,
+                              ctx: "Store",
+                              'end_col_offset': 6,
+                              'end_lineno': 15,
+                              identifiers: [
+                                 {
+                                    'ast_type': "Name",
+                                    'col_offset': 3,
+                                    ctx: "Load",
+                                    'end_col_offset': 6,
+                                    'end_lineno': 15,
+                                    id: "self",
+                                    lineno: 15,
+                                 },
+                                 {
+                                    'ast_type': "Attribute",
+                                    attr: "var101",
+                                    'col_offset': 3,
+                                    ctx: "Store",
+                                    lineno: 15,
+                                 },
+                              ],
+                              lineno: 15,
+                           },
+                        ],
+                        value: {
+                           LiteralValue: "None",
+                           'ast_type': "NoneLiteral",
+                           'col_offset': 17,
+                           'end_col_offset': 20,
+                           'end_lineno': 15,
+                           lineno: 15,
+                           value: ~,
+                        },
+                     },
+                  ],
+                  'col_offset': 6,
+                  'decorator_list': [],
+                  'end_col_offset': 13,
+                  'end_lineno': 14,
+                  lineno: 14,
+                  name: "__init__",
+                  returns: ~,
+               },
+               {
+                  args: {
+                     args: [
                         {
-                            "asname": null,
-                            "ast_type": "alias",
-                            "name": "lib2.lib21"
-                        }
-                    ]
-                },
-                {
-                    "ast_type": "Import",
-                    "col_offset": 1,
-                    "lineno": 3,
-                    "names": [
+                           '@token': "self",
+                           annotation: ~,
+                           'ast_type': "arg",
+                           'col_offset': 13,
+                           'end_col_offset': 16,
+                           'end_lineno': 17,
+                           lineno: 17,
+                           'noops_previous': {
+                              'ast_type': "PreviousNoops",
+                              'col_offset': 1,
+                              'end_col_offset': 1,
+                              'end_lineno': 16,
+                              lineno: 16,
+                              lines: [],
+                           },
+                        },
+                     ],
+                     'ast_type': "arguments",
+                  },
+                  'ast_type': "FunctionDef",
+                  body: [
+                     {
+                        'ast_type': "Assign",
+                        'col_offset': 3,
+                        lineno: 18,
+                        targets: [
+                           {
+                              'ast_type': "QualifiedIdentifier",
+                              'col_offset': 4,
+                              ctx: "Store",
+                              'end_col_offset': 8,
+                              'end_lineno': 18,
+                              identifiers: [
+                                 {
+                                    'ast_type': "Name",
+                                    'col_offset': 3,
+                                    ctx: "Load",
+                                    'end_col_offset': 8,
+                                    'end_lineno': 18,
+                                    id: "class1",
+                                    lineno: 18,
+                                 },
+                                 {
+                                    'ast_type': "Attribute",
+                                    attr: "var111",
+                                    'col_offset': 3,
+                                    ctx: "Store",
+                                    lineno: 18,
+                                 },
+                              ],
+                              lineno: 18,
+                           },
+                        ],
+                        value: {
+                           LiteralValue: "None",
+                           'ast_type': "NoneLiteral",
+                           'col_offset': 19,
+                           'end_col_offset': 22,
+                           'end_lineno': 18,
+                           lineno: 18,
+                           value: ~,
+                        },
+                     },
+                     {
+                        'ast_type': "Assign",
+                        'col_offset': 3,
+                        lineno: 19,
+                        targets: [
+                           {
+                              'ast_type': "QualifiedIdentifier",
+                              'col_offset': 4,
+                              ctx: "Store",
+                              'end_col_offset': 6,
+                              'end_lineno': 19,
+                              identifiers: [
+                                 {
+                                    'ast_type': "Name",
+                                    'col_offset': 3,
+                                    ctx: "Load",
+                                    'end_col_offset': 6,
+                                    'end_lineno': 19,
+                                    id: "self",
+                                    lineno: 19,
+                                 },
+                                 {
+                                    'ast_type': "Attribute",
+                                    attr: "var112",
+                                    'col_offset': 3,
+                                    ctx: "Store",
+                                    lineno: 19,
+                                 },
+                              ],
+                              lineno: 19,
+                           },
+                        ],
+                        value: {
+                           LiteralValue: "None",
+                           'ast_type': "NoneLiteral",
+                           'col_offset': 17,
+                           'end_col_offset': 20,
+                           'end_lineno': 19,
+                           lineno: 19,
+                           value: ~,
+                        },
+                     },
+                     {
+                        'ast_type': "Assign",
+                        'col_offset': 3,
+                        lineno: 20,
+                        targets: [
+                           {
+                              'ast_type': "Name",
+                              'col_offset': 3,
+                              ctx: "Store",
+                              'end_col_offset': 8,
+                              'end_lineno': 20,
+                              id: "var113",
+                              lineno: 20,
+                           },
+                        ],
+                        value: {
+                           LiteralValue: "None",
+                           'ast_type': "NoneLiteral",
+                           'col_offset': 12,
+                           'end_col_offset': 15,
+                           'end_lineno': 20,
+                           lineno: 20,
+                           value: ~,
+                        },
+                     },
+                  ],
+                  'col_offset': 6,
+                  'decorator_list': [],
+                  'end_col_offset': 11,
+                  'end_lineno': 17,
+                  lineno: 17,
+                  name: "func11",
+                  returns: ~,
+               },
+               {
+                  args: {
+                     args: [],
+                     'ast_type': "arguments",
+                  },
+                  'ast_type': "FunctionDef",
+                  body: [
+                     {
+                        args: {
+                           args: [],
+                           'ast_type': "arguments",
+                        },
+                        'ast_type': "FunctionDef",
+                        body: [
+                           {
+                              'ast_type': "Pass",
+                              'col_offset': 4,
+                              'end_col_offset': 7,
+                              'end_lineno': 24,
+                              lineno: 24,
+                              'noops_previous': {
+                                 'ast_type': "PreviousNoops",
+                                 'col_offset': 1,
+                                 'end_col_offset': 1,
+                                 'end_lineno': 21,
+                                 lineno: 21,
+                                 lines: [],
+                              },
+                           },
+                        ],
+                        'col_offset': 7,
+                        'decorator_list': [],
+                        'end_col_offset': 13,
+                        'end_lineno': 23,
+                        lineno: 23,
+                        name: "func121",
+                        returns: ~,
+                     },
+                  ],
+                  'col_offset': 6,
+                  'decorator_list': [],
+                  'end_col_offset': 11,
+                  'end_lineno': 22,
+                  lineno: 22,
+                  name: "func12",
+                  returns: ~,
+               },
+            ],
+            'col_offset': 7,
+            'decorator_list': [],
+            'end_col_offset': 12,
+            'end_lineno': 11,
+            keywords: [],
+            lineno: 11,
+            name: "class1",
+         },
+         {
+            'ast_type': "ClassDef",
+            bases: [],
+            body: [
+               {
+                  'ast_type': "Assign",
+                  'col_offset': 2,
+                  lineno: 27,
+                  targets: [
+                     {
+                        'ast_type': "Name",
+                        'col_offset': 2,
+                        ctx: "Store",
+                        'end_col_offset': 6,
+                        'end_lineno': 27,
+                        id: "var21",
+                        lineno: 27,
+                        'noops_previous': {
+                           'ast_type': "PreviousNoops",
+                           'col_offset': 1,
+                           'end_col_offset': 1,
+                           'end_lineno': 25,
+                           lineno: 25,
+                           lines: [],
+                        },
+                     },
+                  ],
+                  value: {
+                     LiteralValue: "None",
+                     'ast_type': "NoneLiteral",
+                     'col_offset': 10,
+                     'end_col_offset': 13,
+                     'end_lineno': 27,
+                     lineno: 27,
+                     value: ~,
+                  },
+               },
+               {
+                  args: {
+                     args: [
                         {
-                            "asname": "lib3_alias",
-                            "ast_type": "alias",
-                            "name": "lib3"
-                        }
-                    ]
-                },
-                {
-                    "ast_type": "ImportFrom",
-                    "col_offset": 1,
-                    "end_col_offset": 9,
-                    "end_lineno": 4,
-                    "level": 0,
-                    "lineno": 4,
-                    "module": "lib4",
-                    "names": [
+                           '@token': "self",
+                           annotation: ~,
+                           'ast_type': "arg",
+                           'col_offset': 13,
+                           'end_col_offset': 16,
+                           'end_lineno': 28,
+                           lineno: 28,
+                        },
+                     ],
+                     'ast_type': "arguments",
+                  },
+                  'ast_type': "FunctionDef",
+                  body: [
+                     {
+                        'ast_type': "Expr",
+                        'col_offset': 3,
+                        lineno: 29,
+                        value: {
+                           LiteralValue: "None",
+                           'ast_type': "NoneLiteral",
+                           'col_offset': 3,
+                           'end_col_offset': 6,
+                           'end_lineno': 29,
+                           lineno: 29,
+                           value: ~,
+                        },
+                     },
+                  ],
+                  'col_offset': 6,
+                  'decorator_list': [],
+                  'end_col_offset': 11,
+                  'end_lineno': 28,
+                  lineno: 28,
+                  name: "func21",
+                  returns: ~,
+               },
+               {
+                  args: {
+                     args: [
                         {
-                            "asname": null,
-                            "ast_type": "alias",
-                            "name": "lib41"
-                        }
-                    ]
-                },
-                {
-                    "ast_type": "ImportFrom",
-                    "col_offset": 1,
-                    "level": 0,
-                    "lineno": 5,
-                    "module": "lib5.lib51",
-                    "names": [
-                        {
-                            "asname": null,
-                            "ast_type": "alias",
-                            "name": "lib511"
-                        }
-                    ]
-                },
-                {
-                    "ast_type": "ImportFrom",
-                    "col_offset": 1,
-                    "end_col_offset": 9,
-                    "end_lineno": 6,
-                    "level": 0,
-                    "lineno": 6,
-                    "module": "lib6",
-                    "names": [
-                        {
-                            "asname": "lib611",
-                            "ast_type": "alias",
-                            "name": "lib61"
-                        }
-                    ]
-                },
-                {
-                    "ast_type": "Assign",
-                    "col_offset": 1,
-                    "lineno": 8,
-                    "targets": [
-                        {
-                            "ast_type": "Name",
-                            "col_offset": 1,
-                            "ctx": "Store",
-                            "end_col_offset": 4,
-                            "end_lineno": 8,
-                            "id": "var1",
-                            "lineno": 8,
-                            "noops_previous": {
-                                "ast_type": "PreviousNoops",
-                                "col_offset": 1,
-                                "end_col_offset": 1,
-                                "end_lineno": 7,
-                                "lineno": 7,
-                                "lines": []
-                            }
-                        }
-                    ],
-                    "value": {
-                        "LiteralValue": "None",
-                        "ast_type": "NoneLiteral",
-                        "col_offset": 8,
-                        "end_col_offset": 11,
-                        "end_lineno": 8,
-                        "lineno": 8,
-                        "value": null
-                    }
-                },
-                {
-                    "ast_type": "Assign",
-                    "col_offset": 1,
-                    "lineno": 9,
-                    "targets": [
-                        {
-                            "ast_type": "Name",
-                            "col_offset": 1,
-                            "ctx": "Store",
-                            "end_col_offset": 4,
-                            "end_lineno": 9,
-                            "id": "var2",
-                            "lineno": 9
-                        }
-                    ],
-                    "value": {
-                        "LiteralValue": "None",
-                        "ast_type": "NoneLiteral",
-                        "col_offset": 8,
-                        "end_col_offset": 11,
-                        "end_lineno": 9,
-                        "lineno": 9,
-                        "value": null
-                    }
-                },
-                {
-                    "ast_type": "ClassDef",
-                    "bases": [],
-                    "body": [
-                        {
-                            "ast_type": "Assign",
-                            "col_offset": 2,
-                            "lineno": 12,
-                            "targets": [
-                                {
-                                    "ast_type": "Name",
-                                    "col_offset": 2,
-                                    "ctx": "Store",
-                                    "end_col_offset": 6,
-                                    "end_lineno": 12,
-                                    "id": "var11",
-                                    "lineno": 12,
-                                    "noops_previous": {
-                                        "ast_type": "PreviousNoops",
-                                        "col_offset": 1,
-                                        "end_col_offset": 1,
-                                        "end_lineno": 10,
-                                        "lineno": 10,
-                                        "lines": []
-                                    }
-                                }
-                            ],
-                            "value": {
-                                "LiteralValue": "None",
-                                "ast_type": "NoneLiteral",
-                                "col_offset": 10,
-                                "end_col_offset": 13,
-                                "end_lineno": 12,
-                                "lineno": 12,
-                                "value": null
-                            }
+                           '@token': "self",
+                           annotation: ~,
+                           'ast_type': "arg",
+                           'col_offset': 13,
+                           'end_col_offset': 16,
+                           'end_lineno': 30,
+                           lineno: 30,
                         },
                         {
-                            "args": {
-                                "args": [
-                                    {
-                                        "annotation": null,
-                                        "arg": "self",
-                                        "ast_type": "arg",
-                                        "col_offset": 15,
-                                        "end_col_offset": 18,
-                                        "end_lineno": 14,
-                                        "lineno": 14,
-                                        "noops_previous": {
-                                            "ast_type": "PreviousNoops",
-                                            "col_offset": 1,
-                                            "end_col_offset": 1,
-                                            "end_lineno": 13,
-                                            "lineno": 13,
-                                            "lines": []
-                                        }
-                                    }
-                                ],
-                                "ast_type": "arguments",
-                                "defaults": [],
-                                "kw_defaults": [],
-                                "kwarg": null,
-                                "kwonlyargs": [],
-                                "vararg": null
-                            },
-                            "ast_type": "FunctionDef",
-                            "body": [
-                                {
-                                    "ast_type": "Assign",
-                                    "col_offset": 3,
-                                    "lineno": 15,
-                                    "targets": [
-                                        {
-                                            "ast_type": "Attribute",
-                                            "attr": "var101",
-                                            "col_offset": 8,
-                                            "ctx": "Store",
-                                            "end_col_offset": 13,
-                                            "end_lineno": 15,
-                                            "lineno": 15,
-                                            "value": {
-                                                "ast_type": "Name",
-                                                "col_offset": 3,
-                                                "ctx": "Load",
-                                                "end_col_offset": 6,
-                                                "end_lineno": 15,
-                                                "id": "self",
-                                                "lineno": 15
-                                            }
-                                        }
-                                    ],
-                                    "value": {
-                                        "LiteralValue": "None",
-                                        "ast_type": "NoneLiteral",
-                                        "col_offset": 17,
-                                        "end_col_offset": 20,
-                                        "end_lineno": 15,
-                                        "lineno": 15,
-                                        "value": null
-                                    }
-                                }
-                            ],
-                            "col_offset": 6,
-                            "decorator_list": [],
-                            "end_col_offset": 13,
-                            "end_lineno": 14,
-                            "lineno": 14,
-                            "name": "__init__",
-                            "returns": null
+                           '@token': "arg1",
+                           annotation: ~,
+                           'ast_type': "arg",
+                           'col_offset': 19,
+                           'end_col_offset': 22,
+                           'end_lineno': 30,
+                           lineno: 30,
                         },
-                        {
-                            "args": {
-                                "args": [
-                                    {
-                                        "annotation": null,
-                                        "arg": "self",
-                                        "ast_type": "arg",
-                                        "col_offset": 13,
-                                        "end_col_offset": 16,
-                                        "end_lineno": 17,
-                                        "lineno": 17,
-                                        "noops_previous": {
-                                            "ast_type": "PreviousNoops",
-                                            "col_offset": 1,
-                                            "end_col_offset": 1,
-                                            "end_lineno": 16,
-                                            "lineno": 16,
-                                            "lines": []
-                                        }
-                                    }
-                                ],
-                                "ast_type": "arguments",
-                                "defaults": [],
-                                "kw_defaults": [],
-                                "kwarg": null,
-                                "kwonlyargs": [],
-                                "vararg": null
-                            },
-                            "ast_type": "FunctionDef",
-                            "body": [
-                                {
-                                    "ast_type": "Assign",
-                                    "col_offset": 3,
-                                    "lineno": 18,
-                                    "targets": [
-                                        {
-                                            "ast_type": "Attribute",
-                                            "attr": "var111",
-                                            "col_offset": 10,
-                                            "ctx": "Store",
-                                            "end_col_offset": 15,
-                                            "end_lineno": 18,
-                                            "lineno": 18,
-                                            "value": {
-                                                "ast_type": "Name",
-                                                "col_offset": 3,
-                                                "ctx": "Load",
-                                                "end_col_offset": 8,
-                                                "end_lineno": 18,
-                                                "id": "class1",
-                                                "lineno": 18
-                                            }
-                                        }
-                                    ],
-                                    "value": {
-                                        "LiteralValue": "None",
-                                        "ast_type": "NoneLiteral",
-                                        "col_offset": 19,
-                                        "end_col_offset": 22,
-                                        "end_lineno": 18,
-                                        "lineno": 18,
-                                        "value": null
-                                    }
-                                },
-                                {
-                                    "ast_type": "Assign",
-                                    "col_offset": 3,
-                                    "lineno": 19,
-                                    "targets": [
-                                        {
-                                            "ast_type": "Attribute",
-                                            "attr": "var112",
-                                            "col_offset": 8,
-                                            "ctx": "Store",
-                                            "end_col_offset": 13,
-                                            "end_lineno": 19,
-                                            "lineno": 19,
-                                            "value": {
-                                                "ast_type": "Name",
-                                                "col_offset": 3,
-                                                "ctx": "Load",
-                                                "end_col_offset": 6,
-                                                "end_lineno": 19,
-                                                "id": "self",
-                                                "lineno": 19
-                                            }
-                                        }
-                                    ],
-                                    "value": {
-                                        "LiteralValue": "None",
-                                        "ast_type": "NoneLiteral",
-                                        "col_offset": 17,
-                                        "end_col_offset": 20,
-                                        "end_lineno": 19,
-                                        "lineno": 19,
-                                        "value": null
-                                    }
-                                },
-                                {
-                                    "ast_type": "Assign",
-                                    "col_offset": 3,
-                                    "lineno": 20,
-                                    "targets": [
-                                        {
-                                            "ast_type": "Name",
-                                            "col_offset": 3,
-                                            "ctx": "Store",
-                                            "end_col_offset": 8,
-                                            "end_lineno": 20,
-                                            "id": "var113",
-                                            "lineno": 20
-                                        }
-                                    ],
-                                    "value": {
-                                        "LiteralValue": "None",
-                                        "ast_type": "NoneLiteral",
-                                        "col_offset": 12,
-                                        "end_col_offset": 15,
-                                        "end_lineno": 20,
-                                        "lineno": 20,
-                                        "value": null
-                                    }
-                                }
-                            ],
-                            "col_offset": 6,
-                            "decorator_list": [],
-                            "end_col_offset": 11,
-                            "end_lineno": 17,
-                            "lineno": 17,
-                            "name": "func11",
-                            "returns": null
+                     ],
+                     'ast_type': "arguments",
+                  },
+                  'ast_type': "FunctionDef",
+                  body: [
+                     {
+                        'ast_type': "Expr",
+                        'col_offset': 3,
+                        lineno: 31,
+                        value: {
+                           LiteralValue: "None",
+                           'ast_type': "NoneLiteral",
+                           'col_offset': 3,
+                           'end_col_offset': 6,
+                           'end_lineno': 31,
+                           lineno: 31,
+                           value: ~,
                         },
-                        {
-                            "args": {
-                                "args": [],
-                                "ast_type": "arguments",
-                                "defaults": [],
-                                "kw_defaults": [],
-                                "kwarg": null,
-                                "kwonlyargs": [],
-                                "vararg": null
-                            },
-                            "ast_type": "FunctionDef",
-                            "body": [
-                                {
-                                    "args": {
-                                        "args": [],
-                                        "ast_type": "arguments",
-                                        "defaults": [],
-                                        "kw_defaults": [],
-                                        "kwarg": null,
-                                        "kwonlyargs": [],
-                                        "vararg": null
-                                    },
-                                    "ast_type": "FunctionDef",
-                                    "body": [
-                                        {
-                                            "ast_type": "Pass",
-                                            "col_offset": 4,
-                                            "end_col_offset": 7,
-                                            "end_lineno": 24,
-                                            "lineno": 24,
-                                            "noops_previous": {
-                                                "ast_type": "PreviousNoops",
-                                                "col_offset": 1,
-                                                "end_col_offset": 1,
-                                                "end_lineno": 21,
-                                                "lineno": 21,
-                                                "lines": []
-                                            }
-                                        }
-                                    ],
-                                    "col_offset": 7,
-                                    "decorator_list": [],
-                                    "end_col_offset": 13,
-                                    "end_lineno": 23,
-                                    "lineno": 23,
-                                    "name": "func121",
-                                    "returns": null
-                                }
-                            ],
-                            "col_offset": 6,
-                            "decorator_list": [],
-                            "end_col_offset": 11,
-                            "end_lineno": 22,
-                            "lineno": 22,
-                            "name": "func12",
-                            "returns": null
-                        }
-                    ],
-                    "col_offset": 7,
-                    "decorator_list": [],
-                    "end_col_offset": 12,
-                    "end_lineno": 11,
-                    "keywords": [],
-                    "lineno": 11,
-                    "name": "class1"
-                },
-                {
-                    "ast_type": "ClassDef",
-                    "bases": [],
-                    "body": [
-                        {
-                            "ast_type": "Assign",
-                            "col_offset": 2,
-                            "lineno": 27,
-                            "targets": [
-                                {
-                                    "ast_type": "Name",
-                                    "col_offset": 2,
-                                    "ctx": "Store",
-                                    "end_col_offset": 6,
-                                    "end_lineno": 27,
-                                    "id": "var21",
-                                    "lineno": 27,
-                                    "noops_previous": {
-                                        "ast_type": "PreviousNoops",
-                                        "col_offset": 1,
-                                        "end_col_offset": 1,
-                                        "end_lineno": 25,
-                                        "lineno": 25,
-                                        "lines": []
-                                    }
-                                }
-                            ],
-                            "value": {
-                                "LiteralValue": "None",
-                                "ast_type": "NoneLiteral",
-                                "col_offset": 10,
-                                "end_col_offset": 13,
-                                "end_lineno": 27,
-                                "lineno": 27,
-                                "value": null
-                            }
+                     },
+                  ],
+                  'col_offset': 6,
+                  'decorator_list': [],
+                  'end_col_offset': 11,
+                  'end_lineno': 30,
+                  lineno: 30,
+                  name: "func22",
+                  returns: ~,
+               },
+               {
+                  args: {
+                     args: [],
+                     'ast_type': "arguments",
+                  },
+                  'ast_type': "FunctionDef",
+                  body: [
+                     {
+                        'ast_type': "Expr",
+                        'col_offset': 3,
+                        lineno: 33,
+                        value: {
+                           LiteralValue: "None",
+                           'ast_type': "NoneLiteral",
+                           'col_offset': 3,
+                           'end_col_offset': 6,
+                           'end_lineno': 33,
+                           lineno: 33,
+                           value: ~,
                         },
-                        {
-                            "args": {
-                                "args": [
-                                    {
-                                        "annotation": null,
-                                        "arg": "self",
-                                        "ast_type": "arg",
-                                        "col_offset": 13,
-                                        "end_col_offset": 16,
-                                        "end_lineno": 28,
-                                        "lineno": 28
-                                    }
-                                ],
-                                "ast_type": "arguments",
-                                "defaults": [],
-                                "kw_defaults": [],
-                                "kwarg": null,
-                                "kwonlyargs": [],
-                                "vararg": null
-                            },
-                            "ast_type": "FunctionDef",
-                            "body": [
-                                {
-                                    "ast_type": "Expr",
-                                    "col_offset": 3,
-                                    "lineno": 29,
-                                    "value": {
-                                        "LiteralValue": "None",
-                                        "ast_type": "NoneLiteral",
-                                        "col_offset": 3,
-                                        "end_col_offset": 6,
-                                        "end_lineno": 29,
-                                        "lineno": 29,
-                                        "value": null
-                                    }
-                                }
-                            ],
-                            "col_offset": 6,
-                            "decorator_list": [],
-                            "end_col_offset": 11,
-                            "end_lineno": 28,
-                            "lineno": 28,
-                            "name": "func21",
-                            "returns": null
-                        },
-                        {
-                            "args": {
-                                "args": [
-                                    {
-                                        "annotation": null,
-                                        "arg": "self",
-                                        "ast_type": "arg",
-                                        "col_offset": 13,
-                                        "end_col_offset": 16,
-                                        "end_lineno": 30,
-                                        "lineno": 30
-                                    },
-                                    {
-                                        "annotation": null,
-                                        "arg": "arg1",
-                                        "ast_type": "arg",
-                                        "col_offset": 19,
-                                        "end_col_offset": 22,
-                                        "end_lineno": 30,
-                                        "lineno": 30
-                                    }
-                                ],
-                                "ast_type": "arguments",
-                                "defaults": [],
-                                "kw_defaults": [],
-                                "kwarg": null,
-                                "kwonlyargs": [],
-                                "vararg": null
-                            },
-                            "ast_type": "FunctionDef",
-                            "body": [
-                                {
-                                    "ast_type": "Expr",
-                                    "col_offset": 3,
-                                    "lineno": 31,
-                                    "value": {
-                                        "LiteralValue": "None",
-                                        "ast_type": "NoneLiteral",
-                                        "col_offset": 3,
-                                        "end_col_offset": 6,
-                                        "end_lineno": 31,
-                                        "lineno": 31,
-                                        "value": null
-                                    }
-                                }
-                            ],
-                            "col_offset": 6,
-                            "decorator_list": [],
-                            "end_col_offset": 11,
-                            "end_lineno": 30,
-                            "lineno": 30,
-                            "name": "func22",
-                            "returns": null
-                        },
-                        {
-                            "args": {
-                                "args": [],
-                                "ast_type": "arguments",
-                                "defaults": [],
-                                "kw_defaults": [],
-                                "kwarg": null,
-                                "kwonlyargs": [],
-                                "vararg": null
-                            },
-                            "ast_type": "FunctionDef",
-                            "body": [
-                                {
-                                    "ast_type": "Expr",
-                                    "col_offset": 3,
-                                    "lineno": 33,
-                                    "value": {
-                                        "LiteralValue": "None",
-                                        "ast_type": "NoneLiteral",
-                                        "col_offset": 3,
-                                        "end_col_offset": 6,
-                                        "end_lineno": 33,
-                                        "lineno": 33,
-                                        "value": null
-                                    }
-                                }
-                            ],
-                            "col_offset": 6,
-                            "decorator_list": [],
-                            "end_col_offset": 11,
-                            "end_lineno": 32,
-                            "lineno": 32,
-                            "name": "func23",
-                            "returns": null
-                        }
-                    ],
-                    "col_offset": 7,
-                    "decorator_list": [],
-                    "end_col_offset": 12,
-                    "end_lineno": 26,
-                    "keywords": [],
-                    "lineno": 26,
-                    "name": "class2"
-                },
-                {
-                    "ast_type": "ClassDef",
-                    "bases": [],
-                    "body": [
-                        {
-                            "ast_type": "Pass",
-                            "col_offset": 2,
-                            "end_col_offset": 5,
-                            "end_lineno": 36,
-                            "lineno": 36,
-                            "noops_previous": {
-                                "ast_type": "PreviousNoops",
-                                "col_offset": 1,
-                                "end_col_offset": 1,
-                                "end_lineno": 34,
-                                "lineno": 34,
-                                "lines": []
-                            }
-                        }
-                    ],
-                    "col_offset": 7,
-                    "decorator_list": [],
-                    "end_col_offset": 12,
-                    "end_lineno": 35,
-                    "keywords": [],
-                    "lineno": 35,
-                    "name": "class3"
-                }
-            ]
-        }
-    }
+                     },
+                  ],
+                  'col_offset': 6,
+                  'decorator_list': [],
+                  'end_col_offset': 11,
+                  'end_lineno': 32,
+                  lineno: 32,
+                  name: "func23",
+                  returns: ~,
+               },
+            ],
+            'col_offset': 7,
+            'decorator_list': [],
+            'end_col_offset': 12,
+            'end_lineno': 26,
+            keywords: [],
+            lineno: 26,
+            name: "class2",
+         },
+         {
+            'ast_type': "ClassDef",
+            bases: [],
+            body: [
+               {
+                  'ast_type': "Pass",
+                  'col_offset': 2,
+                  'end_col_offset': 5,
+                  'end_lineno': 36,
+                  lineno: 36,
+                  'noops_previous': {
+                     'ast_type': "PreviousNoops",
+                     'col_offset': 1,
+                     'end_col_offset': 1,
+                     'end_lineno': 34,
+                     lineno: 34,
+                     lines: [],
+                  },
+               },
+            ],
+            'col_offset': 7,
+            'decorator_list': [],
+            'end_col_offset': 12,
+            'end_lineno': 35,
+            keywords: [],
+            lineno: 35,
+            name: "class3",
+         },
+      ],
+   },
 }

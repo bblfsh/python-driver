@@ -1,217 +1,275 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: Assign {
-.  .  .  Roles: Assignment,Binary,Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 1
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Name {
-.  .  .  .  .  Roles: Expression,Identifier,Left
-.  .  .  .  .  TOKEN "a"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  internalRole: targets
-.  .  .  .  .  .  lineno: 1
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Num {
-.  .  .  .  .  Roles: Expression,Literal,Number,Primitive,Right
-.  .  .  .  .  TOKEN "1"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  end_col_offset: 5
-.  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 1
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  1: Assign {
-.  .  .  Roles: Assignment,Binary,Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 2
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Name {
-.  .  .  .  .  Roles: Expression,Identifier,Left
-.  .  .  .  .  TOKEN "b"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  internalRole: targets
-.  .  .  .  .  .  lineno: 2
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Num {
-.  .  .  .  .  Roles: Expression,Literal,Number,Primitive,Right
-.  .  .  .  .  TOKEN "2"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  end_col_offset: 5
-.  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 2
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  2: Delete {
-.  .  .  Roles: Incomplete,Statement
-.  .  .  TOKEN "del"
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  end_col_offset: 3
-.  .  .  .  end_lineno: 3
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 3
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Name {
-.  .  .  .  .  Roles: Expression,Identifier
-.  .  .  .  .  TOKEN "a"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  ctx: Del
-.  .  .  .  .  .  end_col_offset: 5
-.  .  .  .  .  .  end_lineno: 3
-.  .  .  .  .  .  internalRole: targets
-.  .  .  .  .  .  lineno: 3
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  3: FunctionDef {
-.  .  .  Roles: Declaration,Function,Identifier,Name
-.  .  .  TOKEN "f"
-.  .  .  Properties: {
-.  .  .  .  col_offset: 5
-.  .  .  .  end_col_offset: 5
-.  .  .  .  end_lineno: 4
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 4
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: arguments {
-.  .  .  .  .  Roles: Argument,Declaration,Function,Incomplete
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: args
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: FunctionDef.body {
-.  .  .  .  .  Roles: Body,Declaration,Function
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: body
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Global {
-.  .  .  .  .  .  .  Roles: Incomplete,Statement,Visibility,World
-.  .  .  .  .  .  .  TOKEN "global"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  .  .  end_col_offset: 10
-.  .  .  .  .  .  .  .  end_lineno: 5
-.  .  .  .  .  .  .  .  internalRole: body_stmts
-.  .  .  .  .  .  .  .  lineno: 5
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
-.  .  .  .  .  .  .  .  .  TOKEN "a"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 12
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 12
-.  .  .  .  .  .  .  .  .  .  end_lineno: 5
-.  .  .  .  .  .  .  .  .  .  internalRole: names
-.  .  .  .  .  .  .  .  .  .  lineno: 5
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Nonlocal {
-.  .  .  .  .  .  .  Roles: Incomplete,Module,Statement,Visibility
-.  .  .  .  .  .  .  TOKEN "nonlocal"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  .  .  end_col_offset: 12
-.  .  .  .  .  .  .  .  end_lineno: 6
-.  .  .  .  .  .  .  .  internalRole: body_stmts
-.  .  .  .  .  .  .  .  lineno: 6
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
-.  .  .  .  .  .  .  .  .  TOKEN "b"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 14
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 14
-.  .  .  .  .  .  .  .  .  .  end_lineno: 6
-.  .  .  .  .  .  .  .  .  .  internalRole: names
-.  .  .  .  .  .  .  .  .  .  lineno: 6
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: Expr {
-.  .  .  .  .  .  .  Roles: Expression
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  .  .  internalRole: body_stmts
-.  .  .  .  .  .  .  .  lineno: 7
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Yield {
-.  .  .  .  .  .  .  .  .  Roles: Incomplete,Return,Statement
-.  .  .  .  .  .  .  .  .  TOKEN "yield"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 9
-.  .  .  .  .  .  .  .  .  .  end_lineno: 7
-.  .  .  .  .  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  .  .  .  .  lineno: 7
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
-.  .  .  .  .  .  .  .  .  .  .  TOKEN "b"
-.  .  .  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  .  .  col_offset: 11
-.  .  .  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  .  .  end_col_offset: 11
-.  .  .  .  .  .  .  .  .  .  .  .  end_lineno: 7
-.  .  .  .  .  .  .  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  .  .  .  .  .  .  lineno: 7
-.  .  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  2: FunctionDef.decorators {
-.  .  .  .  .  Roles: Declaration,Function,Incomplete
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: decorator_list
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "Assign",
+         '@role': [Assignment, Binary, Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 0,
+               line: 1,
+               col: 1,
+            },
+         },
+         targets: [
+            { '@type': "Name",
+               '@token': "a",
+               '@role': [Expression, Identifier, Left],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 0,
+                     line: 1,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 0,
+                     line: 1,
+                     col: 1,
+                  },
+               },
+               ctx: "Store",
+            },
+         ],
+         value: { '@type': "Num",
+            '@token': 1,
+            '@role': [Expression, Literal, Number, Primitive, Right],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 4,
+                  line: 1,
+                  col: 5,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 4,
+                  line: 1,
+                  col: 5,
+               },
+            },
+         },
+      },
+      { '@type': "Assign",
+         '@role': [Assignment, Binary, Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 6,
+               line: 2,
+               col: 1,
+            },
+         },
+         targets: [
+            { '@type': "Name",
+               '@token': "b",
+               '@role': [Expression, Identifier, Left],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 6,
+                     line: 2,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 6,
+                     line: 2,
+                     col: 1,
+                  },
+               },
+               ctx: "Store",
+            },
+         ],
+         value: { '@type': "Num",
+            '@token': 2,
+            '@role': [Expression, Literal, Number, Primitive, Right],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 10,
+                  line: 2,
+                  col: 5,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 10,
+                  line: 2,
+                  col: 5,
+               },
+            },
+         },
+      },
+      { '@type': "Delete",
+         '@token': "del",
+         '@role': [Incomplete, Statement],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 12,
+               line: 3,
+               col: 1,
+            },
+            end: { '@type': "uast:Position",
+               offset: 14,
+               line: 3,
+               col: 3,
+            },
+         },
+         targets: [
+            { '@type': "Name",
+               '@token': "a",
+               '@role': [Expression, Identifier],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 16,
+                     line: 3,
+                     col: 5,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 16,
+                     line: 3,
+                     col: 5,
+                  },
+               },
+               ctx: "Del",
+            },
+         ],
+      },
+      { '@type': "FunctionDef",
+         '@token': "f",
+         '@role': [Declaration, Function, Identifier, Name],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 22,
+               line: 4,
+               col: 5,
+            },
+            end: { '@type': "uast:Position",
+               offset: 22,
+               line: 4,
+               col: 5,
+            },
+         },
+         args: { '@type': "arguments",
+            '@role': [Argument, Declaration, Function, Incomplete],
+            '@pos': { '@type': "uast:Positions",
+            },
+            args: [],
+         },
+         body: { '@type': "FunctionDef.body",
+            '@role': [Body, Declaration, Function],
+            'body_stmts': [
+               { '@type': "Global",
+                  '@token': "global",
+                  '@role': [Incomplete, Statement, Visibility, World],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 31,
+                        line: 5,
+                        col: 5,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 36,
+                        line: 5,
+                        col: 10,
+                     },
+                  },
+                  names: [
+                     { '@type': "Name",
+                        '@token': "a",
+                        '@role': [Expression, Identifier],
+                        '@pos': { '@type': "uast:Positions",
+                           start: { '@type': "uast:Position",
+                              offset: 38,
+                              line: 5,
+                              col: 12,
+                           },
+                           end: { '@type': "uast:Position",
+                              offset: 38,
+                              line: 5,
+                              col: 12,
+                           },
+                        },
+                     },
+                  ],
+               },
+               { '@type': "Nonlocal",
+                  '@token': "nonlocal",
+                  '@role': [Incomplete, Module, Statement, Visibility],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 44,
+                        line: 6,
+                        col: 5,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 51,
+                        line: 6,
+                        col: 12,
+                     },
+                  },
+                  names: [
+                     { '@type': "Name",
+                        '@token': "b",
+                        '@role': [Expression, Identifier],
+                        '@pos': { '@type': "uast:Positions",
+                           start: { '@type': "uast:Position",
+                              offset: 53,
+                              line: 6,
+                              col: 14,
+                           },
+                           end: { '@type': "uast:Position",
+                              offset: 53,
+                              line: 6,
+                              col: 14,
+                           },
+                        },
+                     },
+                  ],
+               },
+               { '@type': "Expr",
+                  '@role': [Expression],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 59,
+                        line: 7,
+                        col: 5,
+                     },
+                  },
+                  value: { '@type': "Yield",
+                     '@token': "yield",
+                     '@role': [Incomplete, Return, Statement],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 59,
+                           line: 7,
+                           col: 5,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 63,
+                           line: 7,
+                           col: 9,
+                        },
+                     },
+                     value: { '@type': "Name",
+                        '@token': "b",
+                        '@role': [Expression, Identifier],
+                        '@pos': { '@type': "uast:Positions",
+                           start: { '@type': "uast:Position",
+                              offset: 65,
+                              line: 7,
+                              col: 11,
+                           },
+                           end: { '@type': "uast:Position",
+                              offset: 65,
+                              line: 7,
+                              col: 11,
+                           },
+                        },
+                        ctx: "Load",
+                     },
+                  },
+               },
+            ],
+         },
+         'decorator_list': { '@type': "FunctionDef.decorators",
+            '@role': [Declaration, Function, Incomplete],
+            decorators: [],
+         },
+         returns: ~,
+      },
+   ],
 }
-

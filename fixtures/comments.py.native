@@ -1,91 +1,86 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "ast_type": "Assign",
-                    "col_offset": 1,
-                    "lineno": 3,
-                    "targets": [
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "Assign",
+            'col_offset': 1,
+            lineno: 3,
+            targets: [
+               {
+                  'ast_type': "Name",
+                  'col_offset': 1,
+                  ctx: "Store",
+                  'end_col_offset': 1,
+                  'end_lineno': 3,
+                  id: "a",
+                  lineno: 3,
+                  'noops_previous': {
+                     'ast_type': "PreviousNoops",
+                     'col_offset': 1,
+                     'end_col_offset': 22,
+                     'end_lineno': 2,
+                     lineno: 1,
+                     lines: [
                         {
-                            "ast_type": "Name",
-                            "col_offset": 1,
-                            "ctx": "Store",
-                            "end_col_offset": 1,
-                            "end_lineno": 3,
-                            "id": "a",
-                            "lineno": 3,
-                            "noops_previous": {
-                                "ast_type": "PreviousNoops",
-                                "col_offset": 1,
-                                "end_col_offset": 22,
-                                "end_lineno": 2,
-                                "lineno": 1,
-                                "lines": [
-                                    {
-                                        "ast_type": "NoopLine",
-                                        "col_offset": 1,
-                                        "lineno": 1,
-                                        "noop_line": " comment above\n"
-                                    },
-                                    {
-                                        "ast_type": "NoopLine",
-                                        "col_offset": 1,
-                                        "lineno": 2,
-                                        "noop_line": " second comment above\n"
-                                    }
-                                ]
-                            },
-                            "noops_sameline": {
-                                "ast_type": "SameLineNoops",
-                                "col_offset": 6,
-                                "end_col_offset": 29,
-                                "end_lineno": 3,
-                                "lineno": 3,
-                                "noop_lines": [
-                                    {
-                                        "ast_type": "NoopSameLine",
-                                        "s": "# line trailing comment"
-                                    }
-                                ]
-                            }
-                        }
-                    ],
-                    "value": {
-                        "ast_type": "Num",
-                        "col_offset": 5,
-                        "end_col_offset": 5,
-                        "end_lineno": 3,
-                        "lineno": 3,
-                        "n": 1
-                    }
-                }
+                           'ast_type': "NoopLine",
+                           'col_offset': 1,
+                           lineno: 1,
+                           'noop_line': " comment above\n",
+                        },
+                        {
+                           'ast_type': "NoopLine",
+                           'col_offset': 1,
+                           lineno: 2,
+                           'noop_line': " second comment above\n",
+                        },
+                     ],
+                  },
+                  'noops_sameline': {
+                     'ast_type': "SameLineNoops",
+                     'col_offset': 6,
+                     'end_col_offset': 29,
+                     'end_lineno': 3,
+                     lineno: 3,
+                     'noop_lines': [
+                        {
+                           'ast_type': "NoopSameLine",
+                           s: "# line trailing comment",
+                        },
+                     ],
+                  },
+               },
             ],
-            "noops_remainder": {
-                "ast_type": "RemainderNoops",
-                "col_offset": 1,
-                "end_col_offset": 1,
-                "end_lineno": 8,
-                "lineno": 4,
-                "lines": [
-                    {
-                        "ast_type": "NoopLine",
-                        "col_offset": 1,
-                        "lineno": 4,
-                        "noop_line": " file trailing comment\n"
-                    },
-                    {
-                        "ast_type": "NoopLine",
-                        "col_offset": 1,
-                        "lineno": 8,
-                        "noop_line": " second file trailing comment\n"
-                    }
-                ]
-            }
-        }
-    }
+            value: {
+               'ast_type': "Num",
+               'col_offset': 5,
+               'end_col_offset': 5,
+               'end_lineno': 3,
+               lineno: 3,
+               'n': 1,
+            },
+         },
+      ],
+      'noops_remainder': {
+         'ast_type': "RemainderNoops",
+         'col_offset': 1,
+         'end_col_offset': 1,
+         'end_lineno': 8,
+         lineno: 4,
+         lines: [
+            {
+               'ast_type': "NoopLine",
+               'col_offset': 1,
+               lineno: 4,
+               'noop_line': " file trailing comment\n",
+            },
+            {
+               'ast_type': "NoopLine",
+               'col_offset': 1,
+               lineno: 8,
+               'noop_line': " second file trailing comment\n",
+            },
+         ],
+      },
+   },
 }

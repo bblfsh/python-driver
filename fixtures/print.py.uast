@@ -1,60 +1,79 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: Print {
-.  .  .  Roles: Call,Callee,Expression,Function,Identifier
-.  .  .  TOKEN "print"
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  end_col_offset: 5
-.  .  .  .  end_lineno: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 1
-.  .  .  .  nl: true
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Num {
-.  .  .  .  .  Roles: Argument,Call,Expression,Literal,Number,Positional,Primitive
-.  .  .  .  .  TOKEN "1"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 7
-.  .  .  .  .  .  end_col_offset: 7
-.  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  internalRole: values
-.  .  .  .  .  .  lineno: 1
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  1: Print {
-.  .  .  Roles: Call,Callee,Expression,Function,Identifier
-.  .  .  TOKEN "print"
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  end_col_offset: 5
-.  .  .  .  end_lineno: 2
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 2
-.  .  .  .  nl: true
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Num {
-.  .  .  .  .  Roles: Argument,Call,Expression,Literal,Number,Positional,Primitive
-.  .  .  .  .  TOKEN "2"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 7
-.  .  .  .  .  .  end_col_offset: 7
-.  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  internalRole: values
-.  .  .  .  .  .  lineno: 2
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "Print",
+         '@token': "print",
+         '@role': [Call, Callee, Expression, Function, Identifier],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 0,
+               line: 1,
+               col: 1,
+            },
+            end: { '@type': "uast:Position",
+               offset: 4,
+               line: 1,
+               col: 5,
+            },
+         },
+         dest: ~,
+         nl: true,
+         values: [
+            { '@type': "Num",
+               '@token': 1,
+               '@role': [Argument, Call, Expression, Literal, Number, Positional, Primitive],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 6,
+                     line: 1,
+                     col: 7,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 6,
+                     line: 1,
+                     col: 7,
+                  },
+               },
+            },
+         ],
+      },
+      { '@type': "Print",
+         '@token': "print",
+         '@role': [Call, Callee, Expression, Function, Identifier],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 9,
+               line: 2,
+               col: 1,
+            },
+            end: { '@type': "uast:Position",
+               offset: 13,
+               line: 2,
+               col: 5,
+            },
+         },
+         dest: ~,
+         nl: true,
+         values: [
+            { '@type': "Num",
+               '@token': 2,
+               '@role': [Argument, Call, Expression, Literal, Number, Positional, Primitive],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 15,
+                     line: 2,
+                     col: 7,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 15,
+                     line: 2,
+                     col: 7,
+                  },
+               },
+            },
+         ],
+      },
+   ],
 }
-

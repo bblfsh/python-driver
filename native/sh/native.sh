@@ -1,7 +1,7 @@
 #!/bin/sh
-if [ -x "$HOME/.local/bin/python_driver" ]
+if [ -x "$HOME/build/.local/bin/python_driver" ]
 then
-    exec $HOME/.local/bin/python_driver
+    exec $HOME/build/.local/bin/python_driver
 else
     exec python_driver
 fi

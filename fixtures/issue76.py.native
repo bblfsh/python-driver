@@ -1,186 +1,213 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "ast_type": "With",
-                    "body": [
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "With",
+            body: [
+               {
+                  'ast_type': "Expr",
+                  'col_offset': 5,
+                  lineno: 2,
+                  value: {
+                     args: [
                         {
-                            "ast_type": "Expr",
-                            "col_offset": 5,
-                            "lineno": 2,
-                            "value": {
-                                "args": [
-                                    {
-                                        "args": [
-                                            {
-                                                "ast_type": "Name",
-                                                "col_offset": 25,
-                                                "ctx": "Load",
-                                                "end_col_offset": 36,
-                                                "end_lineno": 2,
-                                                "id": "chosen_words",
-                                                "lineno": 2
-                                            }
-                                        ],
-                                        "ast_type": "Call",
-                                        "col_offset": 15,
-                                        "func": {
-                                            "ast_type": "Attribute",
-                                            "attr": "join",
-                                            "col_offset": 20,
-                                            "ctx": "Load",
-                                            "end_col_offset": 23,
-                                            "end_lineno": 2,
-                                            "lineno": 2,
-                                            "value": {
-                                                "ast_type": "Str",
-                                                "col_offset": 15,
-                                                "end_col_offset": 18,
-                                                "end_lineno": 2,
-                                                "lineno": 2,
-                                                "s": "\n"
-                                            }
-                                        },
-                                        "keywords": [],
-                                        "lineno": 2
-                                    }
-                                ],
-                                "ast_type": "Call",
-                                "col_offset": 5,
-                                "func": {
-                                    "ast_type": "Attribute",
-                                    "attr": "write",
-                                    "col_offset": 9,
-                                    "ctx": "Load",
-                                    "end_col_offset": 13,
-                                    "end_lineno": 2,
-                                    "lineno": 2,
-                                    "value": {
-                                        "ast_type": "Name",
-                                        "col_offset": 5,
-                                        "ctx": "Load",
-                                        "end_col_offset": 7,
-                                        "end_lineno": 2,
-                                        "id": "out",
-                                        "lineno": 2
-                                    }
-                                },
-                                "keywords": [],
-                                "lineno": 2
-                            }
-                        }
-                    ],
-                    "col_offset": 1,
-                    "end_col_offset": 4,
-                    "end_lineno": 1,
-                    "items": [
+                           args: [
+                              {
+                                 'ast_type': "Name",
+                                 'col_offset': 25,
+                                 ctx: "Load",
+                                 'end_col_offset': 36,
+                                 'end_lineno': 2,
+                                 id: "chosen_words",
+                                 lineno: 2,
+                              },
+                           ],
+                           'ast_type': "Call",
+                           'col_offset': 15,
+                           func: {
+                              'ast_type': "QualifiedIdentifier",
+                              'col_offset': 16,
+                              ctx: "Load",
+                              'end_col_offset': 18,
+                              'end_lineno': 2,
+                              identifiers: [
+                                 {
+                                    'ast_type': "Str",
+                                    'col_offset': 15,
+                                    'end_col_offset': 18,
+                                    'end_lineno': 2,
+                                    lineno: 2,
+                                    s: "\n",
+                                 },
+                                 {
+                                    'ast_type': "Attribute",
+                                    attr: "join",
+                                    'col_offset': 15,
+                                    ctx: "Load",
+                                    lineno: 2,
+                                 },
+                              ],
+                              lineno: 2,
+                           },
+                           keywords: [],
+                           lineno: 2,
+                        },
+                     ],
+                     'ast_type': "Call",
+                     'col_offset': 5,
+                     func: {
+                        'ast_type': "QualifiedIdentifier",
+                        'col_offset': 6,
+                        ctx: "Load",
+                        'end_col_offset': 7,
+                        'end_lineno': 2,
+                        identifiers: [
+                           {
+                              'ast_type': "Name",
+                              'col_offset': 5,
+                              ctx: "Load",
+                              'end_col_offset': 7,
+                              'end_lineno': 2,
+                              id: "out",
+                              lineno: 2,
+                           },
+                           {
+                              'ast_type': "Attribute",
+                              attr: "write",
+                              'col_offset': 5,
+                              ctx: "Load",
+                              lineno: 2,
+                           },
+                        ],
+                        lineno: 2,
+                     },
+                     keywords: [],
+                     lineno: 2,
+                  },
+               },
+            ],
+            'col_offset': 1,
+            'end_col_offset': 4,
+            'end_lineno': 1,
+            items: [
+               {
+                  'ast_type': "withitem",
+                  'context_expr': {
+                     args: [
                         {
-                            "ast_type": "withitem",
-                            "context_expr": {
-                                "args": [
+                           args: [
+                              {
+                                 'ast_type': "QualifiedIdentifier",
+                                 'col_offset': 25,
+                                 ctx: "Load",
+                                 'end_col_offset': 27,
+                                 'end_lineno': 1,
+                                 identifiers: [
                                     {
-                                        "args": [
-                                            {
-                                                "ast_type": "Attribute",
-                                                "attr": "output",
-                                                "col_offset": 29,
-                                                "ctx": "Load",
-                                                "end_col_offset": 34,
-                                                "end_lineno": 1,
-                                                "lineno": 1,
-                                                "value": {
-                                                    "ast_type": "Name",
-                                                    "col_offset": 24,
-                                                    "ctx": "Load",
-                                                    "end_col_offset": 27,
-                                                    "end_lineno": 1,
-                                                    "id": "args",
-                                                    "lineno": 1
-                                                }
-                                            },
-                                            {
-                                                "ast_type": "Str",
-                                                "col_offset": 37,
-                                                "end_col_offset": 51,
-                                                "end_lineno": 1,
-                                                "lineno": 1,
-                                                "s": "row_vocab.txt"
-                                            }
-                                        ],
-                                        "ast_type": "Call",
-                                        "col_offset": 11,
-                                        "func": {
-                                            "ast_type": "Attribute",
-                                            "attr": "join",
-                                            "col_offset": 19,
-                                            "ctx": "Load",
-                                            "end_col_offset": 22,
-                                            "end_lineno": 1,
-                                            "lineno": 1,
-                                            "value": {
-                                                "ast_type": "Attribute",
-                                                "attr": "path",
-                                                "col_offset": 14,
-                                                "ctx": "Load",
-                                                "end_col_offset": 17,
-                                                "end_lineno": 1,
-                                                "lineno": 1,
-                                                "value": {
-                                                    "ast_type": "Name",
-                                                    "col_offset": 11,
-                                                    "ctx": "Load",
-                                                    "end_col_offset": 12,
-                                                    "end_lineno": 1,
-                                                    "id": "os",
-                                                    "lineno": 1
-                                                }
-                                            }
-                                        },
-                                        "keywords": [],
-                                        "lineno": 1
+                                       'ast_type': "Name",
+                                       'col_offset': 24,
+                                       ctx: "Load",
+                                       'end_col_offset': 27,
+                                       'end_lineno': 1,
+                                       id: "args",
+                                       lineno: 1,
                                     },
                                     {
-                                        "ast_type": "Str",
-                                        "col_offset": 55,
-                                        "end_col_offset": 57,
-                                        "end_lineno": 1,
-                                        "lineno": 1,
-                                        "s": "w"
-                                    }
-                                ],
-                                "ast_type": "Call",
-                                "col_offset": 6,
-                                "func": {
-                                    "ast_type": "Name",
-                                    "col_offset": 6,
-                                    "ctx": "Load",
-                                    "end_col_offset": 9,
-                                    "end_lineno": 1,
-                                    "id": "open",
-                                    "lineno": 1
-                                },
-                                "keywords": [],
-                                "lineno": 1
-                            },
-                            "optional_vars": {
-                                "ast_type": "Name",
-                                "col_offset": 63,
-                                "ctx": "Store",
-                                "end_col_offset": 65,
-                                "end_lineno": 1,
-                                "id": "out",
-                                "lineno": 1
-                            }
-                        }
-                    ],
-                    "lineno": 1
-                }
-            ]
-        }
-    }
+                                       'ast_type': "Attribute",
+                                       attr: "output",
+                                       'col_offset': 24,
+                                       ctx: "Load",
+                                       lineno: 1,
+                                    },
+                                 ],
+                                 lineno: 1,
+                              },
+                              {
+                                 'ast_type': "Str",
+                                 'col_offset': 37,
+                                 'end_col_offset': 51,
+                                 'end_lineno': 1,
+                                 lineno: 1,
+                                 s: "row_vocab.txt",
+                              },
+                           ],
+                           'ast_type': "Call",
+                           'col_offset': 11,
+                           func: {
+                              'ast_type': "QualifiedIdentifier",
+                              'col_offset': 12,
+                              ctx: "Load",
+                              'end_col_offset': 12,
+                              'end_lineno': 1,
+                              identifiers: [
+                                 {
+                                    'ast_type': "Name",
+                                    'col_offset': 11,
+                                    ctx: "Load",
+                                    'end_col_offset': 12,
+                                    'end_lineno': 1,
+                                    id: "os",
+                                    lineno: 1,
+                                 },
+                                 {
+                                    'ast_type': "Attribute",
+                                    attr: "path",
+                                    'col_offset': 14,
+                                    ctx: "Load",
+                                    'end_col_offset': 17,
+                                    'end_lineno': 1,
+                                    lineno: 1,
+                                 },
+                                 {
+                                    'ast_type': "Attribute",
+                                    attr: "join",
+                                    'col_offset': 11,
+                                    ctx: "Load",
+                                    lineno: 1,
+                                 },
+                              ],
+                              lineno: 1,
+                           },
+                           keywords: [],
+                           lineno: 1,
+                        },
+                        {
+                           'ast_type': "Str",
+                           'col_offset': 55,
+                           'end_col_offset': 57,
+                           'end_lineno': 1,
+                           lineno: 1,
+                           s: "w",
+                        },
+                     ],
+                     'ast_type': "Call",
+                     'col_offset': 6,
+                     func: {
+                        'ast_type': "Name",
+                        'col_offset': 6,
+                        ctx: "Load",
+                        'end_col_offset': 9,
+                        'end_lineno': 1,
+                        id: "open",
+                        lineno: 1,
+                     },
+                     keywords: [],
+                     lineno: 1,
+                  },
+                  'optional_vars': {
+                     'ast_type': "Name",
+                     'col_offset': 63,
+                     ctx: "Store",
+                     'end_col_offset': 65,
+                     'end_lineno': 1,
+                     id: "out",
+                     lineno: 1,
+                  },
+               },
+            ],
+            lineno: 1,
+         },
+      ],
+   },
 }

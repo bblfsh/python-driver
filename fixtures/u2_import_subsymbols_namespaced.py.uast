@@ -1,59 +1,46 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: ImportFrom {
-.  .  .  Roles: Declaration,Import,Statement
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  end_col_offset: 6
-.  .  .  .  end_lineno: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 1
-.  .  .  .  num_level: 0
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: ImportFrom.level {
-.  .  .  .  .  Roles: Import,Incomplete
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: level
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: ImportFrom.module {
-.  .  .  .  .  Roles: Identifier,Import,Pathname
-.  .  .  .  .  TOKEN "a"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: module
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  2: ImportFrom.names {
-.  .  .  .  .  Roles: Identifier,Import,Incomplete,Pathname
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: names
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: alias {
-.  .  .  .  .  .  .  Roles: Identifier,Import,Pathname
-.  .  .  .  .  .  .  TOKEN "*"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: name_list
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: alias.asname {
-.  .  .  .  .  .  .  .  .  Roles: Alias,Identifier,Import,Pathname
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: asname
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "ImportFrom",
+         '@role': [Declaration, Import, Statement],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 0,
+               line: 1,
+               col: 1,
+            },
+            end: { '@type': "uast:Position",
+               offset: 5,
+               line: 1,
+               col: 6,
+            },
+         },
+         level: { '@type': "ImportFrom.level",
+            '@token': "",
+            '@role': [Import, Incomplete],
+         },
+         module: { '@type': "ImportFrom.module",
+            '@token': "a",
+            '@role': [Identifier, Import, Pathname],
+         },
+         names: { '@type': "ImportFrom.names",
+            '@role': [Identifier, Import, Incomplete, Pathname],
+            'name_list': [
+               { '@type': "alias",
+                  '@token': "*",
+                  '@role': [Identifier, Import, Pathname],
+                  '@pos': { '@type': "uast:Positions",
+                  },
+                  asname: { '@type': "alias.asname",
+                     '@role': [Alias, Identifier, Import, Pathname],
+                     '@token': ~,
+                  },
+               },
+            ],
+         },
+         'num_level': 0,
+      },
+   ],
 }
-

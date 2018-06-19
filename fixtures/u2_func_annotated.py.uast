@@ -1,168 +1,419 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: FunctionDef {
-.  .  .  Roles: Declaration,Function,Identifier,Name
-.  .  .  TOKEN "testfnc1"
-.  .  .  Properties: {
-.  .  .  .  col_offset: 5
-.  .  .  .  end_col_offset: 12
-.  .  .  .  end_lineno: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 1
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: arguments {
-.  .  .  .  .  Roles: Argument,Declaration,Function,Incomplete
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: args
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: arg {
-.  .  .  .  .  .  .  Roles: Argument,Declaration,Function,Identifier,Name
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  arg: a
-.  .  .  .  .  .  .  .  col_offset: 14
-.  .  .  .  .  .  .  .  end_col_offset: 14
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
-.  .  .  .  .  .  .  .  .  TOKEN "int"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 17
-.  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 19
-.  .  .  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  .  .  internalRole: annotation
-.  .  .  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: arg {
-.  .  .  .  .  .  .  Roles: Argument,Declaration,Function,Identifier,Name
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  arg: b
-.  .  .  .  .  .  .  .  col_offset: 22
-.  .  .  .  .  .  .  .  end_col_offset: 22
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
-.  .  .  .  .  .  .  .  .  TOKEN "str"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 25
-.  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 27
-.  .  .  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  .  .  internalRole: annotation
-.  .  .  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  2: arg {
-.  .  .  .  .  .  .  Roles: Argument,Declaration,Function,Identifier,Name
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  arg: c
-.  .  .  .  .  .  .  .  col_offset: 30
-.  .  .  .  .  .  .  .  end_col_offset: 30
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
-.  .  .  .  .  .  .  .  .  TOKEN "List"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 33
-.  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 36
-.  .  .  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  .  .  internalRole: annotation
-.  .  .  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  3: arg {
-.  .  .  .  .  .  .  Roles: Argument,Declaration,Function,Identifier,Name
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  arg: d
-.  .  .  .  .  .  .  .  col_offset: 39
-.  .  .  .  .  .  .  .  end_col_offset: 39
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  .  .  Roles: Expression,Identifier
-.  .  .  .  .  .  .  .  .  TOKEN "MyType"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 42
-.  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 47
-.  .  .  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  .  .  internalRole: annotation
-.  .  .  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: FunctionDef.body {
-.  .  .  .  .  Roles: Body,Declaration,Function
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: body
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Pass {
-.  .  .  .  .  .  .  Roles: Noop,Statement
-.  .  .  .  .  .  .  TOKEN "pass"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  .  .  end_col_offset: 8
-.  .  .  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  .  .  internalRole: body_stmts
-.  .  .  .  .  .  .  .  lineno: 2
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  2: FunctionDef.decorators {
-.  .  .  .  .  Roles: Declaration,Function,Incomplete
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: decorator_list
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  3: Name {
-.  .  .  .  .  Roles: Expression,Identifier
-.  .  .  .  .  TOKEN "str"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 53
-.  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  end_col_offset: 55
-.  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  internalRole: returns
-.  .  .  .  .  .  lineno: 1
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "FunctionDef",
+         '@token': "testfnc1",
+         '@role': [Declaration, Function, Identifier, Name],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 4,
+               line: 1,
+               col: 5,
+            },
+            end: { '@type': "uast:Position",
+               offset: 11,
+               line: 1,
+               col: 12,
+            },
+         },
+         args: { '@type': "arguments",
+            '@role': [Argument, Declaration, Function, Incomplete],
+            '@pos': { '@type': "uast:Positions",
+            },
+            args: [
+               { '@type': "arg",
+                  '@token': "a",
+                  '@role': [Argument, Declaration, Function, Name],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 13,
+                        line: 1,
+                        col: 14,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 13,
+                        line: 1,
+                        col: 14,
+                     },
+                  },
+                  annotation: { '@type': "Name",
+                     '@token': "int",
+                     '@role': [Annotation, Expression, Identifier, Noop],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 16,
+                           line: 1,
+                           col: 17,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 18,
+                           line: 1,
+                           col: 19,
+                        },
+                     },
+                     ctx: "Load",
+                  },
+               },
+               { '@type': "arg",
+                  '@token': "b",
+                  '@role': [Argument, Declaration, Function, Name],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 21,
+                        line: 1,
+                        col: 22,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 21,
+                        line: 1,
+                        col: 22,
+                     },
+                  },
+                  annotation: { '@type': "Name",
+                     '@token': "str",
+                     '@role': [Annotation, Expression, Identifier, Noop],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 24,
+                           line: 1,
+                           col: 25,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 26,
+                           line: 1,
+                           col: 27,
+                        },
+                     },
+                     ctx: "Load",
+                  },
+               },
+               { '@type': "arg",
+                  '@token': "c",
+                  '@role': [Argument, Declaration, Function, Name],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 29,
+                        line: 1,
+                        col: 30,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 29,
+                        line: 1,
+                        col: 30,
+                     },
+                  },
+                  annotation: { '@type': "Name",
+                     '@token': "List",
+                     '@role': [Annotation, Expression, Identifier, Noop],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 32,
+                           line: 1,
+                           col: 33,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 35,
+                           line: 1,
+                           col: 36,
+                        },
+                     },
+                     ctx: "Load",
+                  },
+               },
+               { '@type': "arg",
+                  '@token': "d",
+                  '@role': [Argument, Declaration, Function, Name],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 38,
+                        line: 1,
+                        col: 39,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 38,
+                        line: 1,
+                        col: 39,
+                     },
+                  },
+                  annotation: { '@type': "Name",
+                     '@token': "MyType",
+                     '@role': [Annotation, Expression, Identifier, Noop],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 41,
+                           line: 1,
+                           col: 42,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 46,
+                           line: 1,
+                           col: 47,
+                        },
+                     },
+                     ctx: "Load",
+                  },
+               },
+            ],
+         },
+         body: { '@type': "FunctionDef.body",
+            '@role': [Body, Declaration, Function],
+            'body_stmts': [
+               { '@type': "Pass",
+                  '@token': "pass",
+                  '@role': [Noop, Statement],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 61,
+                        line: 2,
+                        col: 5,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 64,
+                        line: 2,
+                        col: 8,
+                     },
+                  },
+               },
+            ],
+         },
+         'decorator_list': { '@type': "FunctionDef.decorators",
+            '@role': [Declaration, Function, Incomplete],
+            decorators: [],
+         },
+         returns: { '@type': "Name",
+            '@token': "str",
+            '@role': [Expression, Identifier],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 52,
+                  line: 1,
+                  col: 53,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 54,
+                  line: 1,
+                  col: 55,
+               },
+            },
+            ctx: "Load",
+         },
+      },
+      { '@type': "FunctionDef",
+         '@token': "testfnc2",
+         '@role': [Declaration, Function, Identifier, Name],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 71,
+               line: 4,
+               col: 5,
+            },
+            end: { '@type': "uast:Position",
+               offset: 78,
+               line: 4,
+               col: 12,
+            },
+         },
+         args: { '@type': "arguments",
+            '@role': [Argument, Declaration, Function, Incomplete],
+            '@pos': { '@type': "uast:Positions",
+            },
+            args: [
+               { '@type': "arg",
+                  '@token': "a",
+                  '@role': [Argument, Declaration, Function, Name],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 80,
+                        line: 4,
+                        col: 14,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 80,
+                        line: 4,
+                        col: 14,
+                     },
+                  },
+                  annotation: ~,
+                  'noops_previous': { '@type': "PreviousNoops",
+                     '@role': [Noop],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 66,
+                           line: 3,
+                           col: 1,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 66,
+                           line: 3,
+                           col: 1,
+                        },
+                     },
+                     lines: [],
+                  },
+               },
+               { '@type': "arg",
+                  '@token': "b",
+                  '@role': [Argument, Declaration, Function, Name],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 83,
+                        line: 4,
+                        col: 17,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 83,
+                        line: 4,
+                        col: 17,
+                     },
+                  },
+                  annotation: ~,
+               },
+               { '@type': "arg",
+                  '@token': "c",
+                  '@role': [Argument, Declaration, Function, Name],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 86,
+                        line: 4,
+                        col: 20,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 86,
+                        line: 4,
+                        col: 20,
+                     },
+                  },
+                  annotation: { '@type': "Name",
+                     '@token': "int",
+                     '@role': [Annotation, Expression, Identifier, Noop],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 88,
+                           line: 4,
+                           col: 22,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 90,
+                           line: 4,
+                           col: 24,
+                        },
+                     },
+                     ctx: "Load",
+                  },
+               },
+               { '@type': "arg",
+                  '@token': "d",
+                  '@role': [Argument, Declaration, Function, Name],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 93,
+                        line: 4,
+                        col: 27,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 93,
+                        line: 4,
+                        col: 27,
+                     },
+                  },
+                  annotation: ~,
+               },
+               { '@type': "arg",
+                  '@token': "e",
+                  '@role': [Argument, Declaration, Function, Name],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 96,
+                        line: 4,
+                        col: 30,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 96,
+                        line: 4,
+                        col: 30,
+                     },
+                  },
+                  annotation: ~,
+               },
+               { '@type': "arg",
+                  '@token': "f",
+                  '@role': [Argument, Declaration, Function, Name],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 99,
+                        line: 4,
+                        col: 33,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 99,
+                        line: 4,
+                        col: 33,
+                     },
+                  },
+                  annotation: { '@type': "Name",
+                     '@token': "str",
+                     '@role': [Annotation, Expression, Identifier, Noop],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 101,
+                           line: 4,
+                           col: 35,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 103,
+                           line: 4,
+                           col: 37,
+                        },
+                     },
+                     ctx: "Load",
+                  },
+               },
+            ],
+         },
+         body: { '@type': "FunctionDef.body",
+            '@role': [Body, Declaration, Function],
+            'body_stmts': [
+               { '@type': "Pass",
+                  '@token': "pass",
+                  '@role': [Noop, Statement],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 118,
+                        line: 5,
+                        col: 5,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 121,
+                        line: 5,
+                        col: 8,
+                     },
+                  },
+               },
+            ],
+         },
+         'decorator_list': { '@type': "FunctionDef.decorators",
+            '@role': [Declaration, Function, Incomplete],
+            decorators: [],
+         },
+         returns: { '@type': "Name",
+            '@token': "str",
+            '@role': [Expression, Identifier],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 109,
+                  line: 4,
+                  col: 43,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 111,
+                  line: 4,
+                  col: 45,
+               },
+            },
+            ctx: "Load",
+         },
+      },
+   ],
 }
-

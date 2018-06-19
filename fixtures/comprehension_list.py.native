@@ -1,185 +1,180 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "ast_type": "Expr",
-                    "col_offset": 1,
-                    "lineno": 1,
-                    "value": {
-                        "ast_type": "ListComp",
-                        "col_offset": 2,
-                        "elt": {
-                            "ast_type": "BinOp",
-                            "col_offset": 2,
-                            "left": {
-                                "ast_type": "Name",
-                                "col_offset": 2,
-                                "ctx": "Load",
-                                "end_col_offset": 2,
-                                "end_lineno": 1,
-                                "id": "i",
-                                "lineno": 1
-                            },
-                            "lineno": 1,
-                            "op": {
-                                "ast_type": "Mult"
-                            },
-                            "right": {
-                                "ast_type": "Num",
-                                "col_offset": 4,
-                                "end_col_offset": 4,
-                                "end_lineno": 1,
-                                "lineno": 1,
-                                "n": 2
-                            }
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "Expr",
+            'col_offset': 1,
+            lineno: 1,
+            value: {
+               'ast_type': "ListComp",
+               'col_offset': 2,
+               elt: {
+                  'ast_type': "BinOp",
+                  'col_offset': 2,
+                  left: {
+                     'ast_type': "Name",
+                     'col_offset': 2,
+                     ctx: "Load",
+                     'end_col_offset': 2,
+                     'end_lineno': 1,
+                     id: "i",
+                     lineno: 1,
+                  },
+                  lineno: 1,
+                  op: {
+                     'ast_type': "Mult",
+                  },
+                  right: {
+                     'ast_type': "Num",
+                     'col_offset': 4,
+                     'end_col_offset': 4,
+                     'end_lineno': 1,
+                     lineno: 1,
+                     'n': 2,
+                  },
+               },
+               generators: [
+                  {
+                     'ast_type': "comprehension",
+                     ifs: [
+                        {
+                           'ast_type': "Compare",
+                           'col_offset': 27,
+                           comparators: [
+                              {
+                                 'ast_type': "Num",
+                                 'col_offset': 29,
+                                 'end_col_offset': 29,
+                                 'end_lineno': 1,
+                                 lineno: 1,
+                                 'n': 2,
+                              },
+                           ],
+                           left: {
+                              'ast_type': "Name",
+                              'col_offset': 27,
+                              ctx: "Load",
+                              'end_col_offset': 27,
+                              'end_lineno': 1,
+                              id: "i",
+                              lineno: 1,
+                           },
+                           lineno: 1,
+                           ops: [
+                              {
+                                 'ast_type': "Gt",
+                              },
+                           ],
                         },
-                        "generators": [
-                            {
-                                "ast_type": "comprehension",
-                                "ifs": [
-                                    {
-                                        "ast_type": "Compare",
-                                        "col_offset": 27,
-                                        "comparators": [
-                                            {
-                                                "ast_type": "Num",
-                                                "col_offset": 29,
-                                                "end_col_offset": 29,
-                                                "end_lineno": 1,
-                                                "lineno": 1,
-                                                "n": 2
-                                            }
-                                        ],
-                                        "left": {
-                                            "ast_type": "Name",
-                                            "col_offset": 27,
-                                            "ctx": "Load",
-                                            "end_col_offset": 27,
-                                            "end_lineno": 1,
-                                            "id": "i",
-                                            "lineno": 1
-                                        },
-                                        "lineno": 1,
-                                        "ops": [
-                                            {
-                                                "ast_type": "Gt"
-                                            }
-                                        ]
-                                    }
-                                ],
-                                "is_async": 0,
-                                "iter": {
-                                    "ast_type": "Name",
-                                    "col_offset": 15,
-                                    "ctx": "Load",
-                                    "end_col_offset": 22,
-                                    "end_lineno": 1,
-                                    "id": "somelist",
-                                    "lineno": 1
-                                },
-                                "target": {
-                                    "ast_type": "Name",
-                                    "col_offset": 10,
-                                    "ctx": "Store",
-                                    "end_col_offset": 10,
-                                    "end_lineno": 1,
-                                    "id": "i",
-                                    "lineno": 1
-                                }
-                            }
-                        ],
-                        "lineno": 1
-                    }
-                },
-                {
-                    "ast_type": "Expr",
-                    "col_offset": 1,
-                    "lineno": 2,
-                    "value": {
-                        "ast_type": "ListComp",
-                        "col_offset": 2,
-                        "elt": {
-                            "ast_type": "BinOp",
-                            "col_offset": 2,
-                            "left": {
-                                "ast_type": "Name",
-                                "col_offset": 2,
-                                "ctx": "Load",
-                                "end_col_offset": 2,
-                                "end_lineno": 2,
-                                "id": "i",
-                                "lineno": 2
-                            },
-                            "lineno": 2,
-                            "op": {
-                                "ast_type": "Mult"
-                            },
-                            "right": {
-                                "ast_type": "Num",
-                                "col_offset": 4,
-                                "end_col_offset": 4,
-                                "end_lineno": 2,
-                                "lineno": 2,
-                                "n": 2
-                            }
-                        },
-                        "generators": [
-                            {
-                                "ast_type": "comprehension",
-                                "ifs": [],
-                                "is_async": 0,
-                                "iter": {
-                                    "ast_type": "Name",
-                                    "col_offset": 21,
-                                    "ctx": "Load",
-                                    "end_col_offset": 28,
-                                    "end_lineno": 2,
-                                    "id": "somelist",
-                                    "lineno": 2
-                                },
-                                "target": {
-                                    "ast_type": "Name",
-                                    "col_offset": 10,
-                                    "ctx": "Store",
-                                    "end_col_offset": 16,
-                                    "end_lineno": 2,
-                                    "id": "sublist",
-                                    "lineno": 2
-                                }
-                            },
-                            {
-                                "ast_type": "comprehension",
-                                "ifs": [],
-                                "is_async": 0,
-                                "iter": {
-                                    "ast_type": "Name",
-                                    "col_offset": 39,
-                                    "ctx": "Load",
-                                    "end_col_offset": 45,
-                                    "end_lineno": 2,
-                                    "id": "sublist",
-                                    "lineno": 2
-                                },
-                                "target": {
-                                    "ast_type": "Name",
-                                    "col_offset": 34,
-                                    "ctx": "Store",
-                                    "end_col_offset": 34,
-                                    "end_lineno": 2,
-                                    "id": "i",
-                                    "lineno": 2
-                                }
-                            }
-                        ],
-                        "lineno": 2
-                    }
-                }
-            ]
-        }
-    }
+                     ],
+                     'is_async': 0,
+                     iter: {
+                        'ast_type': "Name",
+                        'col_offset': 15,
+                        ctx: "Load",
+                        'end_col_offset': 22,
+                        'end_lineno': 1,
+                        id: "somelist",
+                        lineno: 1,
+                     },
+                     target: {
+                        'ast_type': "Name",
+                        'col_offset': 10,
+                        ctx: "Store",
+                        'end_col_offset': 10,
+                        'end_lineno': 1,
+                        id: "i",
+                        lineno: 1,
+                     },
+                  },
+               ],
+               lineno: 1,
+            },
+         },
+         {
+            'ast_type': "Expr",
+            'col_offset': 1,
+            lineno: 2,
+            value: {
+               'ast_type': "ListComp",
+               'col_offset': 2,
+               elt: {
+                  'ast_type': "BinOp",
+                  'col_offset': 2,
+                  left: {
+                     'ast_type': "Name",
+                     'col_offset': 2,
+                     ctx: "Load",
+                     'end_col_offset': 2,
+                     'end_lineno': 2,
+                     id: "i",
+                     lineno: 2,
+                  },
+                  lineno: 2,
+                  op: {
+                     'ast_type': "Mult",
+                  },
+                  right: {
+                     'ast_type': "Num",
+                     'col_offset': 4,
+                     'end_col_offset': 4,
+                     'end_lineno': 2,
+                     lineno: 2,
+                     'n': 2,
+                  },
+               },
+               generators: [
+                  {
+                     'ast_type': "comprehension",
+                     ifs: [],
+                     'is_async': 0,
+                     iter: {
+                        'ast_type': "Name",
+                        'col_offset': 21,
+                        ctx: "Load",
+                        'end_col_offset': 28,
+                        'end_lineno': 2,
+                        id: "somelist",
+                        lineno: 2,
+                     },
+                     target: {
+                        'ast_type': "Name",
+                        'col_offset': 10,
+                        ctx: "Store",
+                        'end_col_offset': 16,
+                        'end_lineno': 2,
+                        id: "sublist",
+                        lineno: 2,
+                     },
+                  },
+                  {
+                     'ast_type': "comprehension",
+                     ifs: [],
+                     'is_async': 0,
+                     iter: {
+                        'ast_type': "Name",
+                        'col_offset': 39,
+                        ctx: "Load",
+                        'end_col_offset': 45,
+                        'end_lineno': 2,
+                        id: "sublist",
+                        lineno: 2,
+                     },
+                     target: {
+                        'ast_type': "Name",
+                        'col_offset': 34,
+                        ctx: "Store",
+                        'end_col_offset': 34,
+                        'end_lineno': 2,
+                        id: "i",
+                        lineno: 2,
+                     },
+                  },
+               ],
+               lineno: 2,
+            },
+         },
+      ],
+   },
 }

@@ -145,6 +145,7 @@ func (op opLevelDotsNumConv) Construct(st *State, n nodes.Node) (nodes.Node, err
 var _ Op = opLevelDotsNumConv{}
 
 var Annotations = []Mapping{
+	// FIXME: doesnt work
 	AnnotateType("Module", nil, role.File, role.Module),
 
 	// Comparison operators
@@ -233,6 +234,7 @@ var Annotations = []Mapping{
 		role.Identifier, role.Expression),
 	AnnotateType("Attribute", FieldRoles{"attr": {Rename: uast.KeyToken}},
 		role.Identifier, role.Expression),
+	AnnotateType("QualifiedIdentifier", nil, role.Identifier, role.Expression, role.Qualified),
 
 	// Binary Expressions
 	AnnotateType("BinOp", ObjRoles{
@@ -370,29 +372,21 @@ var Annotations = []Mapping{
 	}), role.Function, role.Declaration, role.Value, role.Anonymous),
 
 	// Formal Arguments
-	// FIXME: opt: true + arr: true seems to cause a crash in the SDK
-	AnnotateType("arguments", FieldRoles{
-		"args":     {Arr: true, Roles: role.Roles{role.Function, role.Declaration, role.Argument, role.Name, role.Identifier}},
-		"defaults": {Arr: true, Roles: role.Roles{role.Function, role.Declaration, role.ArgsList, role.Value, role.Default}},
-		// Default arguments: Python's AST puts default arguments on a sibling list to the one of
-		// arguments that must be mapped to the arguments right-aligned like:
-		// a, b=2, c=3 ->
-		//		args    [a,b,c],
-		//		defaults  [2,3]
-		"kwarg":       {Opt: true, Roles: role.Roles{role.Function, role.Declaration, role.ArgsList, role.Map, role.Name, role.Identifier}},
-		"vararg":      {Opt: true, Roles: role.Roles{role.Function, role.Declaration, role.ArgsList, role.Name, role.Identifier}},
-		// forced keyword parameters (def kwonly(*, a=1, b=2))
-		"kwonlyargs":  {Arr: true, Roles: role.Roles{role.Function, role.Declaration, role.ArgsList, role.Name, role.Identifier, role.Incomplete}},
-		// the defaults of the above, same right-align matching
-		"kw_defaults": {Arr: true, Roles: role.Roles{role.Function, role.Declaration, role.ArgsList, role.Map, role.Value, role.Default}},
-	}, role.Function, role.Declaration, role.Argument, role.Incomplete),
-
-	AnnotateType("arguments", FieldRoles{
-		"args":     {Arr: true, Roles: role.Roles{role.Function, role.Declaration, role.Argument, role.Name, role.Identifier}},
-		"defaults": {Arr: true, Roles: role.Roles{role.Function, role.Declaration, role.ArgsList, role.Value, role.Default}},
-		"kwarg":    {Opt: true, Roles: role.Roles{role.Function, role.Declaration, role.ArgsList, role.Map, role.Name, role.Identifier}},
-		"vararg":   {Opt: true, Roles: role.Roles{role.Function, role.Declaration, role.ArgsList, role.Name, role.Identifier}},
-	}, role.Function, role.Declaration, role.Argument, role.Incomplete),
+	// Incomplete because we've no role for "virtual" grouping nodes
+	AnnotateType("arguments", nil, role.Function, role.Declaration, role.Argument, role.Incomplete),
+	AnnotateType("arg",
+		FieldRoles{
+			"default":    {Opt: true, Roles: role.Roles{role.Argument, role.Default}},
+			"annotation": {Opt: true, Roles: role.Roles{role.Annotation, role.Noop}},
+		}, role.Function, role.Declaration, role.Argument, role.Name),
+	// Incomplete because we've no role for "mandatory name"
+	AnnotateType("kwonly_arg",
+		FieldRoles{
+			"default":    {Opt: true, Roles: role.Roles{role.Argument, role.Default}},
+			"annotation": {Opt: true, Roles: role.Roles{role.Annotation, role.Noop}},
+		}, role.Function, role.Declaration, role.Argument, role.Name, role.Incomplete),
+	AnnotateType("kwarg", nil, role.Function, role.Declaration, role.ArgsList, role.Map, role.Name),
+	AnnotateType("vararg", nil, role.Function, role.Declaration, role.ArgsList, role.List, role.Name),
 
 	// Function Calls
 	AnnotateType("Call", FieldRoles{
@@ -427,10 +421,11 @@ var Annotations = []Mapping{
 	}, role.Noop, role.Comment),
 
 	// Qualified Identifiers
+	// FIXME XXX remove
 	// a.b.c ("a" and "b" will be Qualified+Identifier, "c" will be just Identifier)
-	AnnotateType("Attribute", FieldRoles{
-		"value": {Arr: true, Roles: role.Roles{role.Qualified}},
-	}),
+	//AnnotateType("Attribute", FieldRoles{
+	//	"value": {Opt: true, Roles: role.Roles{role.Qualified}},
+	//}),
 
 	// Import
 	AnnotateType("Import", nil, role.Import, role.Declaration, role.Statement),

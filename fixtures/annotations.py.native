@@ -1,148 +1,138 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "annotation": {
-                        "ast_type": "Name",
-                        "col_offset": 4,
-                        "ctx": "Load",
-                        "end_col_offset": 6,
-                        "end_lineno": 1,
-                        "id": "int",
-                        "lineno": 1
-                    },
-                    "ast_type": "AnnAssign",
-                    "col_offset": 1,
-                    "lineno": 1,
-                    "simple": 1,
-                    "target": {
-                        "ast_type": "Name",
-                        "col_offset": 1,
-                        "ctx": "Store",
-                        "end_col_offset": 1,
-                        "end_lineno": 1,
-                        "id": "a",
-                        "lineno": 1
-                    },
-                    "value": {
-                        "ast_type": "Num",
-                        "col_offset": 10,
-                        "end_col_offset": 10,
-                        "end_lineno": 1,
-                        "lineno": 1,
-                        "n": 1
-                    }
-                },
-                {
-                    "annotation": {
-                        "ast_type": "Name",
-                        "col_offset": 4,
-                        "ctx": "Load",
-                        "end_col_offset": 8,
-                        "end_lineno": 2,
-                        "id": "float",
-                        "lineno": 2
-                    },
-                    "ast_type": "AnnAssign",
-                    "col_offset": 1,
-                    "lineno": 2,
-                    "simple": 1,
-                    "target": {
-                        "ast_type": "Name",
-                        "col_offset": 1,
-                        "ctx": "Store",
-                        "end_col_offset": 1,
-                        "end_lineno": 2,
-                        "id": "b",
-                        "lineno": 2
-                    },
-                    "value": null
-                },
-                {
-                    "args": {
-                        "args": [
-                            {
-                                "annotation": {
-                                    "ast_type": "Name",
-                                    "col_offset": 17,
-                                    "ctx": "Load",
-                                    "end_col_offset": 19,
-                                    "end_lineno": 3,
-                                    "id": "int",
-                                    "lineno": 3
-                                },
-                                "arg": "a",
-                                "ast_type": "arg",
-                                "col_offset": 14,
-                                "end_col_offset": 14,
-                                "end_lineno": 3,
-                                "lineno": 3
-                            },
-                            {
-                                "annotation": {
-                                    "ast_type": "Name",
-                                    "col_offset": 25,
-                                    "ctx": "Load",
-                                    "end_col_offset": 27,
-                                    "end_lineno": 3,
-                                    "id": "str",
-                                    "lineno": 3
-                                },
-                                "arg": "b",
-                                "ast_type": "arg",
-                                "col_offset": 22,
-                                "end_col_offset": 22,
-                                "end_lineno": 3,
-                                "lineno": 3
-                            }
-                        ],
-                        "ast_type": "arguments",
-                        "defaults": [],
-                        "kw_defaults": [],
-                        "kwarg": null,
-                        "kwonlyargs": [],
-                        "vararg": null
-                    },
-                    "ast_type": "FunctionDef",
-                    "body": [
-                        {
-                            "ast_type": "Return",
-                            "col_offset": 5,
-                            "end_col_offset": 10,
-                            "end_lineno": 4,
-                            "lineno": 4,
-                            "value": {
-                                "ast_type": "Num",
-                                "col_offset": 12,
-                                "end_col_offset": 14,
-                                "end_lineno": 4,
-                                "lineno": 4,
-                                "n": 0
-                            }
-                        }
-                    ],
-                    "col_offset": 5,
-                    "decorator_list": [],
-                    "end_col_offset": 12,
-                    "end_lineno": 3,
-                    "lineno": 3,
-                    "name": "somefunc",
-                    "returns": {
-                        "ast_type": "Name",
-                        "col_offset": 33,
-                        "ctx": "Load",
-                        "end_col_offset": 37,
-                        "end_lineno": 3,
-                        "id": "float",
-                        "lineno": 3
-                    }
-                }
-            ]
-        }
-    }
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            annotation: {
+               'ast_type': "Name",
+               'col_offset': 4,
+               ctx: "Load",
+               'end_col_offset': 6,
+               'end_lineno': 1,
+               id: "int",
+               lineno: 1,
+            },
+            'ast_type': "AnnAssign",
+            'col_offset': 1,
+            lineno: 1,
+            simple: 1,
+            target: {
+               'ast_type': "Name",
+               'col_offset': 1,
+               ctx: "Store",
+               'end_col_offset': 1,
+               'end_lineno': 1,
+               id: "a",
+               lineno: 1,
+            },
+            value: {
+               'ast_type': "Num",
+               'col_offset': 10,
+               'end_col_offset': 10,
+               'end_lineno': 1,
+               lineno: 1,
+               'n': 1,
+            },
+         },
+         {
+            annotation: {
+               'ast_type': "Name",
+               'col_offset': 4,
+               ctx: "Load",
+               'end_col_offset': 8,
+               'end_lineno': 2,
+               id: "float",
+               lineno: 2,
+            },
+            'ast_type': "AnnAssign",
+            'col_offset': 1,
+            lineno: 2,
+            simple: 1,
+            target: {
+               'ast_type': "Name",
+               'col_offset': 1,
+               ctx: "Store",
+               'end_col_offset': 1,
+               'end_lineno': 2,
+               id: "b",
+               lineno: 2,
+            },
+            value: ~,
+         },
+         {
+            args: {
+               args: [
+                  {
+                     '@token': "a",
+                     annotation: {
+                        'ast_type': "Name",
+                        'col_offset': 17,
+                        ctx: "Load",
+                        'end_col_offset': 19,
+                        'end_lineno': 3,
+                        id: "int",
+                        lineno: 3,
+                     },
+                     'ast_type': "arg",
+                     'col_offset': 14,
+                     'end_col_offset': 14,
+                     'end_lineno': 3,
+                     lineno: 3,
+                  },
+                  {
+                     '@token': "b",
+                     annotation: {
+                        'ast_type': "Name",
+                        'col_offset': 25,
+                        ctx: "Load",
+                        'end_col_offset': 27,
+                        'end_lineno': 3,
+                        id: "str",
+                        lineno: 3,
+                     },
+                     'ast_type': "arg",
+                     'col_offset': 22,
+                     'end_col_offset': 22,
+                     'end_lineno': 3,
+                     lineno: 3,
+                  },
+               ],
+               'ast_type': "arguments",
+            },
+            'ast_type': "FunctionDef",
+            body: [
+               {
+                  'ast_type': "Return",
+                  'col_offset': 5,
+                  'end_col_offset': 10,
+                  'end_lineno': 4,
+                  lineno: 4,
+                  value: {
+                     'ast_type': "Num",
+                     'col_offset': 12,
+                     'end_col_offset': 14,
+                     'end_lineno': 4,
+                     lineno: 4,
+                     'n': 0,
+                  },
+               },
+            ],
+            'col_offset': 5,
+            'decorator_list': [],
+            'end_col_offset': 12,
+            'end_lineno': 3,
+            lineno: 3,
+            name: "somefunc",
+            returns: {
+               'ast_type': "Name",
+               'col_offset': 33,
+               ctx: "Load",
+               'end_col_offset': 37,
+               'end_lineno': 3,
+               id: "float",
+               lineno: 3,
+            },
+         },
+      ],
+   },
 }

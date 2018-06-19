@@ -1,45 +1,33 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: Import {
-.  .  .  Roles: Declaration,Import,Statement
-.  .  .  TOKEN "import"
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 1
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: ImportFrom.names {
-.  .  .  .  .  Roles: Identifier,Import,Incomplete,Pathname
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: names
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: alias {
-.  .  .  .  .  .  .  Roles: Identifier,Import,Pathname
-.  .  .  .  .  .  .  TOKEN "x"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  internalRole: name_list
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: alias.asname {
-.  .  .  .  .  .  .  .  .  Roles: Alias,Identifier,Import,Pathname
-.  .  .  .  .  .  .  .  .  TOKEN "y"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  internalRole: asname
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "Import",
+         '@token': "import",
+         '@role': [Declaration, Import, Statement],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 0,
+               line: 1,
+               col: 1,
+            },
+         },
+         names: { '@type': "ImportFrom.names",
+            '@role': [Identifier, Import, Incomplete, Pathname],
+            'name_list': [
+               { '@type': "alias",
+                  '@token': "x",
+                  '@role': [Identifier, Import, Pathname],
+                  '@pos': { '@type': "uast:Positions",
+                  },
+                  asname: { '@type': "alias.asname",
+                     '@token': "y",
+                     '@role': [Alias, Identifier, Import, Pathname],
+                  },
+               },
+            ],
+         },
+      },
+   ],
 }
-

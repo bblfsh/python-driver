@@ -2,7 +2,6 @@ package normalizer
 
 import (
 	"gopkg.in/bblfsh/sdk.v2/uast"
-	"gopkg.in/bblfsh/sdk.v2/uast/nodes"
 	. "gopkg.in/bblfsh/sdk.v2/uast/transformer"
 )
 
@@ -13,11 +12,10 @@ var Preprocess = Transformers([][]Transformer{
 var Preprocessors = []Mapping{
 	ObjectToNode{
 		InternalTypeKey: "ast_type",
-		// FIXME: restore once positions are working again
-		// LineKey:         "lineno",
-		// ColumnKey:       "col_offset",
-		// EndLineKey:      "end_lineno",
-		// EndColumnKey:    "end_col_offset",
+		LineKey:         "lineno",
+		ColumnKey:       "col_offset",
+		EndLineKey:      "end_lineno",
+		EndColumnKey:    "end_col_offset",
 	}.Mapping(),
 }
 
@@ -25,55 +23,15 @@ var Normalize = Transformers([][]Transformer{
 	{Mappings(Normalizers...)},
 }...)
 
-type opFuncArguments struct {
-	args Op
-}
-
-func (op opFuncArguments) Kinds() nodes.Kind {
-	return nodes.KindArray
-}
-
-func (op opFuncArguments) Check(st *State, n nodes.Node) (bool, error) {
-	v, ok := n.(nodes.Array)
-	if !ok {
-		return false, nil
-	}
-
-	return op.args.Check(st, v)
-}
-
-func (op opFuncArguments) Construct(st *State, n nodes.Node) (nodes.Node, error) {
-	// Iterate over n.args constructing Arguments. Set the arg.Init to the values
-	// in n.defaults. Do the same for kwonlyargs/kw_defaults. Finally add vararg
-	// and kwargs if they are set
-	n, err := op.args.Construct(st, n)
-
-	if err != nil {
-		return nil, err
-	}
-
-	// FIXME: implement
-
-	return n, nil
-}
-
 // FIXME: decorators? (annotations/tags)
-// FIXME: in Python, an argument being variadic or not depends on being on
-// args.[kwonlyargs|args] or plain "args" not on any property of the argument
-// nodes themselves. Check with @dennys about how to map this.
 func funcDefMap(typ string, async bool) Mapping {
 	return MapSemantic(typ, uast.FunctionGroup{}, MapObj(
 		Obj{
 			"body": Var("body"),
-			"name": Var("name"),
+			uast.KeyToken: Var("name"),
+			// Arguments should be converted by the uast.Arguments normalization
 			"args": Obj{
-				"args": Each("normal_args", Var("normal_arg_name")),
-				"kwonlyargs": Each("kw_args",
-					Obj{
-						"arg":   Var("kwarg_name"),
-						"value": Var("kwarg_default"),
-					}),
-				"varargs": Var("varargs"),
+				"args": Var("arguments"),
 			},
 		},
 		Obj{
@@ -83,10 +41,12 @@ func funcDefMap(typ string, async bool) Mapping {
 					"async": Bool(async),
 				},
 				UASTType(uast.Alias{}, Obj{
-					"Name": Var("name"),
+					"Name": UASTType(uast.Identifier{}, Obj{
+						"Name": Var("name"),
+					}),
 					"Node": UASTType(uast.Function{}, Obj{
 						"Type": UASTType(uast.FunctionType{}, Obj{
-							"Arguments": Var("args"),
+							"Arguments": Var("arguments"),
 						}),
 						"Body": Var("body"),
 					}),
@@ -132,25 +92,93 @@ var Normalizers = []Mapping{
 		Obj{"Name": Var("name")},
 	)),
 
+	MapSemantic("Name", uast.Identifier{}, MapObj(
+		Obj{"attr": Var("name")},
+		Obj{"Name": Var("name")},
+	)),
+
 	// FIXME: check that the identifiers are in the right order
-	MapSemantic("Attribute", uast.QualifiedIdentifier{}, MapObj(
-		Obj{"value": Var("identifiers")},
+	// FIXME: check that those are uast:Identifiers
+	MapSemantic("QualifiedIdentifier", uast.QualifiedIdentifier{}, MapObj(
+		Obj{"identifiers": Var("identifiers")},
 		Obj{"Names": Var("identifiers")},
 	)),
 
 	MapSemantic("NoopLine", uast.Comment{}, MapObj(
-		Obj{"noop_line": CommentText([2]string{"#", ""}, "comm")},
+		Obj{"noop_line": CommentText([2]string{}, "comm")},
 		CommentNode(false, "comm", nil),
 	)),
 
 	MapSemantic("NoopSameLine", uast.Comment{}, MapObj(
-		Obj{"s": CommentText([2]string{"#", ""}, "comm")},
+		Obj{"s": CommentText([2]string{}, "comm")},
 		CommentNode(false, "comm", nil),
+	)),
+
+	MapSemantic("arg", uast.Argument{}, MapObj(
+		Obj{
+			uast.KeyToken: Var("name"),
+			"default": Var("init"),
+		},
+		Obj{
+			"Name": UASTType(uast.Identifier{}, Obj{
+				"Name": Var("name"),
+			}),
+			"Init": Var("init"),
+		},
+	)),
+
+	MapSemantic("arg", uast.Argument{}, MapObj(
+		Obj{
+			uast.KeyToken: Var("name"),
+		},
+		Obj{
+			"Name": UASTType(uast.Identifier{}, Obj{
+				"Name": Var("name"),
+			}),
+		},
+	)),
+
+	MapSemantic("kwonly_arg", uast.Argument{}, MapObj(
+		Obj{
+			uast.KeyToken: Var("name"),
+			"default": Var("init"),
+		},
+		Obj{
+			"Name": UASTType(uast.Identifier{}, Obj{
+				"Name": Var("name"),
+			}),
+			"Init": Var("init"),
+		},
+	)),
+
+	MapSemantic("vararg", uast.Argument{}, MapObj(
+		Obj{
+			uast.KeyToken: Var("name"),
+		},
+		Obj{
+			"Name": UASTType(uast.Identifier{}, Obj{
+				"Name": Var("name"),
+			}),
+			"Variadic": Bool(true),
+		},
+	)),
+
+	MapSemantic("kwarg", uast.Argument{}, MapObj(
+		Obj{
+			uast.KeyToken: Var("name"),
+		},
+		Obj{
+			"Name": UASTType(uast.Identifier{}, Obj{
+				"Name": Var("name"),
+			}),
+			"MapVariadic": Bool(true),
+		},
 	)),
 
 	funcDefMap("FunctionDef", false),
 	funcDefMap("AsyncFunctionDef", true),
 
+	// FIXME: check that those are uast:Identifiers too
 	MapSemantic("Import", uast.RuntimeImport{}, MapObj(
 		Obj{
 			"names": Var("names"),

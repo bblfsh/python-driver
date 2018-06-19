@@ -1,166 +1,186 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: ClassDef {
-.  .  .  Roles: Declaration,Identifier,Statement,Type
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 1
-.  .  .  .  name: testcls1
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: ClassDef.bases {
-.  .  .  .  .  Roles: Base,Declaration,Type
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: bases
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: ClassDef.body {
-.  .  .  .  .  Roles: Body,Declaration,Type
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: body
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Pass {
-.  .  .  .  .  .  .  Roles: Noop,Statement
-.  .  .  .  .  .  .  TOKEN "pass"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  .  .  end_col_offset: 8
-.  .  .  .  .  .  .  .  end_lineno: 3
-.  .  .  .  .  .  .  .  internalRole: body_stmts
-.  .  .  .  .  .  .  .  lineno: 3
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  2: ClassDef.decorator_list {
-.  .  .  .  .  Roles: Call,Declaration,Incomplete,Type
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: decorator_list
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  Roles: Expression,Identifier
-.  .  .  .  .  .  .  TOKEN "testtag1"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 2
-.  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  end_col_offset: 9
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: decorators
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  1: ClassDef {
-.  .  .  Roles: Declaration,Identifier,Statement,Type
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 5
-.  .  .  .  name: testcls2
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: ClassDef.bases {
-.  .  .  .  .  Roles: Base,Declaration,Type
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: bases
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: ClassDef.body {
-.  .  .  .  .  Roles: Body,Declaration,Type
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: body
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Pass {
-.  .  .  .  .  .  .  Roles: Noop,Statement
-.  .  .  .  .  .  .  TOKEN "pass"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 5
-.  .  .  .  .  .  .  .  end_col_offset: 8
-.  .  .  .  .  .  .  .  end_lineno: 7
-.  .  .  .  .  .  .  .  internalRole: body_stmts
-.  .  .  .  .  .  .  .  lineno: 7
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: PreviousNoops {
-.  .  .  .  .  .  .  .  .  Roles: Noop
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  .  .  .  .  end_lineno: 4
-.  .  .  .  .  .  .  .  .  .  internalRole: noops_previous
-.  .  .  .  .  .  .  .  .  .  lineno: 4
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  2: ClassDef.decorator_list {
-.  .  .  .  .  Roles: Call,Declaration,Incomplete,Type
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: decorator_list
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Call {
-.  .  .  .  .  .  .  Roles: Call,Expression,Function
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 2
-.  .  .  .  .  .  .  .  internalRole: decorators
-.  .  .  .  .  .  .  .  lineno: 5
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  Children: {
-.  .  .  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  .  .  Roles: Argument,Call,Expression,Function,Literal,Name,Number,Positional,Primitive
-.  .  .  .  .  .  .  .  .  TOKEN "1"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 11
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 11
-.  .  .  .  .  .  .  .  .  .  end_lineno: 5
-.  .  .  .  .  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  .  .  .  .  lineno: 5
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  .  .  Roles: Argument,Call,Expression,Function,Literal,Name,Number,Positional,Primitive
-.  .  .  .  .  .  .  .  .  TOKEN "2"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 14
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 14
-.  .  .  .  .  .  .  .  .  .  end_lineno: 5
-.  .  .  .  .  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  .  .  .  .  lineno: 5
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  2: Name {
-.  .  .  .  .  .  .  .  .  Roles: Call,Callee,Expression,Identifier
-.  .  .  .  .  .  .  .  .  TOKEN "testtag2"
-.  .  .  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  .  .  col_offset: 2
-.  .  .  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  .  .  end_col_offset: 9
-.  .  .  .  .  .  .  .  .  .  end_lineno: 5
-.  .  .  .  .  .  .  .  .  .  internalRole: func
-.  .  .  .  .  .  .  .  .  .  lineno: 5
-.  .  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  .  }
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "ClassDef",
+         '@role': [Declaration, Identifier, Statement, Type],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 0,
+               line: 1,
+               col: 1,
+            },
+         },
+         bases: { '@type': "ClassDef.bases",
+            '@role': [Base, Declaration, Type],
+            bases: [],
+         },
+         body: { '@type': "ClassDef.body",
+            '@role': [Body, Declaration, Type],
+            'body_stmts': [
+               { '@type': "Pass",
+                  '@token': "pass",
+                  '@role': [Noop, Statement],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 30,
+                        line: 3,
+                        col: 5,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 33,
+                        line: 3,
+                        col: 8,
+                     },
+                  },
+               },
+            ],
+         },
+         'decorator_list': { '@type': "ClassDef.decorator_list",
+            '@role': [Call, Declaration, Incomplete, Type],
+            decorators: [
+               { '@type': "Name",
+                  '@token': "testtag1",
+                  '@role': [Expression, Identifier],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 1,
+                        line: 1,
+                        col: 2,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 8,
+                        line: 1,
+                        col: 9,
+                     },
+                  },
+                  ctx: "Load",
+               },
+            ],
+         },
+         keywords: [],
+         name: "testcls1",
+      },
+      { '@type': "ClassDef",
+         '@role': [Declaration, Identifier, Statement, Type],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 36,
+               line: 5,
+               col: 1,
+            },
+         },
+         bases: { '@type': "ClassDef.bases",
+            '@role': [Base, Declaration, Type],
+            bases: [],
+         },
+         body: { '@type': "ClassDef.body",
+            '@role': [Body, Declaration, Type],
+            'body_stmts': [
+               { '@type': "Pass",
+                  '@token': "pass",
+                  '@role': [Noop, Statement],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 72,
+                        line: 7,
+                        col: 5,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 75,
+                        line: 7,
+                        col: 8,
+                     },
+                  },
+                  'noops_previous': { '@type': "PreviousNoops",
+                     '@role': [Noop],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 35,
+                           line: 4,
+                           col: 1,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 35,
+                           line: 4,
+                           col: 1,
+                        },
+                     },
+                     lines: [],
+                  },
+               },
+            ],
+         },
+         'decorator_list': { '@type': "ClassDef.decorator_list",
+            '@role': [Call, Declaration, Incomplete, Type],
+            decorators: [
+               { '@type': "Call",
+                  '@role': [Call, Expression, Function],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 37,
+                        line: 5,
+                        col: 2,
+                     },
+                  },
+                  args: [
+                     { '@type': "Num",
+                        '@token': 1,
+                        '@role': [Argument, Call, Expression, Function, Literal, Name, Number, Positional, Primitive],
+                        '@pos': { '@type': "uast:Positions",
+                           start: { '@type': "uast:Position",
+                              offset: 46,
+                              line: 5,
+                              col: 11,
+                           },
+                           end: { '@type': "uast:Position",
+                              offset: 46,
+                              line: 5,
+                              col: 11,
+                           },
+                        },
+                     },
+                     { '@type': "Num",
+                        '@token': 2,
+                        '@role': [Argument, Call, Expression, Function, Literal, Name, Number, Positional, Primitive],
+                        '@pos': { '@type': "uast:Positions",
+                           start: { '@type': "uast:Position",
+                              offset: 49,
+                              line: 5,
+                              col: 14,
+                           },
+                           end: { '@type': "uast:Position",
+                              offset: 49,
+                              line: 5,
+                              col: 14,
+                           },
+                        },
+                     },
+                  ],
+                  func: { '@type': "Name",
+                     '@token': "testtag2",
+                     '@role': [Call, Callee, Expression, Identifier],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 37,
+                           line: 5,
+                           col: 2,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 44,
+                           line: 5,
+                           col: 9,
+                        },
+                     },
+                     ctx: "Load",
+                  },
+                  keywords: [],
+               },
+            ],
+         },
+         keywords: [],
+         name: "testcls2",
+      },
+   ],
 }
-

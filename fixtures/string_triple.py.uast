@@ -1,58 +1,59 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: Expr {
-.  .  .  Roles: Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 4
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Str {
-.  .  .  .  .  Roles: Expression,Literal,Primitive,String
-.  .  .  .  .  TOKEN "
-Triple double-quoted string
-Second line
-"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  end_col_offset: 3
-.  .  .  .  .  .  end_lineno: 4
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 1
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  1: Expr {
-.  .  .  Roles: Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 8
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Str {
-.  .  .  .  .  Roles: Expression,Literal,Primitive,String
-.  .  .  .  .  TOKEN "
-Triple single-quoted string
-Second line
-"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  end_col_offset: 3
-.  .  .  .  .  .  end_lineno: 8
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 5
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "Expr",
+         '@role': [Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 44,
+               line: 4,
+               col: 1,
+            },
+         },
+         value: { '@type': "Str",
+            '@token': "\nTriple double-quoted string\nSecond line\n",
+            '@role': [Expression, Literal, Primitive, String],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 0,
+                  line: 1,
+                  col: 1,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 46,
+                  line: 4,
+                  col: 3,
+               },
+            },
+         },
+      },
+      { '@type': "Expr",
+         '@role': [Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 92,
+               line: 8,
+               col: 1,
+            },
+         },
+         value: { '@type': "Str",
+            '@token': "\nTriple single-quoted string\nSecond line\n",
+            '@role': [Expression, Literal, Primitive, String],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 48,
+                  line: 5,
+                  col: 1,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 94,
+                  line: 8,
+                  col: 3,
+               },
+            },
+         },
+      },
+   ],
 }
-

@@ -1,123 +1,129 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "ast_type": "ClassDef",
-                    "bases": [],
-                    "body": [
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "ClassDef",
+            bases: [],
+            body: [
+               {
+                  args: {
+                     args: [
                         {
-                            "args": {
-                                "args": [
-                                    {
-                                        "annotation": null,
-                                        "arg": "self",
-                                        "ast_type": "arg",
-                                        "col_offset": 18,
-                                        "end_col_offset": 21,
-                                        "end_lineno": 2,
-                                        "lineno": 2
-                                    }
-                                ],
-                                "ast_type": "arguments",
-                                "defaults": [],
-                                "kw_defaults": [],
-                                "kwarg": null,
-                                "kwonlyargs": [],
-                                "vararg": null
-                            },
-                            "ast_type": "FunctionDef",
-                            "body": [
-                                {
-                                    "ast_type": "Assign",
-                                    "col_offset": 9,
-                                    "lineno": 3,
-                                    "targets": [
-                                        {
-                                            "ast_type": "Name",
-                                            "col_offset": 9,
-                                            "ctx": "Store",
-                                            "end_col_offset": 9,
-                                            "end_lineno": 3,
-                                            "id": "a",
-                                            "lineno": 3
-                                        }
-                                    ],
-                                    "value": {
-                                        "ast_type": "Attribute",
-                                        "attr": "__class__",
-                                        "col_offset": 18,
-                                        "ctx": "Load",
-                                        "end_col_offset": 26,
-                                        "end_lineno": 3,
-                                        "lineno": 3,
-                                        "value": {
-                                            "ast_type": "Name",
-                                            "col_offset": 13,
-                                            "ctx": "Load",
-                                            "end_col_offset": 16,
-                                            "end_lineno": 3,
-                                            "id": "self",
-                                            "lineno": 3
-                                        }
-                                    }
-                                },
-                                {
-                                    "ast_type": "Assign",
-                                    "col_offset": 9,
-                                    "lineno": 4,
-                                    "targets": [
-                                        {
-                                            "ast_type": "Attribute",
-                                            "attr": "var",
-                                            "col_offset": 14,
-                                            "ctx": "Store",
-                                            "end_col_offset": 16,
-                                            "end_lineno": 4,
-                                            "lineno": 4,
-                                            "value": {
-                                                "ast_type": "Name",
-                                                "col_offset": 9,
-                                                "ctx": "Load",
-                                                "end_col_offset": 12,
-                                                "end_lineno": 4,
-                                                "id": "self",
-                                                "lineno": 4
-                                            }
-                                        }
-                                    ],
-                                    "value": {
-                                        "ast_type": "Num",
-                                        "col_offset": 20,
-                                        "end_col_offset": 20,
-                                        "end_lineno": 4,
-                                        "lineno": 4,
-                                        "n": 1
-                                    }
-                                }
-                            ],
-                            "col_offset": 9,
-                            "decorator_list": [],
-                            "end_col_offset": 16,
-                            "end_lineno": 2,
-                            "lineno": 2,
-                            "name": "testfnc1",
-                            "returns": null
-                        }
-                    ],
-                    "col_offset": 7,
-                    "decorator_list": [],
-                    "end_col_offset": 14,
-                    "end_lineno": 1,
-                    "keywords": [],
-                    "lineno": 1,
-                    "name": "testcls1"
-                }
-            ]
-        }
-    }
+                           '@token': "self",
+                           annotation: ~,
+                           'ast_type': "arg",
+                           'col_offset': 18,
+                           'end_col_offset': 21,
+                           'end_lineno': 2,
+                           lineno: 2,
+                        },
+                     ],
+                     'ast_type': "arguments",
+                  },
+                  'ast_type': "FunctionDef",
+                  body: [
+                     {
+                        'ast_type': "Assign",
+                        'col_offset': 9,
+                        lineno: 3,
+                        targets: [
+                           {
+                              'ast_type': "Name",
+                              'col_offset': 9,
+                              ctx: "Store",
+                              'end_col_offset': 9,
+                              'end_lineno': 3,
+                              id: "a",
+                              lineno: 3,
+                           },
+                        ],
+                        value: {
+                           'ast_type': "QualifiedIdentifier",
+                           'col_offset': 14,
+                           ctx: "Load",
+                           'end_col_offset': 16,
+                           'end_lineno': 3,
+                           identifiers: [
+                              {
+                                 'ast_type': "Name",
+                                 'col_offset': 13,
+                                 ctx: "Load",
+                                 'end_col_offset': 16,
+                                 'end_lineno': 3,
+                                 id: "self",
+                                 lineno: 3,
+                              },
+                              {
+                                 'ast_type': "Attribute",
+                                 attr: "__class__",
+                                 'col_offset': 13,
+                                 ctx: "Load",
+                                 lineno: 3,
+                              },
+                           ],
+                           lineno: 3,
+                        },
+                     },
+                     {
+                        'ast_type': "Assign",
+                        'col_offset': 9,
+                        lineno: 4,
+                        targets: [
+                           {
+                              'ast_type': "QualifiedIdentifier",
+                              'col_offset': 10,
+                              ctx: "Store",
+                              'end_col_offset': 12,
+                              'end_lineno': 4,
+                              identifiers: [
+                                 {
+                                    'ast_type': "Name",
+                                    'col_offset': 9,
+                                    ctx: "Load",
+                                    'end_col_offset': 12,
+                                    'end_lineno': 4,
+                                    id: "self",
+                                    lineno: 4,
+                                 },
+                                 {
+                                    'ast_type': "Attribute",
+                                    attr: "var",
+                                    'col_offset': 9,
+                                    ctx: "Store",
+                                    lineno: 4,
+                                 },
+                              ],
+                              lineno: 4,
+                           },
+                        ],
+                        value: {
+                           'ast_type': "Num",
+                           'col_offset': 20,
+                           'end_col_offset': 20,
+                           'end_lineno': 4,
+                           lineno: 4,
+                           'n': 1,
+                        },
+                     },
+                  ],
+                  'col_offset': 9,
+                  'decorator_list': [],
+                  'end_col_offset': 16,
+                  'end_lineno': 2,
+                  lineno: 2,
+                  name: "testfnc1",
+                  returns: ~,
+               },
+            ],
+            'col_offset': 7,
+            'decorator_list': [],
+            'end_col_offset': 14,
+            'end_lineno': 1,
+            keywords: [],
+            lineno: 1,
+            name: "testcls1",
+         },
+      ],
+   },
 }

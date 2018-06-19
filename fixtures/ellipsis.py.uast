@@ -1,53 +1,62 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: Expr {
-.  .  .  Roles: Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 1
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: List {
-.  .  .  .  .  Roles: Expression,List,Literal,Primitive
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 1
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Ellipsis {
-.  .  .  .  .  .  .  Roles: Identifier,Incomplete
-.  .  .  .  .  .  .  TOKEN "..."
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 2
-.  .  .  .  .  .  .  .  end_col_offset: 4
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: elts
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Num {
-.  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
-.  .  .  .  .  .  .  TOKEN "0"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 7
-.  .  .  .  .  .  .  .  end_col_offset: 7
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: elts
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "Expr",
+         '@role': [Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 0,
+               line: 1,
+               col: 1,
+            },
+         },
+         value: { '@type': "List",
+            '@role': [Expression, List, Literal, Primitive],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 0,
+                  line: 1,
+                  col: 1,
+               },
+            },
+            ctx: "Load",
+            elts: [
+               { '@type': "Ellipsis",
+                  '@token': "...",
+                  '@role': [Identifier, Incomplete],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 1,
+                        line: 1,
+                        col: 2,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 3,
+                        line: 1,
+                        col: 4,
+                     },
+                  },
+               },
+               { '@type': "Num",
+                  '@token': 0,
+                  '@role': [Expression, Literal, Number, Primitive],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 6,
+                        line: 1,
+                        col: 7,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 6,
+                        line: 1,
+                        col: 7,
+                     },
+                  },
+               },
+            ],
+         },
+      },
+   ],
 }
-

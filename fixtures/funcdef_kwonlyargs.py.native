@@ -1,78 +1,66 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "args": {
-                        "args": [
-                            {
-                                "annotation": null,
-                                "arg": "a",
-                                "ast_type": "arg",
-                                "col_offset": 14,
-                                "end_col_offset": 14,
-                                "end_lineno": 1,
-                                "lineno": 1
-                            },
-                            {
-                                "annotation": null,
-                                "arg": "b",
-                                "ast_type": "arg",
-                                "col_offset": 17,
-                                "end_col_offset": 17,
-                                "end_lineno": 1,
-                                "lineno": 1
-                            }
-                        ],
-                        "ast_type": "arguments",
-                        "defaults": [],
-                        "kw_defaults": [
-                            {
-                                "ast_type": "Num",
-                                "col_offset": 25,
-                                "end_col_offset": 25,
-                                "end_lineno": 1,
-                                "lineno": 1,
-                                "n": 1
-                            }
-                        ],
-                        "kwarg": null,
-                        "kwonlyargs": [
-                            {
-                                "annotation": null,
-                                "arg": "c",
-                                "ast_type": "arg",
-                                "col_offset": 23,
-                                "end_col_offset": 23,
-                                "end_lineno": 1,
-                                "lineno": 1
-                            }
-                        ],
-                        "vararg": null
-                    },
-                    "ast_type": "FunctionDef",
-                    "body": [
-                        {
-                            "ast_type": "Pass",
-                            "col_offset": 29,
-                            "end_col_offset": 32,
-                            "end_lineno": 1,
-                            "lineno": 1
-                        }
-                    ],
-                    "col_offset": 5,
-                    "decorator_list": [],
-                    "end_col_offset": 12,
-                    "end_lineno": 1,
-                    "lineno": 1,
-                    "name": "testfnc1",
-                    "returns": null
-                }
-            ]
-        }
-    }
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            args: {
+               args: [
+                  {
+                     '@token': "a",
+                     annotation: ~,
+                     'ast_type': "arg",
+                     'col_offset': 14,
+                     'end_col_offset': 14,
+                     'end_lineno': 1,
+                     lineno: 1,
+                  },
+                  {
+                     '@token': "b",
+                     annotation: ~,
+                     'ast_type': "arg",
+                     'col_offset': 17,
+                     'end_col_offset': 17,
+                     'end_lineno': 1,
+                     lineno: 1,
+                  },
+                  {
+                     '@token': "c",
+                     annotation: ~,
+                     'ast_type': "kwonly_arg",
+                     'col_offset': 23,
+                     default: {
+                        'ast_type': "Num",
+                        'col_offset': 25,
+                        'end_col_offset': 25,
+                        'end_lineno': 1,
+                        lineno: 1,
+                        'n': 1,
+                     },
+                     'end_col_offset': 23,
+                     'end_lineno': 1,
+                     lineno: 1,
+                  },
+               ],
+               'ast_type': "arguments",
+            },
+            'ast_type': "FunctionDef",
+            body: [
+               {
+                  'ast_type': "Pass",
+                  'col_offset': 29,
+                  'end_col_offset': 32,
+                  'end_lineno': 1,
+                  lineno: 1,
+               },
+            ],
+            'col_offset': 5,
+            'decorator_list': [],
+            'end_col_offset': 12,
+            'end_lineno': 1,
+            lineno: 1,
+            name: "testfnc1",
+            returns: ~,
+         },
+      ],
+   },
 }

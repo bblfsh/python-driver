@@ -1,60 +1,55 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "ast_type": "ImportFrom",
-                    "col_offset": 1,
-                    "end_col_offset": 7,
-                    "end_lineno": 1,
-                    "level": 0,
-                    "lineno": 1,
-                    "module": "os",
-                    "names": [
-                        {
-                            "asname": null,
-                            "ast_type": "alias",
-                            "name": "path"
-                        }
-                    ]
-                },
-                {
-                    "ast_type": "Import",
-                    "col_offset": 1,
-                    "lineno": 2,
-                    "names": [
-                        {
-                            "asname": null,
-                            "ast_type": "alias",
-                            "name": "sys"
-                        }
-                    ]
-                },
-                {
-                    "ast_type": "Import",
-                    "col_offset": 1,
-                    "lineno": 4,
-                    "names": [
-                        {
-                            "asname": "np",
-                            "ast_type": "alias",
-                            "name": "numpy"
-                        }
-                    ],
-                    "noops_previous": {
-                        "ast_type": "PreviousNoops",
-                        "col_offset": 1,
-                        "end_col_offset": 1,
-                        "end_lineno": 3,
-                        "lineno": 3,
-                        "lines": []
-                    }
-                }
-            ]
-        }
-    }
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "ImportFrom",
+            'col_offset': 1,
+            'end_col_offset': 7,
+            'end_lineno': 1,
+            level: 0,
+            lineno: 1,
+            module: "os",
+            names: [
+               {
+                  asname: ~,
+                  'ast_type': "alias",
+                  name: "path",
+               },
+            ],
+         },
+         {
+            'ast_type': "Import",
+            'col_offset': 1,
+            lineno: 2,
+            names: [
+               {
+                  asname: ~,
+                  'ast_type': "alias",
+                  name: "sys",
+               },
+            ],
+         },
+         {
+            'ast_type': "Import",
+            'col_offset': 1,
+            lineno: 4,
+            names: [
+               {
+                  asname: "np",
+                  'ast_type': "alias",
+                  name: "numpy",
+               },
+            ],
+            'noops_previous': {
+               'ast_type': "PreviousNoops",
+               'col_offset': 1,
+               'end_col_offset': 1,
+               'end_lineno': 3,
+               lineno: 3,
+               lines: [],
+            },
+         },
+      ],
+   },
 }

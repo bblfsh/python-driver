@@ -1,89 +1,113 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: Assign {
-.  .  .  Roles: Assignment,Binary,Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 1
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Tuple {
-.  .  .  .  .  Roles: Expression,Left,Literal,Primitive,Tuple
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  internalRole: targets
-.  .  .  .  .  .  lineno: 1
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Name {
-.  .  .  .  .  .  .  Roles: Expression,Identifier
-.  .  .  .  .  .  .  TOKEN "a"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  .  .  end_col_offset: 1
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: elts
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  Roles: Expression,Identifier
-.  .  .  .  .  .  .  TOKEN "b"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 4
-.  .  .  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  .  .  end_col_offset: 4
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: elts
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Tuple {
-.  .  .  .  .  Roles: Expression,Literal,Primitive,Right,Tuple
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 8
-.  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 1
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Num {
-.  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
-.  .  .  .  .  .  .  TOKEN "0"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 8
-.  .  .  .  .  .  .  .  end_col_offset: 8
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: elts
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: NoneLiteral {
-.  .  .  .  .  .  .  Roles: Expression,Literal,Null,Primitive
-.  .  .  .  .  .  .  TOKEN "None"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  LiteralValue: None
-.  .  .  .  .  .  .  .  col_offset: 11
-.  .  .  .  .  .  .  .  end_col_offset: 14
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: elts
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "Assign",
+         '@role': [Assignment, Binary, Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 0,
+               line: 1,
+               col: 1,
+            },
+         },
+         targets: [
+            { '@type': "Tuple",
+               '@role': [Expression, Left, Literal, Primitive, Tuple],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 0,
+                     line: 1,
+                     col: 1,
+                  },
+               },
+               ctx: "Store",
+               elts: [
+                  { '@type': "Name",
+                     '@token': "a",
+                     '@role': [Expression, Identifier],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 0,
+                           line: 1,
+                           col: 1,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 0,
+                           line: 1,
+                           col: 1,
+                        },
+                     },
+                     ctx: "Store",
+                  },
+                  { '@type': "Name",
+                     '@token': "b",
+                     '@role': [Expression, Identifier],
+                     '@pos': { '@type': "uast:Positions",
+                        start: { '@type': "uast:Position",
+                           offset: 3,
+                           line: 1,
+                           col: 4,
+                        },
+                        end: { '@type': "uast:Position",
+                           offset: 3,
+                           line: 1,
+                           col: 4,
+                        },
+                     },
+                     ctx: "Store",
+                  },
+               ],
+            },
+         ],
+         value: { '@type': "Tuple",
+            '@role': [Expression, Literal, Primitive, Right, Tuple],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 7,
+                  line: 1,
+                  col: 8,
+               },
+            },
+            ctx: "Load",
+            elts: [
+               { '@type': "Num",
+                  '@token': 0,
+                  '@role': [Expression, Literal, Number, Primitive],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 7,
+                        line: 1,
+                        col: 8,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 7,
+                        line: 1,
+                        col: 8,
+                     },
+                  },
+               },
+               { '@type': "NoneLiteral",
+                  '@token': "None",
+                  '@role': [Expression, Literal, 'Null', Primitive],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 10,
+                        line: 1,
+                        col: 11,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 13,
+                        line: 1,
+                        col: 14,
+                     },
+                  },
+                  LiteralValue: "None",
+                  value: ~,
+               },
+            ],
+         },
+      },
+   ],
 }
-

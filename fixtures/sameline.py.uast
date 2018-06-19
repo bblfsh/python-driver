@@ -1,96 +1,119 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: Expr {
-.  .  .  Roles: Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 1
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Call {
-.  .  .  .  .  Roles: Call,Expression,Function
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 1
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  Roles: Argument,Call,Expression,Function,Literal,Name,Positional,Primitive,String
-.  .  .  .  .  .  .  TOKEN "same line test"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 7
-.  .  .  .  .  .  .  .  end_col_offset: 22
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  Roles: Call,Callee,Expression,Identifier
-.  .  .  .  .  .  .  TOKEN "print"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 1
-.  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  end_col_offset: 5
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: func
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  1: Expr {
-.  .  .  Roles: Expression
-.  .  .  Properties: {
-.  .  .  .  col_offset: 26
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 1
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Call {
-.  .  .  .  .  Roles: Call,Expression,Function
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 26
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  .  lineno: 1
-.  .  .  .  .  }
-.  .  .  .  .  Children: {
-.  .  .  .  .  .  0: Str {
-.  .  .  .  .  .  .  Roles: Argument,Call,Expression,Function,Literal,Name,Positional,Primitive,String
-.  .  .  .  .  .  .  TOKEN "another call"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 32
-.  .  .  .  .  .  .  .  end_col_offset: 45
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: args
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  .  1: Name {
-.  .  .  .  .  .  .  Roles: Call,Callee,Expression,Identifier
-.  .  .  .  .  .  .  TOKEN "print"
-.  .  .  .  .  .  .  Properties: {
-.  .  .  .  .  .  .  .  col_offset: 26
-.  .  .  .  .  .  .  .  ctx: Load
-.  .  .  .  .  .  .  .  end_col_offset: 30
-.  .  .  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  .  .  internalRole: func
-.  .  .  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  .  }
-.  .  .  .  .  .  }
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "Expr",
+         '@role': [Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 0,
+               line: 1,
+               col: 1,
+            },
+         },
+         value: { '@type': "Call",
+            '@role': [Call, Expression, Function],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 0,
+                  line: 1,
+                  col: 1,
+               },
+            },
+            args: [
+               { '@type': "Str",
+                  '@token': "same line test",
+                  '@role': [Argument, Call, Expression, Function, Literal, Name, Positional, Primitive, String],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 6,
+                        line: 1,
+                        col: 7,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 21,
+                        line: 1,
+                        col: 22,
+                     },
+                  },
+               },
+            ],
+            func: { '@type': "Name",
+               '@token': "print",
+               '@role': [Call, Callee, Expression, Identifier],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 0,
+                     line: 1,
+                     col: 1,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 4,
+                     line: 1,
+                     col: 5,
+                  },
+               },
+               ctx: "Load",
+            },
+            keywords: [],
+         },
+      },
+      { '@type': "Expr",
+         '@role': [Expression],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 25,
+               line: 1,
+               col: 26,
+            },
+         },
+         value: { '@type': "Call",
+            '@role': [Call, Expression, Function],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 25,
+                  line: 1,
+                  col: 26,
+               },
+            },
+            args: [
+               { '@type': "Str",
+                  '@token': "another call",
+                  '@role': [Argument, Call, Expression, Function, Literal, Name, Positional, Primitive, String],
+                  '@pos': { '@type': "uast:Positions",
+                     start: { '@type': "uast:Position",
+                        offset: 31,
+                        line: 1,
+                        col: 32,
+                     },
+                     end: { '@type': "uast:Position",
+                        offset: 44,
+                        line: 1,
+                        col: 45,
+                     },
+                  },
+               },
+            ],
+            func: { '@type': "Name",
+               '@token': "print",
+               '@role': [Call, Callee, Expression, Identifier],
+               '@pos': { '@type': "uast:Positions",
+                  start: { '@type': "uast:Position",
+                     offset: 25,
+                     line: 1,
+                     col: 26,
+                  },
+                  end: { '@type': "uast:Position",
+                     offset: 29,
+                     line: 1,
+                     col: 30,
+                  },
+               },
+               ctx: "Load",
+            },
+            keywords: [],
+         },
+      },
+   ],
 }
-

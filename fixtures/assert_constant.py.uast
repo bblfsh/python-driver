@@ -1,96 +1,124 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: Assert {
-.  .  .  Roles: Assert,Statement
-.  .  .  TOKEN "assert"
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  end_col_offset: 6
-.  .  .  .  end_lineno: 1
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 1
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: BoolLiteral {
-.  .  .  .  .  Roles: Boolean,Expression,Literal,Primitive
-.  .  .  .  .  TOKEN "True"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 8
-.  .  .  .  .  .  end_col_offset: 11
-.  .  .  .  .  .  end_lineno: 1
-.  .  .  .  .  .  internalRole: test
-.  .  .  .  .  .  lineno: 1
-.  .  .  .  .  .  value: true
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  1: Assert {
-.  .  .  Roles: Assert,Statement
-.  .  .  TOKEN "assert"
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  end_col_offset: 6
-.  .  .  .  end_lineno: 2
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 2
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: BoolLiteral {
-.  .  .  .  .  Roles: Boolean,Expression,Literal,Primitive
-.  .  .  .  .  TOKEN "True"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 8
-.  .  .  .  .  .  end_col_offset: 11
-.  .  .  .  .  .  end_lineno: 2
-.  .  .  .  .  .  internalRole: test
-.  .  .  .  .  .  lineno: 2
-.  .  .  .  .  .  value: true
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  2: Assert {
-.  .  .  Roles: Assert,Statement
-.  .  .  TOKEN "assert"
-.  .  .  Properties: {
-.  .  .  .  col_offset: 1
-.  .  .  .  end_col_offset: 6
-.  .  .  .  end_lineno: 3
-.  .  .  .  internalRole: body
-.  .  .  .  lineno: 3
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Str {
-.  .  .  .  .  Roles: Expression,Literal,Primitive,String
-.  .  .  .  .  TOKEN "assert message"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 14
-.  .  .  .  .  .  end_col_offset: 29
-.  .  .  .  .  .  end_lineno: 3
-.  .  .  .  .  .  internalRole: msg
-.  .  .  .  .  .  lineno: 3
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: BoolLiteral {
-.  .  .  .  .  Roles: Boolean,Expression,Literal,Primitive
-.  .  .  .  .  TOKEN "True"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  col_offset: 8
-.  .  .  .  .  .  end_col_offset: 11
-.  .  .  .  .  .  end_lineno: 3
-.  .  .  .  .  .  internalRole: test
-.  .  .  .  .  .  lineno: 3
-.  .  .  .  .  .  value: true
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "Assert",
+         '@token': "assert",
+         '@role': [Assert, Statement],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 0,
+               line: 1,
+               col: 1,
+            },
+            end: { '@type': "uast:Position",
+               offset: 5,
+               line: 1,
+               col: 6,
+            },
+         },
+         msg: ~,
+         test: { '@type': "BoolLiteral",
+            '@token': "True",
+            '@role': [Boolean, Expression, Literal, Primitive],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 7,
+                  line: 1,
+                  col: 8,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 10,
+                  line: 1,
+                  col: 11,
+               },
+            },
+            value: true,
+         },
+      },
+      { '@type': "Assert",
+         '@token': "assert",
+         '@role': [Assert, Statement],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 13,
+               line: 2,
+               col: 1,
+            },
+            end: { '@type': "uast:Position",
+               offset: 18,
+               line: 2,
+               col: 6,
+            },
+         },
+         msg: ~,
+         test: { '@type': "BoolLiteral",
+            '@token': "True",
+            '@role': [Boolean, Expression, Literal, Primitive],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 20,
+                  line: 2,
+                  col: 8,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 23,
+                  line: 2,
+                  col: 11,
+               },
+            },
+            value: true,
+         },
+      },
+      { '@type': "Assert",
+         '@token': "assert",
+         '@role': [Assert, Statement],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 25,
+               line: 3,
+               col: 1,
+            },
+            end: { '@type': "uast:Position",
+               offset: 30,
+               line: 3,
+               col: 6,
+            },
+         },
+         msg: { '@type': "Str",
+            '@token': "assert message",
+            '@role': [Expression, Literal, Primitive, String],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 38,
+                  line: 3,
+                  col: 14,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 53,
+                  line: 3,
+                  col: 29,
+               },
+            },
+         },
+         test: { '@type': "BoolLiteral",
+            '@token': "True",
+            '@role': [Boolean, Expression, Literal, Primitive],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 32,
+                  line: 3,
+                  col: 8,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 35,
+                  line: 3,
+                  col: 11,
+               },
+            },
+            value: true,
+         },
+      },
+   ],
 }
-
