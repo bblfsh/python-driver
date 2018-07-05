@@ -173,7 +173,8 @@ class AstImprover():
         Convert the very odd Python's argument node organization (several different lists
         for each type and each type's default arguments that you have to right-match) into
         a more common in other languages single list of types arguments with default
-        values as children of their arg
+        values as children of their arg. Also convert Python2's "Name" types inside the
+        arguments to
         """
 
         def match_default_args(args: List[Node], defaults: List[Node]) -> List[Node]:
@@ -184,6 +185,13 @@ class AstImprover():
                     arg["default"] = self.visit(defaults[i])
 
             return args
+
+        def name2arg(node: Node):
+            node["ast_type"] = "arg"
+            id_ = node.get("id")
+            if id_:
+                node["@token"] = node["id"]
+                del node["id"]
 
         norm_args: List[Node] = []
 
@@ -224,6 +232,7 @@ class AstImprover():
             if "arg" in n:
                 n["@token"] = n["arg"]
                 del n["arg"]
+            name2arg(n)
 
         node["args"] = norm_args
         return node

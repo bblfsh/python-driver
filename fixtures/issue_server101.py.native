@@ -579,7 +579,8 @@
             args: {
                args: [
                   {
-                     'ast_type': "Name",
+                     '@token': "value",
+                     'ast_type': "arg",
                      'col_offset': 21,
                      ctx: "Param",
                      default: {
@@ -620,11 +621,11 @@
                      },
                      'end_col_offset': 25,
                      'end_lineno': 74,
-                     id: "value",
                      lineno: 74,
                   },
                   {
-                     'ast_type': "Name",
+                     '@token': "name",
+                     'ast_type': "arg",
                      'col_offset': 33,
                      ctx: "Param",
                      default: {
@@ -638,11 +639,11 @@
                      },
                      'end_col_offset': 36,
                      'end_lineno': 74,
-                     id: "name",
                      lineno: 74,
                   },
                   {
-                     'ast_type': "Name",
+                     '@token': "filename",
+                     'ast_type': "arg",
                      'col_offset': 44,
                      ctx: "Param",
                      default: {
@@ -656,11 +657,11 @@
                      },
                      'end_col_offset': 51,
                      'end_lineno': 74,
-                     id: "filename",
                      lineno: 74,
                   },
                   {
-                     'ast_type': "Name",
+                     '@token': "context",
+                     'ast_type': "arg",
                      'col_offset': 59,
                      ctx: "Param",
                      default: {
@@ -674,11 +675,11 @@
                      },
                      'end_col_offset': 65,
                      'end_lineno': 74,
-                     id: "context",
                      lineno: 74,
                   },
                   {
-                     'ast_type': "Name",
+                     '@token': "is_script",
+                     'ast_type': "arg",
                      'col_offset': 21,
                      ctx: "Param",
                      default: {
@@ -692,11 +693,11 @@
                      },
                      'end_col_offset': 29,
                      'end_lineno': 75,
-                     id: "is_script",
                      lineno: 75,
                   },
                   {
-                     'ast_type': "Name",
+                     '@token': "module_name",
+                     'ast_type': "arg",
                      'col_offset': 38,
                      ctx: "Param",
                      default: {
@@ -710,7 +711,6 @@
                      },
                      'end_col_offset': 48,
                      'end_lineno': 75,
-                     id: "module_name",
                      lineno: 75,
                   },
                ],
@@ -2529,12 +2529,12 @@
             args: {
                args: [
                   {
-                     'ast_type': "Name",
+                     '@token': "value",
+                     'ast_type': "arg",
                      'col_offset': 19,
                      ctx: "Param",
                      'end_col_offset': 23,
                      'end_lineno': 149,
-                     id: "value",
                      lineno: 149,
                      'noops_previous': {
                         'ast_type': "PreviousNoops",
@@ -3584,25 +3584,26 @@
             args: {
                args: [
                   {
-                     'ast_type': "Name",
+                     '@token': "module",
+                     'ast_type': "arg",
                      'col_offset': 23,
                      ctx: "Param",
                      'end_col_offset': 28,
                      'end_lineno': 190,
-                     id: "module",
                      lineno: 190,
                   },
                   {
-                     'ast_type': "Name",
+                     '@token': "module_doc",
+                     'ast_type': "arg",
                      'col_offset': 31,
                      ctx: "Param",
                      'end_col_offset': 40,
                      'end_lineno': 190,
-                     id: "module_doc",
                      lineno: 190,
                   },
                   {
-                     'ast_type': "Name",
+                     '@token': "module_name",
+                     'ast_type': "arg",
                      'col_offset': 43,
                      ctx: "Param",
                      default: {
@@ -3624,11 +3625,11 @@
                      },
                      'end_col_offset': 53,
                      'end_lineno': 190,
-                     id: "module_name",
                      lineno: 190,
                   },
                   {
-                     'ast_type': "Name",
+                     '@token': "preliminary",
+                     'ast_type': "arg",
                      'col_offset': 61,
                      ctx: "Param",
                      default: {
@@ -3642,7 +3643,6 @@
                      },
                      'end_col_offset': 71,
                      'end_lineno': 190,
-                     id: "preliminary",
                      lineno: 190,
                   },
                ],
@@ -7410,25 +7410,26 @@
             args: {
                args: [
                   {
-                     'ast_type': "Name",
+                     '@token': "cls",
+                     'ast_type': "arg",
                      'col_offset': 22,
                      ctx: "Param",
                      'end_col_offset': 24,
                      'end_lineno': 326,
-                     id: "cls",
                      lineno: 326,
                   },
                   {
-                     'ast_type': "Name",
+                     '@token': "class_doc",
+                     'ast_type': "arg",
                      'col_offset': 27,
                      ctx: "Param",
                      'end_col_offset': 35,
                      'end_lineno': 326,
-                     id: "class_doc",
                      lineno: 326,
                   },
                   {
-                     'ast_type': "Name",
+                     '@token': "module_name",
+                     'ast_type': "arg",
                      'col_offset': 38,
                      ctx: "Param",
                      default: {
@@ -7450,7 +7451,6 @@
                      },
                      'end_col_offset': 48,
                      'end_lineno': 326,
-                     id: "module_name",
                      lineno: 326,
                   },
                ],
@@ -9828,25 +9828,26 @@
             args: {
                args: [
                   {
-                     'ast_type': "Name",
+                     '@token': "routine",
+                     'ast_type': "arg",
                      'col_offset': 24,
                      ctx: "Param",
                      'end_col_offset': 30,
                      'end_lineno': 414,
-                     id: "routine",
                      lineno: 414,
                   },
                   {
-                     'ast_type': "Name",
+                     '@token': "routine_doc",
+                     'ast_type': "arg",
                      'col_offset': 33,
                      ctx: "Param",
                      'end_col_offset': 43,
                      'end_lineno': 414,
-                     id: "routine_doc",
                      lineno: 414,
                   },
                   {
-                     'ast_type': "Name",
+                     '@token': "module_name",
+                     'ast_type': "arg",
                      'col_offset': 46,
                      ctx: "Param",
                      default: {
@@ -9887,7 +9888,6 @@
                      },
                      'end_col_offset': 56,
                      'end_lineno': 414,
-                     id: "module_name",
                      lineno: 414,
                   },
                ],
@@ -11982,25 +11982,26 @@
             args: {
                args: [
                   {
-                     'ast_type': "Name",
+                     '@token': "prop",
+                     'ast_type': "arg",
                      'col_offset': 25,
                      ctx: "Param",
                      'end_col_offset': 28,
                      'end_lineno': 480,
-                     id: "prop",
                      lineno: 480,
                   },
                   {
-                     'ast_type': "Name",
+                     '@token': "prop_doc",
+                     'ast_type': "arg",
                      'col_offset': 31,
                      ctx: "Param",
                      'end_col_offset': 38,
                      'end_lineno': 480,
-                     id: "prop_doc",
                      lineno: 480,
                   },
                   {
-                     'ast_type': "Name",
+                     '@token': "module_name",
+                     'ast_type': "arg",
                      'col_offset': 41,
                      ctx: "Param",
                      default: {
@@ -12041,7 +12042,6 @@
                      },
                      'end_col_offset': 51,
                      'end_lineno': 480,
-                     id: "module_name",
                      lineno: 480,
                   },
                ],
@@ -12533,25 +12533,26 @@
             args: {
                args: [
                   {
-                     'ast_type': "Name",
+                     '@token': "val",
+                     'ast_type': "arg",
                      'col_offset': 22,
                      ctx: "Param",
                      'end_col_offset': 24,
                      'end_lineno': 500,
-                     id: "val",
                      lineno: 500,
                   },
                   {
-                     'ast_type': "Name",
+                     '@token': "val_doc",
+                     'ast_type': "arg",
                      'col_offset': 27,
                      ctx: "Param",
                      'end_col_offset': 33,
                      'end_lineno': 500,
-                     id: "val_doc",
                      lineno: 500,
                   },
                   {
-                     'ast_type': "Name",
+                     '@token': "module_name",
+                     'ast_type': "arg",
                      'col_offset': 36,
                      ctx: "Param",
                      default: {
@@ -12592,7 +12593,6 @@
                      },
                      'end_col_offset': 46,
                      'end_lineno': 500,
-                     id: "module_name",
                      lineno: 500,
                   },
                ],
@@ -12691,12 +12691,12 @@
             args: {
                args: [
                   {
-                     'ast_type': "Name",
+                     '@token': "object",
+                     'ast_type': "arg",
                      'col_offset': 13,
                      ctx: "Param",
                      'end_col_offset': 18,
                      'end_lineno': 509,
-                     id: "object",
                      lineno: 509,
                      'noops_previous': {
                         'ast_type': "PreviousNoops",
@@ -12901,12 +12901,12 @@
             args: {
                args: [
                   {
-                     'ast_type': "Name",
+                     '@token': "typ",
+                     'ast_type': "arg",
                      'col_offset': 25,
                      ctx: "Param",
                      'end_col_offset': 27,
                      'end_lineno': 524,
-                     id: "typ",
                      lineno: 524,
                      'noops_previous': {
                         'ast_type': "PreviousNoops",
@@ -13030,12 +13030,12 @@
             args: {
                args: [
                   {
-                     'ast_type': "Name",
+                     '@token': "object",
+                     'ast_type': "arg",
                      'col_offset': 23,
                      ctx: "Param",
                      'end_col_offset': 28,
                      'end_lineno': 532,
-                     id: "object",
                      lineno: 532,
                      'noops_previous': {
                         'ast_type': "PreviousNoops",
@@ -13425,16 +13425,17 @@
             args: {
                args: [
                   {
-                     'ast_type': "Name",
+                     '@token': "value",
+                     'ast_type': "arg",
                      'col_offset': 19,
                      ctx: "Param",
                      'end_col_offset': 23,
                      'end_lineno': 555,
-                     id: "value",
                      lineno: 555,
                   },
                   {
-                     'ast_type': "Name",
+                     '@token': "module_name",
+                     'ast_type': "arg",
                      'col_offset': 26,
                      ctx: "Param",
                      default: {
@@ -13456,7 +13457,6 @@
                      },
                      'end_col_offset': 36,
                      'end_lineno': 555,
-                     id: "module_name",
                      lineno: 555,
                   },
                ],
@@ -14730,16 +14730,17 @@
             args: {
                args: [
                   {
-                     'ast_type': "Name",
+                     '@token': "value",
+                     'ast_type': "arg",
                      'col_offset': 24,
                      ctx: "Param",
                      'end_col_offset': 28,
                      'end_lineno': 596,
-                     id: "value",
                      lineno: 596,
                   },
                   {
-                     'ast_type': "Name",
+                     '@token': "strict",
+                     'ast_type': "arg",
                      'col_offset': 31,
                      ctx: "Param",
                      default: {
@@ -14761,7 +14762,6 @@
                      },
                      'end_col_offset': 36,
                      'end_lineno': 596,
-                     id: "strict",
                      lineno: 596,
                   },
                ],
@@ -16884,12 +16884,12 @@
             args: {
                args: [
                   {
-                     'ast_type': "Name",
+                     '@token': "value",
+                     'ast_type': "arg",
                      'col_offset': 17,
                      ctx: "Param",
                      'end_col_offset': 21,
                      'end_lineno': 654,
-                     id: "value",
                      lineno: 654,
                      'noops_previous': {
                         'ast_type': "PreviousNoops",
@@ -16901,12 +16901,12 @@
                      },
                   },
                   {
-                     'ast_type': "Name",
+                     '@token': "dotted_name",
+                     'ast_type': "arg",
                      'col_offset': 24,
                      ctx: "Param",
                      'end_col_offset': 34,
                      'end_lineno': 654,
-                     id: "dotted_name",
                      lineno: 654,
                   },
                ],
@@ -17484,12 +17484,12 @@
             args: {
                args: [
                   {
-                     'ast_type': "Name",
+                     '@token': "value",
+                     'ast_type': "arg",
                      'col_offset': 16,
                      ctx: "Param",
                      'end_col_offset': 20,
                      'end_lineno': 673,
-                     id: "value",
                      lineno: 673,
                      'noops_previous': {
                         'ast_type': "PreviousNoops",
@@ -17707,12 +17707,12 @@
             args: {
                args: [
                   {
-                     'ast_type': "Name",
+                     '@token': "value",
+                     'ast_type': "arg",
                      'col_offset': 27,
                      ctx: "Param",
                      'end_col_offset': 31,
                      'end_lineno': 682,
-                     id: "value",
                      lineno: 682,
                      'noops_previous': {
                         'ast_type': "PreviousNoops",
@@ -18502,12 +18502,12 @@
             args: {
                args: [
                   {
-                     'ast_type': "Name",
+                     '@token': "func",
+                     'ast_type': "arg",
                      'col_offset': 27,
                      ctx: "Param",
                      'end_col_offset': 30,
                      'end_lineno': 704,
-                     id: "func",
                      lineno: 704,
                      'noops_previous': {
                         'ast_type': "PreviousNoops",
@@ -19144,25 +19144,26 @@
             args: {
                args: [
                   {
-                     'ast_type': "Name",
+                     '@token': "applicability_test",
+                     'ast_type': "arg",
                      'col_offset': 27,
                      ctx: "Param",
                      'end_col_offset': 44,
                      'end_lineno': 735,
-                     id: "applicability_test",
                      lineno: 735,
                   },
                   {
-                     'ast_type': "Name",
+                     '@token': "introspecter",
+                     'ast_type': "arg",
                      'col_offset': 47,
                      ctx: "Param",
                      'end_col_offset': 58,
                      'end_lineno': 735,
-                     id: "introspecter",
                      lineno: 735,
                   },
                   {
-                     'ast_type': "Name",
+                     '@token': "priority",
+                     'ast_type': "arg",
                      'col_offset': 61,
                      ctx: "Param",
                      default: {
@@ -19175,7 +19176,6 @@
                      },
                      'end_col_offset': 68,
                      'end_lineno': 735,
-                     id: "priority",
                      lineno: 735,
                   },
                ],
@@ -19324,12 +19324,12 @@
             args: {
                args: [
                   {
-                     'ast_type': "Name",
+                     '@token': "value",
+                     'ast_type': "arg",
                      'col_offset': 23,
                      ctx: "Param",
                      'end_col_offset': 27,
                      'end_lineno': 757,
-                     id: "value",
                      lineno: 757,
                      'noops_previous': {
                         'ast_type': "PreviousNoops",
@@ -19482,12 +19482,12 @@
             args: {
                args: [
                   {
-                     'ast_type': "Name",
+                     '@token': "v",
+                     'ast_type': "arg",
                      'col_offset': 20,
                      ctx: "Param",
                      'end_col_offset': 20,
                      'end_lineno': 765,
-                     id: "v",
                      lineno: 765,
                      'noops_previous': {
                         'ast_type': "PreviousNoops",
@@ -19566,12 +19566,12 @@
             args: {
                args: [
                   {
-                     'ast_type': "Name",
+                     '@token': "v",
+                     'ast_type': "arg",
                      'col_offset': 21,
                      ctx: "Param",
                      'end_col_offset': 21,
                      'end_lineno': 766,
-                     id: "v",
                      lineno: 766,
                   },
                ],
@@ -19635,12 +19635,12 @@
             args: {
                args: [
                   {
-                     'ast_type': "Name",
+                     '@token': "v",
+                     'ast_type': "arg",
                      'col_offset': 17,
                      ctx: "Param",
                      'end_col_offset': 17,
                      'end_lineno': 767,
-                     id: "v",
                      lineno: 767,
                   },
                ],
@@ -20076,12 +20076,12 @@
                   args: {
                      args: [
                         {
-                           'ast_type': "Name",
+                           '@token': "v",
+                           'ast_type': "arg",
                            'col_offset': 19,
                            ctx: "Param",
                            'end_col_offset': 19,
                            'end_lineno': 778,
-                           id: "v",
                            lineno: 778,
                         },
                      ],
@@ -20341,12 +20341,12 @@
                   args: {
                      args: [
                         {
-                           'ast_type': "Name",
+                           '@token': "v",
+                           'ast_type': "arg",
                            'col_offset': 19,
                            ctx: "Param",
                            'end_col_offset': 19,
                            'end_lineno': 788,
-                           id: "v",
                            lineno: 788,
                         },
                      ],
@@ -20488,16 +20488,17 @@
             args: {
                args: [
                   {
-                     'ast_type': "Name",
+                     '@token': "filename",
+                     'ast_type': "arg",
                      'col_offset': 29,
                      ctx: "Param",
                      'end_col_offset': 36,
                      'end_lineno': 797,
-                     id: "filename",
                      lineno: 797,
                   },
                   {
-                     'ast_type': "Name",
+                     '@token': "context",
+                     'ast_type': "arg",
                      'col_offset': 39,
                      ctx: "Param",
                      default: {
@@ -20538,7 +20539,6 @@
                      },
                      'end_col_offset': 45,
                      'end_lineno': 797,
-                     id: "context",
                      lineno: 797,
                   },
                ],
@@ -22304,12 +22304,12 @@
             args: {
                args: [
                   {
-                     'ast_type': "Name",
+                     '@token': "filename",
+                     'ast_type': "arg",
                      'col_offset': 31,
                      ctx: "Param",
                      'end_col_offset': 38,
                      'end_lineno': 849,
-                     id: "filename",
                      lineno: 849,
                      'noops_previous': {
                         'ast_type': "PreviousNoops",
@@ -22425,16 +22425,17 @@
             args: {
                args: [
                   {
-                     'ast_type': "Name",
+                     '@token': "name",
+                     'ast_type': "arg",
                      'col_offset': 25,
                      ctx: "Param",
                      'end_col_offset': 28,
                      'end_lineno': 853,
-                     id: "name",
                      lineno: 853,
                   },
                   {
-                     'ast_type': "Name",
+                     '@token': "globs",
+                     'ast_type': "arg",
                      'col_offset': 31,
                      ctx: "Param",
                      default: {
@@ -22456,7 +22457,6 @@
                      },
                      'end_col_offset': 35,
                      'end_lineno': 853,
-                     id: "globs",
                      lineno: 853,
                   },
                ],
@@ -23349,12 +23349,12 @@
             args: {
                args: [
                   {
-                     'ast_type': "Name",
+                     '@token': "module",
+                     'ast_type': "arg",
                      'col_offset': 13,
                      ctx: "Param",
                      'end_col_offset': 18,
                      'end_lineno': 882,
-                     id: "module",
                      lineno: 882,
                      'noops_previous': {
                         'ast_type': "PreviousNoops",
@@ -23366,12 +23366,12 @@
                      },
                   },
                   {
-                     'ast_type': "Name",
+                     '@token': "name",
+                     'ast_type': "arg",
                      'col_offset': 21,
                      ctx: "Param",
                      'end_col_offset': 24,
                      'end_lineno': 882,
-                     id: "name",
                      lineno: 882,
                   },
                ],
@@ -23742,16 +23742,17 @@
             args: {
                args: [
                   {
-                     'ast_type': "Name",
+                     '@token': "name",
+                     'ast_type': "arg",
                      'col_offset': 13,
                      ctx: "Param",
                      'end_col_offset': 16,
                      'end_lineno': 892,
-                     id: "name",
                      lineno: 892,
                   },
                   {
-                     'ast_type': "Name",
+                     '@token': "filename",
+                     'ast_type': "arg",
                      'col_offset': 19,
                      ctx: "Param",
                      default: {
@@ -23773,7 +23774,6 @@
                      },
                      'end_col_offset': 26,
                      'end_lineno': 892,
-                     id: "filename",
                      lineno: 892,
                   },
                ],
@@ -25273,12 +25273,12 @@
             args: {
                args: [
                   {
-                     'ast_type': "Name",
+                     '@token': "api_doc",
+                     'ast_type': "arg",
                      'col_offset': 33,
                      ctx: "Param",
                      'end_col_offset': 39,
                      'end_lineno': 944,
-                     id: "api_doc",
                      lineno: 944,
                      'noops_previous': {
                         'ast_type': "PreviousNoops",
@@ -26175,12 +26175,12 @@
                   args: {
                      args: [
                         {
-                           'ast_type': "Name",
+                           '@token': "self",
+                           'ast_type': "arg",
                            'col_offset': 18,
                            ctx: "Param",
                            'end_col_offset': 21,
                            'end_lineno': 975,
-                           id: "self",
                            lineno: 975,
                         },
                      ],
@@ -26364,12 +26364,12 @@
                   args: {
                      args: [
                         {
-                           'ast_type': "Name",
+                           '@token': "self",
+                           'ast_type': "arg",
                            'col_offset': 15,
                            ctx: "Param",
                            'end_col_offset': 18,
                            'end_lineno': 980,
-                           id: "self",
                            lineno: 980,
                         },
                      ],
@@ -26396,12 +26396,12 @@
                   args: {
                      args: [
                         {
-                           'ast_type': "Name",
+                           '@token': "self",
+                           'ast_type': "arg",
                            'col_offset': 15,
                            ctx: "Param",
                            'end_col_offset': 18,
                            'end_lineno': 981,
-                           id: "self",
                            lineno: 981,
                         },
                      ],
@@ -26428,16 +26428,17 @@
                   args: {
                      args: [
                         {
-                           'ast_type': "Name",
+                           '@token': "self",
+                           'ast_type': "arg",
                            'col_offset': 14,
                            ctx: "Param",
                            'end_col_offset': 17,
                            'end_lineno': 982,
-                           id: "self",
                            lineno: 982,
                         },
                         {
-                           'ast_type': "Name",
+                           '@token': "size",
+                           'ast_type': "arg",
                            'col_offset': 20,
                            ctx: "Param",
                            default: {
@@ -26450,7 +26451,6 @@
                            },
                            'end_col_offset': 23,
                            'end_lineno': 982,
-                           id: "size",
                            lineno: 982,
                         },
                      ],
@@ -26485,16 +26485,17 @@
                   args: {
                      args: [
                         {
-                           'ast_type': "Name",
+                           '@token': "self",
+                           'ast_type': "arg",
                            'col_offset': 18,
                            ctx: "Param",
                            'end_col_offset': 21,
                            'end_lineno': 983,
-                           id: "self",
                            lineno: 983,
                         },
                         {
-                           'ast_type': "Name",
+                           '@token': "size",
+                           'ast_type': "arg",
                            'col_offset': 24,
                            ctx: "Param",
                            default: {
@@ -26507,7 +26508,6 @@
                            },
                            'end_col_offset': 27,
                            'end_lineno': 983,
-                           id: "size",
                            lineno: 983,
                         },
                      ],
@@ -26542,16 +26542,17 @@
                   args: {
                      args: [
                         {
-                           'ast_type': "Name",
+                           '@token': "self",
+                           'ast_type': "arg",
                            'col_offset': 19,
                            ctx: "Param",
                            'end_col_offset': 22,
                            'end_lineno': 984,
-                           id: "self",
                            lineno: 984,
                         },
                         {
-                           'ast_type': "Name",
+                           '@token': "sizehint",
+                           'ast_type': "arg",
                            'col_offset': 25,
                            ctx: "Param",
                            default: {
@@ -26564,7 +26565,6 @@
                            },
                            'end_col_offset': 32,
                            'end_lineno': 984,
-                           id: "sizehint",
                            lineno: 984,
                         },
                      ],
@@ -26598,25 +26598,26 @@
                   args: {
                      args: [
                         {
-                           'ast_type': "Name",
+                           '@token': "self",
+                           'ast_type': "arg",
                            'col_offset': 14,
                            ctx: "Param",
                            'end_col_offset': 17,
                            'end_lineno': 985,
-                           id: "self",
                            lineno: 985,
                         },
                         {
-                           'ast_type': "Name",
+                           '@token': "offset",
+                           'ast_type': "arg",
                            'col_offset': 20,
                            ctx: "Param",
                            'end_col_offset': 25,
                            'end_lineno': 985,
-                           id: "offset",
                            lineno: 985,
                         },
                         {
-                           'ast_type': "Name",
+                           '@token': "whence",
+                           'ast_type': "arg",
                            'col_offset': 28,
                            ctx: "Param",
                            default: {
@@ -26629,7 +26630,6 @@
                            },
                            'end_col_offset': 33,
                            'end_lineno': 985,
-                           id: "whence",
                            lineno: 985,
                         },
                      ],
@@ -26656,12 +26656,12 @@
                   args: {
                      args: [
                         {
-                           'ast_type': "Name",
+                           '@token': "self",
+                           'ast_type': "arg",
                            'col_offset': 14,
                            ctx: "Param",
                            'end_col_offset': 17,
                            'end_lineno': 986,
-                           id: "self",
                            lineno: 986,
                         },
                      ],
@@ -26696,16 +26696,17 @@
                   args: {
                      args: [
                         {
-                           'ast_type': "Name",
+                           '@token': "self",
+                           'ast_type': "arg",
                            'col_offset': 18,
                            ctx: "Param",
                            'end_col_offset': 21,
                            'end_lineno': 987,
-                           id: "self",
                            lineno: 987,
                         },
                         {
-                           'ast_type': "Name",
+                           '@token': "size",
+                           'ast_type': "arg",
                            'col_offset': 24,
                            ctx: "Param",
                            default: {
@@ -26718,7 +26719,6 @@
                            },
                            'end_col_offset': 27,
                            'end_lineno': 987,
-                           id: "size",
                            lineno: 987,
                         },
                      ],
@@ -26745,21 +26745,21 @@
                   args: {
                      args: [
                         {
-                           'ast_type': "Name",
+                           '@token': "self",
+                           'ast_type': "arg",
                            'col_offset': 15,
                            ctx: "Param",
                            'end_col_offset': 18,
                            'end_lineno': 988,
-                           id: "self",
                            lineno: 988,
                         },
                         {
-                           'ast_type': "Name",
+                           '@token': "str",
+                           'ast_type': "arg",
                            'col_offset': 21,
                            ctx: "Param",
                            'end_col_offset': 23,
                            'end_lineno': 988,
-                           id: "str",
                            lineno: 988,
                         },
                      ],
@@ -26786,21 +26786,21 @@
                   args: {
                      args: [
                         {
-                           'ast_type': "Name",
+                           '@token': "self",
+                           'ast_type': "arg",
                            'col_offset': 20,
                            ctx: "Param",
                            'end_col_offset': 23,
                            'end_lineno': 989,
-                           id: "self",
                            lineno: 989,
                         },
                         {
-                           'ast_type': "Name",
+                           '@token': "sequence",
+                           'ast_type': "arg",
                            'col_offset': 26,
                            ctx: "Param",
                            'end_col_offset': 33,
                            'end_lineno': 989,
-                           id: "sequence",
                            lineno: 989,
                         },
                      ],
@@ -27090,12 +27090,12 @@
                   args: {
                      args: [
                         {
-                           'ast_type': "Name",
+                           '@token': "val",
+                           'ast_type': "arg",
                            'col_offset': 23,
                            ctx: "Param",
                            'end_col_offset': 25,
                            'end_lineno': 1011,
-                           id: "val",
                            lineno: 1011,
                         },
                      ],
@@ -27248,12 +27248,12 @@
                   args: {
                      args: [
                         {
-                           'ast_type': "Name",
+                           '@token': "val",
+                           'ast_type': "arg",
                            'col_offset': 25,
                            ctx: "Param",
                            'end_col_offset': 27,
                            'end_lineno': 1018,
-                           id: "val",
                            lineno: 1018,
                         },
                      ],
