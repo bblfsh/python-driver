@@ -110,9 +110,11 @@
          },
          keywords: [
             { '@type': "keyword",
-               '@token': "metaclass",
                '@role': [Incomplete, Name],
                '@pos': { '@type': "uast:Positions",
+               },
+               '@token': { '@type': "uast:Identifier",
+                  Name: "metaclass",
                },
                value: { '@type': "uast:Identifier",
                   '@role': [Argument, Value],

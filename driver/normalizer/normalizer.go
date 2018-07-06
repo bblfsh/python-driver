@@ -60,7 +60,23 @@ func funcDefMap(typ string, async bool) Mapping {
 	))
 }
 
+func tokenIsIdentifier(typ, tokenKey string, roles... role.Role) Mapping {
+	return AnnotateType(typ, MapObj(
+		Fields{
+			{Name: tokenKey, Op: Var("name")},
+		},
+		Fields{
+			{Name: tokenKey, Op: UASTType(uast.Identifier{}, Obj{
+				"Name": Var("name"),
+			})},
+		}),
+		roles...)
+}
+
 var Normalizers = []Mapping{
+
+	tokenIsIdentifier("keyword", "arg", role.Name),
+
 	MapSemantic("Str", uast.String{}, MapObj(
 		Obj{
 			"s": Var("val"),
