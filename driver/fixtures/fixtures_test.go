@@ -30,7 +30,6 @@ var Suite = &fixtures.Suite{
 			"AsyncFunctionDef",
 			"Bytes",
 			"FunctionDef",
-			"Import",
 			"ImportFrom",
 			"Name",
 			"NoopLine",
