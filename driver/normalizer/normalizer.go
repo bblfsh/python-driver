@@ -2,6 +2,7 @@ package normalizer
 
 import (
 	"gopkg.in/bblfsh/sdk.v2/uast"
+	"gopkg.in/bblfsh/sdk.v2/uast/role"
 	. "gopkg.in/bblfsh/sdk.v2/uast/transformer"
 )
 
@@ -30,8 +31,8 @@ func funcDefMap(typ string, async bool) Mapping {
 			"name": Var("name"),
 			// Arguments should be converted by the uast.Arguments normalization
 			"args": Obj{
-				"args": Var("arguments"),
-				uast.KeyPos: Var("_pos"),
+				"args":       Var("arguments"),
+				uast.KeyPos:  Var("_pos"),
 				uast.KeyType: Var("_type"),
 			},
 			//"decorator_list": Var("_decorators"),
@@ -105,7 +106,7 @@ var Normalizers = []Mapping{
 
 	MapSemantic("alias", uast.Alias{}, MapObj(
 		Obj{
-			"name": Var("name"),
+			"name":   Var("name"),
 			"asname": Var("aliased"),
 		},
 		Obj{
@@ -123,19 +124,6 @@ var Normalizers = []Mapping{
 		Obj{"Name": Var("name")},
 	)),
 
-	// FIXME: check that the identifiers are in the right order
-	// FIXME: check that those are uast:Identifiers
-	//MapSemantic("QualifiedIdentifier", uast.QualifiedIdentifier{}, MapObj(
-	//	Obj{"identifiers": Var("identifiers")},
-	//	Obj{"Names": Var("identifiers")},
-	//)),
-	//MapSemantic("QualifiedIdentifier", uast.QualifiedIdentifier{}, MapObj(
-	//	Obj{"identifiers": Each("ids", Var("ident"))},
-	//	Obj{"Names": Each("ids", UASTType(uast.Identifier{}, Obj{
-	//		"Name": Var("ident"),
-	//	}))},
-	//)),
-
 	MapSemantic("NoopLine", uast.Comment{}, MapObj(
 		Obj{"noop_line": CommentText([2]string{}, "comm")},
 		CommentNode(false, "comm", nil),
@@ -149,7 +137,7 @@ var Normalizers = []Mapping{
 	MapSemantic("arg", uast.Argument{}, MapObj(
 		Obj{
 			uast.KeyToken: Var("name"),
-			"default": Var("init"),
+			"default":     Var("init"),
 		},
 		Obj{
 			"Name": UASTType(uast.Identifier{}, Obj{
@@ -173,7 +161,7 @@ var Normalizers = []Mapping{
 	MapSemantic("kwonly_arg", uast.Argument{}, MapObj(
 		Obj{
 			uast.KeyToken: Var("name"),
-			"default": Var("init"),
+			"default":     Var("init"),
 		},
 		Obj{
 			"Name": UASTType(uast.Identifier{}, Obj{
@@ -210,9 +198,32 @@ var Normalizers = []Mapping{
 	funcDefMap("FunctionDef", false),
 	funcDefMap("AsyncFunctionDef", true),
 
+	AnnotateType("Import", MapObj(
+		Obj{
+			"names": Each("vals", Var("name")),
+		},
+		Obj{
+			"names": Each("vals", UASTType(uast.RuntimeImport{},
+				Obj{
+					"Path": Var("name"),
+				})),
+		},
+	), role.Import, role.Declaration, role.Statement),
 
 	// FIXME: what to do with levels? convert to ../../... in Path?
 	// FIXME: "import * from x": check the * and set "All" to true
+	//MapSemantic("ImportFrom", uast.RuntimeImport{}, MapObj(
+	//	Obj{
+	//		"names":  Check(Is(Arr(Any))),
+	//		"module": Var("module"),
+	//	},
+	//	Obj{
+	//		"All": Bool(true),
+	//		"Path": UASTType(uast.Identifier{}, Obj{
+	//			"Name":  Var("module"),
+	//		}),
+	//	},
+	//)),
 	MapSemantic("ImportFrom", uast.RuntimeImport{}, MapObj(
 		Obj{
 			"names":  Var("names"),
@@ -220,19 +231,9 @@ var Normalizers = []Mapping{
 		},
 		Obj{
 			"Names": Var("names"),
-			"Path":  UASTType(uast.String{}, Obj{
-				"Value": Var("module"),
-				"Format": String(""),
+			"Path": UASTType(uast.Identifier{}, Obj{
+				"Name":  Var("module"),
 			}),
-		},
-	)),
-
-	MapSemantic("Import", uast.RuntimeImport{}, MapObj(
-		Obj{
-			"names": Var("names"),
-		},
-		Obj{
-			"Names": Var("names"),
 		},
 	)),
 }
