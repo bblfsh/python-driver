@@ -187,7 +187,9 @@ class AstImprover():
             return args
 
         def name2arg(node: Node):
-            node["ast_type"] = "arg"
+            # Normalize Python2 and 3 argument types
+            if node["ast_type"] == "Name":
+                node["ast_type"] = "arg"
             id_ = node.get("id")
             if id_:
                 node["@token"] = node["id"]
