@@ -35,9 +35,6 @@ func funcDefMap(typ string, async bool) Mapping {
 				uast.KeyPos:  Var("_pos"),
 				uast.KeyType: Var("_type"),
 			},
-			//"decorator_list": Var("_decorators"),
-			// XXX handle this
-			//"returns": Var("returns"),
 		},
 		Obj{
 			"Nodes": Arr(
