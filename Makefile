@@ -12,6 +12,7 @@ build-native-internal:
 	$(PIP3_CMD) ${DEV_DEPS}/python-pydetector/ || $(PIP3_CMD) pydetector-bblfsh
 	$(PIP2_CMD) ${DEV_DEPS}/python-pydetector/ || $(PIP2_CMD) pydetector-bblfsh
 	cd native/python_package/ && $(PIP3_CMD) .
+	mkdir -p $(BUILD_PATH)/bin || true
 	cp native/sh/native.sh $(BUILD_PATH)/bin/native;
 	chmod +x $(BUILD_PATH)/bin/native
 

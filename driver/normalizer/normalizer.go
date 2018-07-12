@@ -43,6 +43,8 @@ func funcDefMap(typ string, async bool) Mapping {
 					"async": Bool(async),
 				},
 				UASTType(uast.Alias{}, Obj{
+					// FIXME: can't call identifierWithPos because it would take the position of the
+					// function node that is not exactly the same as the position of the function name
 					"Name": UASTType(uast.Identifier{}, Obj{
 						"Name": Var("name"),
 					}),
@@ -60,21 +62,34 @@ func funcDefMap(typ string, async bool) Mapping {
 	))
 }
 
-func tokenIsIdentifier(typ, tokenKey string, roles... role.Role) Mapping {
+func identifierWithPos(nameVar string) ObjectOp {
+	return UASTType(uast.Identifier{}, Obj{
+		uast.KeyPos: UASTType(uast.Positions{}, Obj{
+			uast.KeyStart: Var(uast.KeyStart),
+			uast.KeyEnd:   Var(uast.KeyEnd),
+		}),
+		"Name": Var(nameVar),
+	})
+}
+
+func tokenIsIdentifier(typ, tokenKey string, roles ...role.Role) Mapping {
 	return AnnotateType(typ, MapObj(
 		Fields{
 			{Name: tokenKey, Op: Var("name")},
 		},
 		Fields{
-			{Name: tokenKey, Op: UASTType(uast.Identifier{}, Obj{
-				"Name": Var("name"),
-			})},
+			{Name: tokenKey,
+			 Op: UASTType(uast.Identifier{}, Obj{
+			 	"Name": Var("name"),
+			 })},
 		}),
 		roles...)
 }
 
+
 var Normalizers = []Mapping{
 
+	// FIXME: no positions for keywords in the native AST
 	tokenIsIdentifier("keyword", "arg", role.Name),
 
 	MapSemantic("Str", uast.String{}, MapObj(
@@ -117,21 +132,6 @@ var Normalizers = []Mapping{
 		Obj{"Name": Var("name")},
 	)),
 
-	MapSemantic("alias", uast.Alias{}, MapObj(
-		Obj{
-			"name":   Var("name"),
-			"asname": Var("aliased"),
-		},
-		Obj{
-			"Name": UASTType(uast.Identifier{}, Obj{
-				"Name": Var("name"),
-			}),
-			"Node": UASTType(uast.Identifier{}, Obj{
-				"Name": Var("aliased"),
-			}),
-		},
-	)),
-
 	MapSemantic("Name", uast.Identifier{}, MapObj(
 		Obj{"attr": Var("name")},
 		Obj{"Name": Var("name")},
@@ -153,9 +153,7 @@ var Normalizers = []Mapping{
 			"default":     Var("init"),
 		},
 		Obj{
-			"Name": UASTType(uast.Identifier{}, Obj{
-				"Name": Var("name"),
-			}),
+			"Name": identifierWithPos("name"),
 			"Init": Var("init"),
 		},
 	)),
@@ -165,9 +163,7 @@ var Normalizers = []Mapping{
 			uast.KeyToken: Var("name"),
 		},
 		Obj{
-			"Name": UASTType(uast.Identifier{}, Obj{
-				"Name": Var("name"),
-			}),
+			"Name": identifierWithPos("name"),
 		},
 	)),
 
@@ -177,10 +173,8 @@ var Normalizers = []Mapping{
 			"default":     Var("init"),
 		},
 		Obj{
-			"Name": UASTType(uast.Identifier{}, Obj{
-				"Name": Var("name"),
-			}),
 			"Init": Var("init"),
+			"Name": identifierWithPos("name"),
 		},
 	)),
 
@@ -189,9 +183,7 @@ var Normalizers = []Mapping{
 			uast.KeyToken: Var("name"),
 		},
 		Obj{
-			"Name": UASTType(uast.Identifier{}, Obj{
-				"Name": Var("name"),
-			}),
+			"Name": identifierWithPos("name"),
 			"Variadic": Bool(true),
 		},
 	)),
@@ -201,15 +193,42 @@ var Normalizers = []Mapping{
 			uast.KeyToken: Var("name"),
 		},
 		Obj{
-			"Name": UASTType(uast.Identifier{}, Obj{
-				"Name": Var("name"),
-			}),
+			"Name": identifierWithPos("name"),
 			"MapVariadic": Bool(true),
 		},
 	)),
 
 	funcDefMap("FunctionDef", false),
 	funcDefMap("AsyncFunctionDef", true),
+
+	AnnotateType("ClassDef", MapObj(Obj{
+		"decorator_list": Var("decors"),
+		"body":           Var("body_stmts"),
+		"bases":          Var("bases"),
+		"name": Var("name"),
+		uast.KeyPos: Obj{
+			uast.KeyType: String(uast.KeyPos),
+			uast.KeyStart: Var(uast.KeyStart),
+			uast.KeyEnd:   Var(uast.KeyEnd),
+		},
+	}, Obj{
+		uast.KeyToken: identifierWithPos("name"),
+		"decorator_list": Obj{
+			uast.KeyType:  String("ClassDef.decorator_list"),
+			uast.KeyRoles: Roles(role.Type, role.Declaration, role.Call, role.Incomplete),
+			"decorators":  Var("decors"),
+		},
+		"body": Obj{
+			uast.KeyType:  String("ClassDef.body"),
+			uast.KeyRoles: Roles(role.Type, role.Declaration, role.Body),
+			"body_stmts":  Var("body_stmts"),
+		},
+		"bases": Obj{
+			uast.KeyType:  String("ClassDef.bases"),
+			uast.KeyRoles: Roles(role.Type, role.Declaration, role.Base),
+			"bases":       Var("bases"),
+		},
+	}), role.Type, role.Declaration, role.Identifier, role.Statement),
 
 	AnnotateType("Import", MapObj(
 		Obj{
@@ -223,29 +242,76 @@ var Normalizers = []Mapping{
 		},
 	), role.Import, role.Declaration, role.Statement),
 
-	// FIXME: what to do with levels? convert to ../../... in Path?
-	// FIXME: "import * from x": check the * and set "All" to true
-	//MapSemantic("ImportFrom", uast.RuntimeImport{}, MapObj(
-	//	Obj{
-	//		"names":  Check(Is(Arr(Any))),
-	//		"module": Var("module"),
-	//	},
-	//	Obj{
-	//		"All": Bool(true),
-	//		"Path": UASTType(uast.Identifier{}, Obj{
-	//			"Name":  Var("module"),
-	//		}),
-	//	},
-	//)),
+	// FIXME: aliases doesn't have a position (can't be currently fixed by the tokenizer
+	// because they don't even have a line in the native AST)
+	MapSemantic("alias", uast.Alias{}, MapObj(
+		Obj{
+			"name": Var("name"),
+			"asname": Cases("case_alias",
+				Check(Is(nil), Var("nilalias")),
+				Check(Not(Is(nil)), Var("alias")),
+			),
+		},
+		CasesObj("case_alias",
+			Obj{
+				"Name": UASTType(uast.Identifier{}, Obj{
+					"Name": Var("name"),
+				}),
+			},
+			Objs{
+				{"Node": Obj{}},
+				{
+					//"Node": identifierWithPos("name"),
+					"Node": UASTType(uast.Identifier{}, Obj{ "Name": Var("alias"), }),
+				}},
+		))),
+
+	// Star imports
+	MapSemantic("ImportFrom", uast.RuntimeImport{}, MapObj(
+		Obj{
+			"names": Arr(
+				Obj{
+					uast.KeyType: String("uast:Alias"),
+					uast.KeyPos: Var("pos"),
+					"Name": Obj{
+						uast.KeyType: String("uast:Identifier"),
+						"Name": String("*"),
+					},
+					"Node": Obj{},
+				},
+			),
+			"level":  Var("level"),
+			"module": Var("module"),
+		},
+		Obj{
+			"All": Bool(true),
+			"Path": UASTType(uast.Identifier{}, Obj{
+				"Name": OpPrependPath{
+					// FIXME: no position for the module (path) in the native AST, only when the import starts
+					numLevel: Var("level"),
+					path:     Var("module"),
+					joined:   Var("joined"),
+					prefix:   "../",
+				},
+			}),
+		},
+	)),
+
 	MapSemantic("ImportFrom", uast.RuntimeImport{}, MapObj(
 		Obj{
 			"names":  Var("names"),
 			"module": Var("module"),
+			"level":  Var("level"),
 		},
 		Obj{
 			"Names": Var("names"),
 			"Path": UASTType(uast.Identifier{}, Obj{
-				"Name":  Var("module"),
+				"Name": OpPrependPath{
+					numLevel: Var("level"),
+					path:     Var("module"),
+					joined:   Var("joined"),
+					prefix:   "../",
+				},
 			}),
 		},
 	)),

@@ -1,10 +1,7 @@
 package normalizer
 
 import (
-	"strings"
-
 	"gopkg.in/bblfsh/sdk.v2/uast"
-	"gopkg.in/bblfsh/sdk.v2/uast/nodes"
 	"gopkg.in/bblfsh/sdk.v2/uast/role"
 	. "gopkg.in/bblfsh/sdk.v2/uast/transformer"
 	"gopkg.in/bblfsh/sdk.v2/uast/transformer/positioner"
@@ -90,59 +87,6 @@ func loopAnnotate(typ string, mainRole role.Role, roles ...role.Role) Mapping {
 		},
 	}), roles...)
 }
-
-func num2dots(n nodes.Value) nodes.Value {
-	if intval, ok := n.(nodes.Int); ok {
-		i64val := int(intval)
-		return nodes.String(strings.Repeat(".", int(i64val)))
-	}
-	return n
-}
-
-type opLevelDotsNumConv struct {
-	op   Op
-	orig Op
-}
-
-func (op opLevelDotsNumConv) Kinds() nodes.Kind {
-	return nodes.KindString | nodes.KindInt
-}
-
-func (op opLevelDotsNumConv) Check(st *State, n nodes.Node) (bool, error) {
-	v, ok := n.(nodes.Value)
-	if !ok {
-		return false, nil
-	}
-
-	nv := num2dots(v)
-	res1, err := op.op.Check(st, nv)
-	if err != nil || !res1 {
-		return false, err
-	}
-
-	res2, err := op.orig.Check(st, v)
-	if err != nil || !res2 {
-		return false, err
-	}
-
-	return res1 && res2, nil
-}
-
-func (op opLevelDotsNumConv) Construct(st *State, n nodes.Node) (nodes.Node, error) {
-	n, err := op.orig.Construct(st, n)
-	if err != nil {
-		return nil, err
-	}
-
-	v, ok := n.(nodes.Int)
-	if !ok {
-		return nil, ErrExpectedValue.New(n)
-	}
-
-	return v, nil
-}
-
-var _ Op = opLevelDotsNumConv{}
 
 var Annotations = []Mapping{
 	// FIXME: doesnt work
@@ -443,7 +387,7 @@ var Annotations = []Mapping{
 
 	AnnotateType("ImportFrom", MapObj(Obj{
 		"module": Var("module"),
-		"level":  opLevelDotsNumConv{op: Var("level"), orig: Var("origlevel")},
+		"level":  OpLevelDotsNumConv{op: Var("level"), orig: Var("origlevel"), prefix: "."},
 		"names":  Var("names"),
 	}, Obj{
 		"names": Obj{
@@ -482,7 +426,9 @@ var Annotations = []Mapping{
 		"decorator_list": Var("decors"),
 		"body":           Var("body_stmts"),
 		"bases":          Var("bases"),
+		"name": Var("name"),
 	}, Obj{
+		uast.KeyToken: Var("name"),
 		"decorator_list": Obj{
 			uast.KeyType:  String("ClassDef.decorator_list"),
 			uast.KeyRoles: Roles(role.Type, role.Declaration, role.Call, role.Incomplete),

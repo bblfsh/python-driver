@@ -4,6 +4,7 @@
    },
    body: [
       { '@type': "ClassDef",
+         '@token': "meta",
          '@role': [Declaration, Identifier, Statement, Type],
          '@pos': { '@type': "uast:Positions",
             start: { '@type': "uast:Position",
@@ -65,9 +66,9 @@
             decorators: [],
          },
          keywords: [],
-         name: "meta",
       },
       { '@type': "ClassDef",
+         '@token': "cls1",
          '@role': [Declaration, Identifier, Statement, Type],
          '@pos': { '@type': "uast:Positions",
             start: { '@type': "uast:Position",
@@ -135,7 +136,6 @@
                },
             },
          ],
-         name: "cls1",
       },
    ],
 }
