@@ -1,72 +1,75 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "ast_type": "Import",
-                    "col_offset": 1,
-                    "lineno": 1,
-                    "names": [
-                        {
-                            "asname": null,
-                            "ast_type": "alias",
-                            "name": "sys"
-                        }
-                    ]
-                },
-                {
-                    "ast_type": "Expr",
-                    "col_offset": 1,
-                    "lineno": 2,
-                    "value": {
-                        "args": [
-                            {
-                                "ast_type": "Str",
-                                "col_offset": 18,
-                                "end_col_offset": 33,
-                                "end_lineno": 2,
-                                "lineno": 2,
-                                "s": "Hello world!\n"
-                            }
-                        ],
-                        "ast_type": "Call",
-                        "col_offset": 1,
-                        "func": {
-                            "ast_type": "Attribute",
-                            "attr": "write",
-                            "col_offset": 12,
-                            "ctx": "Load",
-                            "end_col_offset": 16,
-                            "end_lineno": 2,
-                            "lineno": 2,
-                            "value": {
-                                "ast_type": "Attribute",
-                                "attr": "stdout",
-                                "col_offset": 5,
-                                "ctx": "Load",
-                                "end_col_offset": 10,
-                                "end_lineno": 2,
-                                "lineno": 2,
-                                "value": {
-                                    "ast_type": "Name",
-                                    "col_offset": 1,
-                                    "ctx": "Load",
-                                    "end_col_offset": 3,
-                                    "end_lineno": 2,
-                                    "id": "sys",
-                                    "lineno": 2
-                                }
-                            }
-                        },
-                        "keywords": [],
-                        "lineno": 2
-                    }
-                }
-            ]
-        }
-    }
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "Import",
+            'col_offset': 1,
+            lineno: 1,
+            names: [
+               {
+                  asname: ~,
+                  'ast_type': "alias",
+                  name: "sys",
+               },
+            ],
+         },
+         {
+            'ast_type': "Expr",
+            'col_offset': 1,
+            lineno: 2,
+            value: {
+               args: [
+                  {
+                     'ast_type': "Str",
+                     'col_offset': 18,
+                     'end_col_offset': 33,
+                     'end_lineno': 2,
+                     lineno: 2,
+                     s: "Hello world!\n",
+                  },
+               ],
+               'ast_type': "Call",
+               'col_offset': 1,
+               func: {
+                  'ast_type': "QualifiedIdentifier",
+                  'col_offset': 2,
+                  ctx: "Load",
+                  'end_col_offset': 3,
+                  'end_lineno': 2,
+                  identifiers: [
+                     {
+                        'ast_type': "Name",
+                        'col_offset': 1,
+                        ctx: "Load",
+                        'end_col_offset': 3,
+                        'end_lineno': 2,
+                        id: "sys",
+                        lineno: 2,
+                     },
+                     {
+                        'ast_type': "Attribute",
+                        attr: "stdout",
+                        'col_offset': 5,
+                        ctx: "Load",
+                        'end_col_offset': 10,
+                        'end_lineno': 2,
+                        lineno: 2,
+                     },
+                     {
+                        'ast_type': "Attribute",
+                        attr: "write",
+                        'col_offset': 1,
+                        ctx: "Load",
+                        lineno: 2,
+                     },
+                  ],
+                  lineno: 2,
+               },
+               keywords: [],
+               lineno: 2,
+            },
+         },
+      ],
+   },
 }

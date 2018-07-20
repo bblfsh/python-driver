@@ -1,117 +1,217 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "args": {
-                        "args": [
-                            {
-                                "annotation": {
-                                    "ast_type": "Name",
-                                    "col_offset": 17,
-                                    "ctx": "Load",
-                                    "end_col_offset": 19,
-                                    "end_lineno": 1,
-                                    "id": "int",
-                                    "lineno": 1
-                                },
-                                "arg": "a",
-                                "ast_type": "arg",
-                                "col_offset": 14,
-                                "end_col_offset": 14,
-                                "end_lineno": 1,
-                                "lineno": 1
-                            },
-                            {
-                                "annotation": {
-                                    "ast_type": "Name",
-                                    "col_offset": 25,
-                                    "ctx": "Load",
-                                    "end_col_offset": 27,
-                                    "end_lineno": 1,
-                                    "id": "str",
-                                    "lineno": 1
-                                },
-                                "arg": "b",
-                                "ast_type": "arg",
-                                "col_offset": 22,
-                                "end_col_offset": 22,
-                                "end_lineno": 1,
-                                "lineno": 1
-                            },
-                            {
-                                "annotation": {
-                                    "ast_type": "Name",
-                                    "col_offset": 33,
-                                    "ctx": "Load",
-                                    "end_col_offset": 36,
-                                    "end_lineno": 1,
-                                    "id": "List",
-                                    "lineno": 1
-                                },
-                                "arg": "c",
-                                "ast_type": "arg",
-                                "col_offset": 30,
-                                "end_col_offset": 30,
-                                "end_lineno": 1,
-                                "lineno": 1
-                            },
-                            {
-                                "annotation": {
-                                    "ast_type": "Name",
-                                    "col_offset": 42,
-                                    "ctx": "Load",
-                                    "end_col_offset": 47,
-                                    "end_lineno": 1,
-                                    "id": "MyType",
-                                    "lineno": 1
-                                },
-                                "arg": "d",
-                                "ast_type": "arg",
-                                "col_offset": 39,
-                                "end_col_offset": 39,
-                                "end_lineno": 1,
-                                "lineno": 1
-                            }
-                        ],
-                        "ast_type": "arguments",
-                        "defaults": [],
-                        "kw_defaults": [],
-                        "kwarg": null,
-                        "kwonlyargs": [],
-                        "vararg": null
-                    },
-                    "ast_type": "FunctionDef",
-                    "body": [
-                        {
-                            "ast_type": "Pass",
-                            "col_offset": 5,
-                            "end_col_offset": 8,
-                            "end_lineno": 2,
-                            "lineno": 2
-                        }
-                    ],
-                    "col_offset": 5,
-                    "decorator_list": [],
-                    "end_col_offset": 12,
-                    "end_lineno": 1,
-                    "lineno": 1,
-                    "name": "testfnc1",
-                    "returns": {
-                        "ast_type": "Name",
-                        "col_offset": 53,
-                        "ctx": "Load",
-                        "end_col_offset": 55,
-                        "end_lineno": 1,
-                        "id": "str",
-                        "lineno": 1
-                    }
-                }
-            ]
-        }
-    }
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            args: {
+               args: [
+                  {
+                     '@token': "a",
+                     annotation: {
+                        'ast_type': "Name",
+                        'col_offset': 17,
+                        ctx: "Load",
+                        'end_col_offset': 19,
+                        'end_lineno': 1,
+                        id: "int",
+                        lineno: 1,
+                     },
+                     'ast_type': "arg",
+                     'col_offset': 14,
+                     'end_col_offset': 14,
+                     'end_lineno': 1,
+                     lineno: 1,
+                  },
+                  {
+                     '@token': "b",
+                     annotation: {
+                        'ast_type': "Name",
+                        'col_offset': 25,
+                        ctx: "Load",
+                        'end_col_offset': 27,
+                        'end_lineno': 1,
+                        id: "str",
+                        lineno: 1,
+                     },
+                     'ast_type': "arg",
+                     'col_offset': 22,
+                     'end_col_offset': 22,
+                     'end_lineno': 1,
+                     lineno: 1,
+                  },
+                  {
+                     '@token': "c",
+                     annotation: {
+                        'ast_type': "Name",
+                        'col_offset': 33,
+                        ctx: "Load",
+                        'end_col_offset': 36,
+                        'end_lineno': 1,
+                        id: "List",
+                        lineno: 1,
+                     },
+                     'ast_type': "arg",
+                     'col_offset': 30,
+                     'end_col_offset': 30,
+                     'end_lineno': 1,
+                     lineno: 1,
+                  },
+                  {
+                     '@token': "d",
+                     annotation: {
+                        'ast_type': "Name",
+                        'col_offset': 42,
+                        ctx: "Load",
+                        'end_col_offset': 47,
+                        'end_lineno': 1,
+                        id: "MyType",
+                        lineno: 1,
+                     },
+                     'ast_type': "arg",
+                     'col_offset': 39,
+                     'end_col_offset': 39,
+                     'end_lineno': 1,
+                     lineno: 1,
+                  },
+               ],
+               'ast_type': "arguments",
+            },
+            'ast_type': "FunctionDef",
+            body: [
+               {
+                  'ast_type': "Pass",
+                  'col_offset': 5,
+                  'end_col_offset': 8,
+                  'end_lineno': 2,
+                  lineno: 2,
+               },
+            ],
+            'col_offset': 5,
+            'decorator_list': [],
+            'end_col_offset': 12,
+            'end_lineno': 1,
+            lineno: 1,
+            name: "testfnc1",
+            returns: {
+               'ast_type': "Name",
+               'col_offset': 53,
+               ctx: "Load",
+               'end_col_offset': 55,
+               'end_lineno': 1,
+               id: "str",
+               lineno: 1,
+            },
+         },
+         {
+            args: {
+               args: [
+                  {
+                     '@token': "a",
+                     annotation: ~,
+                     'ast_type': "arg",
+                     'col_offset': 14,
+                     'end_col_offset': 14,
+                     'end_lineno': 4,
+                     lineno: 4,
+                     'noops_previous': {
+                        'ast_type': "PreviousNoops",
+                        'col_offset': 1,
+                        'end_col_offset': 1,
+                        'end_lineno': 3,
+                        lineno: 3,
+                        lines: [],
+                     },
+                  },
+                  {
+                     '@token': "b",
+                     annotation: ~,
+                     'ast_type': "arg",
+                     'col_offset': 17,
+                     'end_col_offset': 17,
+                     'end_lineno': 4,
+                     lineno: 4,
+                  },
+                  {
+                     '@token': "c",
+                     annotation: {
+                        'ast_type': "Name",
+                        'col_offset': 22,
+                        ctx: "Load",
+                        'end_col_offset': 24,
+                        'end_lineno': 4,
+                        id: "int",
+                        lineno: 4,
+                     },
+                     'ast_type': "arg",
+                     'col_offset': 20,
+                     'end_col_offset': 20,
+                     'end_lineno': 4,
+                     lineno: 4,
+                  },
+                  {
+                     '@token': "d",
+                     annotation: ~,
+                     'ast_type': "arg",
+                     'col_offset': 27,
+                     'end_col_offset': 27,
+                     'end_lineno': 4,
+                     lineno: 4,
+                  },
+                  {
+                     '@token': "e",
+                     annotation: ~,
+                     'ast_type': "arg",
+                     'col_offset': 30,
+                     'end_col_offset': 30,
+                     'end_lineno': 4,
+                     lineno: 4,
+                  },
+                  {
+                     '@token': "f",
+                     annotation: {
+                        'ast_type': "Name",
+                        'col_offset': 35,
+                        ctx: "Load",
+                        'end_col_offset': 37,
+                        'end_lineno': 4,
+                        id: "str",
+                        lineno: 4,
+                     },
+                     'ast_type': "arg",
+                     'col_offset': 33,
+                     'end_col_offset': 33,
+                     'end_lineno': 4,
+                     lineno: 4,
+                  },
+               ],
+               'ast_type': "arguments",
+            },
+            'ast_type': "FunctionDef",
+            body: [
+               {
+                  'ast_type': "Pass",
+                  'col_offset': 5,
+                  'end_col_offset': 8,
+                  'end_lineno': 5,
+                  lineno: 5,
+               },
+            ],
+            'col_offset': 5,
+            'decorator_list': [],
+            'end_col_offset': 12,
+            'end_lineno': 4,
+            lineno: 4,
+            name: "testfnc2",
+            returns: {
+               'ast_type': "Name",
+               'col_offset': 43,
+               ctx: "Load",
+               'end_col_offset': 45,
+               'end_lineno': 4,
+               id: "str",
+               lineno: 4,
+            },
+         },
+      ],
+   },
 }

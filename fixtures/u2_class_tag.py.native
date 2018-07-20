@@ -1,100 +1,95 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "ast_type": "ClassDef",
-                    "bases": [],
-                    "body": [
-                        {
-                            "ast_type": "Pass",
-                            "col_offset": 5,
-                            "end_col_offset": 8,
-                            "end_lineno": 3,
-                            "lineno": 3
-                        }
-                    ],
-                    "col_offset": 1,
-                    "decorator_list": [
-                        {
-                            "ast_type": "Name",
-                            "col_offset": 2,
-                            "ctx": "Load",
-                            "end_col_offset": 9,
-                            "end_lineno": 1,
-                            "id": "testtag1",
-                            "lineno": 1
-                        }
-                    ],
-                    "keywords": [],
-                    "lineno": 1,
-                    "name": "testcls1"
-                },
-                {
-                    "ast_type": "ClassDef",
-                    "bases": [],
-                    "body": [
-                        {
-                            "ast_type": "Pass",
-                            "col_offset": 5,
-                            "end_col_offset": 8,
-                            "end_lineno": 7,
-                            "lineno": 7,
-                            "noops_previous": {
-                                "ast_type": "PreviousNoops",
-                                "col_offset": 1,
-                                "end_col_offset": 1,
-                                "end_lineno": 4,
-                                "lineno": 4,
-                                "lines": []
-                            }
-                        }
-                    ],
-                    "col_offset": 1,
-                    "decorator_list": [
-                        {
-                            "args": [
-                                {
-                                    "ast_type": "Num",
-                                    "col_offset": 11,
-                                    "end_col_offset": 11,
-                                    "end_lineno": 5,
-                                    "lineno": 5,
-                                    "n": 1
-                                },
-                                {
-                                    "ast_type": "Num",
-                                    "col_offset": 14,
-                                    "end_col_offset": 14,
-                                    "end_lineno": 5,
-                                    "lineno": 5,
-                                    "n": 2
-                                }
-                            ],
-                            "ast_type": "Call",
-                            "col_offset": 2,
-                            "func": {
-                                "ast_type": "Name",
-                                "col_offset": 2,
-                                "ctx": "Load",
-                                "end_col_offset": 9,
-                                "end_lineno": 5,
-                                "id": "testtag2",
-                                "lineno": 5
-                            },
-                            "keywords": [],
-                            "lineno": 5
-                        }
-                    ],
-                    "keywords": [],
-                    "lineno": 5,
-                    "name": "testcls2"
-                }
-            ]
-        }
-    }
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "ClassDef",
+            bases: [],
+            body: [
+               {
+                  'ast_type': "Pass",
+                  'col_offset': 5,
+                  'end_col_offset': 8,
+                  'end_lineno': 3,
+                  lineno: 3,
+               },
+            ],
+            'col_offset': 1,
+            'decorator_list': [
+               {
+                  'ast_type': "Name",
+                  'col_offset': 2,
+                  ctx: "Load",
+                  'end_col_offset': 9,
+                  'end_lineno': 1,
+                  id: "testtag1",
+                  lineno: 1,
+               },
+            ],
+            keywords: [],
+            lineno: 1,
+            name: "testcls1",
+         },
+         {
+            'ast_type': "ClassDef",
+            bases: [],
+            body: [
+               {
+                  'ast_type': "Pass",
+                  'col_offset': 5,
+                  'end_col_offset': 8,
+                  'end_lineno': 7,
+                  lineno: 7,
+                  'noops_previous': {
+                     'ast_type': "PreviousNoops",
+                     'col_offset': 1,
+                     'end_col_offset': 1,
+                     'end_lineno': 4,
+                     lineno: 4,
+                     lines: [],
+                  },
+               },
+            ],
+            'col_offset': 1,
+            'decorator_list': [
+               {
+                  args: [
+                     {
+                        'ast_type': "Num",
+                        'col_offset': 11,
+                        'end_col_offset': 11,
+                        'end_lineno': 5,
+                        lineno: 5,
+                        'n': 1,
+                     },
+                     {
+                        'ast_type': "Num",
+                        'col_offset': 14,
+                        'end_col_offset': 14,
+                        'end_lineno': 5,
+                        lineno: 5,
+                        'n': 2,
+                     },
+                  ],
+                  'ast_type': "Call",
+                  'col_offset': 2,
+                  func: {
+                     'ast_type': "Name",
+                     'col_offset': 2,
+                     ctx: "Load",
+                     'end_col_offset': 9,
+                     'end_lineno': 5,
+                     id: "testtag2",
+                     lineno: 5,
+                  },
+                  keywords: [],
+                  lineno: 5,
+               },
+            ],
+            keywords: [],
+            lineno: 5,
+            name: "testcls2",
+         },
+      ],
+   },
 }

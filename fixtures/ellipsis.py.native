@@ -1,40 +1,35 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "ast_type": "Expr",
-                    "col_offset": 1,
-                    "lineno": 1,
-                    "value": {
-                        "ast_type": "List",
-                        "col_offset": 1,
-                        "ctx": "Load",
-                        "elts": [
-                            {
-                                "ast_type": "Ellipsis",
-                                "col_offset": 2,
-                                "end_col_offset": 4,
-                                "end_lineno": 1,
-                                "lineno": 1
-                            },
-                            {
-                                "ast_type": "Num",
-                                "col_offset": 7,
-                                "end_col_offset": 7,
-                                "end_lineno": 1,
-                                "lineno": 1,
-                                "n": 0
-                            }
-                        ],
-                        "lineno": 1
-                    }
-                }
-            ]
-        }
-    }
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "Expr",
+            'col_offset': 1,
+            lineno: 1,
+            value: {
+               'ast_type': "List",
+               'col_offset': 1,
+               ctx: "Load",
+               elts: [
+                  {
+                     'ast_type': "Ellipsis",
+                     'col_offset': 2,
+                     'end_col_offset': 4,
+                     'end_lineno': 1,
+                     lineno: 1,
+                  },
+                  {
+                     'ast_type': "Num",
+                     'col_offset': 7,
+                     'end_col_offset': 7,
+                     'end_lineno': 1,
+                     lineno: 1,
+                     'n': 0,
+                  },
+               ],
+               lineno: 1,
+            },
+         },
+      ],
+   },
 }

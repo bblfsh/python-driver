@@ -3,425 +3,27 @@ Improve the basic AST, taken in dictionary form as exported
 from the import pydetector module.
 """
 
-import token as token_module
 import tokenize
-from ast import literal_eval
 from codecs import encode
 from copy import deepcopy
 from io import BytesIO
-from typing import Iterable, List, Dict, Tuple, Any, Union, \
-        Set, cast, Optional
+from typing import List
+
+from python_driver.base_token import Token, create_tokenized_lines
+from python_driver.locationfixer import LocationFixer
+from python_driver.noop_extractor import NoopExtractor
+from python_driver.types import Node, AstDict, VisitResult
 
 __all__ = ["AstImprover"]
 
-NOOP_TOKENS_LINE = {'COMMENT', 'INDENT', 'NL', 'NEWLINE'}
 
-Pos = Tuple[int, int]
-Node = Dict[str, Any]
-AstDict = Dict[Any, Any]
-VisitResult = Union[Node, List[Node]]
-
-
-class TokenPos():
-    def __init__(self, row: int, col: int) -> None:
-        self.row = row
-        self.col = col
-
-
-class Token():
-    def __init__(self, type_: int, value: str, start: Tuple[int, int],
-            end: Tuple[int, int], rawvalue: str) -> None:
-        self.type = type_
-        self.name = token_module.tok_name[type_]
-        self.value = value
-        self.start = TokenPos(*start)
-        self.end = TokenPos(*end)
-        self.rawvalue = rawvalue
-
-    def __str__(self) -> str:
-        s = '%s, %s, %s' % (self.type, self.name, self.value)
-        s += '\n%d %d' % (self.start.row, self.start.col)
-        s += '\n%d %d' % (self.end.row, self.end.col)
-        return s
-
-
-def _create_tokenized_lines(codestr: str, tokens: Iterable[Token]) -> List[List[Token]]:
-    lines = codestr.splitlines() if codestr else []
-    result: List[List[Token]] = []
-    for i in range(0, len(lines) + 1):
-        result.append([])
-
-    for token in tokens:
-        # Save noops in the line of the starting row except for strings where
-        # we save it in the last line (because they can be multiline)
-        if token.name == 'STRING':
-            line = token.end.row - 1
-        else:
-            line = token.start.row - 1
-        result[line].append(token)
-    assert len(lines) + 1 == len(result), len(result)
-    return result
-
-
-class TokenNotFoundException(Exception):
-    pass
-
-
-class LocationFixer(object):
-    """
-    For every line, get the exact position of every token. This will be used by the
-    visitor to fix the position of some nodes that the Python's AST doesn't give or give
-    in a questionable way (sys.stdout.write -> gives the same column for the three).
-    """
-
-    def __init__(self, codestr: str, token_lines: List[List[Token]]) -> None:
-        self._current_line = -1
-
-        # _lines will initially hold the same list of tokens per line as received (in a
-        # dict so speed lookups), but the tokens inside will be removed as they're found
-        # by the visitor (so we still can infer real positions for several tokens with the
-        # same name on the same line)
-        self._lines = {idx: val for idx, val in enumerate(token_lines)}
-
-    def _pop_token(self, lineno: int, token_value: str) -> Token:
-        tokensline = self._lines[lineno - 1]
-
-        # Pop the first token with the same name in the same line
-        for t in tokensline:
-
-            if t.name != 'STRING':
-                line_value = t.value
-            else:
-                if t.value[0] == 'f' and t.value[1] in ('"', "'"):
-                    # fstring: token identify as STRING but they parse into the AST as a
-                    # collection of nodes so the token_value is  different. To find the
-                    # real token position we'll search  inside the fstring token value.
-                    tok_subpos = t.value.find(str(token_value))
-                    if tok_subpos != -1:
-
-                        # We don't remove the fstring token from the line in this case; other
-                        # nodes could match different parts of it
-                        newtok = deepcopy(t)
-                        newtok.start.col = t.start.col + tok_subpos
-                        return newtok
-
-                    raise TokenNotFoundException("Could not find token '{}' inside f-string '{}'"
-                            .format(token_value, t.value))
-                else:
-                    # normal string; they include the single or double quotes so we liteval
-                    line_value = literal_eval(t.value)
-
-            if str(line_value) == str(token_value):
-                tokensline.remove(t)
-                return t
-
-        raise TokenNotFoundException("Token named '{}' not found in line {}"
-                .format(token_value, lineno))
-
-    def sync_node_pos(self, nodedict: Node) -> None:
-        """
-        Check the column position, updating the column if needed (this changes the
-        nodedict argument). Some Nodes have questionable column positions in the Python
-        given AST (e.g. all items in sys.stdout.write have column 1). This fixes if the
-        linenumber is right, using the more exact position given by the tokenizer.
-
-        When a node is checked, it's removed from its line list, so the next token with
-        the same name will not consume that token again (except for fstrings that are
-        a special case of a token mapping to several possible AST nodes).
-        """
-        node_line = nodedict.get('lineno')
-        if node_line is None:
-            return
-
-        # We take these node properties as token name if they exists
-        # (same used in the Bblfsh Python driver parser.go):
-        node_keyset = set(nodedict.keys())
-        token_keys = list(node_keyset.intersection(_TOKEN_KEYS))
-
-        if token_keys:
-            node_token = nodedict[token_keys[0]]
-        else:
-            node_token = _SYNTHETIC_TOKENS.get(nodedict["ast_type"])
-            if not node_token:
-                return  # token not found
-        try:
-            # Pop the fist token with the same name in the same line.
-            token = self._pop_token(node_line, node_token)
-        except TokenNotFoundException:
-            # Only happens with multiline string and the original
-            # position in that case is fine (uses the last line in that case)
-            return
-
-        if nodedict['ast_type'] != 'ImportFrom':
-            # ImportFrom takes the module as token, we don't want that position, default
-            # is fine
-            nodedict["lineno"] = token.start.row
-            nodedict["col_offset"] = token.start.col
-        nodedict["end_lineno"] = token.end.row
-        nodedict["end_col_offset"] = token.end.col
-
-
-class NoopExtractor(object):
-    """
-    Extract lines with tokens from the tokenized source that Python's AST generator ignore
-    like blanks and comments.
-    """
-
-    def __init__(self, codestr: str, token_lines: List[List[Token]]) -> None:
-        self._current_line = -1
-        self._all_lines = tuple(token_lines)
-        self.astmissing_lines = self._create_astmissing_lines()
-
-        # This set is used to avoid adding the "same line-remainder noops" nodes as a child
-        # of every "real" node to avoid having this node duplicated on all semantic
-        # nodes in the same line, thus avoiding duplication. It will contain just the
-        # line numbers of already added sameline_noops
-        self._sameline_added_noops: Set[int] = set()
-
-    def _create_astmissing_lines(self) -> List[Optional[Token]]:
-        """
-        Return a copy of line_tokens containing lines ignored by the AST
-        (comments and blanks-only lines)
-        """
-        lines: List[Optional[Token]] = []
-        nl_token = Token(token_module.NEWLINE, '\n', (0, 0), (0, 0), '\n')
-
-        for i, linetokens in enumerate(self._all_lines):
-            if len(linetokens) == 1 and linetokens[0].name == 'NL':
-                lines.append(nl_token)
-            else:
-                for token in linetokens:
-                    if token.name == 'COMMENT' and \
-                            token.rawvalue.lstrip().startswith('#'):
-                        lines.append(token)
-                        break
-                else:
-                    lines.append(None)
-        assert len(lines) == len(self._all_lines)
-
-        for i, linetokens2 in enumerate(lines):
-            if linetokens2:
-                self._current_line = i
-                break
-        else:
-            self._current_line = len(lines)
-        return lines
-
-    def add_noops(self, node: Node, isRoot: bool) -> None:
-        if not isinstance(node, dict):
-            return
-
-        def _create_nooplines_list(startline: int, noops_previous: List[str]) -> List[Node]:
-            nooplines: List[Node] = []
-            curline = startline
-            for noopline in noops_previous:
-                if noopline != '\n':
-                    if noopline.lstrip().startswith('#'):
-                        noopline = noopline.lstrip()[1:]
-
-                    nooplines.append({
-                        "ast_type": "NoopLine",
-                        "noop_line": noopline,
-                        "lineno": curline,
-                        "col_offset": 1,
-                    })
-                curline += 1
-            return nooplines
-
-        # Add all the noop (whitespace and comments) lines between the
-        # last node and this one
-        noops_previous, startline, endline, endcol = self.previous_nooplines(node)
-        if noops_previous:
-            node['noops_previous'] = {
-                "ast_type": "PreviousNoops",
-                "lineno": startline,
-                "col_offset": 1,
-                "end_lineno": endline,
-                "end_col_offset": max(endcol, 1),
-                "lines": _create_nooplines_list(startline, noops_previous)
-            }
-
-        # Other noops at the end of its significative line except the implicit
-        # finishing newline
-        noops_sameline: List[Token] = [i for i in self.sameline_remainder_noops(node) if i]
-
-        def new_noopline(s: str) -> Dict[str, str]:
-            return {"ast_type": "NoopSameLine", "s": s}
-
-        noop_lines = [new_noopline(i.value.strip()) for i in noops_sameline]
-
-        if noops_sameline:
-            node['noops_sameline'] = {
-                "ast_type": "SameLineNoops",
-                "lineno": node.get("lineno", 0),
-                "col_offset": noops_sameline[0].start.col,
-                "noop_lines": noop_lines,
-                "end_lineno": node.get("lineno", 0),
-                "end_col_offset": max(noops_sameline[-1].end.col, 1)
-            }
-
-        # Finally, if this is the root node, add all noops after the last op node
-        if isRoot:
-            noops_remainder, startline, endline, endcol = self.remainder_noops()
-            if noops_remainder:
-                node['noops_remainder'] = {
-                    "ast_type": "RemainderNoops",
-                    "lineno": startline,
-                    "col_offset": 1,
-                    "end_lineno": endline,
-                    "end_col_offset": max(endcol, 1),
-                    "lines": _create_nooplines_list(startline, noops_remainder)
-                    }
-
-    def previous_nooplines(self, nodedict: Node) -> Tuple[List[str], int, int, int]:
-        """Return a list of the preceding comment and blank lines"""
-        previous = []
-        first_lineno = -1
-        lastline = -1
-        lastcol = -1
-        lineno = nodedict.get('lineno')
-
-        if lineno and self.astmissing_lines:
-            while self._current_line < lineno:
-                token = self.astmissing_lines[self._current_line]
-                if token:
-                    s = token.rawvalue.rstrip() + '\n'
-                    previous.append(s)
-
-                    # take only the first line of the noops as the start and the last
-                    # one (overwriteen every iteration)
-                    if first_lineno == -1:
-                        first_lineno = self._current_line + 1
-                    lastline = self._current_line + 1
-                    lastcol = token.end.col
-                self._current_line += 1
-        return previous, first_lineno, lastline, lastcol
-
-    def sameline_remainder_noops(self, nodedict: Node) -> List[Token]:
-        """
-        Return a list containing the trailing (until EOL) noop Tokens for the
-        node, if any. The ending newline is implicit and thus not returned
-        """
-
-        # Without a line number for the node we can't know
-        lineno = nodedict.get("lineno")
-        if not lineno:
-            return []
-
-        # Skip remainder comments already added to a node in this line to avoid every node
-        # in the same line having it (which is not conceptually wrong, but not DRY)
-        if lineno in self._sameline_added_noops:
-            return []
-
-        # Module nodes have the remaining comments but since we put their first line as "1"
-        # any comment on the first line would wrongly show as sameline comment for the module
-        if nodedict["ast_type"] == 'Module':
-            return []
-
-        tokens = self._all_lines[lineno - 1]
-        trailing: List[Token] = []
-
-        for token in tokens:
-            if token.name not in NOOP_TOKENS_LINE:
-                # restart
-                trailing = []
-            else:
-                trailing.append(token)
-
-        if not trailing:
-            return []
-
-        self._sameline_added_noops.add(lineno)
-        nonewline_trailing = trailing[:-1] if trailing[-1].value == '\n' else trailing
-        return nonewline_trailing
-
-    def remainder_noops(self) -> Tuple[List[str], int, int, int]:
-        """return any remaining ignored lines."""
-        trailing: List[str] = []
-        lastline = -1
-        lastcol = 1
-
-        i = self._current_line
-        first_lineno = self._current_line + 1
-
-        while i < len(self.astmissing_lines):
-            token = self.astmissing_lines[i]
-            i += 1
-            if token:
-                trailing.append(token.rawvalue)
-                lastline = i
-                lastcol = token.end.col
-            else:
-                lastcol = 1
-        self._current_line = i
-        return trailing, first_lineno, lastline, lastcol
-
-
-_TOKEN_KEYS = set(
-    ("module", "name", "id", "attr", "arg", "LiteralValue", "s", "n")
-)
-
-_SYNTHETIC_TOKENS = {
-    "Add": "+",
-    "Assert": "assert",
-    "AugAssign": "+=",
-    "BitAnd": "&",
-    "BitOr": "|",
-    "BitXor": "^",
-    "Break": "break",
-    "ClassDef": "class",
-    "Continue": "continue",
-    "Delete": "del",
-    "Div": "/",
-    "Ellipsis": "...",
-    "ExceptHandler": "except",
-    "Eq": "==",
-    "False": "False",
-    "For": "for",
-    "FloorDiv": "//",
-    "Global": "global",
-    "Gt": ">",
-    "GtE": ">=",
-    "If": "if",
-    "In": "in",
-    "Invert": "~",
-    "Is": "is",
-    "IsNot": "not is",
-    "Lambda": "lambda",
-    "LShift": "<<",
-    "Lt": "<",
-    "LtE": "<=",
-    "Mod": "%%",
-    "Mult": "*",
-    "None": "None",
-    "Nonlocal": "nonlocal",
-    "Not": "not",
-    "NotEq": "!=",
-    "NotIn": "not in",
-    "Pass": "pass",
-    "Pow": "**",
-    "Print": "print",
-    "Raise": "raise",
-    "Return": "return",
-    "RShift": ">>",
-    "Sub": "-",
-    "True": "true",
-    "Try": "try",
-    "UAdd": "+",
-    "USub": "-",
-    "While": "while",
-    "With": "with",
-    "Yield": "yield",
-}
-
-
-class AstImprover(object):
+class AstImprover():
 
     def __init__(self, codestr: str, astdict: AstDict) -> None:
         self._astdict = astdict
         # Tokenize and create the noop extractor and the position fixer
         self._tokens: List[Token] = [Token(*i) for i in tokenize.tokenize(BytesIO(codestr.encode('utf-8')).readline)]
-        token_lines = _create_tokenized_lines(codestr, self._tokens)
+        token_lines = create_tokenized_lines(codestr, self._tokens)
         self.noops_sync = NoopExtractor(codestr, token_lines)
         self.pos_sync   = LocationFixer(codestr, token_lines)
         self.codestr    = codestr
@@ -435,6 +37,18 @@ class AstImprover(object):
     def parse(self) -> VisitResult:
         res = self.visit(self._astdict, root=True)
         return res
+
+    def _normalize_position(self, node):
+        # Python AST gives a 0 based column for the starting col, bblfsh uses 1-based
+        if "col_offset" in node:
+            node["col_offset"] = max(node.get("col_offset", 1) + 1, 1)
+
+        if "end_col_offset" in node:
+            node["end_col_offset"] = max(node["end_col_offset"], 1)
+
+    def _remove_internal(self, node):
+        node.pop('_fields', None)
+        node.pop('_attributes', None)
 
     def visit(self, node: Node, root: bool=False) -> VisitResult:
         # the ctx property always has a "Load"/"Store"/etc dictionary that
@@ -457,16 +71,9 @@ class AstImprover(object):
             visit_result["col_offset"] = visit_result["end_col_offset"] = \
                     visit_result["lineno"] = visit_result["end_lineno"] = 0
         else:
-            # Python AST gives a 0 based column for the starting col, bblfsh uses 1-based
-            if "col_offset" in visit_result:
-                visit_result["col_offset"] = max(visit_result.get("col_offset", 1) + 1, 1)
+            self._normalize_position(visit_result)
 
-            if "end_col_offset" in visit_result:
-                visit_result["end_col_offset"] = max(visit_result["end_col_offset"], 1)
-
-        visit_result.pop('_fields', None)
-        visit_result.pop('_attributes', None)
-
+        self._remove_internal(visit_result)
         return visit_result
 
     def visit_str(self, node: Node) -> str:
@@ -526,10 +133,119 @@ class AstImprover(object):
                     "ast_type": "NoneLiteral"})
         return ret
 
+    def visit_Attribute(self, node: Node) -> Node:
+        value = deepcopy(node.get("value"))
+
+        if not value:
+            return node
+
+        ids: List[Node] = []
+
+        while value:
+            new_value = deepcopy(value.get("value"))
+            if new_value:
+                value.pop("value", None)
+            ids.insert(0, self.visit(value))
+            value = new_value
+
+        # Append a copy of this node at the end, and change the type of the original
+        node.pop("value", None)
+        node_copy = deepcopy(node)
+        self._remove_internal(node_copy)
+        self._normalize_position(node_copy)
+        ids.append(node_copy)
+
+        node["ast_type"] = "QualifiedIdentifier"
+
+        # Copy the position of the first element
+        if len(ids):
+            for key in ("lineno", "end_lineno", "col_offset", "end_col_offset"):
+                if ids[0].get(key):
+                    node[key] = ids[0][key]
+
+        node.pop("attr", None)
+        node["identifiers"] = ids
+
+        return node
+
+    def visit_arguments(self, node: Node) -> Node:
+        """
+        Convert the very odd Python's argument node organization (several different lists
+        for each type and each type's default arguments that you have to right-match) into
+        a more common in other languages single list of types arguments with default
+        values as children of their arg. Also convert Python2's "Name" types inside the
+        arguments to
+        """
+
+        def match_default_args(args: List[Node], defaults: List[Node]) -> List[Node]:
+            if defaults:
+                lendiff = len(args) - len(defaults)
+
+                for i, arg in enumerate(args[lendiff:]):
+                    arg["default"] = self.visit(defaults[i])
+
+            return args
+
+        def name2arg(node: Node):
+            # Normalize Python2 and 3 argument types
+            if node["ast_type"] == "Name":
+                node["ast_type"] = "arg"
+            id_ = node.get("id")
+            if id_:
+                node["@token"] = node["id"]
+                del node["id"]
+
+        norm_args: List[Node] = []
+
+        normal_args = deepcopy(node.get("args"))
+        if normal_args:
+            defaults = deepcopy(node.get("defaults"))
+            match_default_args(normal_args, defaults)
+
+            for i in normal_args:
+                norm_args.append(self.visit(i))
+
+        kwonly_args = deepcopy(node.get("kwonlyargs"))
+        if kwonly_args:
+            kw_defaults = deepcopy(node.get("kw_defaults"))
+            match_default_args(kwonly_args, kw_defaults)
+
+            for a in kwonly_args:
+                a["ast_type"] = "kwonly_arg"
+
+            for i in kwonly_args:
+                norm_args.append(self.visit(i))
+
+        kwarg = deepcopy(node.get("kwarg"))
+        if kwarg:
+            kwarg["ast_type"] = "kwarg"
+            norm_args.append(self.visit(kwarg))
+
+        vararg = deepcopy(node.get("vararg"))
+        if vararg:
+            vararg["ast_type"] = "vararg"
+            norm_args.append(self.visit(vararg))
+
+        for k in ('defaults', 'kw_defaults', 'args', 'kwonlyargs', 'kwarg', 'vararg'):
+            if k in node:
+                del node[k]
+
+        for n in norm_args:
+            if "arg" in n:
+                n["@token"] = n["arg"]
+                del n["arg"]
+            name2arg(n)
+
+        node["args"] = norm_args
+        return node
+
+
     def visit_other(self, node: Node) -> VisitResult:
         for field in node.get("_fields", []):
             meth = getattr(self, "visit_" + node["ast_type"], self.visit_other_field)
-            node[field] = meth(node[field])
+            child = node.get(field)
+            if child:
+                node[field] = meth(child)
         return node
 
     def visit_other_field(self, node: Node) -> VisitResult:

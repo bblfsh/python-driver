@@ -1,167 +1,194 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "ast_type": "Expr",
-                    "col_offset": 1,
-                    "lineno": 1,
-                    "value": {
-                        "args": [],
-                        "ast_type": "Call",
-                        "col_offset": 1,
-                        "func": {
-                            "ast_type": "Attribute",
-                            "attr": "method",
-                            "col_offset": 5,
-                            "ctx": "Load",
-                            "end_col_offset": 10,
-                            "end_lineno": 1,
-                            "lineno": 1,
-                            "value": {
-                                "ast_type": "Name",
-                                "col_offset": 1,
-                                "ctx": "Load",
-                                "end_col_offset": 3,
-                                "end_lineno": 1,
-                                "id": "obj",
-                                "lineno": 1
-                            }
-                        },
-                        "keywords": [],
-                        "lineno": 1
-                    }
-                },
-                {
-                    "ast_type": "Assign",
-                    "col_offset": 1,
-                    "lineno": 2,
-                    "targets": [
-                        {
-                            "ast_type": "Attribute",
-                            "attr": "b",
-                            "col_offset": 3,
-                            "ctx": "Store",
-                            "end_col_offset": 3,
-                            "end_lineno": 2,
-                            "lineno": 2,
-                            "value": {
-                                "ast_type": "Name",
-                                "col_offset": 1,
-                                "ctx": "Load",
-                                "end_col_offset": 1,
-                                "end_lineno": 2,
-                                "id": "a",
-                                "lineno": 2
-                            }
-                        }
-                    ],
-                    "value": {
-                        "ast_type": "Num",
-                        "col_offset": 7,
-                        "end_col_offset": 7,
-                        "end_lineno": 2,
-                        "lineno": 2,
-                        "n": 1
-                    }
-                },
-                {
-                    "ast_type": "Assign",
-                    "col_offset": 1,
-                    "lineno": 3,
-                    "targets": [
-                        {
-                            "ast_type": "Attribute",
-                            "attr": "e",
-                            "col_offset": 9,
-                            "ctx": "Store",
-                            "end_col_offset": 9,
-                            "end_lineno": 3,
-                            "lineno": 3,
-                            "value": {
-                                "ast_type": "Attribute",
-                                "attr": "d",
-                                "col_offset": 7,
-                                "ctx": "Load",
-                                "end_col_offset": 7,
-                                "end_lineno": 3,
-                                "lineno": 3,
-                                "value": {
-                                    "ast_type": "Attribute",
-                                    "attr": "c",
-                                    "col_offset": 5,
-                                    "ctx": "Load",
-                                    "end_col_offset": 5,
-                                    "end_lineno": 3,
-                                    "lineno": 3,
-                                    "value": {
-                                        "ast_type": "Attribute",
-                                        "attr": "b",
-                                        "col_offset": 3,
-                                        "ctx": "Load",
-                                        "end_col_offset": 3,
-                                        "end_lineno": 3,
-                                        "lineno": 3,
-                                        "value": {
-                                            "ast_type": "Name",
-                                            "col_offset": 1,
-                                            "ctx": "Load",
-                                            "end_col_offset": 1,
-                                            "end_lineno": 3,
-                                            "id": "a",
-                                            "lineno": 3
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    ],
-                    "value": {
-                        "ast_type": "Num",
-                        "col_offset": 13,
-                        "end_col_offset": 13,
-                        "end_lineno": 3,
-                        "lineno": 3,
-                        "n": 5
-                    }
-                },
-                {
-                    "ast_type": "Expr",
-                    "col_offset": 1,
-                    "lineno": 4,
-                    "value": {
-                        "ast_type": "Attribute",
-                        "attr": "z",
-                        "col_offset": 5,
-                        "ctx": "Load",
-                        "end_col_offset": 5,
-                        "end_lineno": 4,
-                        "lineno": 4,
-                        "value": {
-                            "ast_type": "Attribute",
-                            "attr": "y",
-                            "col_offset": 3,
-                            "ctx": "Load",
-                            "end_col_offset": 3,
-                            "end_lineno": 4,
-                            "lineno": 4,
-                            "value": {
-                                "ast_type": "Name",
-                                "col_offset": 1,
-                                "ctx": "Load",
-                                "end_col_offset": 1,
-                                "end_lineno": 4,
-                                "id": "x",
-                                "lineno": 4
-                            }
-                        }
-                    }
-                }
-            ]
-        }
-    }
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "Expr",
+            'col_offset': 1,
+            lineno: 1,
+            value: {
+               args: [],
+               'ast_type': "Call",
+               'col_offset': 1,
+               func: {
+                  'ast_type': "QualifiedIdentifier",
+                  'col_offset': 2,
+                  ctx: "Load",
+                  'end_col_offset': 3,
+                  'end_lineno': 1,
+                  identifiers: [
+                     {
+                        'ast_type': "Name",
+                        'col_offset': 1,
+                        ctx: "Load",
+                        'end_col_offset': 3,
+                        'end_lineno': 1,
+                        id: "obj",
+                        lineno: 1,
+                     },
+                     {
+                        'ast_type': "Attribute",
+                        attr: "method",
+                        'col_offset': 1,
+                        ctx: "Load",
+                        lineno: 1,
+                     },
+                  ],
+                  lineno: 1,
+               },
+               keywords: [],
+               lineno: 1,
+            },
+         },
+         {
+            'ast_type': "Assign",
+            'col_offset': 1,
+            lineno: 2,
+            targets: [
+               {
+                  'ast_type': "QualifiedIdentifier",
+                  'col_offset': 2,
+                  ctx: "Store",
+                  'end_col_offset': 1,
+                  'end_lineno': 2,
+                  identifiers: [
+                     {
+                        'ast_type': "Name",
+                        'col_offset': 1,
+                        ctx: "Load",
+                        'end_col_offset': 1,
+                        'end_lineno': 2,
+                        id: "a",
+                        lineno: 2,
+                     },
+                     {
+                        'ast_type': "Attribute",
+                        attr: "b",
+                        'col_offset': 1,
+                        ctx: "Store",
+                        lineno: 2,
+                     },
+                  ],
+                  lineno: 2,
+               },
+            ],
+            value: {
+               'ast_type': "Num",
+               'col_offset': 7,
+               'end_col_offset': 7,
+               'end_lineno': 2,
+               lineno: 2,
+               'n': 1,
+            },
+         },
+         {
+            'ast_type': "Assign",
+            'col_offset': 1,
+            lineno: 3,
+            targets: [
+               {
+                  'ast_type': "QualifiedIdentifier",
+                  'col_offset': 2,
+                  ctx: "Store",
+                  'end_col_offset': 1,
+                  'end_lineno': 3,
+                  identifiers: [
+                     {
+                        'ast_type': "Name",
+                        'col_offset': 1,
+                        ctx: "Load",
+                        'end_col_offset': 1,
+                        'end_lineno': 3,
+                        id: "a",
+                        lineno: 3,
+                     },
+                     {
+                        'ast_type': "Attribute",
+                        attr: "b",
+                        'col_offset': 3,
+                        ctx: "Load",
+                        'end_col_offset': 3,
+                        'end_lineno': 3,
+                        lineno: 3,
+                     },
+                     {
+                        'ast_type': "Attribute",
+                        attr: "c",
+                        'col_offset': 5,
+                        ctx: "Load",
+                        'end_col_offset': 5,
+                        'end_lineno': 3,
+                        lineno: 3,
+                     },
+                     {
+                        'ast_type': "Attribute",
+                        attr: "d",
+                        'col_offset': 7,
+                        ctx: "Load",
+                        'end_col_offset': 7,
+                        'end_lineno': 3,
+                        lineno: 3,
+                     },
+                     {
+                        'ast_type': "Attribute",
+                        attr: "e",
+                        'col_offset': 1,
+                        ctx: "Store",
+                        lineno: 3,
+                     },
+                  ],
+                  lineno: 3,
+               },
+            ],
+            value: {
+               'ast_type': "Num",
+               'col_offset': 13,
+               'end_col_offset': 13,
+               'end_lineno': 3,
+               lineno: 3,
+               'n': 5,
+            },
+         },
+         {
+            'ast_type': "Expr",
+            'col_offset': 1,
+            lineno: 4,
+            value: {
+               'ast_type': "QualifiedIdentifier",
+               'col_offset': 2,
+               ctx: "Load",
+               'end_col_offset': 1,
+               'end_lineno': 4,
+               identifiers: [
+                  {
+                     'ast_type': "Name",
+                     'col_offset': 1,
+                     ctx: "Load",
+                     'end_col_offset': 1,
+                     'end_lineno': 4,
+                     id: "x",
+                     lineno: 4,
+                  },
+                  {
+                     'ast_type': "Attribute",
+                     attr: "y",
+                     'col_offset': 3,
+                     ctx: "Load",
+                     'end_col_offset': 3,
+                     'end_lineno': 4,
+                     lineno: 4,
+                  },
+                  {
+                     'ast_type': "Attribute",
+                     attr: "z",
+                     'col_offset': 1,
+                     ctx: "Load",
+                     lineno: 4,
+                  },
+               ],
+               lineno: 4,
+            },
+         },
+      ],
+   },
 }

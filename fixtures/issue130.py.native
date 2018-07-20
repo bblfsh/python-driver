@@ -1,270 +1,313 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "ast_type": "Expr",
-                    "col_offset": 1,
-                    "lineno": 1,
-                    "value": {
-                        "args": [
-                            {
-                                "args": [
-                                    {
-                                        "ast_type": "Name",
-                                        "col_offset": 31,
-                                        "ctx": "Load",
-                                        "end_col_offset": 36,
-                                        "end_lineno": 1,
-                                        "id": "target",
-                                        "lineno": 1
-                                    }
-                                ],
-                                "ast_type": "Call",
-                                "col_offset": 14,
-                                "func": {
-                                    "ast_type": "Attribute",
-                                    "attr": "basename",
-                                    "col_offset": 22,
-                                    "ctx": "Load",
-                                    "end_col_offset": 29,
-                                    "end_lineno": 1,
-                                    "lineno": 1,
-                                    "value": {
-                                        "ast_type": "Attribute",
-                                        "attr": "path",
-                                        "col_offset": 17,
-                                        "ctx": "Load",
-                                        "end_col_offset": 20,
-                                        "end_lineno": 1,
-                                        "lineno": 1,
-                                        "value": {
-                                            "ast_type": "Name",
-                                            "col_offset": 14,
-                                            "ctx": "Load",
-                                            "end_col_offset": 15,
-                                            "end_lineno": 1,
-                                            "id": "os",
-                                            "lineno": 1
-                                        }
-                                    }
-                                },
-                                "keywords": [],
-                                "lineno": 1
-                            }
-                        ],
-                        "ast_type": "Call",
-                        "col_offset": 1,
-                        "func": {
-                            "ast_type": "Attribute",
-                            "attr": "which",
-                            "col_offset": 8,
-                            "ctx": "Load",
-                            "end_col_offset": 12,
-                            "end_lineno": 1,
-                            "lineno": 1,
-                            "value": {
-                                "ast_type": "Name",
-                                "col_offset": 1,
-                                "ctx": "Load",
-                                "end_col_offset": 6,
-                                "end_lineno": 1,
-                                "id": "shutil",
-                                "lineno": 1
-                            }
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "Expr",
+            'col_offset': 1,
+            lineno: 1,
+            value: {
+               args: [
+                  {
+                     args: [
+                        {
+                           'ast_type': "Name",
+                           'col_offset': 31,
+                           ctx: "Load",
+                           'end_col_offset': 36,
+                           'end_lineno': 1,
+                           id: "target",
+                           lineno: 1,
                         },
-                        "keywords": [],
-                        "lineno": 1
-                    }
-                },
-                {
-                    "ast_type": "Expr",
-                    "col_offset": 1,
-                    "lineno": 2,
-                    "value": {
-                        "args": [
-                            {
-                                "args": [
-                                    {
-                                        "ast_type": "Name",
-                                        "col_offset": 30,
-                                        "ctx": "Load",
-                                        "end_col_offset": 32,
-                                        "end_lineno": 2,
-                                        "id": "cwd",
-                                        "lineno": 2
-                                    },
-                                    {
-                                        "ast_type": "Str",
-                                        "col_offset": 35,
-                                        "end_col_offset": 39,
-                                        "end_lineno": 2,
-                                        "lineno": 2,
-                                        "s": "bin"
-                                    },
-                                    {
-                                        "ast_type": "Str",
-                                        "col_offset": 42,
-                                        "end_col_offset": 50,
-                                        "end_lineno": 2,
-                                        "lineno": 2,
-                                        "s": "bigartm"
-                                    }
-                                ],
-                                "ast_type": "Call",
-                                "col_offset": 17,
-                                "func": {
-                                    "ast_type": "Attribute",
-                                    "attr": "join",
-                                    "col_offset": 25,
-                                    "ctx": "Load",
-                                    "end_col_offset": 28,
-                                    "end_lineno": 2,
-                                    "lineno": 2,
-                                    "value": {
-                                        "ast_type": "Attribute",
-                                        "attr": "path",
-                                        "col_offset": 20,
-                                        "ctx": "Load",
-                                        "end_col_offset": 23,
-                                        "end_lineno": 2,
-                                        "lineno": 2,
-                                        "value": {
-                                            "ast_type": "Name",
-                                            "col_offset": 17,
-                                            "ctx": "Load",
-                                            "end_col_offset": 18,
-                                            "end_lineno": 2,
-                                            "id": "os",
-                                            "lineno": 2
-                                        }
-                                    }
-                                },
-                                "keywords": [],
-                                "lineno": 2
-                            },
-                            {
-                                "ast_type": "Name",
-                                "col_offset": 54,
-                                "ctx": "Load",
-                                "end_col_offset": 59,
-                                "end_lineno": 2,
-                                "id": "target",
-                                "lineno": 2
-                            }
+                     ],
+                     'ast_type': "Call",
+                     'col_offset': 14,
+                     func: {
+                        'ast_type': "QualifiedIdentifier",
+                        'col_offset': 15,
+                        ctx: "Load",
+                        'end_col_offset': 15,
+                        'end_lineno': 1,
+                        identifiers: [
+                           {
+                              'ast_type': "Name",
+                              'col_offset': 14,
+                              ctx: "Load",
+                              'end_col_offset': 15,
+                              'end_lineno': 1,
+                              id: "os",
+                              lineno: 1,
+                           },
+                           {
+                              'ast_type': "Attribute",
+                              attr: "path",
+                              'col_offset': 17,
+                              ctx: "Load",
+                              'end_col_offset': 20,
+                              'end_lineno': 1,
+                              lineno: 1,
+                           },
+                           {
+                              'ast_type': "Attribute",
+                              attr: "basename",
+                              'col_offset': 14,
+                              ctx: "Load",
+                              lineno: 1,
+                           },
                         ],
-                        "ast_type": "Call",
-                        "col_offset": 1,
-                        "func": {
-                            "ast_type": "Attribute",
-                            "attr": "copyfile",
-                            "col_offset": 8,
-                            "ctx": "Load",
-                            "end_col_offset": 15,
-                            "end_lineno": 2,
-                            "lineno": 2,
-                            "value": {
-                                "ast_type": "Name",
-                                "col_offset": 1,
-                                "ctx": "Load",
-                                "end_col_offset": 6,
-                                "end_lineno": 2,
-                                "id": "shutil",
-                                "lineno": 2
-                            }
+                        lineno: 1,
+                     },
+                     keywords: [],
+                     lineno: 1,
+                  },
+               ],
+               'ast_type': "Call",
+               'col_offset': 1,
+               func: {
+                  'ast_type': "QualifiedIdentifier",
+                  'col_offset': 2,
+                  ctx: "Load",
+                  'end_col_offset': 6,
+                  'end_lineno': 1,
+                  identifiers: [
+                     {
+                        'ast_type': "Name",
+                        'col_offset': 1,
+                        ctx: "Load",
+                        'end_col_offset': 6,
+                        'end_lineno': 1,
+                        id: "shutil",
+                        lineno: 1,
+                     },
+                     {
+                        'ast_type': "Attribute",
+                        attr: "which",
+                        'col_offset': 1,
+                        ctx: "Load",
+                        lineno: 1,
+                     },
+                  ],
+                  lineno: 1,
+               },
+               keywords: [],
+               lineno: 1,
+            },
+         },
+         {
+            'ast_type': "Expr",
+            'col_offset': 1,
+            lineno: 2,
+            value: {
+               args: [
+                  {
+                     args: [
+                        {
+                           'ast_type': "Name",
+                           'col_offset': 30,
+                           ctx: "Load",
+                           'end_col_offset': 32,
+                           'end_lineno': 2,
+                           id: "cwd",
+                           lineno: 2,
                         },
-                        "keywords": [],
-                        "lineno": 2
-                    }
-                },
-                {
-                    "ast_type": "Expr",
-                    "col_offset": 1,
-                    "lineno": 3,
-                    "value": {
-                        "args": [
-                            {
-                                "ast_type": "Str",
-                                "col_offset": 10,
-                                "end_col_offset": 23,
-                                "end_lineno": 3,
-                                "lineno": 3,
-                                "s": "Installed %s"
-                            },
-                            {
-                                "args": [
-                                    {
-                                        "ast_type": "Name",
-                                        "col_offset": 42,
-                                        "ctx": "Load",
-                                        "end_col_offset": 47,
-                                        "end_lineno": 3,
-                                        "id": "target",
-                                        "lineno": 3
-                                    }
-                                ],
-                                "ast_type": "Call",
-                                "col_offset": 26,
-                                "func": {
-                                    "ast_type": "Attribute",
-                                    "attr": "abspath",
-                                    "col_offset": 34,
-                                    "ctx": "Load",
-                                    "end_col_offset": 40,
-                                    "end_lineno": 3,
-                                    "lineno": 3,
-                                    "value": {
-                                        "ast_type": "Attribute",
-                                        "attr": "path",
-                                        "col_offset": 29,
-                                        "ctx": "Load",
-                                        "end_col_offset": 32,
-                                        "end_lineno": 3,
-                                        "lineno": 3,
-                                        "value": {
-                                            "ast_type": "Name",
-                                            "col_offset": 26,
-                                            "ctx": "Load",
-                                            "end_col_offset": 27,
-                                            "end_lineno": 3,
-                                            "id": "os",
-                                            "lineno": 3
-                                        }
-                                    }
-                                },
-                                "keywords": [],
-                                "lineno": 3
-                            }
+                        {
+                           'ast_type': "Str",
+                           'col_offset': 35,
+                           'end_col_offset': 39,
+                           'end_lineno': 2,
+                           lineno: 2,
+                           s: "bin",
+                        },
+                        {
+                           'ast_type': "Str",
+                           'col_offset': 42,
+                           'end_col_offset': 50,
+                           'end_lineno': 2,
+                           lineno: 2,
+                           s: "bigartm",
+                        },
+                     ],
+                     'ast_type': "Call",
+                     'col_offset': 17,
+                     func: {
+                        'ast_type': "QualifiedIdentifier",
+                        'col_offset': 18,
+                        ctx: "Load",
+                        'end_col_offset': 18,
+                        'end_lineno': 2,
+                        identifiers: [
+                           {
+                              'ast_type': "Name",
+                              'col_offset': 17,
+                              ctx: "Load",
+                              'end_col_offset': 18,
+                              'end_lineno': 2,
+                              id: "os",
+                              lineno: 2,
+                           },
+                           {
+                              'ast_type': "Attribute",
+                              attr: "path",
+                              'col_offset': 20,
+                              ctx: "Load",
+                              'end_col_offset': 23,
+                              'end_lineno': 2,
+                              lineno: 2,
+                           },
+                           {
+                              'ast_type': "Attribute",
+                              attr: "join",
+                              'col_offset': 17,
+                              ctx: "Load",
+                              lineno: 2,
+                           },
                         ],
-                        "ast_type": "Call",
-                        "col_offset": 1,
-                        "func": {
-                            "ast_type": "Attribute",
-                            "attr": "info",
-                            "col_offset": 5,
-                            "ctx": "Load",
-                            "end_col_offset": 8,
-                            "end_lineno": 3,
-                            "lineno": 3,
-                            "value": {
-                                "ast_type": "Name",
-                                "col_offset": 1,
-                                "ctx": "Load",
-                                "end_col_offset": 3,
-                                "end_lineno": 3,
-                                "id": "log",
-                                "lineno": 3
-                            }
+                        lineno: 2,
+                     },
+                     keywords: [],
+                     lineno: 2,
+                  },
+                  {
+                     'ast_type': "Name",
+                     'col_offset': 54,
+                     ctx: "Load",
+                     'end_col_offset': 59,
+                     'end_lineno': 2,
+                     id: "target",
+                     lineno: 2,
+                  },
+               ],
+               'ast_type': "Call",
+               'col_offset': 1,
+               func: {
+                  'ast_type': "QualifiedIdentifier",
+                  'col_offset': 2,
+                  ctx: "Load",
+                  'end_col_offset': 6,
+                  'end_lineno': 2,
+                  identifiers: [
+                     {
+                        'ast_type': "Name",
+                        'col_offset': 1,
+                        ctx: "Load",
+                        'end_col_offset': 6,
+                        'end_lineno': 2,
+                        id: "shutil",
+                        lineno: 2,
+                     },
+                     {
+                        'ast_type': "Attribute",
+                        attr: "copyfile",
+                        'col_offset': 1,
+                        ctx: "Load",
+                        lineno: 2,
+                     },
+                  ],
+                  lineno: 2,
+               },
+               keywords: [],
+               lineno: 2,
+            },
+         },
+         {
+            'ast_type': "Expr",
+            'col_offset': 1,
+            lineno: 3,
+            value: {
+               args: [
+                  {
+                     'ast_type': "Str",
+                     'col_offset': 10,
+                     'end_col_offset': 23,
+                     'end_lineno': 3,
+                     lineno: 3,
+                     s: "Installed %s",
+                  },
+                  {
+                     args: [
+                        {
+                           'ast_type': "Name",
+                           'col_offset': 42,
+                           ctx: "Load",
+                           'end_col_offset': 47,
+                           'end_lineno': 3,
+                           id: "target",
+                           lineno: 3,
                         },
-                        "keywords": [],
-                        "lineno": 3
-                    }
-                }
-            ]
-        }
-    }
+                     ],
+                     'ast_type': "Call",
+                     'col_offset': 26,
+                     func: {
+                        'ast_type': "QualifiedIdentifier",
+                        'col_offset': 27,
+                        ctx: "Load",
+                        'end_col_offset': 27,
+                        'end_lineno': 3,
+                        identifiers: [
+                           {
+                              'ast_type': "Name",
+                              'col_offset': 26,
+                              ctx: "Load",
+                              'end_col_offset': 27,
+                              'end_lineno': 3,
+                              id: "os",
+                              lineno: 3,
+                           },
+                           {
+                              'ast_type': "Attribute",
+                              attr: "path",
+                              'col_offset': 29,
+                              ctx: "Load",
+                              'end_col_offset': 32,
+                              'end_lineno': 3,
+                              lineno: 3,
+                           },
+                           {
+                              'ast_type': "Attribute",
+                              attr: "abspath",
+                              'col_offset': 26,
+                              ctx: "Load",
+                              lineno: 3,
+                           },
+                        ],
+                        lineno: 3,
+                     },
+                     keywords: [],
+                     lineno: 3,
+                  },
+               ],
+               'ast_type': "Call",
+               'col_offset': 1,
+               func: {
+                  'ast_type': "QualifiedIdentifier",
+                  'col_offset': 2,
+                  ctx: "Load",
+                  'end_col_offset': 3,
+                  'end_lineno': 3,
+                  identifiers: [
+                     {
+                        'ast_type': "Name",
+                        'col_offset': 1,
+                        ctx: "Load",
+                        'end_col_offset': 3,
+                        'end_lineno': 3,
+                        id: "log",
+                        lineno: 3,
+                     },
+                     {
+                        'ast_type': "Attribute",
+                        attr: "info",
+                        'col_offset': 1,
+                        ctx: "Load",
+                        lineno: 3,
+                     },
+                  ],
+                  lineno: 3,
+               },
+               keywords: [],
+               lineno: 3,
+            },
+         },
+      ],
+   },
 }

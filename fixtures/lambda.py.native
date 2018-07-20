@@ -1,68 +1,58 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "ast_type": "Expr",
-                    "col_offset": 1,
-                    "lineno": 1,
-                    "value": {
-                        "args": {
-                            "args": [
-                                {
-                                    "annotation": null,
-                                    "arg": "x",
-                                    "ast_type": "arg",
-                                    "col_offset": 8,
-                                    "end_col_offset": 8,
-                                    "end_lineno": 1,
-                                    "lineno": 1
-                                }
-                            ],
-                            "ast_type": "arguments",
-                            "defaults": [],
-                            "kw_defaults": [],
-                            "kwarg": null,
-                            "kwonlyargs": [],
-                            "vararg": null
-                        },
-                        "ast_type": "Lambda",
-                        "body": {
-                            "ast_type": "BinOp",
-                            "col_offset": 11,
-                            "left": {
-                                "ast_type": "Name",
-                                "col_offset": 11,
-                                "ctx": "Load",
-                                "end_col_offset": 11,
-                                "end_lineno": 1,
-                                "id": "x",
-                                "lineno": 1
-                            },
-                            "lineno": 1,
-                            "op": {
-                                "ast_type": "Add"
-                            },
-                            "right": {
-                                "ast_type": "Num",
-                                "col_offset": 13,
-                                "end_col_offset": 13,
-                                "end_lineno": 1,
-                                "lineno": 1,
-                                "n": 1
-                            }
-                        },
-                        "col_offset": 1,
-                        "end_col_offset": 6,
-                        "end_lineno": 1,
-                        "lineno": 1
-                    }
-                }
-            ]
-        }
-    }
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "Expr",
+            'col_offset': 1,
+            lineno: 1,
+            value: {
+               args: {
+                  args: [
+                     {
+                        '@token': "x",
+                        annotation: ~,
+                        'ast_type': "arg",
+                        'col_offset': 8,
+                        'end_col_offset': 8,
+                        'end_lineno': 1,
+                        lineno: 1,
+                     },
+                  ],
+                  'ast_type': "arguments",
+               },
+               'ast_type': "Lambda",
+               body: {
+                  'ast_type': "BinOp",
+                  'col_offset': 11,
+                  left: {
+                     'ast_type': "Name",
+                     'col_offset': 11,
+                     ctx: "Load",
+                     'end_col_offset': 11,
+                     'end_lineno': 1,
+                     id: "x",
+                     lineno: 1,
+                  },
+                  lineno: 1,
+                  op: {
+                     'ast_type': "Add",
+                  },
+                  right: {
+                     'ast_type': "Num",
+                     'col_offset': 13,
+                     'end_col_offset': 13,
+                     'end_lineno': 1,
+                     lineno: 1,
+                     'n': 1,
+                  },
+               },
+               'col_offset': 1,
+               'end_col_offset': 6,
+               'end_lineno': 1,
+               lineno: 1,
+            },
+         },
+      ],
+   },
 }

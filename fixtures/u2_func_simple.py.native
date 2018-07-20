@@ -1,92 +1,82 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "args": {
-                        "args": [
-                            {
-                                "annotation": null,
-                                "arg": "a",
-                                "ast_type": "arg",
-                                "col_offset": 14,
-                                "end_col_offset": 14,
-                                "end_lineno": 1,
-                                "lineno": 1
-                            },
-                            {
-                                "annotation": null,
-                                "arg": "b",
-                                "ast_type": "arg",
-                                "col_offset": 17,
-                                "end_col_offset": 17,
-                                "end_lineno": 1,
-                                "lineno": 1
-                            }
-                        ],
-                        "ast_type": "arguments",
-                        "defaults": [],
-                        "kw_defaults": [],
-                        "kwarg": null,
-                        "kwonlyargs": [],
-                        "vararg": null
-                    },
-                    "ast_type": "FunctionDef",
-                    "body": [
-                        {
-                            "ast_type": "Assign",
-                            "col_offset": 5,
-                            "lineno": 2,
-                            "targets": [
-                                {
-                                    "ast_type": "Name",
-                                    "col_offset": 5,
-                                    "ctx": "Store",
-                                    "end_col_offset": 5,
-                                    "end_lineno": 2,
-                                    "id": "a",
-                                    "lineno": 2
-                                }
-                            ],
-                            "value": {
-                                "ast_type": "Name",
-                                "col_offset": 9,
-                                "ctx": "Load",
-                                "end_col_offset": 9,
-                                "end_lineno": 2,
-                                "id": "b",
-                                "lineno": 2
-                            }
-                        },
-                        {
-                            "ast_type": "Return",
-                            "col_offset": 5,
-                            "end_col_offset": 10,
-                            "end_lineno": 3,
-                            "lineno": 3,
-                            "value": {
-                                "ast_type": "Num",
-                                "col_offset": 12,
-                                "end_col_offset": 12,
-                                "end_lineno": 3,
-                                "lineno": 3,
-                                "n": 1
-                            }
-                        }
-                    ],
-                    "col_offset": 5,
-                    "decorator_list": [],
-                    "end_col_offset": 12,
-                    "end_lineno": 1,
-                    "lineno": 1,
-                    "name": "testfnc1",
-                    "returns": null
-                }
-            ]
-        }
-    }
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            args: {
+               args: [
+                  {
+                     '@token': "a",
+                     annotation: ~,
+                     'ast_type': "arg",
+                     'col_offset': 14,
+                     'end_col_offset': 14,
+                     'end_lineno': 1,
+                     lineno: 1,
+                  },
+                  {
+                     '@token': "b",
+                     annotation: ~,
+                     'ast_type': "arg",
+                     'col_offset': 17,
+                     'end_col_offset': 17,
+                     'end_lineno': 1,
+                     lineno: 1,
+                  },
+               ],
+               'ast_type': "arguments",
+            },
+            'ast_type': "FunctionDef",
+            body: [
+               {
+                  'ast_type': "Assign",
+                  'col_offset': 5,
+                  lineno: 2,
+                  targets: [
+                     {
+                        'ast_type': "Name",
+                        'col_offset': 5,
+                        ctx: "Store",
+                        'end_col_offset': 5,
+                        'end_lineno': 2,
+                        id: "a",
+                        lineno: 2,
+                     },
+                  ],
+                  value: {
+                     'ast_type': "Name",
+                     'col_offset': 9,
+                     ctx: "Load",
+                     'end_col_offset': 9,
+                     'end_lineno': 2,
+                     id: "b",
+                     lineno: 2,
+                  },
+               },
+               {
+                  'ast_type': "Return",
+                  'col_offset': 5,
+                  'end_col_offset': 10,
+                  'end_lineno': 3,
+                  lineno: 3,
+                  value: {
+                     'ast_type': "Num",
+                     'col_offset': 12,
+                     'end_col_offset': 12,
+                     'end_lineno': 3,
+                     lineno: 3,
+                     'n': 1,
+                  },
+               },
+            ],
+            'col_offset': 5,
+            'decorator_list': [],
+            'end_col_offset': 12,
+            'end_lineno': 1,
+            lineno: 1,
+            name: "testfnc1",
+            returns: ~,
+         },
+      ],
+   },
 }

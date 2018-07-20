@@ -1,69 +1,64 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "ast_type": "With",
-                    "body": [
-                        {
-                            "ast_type": "Assign",
-                            "col_offset": 5,
-                            "lineno": 2,
-                            "targets": [
-                                {
-                                    "ast_type": "Name",
-                                    "col_offset": 5,
-                                    "ctx": "Store",
-                                    "end_col_offset": 5,
-                                    "end_lineno": 2,
-                                    "id": "a",
-                                    "lineno": 2
-                                }
-                            ],
-                            "value": {
-                                "ast_type": "Name",
-                                "col_offset": 9,
-                                "ctx": "Load",
-                                "end_col_offset": 9,
-                                "end_lineno": 2,
-                                "id": "s",
-                                "lineno": 2
-                            }
-                        }
-                    ],
-                    "col_offset": 1,
-                    "end_col_offset": 4,
-                    "end_lineno": 1,
-                    "items": [
-                        {
-                            "ast_type": "withitem",
-                            "context_expr": {
-                                "ast_type": "Name",
-                                "col_offset": 6,
-                                "ctx": "Load",
-                                "end_col_offset": 14,
-                                "end_lineno": 1,
-                                "id": "something",
-                                "lineno": 1
-                            },
-                            "optional_vars": {
-                                "ast_type": "Name",
-                                "col_offset": 19,
-                                "ctx": "Store",
-                                "end_col_offset": 19,
-                                "end_lineno": 1,
-                                "id": "s",
-                                "lineno": 1
-                            }
-                        }
-                    ],
-                    "lineno": 1
-                }
-            ]
-        }
-    }
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "With",
+            body: [
+               {
+                  'ast_type': "Assign",
+                  'col_offset': 5,
+                  lineno: 2,
+                  targets: [
+                     {
+                        'ast_type': "Name",
+                        'col_offset': 5,
+                        ctx: "Store",
+                        'end_col_offset': 5,
+                        'end_lineno': 2,
+                        id: "a",
+                        lineno: 2,
+                     },
+                  ],
+                  value: {
+                     'ast_type': "Name",
+                     'col_offset': 9,
+                     ctx: "Load",
+                     'end_col_offset': 9,
+                     'end_lineno': 2,
+                     id: "s",
+                     lineno: 2,
+                  },
+               },
+            ],
+            'col_offset': 1,
+            'end_col_offset': 4,
+            'end_lineno': 1,
+            items: [
+               {
+                  'ast_type': "withitem",
+                  'context_expr': {
+                     'ast_type': "Name",
+                     'col_offset': 6,
+                     ctx: "Load",
+                     'end_col_offset': 14,
+                     'end_lineno': 1,
+                     id: "something",
+                     lineno: 1,
+                  },
+                  'optional_vars': {
+                     'ast_type': "Name",
+                     'col_offset': 19,
+                     ctx: "Store",
+                     'end_col_offset': 19,
+                     'end_lineno': 1,
+                     id: "s",
+                     lineno: 1,
+                  },
+               },
+            ],
+            lineno: 1,
+         },
+      ],
+   },
 }

@@ -1,84 +1,79 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "ast_type": "Expr",
-                    "col_offset": 1,
-                    "lineno": 2,
-                    "value": {
-                        "ast_type": "BinOp",
-                        "col_offset": 1,
-                        "left": {
-                            "ast_type": "Num",
-                            "col_offset": 1,
-                            "end_col_offset": 1,
-                            "end_lineno": 2,
-                            "lineno": 2,
-                            "n": 1,
-                            "noops_previous": {
-                                "ast_type": "PreviousNoops",
-                                "col_offset": 1,
-                                "end_col_offset": 16,
-                                "end_lineno": 1,
-                                "lineno": 1,
-                                "lines": [
-                                    {
-                                        "ast_type": "NoopLine",
-                                        "col_offset": 1,
-                                        "lineno": 1,
-                                        "noop_line": " before comment\n"
-                                    }
-                                ]
-                            },
-                            "noops_sameline": {
-                                "ast_type": "SameLineNoops",
-                                "col_offset": 4,
-                                "end_col_offset": 26,
-                                "end_lineno": 2,
-                                "lineno": 2,
-                                "noop_lines": [
-                                    {
-                                        "ast_type": "NoopSameLine",
-                                        "s": "# linetrailing comment"
-                                    }
-                                ]
-                            }
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "Expr",
+            'col_offset': 1,
+            lineno: 2,
+            value: {
+               'ast_type': "BinOp",
+               'col_offset': 1,
+               left: {
+                  'ast_type': "Num",
+                  'col_offset': 1,
+                  'end_col_offset': 1,
+                  'end_lineno': 2,
+                  lineno: 2,
+                  'n': 1,
+                  'noops_previous': {
+                     'ast_type': "PreviousNoops",
+                     'col_offset': 1,
+                     'end_col_offset': 16,
+                     'end_lineno': 1,
+                     lineno: 1,
+                     lines: [
+                        {
+                           'ast_type': "NoopLine",
+                           'col_offset': 1,
+                           lineno: 1,
+                           'noop_line': " before comment\n",
                         },
-                        "lineno": 2,
-                        "op": {
-                            "ast_type": "Add"
+                     ],
+                  },
+                  'noops_sameline': {
+                     'ast_type': "SameLineNoops",
+                     'col_offset': 4,
+                     'end_col_offset': 26,
+                     'end_lineno': 2,
+                     lineno: 2,
+                     'noop_lines': [
+                        {
+                           'ast_type': "NoopSameLine",
+                           s: "# linetrailing comment",
                         },
-                        "right": {
-                            "ast_type": "Num",
-                            "col_offset": 3,
-                            "end_col_offset": 3,
-                            "end_lineno": 2,
-                            "lineno": 2,
-                            "n": 2
-                        }
-                    }
-                }
-            ],
-            "noops_remainder": {
-                "ast_type": "RemainderNoops",
-                "col_offset": 1,
-                "end_col_offset": 1,
-                "end_lineno": 3,
-                "lineno": 3,
-                "lines": [
-                    {
-                        "ast_type": "NoopLine",
-                        "col_offset": 1,
-                        "lineno": 3,
-                        "noop_line": " remaining comment\n"
-                    }
-                ]
-            }
-        }
-    }
+                     ],
+                  },
+               },
+               lineno: 2,
+               op: {
+                  'ast_type': "Add",
+               },
+               right: {
+                  'ast_type': "Num",
+                  'col_offset': 3,
+                  'end_col_offset': 3,
+                  'end_lineno': 2,
+                  lineno: 2,
+                  'n': 2,
+               },
+            },
+         },
+      ],
+      'noops_remainder': {
+         'ast_type': "RemainderNoops",
+         'col_offset': 1,
+         'end_col_offset': 1,
+         'end_lineno': 3,
+         lineno: 3,
+         lines: [
+            {
+               'ast_type': "NoopLine",
+               'col_offset': 1,
+               lineno: 3,
+               'noop_line': " remaining comment\n",
+            },
+         ],
+      },
+   },
 }

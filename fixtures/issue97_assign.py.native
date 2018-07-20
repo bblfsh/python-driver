@@ -1,46 +1,41 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "ast_type": "Assign",
-                    "col_offset": 1,
-                    "lineno": 1,
-                    "targets": [
-                        {
-                            "ast_type": "Name",
-                            "col_offset": 1,
-                            "ctx": "Store",
-                            "end_col_offset": 1,
-                            "end_lineno": 1,
-                            "id": "a",
-                            "lineno": 1
-                        },
-                        {
-                            "ast_type": "Name",
-                            "col_offset": 5,
-                            "ctx": "Store",
-                            "end_col_offset": 5,
-                            "end_lineno": 1,
-                            "id": "b",
-                            "lineno": 1
-                        }
-                    ],
-                    "value": {
-                        "ast_type": "Name",
-                        "col_offset": 9,
-                        "ctx": "Load",
-                        "end_col_offset": 9,
-                        "end_lineno": 1,
-                        "id": "c",
-                        "lineno": 1
-                    }
-                }
-            ]
-        }
-    }
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "Assign",
+            'col_offset': 1,
+            lineno: 1,
+            targets: [
+               {
+                  'ast_type': "Name",
+                  'col_offset': 1,
+                  ctx: "Store",
+                  'end_col_offset': 1,
+                  'end_lineno': 1,
+                  id: "a",
+                  lineno: 1,
+               },
+               {
+                  'ast_type': "Name",
+                  'col_offset': 5,
+                  ctx: "Store",
+                  'end_col_offset': 5,
+                  'end_lineno': 1,
+                  id: "b",
+                  lineno: 1,
+               },
+            ],
+            value: {
+               'ast_type': "Name",
+               'col_offset': 9,
+               ctx: "Load",
+               'end_col_offset': 9,
+               'end_lineno': 1,
+               id: "c",
+               lineno: 1,
+            },
+         },
+      ],
+   },
 }

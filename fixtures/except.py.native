@@ -1,201 +1,196 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "ast_type": "Try",
-                    "body": [
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "Try",
+            body: [
+               {
+                  'ast_type': "Assign",
+                  'col_offset': 5,
+                  lineno: 2,
+                  targets: [
+                     {
+                        'ast_type': "Name",
+                        'col_offset': 5,
+                        ctx: "Store",
+                        'end_col_offset': 5,
+                        'end_lineno': 2,
+                        id: "a",
+                        lineno: 2,
+                     },
+                  ],
+                  value: {
+                     'ast_type': "Num",
+                     'col_offset': 9,
+                     'end_col_offset': 9,
+                     'end_lineno': 2,
+                     lineno: 2,
+                     'n': 1,
+                  },
+               },
+               {
+                  'ast_type': "Raise",
+                  cause: ~,
+                  'col_offset': 5,
+                  'end_col_offset': 9,
+                  'end_lineno': 3,
+                  exc: {
+                     args: [
                         {
-                            "ast_type": "Assign",
-                            "col_offset": 5,
-                            "lineno": 2,
-                            "targets": [
-                                {
-                                    "ast_type": "Name",
-                                    "col_offset": 5,
-                                    "ctx": "Store",
-                                    "end_col_offset": 5,
-                                    "end_lineno": 2,
-                                    "id": "a",
-                                    "lineno": 2
-                                }
-                            ],
-                            "value": {
-                                "ast_type": "Num",
-                                "col_offset": 9,
-                                "end_col_offset": 9,
-                                "end_lineno": 2,
-                                "lineno": 2,
-                                "n": 1
-                            }
+                           'ast_type': "Str",
+                           'col_offset': 21,
+                           'end_col_offset': 28,
+                           'end_lineno': 3,
+                           lineno: 3,
+                           s: "gogogo",
                         },
+                     ],
+                     'ast_type': "Call",
+                     'col_offset': 11,
+                     func: {
+                        'ast_type': "Name",
+                        'col_offset': 11,
+                        ctx: "Load",
+                        'end_col_offset': 19,
+                        'end_lineno': 3,
+                        id: "Exception",
+                        lineno: 3,
+                     },
+                     keywords: [],
+                     lineno: 3,
+                  },
+                  lineno: 3,
+               },
+            ],
+            'col_offset': 1,
+            'end_col_offset': 3,
+            'end_lineno': 1,
+            finalbody: [
+               {
+                  'ast_type': "Expr",
+                  'col_offset': 5,
+                  lineno: 9,
+                  value: {
+                     args: [
                         {
-                            "ast_type": "Raise",
-                            "cause": null,
-                            "col_offset": 5,
-                            "end_col_offset": 9,
-                            "end_lineno": 3,
-                            "exc": {
-                                "args": [
-                                    {
-                                        "ast_type": "Str",
-                                        "col_offset": 21,
-                                        "end_col_offset": 28,
-                                        "end_lineno": 3,
-                                        "lineno": 3,
-                                        "s": "gogogo"
-                                    }
-                                ],
-                                "ast_type": "Call",
-                                "col_offset": 11,
-                                "func": {
-                                    "ast_type": "Name",
-                                    "col_offset": 11,
-                                    "ctx": "Load",
-                                    "end_col_offset": 19,
-                                    "end_lineno": 3,
-                                    "id": "Exception",
-                                    "lineno": 3
-                                },
-                                "keywords": [],
-                                "lineno": 3
-                            },
-                            "lineno": 3
-                        }
-                    ],
-                    "col_offset": 1,
-                    "end_col_offset": 3,
-                    "end_lineno": 1,
-                    "finalbody": [
-                        {
-                            "ast_type": "Expr",
-                            "col_offset": 5,
-                            "lineno": 9,
-                            "value": {
-                                "args": [
-                                    {
-                                        "ast_type": "Str",
-                                        "col_offset": 11,
-                                        "end_col_offset": 23,
-                                        "end_lineno": 9,
-                                        "lineno": 9,
-                                        "s": "here we are"
-                                    }
-                                ],
-                                "ast_type": "Call",
-                                "col_offset": 5,
-                                "func": {
-                                    "ast_type": "Name",
-                                    "col_offset": 5,
-                                    "ctx": "Load",
-                                    "end_col_offset": 9,
-                                    "end_lineno": 9,
-                                    "id": "print",
-                                    "lineno": 9
-                                },
-                                "keywords": [],
-                                "lineno": 9
-                            }
-                        }
-                    ],
-                    "handlers": [
-                        {
-                            "ast_type": "ExceptHandler",
-                            "body": [
-                                {
-                                    "ast_type": "Expr",
-                                    "col_offset": 5,
-                                    "lineno": 5,
-                                    "value": {
-                                        "args": [
-                                            {
-                                                "ast_type": "Str",
-                                                "col_offset": 11,
-                                                "end_col_offset": 33,
-                                                "end_lineno": 5,
-                                                "lineno": 5,
-                                                "s": "someexception catched"
-                                            }
-                                        ],
-                                        "ast_type": "Call",
-                                        "col_offset": 5,
-                                        "func": {
-                                            "ast_type": "Name",
-                                            "col_offset": 5,
-                                            "ctx": "Load",
-                                            "end_col_offset": 9,
-                                            "end_lineno": 5,
-                                            "id": "print",
-                                            "lineno": 5
-                                        },
-                                        "keywords": [],
-                                        "lineno": 5
-                                    }
-                                }
-                            ],
-                            "col_offset": 25,
-                            "end_col_offset": 25,
-                            "end_lineno": 4,
-                            "lineno": 4,
-                            "name": "e",
-                            "type": {
-                                "ast_type": "Name",
-                                "col_offset": 8,
-                                "ctx": "Load",
-                                "end_col_offset": 20,
-                                "end_lineno": 4,
-                                "id": "SomeException",
-                                "lineno": 4
-                            }
+                           'ast_type': "Str",
+                           'col_offset': 11,
+                           'end_col_offset': 23,
+                           'end_lineno': 9,
+                           lineno: 9,
+                           s: "here we are",
                         },
-                        {
-                            "ast_type": "ExceptHandler",
-                            "body": [
-                                {
-                                    "ast_type": "Expr",
-                                    "col_offset": 5,
-                                    "lineno": 7,
-                                    "value": {
-                                        "args": [
-                                            {
-                                                "ast_type": "Str",
-                                                "col_offset": 11,
-                                                "end_col_offset": 17,
-                                                "end_lineno": 7,
-                                                "lineno": 7,
-                                                "s": "ayyyy"
-                                            }
-                                        ],
-                                        "ast_type": "Call",
-                                        "col_offset": 5,
-                                        "func": {
-                                            "ast_type": "Name",
-                                            "col_offset": 5,
-                                            "ctx": "Load",
-                                            "end_col_offset": 9,
-                                            "end_lineno": 7,
-                                            "id": "print",
-                                            "lineno": 7
-                                        },
-                                        "keywords": [],
-                                        "lineno": 7
-                                    }
-                                }
-                            ],
-                            "col_offset": 1,
-                            "lineno": 6,
-                            "name": null,
-                            "type": null
-                        }
-                    ],
-                    "lineno": 1,
-                    "orelse": []
-                }
-            ]
-        }
-    }
+                     ],
+                     'ast_type': "Call",
+                     'col_offset': 5,
+                     func: {
+                        'ast_type': "Name",
+                        'col_offset': 5,
+                        ctx: "Load",
+                        'end_col_offset': 9,
+                        'end_lineno': 9,
+                        id: "print",
+                        lineno: 9,
+                     },
+                     keywords: [],
+                     lineno: 9,
+                  },
+               },
+            ],
+            handlers: [
+               {
+                  'ast_type': "ExceptHandler",
+                  body: [
+                     {
+                        'ast_type': "Expr",
+                        'col_offset': 5,
+                        lineno: 5,
+                        value: {
+                           args: [
+                              {
+                                 'ast_type': "Str",
+                                 'col_offset': 11,
+                                 'end_col_offset': 33,
+                                 'end_lineno': 5,
+                                 lineno: 5,
+                                 s: "someexception catched",
+                              },
+                           ],
+                           'ast_type': "Call",
+                           'col_offset': 5,
+                           func: {
+                              'ast_type': "Name",
+                              'col_offset': 5,
+                              ctx: "Load",
+                              'end_col_offset': 9,
+                              'end_lineno': 5,
+                              id: "print",
+                              lineno: 5,
+                           },
+                           keywords: [],
+                           lineno: 5,
+                        },
+                     },
+                  ],
+                  'col_offset': 25,
+                  'end_col_offset': 25,
+                  'end_lineno': 4,
+                  lineno: 4,
+                  name: "e",
+                  type: {
+                     'ast_type': "Name",
+                     'col_offset': 8,
+                     ctx: "Load",
+                     'end_col_offset': 20,
+                     'end_lineno': 4,
+                     id: "SomeException",
+                     lineno: 4,
+                  },
+               },
+               {
+                  'ast_type': "ExceptHandler",
+                  body: [
+                     {
+                        'ast_type': "Expr",
+                        'col_offset': 5,
+                        lineno: 7,
+                        value: {
+                           args: [
+                              {
+                                 'ast_type': "Str",
+                                 'col_offset': 11,
+                                 'end_col_offset': 17,
+                                 'end_lineno': 7,
+                                 lineno: 7,
+                                 s: "ayyyy",
+                              },
+                           ],
+                           'ast_type': "Call",
+                           'col_offset': 5,
+                           func: {
+                              'ast_type': "Name",
+                              'col_offset': 5,
+                              ctx: "Load",
+                              'end_col_offset': 9,
+                              'end_lineno': 7,
+                              id: "print",
+                              lineno: 7,
+                           },
+                           keywords: [],
+                           lineno: 7,
+                        },
+                     },
+                  ],
+                  'col_offset': 1,
+                  lineno: 6,
+                  name: ~,
+                  type: ~,
+               },
+            ],
+            lineno: 1,
+            orelse: [],
+         },
+      ],
+   },
 }

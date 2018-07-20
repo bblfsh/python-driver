@@ -1,163 +1,158 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "ast_type": "For",
-                    "body": [
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "For",
+            body: [
+               {
+                  'ast_type': "If",
+                  body: [
+                     {
+                        'ast_type': "Continue",
+                        'col_offset': 9,
+                        'end_col_offset': 16,
+                        'end_lineno': 3,
+                        lineno: 3,
+                     },
+                  ],
+                  'col_offset': 5,
+                  'end_col_offset': 6,
+                  'end_lineno': 2,
+                  lineno: 2,
+                  orelse: [],
+                  test: {
+                     'ast_type': "Compare",
+                     'col_offset': 8,
+                     comparators: [
                         {
-                            "ast_type": "If",
-                            "body": [
-                                {
-                                    "ast_type": "Continue",
-                                    "col_offset": 9,
-                                    "end_col_offset": 16,
-                                    "end_lineno": 3,
-                                    "lineno": 3
-                                }
-                            ],
-                            "col_offset": 5,
-                            "end_col_offset": 6,
-                            "end_lineno": 2,
-                            "lineno": 2,
-                            "orelse": [],
-                            "test": {
-                                "ast_type": "Compare",
-                                "col_offset": 8,
-                                "comparators": [
-                                    {
-                                        "ast_type": "Num",
-                                        "col_offset": 13,
-                                        "end_col_offset": 13,
-                                        "end_lineno": 2,
-                                        "lineno": 2,
-                                        "n": 2
-                                    }
-                                ],
-                                "left": {
-                                    "ast_type": "Name",
-                                    "col_offset": 8,
-                                    "ctx": "Load",
-                                    "end_col_offset": 8,
-                                    "end_lineno": 2,
-                                    "id": "i",
-                                    "lineno": 2
-                                },
-                                "lineno": 2,
-                                "ops": [
-                                    {
-                                        "ast_type": "Eq"
-                                    }
-                                ]
-                            }
+                           'ast_type': "Num",
+                           'col_offset': 13,
+                           'end_col_offset': 13,
+                           'end_lineno': 2,
+                           lineno: 2,
+                           'n': 2,
                         },
+                     ],
+                     left: {
+                        'ast_type': "Name",
+                        'col_offset': 8,
+                        ctx: "Load",
+                        'end_col_offset': 8,
+                        'end_lineno': 2,
+                        id: "i",
+                        lineno: 2,
+                     },
+                     lineno: 2,
+                     ops: [
                         {
-                            "ast_type": "If",
-                            "body": [
-                                {
-                                    "ast_type": "Break",
-                                    "col_offset": 9,
-                                    "end_col_offset": 13,
-                                    "end_lineno": 5,
-                                    "lineno": 5
-                                }
-                            ],
-                            "col_offset": 5,
-                            "end_col_offset": 6,
-                            "end_lineno": 4,
-                            "lineno": 4,
-                            "orelse": [],
-                            "test": {
-                                "ast_type": "Compare",
-                                "col_offset": 8,
-                                "comparators": [
-                                    {
-                                        "ast_type": "Num",
-                                        "col_offset": 13,
-                                        "end_col_offset": 13,
-                                        "end_lineno": 4,
-                                        "lineno": 4,
-                                        "n": 3
-                                    }
-                                ],
-                                "left": {
-                                    "ast_type": "Name",
-                                    "col_offset": 8,
-                                    "ctx": "Load",
-                                    "end_col_offset": 8,
-                                    "end_lineno": 4,
-                                    "id": "i",
-                                    "lineno": 4
-                                },
-                                "lineno": 4,
-                                "ops": [
-                                    {
-                                        "ast_type": "Eq"
-                                    }
-                                ]
-                            }
-                        }
-                    ],
-                    "col_offset": 1,
-                    "end_col_offset": 3,
-                    "end_lineno": 1,
-                    "iter": {
-                        "ast_type": "List",
-                        "col_offset": 10,
-                        "ctx": "Load",
-                        "elts": [
-                            {
-                                "ast_type": "Num",
-                                "col_offset": 11,
-                                "end_col_offset": 11,
-                                "end_lineno": 1,
-                                "lineno": 1,
-                                "n": 1
-                            },
-                            {
-                                "ast_type": "Num",
-                                "col_offset": 13,
-                                "end_col_offset": 13,
-                                "end_lineno": 1,
-                                "lineno": 1,
-                                "n": 2
-                            },
-                            {
-                                "ast_type": "Num",
-                                "col_offset": 15,
-                                "end_col_offset": 15,
-                                "end_lineno": 1,
-                                "lineno": 1,
-                                "n": 3
-                            }
-                        ],
-                        "lineno": 1
-                    },
-                    "lineno": 1,
-                    "orelse": [],
-                    "target": {
-                        "ast_type": "Name",
-                        "col_offset": 5,
-                        "ctx": "Store",
-                        "end_col_offset": 5,
-                        "end_lineno": 1,
-                        "id": "i",
-                        "lineno": 1
-                    }
-                }
+                           'ast_type': "Eq",
+                        },
+                     ],
+                  },
+               },
+               {
+                  'ast_type': "If",
+                  body: [
+                     {
+                        'ast_type': "Break",
+                        'col_offset': 9,
+                        'end_col_offset': 13,
+                        'end_lineno': 5,
+                        lineno: 5,
+                     },
+                  ],
+                  'col_offset': 5,
+                  'end_col_offset': 6,
+                  'end_lineno': 4,
+                  lineno: 4,
+                  orelse: [],
+                  test: {
+                     'ast_type': "Compare",
+                     'col_offset': 8,
+                     comparators: [
+                        {
+                           'ast_type': "Num",
+                           'col_offset': 13,
+                           'end_col_offset': 13,
+                           'end_lineno': 4,
+                           lineno: 4,
+                           'n': 3,
+                        },
+                     ],
+                     left: {
+                        'ast_type': "Name",
+                        'col_offset': 8,
+                        ctx: "Load",
+                        'end_col_offset': 8,
+                        'end_lineno': 4,
+                        id: "i",
+                        lineno: 4,
+                     },
+                     lineno: 4,
+                     ops: [
+                        {
+                           'ast_type': "Eq",
+                        },
+                     ],
+                  },
+               },
             ],
-            "noops_remainder": {
-                "ast_type": "RemainderNoops",
-                "col_offset": 1,
-                "end_col_offset": 1,
-                "end_lineno": 6,
-                "lineno": 6,
-                "lines": []
-            }
-        }
-    }
+            'col_offset': 1,
+            'end_col_offset': 3,
+            'end_lineno': 1,
+            iter: {
+               'ast_type': "List",
+               'col_offset': 10,
+               ctx: "Load",
+               elts: [
+                  {
+                     'ast_type': "Num",
+                     'col_offset': 11,
+                     'end_col_offset': 11,
+                     'end_lineno': 1,
+                     lineno: 1,
+                     'n': 1,
+                  },
+                  {
+                     'ast_type': "Num",
+                     'col_offset': 13,
+                     'end_col_offset': 13,
+                     'end_lineno': 1,
+                     lineno: 1,
+                     'n': 2,
+                  },
+                  {
+                     'ast_type': "Num",
+                     'col_offset': 15,
+                     'end_col_offset': 15,
+                     'end_lineno': 1,
+                     lineno: 1,
+                     'n': 3,
+                  },
+               ],
+               lineno: 1,
+            },
+            lineno: 1,
+            orelse: [],
+            target: {
+               'ast_type': "Name",
+               'col_offset': 5,
+               ctx: "Store",
+               'end_col_offset': 5,
+               'end_lineno': 1,
+               id: "i",
+               lineno: 1,
+            },
+         },
+      ],
+      'noops_remainder': {
+         'ast_type': "RemainderNoops",
+         'col_offset': 1,
+         'end_col_offset': 1,
+         'end_lineno': 6,
+         lineno: 6,
+         lines: [],
+      },
+   },
 }

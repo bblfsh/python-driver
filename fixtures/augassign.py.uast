@@ -1,235 +1,208 @@
-Status:  ok
-Language:  python
-Errors: 
-UAST: 
-Module {
-.  Roles: File,Module
-.  Children: {
-.  .  0: AugAssign {
-.  .  .  Roles: Assignment,Binary,Expression,Operator
-.  .  .  StartPosition: {
-.  .  .  .  Offset: 2
-.  .  .  .  Line: 1
-.  .  .  .  Col: 3
-.  .  .  }
-.  .  .  EndPosition: {
-.  .  .  .  Offset: 3
-.  .  .  .  Line: 1
-.  .  .  .  Col: 4
-.  .  .  }
-.  .  .  Properties: {
-.  .  .  .  internalRole: body
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Add {
-.  .  .  .  .  Roles: Add,Arithmetic,Operator
-.  .  .  .  .  TOKEN "+"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: op
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Name {
-.  .  .  .  .  Roles: Expression,Identifier,Right
-.  .  .  .  .  TOKEN "a"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 0
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  internalRole: target
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  2: Num {
-.  .  .  .  .  Roles: Expression,Left,Literal,Number,Primitive
-.  .  .  .  .  TOKEN "1"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 5
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 6
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 5
-.  .  .  .  .  .  Line: 1
-.  .  .  .  .  .  Col: 6
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  1: AugAssign {
-.  .  .  Roles: Assignment,Binary,Expression,Operator
-.  .  .  StartPosition: {
-.  .  .  .  Offset: 7
-.  .  .  .  Line: 2
-.  .  .  .  Col: 1
-.  .  .  }
-.  .  .  Properties: {
-.  .  .  .  internalRole: body
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Sub {
-.  .  .  .  .  Roles: Arithmetic,Operator,Substract
-.  .  .  .  .  TOKEN "-"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: op
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Name {
-.  .  .  .  .  Roles: Expression,Identifier,Right
-.  .  .  .  .  TOKEN "a"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 7
-.  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 7
-.  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  internalRole: target
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  2: Num {
-.  .  .  .  .  Roles: Expression,Left,Literal,Number,Primitive
-.  .  .  .  .  TOKEN "1"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 12
-.  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  Col: 6
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 12
-.  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  Col: 6
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  2: AugAssign {
-.  .  .  Roles: Assignment,Binary,Expression,Operator
-.  .  .  StartPosition: {
-.  .  .  .  Offset: 14
-.  .  .  .  Line: 3
-.  .  .  .  Col: 1
-.  .  .  }
-.  .  .  Properties: {
-.  .  .  .  internalRole: body
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Mult {
-.  .  .  .  .  Roles: Arithmetic,Multiply,Operator
-.  .  .  .  .  TOKEN "*"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: op
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Name {
-.  .  .  .  .  Roles: Expression,Identifier,Right
-.  .  .  .  .  TOKEN "a"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 14
-.  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 14
-.  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  internalRole: target
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  2: Num {
-.  .  .  .  .  Roles: Expression,Left,Literal,Number,Primitive
-.  .  .  .  .  TOKEN "1"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 19
-.  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  Col: 6
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 19
-.  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  Col: 6
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  .  3: AugAssign {
-.  .  .  Roles: Assignment,Binary,Expression,Operator
-.  .  .  StartPosition: {
-.  .  .  .  Offset: 21
-.  .  .  .  Line: 4
-.  .  .  .  Col: 1
-.  .  .  }
-.  .  .  Properties: {
-.  .  .  .  internalRole: body
-.  .  .  }
-.  .  .  Children: {
-.  .  .  .  0: Div {
-.  .  .  .  .  Roles: Arithmetic,Divide,Operator
-.  .  .  .  .  TOKEN "/"
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: op
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  1: Name {
-.  .  .  .  .  Roles: Expression,Identifier,Right
-.  .  .  .  .  TOKEN "a"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 21
-.  .  .  .  .  .  Line: 4
-.  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 21
-.  .  .  .  .  .  Line: 4
-.  .  .  .  .  .  Col: 1
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  ctx: Store
-.  .  .  .  .  .  internalRole: target
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  .  2: Num {
-.  .  .  .  .  Roles: Expression,Left,Literal,Number,Primitive
-.  .  .  .  .  TOKEN "1"
-.  .  .  .  .  StartPosition: {
-.  .  .  .  .  .  Offset: 26
-.  .  .  .  .  .  Line: 4
-.  .  .  .  .  .  Col: 6
-.  .  .  .  .  }
-.  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  Offset: 26
-.  .  .  .  .  .  Line: 4
-.  .  .  .  .  .  Col: 6
-.  .  .  .  .  }
-.  .  .  .  .  Properties: {
-.  .  .  .  .  .  internalRole: value
-.  .  .  .  .  }
-.  .  .  .  }
-.  .  .  }
-.  .  }
-.  }
+{ '@type': "Module",
+   '@role': [File, Module],
+   '@pos': { '@type': "uast:Positions",
+   },
+   body: [
+      { '@type': "AugAssign",
+         '@role': [Assignment, Binary, Expression, Operator],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 2,
+               line: 1,
+               col: 3,
+            },
+            end: { '@type': "uast:Position",
+               offset: 3,
+               line: 1,
+               col: 4,
+            },
+         },
+         op: { '@type': "Add",
+            '@token': "+",
+            '@role': [Add, Arithmetic, Operator],
+            '@pos': { '@type': "uast:Positions",
+            },
+         },
+         target: { '@type': "Name",
+            '@token': "a",
+            '@role': [Expression, Identifier, Right],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 0,
+                  line: 1,
+                  col: 1,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 0,
+                  line: 1,
+                  col: 1,
+               },
+            },
+            ctx: "Store",
+         },
+         value: { '@type': "Num",
+            '@token': 1,
+            '@role': [Expression, Left, Literal, Number, Primitive],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 5,
+                  line: 1,
+                  col: 6,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 5,
+                  line: 1,
+                  col: 6,
+               },
+            },
+         },
+      },
+      { '@type': "AugAssign",
+         '@role': [Assignment, Binary, Expression, Operator],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 7,
+               line: 2,
+               col: 1,
+            },
+         },
+         op: { '@type': "Sub",
+            '@token': "-",
+            '@role': [Arithmetic, Operator, Substract],
+            '@pos': { '@type': "uast:Positions",
+            },
+         },
+         target: { '@type': "Name",
+            '@token': "a",
+            '@role': [Expression, Identifier, Right],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 7,
+                  line: 2,
+                  col: 1,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 7,
+                  line: 2,
+                  col: 1,
+               },
+            },
+            ctx: "Store",
+         },
+         value: { '@type': "Num",
+            '@token': 1,
+            '@role': [Expression, Left, Literal, Number, Primitive],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 12,
+                  line: 2,
+                  col: 6,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 12,
+                  line: 2,
+                  col: 6,
+               },
+            },
+         },
+      },
+      { '@type': "AugAssign",
+         '@role': [Assignment, Binary, Expression, Operator],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 14,
+               line: 3,
+               col: 1,
+            },
+         },
+         op: { '@type': "Mult",
+            '@token': "*",
+            '@role': [Arithmetic, Multiply, Operator],
+            '@pos': { '@type': "uast:Positions",
+            },
+         },
+         target: { '@type': "Name",
+            '@token': "a",
+            '@role': [Expression, Identifier, Right],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 14,
+                  line: 3,
+                  col: 1,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 14,
+                  line: 3,
+                  col: 1,
+               },
+            },
+            ctx: "Store",
+         },
+         value: { '@type': "Num",
+            '@token': 1,
+            '@role': [Expression, Left, Literal, Number, Primitive],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 19,
+                  line: 3,
+                  col: 6,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 19,
+                  line: 3,
+                  col: 6,
+               },
+            },
+         },
+      },
+      { '@type': "AugAssign",
+         '@role': [Assignment, Binary, Expression, Operator],
+         '@pos': { '@type': "uast:Positions",
+            start: { '@type': "uast:Position",
+               offset: 21,
+               line: 4,
+               col: 1,
+            },
+         },
+         op: { '@type': "Div",
+            '@token': "/",
+            '@role': [Arithmetic, Divide, Operator],
+            '@pos': { '@type': "uast:Positions",
+            },
+         },
+         target: { '@type': "Name",
+            '@token': "a",
+            '@role': [Expression, Identifier, Right],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 21,
+                  line: 4,
+                  col: 1,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 21,
+                  line: 4,
+                  col: 1,
+               },
+            },
+            ctx: "Store",
+         },
+         value: { '@type': "Num",
+            '@token': 1,
+            '@role': [Expression, Left, Literal, Number, Primitive],
+            '@pos': { '@type': "uast:Positions",
+               start: { '@type': "uast:Position",
+                  offset: 26,
+                  line: 4,
+                  col: 6,
+               },
+               end: { '@type': "uast:Position",
+                  offset: 26,
+                  line: 4,
+                  col: 6,
+               },
+            },
+         },
+      },
+   ],
 }
-

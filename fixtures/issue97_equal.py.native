@@ -1,59 +1,54 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "ast_type": "Expr",
-                    "col_offset": 1,
-                    "lineno": 1,
-                    "value": {
-                        "ast_type": "Compare",
-                        "col_offset": 1,
-                        "comparators": [
-                            {
-                                "ast_type": "Name",
-                                "col_offset": 9,
-                                "ctx": "Load",
-                                "end_col_offset": 12,
-                                "end_lineno": 1,
-                                "id": "var2",
-                                "lineno": 1
-                            },
-                            {
-                                "ast_type": "Name",
-                                "col_offset": 17,
-                                "ctx": "Load",
-                                "end_col_offset": 20,
-                                "end_lineno": 1,
-                                "id": "var3",
-                                "lineno": 1
-                            }
-                        ],
-                        "left": {
-                            "ast_type": "Name",
-                            "col_offset": 1,
-                            "ctx": "Load",
-                            "end_col_offset": 4,
-                            "end_lineno": 1,
-                            "id": "var1",
-                            "lineno": 1
-                        },
-                        "lineno": 1,
-                        "ops": [
-                            {
-                                "ast_type": "Eq"
-                            },
-                            {
-                                "ast_type": "Eq"
-                            }
-                        ]
-                    }
-                }
-            ]
-        }
-    }
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "Expr",
+            'col_offset': 1,
+            lineno: 1,
+            value: {
+               'ast_type': "Compare",
+               'col_offset': 1,
+               comparators: [
+                  {
+                     'ast_type': "Name",
+                     'col_offset': 9,
+                     ctx: "Load",
+                     'end_col_offset': 12,
+                     'end_lineno': 1,
+                     id: "var2",
+                     lineno: 1,
+                  },
+                  {
+                     'ast_type': "Name",
+                     'col_offset': 17,
+                     ctx: "Load",
+                     'end_col_offset': 20,
+                     'end_lineno': 1,
+                     id: "var3",
+                     lineno: 1,
+                  },
+               ],
+               left: {
+                  'ast_type': "Name",
+                  'col_offset': 1,
+                  ctx: "Load",
+                  'end_col_offset': 4,
+                  'end_lineno': 1,
+                  id: "var1",
+                  lineno: 1,
+               },
+               lineno: 1,
+               ops: [
+                  {
+                     'ast_type': "Eq",
+                  },
+                  {
+                     'ast_type': "Eq",
+                  },
+               ],
+            },
+         },
+      ],
+   },
 }

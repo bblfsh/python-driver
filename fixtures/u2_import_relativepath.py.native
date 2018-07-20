@@ -1,58 +1,53 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "ast_type": "ImportFrom",
-                    "col_offset": 1,
-                    "end_col_offset": 7,
-                    "end_lineno": 1,
-                    "level": 1,
-                    "lineno": 1,
-                    "module": "a",
-                    "names": [
-                        {
-                            "asname": null,
-                            "ast_type": "alias",
-                            "name": "b"
-                        }
-                    ]
-                },
-                {
-                    "ast_type": "ImportFrom",
-                    "col_offset": 1,
-                    "end_col_offset": 8,
-                    "end_lineno": 2,
-                    "level": 2,
-                    "lineno": 2,
-                    "module": "c",
-                    "names": [
-                        {
-                            "asname": null,
-                            "ast_type": "alias",
-                            "name": "e"
-                        }
-                    ]
-                },
-                {
-                    "ast_type": "ImportFrom",
-                    "col_offset": 1,
-                    "level": 3,
-                    "lineno": 3,
-                    "module": null,
-                    "names": [
-                        {
-                            "asname": null,
-                            "ast_type": "alias",
-                            "name": "f"
-                        }
-                    ]
-                }
-            ]
-        }
-    }
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "ImportFrom",
+            'col_offset': 1,
+            'end_col_offset': 7,
+            'end_lineno': 1,
+            level: 1,
+            lineno: 1,
+            module: "a",
+            names: [
+               {
+                  asname: ~,
+                  'ast_type': "alias",
+                  name: "b",
+               },
+            ],
+         },
+         {
+            'ast_type': "ImportFrom",
+            'col_offset': 1,
+            'end_col_offset': 8,
+            'end_lineno': 2,
+            level: 2,
+            lineno: 2,
+            module: "c",
+            names: [
+               {
+                  asname: ~,
+                  'ast_type': "alias",
+                  name: "e",
+               },
+            ],
+         },
+         {
+            'ast_type': "ImportFrom",
+            'col_offset': 1,
+            level: 3,
+            lineno: 3,
+            module: ~,
+            names: [
+               {
+                  asname: ~,
+                  'ast_type': "alias",
+                  name: "f",
+               },
+            ],
+         },
+      ],
+   },
 }

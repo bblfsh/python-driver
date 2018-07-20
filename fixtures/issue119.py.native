@@ -1,157 +1,147 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "args": {
-                        "args": [],
-                        "ast_type": "arguments",
-                        "defaults": [],
-                        "kw_defaults": [],
-                        "kwarg": null,
-                        "kwonlyargs": [],
-                        "vararg": null
-                    },
-                    "ast_type": "FunctionDef",
-                    "body": [
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            args: {
+               args: [],
+               'ast_type': "arguments",
+            },
+            'ast_type': "FunctionDef",
+            body: [
+               {
+                  'ast_type': "Assign",
+                  'col_offset': 5,
+                  lineno: 2,
+                  targets: [
+                     {
+                        'ast_type': "Name",
+                        'col_offset': 5,
+                        ctx: "Store",
+                        'end_col_offset': 5,
+                        'end_lineno': 2,
+                        id: "a",
+                        lineno: 2,
+                     },
+                  ],
+                  value: {
+                     'ast_type': "Dict",
+                     'col_offset': 9,
+                     keys: [
                         {
-                            "ast_type": "Assign",
-                            "col_offset": 5,
-                            "lineno": 2,
-                            "targets": [
-                                {
-                                    "ast_type": "Name",
-                                    "col_offset": 5,
-                                    "ctx": "Store",
-                                    "end_col_offset": 5,
-                                    "end_lineno": 2,
-                                    "id": "a",
-                                    "lineno": 2
-                                }
-                            ],
-                            "value": {
-                                "ast_type": "Dict",
-                                "col_offset": 9,
-                                "keys": [
-                                    {
-                                        "ast_type": "Str",
-                                        "col_offset": 10,
-                                        "end_col_offset": 12,
-                                        "end_lineno": 2,
-                                        "lineno": 2,
-                                        "s": "1"
-                                    }
-                                ],
-                                "lineno": 2,
-                                "values": [
-                                    {
-                                        "ast_type": "Num",
-                                        "col_offset": 15,
-                                        "end_col_offset": 15,
-                                        "end_lineno": 2,
-                                        "lineno": 2,
-                                        "n": 1
-                                    }
-                                ]
-                            }
+                           'ast_type': "Str",
+                           'col_offset': 10,
+                           'end_col_offset': 12,
+                           'end_lineno': 2,
+                           lineno: 2,
+                           s: "1",
+                        },
+                     ],
+                     lineno: 2,
+                     values: [
+                        {
+                           'ast_type': "Num",
+                           'col_offset': 15,
+                           'end_col_offset': 15,
+                           'end_lineno': 2,
+                           lineno: 2,
+                           'n': 1,
+                        },
+                     ],
+                  },
+               },
+               {
+                  'ast_type': "Assign",
+                  'col_offset': 5,
+                  lineno: 3,
+                  targets: [
+                     {
+                        'ast_type': "Name",
+                        'col_offset': 5,
+                        ctx: "Store",
+                        'end_col_offset': 5,
+                        'end_lineno': 3,
+                        id: "b",
+                        lineno: 3,
+                     },
+                  ],
+                  value: {
+                     'ast_type': "Dict",
+                     'col_offset': 9,
+                     keys: [
+                        {
+                           'ast_type': "Str",
+                           'col_offset': 10,
+                           'end_col_offset': 12,
+                           'end_lineno': 3,
+                           lineno: 3,
+                           s: "2",
+                        },
+                     ],
+                     lineno: 3,
+                     values: [
+                        {
+                           'ast_type': "Num",
+                           'col_offset': 15,
+                           'end_col_offset': 15,
+                           'end_lineno': 3,
+                           lineno: 3,
+                           'n': 2,
+                        },
+                     ],
+                  },
+               },
+               {
+                  'ast_type': "Return",
+                  'col_offset': 5,
+                  'end_col_offset': 10,
+                  'end_lineno': 4,
+                  lineno: 4,
+                  value: {
+                     'ast_type': "Dict",
+                     'col_offset': 12,
+                     keys: [
+                        {
+                           LiteralValue: "None",
+                           'ast_type': "NoneLiteral",
                         },
                         {
-                            "ast_type": "Assign",
-                            "col_offset": 5,
-                            "lineno": 3,
-                            "targets": [
-                                {
-                                    "ast_type": "Name",
-                                    "col_offset": 5,
-                                    "ctx": "Store",
-                                    "end_col_offset": 5,
-                                    "end_lineno": 3,
-                                    "id": "b",
-                                    "lineno": 3
-                                }
-                            ],
-                            "value": {
-                                "ast_type": "Dict",
-                                "col_offset": 9,
-                                "keys": [
-                                    {
-                                        "ast_type": "Str",
-                                        "col_offset": 10,
-                                        "end_col_offset": 12,
-                                        "end_lineno": 3,
-                                        "lineno": 3,
-                                        "s": "2"
-                                    }
-                                ],
-                                "lineno": 3,
-                                "values": [
-                                    {
-                                        "ast_type": "Num",
-                                        "col_offset": 15,
-                                        "end_col_offset": 15,
-                                        "end_lineno": 3,
-                                        "lineno": 3,
-                                        "n": 2
-                                    }
-                                ]
-                            }
+                           LiteralValue: "None",
+                           'ast_type': "NoneLiteral",
+                        },
+                     ],
+                     lineno: 4,
+                     values: [
+                        {
+                           'ast_type': "Name",
+                           'col_offset': 15,
+                           ctx: "Load",
+                           'end_col_offset': 15,
+                           'end_lineno': 4,
+                           id: "a",
+                           lineno: 4,
                         },
                         {
-                            "ast_type": "Return",
-                            "col_offset": 5,
-                            "end_col_offset": 10,
-                            "end_lineno": 4,
-                            "lineno": 4,
-                            "value": {
-                                "ast_type": "Dict",
-                                "col_offset": 12,
-                                "keys": [
-                                    {
-                                        "LiteralValue": "None",
-                                        "ast_type": "NoneLiteral"
-                                    },
-                                    {
-                                        "LiteralValue": "None",
-                                        "ast_type": "NoneLiteral"
-                                    }
-                                ],
-                                "lineno": 4,
-                                "values": [
-                                    {
-                                        "ast_type": "Name",
-                                        "col_offset": 15,
-                                        "ctx": "Load",
-                                        "end_col_offset": 15,
-                                        "end_lineno": 4,
-                                        "id": "a",
-                                        "lineno": 4
-                                    },
-                                    {
-                                        "ast_type": "Name",
-                                        "col_offset": 20,
-                                        "ctx": "Load",
-                                        "end_col_offset": 20,
-                                        "end_lineno": 4,
-                                        "id": "b",
-                                        "lineno": 4
-                                    }
-                                ]
-                            }
-                        }
-                    ],
-                    "col_offset": 5,
-                    "decorator_list": [],
-                    "end_col_offset": 7,
-                    "end_lineno": 1,
-                    "lineno": 1,
-                    "name": "foo",
-                    "returns": null
-                }
-            ]
-        }
-    }
+                           'ast_type': "Name",
+                           'col_offset': 20,
+                           ctx: "Load",
+                           'end_col_offset': 20,
+                           'end_lineno': 4,
+                           id: "b",
+                           lineno: 4,
+                        },
+                     ],
+                  },
+               },
+            ],
+            'col_offset': 5,
+            'decorator_list': [],
+            'end_col_offset': 7,
+            'end_lineno': 1,
+            lineno: 1,
+            name: "foo",
+            returns: ~,
+         },
+      ],
+   },
 }

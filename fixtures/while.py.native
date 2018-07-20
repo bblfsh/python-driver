@@ -1,118 +1,113 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "ast_type": "While",
-                    "body": [
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "While",
+            body: [
+               {
+                  'ast_type': "Expr",
+                  'col_offset': 5,
+                  lineno: 2,
+                  value: {
+                     args: [
                         {
-                            "ast_type": "Expr",
-                            "col_offset": 5,
-                            "lineno": 2,
-                            "value": {
-                                "args": [
-                                    {
-                                        "ast_type": "Str",
-                                        "col_offset": 11,
-                                        "end_col_offset": 23,
-                                        "end_lineno": 2,
-                                        "lineno": 2,
-                                        "s": "surely here"
-                                    }
-                                ],
-                                "ast_type": "Call",
-                                "col_offset": 5,
-                                "func": {
-                                    "ast_type": "Name",
-                                    "col_offset": 5,
-                                    "ctx": "Load",
-                                    "end_col_offset": 9,
-                                    "end_lineno": 2,
-                                    "id": "print",
-                                    "lineno": 2
-                                },
-                                "keywords": [],
-                                "lineno": 2
-                            }
+                           'ast_type': "Str",
+                           'col_offset': 11,
+                           'end_col_offset': 23,
+                           'end_lineno': 2,
+                           lineno: 2,
+                           s: "surely here",
                         },
+                     ],
+                     'ast_type': "Call",
+                     'col_offset': 5,
+                     func: {
+                        'ast_type': "Name",
+                        'col_offset': 5,
+                        ctx: "Load",
+                        'end_col_offset': 9,
+                        'end_lineno': 2,
+                        id: "print",
+                        lineno: 2,
+                     },
+                     keywords: [],
+                     lineno: 2,
+                  },
+               },
+               {
+                  'ast_type': "Break",
+                  'col_offset': 5,
+                  'end_col_offset': 9,
+                  'end_lineno': 3,
+                  lineno: 3,
+               },
+            ],
+            'col_offset': 1,
+            'end_col_offset': 5,
+            'end_lineno': 1,
+            lineno: 1,
+            orelse: [
+               {
+                  'ast_type': "Expr",
+                  'col_offset': 5,
+                  lineno: 5,
+                  value: {
+                     args: [
                         {
-                            "ast_type": "Break",
-                            "col_offset": 5,
-                            "end_col_offset": 9,
-                            "end_lineno": 3,
-                            "lineno": 3
-                        }
-                    ],
-                    "col_offset": 1,
-                    "end_col_offset": 5,
-                    "end_lineno": 1,
-                    "lineno": 1,
-                    "orelse": [
-                        {
-                            "ast_type": "Expr",
-                            "col_offset": 5,
-                            "lineno": 5,
-                            "value": {
-                                "args": [
-                                    {
-                                        "ast_type": "Str",
-                                        "col_offset": 11,
-                                        "end_col_offset": 24,
-                                        "end_lineno": 5,
-                                        "lineno": 5,
-                                        "s": "while's else"
-                                    }
-                                ],
-                                "ast_type": "Call",
-                                "col_offset": 5,
-                                "func": {
-                                    "ast_type": "Name",
-                                    "col_offset": 5,
-                                    "ctx": "Load",
-                                    "end_col_offset": 9,
-                                    "end_lineno": 5,
-                                    "id": "print",
-                                    "lineno": 5
-                                },
-                                "keywords": [],
-                                "lineno": 5
-                            }
-                        }
-                    ],
-                    "test": {
-                        "ast_type": "Compare",
-                        "col_offset": 7,
-                        "comparators": [
-                            {
-                                "ast_type": "Num",
-                                "col_offset": 11,
-                                "end_col_offset": 11,
-                                "end_lineno": 1,
-                                "lineno": 1,
-                                "n": 2
-                            }
-                        ],
-                        "left": {
-                            "ast_type": "Num",
-                            "col_offset": 7,
-                            "end_col_offset": 7,
-                            "end_lineno": 1,
-                            "lineno": 1,
-                            "n": 3
+                           'ast_type': "Str",
+                           'col_offset': 11,
+                           'end_col_offset': 24,
+                           'end_lineno': 5,
+                           lineno: 5,
+                           s: "while's else",
                         },
-                        "lineno": 1,
-                        "ops": [
-                            {
-                                "ast_type": "Gt"
-                            }
-                        ]
-                    }
-                }
-            ]
-        }
-    }
+                     ],
+                     'ast_type': "Call",
+                     'col_offset': 5,
+                     func: {
+                        'ast_type': "Name",
+                        'col_offset': 5,
+                        ctx: "Load",
+                        'end_col_offset': 9,
+                        'end_lineno': 5,
+                        id: "print",
+                        lineno: 5,
+                     },
+                     keywords: [],
+                     lineno: 5,
+                  },
+               },
+            ],
+            test: {
+               'ast_type': "Compare",
+               'col_offset': 7,
+               comparators: [
+                  {
+                     'ast_type': "Num",
+                     'col_offset': 11,
+                     'end_col_offset': 11,
+                     'end_lineno': 1,
+                     lineno: 1,
+                     'n': 2,
+                  },
+               ],
+               left: {
+                  'ast_type': "Num",
+                  'col_offset': 7,
+                  'end_col_offset': 7,
+                  'end_lineno': 1,
+                  lineno: 1,
+                  'n': 3,
+               },
+               lineno: 1,
+               ops: [
+                  {
+                     'ast_type': "Gt",
+                  },
+               ],
+            },
+         },
+      ],
+   },
 }

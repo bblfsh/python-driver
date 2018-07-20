@@ -1,38 +1,33 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "ast_type": "Expr",
-                    "col_offset": 1,
-                    "lineno": 4,
-                    "value": {
-                        "ast_type": "Str",
-                        "col_offset": 1,
-                        "end_col_offset": 3,
-                        "end_lineno": 4,
-                        "lineno": 1,
-                        "s": "\nTriple double-quoted string\nSecond line\n"
-                    }
-                },
-                {
-                    "ast_type": "Expr",
-                    "col_offset": 1,
-                    "lineno": 8,
-                    "value": {
-                        "ast_type": "Str",
-                        "col_offset": 1,
-                        "end_col_offset": 3,
-                        "end_lineno": 8,
-                        "lineno": 5,
-                        "s": "\nTriple single-quoted string\nSecond line\n"
-                    }
-                }
-            ]
-        }
-    }
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "Expr",
+            'col_offset': 1,
+            lineno: 4,
+            value: {
+               'ast_type': "Str",
+               'col_offset': 1,
+               'end_col_offset': 3,
+               'end_lineno': 4,
+               lineno: 1,
+               s: "\nTriple double-quoted string\nSecond line\n",
+            },
+         },
+         {
+            'ast_type': "Expr",
+            'col_offset': 1,
+            lineno: 8,
+            value: {
+               'ast_type': "Str",
+               'col_offset': 1,
+               'end_col_offset': 3,
+               'end_lineno': 8,
+               lineno: 5,
+               s: "\nTriple single-quoted string\nSecond line\n",
+            },
+         },
+      ],
+   },
 }

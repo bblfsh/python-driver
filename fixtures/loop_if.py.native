@@ -1,78 +1,73 @@
 {
-    "status": "ok",
-    "language": "python",
-    "errors": [],
-    "ast": {
-        "PY3AST": {
-            "ast_type": "Module",
-            "body": [
-                {
-                    "ast_type": "For",
-                    "body": [
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "For",
+            body: [
+               {
+                  'ast_type': "Pass",
+                  'col_offset': 5,
+                  'end_col_offset': 8,
+                  'end_lineno': 2,
+                  lineno: 2,
+               },
+            ],
+            'col_offset': 1,
+            'end_col_offset': 3,
+            'end_lineno': 1,
+            iter: {
+               'ast_type': "Name",
+               'col_offset': 10,
+               ctx: "Load",
+               'end_col_offset': 18,
+               'end_lineno': 1,
+               id: "something",
+               lineno: 1,
+            },
+            lineno: 1,
+            orelse: [
+               {
+                  'ast_type': "Expr",
+                  'col_offset': 5,
+                  lineno: 4,
+                  value: {
+                     args: [
                         {
-                            "ast_type": "Pass",
-                            "col_offset": 5,
-                            "end_col_offset": 8,
-                            "end_lineno": 2,
-                            "lineno": 2
-                        }
-                    ],
-                    "col_offset": 1,
-                    "end_col_offset": 3,
-                    "end_lineno": 1,
-                    "iter": {
-                        "ast_type": "Name",
-                        "col_offset": 10,
-                        "ctx": "Load",
-                        "end_col_offset": 18,
-                        "end_lineno": 1,
-                        "id": "something",
-                        "lineno": 1
-                    },
-                    "lineno": 1,
-                    "orelse": [
-                        {
-                            "ast_type": "Expr",
-                            "col_offset": 5,
-                            "lineno": 4,
-                            "value": {
-                                "args": [
-                                    {
-                                        "ast_type": "Str",
-                                        "col_offset": 11,
-                                        "end_col_offset": 34,
-                                        "end_lineno": 4,
-                                        "lineno": 4,
-                                        "s": "Python fors have elses"
-                                    }
-                                ],
-                                "ast_type": "Call",
-                                "col_offset": 5,
-                                "func": {
-                                    "ast_type": "Name",
-                                    "col_offset": 5,
-                                    "ctx": "Load",
-                                    "end_col_offset": 9,
-                                    "end_lineno": 4,
-                                    "id": "print",
-                                    "lineno": 4
-                                },
-                                "keywords": [],
-                                "lineno": 4
-                            }
-                        }
-                    ],
-                    "target": {
-                        "ast_type": "Name",
-                        "col_offset": 5,
-                        "ctx": "Store",
-                        "end_col_offset": 5,
-                        "end_lineno": 1,
-                        "id": "i",
-                        "lineno": 1
-                    }
-                }
-            ]
-        }
-    }
+                           'ast_type': "Str",
+                           'col_offset': 11,
+                           'end_col_offset': 34,
+                           'end_lineno': 4,
+                           lineno: 4,
+                           s: "Python fors have elses",
+                        },
+                     ],
+                     'ast_type': "Call",
+                     'col_offset': 5,
+                     func: {
+                        'ast_type': "Name",
+                        'col_offset': 5,
+                        ctx: "Load",
+                        'end_col_offset': 9,
+                        'end_lineno': 4,
+                        id: "print",
+                        lineno: 4,
+                     },
+                     keywords: [],
+                     lineno: 4,
+                  },
+               },
+            ],
+            target: {
+               'ast_type': "Name",
+               'col_offset': 5,
+               ctx: "Store",
+               'end_col_offset': 5,
+               'end_lineno': 1,
+               id: "i",
+               lineno: 1,
+            },
+         },
+      ],
+   },
 }
