@@ -1,0 +1,18 @@
+sdk: '2'
+go-runtime:
+  version: '1.10-alpine'
+native:
+  image: 'dennwc/python:3.6-2.7-alpine'
+  static:
+    - path: 'sh/native.sh'
+      dest: 'native'
+  build:
+    image: 'python:3.6-alpine'
+    run:
+      - 'pip3 install -U --prefix=./.local ./python_package'
+    artifacts:
+      - path: '/native/.local'
+        dest: '.local'
+  test:
+    run:
+      - 'cd ./python_package/test && PYTHONPATH=../../.local:$PYTHONPATH python3 -m unittest discover'

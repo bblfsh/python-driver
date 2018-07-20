@@ -5,7 +5,7 @@ try:
     from pydetector import detector
 except ImportError:
     # local test mode
-    sys.path.insert(0, '../../../build/.local/lib/python3.6/site-packages')
+    sys.path.insert(0, '../../.local/lib/python3.6/site-packages')
     from pydetector import detector
 
 from traceback import format_exc
