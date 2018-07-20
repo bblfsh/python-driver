@@ -35,23 +35,23 @@ ADD driver $DRIVER_REPO_PATH/driver
 
 WORKDIR $DRIVER_REPO_PATH/
 
-# build tests
-RUN go test -c -o /tmp/fixtures.test ./driver/fixtures/
 # build server binary
 RUN go build -o /tmp/driver ./driver/main.go
+# build tests
+RUN go test -c -o /tmp/fixtures.test ./driver/fixtures/
 
 #=======================
 # Stage 3: Driver Build
 #=======================
-FROM dennwc/python:3.6-2.7-alpine
+FROM python:3.6-alpine
+
+RUN apk add python2
+
 
 LABEL maintainer="source{d}" \
       bblfsh.language="python"
 
 WORKDIR /opt/driver
-
-# copy driver manifest and static files
-ADD .manifest.release.toml ./etc/manifest.toml
 
 # copy static files from driver source directory
 ADD ./native/sh/native.sh ./bin/native
@@ -61,13 +61,16 @@ ADD ./native/sh/native.sh ./bin/native
 COPY --from=native /native/.local ./bin/.local
 
 
+# copy driver server binary
+COPY --from=driver /tmp/driver ./bin/
+
 # copy tests binary
 COPY --from=driver /tmp/fixtures.test ./bin/
 # move stuff to make tests work
 RUN ln -s /opt/driver ../build
 VOLUME /opt/fixtures
 
-# copy driver server binary
-COPY --from=driver /tmp/driver ./bin/
+# copy driver manifest and static files
+ADD .manifest.release.toml ./etc/manifest.toml
 
 ENTRYPOINT ["/opt/driver/bin/driver"]

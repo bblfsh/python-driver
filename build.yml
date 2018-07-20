@@ -2,7 +2,9 @@ sdk: '2'
 go-runtime:
   version: '1.10-alpine'
 native:
-  image: 'dennwc/python:3.6-2.7-alpine'
+  image: 'python:3.6-alpine'
+  deps:
+    - 'apk add python2'
   static:
     - path: 'sh/native.sh'
       dest: 'native'
