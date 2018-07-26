@@ -13,7 +13,7 @@
                     "value": {
                         "ast_type": "Str",
                         "col_offset": 1,
-                        "end_col_offset": 49,
+                        "end_col_offset": 50,
                         "end_lineno": 7,
                         "lineno": 1,
                         "s": "\n        select message.*, user.* from message, user\n        where message.author_id = user.user_id and (\n            user.user_id = ? or\n            user.user_id in (select whom_id from follower\n                                    where who_id = ?))\n        order by message.pub_date desc limit ?"

@@ -16,7 +16,7 @@
                         "left": {
                             "ast_type": "Num",
                             "col_offset": 1,
-                            "end_col_offset": 1,
+                            "end_col_offset": 2,
                             "end_lineno": 2,
                             "lineno": 2,
                             "n": 1,
@@ -42,7 +42,10 @@
                                 "end_lineno": 2,
                                 "lineno": 2,
                                 "noop_line": [
-                                    "# linetrailing comment"
+                                    {
+                                        "ast_type": "NoopSameLine",
+                                        "s": "# linetrailing comment"
+                                    }
                                 ]
                             }
                         },
@@ -53,7 +56,7 @@
                         "right": {
                             "ast_type": "Num",
                             "col_offset": 3,
-                            "end_col_offset": 3,
+                            "end_col_offset": 4,
                             "end_lineno": 2,
                             "lineno": 2,
                             "n": 2

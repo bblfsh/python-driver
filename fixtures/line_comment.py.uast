@@ -14,9 +14,9 @@ Module {
 .  .  .  .  Col: 1
 .  .  .  }
 .  .  .  EndPosition: {
-.  .  .  .  Offset: 34
+.  .  .  .  Offset: 35
 .  .  .  .  Line: 3
-.  .  .  .  Col: 4
+.  .  .  .  Col: 5
 .  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
@@ -68,7 +68,6 @@ Module {
 .  .  .  .  }
 .  .  .  .  1: SameLineNoops {
 .  .  .  .  .  Roles: Comment
-.  .  .  .  .  TOKEN "[# sameline comment]"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 35
 .  .  .  .  .  .  Line: 3
@@ -81,6 +80,15 @@ Module {
 .  .  .  .  .  }
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: noops_sameline
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: NoopSameLine {
+.  .  .  .  .  .  .  Roles: Unannotated
+.  .  .  .  .  .  .  TOKEN "# sameline comment"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: noop_line
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
 .  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }

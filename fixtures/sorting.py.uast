@@ -36,9 +36,9 @@ Module {
 .  .  .  .  .  .  .  .  Col: 1
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 17
+.  .  .  .  .  .  .  .  Offset: 18
 .  .  .  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  .  .  Col: 1
+.  .  .  .  .  .  .  .  Col: 2
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: left
@@ -77,7 +77,6 @@ Module {
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  1: SameLineNoops {
 .  .  .  .  .  .  .  .  .  Roles: Comment
-.  .  .  .  .  .  .  .  .  TOKEN "[# linetrailing comment]"
 .  .  .  .  .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  .  .  .  .  Offset: 20
 .  .  .  .  .  .  .  .  .  .  Line: 2
@@ -90,6 +89,15 @@ Module {
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  .  .  internalRole: noops_sameline
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  .  .  0: NoopSameLine {
+.  .  .  .  .  .  .  .  .  .  .  Roles: Unannotated
+.  .  .  .  .  .  .  .  .  .  .  TOKEN "# linetrailing comment"
+.  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  internalRole: noop_line
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  }
@@ -110,9 +118,9 @@ Module {
 .  .  .  .  .  .  .  .  Col: 3
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 19
+.  .  .  .  .  .  .  .  Offset: 20
 .  .  .  .  .  .  .  .  Line: 2
-.  .  .  .  .  .  .  .  Col: 3
+.  .  .  .  .  .  .  .  Col: 4
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Properties: {
 .  .  .  .  .  .  .  .  internalRole: right

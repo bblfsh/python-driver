@@ -245,19 +245,17 @@ class NoopExtractor(object):
         # finishing newline
         noops_sameline: List[Token] = [i for i in self.sameline_remainder_noops(node) if i]
 
-        joined_sameline = []
-        for tok in noops_sameline:
-            if tok.value.lstrip().startswith('\n'):
-                joined_sameline.append(tok.value.lstrip()[1:])
-            else:
-                joined_sameline.append(tok.value)
+        def new_noopline(s: str) -> Dict[str, str]:
+            return {"ast_type": "NoopSameLine", "s": s}
+
+        noop_lines = [new_noopline(i.value.strip()) for i in noops_sameline]
 
         if noops_sameline:
             node['noops_sameline'] = {
                 "ast_type": "SameLineNoops",
                 "lineno": node.get("lineno", 0),
                 "col_offset": noops_sameline[0].start.col,
-                "noop_line": joined_sameline,
+                "noop_line": noop_lines,
                 "end_lineno": node.get("lineno", 0),
                 "end_col_offset": max(noops_sameline[-1].end.col, 1)
             }
@@ -464,7 +462,7 @@ class AstImprover(object):
                 visit_result["col_offset"] = max(visit_result.get("col_offset", 1) + 1, 1)
 
             if "end_col_offset" in visit_result:
-                visit_result["end_col_offset"] = max(visit_result["end_col_offset"], 1)
+                visit_result["end_col_offset"] = max(visit_result["end_col_offset"] + 1, 1)
 
         visit_result.pop('_fields', None)
         visit_result.pop('_attributes', None)
