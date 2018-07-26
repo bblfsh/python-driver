@@ -44,7 +44,7 @@ class AstImprover():
             node["col_offset"] = max(node.get("col_offset", 1) + 1, 1)
 
         if "end_col_offset" in node:
-            node["end_col_offset"] = max(node["end_col_offset"], 1)
+            node["end_col_offset"] = max(node["end_col_offset"] + 1, 1)
 
     def _remove_internal(self, node):
         node.pop('_fields', None)
