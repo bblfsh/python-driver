@@ -1,5 +1,6 @@
 Status:  ok
 Language:  python
+Filename::  fixtures/pass.py
 Errors: 
 UAST: 
 Module {
@@ -14,9 +15,9 @@ Module {
 .  .  .  .  Col: 1
 .  .  .  }
 .  .  .  EndPosition: {
-.  .  .  .  Offset: 3
+.  .  .  .  Offset: 4
 .  .  .  .  Line: 1
-.  .  .  .  Col: 4
+.  .  .  .  Col: 5
 .  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
@@ -24,7 +25,6 @@ Module {
 .  .  .  Children: {
 .  .  .  .  0: SameLineNoops {
 .  .  .  .  .  Roles: Comment
-.  .  .  .  .  TOKEN "[# easy]"
 .  .  .  .  .  StartPosition: {
 .  .  .  .  .  .  Offset: 4
 .  .  .  .  .  .  Line: 1
@@ -38,6 +38,15 @@ Module {
 .  .  .  .  .  Properties: {
 .  .  .  .  .  .  internalRole: noops_sameline
 .  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: NoopSameLine {
+.  .  .  .  .  .  .  Roles: Unannotated
+.  .  .  .  .  .  .  TOKEN "# easy"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: noop_line
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
 .  .  .  .  }
 .  .  .  }
 .  .  }
@@ -50,9 +59,9 @@ Module {
 .  .  .  .  Col: 5
 .  .  .  }
 .  .  .  EndPosition: {
-.  .  .  .  Offset: 23
+.  .  .  .  Offset: 24
 .  .  .  .  Line: 3
-.  .  .  .  Col: 11
+.  .  .  .  Col: 12
 .  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
@@ -79,9 +88,9 @@ Module {
 .  .  .  .  .  .  .  .  Col: 16
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 31
+.  .  .  .  .  .  .  .  Offset: 32
 .  .  .  .  .  .  .  .  Line: 3
-.  .  .  .  .  .  .  .  Col: 19
+.  .  .  .  .  .  .  .  Col: 20
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: PreviousNoops {
@@ -115,9 +124,9 @@ Module {
 .  .  .  .  Col: 5
 .  .  .  }
 .  .  .  EndPosition: {
-.  .  .  .  Offset: 45
+.  .  .  .  Offset: 46
 .  .  .  .  Line: 5
-.  .  .  .  Col: 12
+.  .  .  .  Col: 13
 .  .  .  }
 .  .  .  Properties: {
 .  .  .  .  internalRole: body
@@ -144,9 +153,9 @@ Module {
 .  .  .  .  .  .  .  .  Col: 5
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  EndPosition: {
-.  .  .  .  .  .  .  .  Offset: 57
+.  .  .  .  .  .  .  .  Offset: 58
 .  .  .  .  .  .  .  .  Line: 6
-.  .  .  .  .  .  .  .  Col: 8
+.  .  .  .  .  .  .  .  Col: 9
 .  .  .  .  .  .  .  }
 .  .  .  .  .  .  .  Children: {
 .  .  .  .  .  .  .  .  0: PreviousNoops {
