@@ -1,0 +1,302 @@
+{
+   'PY2AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "For",
+            body: [
+               {
+                  'ast_type': "If",
+                  body: [
+                     {
+                        'ast_type': "Print",
+                        'col_offset': 9,
+                        dest: ~,
+                        'end_col_offset': 14,
+                        'end_lineno': 3,
+                        lineno: 3,
+                        nl: true,
+                        values: [
+                           {
+                              'ast_type': "Str",
+                              'col_offset': 15,
+                              'end_col_offset': 25,
+                              'end_lineno': 3,
+                              lineno: 3,
+                              s: "FizzBuzz",
+                           },
+                        ],
+                     },
+                  ],
+                  'col_offset': 5,
+                  'end_col_offset': 7,
+                  'end_lineno': 2,
+                  lineno: 2,
+                  orelse: [
+                     {
+                        'ast_type': "If",
+                        body: [
+                           {
+                              'ast_type': "Print",
+                              'col_offset': 9,
+                              dest: ~,
+                              'end_col_offset': 14,
+                              'end_lineno': 5,
+                              lineno: 5,
+                              nl: true,
+                              values: [
+                                 {
+                                    'ast_type': "Str",
+                                    'col_offset': 15,
+                                    'end_col_offset': 21,
+                                    'end_lineno': 5,
+                                    lineno: 5,
+                                    s: "Fizz",
+                                 },
+                              ],
+                           },
+                        ],
+                        'col_offset': 10,
+                        lineno: 4,
+                        orelse: [
+                           {
+                              'ast_type': "If",
+                              body: [
+                                 {
+                                    'ast_type': "Print",
+                                    'col_offset': 9,
+                                    dest: ~,
+                                    'end_col_offset': 14,
+                                    'end_lineno': 7,
+                                    lineno: 7,
+                                    nl: true,
+                                    values: [
+                                       {
+                                          'ast_type': "Str",
+                                          'col_offset': 15,
+                                          'end_col_offset': 21,
+                                          'end_lineno': 7,
+                                          lineno: 7,
+                                          s: "Buzz",
+                                       },
+                                    ],
+                                 },
+                              ],
+                              'col_offset': 10,
+                              lineno: 6,
+                              orelse: [
+                                 {
+                                    'ast_type': "Print",
+                                    'col_offset': 9,
+                                    dest: ~,
+                                    'end_col_offset': 14,
+                                    'end_lineno': 9,
+                                    lineno: 9,
+                                    nl: true,
+                                    values: [
+                                       {
+                                          'ast_type': "Name",
+                                          'col_offset': 15,
+                                          ctx: "Load",
+                                          'end_col_offset': 16,
+                                          'end_lineno': 9,
+                                          id: "i",
+                                          lineno: 9,
+                                       },
+                                    ],
+                                 },
+                              ],
+                              test: {
+                                 'ast_type': "Compare",
+                                 'col_offset': 10,
+                                 comparators: [
+                                    {
+                                       'ast_type': "Num",
+                                       'col_offset': 19,
+                                       'end_col_offset': 20,
+                                       'end_lineno': 6,
+                                       lineno: 6,
+                                       'n': 0,
+                                    },
+                                 ],
+                                 left: {
+                                    'ast_type': "BinOp",
+                                    'col_offset': 10,
+                                    left: {
+                                       'ast_type': "Name",
+                                       'col_offset': 10,
+                                       ctx: "Load",
+                                       'end_col_offset': 11,
+                                       'end_lineno': 6,
+                                       id: "i",
+                                       lineno: 6,
+                                    },
+                                    lineno: 6,
+                                    op: {
+                                       'ast_type': "Mod",
+                                    },
+                                    right: {
+                                       'ast_type': "Num",
+                                       'col_offset': 14,
+                                       'end_col_offset': 15,
+                                       'end_lineno': 6,
+                                       lineno: 6,
+                                       'n': 5,
+                                    },
+                                 },
+                                 lineno: 6,
+                                 ops: [
+                                    {
+                                       'ast_type': "Eq",
+                                    },
+                                 ],
+                              },
+                           },
+                        ],
+                        test: {
+                           'ast_type': "Compare",
+                           'col_offset': 10,
+                           comparators: [
+                              {
+                                 'ast_type': "Num",
+                                 'col_offset': 19,
+                                 'end_col_offset': 20,
+                                 'end_lineno': 4,
+                                 lineno: 4,
+                                 'n': 0,
+                              },
+                           ],
+                           left: {
+                              'ast_type': "BinOp",
+                              'col_offset': 10,
+                              left: {
+                                 'ast_type': "Name",
+                                 'col_offset': 10,
+                                 ctx: "Load",
+                                 'end_col_offset': 11,
+                                 'end_lineno': 4,
+                                 id: "i",
+                                 lineno: 4,
+                              },
+                              lineno: 4,
+                              op: {
+                                 'ast_type': "Mod",
+                              },
+                              right: {
+                                 'ast_type': "Num",
+                                 'col_offset': 14,
+                                 'end_col_offset': 15,
+                                 'end_lineno': 4,
+                                 lineno: 4,
+                                 'n': 3,
+                              },
+                           },
+                           lineno: 4,
+                           ops: [
+                              {
+                                 'ast_type': "Eq",
+                              },
+                           ],
+                        },
+                     },
+                  ],
+                  test: {
+                     'ast_type': "Compare",
+                     'col_offset': 8,
+                     comparators: [
+                        {
+                           'ast_type': "Num",
+                           'col_offset': 18,
+                           'end_col_offset': 19,
+                           'end_lineno': 2,
+                           lineno: 2,
+                           'n': 0,
+                        },
+                     ],
+                     left: {
+                        'ast_type': "BinOp",
+                        'col_offset': 8,
+                        left: {
+                           'ast_type': "Name",
+                           'col_offset': 8,
+                           ctx: "Load",
+                           'end_col_offset': 9,
+                           'end_lineno': 2,
+                           id: "i",
+                           lineno: 2,
+                        },
+                        lineno: 2,
+                        op: {
+                           'ast_type': "Mod",
+                        },
+                        right: {
+                           'ast_type': "Num",
+                           'col_offset': 12,
+                           'end_col_offset': 14,
+                           'end_lineno': 2,
+                           lineno: 2,
+                           'n': 15,
+                        },
+                     },
+                     lineno: 2,
+                     ops: [
+                        {
+                           'ast_type': "Eq",
+                        },
+                     ],
+                  },
+               },
+            ],
+            'col_offset': 1,
+            'end_col_offset': 4,
+            'end_lineno': 1,
+            iter: {
+               args: [
+                  {
+                     'ast_type': "Num",
+                     'col_offset': 17,
+                     'end_col_offset': 18,
+                     'end_lineno': 1,
+                     lineno: 1,
+                     'n': 1,
+                  },
+                  {
+                     'ast_type': "Num",
+                     'col_offset': 20,
+                     'end_col_offset': 23,
+                     'end_lineno': 1,
+                     lineno: 1,
+                     'n': 101,
+                  },
+               ],
+               'ast_type': "Call",
+               'col_offset': 10,
+               func: {
+                  'ast_type': "Name",
+                  'col_offset': 10,
+                  ctx: "Load",
+                  'end_col_offset': 16,
+                  'end_lineno': 1,
+                  id: "xrange",
+                  lineno: 1,
+               },
+               keywords: [],
+               kwargs: ~,
+               lineno: 1,
+               starargs: ~,
+            },
+            lineno: 1,
+            orelse: [],
+            target: {
+               'ast_type': "Name",
+               'col_offset': 5,
+               ctx: "Store",
+               'end_col_offset': 6,
+               'end_lineno': 1,
+               id: "i",
+               lineno: 1,
+            },
+         },
+      ],
+   },
+}

@@ -1,0 +1,270 @@
+{
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            args: {
+               args: [
+                  {
+                     '@token': "s",
+                     annotation: ~,
+                     'ast_type': "arg",
+                     'col_offset': 21,
+                     'end_col_offset': 22,
+                     'end_lineno': 1,
+                     lineno: 1,
+                  },
+               ],
+               'ast_type': "arguments",
+            },
+            'ast_type': "FunctionDef",
+            body: [
+               {
+                  'ast_type': "If",
+                  body: [
+                     {
+                        'ast_type': "Return",
+                        'col_offset': 5,
+                        'end_col_offset': 11,
+                        'end_lineno': 3,
+                        lineno: 3,
+                        value: {
+                           LiteralValue: "True",
+                           'ast_type': "BoolLiteral",
+                           'col_offset': 12,
+                           'end_col_offset': 16,
+                           'end_lineno': 3,
+                           lineno: 3,
+                           value: true,
+                        },
+                     },
+                  ],
+                  'col_offset': 3,
+                  'end_col_offset': 5,
+                  'end_lineno': 2,
+                  lineno: 2,
+                  orelse: [
+                     {
+                        'ast_type': "If",
+                        body: [
+                           {
+                              'ast_type': "Return",
+                              'col_offset': 5,
+                              'end_col_offset': 11,
+                              'end_lineno': 5,
+                              lineno: 5,
+                              value: {
+                                 LiteralValue: "False",
+                                 'ast_type': "BoolLiteral",
+                                 'col_offset': 12,
+                                 'end_col_offset': 17,
+                                 'end_lineno': 5,
+                                 lineno: 5,
+                                 value: false,
+                              },
+                           },
+                        ],
+                        'col_offset': 8,
+                        lineno: 4,
+                        orelse: [
+                           {
+                              'ast_type': "Return",
+                              'col_offset': 5,
+                              'end_col_offset': 11,
+                              'end_lineno': 7,
+                              lineno: 7,
+                              value: {
+                                 args: [
+                                    {
+                                       'ast_type': "Subscript",
+                                       'col_offset': 28,
+                                       ctx: "Load",
+                                       lineno: 7,
+                                       slice: {
+                                          'ast_type': "Slice",
+                                          lower: {
+                                             'ast_type': "Num",
+                                             'col_offset': 30,
+                                             'end_col_offset': 31,
+                                             'end_lineno': 7,
+                                             lineno: 7,
+                                             'n': 1,
+                                          },
+                                          step: ~,
+                                          upper: {
+                                             'ast_type': "UnaryOp",
+                                             'col_offset': 32,
+                                             lineno: 7,
+                                             op: {
+                                                'ast_type': "USub",
+                                             },
+                                             operand: {
+                                                'ast_type': "Num",
+                                                'col_offset': 33,
+                                                'end_col_offset': 34,
+                                                'end_lineno': 7,
+                                                lineno: 7,
+                                                'n': 1,
+                                             },
+                                          },
+                                       },
+                                       value: {
+                                          'ast_type': "Name",
+                                          'col_offset': 28,
+                                          ctx: "Load",
+                                          'end_col_offset': 29,
+                                          'end_lineno': 7,
+                                          id: "s",
+                                          lineno: 7,
+                                       },
+                                    },
+                                 ],
+                                 'ast_type': "Call",
+                                 'col_offset': 12,
+                                 func: {
+                                    'ast_type': "Name",
+                                    'col_offset': 12,
+                                    ctx: "Load",
+                                    'end_col_offset': 27,
+                                    'end_lineno': 7,
+                                    id: "is_palindrome_r",
+                                    lineno: 7,
+                                 },
+                                 keywords: [],
+                                 lineno: 7,
+                              },
+                           },
+                        ],
+                        test: {
+                           'ast_type': "Compare",
+                           'col_offset': 8,
+                           comparators: [
+                              {
+                                 'ast_type': "Subscript",
+                                 'col_offset': 16,
+                                 ctx: "Load",
+                                 lineno: 4,
+                                 slice: {
+                                    'ast_type': "Index",
+                                    value: {
+                                       'ast_type': "UnaryOp",
+                                       'col_offset': 18,
+                                       lineno: 4,
+                                       op: {
+                                          'ast_type': "USub",
+                                       },
+                                       operand: {
+                                          'ast_type': "Num",
+                                          'col_offset': 19,
+                                          'end_col_offset': 20,
+                                          'end_lineno': 4,
+                                          lineno: 4,
+                                          'n': 1,
+                                       },
+                                    },
+                                 },
+                                 value: {
+                                    'ast_type': "Name",
+                                    'col_offset': 16,
+                                    ctx: "Load",
+                                    'end_col_offset': 17,
+                                    'end_lineno': 4,
+                                    id: "s",
+                                    lineno: 4,
+                                 },
+                              },
+                           ],
+                           left: {
+                              'ast_type': "Subscript",
+                              'col_offset': 8,
+                              ctx: "Load",
+                              lineno: 4,
+                              slice: {
+                                 'ast_type': "Index",
+                                 value: {
+                                    'ast_type': "Num",
+                                    'col_offset': 10,
+                                    'end_col_offset': 11,
+                                    'end_lineno': 4,
+                                    lineno: 4,
+                                    'n': 0,
+                                 },
+                              },
+                              value: {
+                                 'ast_type': "Name",
+                                 'col_offset': 8,
+                                 ctx: "Load",
+                                 'end_col_offset': 9,
+                                 'end_lineno': 4,
+                                 id: "s",
+                                 lineno: 4,
+                              },
+                           },
+                           lineno: 4,
+                           ops: [
+                              {
+                                 'ast_type': "NotEq",
+                              },
+                           ],
+                        },
+                     },
+                  ],
+                  test: {
+                     'ast_type': "Compare",
+                     'col_offset': 6,
+                     comparators: [
+                        {
+                           'ast_type': "Num",
+                           'col_offset': 16,
+                           'end_col_offset': 17,
+                           'end_lineno': 2,
+                           lineno: 2,
+                           'n': 1,
+                        },
+                     ],
+                     left: {
+                        args: [
+                           {
+                              'ast_type': "Name",
+                              'col_offset': 10,
+                              ctx: "Load",
+                              'end_col_offset': 11,
+                              'end_lineno': 2,
+                              id: "s",
+                              lineno: 2,
+                           },
+                        ],
+                        'ast_type': "Call",
+                        'col_offset': 6,
+                        func: {
+                           'ast_type': "Name",
+                           'col_offset': 6,
+                           ctx: "Load",
+                           'end_col_offset': 9,
+                           'end_lineno': 2,
+                           id: "len",
+                           lineno: 2,
+                        },
+                        keywords: [],
+                        lineno: 2,
+                     },
+                     lineno: 2,
+                     ops: [
+                        {
+                           'ast_type': "LtE",
+                        },
+                     ],
+                  },
+               },
+            ],
+            'col_offset': 5,
+            'decorator_list': [],
+            'end_col_offset': 20,
+            'end_lineno': 1,
+            lineno: 1,
+            name: "is_palindrome_r",
+            returns: ~,
+         },
+      ],
+   },
+}
