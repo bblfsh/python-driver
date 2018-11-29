@@ -1,0 +1,188 @@
+{
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            args: {
+               args: [
+                  {
+                     '@token': "n",
+                     annotation: ~,
+                     'ast_type': "arg",
+                     'col_offset': 12,
+                     'end_col_offset': 13,
+                     'end_lineno': 1,
+                     lineno: 1,
+                  },
+               ],
+               'ast_type': "arguments",
+            },
+            'ast_type': "FunctionDef",
+            body: [
+               {
+                  'ast_type': "If",
+                  body: [
+                     {
+                        'ast_type': "Return",
+                        'col_offset': 9,
+                        'end_col_offset': 15,
+                        'end_lineno': 3,
+                        lineno: 3,
+                        value: {
+                           'ast_type': "Name",
+                           'col_offset': 16,
+                           ctx: "Load",
+                           'end_col_offset': 17,
+                           'end_lineno': 3,
+                           id: "n",
+                           lineno: 3,
+                        },
+                     },
+                  ],
+                  'col_offset': 5,
+                  'end_col_offset': 7,
+                  'end_lineno': 2,
+                  lineno: 2,
+                  orelse: [
+                     {
+                        'ast_type': "Return",
+                        'col_offset': 9,
+                        'end_col_offset': 15,
+                        'end_lineno': 5,
+                        lineno: 5,
+                        value: {
+                           'ast_type': "BinOp",
+                           'col_offset': 16,
+                           left: {
+                              args: [
+                                 {
+                                    'ast_type': "BinOp",
+                                    'col_offset': 23,
+                                    left: {
+                                       'ast_type': "Name",
+                                       'col_offset': 23,
+                                       ctx: "Load",
+                                       'end_col_offset': 24,
+                                       'end_lineno': 5,
+                                       id: "n",
+                                       lineno: 5,
+                                    },
+                                    lineno: 5,
+                                    op: {
+                                       'ast_type': "Sub",
+                                    },
+                                    right: {
+                                       'ast_type': "Num",
+                                       'col_offset': 25,
+                                       'end_col_offset': 26,
+                                       'end_lineno': 5,
+                                       lineno: 5,
+                                       'n': 1,
+                                    },
+                                 },
+                              ],
+                              'ast_type': "Call",
+                              'col_offset': 16,
+                              func: {
+                                 'ast_type': "Name",
+                                 'col_offset': 16,
+                                 ctx: "Load",
+                                 'end_col_offset': 22,
+                                 'end_lineno': 5,
+                                 id: "fibRec",
+                                 lineno: 5,
+                              },
+                              keywords: [],
+                              lineno: 5,
+                           },
+                           lineno: 5,
+                           op: {
+                              'ast_type': "Add",
+                           },
+                           right: {
+                              args: [
+                                 {
+                                    'ast_type': "BinOp",
+                                    'col_offset': 37,
+                                    left: {
+                                       'ast_type': "Name",
+                                       'col_offset': 37,
+                                       ctx: "Load",
+                                       'end_col_offset': 38,
+                                       'end_lineno': 5,
+                                       id: "n",
+                                       lineno: 5,
+                                    },
+                                    lineno: 5,
+                                    op: {
+                                       'ast_type': "Sub",
+                                    },
+                                    right: {
+                                       'ast_type': "Num",
+                                       'col_offset': 39,
+                                       'end_col_offset': 40,
+                                       'end_lineno': 5,
+                                       lineno: 5,
+                                       'n': 2,
+                                    },
+                                 },
+                              ],
+                              'ast_type': "Call",
+                              'col_offset': 30,
+                              func: {
+                                 'ast_type': "Name",
+                                 'col_offset': 30,
+                                 ctx: "Load",
+                                 'end_col_offset': 36,
+                                 'end_lineno': 5,
+                                 id: "fibRec",
+                                 lineno: 5,
+                              },
+                              keywords: [],
+                              lineno: 5,
+                           },
+                        },
+                     },
+                  ],
+                  test: {
+                     'ast_type': "Compare",
+                     'col_offset': 8,
+                     comparators: [
+                        {
+                           'ast_type': "Num",
+                           'col_offset': 12,
+                           'end_col_offset': 13,
+                           'end_lineno': 2,
+                           lineno: 2,
+                           'n': 2,
+                        },
+                     ],
+                     left: {
+                        'ast_type': "Name",
+                        'col_offset': 8,
+                        ctx: "Load",
+                        'end_col_offset': 9,
+                        'end_lineno': 2,
+                        id: "n",
+                        lineno: 2,
+                     },
+                     lineno: 2,
+                     ops: [
+                        {
+                           'ast_type': "Lt",
+                        },
+                     ],
+                  },
+               },
+            ],
+            'col_offset': 5,
+            'decorator_list': [],
+            'end_col_offset': 11,
+            'end_lineno': 1,
+            lineno: 1,
+            name: "fibRec",
+            returns: ~,
+         },
+      ],
+   },
+}
