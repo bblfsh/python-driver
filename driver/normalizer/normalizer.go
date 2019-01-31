@@ -146,7 +146,7 @@ var Normalizers = []Mapping{
 
 	MapSemantic("NoopLine", uast.Comment{}, MapObj(
 		Obj{
-			"noop_line": CommentText([2]string{"#", ""}, "comm"),
+			"noop_line": CommentTextTrimmed([2]string{"#", ""}, "comm"),
 		},
 		CommentNode(false, "comm", nil),
 	)),
