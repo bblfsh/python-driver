@@ -142,10 +142,38 @@ var Normalizers = []Mapping{
 		CommentNode(false, "comm", nil),
 	)),
 
-	MapSemantic("NoopSameLine", uast.Comment{}, MapObj(
-		Obj{"s": CommentText([2]string{}, "comm")},
+	//SameLineNoops like the other comment container nodes hold an array of lines, but by
+	//definition it can only hold one, thus we copy the position from the parent to the (only) child
+	//that doesn't have it
+	MapSemantic("SameLineNoops", uast.Comment{}, MapObj(
+		Obj{
+			"noop_lines": Arr(
+				Obj{
+					uast.KeyType: String("NoopSameLine"),
+					uast.KeyPos: Var("foo"),
+					"s": CommentText([2]string{}, "comm"),
+				},
+			),
+		},
 		CommentNode(false, "comm", nil),
 	)),
+	MapSemantic("SameLineNoops", uast.Comment{}, MapObj(
+		Obj{
+			"noop_lines": Arr(
+				Obj{
+					uast.KeyType: String("NoopSameLine"),
+					"s": CommentText([2]string{}, "comm"),
+				},
+			),
+		},
+		CommentNode(false, "comm", nil),
+	)),
+
+	// XXX remove
+	//MapSemantic("NoopSameLine", uast.Comment{}, MapObj(
+	//	Obj{"s": CommentText([2]string{}, "comm")},
+	//	CommentNode(false, "comm", nil),
+	//)),
 
 	MapSemantic("arg", uast.Argument{}, MapObj(
 		Obj{
@@ -201,35 +229,6 @@ var Normalizers = []Mapping{
 	funcDefMap("FunctionDef", false),
 	funcDefMap("AsyncFunctionDef", true),
 
-	AnnotateType("ClassDef", MapObj(Obj{
-		"decorator_list": Var("decors"),
-		"body":           Var("body_stmts"),
-		"bases":          Var("bases"),
-		"name": Var("name"),
-		uast.KeyPos: Obj{
-			uast.KeyType: String(uast.KeyPos),
-			uast.KeyStart: Var(uast.KeyStart),
-			uast.KeyEnd:   Var(uast.KeyEnd),
-		},
-	}, Obj{
-		uast.KeyToken: identifierWithPos("name"),
-		"decorator_list": Obj{
-			uast.KeyType:  String("ClassDef.decorator_list"),
-			uast.KeyRoles: Roles(role.Type, role.Declaration, role.Call, role.Incomplete),
-			"decorators":  Var("decors"),
-		},
-		"body": Obj{
-			uast.KeyType:  String("ClassDef.body"),
-			uast.KeyRoles: Roles(role.Type, role.Declaration, role.Body),
-			"body_stmts":  Var("body_stmts"),
-		},
-		"bases": Obj{
-			uast.KeyType:  String("ClassDef.bases"),
-			uast.KeyRoles: Roles(role.Type, role.Declaration, role.Base),
-			"bases":       Var("bases"),
-		},
-	}), role.Type, role.Declaration, role.Identifier, role.Statement),
-
 	AnnotateType("Import", MapObj(
 		Obj{
 			"names": Each("vals", Var("name")),
@@ -261,7 +260,6 @@ var Normalizers = []Mapping{
 			Objs{
 				{"Node": Obj{}},
 				{
-					//"Node": identifierWithPos("name"),
 					"Node": UASTType(uast.Identifier{}, Obj{ "Name": Var("alias"), }),
 				}},
 		))),
