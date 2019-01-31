@@ -45,7 +45,7 @@
                   },
                   lines: [
                      { '@type': "NoopLine",
-                        '@token': " regular comment\n",
+                        '@token': "# regular comment\n",
                         '@role': [Comment, Noop],
                         '@pos': { '@type': "uast:Positions",
                            start: { '@type': "uast:Position",
@@ -73,7 +73,7 @@
                   },
                   'noop_lines': [
                      { '@type': "NoopSameLine",
-                        '@token': " line comment",
+                        '@token': "# line comment",
                         '@role': [Comment, Noop],
                         '@pos': { '@type': "uast:Positions",
                         },

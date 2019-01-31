@@ -72,6 +72,7 @@ func identifierWithPos(nameVar string) ObjectOp {
 	})
 }
 
+// Common for string types (Byte, Str, StrLiteral)
 func mapStr(nativeType string) Mapping {
 	return Map(
 		Part("_", Fields{

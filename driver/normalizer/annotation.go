@@ -5,7 +5,6 @@ import (
 	"gopkg.in/bblfsh/sdk.v2/uast/role"
 	. "gopkg.in/bblfsh/sdk.v2/uast/transformer"
 	"gopkg.in/bblfsh/sdk.v2/uast/transformer/positioner"
-	"strings"
 )
 
 var Native = Transformers([][]Transformer{
@@ -87,21 +86,6 @@ func loopAnnotate(typ string, mainRole role.Role, roles ...role.Role) Mapping {
 			uast.KeyToken: String("else"),
 		},
 	}), roles...)
-}
-
-func uncomment_bash(s string) (string, error) {
-	if strings.HasPrefix(s, "#") {
-		s = s[1:]
-	}
-	return s, nil
-}
-
-func comment_bash(s string) (string, error) {
-	return "#" + s, nil
-}
-
-func UncommentBashLike(vr string) Op {
-	return StringConv(Var(vr), uncomment_bash, comment_bash)
 }
 
 var Annotations = []Mapping{
@@ -373,13 +357,13 @@ var Annotations = []Mapping{
 	}, role.Noop),
 
 	AnnotateType("NoopLine", MapObj(Obj{
-		"noop_line": UncommentBashLike("txt"),
+		"noop_line": Var("txt"),
 	}, Obj{
 		uast.KeyToken: Var("txt"),
 	}), role.Comment, role.Noop),
 
 	AnnotateType("NoopSameLine", MapObj(Obj{
-		"s": UncommentBashLike("txt"),
+		"s": Var("txt"),
 	}, Obj{
 		uast.KeyToken: Var("txt"),
 	}), role.Comment, role.Noop),
