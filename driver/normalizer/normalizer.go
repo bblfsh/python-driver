@@ -10,6 +10,8 @@ var Preprocess = Transformers([][]Transformer{
 	{Mappings(Preprocessors...)},
 }...)
 
+var PreprocessCode = []CodeTransformer{}
+
 var Preprocessors = []Mapping{
 	ObjectToNode{
 		InternalTypeKey: "ast_type",
@@ -72,7 +74,7 @@ func identifierWithPos(nameVar string) ObjectOp {
 	})
 }
 
-// Common for string types (Byte, Str, StrLiteral)
+// mapStr factorizes the common annotation for string types (Byte, Str, StrLiteral)
 func mapStr(nativeType string) Mapping {
 	return Map(
 		Part("_", Fields{
