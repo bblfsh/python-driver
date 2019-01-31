@@ -115,7 +115,7 @@
                                  },
                                  'noop_lines': [
                                     { '@type': "NoopSameLine",
-                                       '@token': "# u >= 0, v >= 0",
+                                       '@token': " u >= 0, v >= 0",
                                        '@role': [Comment, Noop],
                                        '@pos': { '@type': "uast:Positions",
                                        },
@@ -322,7 +322,7 @@
                                           },
                                           'noop_lines': [
                                              { '@type': "NoopSameLine",
-                                                '@token': "# u >= v >= 0",
+                                                '@token': " u >= v >= 0",
                                                 '@role': [Comment, Noop],
                                                 '@pos': { '@type': "uast:Positions",
                                                 },
@@ -626,7 +626,7 @@
                            },
                            lines: [
                               { '@type': "NoopLine",
-                                 '@token': " u >= v > 0\n",
+                                 '@token': "    # u >= v > 0\n",
                                  '@role': [Comment, Noop],
                                  '@pos': { '@type': "uast:Positions",
                                     start: { '@type': "uast:Position",
@@ -916,7 +916,7 @@
                                     },
                                     'noop_lines': [
                                        { '@type': "NoopSameLine",
-                                          '@token': "# u, v - even",
+                                          '@token': " u, v - even",
                                           '@role': [Comment, Noop],
                                           '@pos': { '@type': "uast:Positions",
                                           },

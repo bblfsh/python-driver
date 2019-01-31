@@ -72,108 +72,109 @@ func identifierWithPos(nameVar string) ObjectOp {
 	})
 }
 
-func tokenIsIdentifier(typ, tokenKey string, roles ...role.Role) Mapping {
-	return AnnotateType(typ, MapObj(
-		Fields{
-			{Name: tokenKey, Op: Var("name")},
-		},
-		Fields{
-			{Name: tokenKey,
-			 Op: UASTType(uast.Identifier{}, Obj{
-			 	"Name": Var("name"),
-			 })},
+func mapStr(nativeType string) Mapping {
+	return Map(
+		Part("_", Fields{
+			{Name: uast.KeyType, Op: String(nativeType)},
+			{Name: uast.KeyPos, Op: Var("pos_")},
+			{Name: "s", Op: Var("s")},
+			{Name: "noops_previous", Optional: "np_opt", Op: Var("noops_previous")},
+			{Name: "noops_sameline", Optional: "ns_opt", Op: Var("noops_sameline")},
 		}),
-		roles...)
+		Part("_", Fields{
+			{Name: uast.KeyType, Op: String("Boxed" + nativeType)},
+			{Name: "boxed_value", Op: UASTType(uast.String{}, Obj{
+				uast.KeyPos: Var("pos_"),
+				"Value": Var("s"),
+				"Format": String(""),
+			})},
+			{Name: "noops_previous", Optional: "np_opt", Op: Var("noops_previous")},
+			{Name: "noops_sameline", Optional: "ns_opt", Op: Var("noops_sameline")},
+		}),
+	)
 }
-
 
 var Normalizers = []Mapping{
 
+	// Box Names, Strings, and Bools into a "BoxedFoo" moving the real node to the
+	// "value" property and keeping the comments in the parent (if not, comments would be lost
+	// when promoting the objects)
+	Map(
+		Part("_", Fields{
+			{Name: uast.KeyType, Op: String("Name")},
+			{Name: uast.KeyPos, Op: Var("pos_")},
+			{Name: "id", Op: Var("id")},
+			{Name: "noops_previous", Optional: "np_opt", Op: Var("noops_previous")},
+			{Name: "noops_sameline", Optional: "ns_opt", Op: Var("noops_sameline")},
+		}),
+		Part("_", Fields{
+			{Name: uast.KeyType, Op: String("BoxedName")},
+			{Name: "boxed_value", Op: UASTType(uast.Identifier{}, Obj{
+				uast.KeyPos: Var("pos_"),
+				"Name": Var("id"),
+			})},
+			{Name: "noops_previous", Optional: "np_opt", Op: Var("noops_previous")},
+			{Name: "noops_sameline", Optional: "ns_opt", Op: Var("noops_sameline")},
+		}),
+	),
+
+	// TODO: uncomment after SDK 2.13.x update
+	//  (upgrade currently blocked by: https://github.com/bblfsh/sdk/issues/353)
+	Map(
+		Part("_", Fields{
+			{Name: uast.KeyType, Op: String("BoolLiteral")},
+			{Name: uast.KeyPos, Op: Var("pos_")},
+			//{Name: "LiteralValue", Op: Var("lv")},
+			{Name: "value", Op: Var("lv")},
+			{Name: "noops_previous", Optional: "np_opt", Op: Var("noops_previous")},
+			{Name: "noops_sameline", Optional: "ns_opt", Op: Var("noops_sameline")},
+		}),
+		Part("_", Fields{
+			{Name: uast.KeyType, Op: String("BoxedBoolLiteral")},
+			{Name: "boxed_value", Op: UASTType(uast.Bool{}, Obj{
+				uast.KeyPos: Var("pos_"),
+				"Value": Var("lv"),
+			})},
+			{Name: "noops_previous", Optional: "np_opt", Op: Var("noops_previous")},
+			{Name: "noops_sameline", Optional: "ns_opt", Op: Var("noops_sameline")},
+		}),
+	),
+
+	mapStr("Bytes"),
+	mapStr("Str"),
+	mapStr("StringLiteral"),
+
+	MapSemantic("NoopLine", uast.Comment{}, MapObj(
+		Obj{
+			"noop_line": CommentText([2]string{"#", ""}, "comm"),
+		},
+		CommentNode(false, "comm", nil),
+	)),
+
+	MapSemantic("NoopSameLine", uast.Comment{}, MapObj(
+		Obj{
+			"s": CommentText([2]string{"#", ""}, "comm"),
+		},
+		CommentNode(false, "comm", nil),
+	)),
+
 	// FIXME: no positions for keywords in the native AST
-	tokenIsIdentifier("keyword", "arg", role.Name),
-
-	MapSemantic("Str", uast.String{}, MapObj(
-		Obj{
-			"s": Var("val"),
+	AnnotateType("keyword", MapObj(
+		Fields{
+			{Name: "arg", Op: Var("name")},
 		},
-		Obj{
-			"Value":  Var("val"),
-			"Format": String(""),
-		},
-	)),
-
-	MapSemantic("Bytes", uast.String{}, MapObj(
-		Obj{
-			"s": Var("val"),
-		},
-		Obj{
-			"Value":  Var("val"),
-			"Format": String(""),
-		},
-	)),
-
-	MapSemantic("StringLiteral", uast.String{}, MapObj(
-		Obj{
-			"s": Var("val"),
-		},
-		Obj{
-			"Value":  Var("val"),
-			"Format": String(""),
-		},
-	)),
-
-	MapSemantic("Name", uast.Identifier{}, MapObj(
-		Obj{"id": Var("name")},
-		Obj{"Name": Var("name")},
-	)),
+		Fields{
+			{Name: "arg",
+				Op: UASTType(uast.Identifier{}, Obj{
+					"Name": Var("name"),
+				})},
+		}),
+		role.Name),
 
 	MapSemantic("Attribute", uast.Identifier{}, MapObj(
 		Obj{"attr": Var("name")},
 		Obj{"Name": Var("name")},
 	)),
-
-	MapSemantic("Name", uast.Identifier{}, MapObj(
-		Obj{"attr": Var("name")},
-		Obj{"Name": Var("name")},
-	)),
-
-	MapSemantic("NoopLine", uast.Comment{}, MapObj(
-		Obj{"noop_line": CommentText([2]string{}, "comm")},
-		CommentNode(false, "comm", nil),
-	)),
-
-	//SameLineNoops like the other comment container nodes hold an array of lines, but by
-	//definition it can only hold one, thus we copy the position from the parent to the (only) child
-	//that doesn't have it
-	MapSemantic("SameLineNoops", uast.Comment{}, MapObj(
-		Obj{
-			"noop_lines": Arr(
-				Obj{
-					uast.KeyType: String("NoopSameLine"),
-					uast.KeyPos: Var("foo"),
-					"s": CommentText([2]string{}, "comm"),
-				},
-			),
-		},
-		CommentNode(false, "comm", nil),
-	)),
-	MapSemantic("SameLineNoops", uast.Comment{}, MapObj(
-		Obj{
-			"noop_lines": Arr(
-				Obj{
-					uast.KeyType: String("NoopSameLine"),
-					"s": CommentText([2]string{}, "comm"),
-				},
-			),
-		},
-		CommentNode(false, "comm", nil),
-	)),
-
-	// XXX remove
-	//MapSemantic("NoopSameLine", uast.Comment{}, MapObj(
-	//	Obj{"s": CommentText([2]string{}, "comm")},
-	//	CommentNode(false, "comm", nil),
-	//)),
 
 	MapSemantic("arg", uast.Argument{}, MapObj(
 		Obj{
@@ -211,7 +212,7 @@ var Normalizers = []Mapping{
 			uast.KeyToken: Var("name"),
 		},
 		Obj{
-			"Name": identifierWithPos("name"),
+			"Name":     identifierWithPos("name"),
 			"Variadic": Bool(true),
 		},
 	)),
@@ -221,7 +222,7 @@ var Normalizers = []Mapping{
 			uast.KeyToken: Var("name"),
 		},
 		Obj{
-			"Name": identifierWithPos("name"),
+			"Name":        identifierWithPos("name"),
 			"MapVariadic": Bool(true),
 		},
 	)),
@@ -260,7 +261,7 @@ var Normalizers = []Mapping{
 			Objs{
 				{"Node": Obj{}},
 				{
-					"Node": UASTType(uast.Identifier{}, Obj{ "Name": Var("alias"), }),
+					"Node": UASTType(uast.Identifier{}, Obj{"Name": Var("alias")}),
 				}},
 		))),
 
@@ -270,10 +271,10 @@ var Normalizers = []Mapping{
 			"names": Arr(
 				Obj{
 					uast.KeyType: String("uast:Alias"),
-					uast.KeyPos: Var("pos"),
+					uast.KeyPos:  Var("pos"),
 					"Name": Obj{
 						uast.KeyType: String("uast:Identifier"),
-						"Name": String("*"),
+						"Name":       String("*"),
 					},
 					"Node": Obj{},
 				},

@@ -62,9 +62,6 @@ class NoopExtractor():
             curline = startline
             for noopline in noops_previous:
                 if noopline != '\n':
-                    if noopline.lstrip().startswith('#'):
-                        noopline = noopline.lstrip()[1:]
-
                     nooplines.append({
                         "ast_type": "NoopLine",
                         "noop_line": noopline,

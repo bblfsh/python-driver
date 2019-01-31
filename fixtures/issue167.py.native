@@ -1,0 +1,67 @@
+{
+   'PY3AST': {
+      'ast_type': "Module",
+      body: [
+         {
+            'ast_type': "Assign",
+            'col_offset': 1,
+            lineno: 2,
+            targets: [
+               {
+                  'ast_type': "Name",
+                  'col_offset': 1,
+                  ctx: "Store",
+                  'end_col_offset': 2,
+                  'end_lineno': 2,
+                  id: "a",
+                  lineno: 2,
+                  'noops_previous': {
+                     'ast_type': "PreviousNoops",
+                     'col_offset': 1,
+                     'end_col_offset': 17,
+                     'end_lineno': 1,
+                     lineno: 1,
+                     lines: [
+                        {
+                           'ast_type': "NoopLine",
+                           'col_offset': 1,
+                           lineno: 1,
+                           'noop_line': "# regular comment\n",
+                        },
+                     ],
+                  },
+                  'noops_sameline': {
+                     'ast_type': "SameLineNoops",
+                     'col_offset': 13,
+                     'end_col_offset': 27,
+                     'end_lineno': 2,
+                     lineno: 2,
+                     'noop_lines': [
+                        {
+                           'ast_type': "NoopSameLine",
+                           s: "# line comment",
+                        },
+                     ],
+                  },
+               },
+            ],
+            value: {
+               args: [],
+               'ast_type': "Call",
+               'col_offset': 5,
+               func: {
+                  'ast_type': "Name",
+                  'col_offset': 5,
+                  ctx: "Load",
+                  'end_col_offset': 11,
+                  'end_lineno': 2,
+                  id: "Animal",
+                  lineno: 2,
+               },
+               keywords: [],
+               lineno: 2,
+            },
+         },
+      ],
+   },
+}

@@ -5,6 +5,7 @@ import (
 	"gopkg.in/bblfsh/sdk.v2/uast/role"
 	. "gopkg.in/bblfsh/sdk.v2/uast/transformer"
 	"gopkg.in/bblfsh/sdk.v2/uast/transformer/positioner"
+	"strings"
 )
 
 var Native = Transformers([][]Transformer{
@@ -86,6 +87,21 @@ func loopAnnotate(typ string, mainRole role.Role, roles ...role.Role) Mapping {
 			uast.KeyToken: String("else"),
 		},
 	}), roles...)
+}
+
+func uncomment_bash(s string) (string, error) {
+	if strings.HasPrefix(s, "#") {
+		s = s[1:]
+	}
+	return s, nil
+}
+
+func comment_bash(s string) (string, error) {
+	return "#" + s, nil
+}
+
+func UncommentBashLike(vr string) Op {
+	return StringConv(Var(vr), uncomment_bash, comment_bash)
 }
 
 var Annotations = []Mapping{
@@ -356,20 +372,17 @@ var Annotations = []Mapping{
 		"lines": {Arr: true, Roles: role.Roles{role.Noop}},
 	}, role.Noop),
 
-	AnnotateType("NoopLine", FieldRoles{
-		"noop_line": {Rename: uast.KeyToken},
-	}, role.Noop, role.Comment),
+	AnnotateType("NoopLine", MapObj(Obj{
+		"noop_line": UncommentBashLike("txt"),
+	}, Obj{
+		uast.KeyToken: Var("txt"),
+	}), role.Comment, role.Noop),
 
-	AnnotateType("NoopSameLine", FieldRoles{
-		"s": {Rename: uast.KeyToken},
-	}, role.Noop, role.Comment),
-
-	// Qualified Identifiers
-	// FIXME XXX remove
-	// a.b.c ("a" and "b" will be Qualified+Identifier, "c" will be just Identifier)
-	//AnnotateType("Attribute", FieldRoles{
-	//	"value": {Opt: true, Roles: role.Roles{role.Qualified}},
-	//}),
+	AnnotateType("NoopSameLine", MapObj(Obj{
+		"s": UncommentBashLike("txt"),
+	}, Obj{
+		uast.KeyToken: Var("txt"),
+	}), role.Comment, role.Noop),
 
 	// Import
 	AnnotateType("Import", nil, role.Import, role.Declaration, role.Statement),
