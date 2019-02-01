@@ -356,20 +356,17 @@ var Annotations = []Mapping{
 		"lines": {Arr: true, Roles: role.Roles{role.Noop}},
 	}, role.Noop),
 
-	AnnotateType("NoopLine", FieldRoles{
-		"noop_line": {Rename: uast.KeyToken},
-	}, role.Noop, role.Comment),
+	AnnotateType("NoopLine", MapObj(Obj{
+		"noop_line": Var("txt"),
+	}, Obj{
+		uast.KeyToken: Var("txt"),
+	}), role.Comment, role.Noop),
 
-	AnnotateType("NoopSameLine", FieldRoles{
-		"s": {Rename: uast.KeyToken},
-	}, role.Noop, role.Comment),
-
-	// Qualified Identifiers
-	// FIXME XXX remove
-	// a.b.c ("a" and "b" will be Qualified+Identifier, "c" will be just Identifier)
-	//AnnotateType("Attribute", FieldRoles{
-	//	"value": {Opt: true, Roles: role.Roles{role.Qualified}},
-	//}),
+	AnnotateType("NoopSameLine", MapObj(Obj{
+		"s": Var("txt"),
+	}, Obj{
+		uast.KeyToken: Var("txt"),
+	}), role.Comment, role.Noop),
 
 	// Import
 	AnnotateType("Import", nil, role.Import, role.Declaration, role.Statement),

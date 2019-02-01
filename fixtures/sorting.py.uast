@@ -52,7 +52,7 @@
                   },
                   lines: [
                      { '@type': "NoopLine",
-                        '@token': " before comment\n",
+                        '@token': "# before comment\n",
                         '@role': [Comment, Noop],
                         '@pos': { '@type': "uast:Positions",
                            start: { '@type': "uast:Position",
@@ -129,7 +129,7 @@
       },
       lines: [
          { '@type': "NoopLine",
-            '@token': " remaining comment\n",
+            '@token': "# remaining comment\n",
             '@role': [Comment, Noop],
             '@pos': { '@type': "uast:Positions",
                start: { '@type': "uast:Position",
