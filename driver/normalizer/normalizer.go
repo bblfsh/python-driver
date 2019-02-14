@@ -234,7 +234,7 @@ var Normalizers = []Mapping{
 			// No problem dropping this one, it's used by an internal interpreter optimization/cache
 			// without semantic meaning
 			{Name: "ctx", Optional: "opt_ctx", Op: Any()},
-			// TODO: change this once we've a way to store other nodes on semantic objects
+			// FIXME: change this once we've a way to store other nodes on semantic objects
 			// See: https://github.com/bblfsh/sdk/issues/361
 			// See: https://github.com/bblfsh/python-driver/issues/178
 			{Name: "noops_previous", Optional: "np_opt", Op: Any()},
