@@ -218,6 +218,10 @@ class AstImprover():
 
         kwarg = deepcopy(node.get("kwarg"))
         if kwarg:
+            if isinstance(kwarg, str):
+                # Python2 kwargs are just strings; convert to same format
+                # as Python3
+                kwarg = {"arg": kwarg, "annotation": None}
             kwarg["ast_type"] = "kwarg"
             norm_args.append(self.visit(kwarg))
 
@@ -264,13 +268,39 @@ if __name__ == '__main__':
     from pprint import pprint
 
     if len(sys.argv) > 1:
-        from pydetector.ast2dict import ast2dict
+        from pydetector import detector
         codestr = open(sys.argv[1]).read()
-        testdict = ast2dict(codestr)
+        resdict = detector.detect(codestr=codestr, stop_on_ok_ast=True)
+        codeinfo = resdict['<code_string>']
+        version = codeinfo['version']
+
+        failed = False
+
+        if version in (3, 6) and codeinfo['py3ast']:
+            testdict = codeinfo['py3ast']["PY3AST"]
+            print("Using Python3")
+        elif version in (1, 2) and codeinfo['py2ast']:
+            testdict = codeinfo['py2ast']["PY2AST"]
+            print("Using Python2")
+        else:
+            failed = True
+            errors = [
+              'Errors produced trying to get an AST for both Python versions' +
+              '\n------ Python2 errors:\n%s' % codeinfo['py2_ast_errors'] +
+              '\n------ Python3 errors:\n%s' % codeinfo['py3_ast_errors']
+            ]
+
+        if not failed and not testdict:
+            raise Exception('Empty AST generated from non empty code')
+        ast = AstImprover(codestr, testdict).parse()
+        if not ast:
+            raise Exception('Empty AST generated from non empty code')
     else:
         codestr = open("../test/fixtures/detector.py").read()
-        spec = importlib.util.spec_from_file_location("module.testmod",
-                                                      "../test/fixtures/exported_dict.py")
+        spec = importlib.util.spec_from_file_location(
+                "module.testmod",
+                "../test/fixtures/exported_dict.py"
+        )
         testmod = importlib.util.module_from_spec(spec)
 
         if spec.loader:
