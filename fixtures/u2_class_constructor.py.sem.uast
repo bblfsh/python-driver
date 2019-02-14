@@ -20,6 +20,9 @@
             {
                async: false,
             },
+            {
+               decorators: [],
+            },
             { '@type': "uast:Alias",
                Name: { '@type': "uast:Identifier",
                   Name: "testcls1",
@@ -43,6 +46,9 @@
                            Nodes: [
                               {
                                  async: false,
+                              },
+                              {
+                                 decorators: [],
                               },
                               { '@type': "uast:Alias",
                                  Name: { '@type': "uast:Identifier",
@@ -84,7 +90,6 @@
                                                    col: 22,
                                                 },
                                              },
-                                             Init: ~,
                                              MapVariadic: false,
                                              Name: { '@type': "uast:Identifier",
                                                 '@pos': { '@type': "uast:Positions",
@@ -129,6 +134,9 @@
                               {
                                  async: false,
                               },
+                              {
+                                 decorators: [],
+                              },
                               { '@type': "uast:Alias",
                                  Name: { '@type': "uast:Identifier",
                                     Name: "__new__",
@@ -169,7 +177,6 @@
                                                    col: 21,
                                                 },
                                              },
-                                             Init: ~,
                                              MapVariadic: false,
                                              Name: { '@type': "uast:Identifier",
                                                 '@pos': { '@type': "uast:Positions",

@@ -1,25 +1,12 @@
 package normalizer
 
 import (
-	"errors"
-
 	"gopkg.in/bblfsh/sdk.v2/uast"
-	"gopkg.in/bblfsh/sdk.v2/uast/nodes"
 	"gopkg.in/bblfsh/sdk.v2/uast/role"
 	. "gopkg.in/bblfsh/sdk.v2/uast/transformer"
 )
 
 var Preprocess = Transformers([][]Transformer{
-	{Mappings(
-		// Move the Leading/TrailingTrivia outside of nodes.
-		//
-		// This cannot be inside Normalizers because it should precede any
-		// other transformation.
-		Map(
-			opMoveCommentsAnns{Var("group")},
-			Check(Has{uast.KeyType: String(typeGroup)}, Var("group")),
-		),
-	)},
 	{Mappings(Preprocessors...)},
 }...)
 
@@ -41,18 +28,27 @@ var Normalize = Transformers([][]Transformer{
 
 func funcDefMap(typ string, async bool) Mapping {
 	return MapSemantic(typ, uast.FunctionGroup{}, MapObj(
-		Obj{
-			"body": Var("body"),
-			"name": Var("name"),
+		Fields{
+			{Name: "body", Op: Var("body")},
+			{Name: "name", Op: Var("name")},
 			// Arguments should be converted by the uast.Arguments normalization
-			"args": Obj{
+			{Name: "args", Op: Obj{
 				"args":       Var("arguments"),
 				uast.KeyPos:  Var("_pos"),
 				uast.KeyType: Var("_type"),
-			},
+			}},
 			// Will be filled only if there is a Python3 type annotation
-			"returns":        Var("returns"),
-			"decorator_list": Var("func_decorators"),
+			{Name: "returns", Optional: "ret_opt", Op: Cases("ret_case",
+				Is(nil),
+				Obj{
+					uast.KeyType:  String("BoxedName"),
+					"boxed_value": Var("ret_type"),
+					// No problem dropping this one, it's used by an internal interpreter optimization/cache
+					// without semantic meaning
+					"ctx": Any(),
+				}),
+			},
+			{Name: "decorator_list", Op: Var("func_decorators")},
 		},
 		Obj{
 			"Nodes": Arr(
@@ -70,9 +66,15 @@ func funcDefMap(typ string, async bool) Mapping {
 						"Name": Var("name"),
 					}),
 					"Node": UASTType(uast.Function{}, Obj{
-						"Type": UASTType(uast.FunctionType{}, Obj{
-							"Arguments": Var("arguments"),
-							"Returns":   Var("returns"),
+						"Type": UASTType(uast.FunctionType{}, Fields{
+							{Name: "Arguments", Op: Var("arguments")},
+							{Name: "Returns", Optional: "ret_opt", Op: Cases("ret_case",
+								Is(nil),
+								Arr(UASTType(uast.Argument{},
+									Obj{
+										"Type": Var("ret_type"),
+									},
+								)))},
 						}),
 						"Body": UASTType(uast.Block{}, Obj{
 							"Statements": Var("body"),
@@ -116,141 +118,13 @@ func mapStr(nativeType string) Mapping {
 	)
 }
 
-var (
-	typeGroup     = uast.TypeOf(uast.Group{})
-	typeFuncGroup = uast.TypeOf(uast.FunctionGroup{})
-)
-
-// Similar (but not equal) to:
-// https://github.com/bblfsh/csharp-driver/blob/master/driver/normalizer/normalizer.go#L827
-// Should be removed once we have some generic solution in the SDK
-type opMoveCommentsAnns struct {
-	sub Op
-}
-
-func (op opMoveCommentsAnns) Kinds() nodes.Kind {
-	return nodes.KindObject
-}
-
-func (op opMoveCommentsAnns) Check(st *State, n nodes.Node) (bool, error) {
-	obj, ok := n.(nodes.Object)
-	if !ok {
-		return false, nil
-	}
-	modified := false
-	noops_prevs, ok1 := obj["noops_previous"].(nodes.Array)
-	noops_same, ok2 := obj["noops_sameline"].(nodes.Array)
-	//decorators, ok3 := obj["decorator_list"].(nodes.Array)
-
-	if ok1 || ok2 {
-		// we saved the comments and decorators, remove from them from this node
-		obj = obj.CloneObject()
-		modified = true
-		delete(obj, "noops_previous")
-		delete(obj, "noops_sameline")
-		//delete(obj, "decorator_list")
-	}
-
-	if len(noops_prevs) == 0 || len(noops_same) == 0 {
-		if !modified {
-			return false, nil
-		}
-		return op.sub.Check(st, obj)
-	}
-
-	arr := make(nodes.Array, 0, len(noops_prevs) + 1 + len(noops_same))
-	arr = append(arr, noops_prevs...)
-	arr = append(arr, obj)
-	arr = append(arr, noops_same)
-	group, err := uast.ToNode(uast.Group{})
-	if err != nil {
-		return false, err
-	}
-
-	obj = group.(nodes.Object)
-	obj["Nodes"] = arr
-	return op.sub.Check(st, obj)
-}
-
-func (op opMoveCommentsAnns) Construct(st *State, n nodes.Node) (nodes.Node, error) {
-	// TODO(dennwc): implement when we will need a reversal
-	//				 see https://github.com/bblfsh/sdk/issues/355
-	return op.sub.Construct(st, n)
-}
-
-// opMergeGroups finds the uast:Group nodes and merges them into a child
-// uast:FunctionGroup, if it exists.
-//
-// This transform is necessary because opMoveTrivias will wrap all nodes that contain trivia
-// into a Group node, and the same will happen with MethodDeclaration nodes. But according
-// to a UAST schema defined in SDK, the comments (trivia) should be directly inside the
-// FunctionGroup node that wraps functions in Semantic mode.
-type opMergeGroups struct {
-	sub Op
-}
-
-func (op opMergeGroups) Kinds() nodes.Kind {
-	return nodes.KindObject
-}
-
-
-// firstWithType returns an index of the first node type of which matches the filter function.
-func firstWithType(arr nodes.Array, fnc func(typ string) bool) int {
-	for i, sub := range arr {
-		if fnc(uast.TypeOf(sub)) {
-			return i
-		}
-	}
-	return -1
-}
-
-// Check tests if the current node is uast:Group and if it contains a uast:FunctionGroup
-// node, it will remove the current node and merge other children into the FunctionGroup.
-func (op opMergeGroups) Check(st *State, n nodes.Node) (bool, error) {
-	group, ok := n.(nodes.Object)
-	if !ok || uast.TypeOf(group) != typeGroup {
-		return false, nil
-	}
-	arr, ok := group["Nodes"].(nodes.Array)
-	if !ok {
-		return false, errors.New("expected an array in Group.Nodes")
-	}
-	ind := firstWithType(arr, func(typ string) bool {
-		return typ == typeFuncGroup
-	})
-	if ind < 0 {
-		return false, nil
-	}
-	leading := arr[:ind]
-	fgroup := arr[ind].(nodes.Object)
-	trailing := arr[ind+1:]
-
-	arr, ok = fgroup["Nodes"].(nodes.Array)
-	if !ok {
-		return false, errors.New("expected an array in Group.Nodes")
-	}
-	out := make(nodes.Array, 0, len(leading)+len(arr)+len(trailing))
-	out = append(out, leading...)
-	out = append(out, arr...)
-	out = append(out, trailing...)
-
-	fgroup = fgroup.CloneObject()
-	fgroup["Nodes"] = out
-
-	return op.sub.Check(st, fgroup)
-}
-
-func (op opMergeGroups) Construct(st *State, n nodes.Node) (nodes.Node, error) {
-	// TODO(dennwc): implement when we will need a reversal
-	//				 see https://github.com/bblfsh/sdk/issues/355
-	return op.sub.Construct(st, n)
-}
-
 var Normalizers = []Mapping{
 
-	// Box Names, Strings, Attributes, ImportFroms and Bools into a "BoxedFoo" moving the real node to the
+	// Box Names, Strings, Attributes, and Bools into a "BoxedFoo" moving the real node to the
 	// "value" property and keeping the comments in the parent (if not, comments would be lost
-	// when promoting the objects)
+	// when promoting the objects).
+	// For other objects, the comments are dropped.
+	// See: https://github.com/bblfsh/sdk/issues/361
 	Map(
 		Part("_", Fields{
 			{Name: uast.KeyType, Op: String("Name")},
@@ -299,6 +173,8 @@ var Normalizers = []Mapping{
 			{Name: uast.KeyType, Op: String("Attribute")},
 			{Name: uast.KeyPos, Op: Var("pos_")},
 			{Name: "attr", Op: Var("aname")},
+			// No problem dropping this one, it's used by an internal interpreter optimization/cache
+			// without semantic meaning
 			{Name: "ctx", Op: Any()},
 			{Name: "noops_previous", Optional: "np_opt", Op: Var("noops_previous")},
 			{Name: "noops_sameline", Optional: "ns_opt", Op: Var("noops_sameline")},
@@ -337,6 +213,11 @@ var Normalizers = []Mapping{
 	AnnotateType("keyword", MapObj(
 		Fields{
 			{Name: "arg", Op: Var("name")},
+			// TODO: change this once we've a way to store other nodes on semantic objects
+			// See: https://github.com/bblfsh/sdk/issues/361
+			// See: https://github.com/bblfsh/python-driver/issues/178
+			{Name: "noops_previous", Optional: "np_opt", Op: Any()},
+			{Name: "noops_sameline", Optional: "ns_opt", Op: Any()},
 		},
 		Fields{
 			{Name: "arg",
@@ -347,33 +228,39 @@ var Normalizers = []Mapping{
 		role.Name),
 
 	MapSemantic("arg", uast.Argument{}, MapObj(
-		Obj{
-			uast.KeyToken: Var("name"),
-			"default":     Var("init"),
-			"ctx":         Any(),
+		Fields{
+			{Name: uast.KeyToken, Op: Var("name")},
+			{Name: "default", Optional: "opt_def", Op: Var("init")},
+			// No problem dropping this one, it's used by an internal interpreter optimization/cache
+			// without semantic meaning
+			{Name: "ctx", Optional: "opt_ctx", Op: Any()},
+			// TODO: change this once we've a way to store other nodes on semantic objects
+			// See: https://github.com/bblfsh/sdk/issues/361
+			// See: https://github.com/bblfsh/python-driver/issues/178
+			{Name: "noops_previous", Optional: "np_opt", Op: Any()},
+			{Name: "noops_sameline", Optional: "ns_opt", Op: Any()},
+			// This one is pesky - they're ignored by the runtime, could have typing from
+			// mypy, or could have anything else, so we can assign to the semantic type
+			{Name: "annotation", Optional: "ann_opt", Op: Any()},
 		},
-		Obj{
-			"Name": identifierWithPos("name"),
-			"Init": Var("init"),
-		},
-	)),
-
-	MapSemantic("arg", uast.Argument{}, MapObj(
-		Obj{
-			uast.KeyToken: Var("name"),
-			"ctx":         Any(),
-		},
-		Obj{
-			"Name": identifierWithPos("name"),
+		Fields{
+			{Name: "Name", Op: identifierWithPos("name")},
+			{Name: "Init", Optional: "opt_def", Op: Var("init")},
 		},
 	)),
 
 	MapSemantic("kwonly_arg", uast.Argument{}, MapObj(
-		Obj{
-			uast.KeyToken: Var("name"),
-			"default":     Var("init"),
+		Fields{
+			{Name: uast.KeyToken, Op: Var("name")},
+			{Name: "default", Op: Var("init")},
 			// TODO: change this once we've a way to store other nodes on semantic objects
-			"annotation": Any(),
+			// See: https://github.com/bblfsh/sdk/issues/361
+			// See: https://github.com/bblfsh/python-driver/issues/178
+			{Name: "noops_previous", Optional: "np_opt", Op: Any()},
+			{Name: "noops_sameline", Optional: "ns_opt", Op: Any()},
+			// This one is pesky - they're ignored by the runtime, could have typing from
+			// mypy, or could have anything else, so we can assign to the semantic type
+			{Name: "annotation", Op: Any()},
 		},
 		Obj{
 			"Init": Var("init"),
@@ -382,10 +269,16 @@ var Normalizers = []Mapping{
 	)),
 
 	MapSemantic("vararg", uast.Argument{}, MapObj(
-		Obj{
-			uast.KeyToken: Var("name"),
+		Fields{
+			{Name: uast.KeyToken, Op: Var("name")},
 			// TODO: change this once we've a way to store other nodes on semantic objects
-			"annotation": Any(),
+			// See: https://github.com/bblfsh/sdk/issues/361
+			// See: https://github.com/bblfsh/python-driver/issues/178
+			{Name: "noops_previous", Optional: "np_opt", Op: Any()},
+			{Name: "noops_sameline", Optional: "ns_opt", Op: Any()},
+			// This one is pesky - they're ignored by the runtime, could have typing from
+			// mypy, or could have anything else, so we can assign to the semantic type
+			{Name: "annotation", Op: Any()},
 		},
 		Obj{
 			"Name":     identifierWithPos("name"),
@@ -394,10 +287,16 @@ var Normalizers = []Mapping{
 	)),
 
 	MapSemantic("kwarg", uast.Argument{}, MapObj(
-		Obj{
-			uast.KeyToken: Var("name"),
+		Fields{
+			{Name: uast.KeyToken, Op: Var("name")},
 			// TODO: change this once we've a way to store other nodes on semantic objects
-			"annotation": Any(),
+			// See: https://github.com/bblfsh/sdk/issues/361
+			// See: https://github.com/bblfsh/python-driver/issues/178
+			{Name: "noops_previous", Optional: "np_opt", Op: Any()},
+			{Name: "noops_sameline", Optional: "ns_opt", Op: Any()},
+			// This one is pesky - they're ignored by the runtime, could have typing from
+			// mypy, or could have anything else, so we can assign to the semantic type
+			{Name: "annotation", Op: Any()},
 		},
 		Obj{
 			"Name": identifierWithPos("name"),
@@ -439,14 +338,17 @@ var Normalizers = []Mapping{
 			Objs{
 				{"Node": Obj{}},
 				{
-					"Node": UASTType(uast.Identifier{}, Obj{"Name": Var("alias")}),
+					"Node": UASTType(uast.Identifier{},
+						Obj{
+							"Name": Var("alias"),
+						}),
 				}},
 		))),
 
 	// Star imports
 	MapSemantic("ImportFrom", uast.RuntimeImport{}, MapObj(
-		Obj{
-			"names": Arr(
+		Fields{
+			{Name: "names", Op: Arr(
 				Obj{
 					uast.KeyType: String("uast:Alias"),
 					uast.KeyPos:  Var("pos"),
@@ -456,9 +358,14 @@ var Normalizers = []Mapping{
 					},
 					"Node": Obj{},
 				},
-			),
-			"level":  Var("level"),
-			"module": Var("module"),
+			)},
+			{Name: "level", Op: Var("level")},
+			{Name: "module", Op: Var("module")},
+			// TODO: change this once we've a way to store other nodes on semantic objects
+			// See: https://github.com/bblfsh/sdk/issues/361
+			// See: https://github.com/bblfsh/python-driver/issues/178
+			{Name: "noops_previous", Optional: "np_opt", Op: Any()},
+			{Name: "noops_sameline", Optional: "ns_opt", Op: Any()},
 		},
 		Obj{
 			"All": Bool(true),
@@ -475,10 +382,15 @@ var Normalizers = []Mapping{
 	)),
 
 	MapSemantic("ImportFrom", uast.RuntimeImport{}, MapObj(
-		Obj{
-			"names":  Var("names"),
-			"module": Var("module"),
-			"level":  Var("level"),
+		Fields{
+			{Name: "names", Op: Var("names")},
+			{Name: "module", Op: Var("module")},
+			{Name: "level", Op: Var("level")},
+			// TODO: change this once we've a way to store other nodes on semantic objects
+			// See: https://github.com/bblfsh/sdk/issues/361
+			// See: https://github.com/bblfsh/python-driver/issues/178
+			{Name: "noops_previous", Optional: "np_opt", Op: Any()},
+			{Name: "noops_sameline", Optional: "ns_opt", Op: Any()},
 		},
 		Obj{
 			"Names": Var("names"),
@@ -492,10 +404,4 @@ var Normalizers = []Mapping{
 			}),
 		},
 	)),
-
-	// Merge uast:Group with uast:FunctionGroup.
-	Map(
-		opMergeGroups{Var("group")},
-		Check(Has{uast.KeyType: String(uast.TypeOf(uast.FunctionGroup{}))}, Var("group")),
-	),
 }
