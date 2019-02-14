@@ -213,7 +213,7 @@ var Normalizers = []Mapping{
 	AnnotateType("keyword", MapObj(
 		Fields{
 			{Name: "arg", Op: Var("name")},
-			// TODO: change this once we've a way to store other nodes on semantic objects
+			// FIXME: change this once we've a way to store other nodes on semantic objects
 			// See: https://github.com/bblfsh/sdk/issues/361
 			// See: https://github.com/bblfsh/python-driver/issues/178
 			{Name: "noops_previous", Optional: "np_opt", Op: Any()},
