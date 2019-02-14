@@ -221,7 +221,15 @@ class AstImprover():
             if isinstance(kwarg, str):
                 # Python2 kwargs are just strings; convert to same format
                 # as Python3
-                kwarg = {"arg": kwarg, "annotation": None}
+                kwarg = {
+                    "arg": kwarg,
+                    "annotation": None,
+                    # the tokenizer will fix the positions later
+                    "lineno": 1,
+                    "end_lineno": 1,
+                    "col_offset": 0,
+                    "end_col_offset": 0
+                    }
             kwarg["ast_type"] = "kwarg"
             norm_args.append(self.visit(kwarg))
 
@@ -275,6 +283,7 @@ if __name__ == '__main__':
         version = codeinfo['version']
 
         failed = False
+        testdict = None
 
         if version in (3, 6) and codeinfo['py3ast']:
             testdict = codeinfo['py3ast']["PY3AST"]
