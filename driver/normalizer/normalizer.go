@@ -88,8 +88,8 @@ func mapStr(nativeType string) Mapping {
 			{Name: uast.KeyType, Op: String("Boxed" + nativeType)},
 			{Name: "boxed_value", Op: UASTType(uast.String{}, Obj{
 				uast.KeyPos: Var("pos_"),
-				"Value": Var("s"),
-				"Format": String(""),
+				"Value":     Var("s"),
+				//"Format":    String(""),
 			})},
 			{Name: "noops_previous", Optional: "np_opt", Op: Var("noops_previous")},
 			{Name: "noops_sameline", Optional: "ns_opt", Op: Var("noops_sameline")},
@@ -114,7 +114,7 @@ var Normalizers = []Mapping{
 			{Name: uast.KeyType, Op: String("BoxedName")},
 			{Name: "boxed_value", Op: UASTType(uast.Identifier{}, Obj{
 				uast.KeyPos: Var("pos_"),
-				"Name": Var("id"),
+				"Name":      Var("id"),
 			})},
 			{Name: "noops_previous", Optional: "np_opt", Op: Var("noops_previous")},
 			{Name: "noops_sameline", Optional: "ns_opt", Op: Var("noops_sameline")},
@@ -136,7 +136,7 @@ var Normalizers = []Mapping{
 			{Name: uast.KeyType, Op: String("BoxedBoolLiteral")},
 			{Name: "boxed_value", Op: UASTType(uast.Bool{}, Obj{
 				uast.KeyPos: Var("pos_"),
-				"Value": Var("lv"),
+				"Value":     Var("lv"),
 			})},
 			{Name: "noops_previous", Optional: "np_opt", Op: Var("noops_previous")},
 			{Name: "noops_sameline", Optional: "ns_opt", Op: Var("noops_sameline")},
@@ -225,8 +225,8 @@ var Normalizers = []Mapping{
 			uast.KeyToken: Var("name"),
 		},
 		Obj{
-			"Name":        identifierWithPos("name"),
-			"MapVariadic": Bool(true),
+			"Name": identifierWithPos("name"),
+		    "MapVariadic": Bool(true),
 		},
 	)),
 
