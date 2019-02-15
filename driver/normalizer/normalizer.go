@@ -49,13 +49,19 @@ func funcDefMap(typ string, async bool) Mapping {
 				}),
 			},
 			{Name: "decorator_list", Op: Var("func_decorators")},
+			{Name: "noops_previous", Optional: "np_opt", Op: Var("noops_previous")},
+			{Name: "noops_sameline", Optional: "ns_opt", Op: Var("noops_sameline")},
 		},
 		Obj{
 			"Nodes": Arr(
-				Obj{
+				Fields{
 					// FIXME: generator=true if it uses yield anywhere in the body
-					"async": Bool(async),
-					"decorators": Var("func_decorators"),
+					{Name: "async", Op: Bool(async)},
+					{Name: "decorators", Op: Var("func_decorators")},
+					{Name: "comments", Op: Fields{
+						{Name: "noops_previous", Optional: "np_opt", Op: Var("noops_previous")},
+						{Name: "noops_sameline", Optional: "ns_opt", Op: Var("noops_sameline")},
+					}},
 				},
 				UASTType(uast.Alias{}, Obj{
 					// FIXME: can't call identifierWithPos because it would take the position of the
@@ -154,11 +160,6 @@ var Normalizers = []Mapping{
 			{Name: uast.KeyType, Op: String("BoxedBoolLiteral")},
 			{Name: "boxed_value", Op: UASTType(uast.Bool{}, Obj{
 				uast.KeyPos: Var("pos_"),
-<<<<<<< HEAD
-				"Value":     Var("lv"),
-||||||| merged common ancestors
-				"Value": Var("lv"),
-=======
 				"Value":     Var("lv"),
 			})},
 			{Name: "noops_previous", Optional: "np_opt", Op: Var("noops_previous")},
@@ -171,7 +172,8 @@ var Normalizers = []Mapping{
 			{Name: uast.KeyType, Op: String("Attribute")},
 			{Name: uast.KeyPos, Op: Var("pos_")},
 			{Name: "attr", Op: Var("aname")},
-			// No problem dropping this one, it's used by an internal interpreter optimization/cache
+			// No problem dropping this one, it's used by an internal interpreter optimization
+			//cache
 			// without semantic meaning
 			{Name: "ctx", Op: Any()},
 			{Name: "noops_previous", Optional: "np_opt", Op: Var("noops_previous")},
@@ -182,7 +184,6 @@ var Normalizers = []Mapping{
 			{Name: "boxed_value", Op: UASTType(uast.Identifier{}, Obj{
 				uast.KeyPos: Var("pos_"),
 				"Name":      Var("aname"),
->>>>>>> Checkpoint with the C# like transform
 			})},
 			{Name: "noops_previous", Optional: "np_opt", Op: Var("noops_previous")},
 			{Name: "noops_sameline", Optional: "ns_opt", Op: Var("noops_sameline")},
@@ -251,7 +252,7 @@ var Normalizers = []Mapping{
 		Fields{
 			{Name: uast.KeyToken, Op: Var("name")},
 			{Name: "default", Op: Var("init")},
-			// TODO: change this once we've a way to store other nodes on semantic objects
+			// FIXME: change this once we've a way to store other nodes on semantic objects
 			// See: https://github.com/bblfsh/sdk/issues/361
 			// See: https://github.com/bblfsh/python-driver/issues/178
 			{Name: "noops_previous", Optional: "np_opt", Op: Any()},
@@ -269,7 +270,7 @@ var Normalizers = []Mapping{
 	MapSemantic("vararg", uast.Argument{}, MapObj(
 		Fields{
 			{Name: uast.KeyToken, Op: Var("name")},
-			// TODO: change this once we've a way to store other nodes on semantic objects
+			// FIXME: change this once we've a way to store other nodes on semantic objects
 			// See: https://github.com/bblfsh/sdk/issues/361
 			// See: https://github.com/bblfsh/python-driver/issues/178
 			{Name: "noops_previous", Optional: "np_opt", Op: Any()},
@@ -287,7 +288,7 @@ var Normalizers = []Mapping{
 	MapSemantic("kwarg", uast.Argument{}, MapObj(
 		Fields{
 			{Name: uast.KeyToken, Op: Var("name")},
-			// TODO: change this once we've a way to store other nodes on semantic objects
+			// FIXME: change this once we've a way to store other nodes on semantic objects
 			// See: https://github.com/bblfsh/sdk/issues/361
 			// See: https://github.com/bblfsh/python-driver/issues/178
 			{Name: "noops_previous", Optional: "np_opt", Op: Any()},
@@ -297,8 +298,8 @@ var Normalizers = []Mapping{
 			{Name: "annotation", Op: Any()},
 		},
 		Obj{
-			"Name": identifierWithPos("name"),
-		    "MapVariadic": Bool(true),
+			"Name":        identifierWithPos("name"),
+			"MapVariadic": Bool(true),
 		},
 	)),
 
@@ -359,7 +360,7 @@ var Normalizers = []Mapping{
 			)},
 			{Name: "level", Op: Var("level")},
 			{Name: "module", Op: Var("module")},
-			// TODO: change this once we've a way to store other nodes on semantic objects
+			// FIXME: change this once we've a way to store other nodes on semantic objects
 			// See: https://github.com/bblfsh/sdk/issues/361
 			// See: https://github.com/bblfsh/python-driver/issues/178
 			{Name: "noops_previous", Optional: "np_opt", Op: Any()},
@@ -384,7 +385,7 @@ var Normalizers = []Mapping{
 			{Name: "names", Op: Var("names")},
 			{Name: "module", Op: Var("module")},
 			{Name: "level", Op: Var("level")},
-			// TODO: change this once we've a way to store other nodes on semantic objects
+			// FIXME: change this once we've a way to store other nodes on semantic objects
 			// See: https://github.com/bblfsh/sdk/issues/361
 			// See: https://github.com/bblfsh/python-driver/issues/178
 			{Name: "noops_previous", Optional: "np_opt", Op: Any()},
