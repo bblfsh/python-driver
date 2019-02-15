@@ -37,7 +37,10 @@ func funcDefMap(typ string, async bool) Mapping {
 				uast.KeyPos:  Var("_pos"),
 				uast.KeyType: Var("_type"),
 			}},
-			// Will be filled only if there is a Python3 type annotation
+			// Will be filled only if there is a Python3 type annotation. If the field is
+			// missing or the value is nil it DOESNT mean that the function returns None,
+			// just that there is no annotation (but the function could still return some
+			// other type!).
 			{Name: "returns", Optional: "ret_opt", Op: Cases("ret_case",
 				Is(nil),
 				Obj{
@@ -73,6 +76,8 @@ func funcDefMap(typ string, async bool) Mapping {
 						"Type": UASTType(uast.FunctionType{}, Fields{
 							{Name: "Arguments", Op: Var("arguments")},
 							{Name: "Returns", Optional: "ret_opt", Op: Cases("ret_case",
+								// Dont add None here as default, read the comment on the upper
+								// side of the annotation
 								Is(nil),
 								Arr(UASTType(uast.Argument{},
 									Obj{
