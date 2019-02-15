@@ -55,8 +55,6 @@ func funcDefMap(typ string, async bool) Mapping {
 				Obj{
 					// FIXME: generator=true if it uses yield anywhere in the body
 					"async": Bool(async),
-				},
-				Obj{
 					"decorators": Var("func_decorators"),
 				},
 				UASTType(uast.Alias{}, Obj{
