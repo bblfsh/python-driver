@@ -178,7 +178,7 @@ var Normalizers = []Mapping{
 			{Name: uast.KeyPos, Op: Var("pos_")},
 			{Name: "attr", Op: Var("aname")},
 			// No problem dropping this one, it's used by an internal interpreter optimization
-			//cache
+			// cache without semantic meaning
 			// without semantic meaning
 			{Name: "ctx", Op: Any()},
 			{Name: "noops_previous", Optional: "np_opt", Op: Var("noops_previous")},
