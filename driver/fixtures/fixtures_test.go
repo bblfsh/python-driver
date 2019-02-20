@@ -27,6 +27,7 @@ var Suite = &fixtures.Suite{
 	Semantic: fixtures.SemanticConfig{
 		BlacklistTypes: []string{
 			"AsyncFunctionDef",
+			"Attribute",
 			"BoolLiteral",
 			"Bytes",
 			"FunctionDef",

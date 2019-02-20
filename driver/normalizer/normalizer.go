@@ -28,21 +28,43 @@ var Normalize = Transformers([][]Transformer{
 
 func funcDefMap(typ string, async bool) Mapping {
 	return MapSemantic(typ, uast.FunctionGroup{}, MapObj(
-		Obj{
-			"body": Var("body"),
-			"name": Var("name"),
+		Fields{
+			{Name: "body", Op: Var("body")},
+			{Name: "name", Op: Var("name")},
 			// Arguments should be converted by the uast.Arguments normalization
-			"args": Obj{
+			{Name: "args", Op: Obj{
 				"args":       Var("arguments"),
 				uast.KeyPos:  Var("_pos"),
 				uast.KeyType: Var("_type"),
+			}},
+			// Will be filled only if there is a Python3 type annotation. If the field is
+			// missing or the value is nil it DOESNT mean that the function returns None,
+			// just that there is no annotation (but the function could still return some
+			// other type!).
+			{Name: "returns", Optional: "ret_opt", Op: Cases("ret_case",
+				Is(nil),
+				Obj{
+					uast.KeyType:  String("BoxedName"),
+					"boxed_value": Var("ret_type"),
+					// No problem dropping this one, it's used by an internal interpreter optimization/cache
+					// without semantic meaning
+					"ctx": Any(),
+				}),
 			},
+			{Name: "decorator_list", Op: Var("func_decorators")},
+			{Name: "noops_previous", Optional: "np_opt", Op: Var("noops_previous")},
+			{Name: "noops_sameline", Optional: "ns_opt", Op: Var("noops_sameline")},
 		},
 		Obj{
 			"Nodes": Arr(
-				Obj{
+				Fields{
 					// FIXME: generator=true if it uses yield anywhere in the body
-					"async": Bool(async),
+					{Name: "async", Op: Bool(async)},
+					{Name: "decorators", Op: Var("func_decorators")},
+					{Name: "comments", Op: Fields{
+						{Name: "noops_previous", Optional: "np_opt", Op: Var("noops_previous")},
+						{Name: "noops_sameline", Optional: "ns_opt", Op: Var("noops_sameline")},
+					}},
 				},
 				UASTType(uast.Alias{}, Obj{
 					// FIXME: can't call identifierWithPos because it would take the position of the
@@ -51,8 +73,17 @@ func funcDefMap(typ string, async bool) Mapping {
 						"Name": Var("name"),
 					}),
 					"Node": UASTType(uast.Function{}, Obj{
-						"Type": UASTType(uast.FunctionType{}, Obj{
-							"Arguments": Var("arguments"),
+						"Type": UASTType(uast.FunctionType{}, Fields{
+							{Name: "Arguments", Op: Var("arguments")},
+							{Name: "Returns", Optional: "ret_opt", Op: Cases("ret_case",
+								// Dont add None here as default, read the comment on the upper
+								// side of the annotation
+								Is(nil),
+								Arr(UASTType(uast.Argument{},
+									Obj{
+										"Type": Var("ret_type"),
+									},
+								)))},
 						}),
 						"Body": UASTType(uast.Block{}, Obj{
 							"Statements": Var("body"),
@@ -89,7 +120,6 @@ func mapStr(nativeType string) Mapping {
 			{Name: "boxed_value", Op: UASTType(uast.String{}, Obj{
 				uast.KeyPos: Var("pos_"),
 				"Value":     Var("s"),
-				//"Format":    String(""),
 			})},
 			{Name: "noops_previous", Optional: "np_opt", Op: Var("noops_previous")},
 			{Name: "noops_sameline", Optional: "ns_opt", Op: Var("noops_sameline")},
@@ -99,9 +129,11 @@ func mapStr(nativeType string) Mapping {
 
 var Normalizers = []Mapping{
 
-	// Box Names, Strings, and Bools into a "BoxedFoo" moving the real node to the
+	// Box Names, Strings, Attributes, and Bools into a "BoxedFoo" moving the real node to the
 	// "value" property and keeping the comments in the parent (if not, comments would be lost
-	// when promoting the objects)
+	// when promoting the objects).
+	// For other objects, the comments are dropped.
+	// See: https://github.com/bblfsh/sdk/issues/361
 	Map(
 		Part("_", Fields{
 			{Name: uast.KeyType, Op: String("Name")},
@@ -121,13 +153,10 @@ var Normalizers = []Mapping{
 		}),
 	),
 
-	// TODO: uncomment after SDK 2.13.x update
-	//  (upgrade currently blocked by: https://github.com/bblfsh/sdk/issues/353)
 	Map(
 		Part("_", Fields{
 			{Name: uast.KeyType, Op: String("BoolLiteral")},
 			{Name: uast.KeyPos, Op: Var("pos_")},
-			//{Name: "LiteralValue", Op: Var("lv")},
 			{Name: "value", Op: Var("lv")},
 			{Name: "noops_previous", Optional: "np_opt", Op: Var("noops_previous")},
 			{Name: "noops_sameline", Optional: "ns_opt", Op: Var("noops_sameline")},
@@ -137,6 +166,29 @@ var Normalizers = []Mapping{
 			{Name: "boxed_value", Op: UASTType(uast.Bool{}, Obj{
 				uast.KeyPos: Var("pos_"),
 				"Value":     Var("lv"),
+			})},
+			{Name: "noops_previous", Optional: "np_opt", Op: Var("noops_previous")},
+			{Name: "noops_sameline", Optional: "ns_opt", Op: Var("noops_sameline")},
+		}),
+	),
+
+	Map(
+		Part("_", Fields{
+			{Name: uast.KeyType, Op: String("Attribute")},
+			{Name: uast.KeyPos, Op: Var("pos_")},
+			{Name: "attr", Op: Var("aname")},
+			// No problem dropping this one, it's used by an internal interpreter optimization
+			// cache without semantic meaning
+			// without semantic meaning
+			{Name: "ctx", Op: Any()},
+			{Name: "noops_previous", Optional: "np_opt", Op: Var("noops_previous")},
+			{Name: "noops_sameline", Optional: "ns_opt", Op: Var("noops_sameline")},
+		}),
+		Part("_", Fields{
+			{Name: uast.KeyType, Op: String("BoxedAttribute")},
+			{Name: "boxed_value", Op: UASTType(uast.Identifier{}, Obj{
+				uast.KeyPos: Var("pos_"),
+				"Name":      Var("aname"),
 			})},
 			{Name: "noops_previous", Optional: "np_opt", Op: Var("noops_previous")},
 			{Name: "noops_sameline", Optional: "ns_opt", Op: Var("noops_sameline")},
@@ -165,6 +217,11 @@ var Normalizers = []Mapping{
 	AnnotateType("keyword", MapObj(
 		Fields{
 			{Name: "arg", Op: Var("name")},
+			// FIXME: change this once we've a way to store other nodes on semantic objects
+			// See: https://github.com/bblfsh/sdk/issues/361
+			// See: https://github.com/bblfsh/python-driver/issues/178
+			{Name: "noops_previous", Optional: "np_opt", Op: Any()},
+			{Name: "noops_sameline", Optional: "ns_opt", Op: Any()},
 		},
 		Fields{
 			{Name: "arg",
@@ -174,35 +231,40 @@ var Normalizers = []Mapping{
 		}),
 		role.Name),
 
-	MapSemantic("Attribute", uast.Identifier{}, MapObj(
-		Obj{"attr": Var("name")},
-		Obj{"Name": Var("name")},
-	)),
-
 	MapSemantic("arg", uast.Argument{}, MapObj(
-		Obj{
-			uast.KeyToken: Var("name"),
-			"default":     Var("init"),
+		Fields{
+			{Name: uast.KeyToken, Op: Var("name")},
+			{Name: "default", Optional: "opt_def", Op: Var("init")},
+			// No problem dropping this one, it's used by an internal interpreter optimization/cache
+			// without semantic meaning
+			{Name: "ctx", Optional: "opt_ctx", Op: Any()},
+			// FIXME: change this once we've a way to store other nodes on semantic objects
+			// See: https://github.com/bblfsh/sdk/issues/361
+			// See: https://github.com/bblfsh/python-driver/issues/178
+			{Name: "noops_previous", Optional: "np_opt", Op: Any()},
+			{Name: "noops_sameline", Optional: "ns_opt", Op: Any()},
+			// This one is pesky - they're ignored by the runtime, could have typing from
+			// mypy, or could have anything else, so we can assign to the semantic type
+			{Name: "annotation", Optional: "ann_opt", Op: Any()},
 		},
-		Obj{
-			"Name": identifierWithPos("name"),
-			"Init": Var("init"),
-		},
-	)),
-
-	MapSemantic("arg", uast.Argument{}, MapObj(
-		Obj{
-			uast.KeyToken: Var("name"),
-		},
-		Obj{
-			"Name": identifierWithPos("name"),
+		Fields{
+			{Name: "Name", Op: identifierWithPos("name")},
+			{Name: "Init", Optional: "opt_def", Op: Var("init")},
 		},
 	)),
 
 	MapSemantic("kwonly_arg", uast.Argument{}, MapObj(
-		Obj{
-			uast.KeyToken: Var("name"),
-			"default":     Var("init"),
+		Fields{
+			{Name: uast.KeyToken, Op: Var("name")},
+			{Name: "default", Op: Var("init")},
+			// FIXME: change this once we've a way to store other nodes on semantic objects
+			// See: https://github.com/bblfsh/sdk/issues/361
+			// See: https://github.com/bblfsh/python-driver/issues/178
+			{Name: "noops_previous", Optional: "np_opt", Op: Any()},
+			{Name: "noops_sameline", Optional: "ns_opt", Op: Any()},
+			// This one is pesky - they're ignored by the runtime, could have typing from
+			// mypy, or could have anything else, so we can assign to the semantic type
+			{Name: "annotation", Op: Any()},
 		},
 		Obj{
 			"Init": Var("init"),
@@ -211,8 +273,16 @@ var Normalizers = []Mapping{
 	)),
 
 	MapSemantic("vararg", uast.Argument{}, MapObj(
-		Obj{
-			uast.KeyToken: Var("name"),
+		Fields{
+			{Name: uast.KeyToken, Op: Var("name")},
+			// FIXME: change this once we've a way to store other nodes on semantic objects
+			// See: https://github.com/bblfsh/sdk/issues/361
+			// See: https://github.com/bblfsh/python-driver/issues/178
+			{Name: "noops_previous", Optional: "np_opt", Op: Any()},
+			{Name: "noops_sameline", Optional: "ns_opt", Op: Any()},
+			// This one is pesky - they're ignored by the runtime, could have typing from
+			// mypy, or could have anything else, so we can assign to the semantic type
+			{Name: "annotation", Op: Any()},
 		},
 		Obj{
 			"Name":     identifierWithPos("name"),
@@ -221,12 +291,20 @@ var Normalizers = []Mapping{
 	)),
 
 	MapSemantic("kwarg", uast.Argument{}, MapObj(
-		Obj{
-			uast.KeyToken: Var("name"),
+		Fields{
+			{Name: uast.KeyToken, Op: Var("name")},
+			// FIXME: change this once we've a way to store other nodes on semantic objects
+			// See: https://github.com/bblfsh/sdk/issues/361
+			// See: https://github.com/bblfsh/python-driver/issues/178
+			{Name: "noops_previous", Optional: "np_opt", Op: Any()},
+			{Name: "noops_sameline", Optional: "ns_opt", Op: Any()},
+			// This one is pesky - they're ignored by the runtime, could have typing from
+			// mypy, or could have anything else, so we can assign to the semantic type
+			{Name: "annotation", Op: Any()},
 		},
 		Obj{
-			"Name": identifierWithPos("name"),
-		    "MapVariadic": Bool(true),
+			"Name":        identifierWithPos("name"),
+			"MapVariadic": Bool(true),
 		},
 	)),
 
@@ -264,14 +342,17 @@ var Normalizers = []Mapping{
 			Objs{
 				{"Node": Obj{}},
 				{
-					"Node": UASTType(uast.Identifier{}, Obj{"Name": Var("alias")}),
+					"Node": UASTType(uast.Identifier{},
+						Obj{
+							"Name": Var("alias"),
+						}),
 				}},
 		))),
 
 	// Star imports
 	MapSemantic("ImportFrom", uast.RuntimeImport{}, MapObj(
-		Obj{
-			"names": Arr(
+		Fields{
+			{Name: "names", Op: Arr(
 				Obj{
 					uast.KeyType: String("uast:Alias"),
 					uast.KeyPos:  Var("pos"),
@@ -281,9 +362,14 @@ var Normalizers = []Mapping{
 					},
 					"Node": Obj{},
 				},
-			),
-			"level":  Var("level"),
-			"module": Var("module"),
+			)},
+			{Name: "level", Op: Var("level")},
+			{Name: "module", Op: Var("module")},
+			// FIXME: change this once we've a way to store other nodes on semantic objects
+			// See: https://github.com/bblfsh/sdk/issues/361
+			// See: https://github.com/bblfsh/python-driver/issues/178
+			{Name: "noops_previous", Optional: "np_opt", Op: Any()},
+			{Name: "noops_sameline", Optional: "ns_opt", Op: Any()},
 		},
 		Obj{
 			"All": Bool(true),
@@ -300,10 +386,15 @@ var Normalizers = []Mapping{
 	)),
 
 	MapSemantic("ImportFrom", uast.RuntimeImport{}, MapObj(
-		Obj{
-			"names":  Var("names"),
-			"module": Var("module"),
-			"level":  Var("level"),
+		Fields{
+			{Name: "names", Op: Var("names")},
+			{Name: "module", Op: Var("module")},
+			{Name: "level", Op: Var("level")},
+			// FIXME: change this once we've a way to store other nodes on semantic objects
+			// See: https://github.com/bblfsh/sdk/issues/361
+			// See: https://github.com/bblfsh/python-driver/issues/178
+			{Name: "noops_previous", Optional: "np_opt", Op: Any()},
+			{Name: "noops_sameline", Optional: "ns_opt", Op: Any()},
 		},
 		Obj{
 			"Names": Var("names"),
